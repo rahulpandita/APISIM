@@ -10,6 +10,8 @@ public class Configuration
 		CLDC
 	}
 	
+	public static final String DICTIONARY = ""; 
+	
 	public static final String PROJECT_PATH = "C:\\Users\\rahulpandita\\Dropbox\\my docs\\workspace\\APISIM\\";
 	
 	public static final String ANDROID_DUMP_PATH = PROJECT_PATH + "TEMPFILES" + File.separator + "android.api";
