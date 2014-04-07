@@ -65,8 +65,8 @@ public class APISearcher {
 						ConsoleUtil.readConsole("");
 						try {
 							Query q = MultiFieldQueryParser.parse(
-									Version.LUCENE_44, query, fields, flags,
-									new EnglishAnalyzer(Version.LUCENE_44));
+									Version.LUCENE_47, query, fields, flags,
+									new EnglishAnalyzer(Version.LUCENE_47));
 							searcher.search(q);
 						} catch (Exception e) {
 							// Double the number of boolean queries allowed.
@@ -87,8 +87,8 @@ public class APISearcher {
 									Integer.toString(newQueries));
 							BooleanQuery.setMaxClauseCount(newQueries);
 							Query q = MultiFieldQueryParser.parse(
-									Version.LUCENE_44, query, fields, flags,
-									new EnglishAnalyzer(Version.LUCENE_44));
+									Version.LUCENE_47, query, fields, flags,
+									new EnglishAnalyzer(Version.LUCENE_47));
 							searcher.search(q);
 							System.setProperty(
 									"org.apache.lucene.maxClauseCount",
@@ -170,7 +170,7 @@ public class APISearcher {
 		MoreLikeThis mlt = new MoreLikeThis(ir);
 		// lower some settings to MoreLikeThis will work with very short
 		// quotations
-		mlt.setAnalyzer(new EnglishAnalyzer(Version.LUCENE_42));
+		mlt.setAnalyzer(new EnglishAnalyzer(Version.LUCENE_47));
 		mlt.setMinTermFreq(2);
 		// mlt.setMinDocFreq(1);
 		// We need a Reader to create the Query so we'll create one

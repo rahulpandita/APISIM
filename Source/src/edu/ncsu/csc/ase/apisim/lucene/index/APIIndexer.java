@@ -28,8 +28,8 @@ public class APIIndexer {
 
 	public IndexWriter getIndexWriter(boolean create) throws IOException {
 		if (indexWriter == null) {
-			IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_44,
-					new EnglishAnalyzer(Version.LUCENE_44));
+			IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_47,
+					new EnglishAnalyzer(Version.LUCENE_47));
 			Directory index = FSDirectory.open(new File(
 					Configuration.API_IDX_FILE));
 			indexWriter = new IndexWriter(index, config);
