@@ -4,7 +4,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
+
+
+import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.en.EnglishAnalyzer;
+//import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.StringField;
@@ -17,6 +22,7 @@ import org.apache.lucene.util.Version;
 
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
 import edu.ncsu.csc.ase.apisim.configuration.Configuration.APITYPE;
+import edu.ncsu.csc.ase.apisim.lucene.analyzer.SynonymAnalyzer;
 import edu.ncsu.csc.ase.apisim.util.AllClassCrawler;
 import edu.ncsu.csc.ase.apisim.util.SimpleSimilarity;
 import edu.ncsu.csc.ase.apisim.util.dataStructure.APIClass;
@@ -26,12 +32,17 @@ public class APIIndexer {
 
 	private IndexWriter indexWriter = null;
 
+	private Analyzer analyser = new EnglishAnalyzer(ver);
+	
+	private static final Version ver = Version.LUCENE_47;
+	
+	private String idx_path = "";
+	
 	public IndexWriter getIndexWriter(boolean create) throws IOException {
 		if (indexWriter == null) {
-			IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_47,
-					new EnglishAnalyzer(Version.LUCENE_47));
+			IndexWriterConfig config = new IndexWriterConfig(ver, analyser);
 			Directory index = FSDirectory.open(new File(
-					Configuration.API_IDX_FILE));
+					idx_path));
 			indexWriter = new IndexWriter(index, config);
 		}
 		return indexWriter;
@@ -131,7 +142,10 @@ public class APIIndexer {
 
 	public static void main(String[] args) {
 		APIIndexer idxr = new APIIndexer();
+		
 		try {
+			idxr.analyser = new SynonymAnalyzer();
+			idxr.idx_path = Configuration.API_IDX_FILE_SYNONYM;
 			idxr.rebuildIndexes();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
 import edu.ncsu.csc.ase.apisim.configuration.Configuration.APITYPE;
+import edu.ncsu.csc.ase.apisim.lucene.analyzer.SynonymAnalyzer;
 import edu.ncsu.csc.ase.apisim.lucene.searcher.APISearcher;
 import edu.ncsu.csc.ase.apisim.spring.mvc.cache.APICache;
 import edu.ncsu.csc.ase.apisim.spring.mvc.displayBeans.Result;
@@ -98,7 +99,7 @@ public class MainController {
 		String[] fields = { Configuration.IDX_FIELD_API_NAME, Configuration.IDX_FIELD_METHOD_DESCRIPTION };
 		try 
 		{
-			Query q = MultiFieldQueryParser.parse(Version.LUCENE_44, query, fields, flags, new EnglishAnalyzer(Version.LUCENE_44));
+			Query q = MultiFieldQueryParser.parse(Version.LUCENE_47, query, fields, flags, new SynonymAnalyzer());
 			mtdList = searcher.search(q);
 		} 
 		catch (Exception e) 

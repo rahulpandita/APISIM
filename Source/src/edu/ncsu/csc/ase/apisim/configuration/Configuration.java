@@ -10,9 +10,9 @@ public class Configuration
 		CLDC
 	}
 	
-	public static final String DICTIONARY = ""; 
+	public static final String PROJECT_PATH = "C:\\Users\\rahulpandita\\Documents\\GitHub\\APISIM\\Source\\";
 	
-	public static final String PROJECT_PATH = "C:\\Users\\rahulpandita\\Dropbox\\my docs\\workspace\\APISIM\\";
+	public static final String DICTIONARY = PROJECT_PATH + "data" + File.separator + "wn_s.pl"; 
 	
 	public static final String ANDROID_DUMP_PATH = PROJECT_PATH + "TEMPFILES" + File.separator + "android.api";
 	
@@ -27,6 +27,8 @@ public class Configuration
 	public static final String MIDP_ALL_CLASS_URL = "http://docs.oracle.com/javame/config/cldc/ref-impl/midp2.0/jsr118/allclasses-frame.html";
 	
 	public static final String API_IDX_FILE = PROJECT_PATH + "idx" + File.separator + "idx_all";
+	
+	public static final String API_IDX_FILE_SYNONYM = PROJECT_PATH + "idx" + File.separator + "idx_syn";
 	
 	public static final String IDX_FIELD_API_NAME = "APINAME";
 	
