@@ -22,6 +22,11 @@ import edu.ncsu.csc.ase.apisim.util.AllClassCrawler;
 import edu.ncsu.csc.ase.apisim.util.StringUtil;
 import edu.ncsu.csc.ase.apisim.util.dataStructure.APIClass;
 
+/**
+ * Indexer class to index API method description.
+ * @author rahulpandita
+ *
+ */
 public class APIClassIndexer {
 
 	private IndexWriter indexWriter = null;
