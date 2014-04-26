@@ -103,6 +103,7 @@ public class AllClassCrawler
 			 
 			FileOutputStream fout = new FileOutputStream(file);
 			ObjectOutputStream oos = new ObjectOutputStream(fout);   
+			// just for fun got done from remote desktop
 			for(APIClass clazz:classList)
 				oos.writeObject(clazz);
 			oos.close();
@@ -152,30 +153,22 @@ public class AllClassCrawler
 		
 		System.err.println("Writen "+ classList.size() + " documents to file");
 	}
+
 	public static ArrayList<APIClass> read(String file) {
 		ArrayList<APIClass> classList = new ArrayList<>();
 		APIClass clazz;
-		 
-		   try{
-	 
-			   FileInputStream fin = new FileInputStream(file);
-			   ObjectInputStream ois = new ObjectInputStream(fin);
-			   while(fin.available()>0)
-			   {
-				   clazz = (APIClass) ois.readObject();
-				   classList.add(clazz);
-				   
-			   }
-			   ois.close();
-	 
-			  
-	 
-		   }catch(Exception ex){
-			   ex.printStackTrace();
-			  
-		   }
-		
-		System.err.println("Read "+ classList.size() + " documents from file");
+		try {
+			FileInputStream fin = new FileInputStream(file);
+			ObjectInputStream ois = new ObjectInputStream(fin);
+			while (fin.available() > 0) {
+				clazz = (APIClass) ois.readObject();
+				classList.add(clazz);
+			}
+			ois.close();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		System.err.println("Read " + classList.size() + " documents from file");
 		return classList;
 	}
 }

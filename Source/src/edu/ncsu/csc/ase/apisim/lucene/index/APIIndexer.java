@@ -41,8 +41,8 @@ public class APIIndexer {
 	public IndexWriter getIndexWriter(boolean create) throws IOException {
 		if (indexWriter == null) {
 			IndexWriterConfig config = new IndexWriterConfig(ver, analyser);
-			Directory index = FSDirectory.open(new File(
-					idx_path));
+			Directory index = FSDirectory.open(new File(idx_path));
+			config.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
 			indexWriter = new IndexWriter(index, config);
 		}
 		return indexWriter;
@@ -77,6 +77,12 @@ public class APIIndexer {
 		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_DESCRIPTION,
 				className + " " + apiMethod.getName() + " "
 						+ apiMethod.getDescription(), Field.Store.YES));
+		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_DESCRIPTION1,
+				apiMethod.getDescription(), Field.Store.YES));
+		
+		doc.add(new TextField(Configuration.IDX_FIELD_CLASS_NAME1, className.replaceAll("\\.", " "),
+				Field.Store.YES));
+		
 		writer.addDocument(doc);
 	}
 
