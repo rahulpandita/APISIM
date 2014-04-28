@@ -16,6 +16,7 @@ import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.ParseException;
+import org.apache.lucene.search.BooleanClause;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
@@ -50,8 +51,13 @@ public class PremEval
 	{
 		StringBuffer buff = new StringBuffer();
 		//Graphics
-		ArrayList<APIClass> clazzList = AllClassCrawler
-				.read(Configuration.MIDP_DUMP_PATH);
+		ArrayList<APIClass> clazzList = AllClassCrawler.read(Configuration.MIDP_DUMP_PATH);
+		BooleanClause.Occur bc1 = BooleanClause.Occur.MUST;
+		BooleanClause.Occur bc2 = BooleanClause.Occur.SHOULD;
+		BooleanClause.Occur bc3 = BooleanClause.Occur.SHOULD;
+		BooleanClause.Occur bc4 = BooleanClause.Occur.SHOULD;
+		BooleanClause.Occur[] flags = { bc1, bc2, bc3, bc4 };
+		int i =0;
 		for (APIClass clazz : clazzList) 
 		{
 			if(clazz.getName().equalsIgnoreCase("graphics"))
@@ -63,7 +69,7 @@ public class PremEval
 					String[] methodTokens = methodNameTrunc.split("\\s+");
 					String methodBaseName = mtd.getName();
 					if(methodTokens.length >= 2) 
-						methodBaseName = methodTokens[methodTokens.length - 1];
+						methodBaseName = methodTokens[methodTokens.length-1];
 					
 					String desclist[] = mtd.getDescription().split("\\.");
 					String methodDesc = "a";
@@ -76,19 +82,20 @@ public class PremEval
 						METHODNAME:getHeight
 						MTDDESCRIPTION:Gets height of the displayable area in pixels.
 					 */
-					
-					String[] termVector = new String[] {"graphics*","+android", methodBaseName, methodDesc};
-					String[] columnVector = new String[] {"CLASSNAME1","APINAME","METHODNAME","MTDDESCRIPTION1"};
-					int i =0;
+					methodBaseName = MultiFieldQueryParser.escape(methodBaseName);
+					methodDesc = MultiFieldQueryParser.escape(methodDesc);
+					String[] termVector = new String[] {"android", "graphics*", methodBaseName, methodDesc};
+					String[] columnVector = new String[] {"APINAME","CLASSNAME1","METHODNAME","MTDDESCRIPTION1"};
 					try{
 						i=i+1;
-						Query query = MultiFieldQueryParser.parse(Version.LUCENE_47, termVector, columnVector,new EnglishAnalyzer(Version.LUCENE_47));
-						
+						Query query = MultiFieldQueryParser.parse(Version.LUCENE_47, termVector, columnVector, flags, new EnglishAnalyzer(Version.LUCENE_47));
+						System.out.println(query);
 						System.out.println(i);
 						List<String> result = searcher(query);
 						buff.append(methodBaseName);
 						buff.append("\n");
 						buff.append(methodDesc);
+						buff.append("\n");
 						for(int cnt =0; cnt<result.size();cnt++)
 						{
 							buff.append("\t");
