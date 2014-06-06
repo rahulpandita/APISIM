@@ -3,7 +3,6 @@ package edu.ncsu.csc.ase.apisim.spring.mvc.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.search.BooleanClause;
 import org.apache.lucene.search.Query;
@@ -17,12 +16,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
 import edu.ncsu.csc.ase.apisim.configuration.Configuration.APITYPE;
+import edu.ncsu.csc.ase.apisim.dataStructure.APIMtd;
+import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
 import edu.ncsu.csc.ase.apisim.lucene.analyzer.SynonymAnalyzer;
 import edu.ncsu.csc.ase.apisim.lucene.searcher.APISearcher;
 import edu.ncsu.csc.ase.apisim.spring.mvc.cache.APICache;
 import edu.ncsu.csc.ase.apisim.spring.mvc.displayBeans.Result;
-import edu.ncsu.csc.ase.apisim.util.dataStructure.APIClass;
-import edu.ncsu.csc.ase.apisim.util.dataStructure.APIMethod;
 
 @Controller
 public class MainController {
@@ -37,9 +36,9 @@ public class MainController {
 		
 		
 		APICache cache = APICache.getInstance();
-		APIClass clazz = cache.getAPIClass(APITYPE.valueOf(api), choice);
+		APIType clazz = cache.getAPIClass(APITYPE.valueOf(api), choice);
 		List<String> result = new ArrayList<>();
-		for(APIMethod mtd: clazz.getMethod())
+		for(APIMtd mtd: clazz.getMethod())
 		{
 			result.add(clazz.getPackage() + "." + clazz.getName() + " " + mtd.getName() + " " +  mtd.getDescription());
 		}
@@ -52,7 +51,7 @@ public class MainController {
 	public String exploreAPI(@RequestParam("repo") String choice, Model model) {
 		
 		APICache cache = APICache.getInstance();
-		List<APIClass> classList;
+		List<APIType> classList;
 		switch (choice)
 		{
 			case "EXPLOREANDROID":
@@ -74,7 +73,7 @@ public class MainController {
 		
 		List<String> result = new ArrayList<>();
 		
-		for(APIClass clazz: classList)
+		for(APIType clazz: classList)
 			result.add(clazz.getPackage() + "." + clazz.getName());
 		
 		model.addAttribute("message", result);

@@ -33,7 +33,7 @@ public class GoogleResults
     
     public List<String> getGoogleResultUrlList(String searchTerm) throws Exception
     {
-    	List<String> retURLList = new ArrayList();
+    	List<String> retURLList = new ArrayList<>();
     	String google = "http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=";
 	    String charset = "UTF-8";
 

@@ -36,6 +36,9 @@ public class Configuration
 	
 	public static final String API_IDX_CLAZZ = PROJECT_PATH + "idx" + File.separator + "classidx";
 	
+	public static final String API_IDX_CLAZZ_NEW = PROJECT_PATH + "idx" + File.separator + "classidxNew";
+	public static final String API_IDX_ANDROID_NEW = PROJECT_PATH + "idx" + File.separator + "idxAndroidNew";
+	
 	public static final String IDX_FIELD_API_NAME = "APINAME";
 	
 	public static final String IDX_FIELD_CLASS_NAME = "CLASSNAME";

@@ -3,15 +3,11 @@ package edu.ncsu.csc.ase.apisim.eval;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.lucene.analysis.core.SimpleAnalyzer;
 import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.document.Document;
-import org.apache.lucene.document.Field;
-import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
@@ -26,12 +22,9 @@ import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
 
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
-import edu.ncsu.csc.ase.apisim.configuration.Configuration.APITYPE;
-import edu.ncsu.csc.ase.apisim.spring.mvc.displayBeans.Result;
-import edu.ncsu.csc.ase.apisim.util.AllClassCrawler;
-import edu.ncsu.csc.ase.apisim.util.StringUtil;
-import edu.ncsu.csc.ase.apisim.util.dataStructure.APIClass;
-import edu.ncsu.csc.ase.apisim.util.dataStructure.APIMethod;
+import edu.ncsu.csc.ase.apisim.dataStructure.APIMtd;
+import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
+import edu.ncsu.csc.ase.apisim.webcrawler.AllClassCrawler;
 
 /**
  * 
@@ -51,18 +44,18 @@ public class PremEval
 	{
 		StringBuffer buff = new StringBuffer();
 		//Graphics
-		ArrayList<APIClass> clazzList = AllClassCrawler.read(Configuration.MIDP_DUMP_PATH);
+		List<APIType> clazzList = AllClassCrawler.read(Configuration.MIDP_DUMP_PATH);
 		BooleanClause.Occur bc1 = BooleanClause.Occur.MUST;
 		BooleanClause.Occur bc2 = BooleanClause.Occur.SHOULD;
 		BooleanClause.Occur bc3 = BooleanClause.Occur.SHOULD;
 		BooleanClause.Occur bc4 = BooleanClause.Occur.SHOULD;
-		BooleanClause.Occur[] flags = { bc1, bc2, bc3, bc4 };
+		BooleanClause.Occur[] flags = { bc1, bc2, bc4 };
 		int i =0;
-		for (APIClass clazz : clazzList) 
+		for (APIType clazz : clazzList) 
 		{
 			if(clazz.getName().equalsIgnoreCase("graphics"))
 			{
-				for (APIMethod mtd : clazz.getMethod())
+				for (APIMtd mtd : clazz.getMethod())
 				{
 					
 					String methodNameTrunc = mtd.getName().substring(0, mtd.getName().indexOf('(')).trim();
@@ -86,6 +79,9 @@ public class PremEval
 					methodDesc = MultiFieldQueryParser.escape(methodDesc);
 					String[] termVector = new String[] {"android", "graphics*", methodBaseName, methodDesc};
 					String[] columnVector = new String[] {"APINAME","CLASSNAME1","METHODNAME","MTDDESCRIPTION1"};
+					termVector = new String[] {"android", "graphics*", methodDesc};
+					columnVector = new String[] {"APINAME","CLASSNAME1","MTDDESCRIPTION1"};
+					
 					try{
 						i=i+1;
 						Query query = MultiFieldQueryParser.parse(Version.LUCENE_47, termVector, columnVector, flags, new EnglishAnalyzer(Version.LUCENE_47));

@@ -1,5 +1,10 @@
 package edu.ncsu.csc.ase.apisim.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.jsoup.Jsoup;
+
 /**
  * Class containing common String utility routines
  * 
@@ -7,6 +12,7 @@ package edu.ncsu.csc.ase.apisim.util;
  * 
  */
 public class StringUtil {
+	
 	/**
 	 * Utility function to remove spaces
 	 * 
@@ -31,5 +37,37 @@ public class StringUtil {
 				"(?<=[A-Z])(?=[A-Z][a-z])", "(?<=[^A-Z])(?=[A-Z])",
 				"(?<=[A-Za-z])(?=[^A-Za-z])"), " ");
 	}
-
+	
+	/**
+	 * Cleans the HTML Content of a String
+	 * Also replaces {@code CharSequence} elements returned 
+	 * by {@link #cleanCharactersList()} with a space
+	 * @param htmlText
+	 * @return cleaned input String
+	 */
+	public static String cleanHTML(String htmlText) {
+		htmlText = Jsoup.parse(htmlText).text();
+		for(CharSequence seq: cleanCharactersList())
+		{
+			while(!htmlText.equals(htmlText.replace(seq, " ")))
+				htmlText = htmlText.replace(seq, " ");
+		}
+		htmlText = htmlText.replaceAll("\\s+", " ");
+		return htmlText.trim();
+	}
+	
+	/**
+	 * Returns a {@link List} containing {@code CharSequence} commonly used to
+	 * clean text. 
+	 * @return
+	 */
+	public static List<CharSequence> cleanCharactersList()
+	{
+		List<CharSequence> cleanList = new ArrayList<>();
+		cleanList.add("\n");
+		cleanList.add("\t");
+		cleanList.add("\u00a0");
+		return cleanList;
+	}
+	
 }

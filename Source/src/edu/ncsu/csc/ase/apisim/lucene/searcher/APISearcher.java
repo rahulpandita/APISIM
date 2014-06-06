@@ -24,12 +24,12 @@ import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
 
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
+import edu.ncsu.csc.ase.apisim.dataStructure.APIMtd;
+import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
 import edu.ncsu.csc.ase.apisim.spring.mvc.displayBeans.Result;
-import edu.ncsu.csc.ase.apisim.util.AllClassCrawler;
-import edu.ncsu.csc.ase.apisim.util.ConsoleUtil;
 import edu.ncsu.csc.ase.apisim.util.FileUtilExcel;
-import edu.ncsu.csc.ase.apisim.util.dataStructure.APIClass;
-import edu.ncsu.csc.ase.apisim.util.dataStructure.APIMethod;
+import edu.ncsu.csc.ase.apisim.webcrawler.AllClassCrawler;
+import edu.ncsu.csc.ase.dristi.util.ConsoleUtil;
 
 public class APISearcher {
 	public static String queryTerm = "";
@@ -43,12 +43,12 @@ public class APISearcher {
 		BooleanClause.Occur[] flags = { bc1, bc2 };
 
 		try {
-			for (APIClass clazz : AllClassCrawler
+			for (APIType clazz : AllClassCrawler
 					.read(Configuration.MIDP_DUMP_PATH)) {
 				 if((clazz.getPackage().trim() + "." +
 				 clazz.getName().trim()).equalsIgnoreCase("javax.microedition.lcdui.Graphics"))
 				{
-					for (APIMethod mtd : clazz.getMethod()) {
+					for (APIMtd mtd : clazz.getMethod()) {
 						{
 						FileUtilExcel.getInstance().writeDataToExcel(
 								clazz.getPackage() + "." + clazz.getName(),

@@ -7,37 +7,37 @@ import java.util.Map;
 
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
 import edu.ncsu.csc.ase.apisim.configuration.Configuration.APITYPE;
-import edu.ncsu.csc.ase.apisim.util.AllClassCrawler;
-import edu.ncsu.csc.ase.apisim.util.dataStructure.APIClass;
+import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
+import edu.ncsu.csc.ase.apisim.webcrawler.AllClassCrawler;
 
 public class APICache {
 	private static APICache instance;
 
-	private static Map<String, APIClass> AndroidMap;
+	private static Map<String, APIType> AndroidMap;
 	
-	private static Map<String, APIClass> MidpMap;
+	private static Map<String, APIType> MidpMap;
 	
-	private static Map<String, APIClass> CldcMap;
+	private static Map<String, APIType> CldcMap;
 	
 
 	private APICache() {
-		List<APIClass> clazzList = AllClassCrawler
+		List<APIType> clazzList = AllClassCrawler
 				.read(Configuration.ANDROID_DUMP_PATH);
 		AndroidMap = new LinkedHashMap<>();
-		for(APIClass clazz: clazzList)
+		for(APIType clazz: clazzList)
 			AndroidMap.put(clazz.getPackage() + "." + clazz.getName(), clazz);
 		
 		clazzList = AllClassCrawler
 				.read(Configuration.MIDP_DUMP_PATH);
 		MidpMap = new LinkedHashMap<>();
-		for(APIClass clazz: clazzList)
+		for(APIType clazz: clazzList)
 			MidpMap.put(clazz.getPackage() + "." + clazz.getName(), clazz);
 		
 		
 		clazzList = AllClassCrawler
 				.read(Configuration.CLDC_DUMP_PATH);
 		CldcMap = new LinkedHashMap<>();
-		for(APIClass clazz: clazzList)
+		for(APIType clazz: clazzList)
 			CldcMap.put(clazz.getPackage() + "." + clazz.getName(), clazz);
 		
 		
@@ -50,8 +50,8 @@ public class APICache {
 		return instance;
 	}
 
-	public List<APIClass> getClassList(APITYPE apiType) {
-		List<APIClass> retList = new ArrayList<>();
+	public List<APIType> getClassList(APITYPE apiType) {
+		List<APIType> retList = new ArrayList<>();
 		switch (apiType) {
 		case ANDROID:
 			retList.addAll(AndroidMap.values());
@@ -68,8 +68,8 @@ public class APICache {
 		return retList;
 	}
 
-	public APIClass getAPIClass(APITYPE apiType, String choice) {
-		APIClass retVal = null;
+	public APIType getAPIClass(APITYPE apiType, String choice) {
+		APIType retVal = null;
 		switch (apiType) {
 		case ANDROID:
 			retVal =  AndroidMap.get(choice);

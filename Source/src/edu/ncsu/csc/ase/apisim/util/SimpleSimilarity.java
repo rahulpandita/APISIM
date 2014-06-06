@@ -1,33 +1,34 @@
 package edu.ncsu.csc.ase.apisim.util;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
-import edu.ncsu.csc.ase.apisim.util.dataStructure.APIClass;
-import edu.ncsu.csc.ase.apisim.util.dataStructure.APIMethod;
+import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
+import edu.ncsu.csc.ase.apisim.webcrawler.AllClassCrawler;
 
 public class SimpleSimilarity 
 {
-	private static ArrayList<APIClass> clazzListMIDP;
+	private static List<APIType> clazzListMIDP;
 	
-	private static ArrayList<APIClass> clazzListCLDC;
+	private static List<APIType> clazzListCLDC;
 	
-	private static ArrayList<APIClass> clazzListAndroid;
+	private static List<APIType> clazzListAndroid;
 	
-	private static ArrayList<APIClass> clazzListMIDPRed;
+	private static List<APIType> clazzListMIDPRed;
 	
-	private static ArrayList<APIClass> clazzListCLDCRed;
+	private static List<APIType> clazzListCLDCRed;
 	
-	private static ArrayList<APIClass> clazzListAndroidRed;
+	private static List<APIType> clazzListAndroidRed;
 	
 	
 	
 	public SimpleSimilarity() 
 	{
 		
-		ArrayList<APIClass> clazzListMIDPComm = new ArrayList<>();
+		ArrayList<APIType> clazzListMIDPComm = new ArrayList<>();
 		
-		ArrayList<APIClass> clazzListAndroidComm = new ArrayList<>();
+		ArrayList<APIType> clazzListAndroidComm = new ArrayList<>();
 		
 		clazzListAndroidRed = new ArrayList<>();
 		
@@ -39,9 +40,9 @@ public class SimpleSimilarity
 		clazzListAndroid = AllClassCrawler.read(Configuration.ANDROID_DUMP_PATH);
         
 		
-		for(APIClass clazzAndroid : clazzListAndroid) 
+		for(APIType clazzAndroid : clazzListAndroid) 
 		{
-            for(APIClass clazzMIDP: clazzListMIDP)
+            for(APIType clazzMIDP: clazzListMIDP)
             {
 				if(clazzAndroid.getPackage().trim().equals(clazzMIDP.getPackage().trim()))
             	{
@@ -55,7 +56,7 @@ public class SimpleSimilarity
             }
         }
 		
-		for(APIClass clazzAndroid : clazzListAndroid) 
+		for(APIType clazzAndroid : clazzListAndroid) 
 		{
 			if(!clazzListAndroidComm.contains(clazzAndroid))
 			{
@@ -63,7 +64,7 @@ public class SimpleSimilarity
 			}
 		}
 		
-		for(APIClass clazzMIDP : clazzListMIDP) 
+		for(APIType clazzMIDP : clazzListMIDP) 
 		{
 			if(!clazzListMIDPComm.contains(clazzMIDP))
 			{
@@ -77,13 +78,13 @@ public class SimpleSimilarity
 		new SimpleSimilarity();
 	}
 
-	public ArrayList<APIClass> getClazzListMIDPRed() {
+	public List<APIType> getClazzListMIDPRed() {
 		return clazzListMIDPRed;
 	}
 
 
 
-	public ArrayList<APIClass> getClazzListAndroidRed() {
+	public List<APIType> getClazzListAndroidRed() {
 		return clazzListAndroidRed;
 	}
 	

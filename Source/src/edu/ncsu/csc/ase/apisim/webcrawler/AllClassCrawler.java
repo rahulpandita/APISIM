@@ -1,0 +1,234 @@
+package edu.ncsu.csc.ase.apisim.webcrawler;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import edu.ncsu.csc.ase.apisim.cache.FailedCache;
+import edu.ncsu.csc.ase.apisim.configuration.Configuration;
+import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
+import edu.ncsu.csc.ase.apisim.util.StringUtil;
+
+public class AllClassCrawler
+{
+	public static List<APIType> listClassesJ2ME(String url)
+	{
+		List<APIType> classList = new ArrayList<>();
+		Document doc;
+		try {
+			doc = Jsoup.connect(url).get();
+		
+			Elements links = doc.select("a");
+			for (Element link : links)
+			{
+				try
+				{
+					classList.add(new APICrawlerMIDP().processURL(link.attr("abs:href"), link.text()));	
+					System.out.println("processed "+  link.text() + " <" + link.attr("abs:href") + ">");
+				}
+				catch(Exception e)
+				{
+					System.err.println(link);
+				}
+			}
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}	
+		return classList;	
+	}
+	
+	public static List<APIType> listClassesCLDC(String url)
+	{
+		List<APIType> classList = new ArrayList<>();
+		Document doc;
+		try {
+			doc = Jsoup.connect(url).get();
+		
+			Elements links = doc.select("a");
+			for (Element link : links)
+			{
+				try
+				{
+					classList.add(new APICrawlerCLDC().processURL(link.attr("abs:href"), link.text()));	
+					System.out.println("processed "+  link.text() + " <" + link.attr("abs:href") + ">");
+				}
+				catch(Exception e)
+				{
+					System.err.println(link);
+				}
+			}
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}	
+		return classList;	
+	}
+	
+	public static List<APIType> listClassesAndroid(String url)
+	{
+		List<APIType> classList = new ArrayList<>();
+		Document doc;
+		try {
+			doc = Jsoup.connect(url).get();
+		
+			Elements links = doc.select("td");
+			for (Element link : links)
+			{
+				
+				if((link.children().size()==1)&&(link.child(0).tagName().equalsIgnoreCase("a")))
+				{
+					Element link1 = link.child(0);
+					if(StringUtil.cleanHTML(link.text()).equals(StringUtil.cleanHTML(link1.text())))
+					{
+						classList.add(new APICrawlerAndroid().processURLAndroid(link1.attr("abs:href"), link.text()));
+						System.out.println("processed "+  link.text() + " <" + link1.attr("abs:href") + ">");
+					}
+				}
+			}
+			
+		} catch (IOException e) 
+		{
+			e.printStackTrace();
+		}	
+		return classList;	
+	}
+	
+	public static void main(String[] args) {
+		//Connected Limited Device Configuration (CLDC) 
+		//Mobile Information Device Profile (MIDP) 
+		//write("http://docs.oracle.com/javame/config/cldc/ref-impl/midp2.0/jsr118/allclasses-frame.html", "midp.api");
+		//read(android_Dump);
+		//listClassesAndroid("http://developer.android.com/reference/classes.html");
+		/*write(Configuration.ANDROID_ALL_CLASS_URL, Configuration.ANDROID_DUMP_PATH);
+		System.out.println("-----------------------------------------------------------");
+		System.out.println("Finished Android");
+		System.out.println("-----------------------------------------------------------");*/
+		write(Configuration.CLDC_ALL_CLASS_URL,Configuration.CLDC_DUMP_PATH);
+		System.out.println("-----------------------------------------------------------");
+		System.out.println("Finished CLDC");
+		/*System.out.println("-----------------------------------------------------------");
+		write(Configuration.MIDP_ALL_CLASS_URL,Configuration.MIDP_DUMP_PATH);
+		System.out.println("-----------------------------------------------------------");*/
+		System.out.println(FailedCache.getInstance().toString());
+		
+	}
+	
+	public static void main12(String[] args) {
+		List<APIType> list = read(Configuration.ANDROID_DUMP_PATH);
+		List<String> classNames = new ArrayList<String>();
+		for(APIType clazz: list)
+		{
+			if(classNames.contains(clazz.getName()))
+				System.err.println(clazz.getName());
+			else
+				classNames.add(clazz.getName());
+		}
+		System.err.println(list.size()-classNames.size());
+	}
+	
+	public static void writeAndroid(String url, String file) {
+		List<APIType> classList = listClassesAndroid(url);
+		System.err.println(classList.size());
+		try{
+			 
+			FileOutputStream fout = new FileOutputStream(file);
+			ObjectOutputStream oos = new ObjectOutputStream(fout);   
+			// just for fun got done from remote desktop
+			for(APIType clazz:classList)
+				oos.writeObject(clazz);
+			oos.close();
+			System.out.println("Done");
+	 
+		   }catch(Exception ex){
+			   ex.printStackTrace();
+		   }
+		
+		System.err.println("Writen "+ classList.size() + " documents to file");
+	}
+	
+	
+	
+	public static void write(String url, String file) {
+		List<APIType> classList = listClassesJ2ME(url);
+		System.err.println(classList.size());
+		try{
+			 
+			FileOutputStream fout = new FileOutputStream(file);
+			ObjectOutputStream oos = new ObjectOutputStream(fout);   
+			for(APIType clazz:classList)
+				oos.writeObject(clazz);
+			oos.close();
+			System.out.println("Done");
+	 
+		   }catch(Exception ex){
+			   ex.printStackTrace();
+		   }
+		
+		System.err.println("Writen "+ classList.size() + " documents to file");
+	}
+	
+	public static void writeCLDC(String url, String file) {
+		List<APIType> classList = listClassesCLDC(url);
+		System.err.println(classList.size());
+		try{
+			 
+			FileOutputStream fout = new FileOutputStream(file);
+			ObjectOutputStream oos = new ObjectOutputStream(fout);   
+			for(APIType clazz:classList)
+				oos.writeObject(clazz);
+			oos.close();
+			System.out.println("Done");
+	 
+		   }catch(Exception ex){
+			   ex.printStackTrace();
+		   }
+		
+		System.err.println("Writen "+ classList.size() + " documents to file");
+	}
+	
+	public static void write(List<APIType> classList, String file) {
+		System.err.println(classList.size());
+		try {
+
+			FileOutputStream fout = new FileOutputStream(file);
+			ObjectOutputStream oos = new ObjectOutputStream(fout);
+			for (APIType clazz : classList)
+				oos.writeObject(clazz);
+			oos.close();
+			System.out.println("Done");
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+
+		System.err.println("Writen " + classList.size() + " documents to file");
+	}
+
+	public static List<APIType> read(String file) {
+		List<APIType> classList = new ArrayList<>();
+		APIType clazz;
+		try {
+			FileInputStream fin = new FileInputStream(file);
+			ObjectInputStream ois = new ObjectInputStream(fin);
+			while (fin.available() > 0) {
+				clazz = (APIType) ois.readObject();
+				classList.add(clazz);
+			}
+			ois.close();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		System.err.println("Read " + classList.size() + " documents from file");
+		return classList;
+	}
+}

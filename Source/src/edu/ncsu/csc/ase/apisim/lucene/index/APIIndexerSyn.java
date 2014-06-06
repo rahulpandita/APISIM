@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.lucene.analysis.Analyzer;
@@ -26,12 +27,12 @@ import org.apache.lucene.util.Version;
 
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
 import edu.ncsu.csc.ase.apisim.configuration.Configuration.APITYPE;
+import edu.ncsu.csc.ase.apisim.dataStructure.APIMtd;
+import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
 import edu.ncsu.csc.ase.apisim.lucene.analyzer.SynonymAnalyzer;
-import edu.ncsu.csc.ase.apisim.util.AllClassCrawler;
 import edu.ncsu.csc.ase.apisim.util.SimpleSimilarity;
-import edu.ncsu.csc.ase.apisim.util.dataStructure.APIClass;
-import edu.ncsu.csc.ase.apisim.util.dataStructure.APIMethod;
 import edu.ncsu.csc.ase.apisim.util.StringUtil;
+import edu.ncsu.csc.ase.apisim.webcrawler.AllClassCrawler;
 
 public class APIIndexerSyn {
 
@@ -60,43 +61,43 @@ public class APIIndexerSyn {
 		}
 	}
 	
-	public void indexAPIClass(APIClass apiClass) throws IOException {
+	public void indexAPIType(APIType APIType) throws IOException {
 		IndexWriter writer = getIndexWriter(false);
 		Document doc = new Document();
-		doc.add(new StringField("className", apiClass.getPackage() + "."
-				+ apiClass.getName(), Field.Store.YES));
-		doc.add(new TextField("description", apiClass.getSummary(),
+		doc.add(new StringField("className", APIType.getPackage() + "."
+				+ APIType.getName(), Field.Store.YES));
+		doc.add(new TextField("description", APIType.getSummary(),
 				Field.Store.YES));
 		writer.addDocument(doc);
 	}
 
 	
 	
-	public void indexAPIMethod(String apiName, String className,
-			APIMethod apiMethod) throws IOException {
+	public void indexAPIMtd(String apiName, String className,
+			APIMtd APIMtd) throws IOException {
 		IndexWriter writer = getIndexWriter(false);
 		Document doc = new Document();
 		doc.add(new StringField(Configuration.IDX_FIELD_API_NAME, apiName,
 				Field.Store.YES));
 		doc.add(new TextField(Configuration.IDX_FIELD_CLASS_NAME, className,
 				Field.Store.YES));
-		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_NAME, apiMethod
+		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_NAME, APIMtd
 				.getName(), Field.Store.YES));
 		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_DESCRIPTION,
-				className + " " + apiMethod.getName() + " "
-						+ apiMethod.getDescription(), Field.Store.YES));
+				className + " " + APIMtd.getName() + " "
+						+ APIMtd.getDescription(), Field.Store.YES));
 		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_DESCRIPTION1,
-				apiMethod.getDescription(), Field.Store.YES));
+				APIMtd.getDescription(), Field.Store.YES));
 		
 		doc.add(new TextField(Configuration.IDX_FIELD_CLASS_NAME1, className.replaceAll("\\.", " "),
 				Field.Store.YES));
 		
-		String methodNameTrunc = apiMethod.getName().substring(0, apiMethod.getName().indexOf('(')).trim();
+		String methodNameTrunc = APIMtd.getName().substring(0, APIMtd.getName().indexOf('(')).trim();
 		String[] methodTokens = methodNameTrunc.split("\\s+");
 		if(methodTokens.length >= 2) {
 			String methodReturnType = methodTokens[methodTokens.length - 2];
 			String methodBaseName = methodTokens[methodTokens.length - 1];
-			String methodParams = apiMethod.getName().substring(apiMethod.getName().indexOf('(') + 1, apiMethod.getName().indexOf(')'));
+			String methodParams = APIMtd.getName().substring(APIMtd.getName().indexOf('(') + 1, APIMtd.getName().indexOf(')'));
 			
 			if (methodReturnType == "") {
 				methodReturnType = "void";
@@ -114,12 +115,12 @@ public class APIIndexerSyn {
 			doc.add(new TextField(Configuration.IDX_FIELD_METHOD_PARAMS,
 					methodParams, Field.Store.YES));
 		} else {
-			System.err.println(apiMethod.getName());
+			System.err.println(APIMtd.getName());
 			doc.add(new TextField(Configuration.IDX_FIELD_METHOD_RETURN,
 					"", Field.Store.YES));
 			
 				doc.add(new TextField(Configuration.IDX_FIELD_METHOD_BASE_NAME,
-					apiMethod.getName(), Field.Store.YES));
+					APIMtd.getName(), Field.Store.YES));
 				
 				doc.add(new TextField(Configuration.IDX_FIELD_METHOD_BASE_NAME_CAMELCASE_SPLIT,
 						"", Field.Store.YES));
@@ -139,31 +140,31 @@ public class APIIndexerSyn {
 		//
 		getIndexWriter(true);
 		
-		ArrayList<APIClass> clazzList = AllClassCrawler
+		List<APIType> clazzList = AllClassCrawler
 				.read(Configuration.ANDROID_DUMP_PATH);
-		for (APIClass clazz : clazzList) 
+		for (APIType clazz : clazzList) 
 		{
-			for (APIMethod mtd : clazz.getMethod()) {
-				indexAPIMethod(APITYPE.ANDROID.name().toLowerCase(),
+			for (APIMtd mtd : clazz.getMethod()) {
+				indexAPIMtd(APITYPE.ANDROID.name().toLowerCase(),
 						clazz.getPackage() + "." + clazz.getName(), mtd);
 			}
 		}
 
 		clazzList = AllClassCrawler.read(Configuration.CLDC_DUMP_PATH);
-		for (APIClass clazz : clazzList) 
+		for (APIType clazz : clazzList) 
 		{
-			for (APIMethod mtd : clazz.getMethod()) {
-				indexAPIMethod(APITYPE.CLDC.name().toLowerCase(),
+			for (APIMtd mtd : clazz.getMethod()) {
+				indexAPIMtd(APITYPE.CLDC.name().toLowerCase(),
 						clazz.getPackage() + "." + clazz.getName(), mtd);
 			}
 		}
 
 		clazzList = AllClassCrawler.read(Configuration.MIDP_DUMP_PATH);
-		for (APIClass clazz : clazzList)
+		for (APIType clazz : clazzList)
 		{
-			for (APIMethod mtd : clazz.getMethod())
+			for (APIMtd mtd : clazz.getMethod())
 			{
-				indexAPIMethod(APITYPE.MIDP.name().toLowerCase(),
+				indexAPIMtd(APITYPE.MIDP.name().toLowerCase(),
 						clazz.getPackage() + "." + clazz.getName(), mtd);
 			}
 		}
@@ -178,18 +179,18 @@ public class APIIndexerSyn {
 		getIndexWriter(true);
 
 		SimpleSimilarity sim = new SimpleSimilarity();
-		ArrayList<APIClass> clazzList = sim.getClazzListAndroidRed();
-		for (APIClass clazz : clazzList) {
-			for (APIMethod mtd : clazz.getMethod()) {
-				indexAPIMethod("android",
+		List<APIType> clazzList = sim.getClazzListAndroidRed();
+		for (APIType clazz : clazzList) {
+			for (APIMtd mtd : clazz.getMethod()) {
+				indexAPIMtd("android",
 						clazz.getPackage() + "." + clazz.getName(), mtd);
 			}
 		}
 
 		clazzList = sim.getClazzListMIDPRed();
-		for (APIClass clazz : clazzList) {
-			for (APIMethod mtd : clazz.getMethod()) {
-				indexAPIMethod("j2me_midp",
+		for (APIType clazz : clazzList) {
+			for (APIMtd mtd : clazz.getMethod()) {
+				indexAPIMtd("j2me_midp",
 						clazz.getPackage() + "." + clazz.getName(), mtd);
 			}
 		}

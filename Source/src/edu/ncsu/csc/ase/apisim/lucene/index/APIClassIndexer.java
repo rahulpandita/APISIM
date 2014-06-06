@@ -2,7 +2,7 @@ package edu.ncsu.csc.ase.apisim.lucene.index;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.en.EnglishAnalyzer;
@@ -17,10 +17,10 @@ import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
 
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
+import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
 import edu.ncsu.csc.ase.apisim.lucene.analyzer.SynonymAnalyzer;
-import edu.ncsu.csc.ase.apisim.util.AllClassCrawler;
 import edu.ncsu.csc.ase.apisim.util.StringUtil;
-import edu.ncsu.csc.ase.apisim.util.dataStructure.APIClass;
+import edu.ncsu.csc.ase.apisim.webcrawler.AllClassCrawler;
 
 /**
  * Indexer class to index API method description.
@@ -53,7 +53,7 @@ public class APIClassIndexer {
 		}
 	}
 
-	public void indexAPIClass(APIClass apiClass) throws IOException {
+	public void indexAPIClass(APIType apiClass) throws IOException {
 		IndexWriter writer = getIndexWriter(false);
 		Document doc = new Document();
 		doc.add(new StringField("name", apiClass.getPackage() + "." + apiClass.getName(), Field.Store.YES));
@@ -68,19 +68,19 @@ public class APIClassIndexer {
 		//
 		getIndexWriter(true);
 		
-		ArrayList<APIClass> clazzList = AllClassCrawler
+		List<APIType> clazzList = AllClassCrawler
 				.read(Configuration.ANDROID_DUMP_PATH);
-		for (APIClass clazz : clazzList) {
+		for (APIType clazz : clazzList) {
 			indexAPIClass(clazz);
 		}
 
 		clazzList = AllClassCrawler.read(Configuration.CLDC_DUMP_PATH);
-		for (APIClass clazz : clazzList) {
+		for (APIType clazz : clazzList) {
 			indexAPIClass(clazz);
 		}
 
 		clazzList = AllClassCrawler.read(Configuration.MIDP_DUMP_PATH);
-		for (APIClass clazz : clazzList) {
+		for (APIType clazz : clazzList) {
 			indexAPIClass(clazz);
 		}
 		
