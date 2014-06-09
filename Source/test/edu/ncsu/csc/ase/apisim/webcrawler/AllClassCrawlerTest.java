@@ -11,10 +11,46 @@ import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
 
 public class AllClassCrawlerTest 
 {
+	@Test
 	public void testCLDCWebGet()
 	{
 		List<APIType> classList = AllClassCrawler.listClassesCLDC(Configuration.CLDC_ALL_CLASS_URL);
 		Assert.assertTrue(classList.size()==81);
+	}
+	
+	@Test
+	public void testMIDPWebGet()
+	{
+		List<APIType> classList = AllClassCrawler.listClassesMIDP(Configuration.MIDP_ALL_CLASS_URL);
+		Assert.assertTrue(classList.size()==145);
+	}
+	
+	@Test
+	public void testAndroidWebGet()
+	{
+		List<APIType> classList = AllClassCrawler.listClassesMIDP(Configuration.ANDROID_ALL_CLASS_URL);
+		Assert.assertTrue(classList.size()==2855);
+	}
+	
+	@Test
+	public void testCLDCRead()
+	{
+		List<APIType> classList = AllClassCrawler.read(Configuration.CLDC_DUMP_PATH);
+		Assert.assertTrue(classList.size()==81);
+	}
+	
+	@Test
+	public void testMIDPRead()
+	{
+		List<APIType> classList = AllClassCrawler.read(Configuration.MIDP_DUMP_PATH);
+		Assert.assertTrue(classList.size()==145);
+	}
+	
+	@Test
+	public void testAndroidRead()
+	{
+		List<APIType> classList = AllClassCrawler.read(Configuration.ANDROID_DUMP_PATH);
+		Assert.assertTrue(classList.size()==2855);
 	}
 	
 	@Test
@@ -30,7 +66,7 @@ public class AllClassCrawlerTest
 	@Test
 	public void testMIDP()
 	{
-		AllClassCrawler.write(Configuration.MIDP_ALL_CLASS_URL, Configuration.MIDP_DUMP_PATH);
+		AllClassCrawler.writeMIDP(Configuration.MIDP_ALL_CLASS_URL, Configuration.MIDP_DUMP_PATH);
 		System.out.println("-----------------------------------------------------------");
 		System.out.println("Finished MIDP");
 		System.out.println("-----------------------------------------------------------");
