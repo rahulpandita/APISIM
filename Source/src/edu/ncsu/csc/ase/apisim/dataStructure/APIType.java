@@ -11,7 +11,7 @@ public class APIType implements Serializable
 	
 	private String modifier;
 	
-	private APIType parentClass;
+	private String apiName;
 	
 	private List<APIField> fieldList;
 	
@@ -82,12 +82,12 @@ public class APIType implements Serializable
 		this.modifier = modifier;
 	}
 
-	public APIType getParentClass() {
-		return parentClass;
+	public String getApiName() {
+		return apiName;
 	}
 
-	public void setParentClass(APIType parent) {
-		this.parentClass = parent;
+	public void setApiName(String apiName) {
+		this.apiName = apiName;
 	}
 
 	public List<APIField> getFieldList() {

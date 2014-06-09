@@ -7,7 +7,8 @@ public class Configuration
 	public enum APITYPE{
 		ANDROID,
 		MIDP,
-		CLDC
+		CLDC,
+		UNKNOWN
 	}
 	
 	public static final String PROJECT_PATH = "C:\\Users\\rahulpandita\\Documents\\GitHub\\APISIM\\Source\\";

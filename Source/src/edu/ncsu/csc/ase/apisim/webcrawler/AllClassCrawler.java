@@ -77,7 +77,7 @@ public class AllClassCrawler {
 					if (StringUtil.cleanHTML(link.text()).equals(
 							StringUtil.cleanHTML(link1.text()))) {
 						classList.add(new APICrawlerAndroid()
-								.processURLAndroid(link1.attr("abs:href"),
+								.processURL(link1.attr("abs:href"),
 										link.text()));
 						System.out.println("processed " + link.text() + " <"
 								+ link1.attr("abs:href") + ">");
