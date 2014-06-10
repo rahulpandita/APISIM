@@ -2,12 +2,15 @@ package edu.ncsu.csc.ase.apisim.configuration;
 
 import java.io.File;
 
+import org.apache.lucene.util.Version;
+
 public class Configuration 
 {
 	public enum APITYPE{
 		ANDROID,
 		MIDP,
-		CLDC
+		CLDC,
+		UNKNOWN
 	}
 	
 	public static final String PROJECT_PATH = "C:\\Users\\rahulpandita\\Documents\\GitHub\\APISIM\\Source\\";
@@ -36,8 +39,7 @@ public class Configuration
 	
 	public static final String API_IDX_CLAZZ = PROJECT_PATH + "idx" + File.separator + "classidx";
 	
-	public static final String API_IDX_CLAZZ_NEW = PROJECT_PATH + "idx" + File.separator + "classidxNew";
-	public static final String API_IDX_ANDROID_NEW = PROJECT_PATH + "idx" + File.separator + "idxAndroidNew";
+	public static final String API_IDX_CLAZZ_SYN = PROJECT_PATH + "idx" + File.separator + "classidxSyn";
 	
 	public static final String IDX_FIELD_API_NAME = "APINAME";
 	
@@ -54,12 +56,14 @@ public class Configuration
 	public static final String IDX_FIELD_METHOD_RETURN = "METHODRETURNTYPE";
 
 	public static final String IDX_FIELD_METHOD_PARAMS = "METHODPARAMS";
+	
+	public static final String IDX_FIELD_METHOD_EXCEPTIONS = "METHODEXCEPTIONS";
 
 	public static final String IDX_FIELD_METHOD_BASE_NAME = "METHODBASENAME";
 	
 	public static final String IDX_FIELD_METHOD_BASE_NAME_CAMELCASE_SPLIT = "MTDBASENAMECCSPLIT";
 	
-	
+	public static final Version LUCENE_VERSION =  Version.LUCENE_47;
 	
 
 }

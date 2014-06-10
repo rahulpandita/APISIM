@@ -3,8 +3,6 @@ package edu.ncsu.csc.ase.apisim.util;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.jsoup.Jsoup;
-
 /**
  * Class containing common String utility routines
  * 
@@ -46,7 +44,6 @@ public class StringUtil {
 	 * @return cleaned input String
 	 */
 	public static String cleanHTML(String htmlText) {
-		htmlText = Jsoup.parse(htmlText).text();
 		for(CharSequence seq: cleanCharactersList())
 		{
 			while(!htmlText.equals(htmlText.replace(seq, " ")))

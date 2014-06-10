@@ -1,159 +1,96 @@
 package edu.ncsu.csc.ase.apisim.lucene.index;
 
-import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.lucene.analysis.Analyzer;
-import org.apache.lucene.analysis.en.EnglishAnalyzer;
-//import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
-import org.apache.lucene.index.IndexWriter;
-import org.apache.lucene.index.IndexWriterConfig;
-import org.apache.lucene.store.Directory;
-import org.apache.lucene.store.FSDirectory;
-import org.apache.lucene.util.Version;
 
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
-import edu.ncsu.csc.ase.apisim.configuration.Configuration.APITYPE;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIMtd;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
-import edu.ncsu.csc.ase.apisim.lucene.analyzer.SynonymAnalyzer;
-import edu.ncsu.csc.ase.apisim.util.SimpleSimilarity;
+import edu.ncsu.csc.ase.apisim.util.StringUtil;
 import edu.ncsu.csc.ase.apisim.webcrawler.AllClassCrawler;
+import edu.ncsu.csc.ase.apisim.webcrawler.apiutil.ASTBuilder;
 
 
-public class APIIndexer {
+public class APIIndexer extends Indexer<APIMtd>{
 
-	private IndexWriter indexWriter = null;
-
-	private Analyzer analyser = new EnglishAnalyzer(ver);
+	public APIIndexer() throws IOException 
+	{
+		idx_path = Configuration.API_IDX_FILE;
+	}
 	
-	private static final Version ver = Version.LUCENE_47;
-	
-	private String idx_path = "";
-	
-	public IndexWriter getIndexWriter(boolean create) throws IOException {
-		if (indexWriter == null) {
-			IndexWriterConfig config = new IndexWriterConfig(ver, analyser);
-			Directory index = FSDirectory.open(new File(idx_path));
-			config.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
-			indexWriter = new IndexWriter(index, config);
+	@Override
+	public List<APIMtd> readObjects() throws Exception {
+		List<APIMtd> mtdList = new ArrayList<>();
+		
+		List<APIType> clazzList = new ArrayList<>();
+		
+		clazzList.addAll(AllClassCrawler.read(Configuration.ANDROID_DUMP_PATH));
+		clazzList.addAll(AllClassCrawler.read(Configuration.CLDC_DUMP_PATH));
+		clazzList.addAll(AllClassCrawler.read(Configuration.MIDP_DUMP_PATH));
+		
+		for (APIType clazz : clazzList) {
+			mtdList.addAll(clazz.getConstructors());
+			mtdList.addAll(clazz.getMethod());
 		}
-		return indexWriter;
+		return mtdList;
 	}
 
-	public void closeIndexWriter() throws IOException {
-		if (indexWriter != null) {
-			indexWriter.close();
-		}
-	}
-
-	public void indexAPIType(APIType APIType) throws IOException {
-		IndexWriter writer = getIndexWriter(false);
+	
+	@Override
+	public Document createDocument(APIMtd mtd) {
+		
 		Document doc = new Document();
-		doc.add(new StringField("className", APIType.getPackage() + "."
-				+ APIType.getName(), Field.Store.YES));
-		doc.add(new TextField("description", APIType.getSummary(),
-				Field.Store.YES));
-		writer.addDocument(doc);
+		
+		doc.add(new StringField(Configuration.IDX_FIELD_API_NAME, mtd.getParentClass().getApiName(), Field.Store.YES));
+		doc.add(new TextField(Configuration.IDX_FIELD_CLASS_NAME, getParentClassName(mtd), Field.Store.YES));
+		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_NAME, mtd.getName(), Field.Store.YES));
+		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_DESCRIPTION, getParentClassName(mtd) + " " + mtd.getName() + " "	+ mtd.getDescription(), Field.Store.YES));
+		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_DESCRIPTION1, mtd.getDescription(), Field.Store.YES));
+		doc.add(new TextField(Configuration.IDX_FIELD_CLASS_NAME1, getParentClassName(mtd).replaceAll("\\.", " "), Field.Store.YES));
+		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_RETURN, clean(mtd.getReturnType()), Field.Store.YES));
+		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_PARAMS,getTypeListasString(mtd.getParameterList()), Field.Store.YES));
+		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_EXCEPTIONS,getTypeListasString(mtd.getParameterList()), Field.Store.YES));
+		doc.add(new TextField("ANNOTATED",  clean(String.valueOf(mtd.isTypeAnnotated())), Field.Store.YES));
+		doc.add(new TextField("MODIFIER",  clean(mtd.getModifier()), Field.Store.YES));decorator(doc, mtd);
+		
+		return doc;
+	}
+	
+	private void decorator(Document doc, APIMtd mtd) {
+		String name = ASTBuilder.getJavaMethodName(mtd.getName());
+		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_BASE_NAME,name, Field.Store.YES));
+		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_BASE_NAME_CAMELCASE_SPLIT, StringUtil.splitCamelCase(name), Field.Store.YES));
+
+	}
+	
+	/**
+	 * @param apiTypeList
+	 * @return
+	 */
+	private String getTypeListasString(List<String> apiTypeList) {
+		StringBuffer buff = new StringBuffer();
+		if(apiTypeList!=null)
+		{
+			for(String tmp: apiTypeList)
+			{
+				buff.append(tmp);
+				buff.append(" ");
+			}
+		}
+		return buff.toString().trim();
 	}
 
-	public void indexAPIMtd(String apiName, String className,
-			APIMtd APIMtd) throws IOException {
-		IndexWriter writer = getIndexWriter(false);
-		Document doc = new Document();
-		doc.add(new StringField(Configuration.IDX_FIELD_API_NAME, apiName,
-				Field.Store.YES));
-		doc.add(new TextField(Configuration.IDX_FIELD_CLASS_NAME, className,
-				Field.Store.YES));
-		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_NAME, APIMtd
-				.getName(), Field.Store.YES));
-		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_DESCRIPTION,
-				className + " " + APIMtd.getName() + " "
-						+ APIMtd.getDescription(), Field.Store.YES));
-		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_DESCRIPTION1,
-				APIMtd.getDescription(), Field.Store.YES));
-		
-		doc.add(new TextField(Configuration.IDX_FIELD_CLASS_NAME1, className.replaceAll("\\.", " "),
-				Field.Store.YES));
-		
-		writer.addDocument(doc);
-	}
-
-	public void rebuildIndexes() throws IOException {
-		//
-		// Erase existing index
-		//
-		getIndexWriter(true);
-		
-		List<APIType> clazzList = AllClassCrawler
-				.read(Configuration.ANDROID_DUMP_PATH);
-		for (APIType clazz : clazzList) {
-			for (APIMtd mtd : clazz.getMethod()) {
-				indexAPIMtd(APITYPE.ANDROID.name().toLowerCase(),
-						clazz.getPackage() + "." + clazz.getName(), mtd);
-			}
-		}
-
-		clazzList = AllClassCrawler.read(Configuration.CLDC_DUMP_PATH);
-		for (APIType clazz : clazzList) {
-			for (APIMtd mtd : clazz.getMethod()) {
-				indexAPIMtd(APITYPE.CLDC.name().toLowerCase(),
-						clazz.getPackage() + "." + clazz.getName(), mtd);
-			}
-		}
-
-		clazzList = AllClassCrawler.read(Configuration.MIDP_DUMP_PATH);
-		for (APIType clazz : clazzList) {
-			for (APIMtd mtd : clazz.getMethod()) {
-				indexAPIMtd(APITYPE.MIDP.name().toLowerCase(),
-						clazz.getPackage() + "." + clazz.getName(), mtd);
-			}
-		}
-		
-		closeIndexWriter();
-	}
-
-	public void rebuildIndexesRed() throws IOException {
-		//
-		// Erase existing index
-		//
-		getIndexWriter(true);
-
-		SimpleSimilarity sim = new SimpleSimilarity();
-		List<APIType> clazzList = sim.getClazzListAndroidRed();
-		for (APIType clazz : clazzList) {
-			for (APIMtd mtd : clazz.getMethod()) {
-				indexAPIMtd("android",
-						clazz.getPackage() + "." + clazz.getName(), mtd);
-			}
-		}
-
-		clazzList = sim.getClazzListMIDPRed();
-		for (APIType clazz : clazzList) {
-			for (APIMtd mtd : clazz.getMethod()) {
-				indexAPIMtd("j2me_midp",
-						clazz.getPackage() + "." + clazz.getName(), mtd);
-			}
-		}
-
-		closeIndexWriter();
-	}
-
-	public static void main(String[] args) {
-		APIIndexer idxr = new APIIndexer();
-		
-		try {
-			idxr.analyser = new SynonymAnalyzer();
-			idxr.idx_path = Configuration.API_IDX_FILE_SYNONYM;
-			idxr.rebuildIndexes();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	/**
+	 * @param APIMtd
+	 * @return
+	 */
+	private String getParentClassName(APIMtd APIMtd) {
+		return APIMtd.getParentClass().getPackage() +"."+ APIMtd.getParentClass().getName();
 	}
 }

@@ -28,8 +28,8 @@ public class AllClassCrawlerTest
 	@Test
 	public void testAndroidWebGet()
 	{
-		List<APIType> classList = AllClassCrawler.listClassesMIDP(Configuration.ANDROID_ALL_CLASS_URL);
-		Assert.assertTrue(classList.size()==2855);
+		List<APIType> classList = AllClassCrawler.listClassesAndroid(Configuration.ANDROID_ALL_CLASS_URL);
+		Assert.assertTrue(classList.size()==2757);
 	}
 	
 	@Test
@@ -50,7 +50,7 @@ public class AllClassCrawlerTest
 	public void testAndroidRead()
 	{
 		List<APIType> classList = AllClassCrawler.read(Configuration.ANDROID_DUMP_PATH);
-		Assert.assertTrue(classList.size()==2855);
+		Assert.assertTrue(classList.size()==2757);
 	}
 	
 	@Test

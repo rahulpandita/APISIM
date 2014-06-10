@@ -1,72 +1,29 @@
 package edu.ncsu.csc.ase.apisim.webcrawler;
 
-import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import edu.ncsu.csc.ase.apisim.cache.FailedCache;
-import edu.ncsu.csc.ase.apisim.util.StringUtil;
-import edu.ncsu.csc.ase.apisim.webcrawler.apiutil.JarClassLoader;
-import edu.ncsu.csc.ase.apisim.webcrawler.apiutil.JavaTypeDecorator;
+import edu.ncsu.csc.ase.apisim.configuration.Configuration.APITYPE;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIMtd;
-import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
+import edu.ncsu.csc.ase.apisim.util.StringUtil;
+import edu.ncsu.csc.ase.apisim.webcrawler.apiutil.ASTBuilder;
 
 /**
  * Class for Crawling elements from online MIDP html document.
  * @author Rahul Pandita
  *
  */
-public class APICrawlerMIDP {
+public class APICrawlerMIDP extends APICrawler {
 
-	private Document doc;
-	
-	private APIType clazz;
-	
-	public APIType processURL(String url, String typeName)
-	{
-		loadDoc(typeName, url);
-		//Gets package Name
-		clazz = new APIType(classPackageExtractor(typeName), typeName);
-		clazz.setUrl(url);
-		
-		//Gets class description
-		classDescriptionExtractor(typeName);
-		
-		//Gets Method Information
-		classElementExtractor(typeName);
-		
-		// Type additions
-		Class<?> javaClass = JarClassLoader.loadTypeSilently(clazz);
-		if(javaClass!=null)
-			JavaTypeDecorator.decorateType(javaClass, clazz);
-		
-		return clazz;
+	public APICrawlerMIDP() {
+		type =  APITYPE.MIDP;
 	}
 	
-	private void loadDoc(String entity,String url)
-	{
-		try {
-			doc = Jsoup.connect(url).get();
-		} catch (IOException e) 
-		{
-			System.err.println("Trying Again!\n"+ entity+"\t<"+url+">" );
-			try {
-				doc = Jsoup.connect(url).get();
-			} catch (IOException ex) 
-			{
-				FailedCache.getInstance().addFailedURL(entity, url);
-				ex.printStackTrace();
-			}
-		}
-	}
-	
-	
-	private String classPackageExtractor(String typeName)
+	@Override
+	protected String classPackageExtractor(String typeName)
 	{
 		StringBuffer buff = new StringBuffer();
 		Elements links = doc.select("h2");
@@ -86,7 +43,8 @@ public class APICrawlerMIDP {
 		return StringUtil.cleanHTML(buff.toString());
 	}
 	
-	private void classDescriptionExtractor(String javaClass) {
+	@Override
+	protected void classDescriptionExtractor(String javaClass) {
 		StringBuffer buff = new StringBuffer();
 		// doc = Jsoup.connect(url).get();
 		Elements links = doc.select("dl");
@@ -119,7 +77,8 @@ public class APICrawlerMIDP {
 		clazz.setSummary(StringUtil.cleanHTML(buff.toString()));
 	}
 	
-	private void classElementExtractor(String javaClass)
+	@Override
+	protected void classElementExtractor(String javaClass)
 	{
 		StringBuffer buff;
 		

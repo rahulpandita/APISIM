@@ -1,102 +1,87 @@
 package edu.ncsu.csc.ase.apisim.lucene.index;
 
-import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.lucene.analysis.Analyzer;
-import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
-import org.apache.lucene.index.IndexWriter;
-import org.apache.lucene.index.IndexWriterConfig;
-import org.apache.lucene.store.Directory;
-import org.apache.lucene.store.FSDirectory;
-import org.apache.lucene.util.Version;
 
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
-import edu.ncsu.csc.ase.apisim.lucene.analyzer.SynonymAnalyzer;
 import edu.ncsu.csc.ase.apisim.util.StringUtil;
 import edu.ncsu.csc.ase.apisim.webcrawler.AllClassCrawler;
 
 /**
- * Indexer class to index API method description.
- * @author rahulpandita
+ * Indexer class to index API class description.
+ * @author Rahul Pandita
  *
  */
-public class APIClassIndexer {
-
-	private IndexWriter indexWriter = null;
-
-	private Analyzer analyser = new EnglishAnalyzer(ver);
-	
-	private static final Version ver = Version.LUCENE_47;
-	
-	private String idx_path = "";
-	
-	public IndexWriter getIndexWriter(boolean create) throws IOException {
-		if (indexWriter == null) {
-			IndexWriterConfig config = new IndexWriterConfig(ver, analyser);
-			Directory index = FSDirectory.open(new File(idx_path));
-			config.setOpenMode(IndexWriterConfig.OpenMode.CREATE);
-			indexWriter = new IndexWriter(index, config);
-		}
-		return indexWriter;
+public class APIClassIndexer extends Indexer<APIType>
+{
+	public APIClassIndexer() throws IOException 
+	{
+		idx_path = Configuration.API_IDX_CLAZZ;
 	}
-
-	public void closeIndexWriter() throws IOException {
-		if (indexWriter != null) {
-			indexWriter.close();
-		}
-	}
-
-	public void indexAPIClass(APIType apiClass) throws IOException {
-		IndexWriter writer = getIndexWriter(false);
+	
+	/**
+	 * @param apiType
+	 * @return
+	 */
+	public Document createDocument(APIType apiType) {
 		Document doc = new Document();
-		doc.add(new StringField("name", apiClass.getPackage() + "." + apiClass.getName(), Field.Store.YES));
-		doc.add(new StringField("nameBase", StringUtil.splitCamelCase(apiClass.getName()), Field.Store.YES));
-		doc.add(new TextField("desc", apiClass.getSummary(),	Field.Store.YES));
-		writer.addDocument(doc);
+		
+		doc.add(new StringField("NAME", clean(apiType.getPackage() + "." + apiType.getName()), Field.Store.YES));
+		doc.add(new StringField("NAME_SPLIT", clean(StringUtil.splitCamelCase(apiType.getName())), Field.Store.YES));
+		doc.add(new TextField("SUMMARY", clean(apiType.getSummary()),	Field.Store.YES));
+		doc.add(new TextField("APINAME", clean(apiType.getApiName()),	Field.Store.YES));
+		doc.add(new TextField("TYPE", clean(getElementType(apiType)),	Field.Store.YES));
+		doc.add(new TextField("IMPLEMENTS", clean(getTypeListasString(apiType.getImplementsList())), Field.Store.YES));
+		doc.add(new TextField("EXTENDS",  clean(getTypeListasString(apiType.getExtendsList())), Field.Store.YES));
+		doc.add(new TextField("ANNOTATED",  clean(String.valueOf(apiType.isTypeAnnotated())), Field.Store.YES));
+		doc.add(new TextField("MODIFIER",  clean(apiType.getModifier()), Field.Store.YES));
+		return doc;
 	}
 
-	public void rebuildIndexes() throws IOException {
-		//
-		// Erase existing index
-		//
-		getIndexWriter(true);
-		
-		List<APIType> clazzList = AllClassCrawler
-				.read(Configuration.ANDROID_DUMP_PATH);
-		for (APIType clazz : clazzList) {
-			indexAPIClass(clazz);
+	/**
+	 * @param apiTypeList
+	 * @return
+	 */
+	private String getTypeListasString(List<String> apiTypeList) {
+		StringBuffer buff = new StringBuffer();
+		if(apiTypeList!=null)
+		{
+			for(String tmp: apiTypeList)
+			{
+				buff.append(tmp);
+				buff.append(" ");
+			}
 		}
-
-		clazzList = AllClassCrawler.read(Configuration.CLDC_DUMP_PATH);
-		for (APIType clazz : clazzList) {
-			indexAPIClass(clazz);
-		}
-
-		clazzList = AllClassCrawler.read(Configuration.MIDP_DUMP_PATH);
-		for (APIType clazz : clazzList) {
-			indexAPIClass(clazz);
-		}
-		
-		closeIndexWriter();
+		return buff.toString().trim();
 	}
 
-	public static void main(String[] args) {
-		APIClassIndexer idxr = new APIClassIndexer();
+	/**
+	 * @param apiType
+	 * @return
+	 */
+	private String getElementType(APIType apiType) {
+		String type ="class";
+		if(apiType.isEnums())
+			type = "enum";
+		if(apiType.isInterfaze())
+			type = "interface";
+		return type;
+	}
+	
+	@Override
+	public List<APIType> readObjects() throws Exception {
+		List<APIType> clazzList = new ArrayList<>();
 		
-		try {
-			idxr.analyser = new SynonymAnalyzer();
-			idxr.idx_path = Configuration.API_IDX_CLAZZ;
-			idxr.rebuildIndexes();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		clazzList.addAll(AllClassCrawler.read(Configuration.ANDROID_DUMP_PATH));
+		clazzList.addAll(AllClassCrawler.read(Configuration.CLDC_DUMP_PATH));
+		clazzList.addAll(AllClassCrawler.read(Configuration.MIDP_DUMP_PATH));
+		return clazzList;
 	}
 }
