@@ -35,7 +35,7 @@ class MethodDecorator extends ASTVisitor
 
     	for(Method mtd: javaClass.getDeclaredMethods())
 		{
-    		if(n.getName().equals(mtd.getName()))
+    		if((n.getName().toString()).equals(mtd.getName()))
 			{
 				List<?> paramList = new ArrayList<SingleVariableDeclaration>();
 				if(n.parameters()!=null)
@@ -61,7 +61,7 @@ class MethodDecorator extends ASTVisitor
 					boolean val = true;
 					for(String paramType:variableIDMap.keySet())
 					{
-						if(mtd.getParameterTypes()[i].getCanonicalName().endsWith(paramType))
+						if(mtd.getParameterTypes()[i].getCanonicalName().endsWith(variableIDMap.get(paramType)))
 						{
 							i++;
 						}
