@@ -143,7 +143,7 @@ public class PremEval
 		//System.err.println("here");
 				List<String> retList = new ArrayList<>();
 				int hitsPerPage = 10;
-				Directory index = FSDirectory.open(new File(Configuration.API_IDX_FILE_SELECTIVE_SYNONYM));
+				Directory index = FSDirectory.open(new File(Configuration.API_IDX_FILE_SYNONYM));
 				IndexReader reader = DirectoryReader.open(index);
 				IndexSearcher searcher = new IndexSearcher(reader);
 				TopScoreDocCollector collector = TopScoreDocCollector.create(
