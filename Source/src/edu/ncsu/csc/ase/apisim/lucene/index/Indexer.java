@@ -14,8 +14,6 @@ import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
 
-import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
-
 /**
  * Abstract Class for creating the template for an Indexing
  * @author Rahul Pandita
