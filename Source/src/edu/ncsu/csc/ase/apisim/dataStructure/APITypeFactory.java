@@ -7,7 +7,7 @@ import java.util.Map;
 
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
 import edu.ncsu.csc.ase.apisim.webcrawler.AllClassCrawler;
-import edu.ncsu.csc.ase.dristi.util.ConsoleUtil;
+import edu.ncsu.csc.ase.apisim.util.ConsoleUtil;
 
 public class APITypeFactory 
 {

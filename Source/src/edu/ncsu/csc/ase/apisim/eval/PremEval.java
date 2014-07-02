@@ -53,7 +53,7 @@ public class PremEval
 		int i =0;
 		for (APIType clazz : clazzList) 
 		{
-			if(clazz.getName().equalsIgnoreCase("graphics"))
+			if(clazz.getName().equalsIgnoreCase("alert"))
 			{
 				for (APIMtd mtd : clazz.getMethod())
 				{
@@ -66,8 +66,8 @@ public class PremEval
 					
 					String desclist[] = mtd.getDescription().split("\\.");
 					String methodDesc = "a";
-					if(desclist[0]!=null)
-						desclist = desclist[0].split("\\n");
+					//if(desclist[0]!=null)
+					//	desclist = desclist[0].split("\\n");
 					methodDesc = desclist[0]==null?"a":desclist[0];
 					/*
 					 	CLASSNAME1:canvas*
