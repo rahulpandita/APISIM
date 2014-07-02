@@ -13,26 +13,74 @@ import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.search.BooleanClause;
+import org.apache.lucene.search.BooleanClause.Occur;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopScoreDocCollector;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
-import org.apache.lucene.util.Version;
 
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIMtd;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
+import edu.ncsu.csc.ase.apisim.util.FileUtil;
 import edu.ncsu.csc.ase.apisim.webcrawler.AllClassCrawler;
 
 /**
- * 
- * @author rahulpandita
+ * This class is responsible for the Preliminary Evaluation of API similarity project
+ * @author Rahul Pandita
  *
  */
 public class PremEval 
 {
+	
+	public static Query createQuery1(String className, String methodBaseName, String methodDesc) throws ParseException
+	{
+		return createQueryBase(Occur.MUST, false, className, methodBaseName, methodDesc);
+	}
+	
+	public static Query createQuery2(String className, String methodBaseName, String methodDesc) throws ParseException
+	{
+		return createQueryBase(Occur.MUST, true, className, methodBaseName, methodDesc);
+	}
+	
+	public static Query createQuery3(String className, String methodBaseName, String methodDesc) throws ParseException
+	{
+		return createQueryBase(Occur.SHOULD, false, className, methodBaseName, methodDesc);
+	}
+	
+	public static Query createQuery4(String className, String methodBaseName, String methodDesc) throws ParseException
+	{
+		return createQueryBase(Occur.SHOULD, true, className, methodBaseName, methodDesc);
+	}
+	
+	
+	private static Query createQueryBase(Occur clause, Boolean wildCard, String className, String methodBaseName, String methodDesc) throws ParseException
+	{
+		methodBaseName = MultiFieldQueryParser.escape(methodBaseName.toLowerCase());
+		methodDesc = MultiFieldQueryParser.escape(methodDesc.toLowerCase());
+		className = MultiFieldQueryParser.escape(className.toLowerCase());
+		className = wildCard?className+"*":className;
+		/*
+	 		+APINAME: android
+			+CLASSNAME1:canvas
+			METHODNAME:getHeight
+			MTDDESCRIPTION:Gets height of the displayable area in pixels.
+		 */
+		BooleanClause.Occur bc1 = BooleanClause.Occur.MUST;
+		BooleanClause.Occur bc2 = clause;
+		BooleanClause.Occur bc3 = BooleanClause.Occur.SHOULD;
+		BooleanClause.Occur bc4 = BooleanClause.Occur.SHOULD;
+		BooleanClause.Occur[] flags = { bc1, bc2, bc3, bc4 };
+		
+		String[] termVector = new String[] {"android", className, methodBaseName, methodDesc};
+		String[] columnVector = new String[] {"APINAME","CLASSNAME1","METHODNAME","MTDDESCRIPTION"};
+		
+		Query query = MultiFieldQueryParser.parse(Configuration.LUCENE_VERSION, termVector, columnVector, flags, new EnglishAnalyzer(Configuration.LUCENE_VERSION));
+		
+		return query;
+	}
 	
 	
 	/**
@@ -45,11 +93,6 @@ public class PremEval
 		StringBuffer buff = new StringBuffer();
 		//Graphics
 		List<APIType> clazzList = AllClassCrawler.read(Configuration.MIDP_DUMP_PATH);
-		BooleanClause.Occur bc1 = BooleanClause.Occur.MUST;
-		BooleanClause.Occur bc2 = BooleanClause.Occur.SHOULD;
-		BooleanClause.Occur bc3 = BooleanClause.Occur.SHOULD;
-		BooleanClause.Occur bc4 = BooleanClause.Occur.SHOULD;
-		BooleanClause.Occur[] flags = { bc1, bc2, bc4 };
 		int i =0;
 		for (APIType clazz : clazzList) 
 		{
@@ -63,42 +106,40 @@ public class PremEval
 					String methodBaseName = mtd.getName();
 					if(methodTokens.length >= 2) 
 						methodBaseName = methodTokens[methodTokens.length-1];
-					
+					else
+						methodBaseName = methodNameTrunc;
 					String desclist[] = mtd.getDescription().split("\\.");
 					String methodDesc = "a";
-					//if(desclist[0]!=null)
-					//	desclist = desclist[0].split("\\n");
 					methodDesc = desclist[0]==null?"a":desclist[0];
-					/*
-					 	CLASSNAME1:canvas*
-						+APINAME: android
-						METHODNAME:getHeight
-						MTDDESCRIPTION:Gets height of the displayable area in pixels.
-					 */
-					methodBaseName = MultiFieldQueryParser.escape(methodBaseName);
-					methodDesc = MultiFieldQueryParser.escape(methodDesc);
-					String[] termVector = new String[] {"android", "graphics*", methodBaseName, methodDesc};
-					String[] columnVector = new String[] {"APINAME","CLASSNAME1","METHODNAME","MTDDESCRIPTION1"};
-					termVector = new String[] {"android", "graphics*", methodDesc};
-					columnVector = new String[] {"APINAME","CLASSNAME1","MTDDESCRIPTION1"};
 					
 					try{
 						i=i+1;
-						Query query = MultiFieldQueryParser.parse(Version.LUCENE_47, termVector, columnVector, flags, new EnglishAnalyzer(Version.LUCENE_47));
+						Query query = createQuery1(clazz.getName(),methodBaseName, methodDesc);
 						System.out.println(query);
 						System.out.println(i);
 						List<String> result = searcher(query);
-						buff.append(methodBaseName);
-						buff.append("\n");
-						buff.append(methodDesc);
-						buff.append("\n");
-						for(int cnt =0; cnt<result.size();cnt++)
+						if(result.size()>0)
+							buff.append(resultFormatter(methodBaseName, methodDesc,result));
+						else
 						{
-							buff.append("\t");
-							buff.append(cnt);
-							buff.append(":\t");
-							buff.append(result.get(cnt));
-							buff.append("\n");
+							query = createQuery2(clazz.getName(),methodBaseName, methodDesc);
+							result = searcher(query);
+							if(result.size()>0)
+								buff.append(resultFormatter(methodBaseName, methodDesc,result));
+							else
+							{
+								query = createQuery3(clazz.getName(),methodBaseName, methodDesc);
+								result = searcher(query);
+								if(result.size()>0)
+									buff.append(resultFormatter(methodBaseName, methodDesc,result));
+								else
+								{
+									query = createQuery4(clazz.getName(),methodBaseName, methodDesc);
+									result = searcher(query);
+									buff.append(resultFormatter(methodBaseName, methodDesc,result));
+									
+								}
+							}
 						}
 						
 					}
@@ -113,50 +154,54 @@ public class PremEval
 			
 		}
 		
-		BufferedWriter writer = null;
-        try {
-            //create a temporary file
-            File logFile = new File("tst.txt");
+		FileUtil.writeStringtoFile("tst.txt", buff.toString());
+	}
 
-            // This will output the full path where the file will be written to...
-            System.out.println(logFile.getCanonicalPath());
-
-            writer = new BufferedWriter(new FileWriter(logFile));
-            writer.write(buff.toString());
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                // Close the writer regardless of what happens...
-                writer.close();
-            } catch (Exception e) {
-            }
-        }
+	/**
+	 * @param buff
+	 * @param methodBaseName
+	 * @param methodDesc
+	 * @param result
+	 */
+	private static String resultFormatter(String methodBaseName, String methodDesc, List<String> result) {
+		StringBuffer buff = new StringBuffer();
+		buff.append(methodBaseName);
+		buff.append("\n");
+		buff.append(methodDesc);
+		buff.append("\n");
+		for(int cnt =0; cnt<result.size();cnt++)
+		{
+			buff.append("\t");
+			buff.append(cnt);
+			buff.append(":\t");
+			buff.append(result.get(cnt));
+			buff.append("\n");
+		}
+		return buff.toString();
 	}
 	
 	/**
-	 * @throws Exception 
+	 * @throws Exception
 	 * 
 	 */
-	public static List<String> searcher(Query query) throws Exception
+	public static List<String> searcher(Query query) throws Exception 
 	{
-		//System.err.println("here");
-				List<String> retList = new ArrayList<>();
-				int hitsPerPage = 10;
-				Directory index = FSDirectory.open(new File(Configuration.API_IDX_FILE_SYNONYM));
-				IndexReader reader = DirectoryReader.open(index);
-				IndexSearcher searcher = new IndexSearcher(reader);
-				TopScoreDocCollector collector = TopScoreDocCollector.create(
-						hitsPerPage, true);
-				searcher.search(query, collector);
-				ScoreDoc[] hits = collector.topDocs().scoreDocs;
-				for (int i = 0; i < 10; ++i) 
-				{
-					int docId = hits[i].doc;
-					Document d = searcher.doc(docId);
-					retList.add(d.get("MTDDESCRIPTION"));
-				}
-				return retList;
+		// System.err.println("here");
+		List<String> retList = new ArrayList<>();
+		int hitsPerPage = 10;
+		Directory index = FSDirectory.open(new File(Configuration.API_IDX_FILE_SYNONYM));
+		IndexReader reader = DirectoryReader.open(index);
+		IndexSearcher searcher = new IndexSearcher(reader);
+		TopScoreDocCollector collector = TopScoreDocCollector.create(hitsPerPage, true);
+		searcher.search(query, collector);
+		ScoreDoc[] hits = collector.topDocs().scoreDocs;
+		for (int i = 0; i < hits.length; ++i) 
+		{
+			int docId = hits[i].doc;
+			Document d = searcher.doc(docId);
+			retList.add(d.get("MTDDESCRIPTION"));
+		}
+		return retList;
 	}
 	
 }
