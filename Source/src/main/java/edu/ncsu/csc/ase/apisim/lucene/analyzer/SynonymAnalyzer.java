@@ -1,6 +1,7 @@
 package edu.ncsu.csc.ase.apisim.lucene.analyzer;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -17,6 +18,7 @@ import org.apache.lucene.analysis.synonym.SynonymFilter;
 import org.apache.lucene.analysis.synonym.SynonymMap;
 import org.apache.lucene.analysis.synonym.WordnetSynonymParser;
 import org.apache.lucene.analysis.util.CharArraySet;
+import org.apache.lucene.util.Version;
 
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
 
@@ -49,7 +51,26 @@ public class SynonymAnalyzer extends Analyzer {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
 
+	/**
+	 * @param luceneVersion 
+	 * @throws IOException
+	 * @throws FileNotFoundException
+	 */
+	public SynonymAnalyzer(Version luceneVersion) throws IOException, FileNotFoundException {
+		WordnetSynonymParser parser = new WordnetSynonymParser(true, true,
+				new StandardAnalyzer(luceneVersion,CharArraySet.EMPTY_SET));
+		try 
+		{
+			parser.parse(new InputStreamReader(new FileInputStream(Configuration.DICTIONARY)));
+			synMap = parser.build();
+		} 
+		catch (ParseException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**

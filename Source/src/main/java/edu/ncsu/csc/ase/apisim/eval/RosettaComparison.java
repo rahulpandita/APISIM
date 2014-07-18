@@ -11,6 +11,8 @@ import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 
+import edu.ncsu.csc.ase.apisim.configuration.Configuration;
+
 
 /**
  * This Class is responsible to compute the benefit over 
@@ -26,7 +28,7 @@ public class RosettaComparison
 	public static Map<String, List<String>> read() throws Exception {
 		
 		Map<String, List<String>> retMap = new HashMap<String, List<String>>(); 
-		FileInputStream fileInputStream = new FileInputStream("data\\Rosetta_Results.xls");
+		FileInputStream fileInputStream = new FileInputStream(Configuration.ROSETTA_RESULTS);
 		HSSFWorkbook workbook = new HSSFWorkbook(fileInputStream);
 		HSSFSheet worksheet = workbook.getSheetAt(0);
 		HSSFRow row;
@@ -40,12 +42,12 @@ public class RosettaComparison
 				targetMtd = targetMtd + ";" + getStringValue(row.getCell(4)) + "_" + getStringValue(row.getCell(5));
 			if(retMap.containsKey(sourceMtd))
 			{
-				retMap.get(sourceMtd).add(targetMtd);
+				retMap.get(sourceMtd).add(targetMtd.trim());
 			}
 			else
 			{
 				List<String> targetMtdList = new ArrayList<String>();
-				targetMtdList.add(targetMtd);
+				targetMtdList.add(targetMtd.trim());
 				retMap.put(sourceMtd, targetMtdList);
 			}
 		}
@@ -62,6 +64,10 @@ public class RosettaComparison
 	private static String getStringValue(HSSFCell cell) 
 	{
 		return cell==null?"":cell.getStringCellValue();
+	}
+	
+	public static void main(String[] args) throws Exception {
+		read();
 	}
 	
 }

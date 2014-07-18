@@ -1,0 +1,108 @@
+setPosition
+Sets this Layer's position such that its upper-left corner is located at (x,y) in the painter's coordinate system
+	0:	java.util.logging.Level protected Level (String name, int level) Constructs an instance of Level taking the supplied name and level value. Parameters name the name of the level. level an integer value indicating the level. Throws NullPointerException if name is null.
+	1:	java.util.logging.Level protected Level (String name, int level, String resourceBundleName) Constructs an instance of Level taking the supplied name, level value and resource bundle name. Parameters name the name of the level. level an integer value indicating the level. resourceBundleName the name of the resource bundle to use. Throws NullPointerException if name is null.
+	2:	java.util.logging.Level public boolean equals (Object o) Compares two Level objects for equality. They are considered to be equal if they have the same level value. Parameters o the other object to compare this level to. Returns true if this object equals to the supplied object, false otherwise.
+	3:	java.util.logging.Level public String getLocalizedName () Gets the localized name of this level. The default locale is used. If no resource bundle is associated with this level then the original level name is returned. Returns the localized name of this level.
+	4:	java.util.logging.Level public String getName () Gets the name of this level. Returns this level's name.
+	5:	java.util.logging.Level public String getResourceBundleName () Gets the name of the resource bundle associated with this level. Returns the name of this level's resource bundle.
+	6:	java.util.logging.Level public int hashCode () Returns the hash code of this Level object. Returns this level's hash code.
+	7:	java.util.logging.Level public final int intValue () Gets the integer value indicating this level. Returns this level's integer value.
+	8:	java.util.logging.Level public static Level parse (String name) Parses a level name into a Level object. Parameters name the name of the desired level, which cannot be null. Returns the level with the specified name. Throws NullPointerException if name is null. IllegalArgumentException if name is not valid.
+	9:	java.util.logging.Level public final String toString () Returns the string representation of this Level object. In this case, it is the level's name. Returns the string representation of this level.
+move
+Moves this Layer by the specified horizontal and vertical distances
+	0:	java.util.logging.Level protected Level (String name, int level) Constructs an instance of Level taking the supplied name and level value. Parameters name the name of the level. level an integer value indicating the level. Throws NullPointerException if name is null.
+	1:	java.util.logging.Level public String getName () Gets the name of this level. Returns this level's name.
+	2:	java.util.logging.Level protected Level (String name, int level, String resourceBundleName) Constructs an instance of Level taking the supplied name, level value and resource bundle name. Parameters name the name of the level. level an integer value indicating the level. resourceBundleName the name of the resource bundle to use. Throws NullPointerException if name is null.
+	3:	java.util.logging.Level public final String toString () Returns the string representation of this Level object. In this case, it is the level's name. Returns the string representation of this level.
+	4:	java.util.logging.Level public String getLocalizedName () Gets the localized name of this level. The default locale is used. If no resource bundle is associated with this level then the original level name is returned. Returns the localized name of this level.
+	5:	java.util.logging.Level public String getResourceBundleName () Gets the name of the resource bundle associated with this level. Returns the name of this level's resource bundle.
+	6:	java.util.logging.Level public int hashCode () Returns the hash code of this Level object. Returns this level's hash code.
+	7:	java.util.logging.Level public final int intValue () Gets the integer value indicating this level. Returns this level's integer value.
+	8:	java.util.logging.Level public static Level parse (String name) Parses a level name into a Level object. Parameters name the name of the desired level, which cannot be null. Returns the level with the specified name. Throws NullPointerException if name is null. IllegalArgumentException if name is not valid.
+	9:	java.util.logging.Level public boolean equals (Object o) Compares two Level objects for equality. They are considered to be equal if they have the same level value. Parameters o the other object to compare this level to. Returns true if this object equals to the supplied object, false otherwise.
+getX
+Gets the horizontal position of this Layer's upper-left corner in the painter's coordinate system
+	0:	java.util.logging.Level protected Level (String name, int level) Constructs an instance of Level taking the supplied name and level value. Parameters name the name of the level. level an integer value indicating the level. Throws NullPointerException if name is null.
+	1:	java.util.logging.Level protected Level (String name, int level, String resourceBundleName) Constructs an instance of Level taking the supplied name, level value and resource bundle name. Parameters name the name of the level. level an integer value indicating the level. resourceBundleName the name of the resource bundle to use. Throws NullPointerException if name is null.
+	2:	java.util.logging.Level public boolean equals (Object o) Compares two Level objects for equality. They are considered to be equal if they have the same level value. Parameters o the other object to compare this level to. Returns true if this object equals to the supplied object, false otherwise.
+	3:	java.util.logging.Level public String getLocalizedName () Gets the localized name of this level. The default locale is used. If no resource bundle is associated with this level then the original level name is returned. Returns the localized name of this level.
+	4:	java.util.logging.Level public String getName () Gets the name of this level. Returns this level's name.
+	5:	java.util.logging.Level public String getResourceBundleName () Gets the name of the resource bundle associated with this level. Returns the name of this level's resource bundle.
+	6:	java.util.logging.Level public int hashCode () Returns the hash code of this Level object. Returns this level's hash code.
+	7:	java.util.logging.Level public final int intValue () Gets the integer value indicating this level. Returns this level's integer value.
+	8:	java.util.logging.Level public static Level parse (String name) Parses a level name into a Level object. Parameters name the name of the desired level, which cannot be null. Returns the level with the specified name. Throws NullPointerException if name is null. IllegalArgumentException if name is not valid.
+	9:	java.util.logging.Level public final String toString () Returns the string representation of this Level object. In this case, it is the level's name. Returns the string representation of this level.
+getY
+Gets the vertical position of this Layer's upper-left corner in the painter's coordinate system
+	0:	java.util.logging.Level protected Level (String name, int level) Constructs an instance of Level taking the supplied name and level value. Parameters name the name of the level. level an integer value indicating the level. Throws NullPointerException if name is null.
+	1:	java.util.logging.Level protected Level (String name, int level, String resourceBundleName) Constructs an instance of Level taking the supplied name, level value and resource bundle name. Parameters name the name of the level. level an integer value indicating the level. resourceBundleName the name of the resource bundle to use. Throws NullPointerException if name is null.
+	2:	java.util.logging.Level public boolean equals (Object o) Compares two Level objects for equality. They are considered to be equal if they have the same level value. Parameters o the other object to compare this level to. Returns true if this object equals to the supplied object, false otherwise.
+	3:	java.util.logging.Level public String getLocalizedName () Gets the localized name of this level. The default locale is used. If no resource bundle is associated with this level then the original level name is returned. Returns the localized name of this level.
+	4:	java.util.logging.Level public String getName () Gets the name of this level. Returns this level's name.
+	5:	java.util.logging.Level public String getResourceBundleName () Gets the name of the resource bundle associated with this level. Returns the name of this level's resource bundle.
+	6:	java.util.logging.Level public int hashCode () Returns the hash code of this Level object. Returns this level's hash code.
+	7:	java.util.logging.Level public final int intValue () Gets the integer value indicating this level. Returns this level's integer value.
+	8:	java.util.logging.Level public static Level parse (String name) Parses a level name into a Level object. Parameters name the name of the desired level, which cannot be null. Returns the level with the specified name. Throws NullPointerException if name is null. IllegalArgumentException if name is not valid.
+	9:	java.util.logging.Level public final String toString () Returns the string representation of this Level object. In this case, it is the level's name. Returns the string representation of this level.
+getWidth
+Gets the current width of this layer, in pixels
+	0:	java.util.logging.Level protected Level (String name, int level) Constructs an instance of Level taking the supplied name and level value. Parameters name the name of the level. level an integer value indicating the level. Throws NullPointerException if name is null.
+	1:	java.util.logging.Level public String getName () Gets the name of this level. Returns this level's name.
+	2:	java.util.logging.Level protected Level (String name, int level, String resourceBundleName) Constructs an instance of Level taking the supplied name, level value and resource bundle name. Parameters name the name of the level. level an integer value indicating the level. resourceBundleName the name of the resource bundle to use. Throws NullPointerException if name is null.
+	3:	java.util.logging.Level public final String toString () Returns the string representation of this Level object. In this case, it is the level's name. Returns the string representation of this level.
+	4:	java.util.logging.Level public String getLocalizedName () Gets the localized name of this level. The default locale is used. If no resource bundle is associated with this level then the original level name is returned. Returns the localized name of this level.
+	5:	java.util.logging.Level public String getResourceBundleName () Gets the name of the resource bundle associated with this level. Returns the name of this level's resource bundle.
+	6:	java.util.logging.Level public int hashCode () Returns the hash code of this Level object. Returns this level's hash code.
+	7:	java.util.logging.Level public final int intValue () Gets the integer value indicating this level. Returns this level's integer value.
+	8:	java.util.logging.Level public static Level parse (String name) Parses a level name into a Level object. Parameters name the name of the desired level, which cannot be null. Returns the level with the specified name. Throws NullPointerException if name is null. IllegalArgumentException if name is not valid.
+	9:	java.util.logging.Level public boolean equals (Object o) Compares two Level objects for equality. They are considered to be equal if they have the same level value. Parameters o the other object to compare this level to. Returns true if this object equals to the supplied object, false otherwise.
+getHeight
+Gets the current height of this layer, in pixels
+	0:	java.util.logging.Level protected Level (String name, int level) Constructs an instance of Level taking the supplied name and level value. Parameters name the name of the level. level an integer value indicating the level. Throws NullPointerException if name is null.
+	1:	java.util.logging.Level public String getName () Gets the name of this level. Returns this level's name.
+	2:	java.util.logging.Level protected Level (String name, int level, String resourceBundleName) Constructs an instance of Level taking the supplied name, level value and resource bundle name. Parameters name the name of the level. level an integer value indicating the level. resourceBundleName the name of the resource bundle to use. Throws NullPointerException if name is null.
+	3:	java.util.logging.Level public final String toString () Returns the string representation of this Level object. In this case, it is the level's name. Returns the string representation of this level.
+	4:	java.util.logging.Level public String getLocalizedName () Gets the localized name of this level. The default locale is used. If no resource bundle is associated with this level then the original level name is returned. Returns the localized name of this level.
+	5:	java.util.logging.Level public String getResourceBundleName () Gets the name of the resource bundle associated with this level. Returns the name of this level's resource bundle.
+	6:	java.util.logging.Level public int hashCode () Returns the hash code of this Level object. Returns this level's hash code.
+	7:	java.util.logging.Level public final int intValue () Gets the integer value indicating this level. Returns this level's integer value.
+	8:	java.util.logging.Level public static Level parse (String name) Parses a level name into a Level object. Parameters name the name of the desired level, which cannot be null. Returns the level with the specified name. Throws NullPointerException if name is null. IllegalArgumentException if name is not valid.
+	9:	java.util.logging.Level public boolean equals (Object o) Compares two Level objects for equality. They are considered to be equal if they have the same level value. Parameters o the other object to compare this level to. Returns true if this object equals to the supplied object, false otherwise.
+setVisible
+Sets the visibility of this Layer
+	0:	java.util.logging.Level protected Level (String name, int level) Constructs an instance of Level taking the supplied name and level value. Parameters name the name of the level. level an integer value indicating the level. Throws NullPointerException if name is null.
+	1:	java.util.logging.Level public String getName () Gets the name of this level. Returns this level's name.
+	2:	java.util.logging.Level protected Level (String name, int level, String resourceBundleName) Constructs an instance of Level taking the supplied name, level value and resource bundle name. Parameters name the name of the level. level an integer value indicating the level. resourceBundleName the name of the resource bundle to use. Throws NullPointerException if name is null.
+	3:	java.util.logging.Level public final String toString () Returns the string representation of this Level object. In this case, it is the level's name. Returns the string representation of this level.
+	4:	java.util.logging.Level public String getLocalizedName () Gets the localized name of this level. The default locale is used. If no resource bundle is associated with this level then the original level name is returned. Returns the localized name of this level.
+	5:	java.util.logging.Level public String getResourceBundleName () Gets the name of the resource bundle associated with this level. Returns the name of this level's resource bundle.
+	6:	java.util.logging.Level public int hashCode () Returns the hash code of this Level object. Returns this level's hash code.
+	7:	java.util.logging.Level public final int intValue () Gets the integer value indicating this level. Returns this level's integer value.
+	8:	java.util.logging.Level public static Level parse (String name) Parses a level name into a Level object. Parameters name the name of the desired level, which cannot be null. Returns the level with the specified name. Throws NullPointerException if name is null. IllegalArgumentException if name is not valid.
+	9:	java.util.logging.Level public boolean equals (Object o) Compares two Level objects for equality. They are considered to be equal if they have the same level value. Parameters o the other object to compare this level to. Returns true if this object equals to the supplied object, false otherwise.
+isVisible
+Gets the visibility of this Layer
+	0:	java.util.logging.Level protected Level (String name, int level) Constructs an instance of Level taking the supplied name and level value. Parameters name the name of the level. level an integer value indicating the level. Throws NullPointerException if name is null.
+	1:	java.util.logging.Level public String getName () Gets the name of this level. Returns this level's name.
+	2:	java.util.logging.Level protected Level (String name, int level, String resourceBundleName) Constructs an instance of Level taking the supplied name, level value and resource bundle name. Parameters name the name of the level. level an integer value indicating the level. resourceBundleName the name of the resource bundle to use. Throws NullPointerException if name is null.
+	3:	java.util.logging.Level public final String toString () Returns the string representation of this Level object. In this case, it is the level's name. Returns the string representation of this level.
+	4:	java.util.logging.Level public String getLocalizedName () Gets the localized name of this level. The default locale is used. If no resource bundle is associated with this level then the original level name is returned. Returns the localized name of this level.
+	5:	java.util.logging.Level public String getResourceBundleName () Gets the name of the resource bundle associated with this level. Returns the name of this level's resource bundle.
+	6:	java.util.logging.Level public int hashCode () Returns the hash code of this Level object. Returns this level's hash code.
+	7:	java.util.logging.Level public final int intValue () Gets the integer value indicating this level. Returns this level's integer value.
+	8:	java.util.logging.Level public static Level parse (String name) Parses a level name into a Level object. Parameters name the name of the desired level, which cannot be null. Returns the level with the specified name. Throws NullPointerException if name is null. IllegalArgumentException if name is not valid.
+	9:	java.util.logging.Level public boolean equals (Object o) Compares two Level objects for equality. They are considered to be equal if they have the same level value. Parameters o the other object to compare this level to. Returns true if this object equals to the supplied object, false otherwise.
+paint
+Paints this Layer if it is visible
+	0:	java.util.logging.Level protected Level (String name, int level) Constructs an instance of Level taking the supplied name and level value. Parameters name the name of the level. level an integer value indicating the level. Throws NullPointerException if name is null.
+	1:	java.util.logging.Level public String getName () Gets the name of this level. Returns this level's name.
+	2:	java.util.logging.Level protected Level (String name, int level, String resourceBundleName) Constructs an instance of Level taking the supplied name, level value and resource bundle name. Parameters name the name of the level. level an integer value indicating the level. resourceBundleName the name of the resource bundle to use. Throws NullPointerException if name is null.
+	3:	java.util.logging.Level public final String toString () Returns the string representation of this Level object. In this case, it is the level's name. Returns the string representation of this level.
+	4:	java.util.logging.Level public String getLocalizedName () Gets the localized name of this level. The default locale is used. If no resource bundle is associated with this level then the original level name is returned. Returns the localized name of this level.
+	5:	java.util.logging.Level public String getResourceBundleName () Gets the name of the resource bundle associated with this level. Returns the name of this level's resource bundle.
+	6:	java.util.logging.Level public int hashCode () Returns the hash code of this Level object. Returns this level's hash code.
+	7:	java.util.logging.Level public final int intValue () Gets the integer value indicating this level. Returns this level's integer value.
+	8:	java.util.logging.Level public static Level parse (String name) Parses a level name into a Level object. Parameters name the name of the desired level, which cannot be null. Returns the level with the specified name. Throws NullPointerException if name is null. IllegalArgumentException if name is not valid.
+	9:	java.util.logging.Level public boolean equals (Object o) Compares two Level objects for equality. They are considered to be equal if they have the same level value. Parameters o the other object to compare this level to. Returns true if this object equals to the supplied object, false otherwise.

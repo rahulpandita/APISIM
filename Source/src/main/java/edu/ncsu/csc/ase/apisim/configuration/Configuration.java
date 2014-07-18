@@ -65,7 +65,8 @@ public class Configuration
 	
 	public static final Version LUCENE_VERSION =  Version.LUCENE_4_9;
 
-	public static final String API_LIBS_PATH = "libs"+ File.separator + "API" + File.separator;
+	public static final String API_LIBS_PATH = PROJECT_PATH + "libs"+ File.separator + "API" + File.separator;
 	
+	public static final String ROSETTA_RESULTS = PROJECT_PATH + "data"+ File.separator + "Rosetta_Results.xls";
 
 }
