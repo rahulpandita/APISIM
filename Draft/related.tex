@@ -1,0 +1,32 @@
+\section{Related work}
+\label{sec:related}
+
+Language migration has been an active area of research~\cite{Hassan2005LAM, Mossienko2003ACJ, vanDeursen1999ICSE, WatersIEEEtranSE88}, with myriad techniques that have been proposed over time to achieve automation. However, most of these approaches focus on syntactical and structural differences across languages. For instance, Deursen et al.~\cite{vanDeursen1999ICSE} proposed an approach to automatically infer objects in legacy code to effectively deal with differences between object-oriented and procedural languages.
+
+However, El-Ramly et al.~\cite{Ramly2006CSA}'s experience points out that most of these approaches support only a subset of API's for migration. Another recently published survey by Robillard et al.~\cite{RobillardIEEEtranSE13} provides a detailed overview of techniques dealing with mining API mappings.
+
+Among other works described in ~\cite{RobillardIEEEtranSE13}, Mining API Mapping (MAM)~\cite{Zhong2010ICSE} is most directly related to our work. MAM mines API mapping relations across different languages for language migration, however there is a significant difference between the approach undertaken to achieve it, thus each techniques have its own pros and cons.
+
+While MOM relies on existence of software that has been ported manually from a source to target API, our approach has no such requirement. MOM then applies a technique called ``method alignment'' that pairs the methods with similar functionality across implementation. These methods are then statically analyzed to detect mappings between source and target API. In contrast, our approach relies on simple text analytics and natural language processing of source and target API document to achieve the same. While our approach also uses simple static analysis, our techniques are relatively very lightweight. Furthermore, we demonstrate that our approach also infers equally good mappings if not better.
+
+Gokhle et al.~\cite{Gokhale2013ICSE} is another work that is closely related to our approach. They improve upon the MOM project by removing the restriction of having software that has been ported manually from a source to target API. They however still require software that have similar functionality (if not exactly same) that use source and target API. In contrast our approach is independent of such requirement.
+
+Zheng at al.~\cite{Zheng2011FSE} mine search results of Web search engines such as google to recommend related APIs of different libraries. In particular, they propose heuristics to formulate keywords using the name of the method in the source API, and the name of target API to query web search engine. \textbf{TODO} to see if their techniques can be adapted.
+
+
+%Web Query~\cite{Zheng2011FSE}
+
+%\textbf{Library migration}. With evolution of libraries, some APIs may become incompatible across library versions. To address this problem, Henkel and Diwan [5] proposed an approach that captures and replays API refactoring actions to update the client code. Xing and Stroulia [17] proposed an approach that recognizes the changes of APIs by comparing the differences between two versions of libraries. Balaban et al. [2] proposed an approach to migrate client code when mapping relations of libraries are available. In contrast to these approaches, our approach focuses on mapping relations of APIs across different languages. In addition, since our approach uses ATGs to mine API mapping relations, our approach can also mine mapping relations between API methods with different parameters or between API methods whose functionalities are split among several API methods in the other language.
+
+
+%\textbf{Mining specifications.} Some of our previous approaches [1, 12, 13, 19, 20] focus on mining specifications. MAM mines API mapping relations across different languages for language migration, whereas the previous approaches mine API properties of a single language to detect defects or to assist programming.
+
+\textbf{NLP}
+NLP techniques are increasingly applied in the software engineering domain. NLP techniques have been shown to be useful in requirements engineering ~\cite{Sinha2009,Sinha2010,Gervasi2005}, usability of API documents~\cite{Dekel2009, pandita12:inferring}, and other areas~\cite{Zhou2008,Little2009, xiao11:improving, zhong09SE}. We next describe most relevant approaches.
+
+
+
+Zhong et al.~\cite{zhong09SE} employ NLP and ML techniques to infer resource specifications from API documents. Their approach uses machine learning to automatically classify such rules in a single API library. In contrast, our approach infers API map-
+ping relations across different languages for language migration, whereas the previous approaches mine API properties of a single language to detect defects or to assist programming.. Furthermore, the performance of the preceding ML-based approaches is dependent on the quality of the training sets used for ML. In contrast, our approach is independent of such training set and thus can be easily extended to target respective problems addressed by these approaches.
+
+%\textbf{Mock Objects.} Karlesky and Williams

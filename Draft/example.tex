@@ -1,0 +1,59 @@
+\section{Examples}
+\label{sec:example}
+
+We now present a series progressing in complexity to demonstrate our approach. Our examples are from real Java Platform, Micro Edition (JME) formerly known as J2ME and Android API. Both JME and Android use Java as the language of implementation and targeted towards hand-held devices. However, our approach is independent of language of implementation and thus can be used for any similar source and target API.  
+
+First we parse the API documents of source and target API library and store it in intermediate representation for analysis. In particular, we extract class, interface and corresponding method descriptions from API documents. Second, we then create a term vector representation of each class description and method descriptions. Vector space model or term vector model is an algebraic model for representing text documents (and any objects, in general) as vectors of identifiers, such as, for example, index terms. In our case, each word is considered as a term barring the stop words such as (a, the, and ...). 
+
+Finally we use the term vector representation of a method description in a source API to query term vector representation of the the method description in target API. The results are ranked based on the Term Frequency-Inverse Document Frequency (TF-IDF) measure. TF-IDF is a numerical statistic which reflects how important a word is to a document in a collection or corpus. It is often used as a weighting factor in information retrieval and text mining.
+
+We then collect the top 10 results from target API methods for each source API method. Figure~\ref{fig:excpAPIJ2ME} and Figure~\ref{fig:excpAPIAndroid} shows example of trivially similar API methods. Our search results return the Android API method shown in Figure~\ref{fig:excpAPIAndroid} as a first match for the JME method shown in Figure~\ref{fig:excpAPIJ2ME}. Notice the slightly different description for the methods in JME and Android API. Although, correct this is very trivial mapping. We next present a more complex example.  
+
+\begin{figure}[t]
+\begin{CodeOut}
+\begin{alltt}
+\includegraphics[scale=0.45]{AritmeticExceptionJ2ME.eps}
+\end{alltt}
+\end{CodeOut}
+\caption{\label{fig:excpAPIJ2ME} The method description of the \CodeIn{ArithmeticException} method in J2ME API}
+\end{figure}
+
+
+
+\begin{figure}[t]
+\begin{CodeOut}
+\begin{alltt}
+\includegraphics[scale=0.45]{AritmeticExceptionAndroid.eps}
+\end{alltt}
+\end{CodeOut}
+\caption{\label{fig:excpAPIAndroid} The method description of the \CodeIn{ArithmeticException} method in Android API}
+\end{figure}
+
+Figure~\ref{fig:drawCharAPIJ2ME} and Figure~\ref{fig:drawTextAPIJ2ME} shows example of non-trivially similar API methods. Although, the textual description is similar using text analytics (TF-IDF similarity using term frequency vector), there is difference in type of arguments.
+
+Our approach first tries to align the arguments:
+\begin{enumerate}
+\item int is matched to float common knowledge
+\item \CodeIn{Type} analysis for \CodeIn{Paint} is performed to get additional (previous) method invocations
+\item \CodeIn{Type} analysis of \CodeIn{Anchor} is performed to get additional method invocations
+\end{enumerate}
+
+
+
+\begin{figure}[t]
+\begin{CodeOut}
+\begin{alltt}
+\includegraphics[scale=0.45]{drawStringJ2ME.eps}
+\end{alltt}
+\end{CodeOut}
+\caption{\label{fig:drawCharAPIJ2ME} The method description of the \CodeIn{drawChar} method in J2ME API}
+\end{figure}
+
+\begin{figure}[t]
+\begin{CodeOut}
+\begin{alltt}
+\includegraphics[scale=0.45]{drawTextAndroid.eps}
+\end{alltt}
+\end{CodeOut}
+\caption{\label{fig:drawTextAPIJ2ME} The method description of the \CodeIn{drawText} method in Android API}
+\end{figure}
