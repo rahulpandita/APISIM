@@ -20,7 +20,8 @@ import edu.ncsu.csc.ase.apisim.webcrawler.AllClassCrawler;
 public class JarClassLoaderTest 
 {
 
-	
+	//Intentional to test an old method for fall~back in future
+	@SuppressWarnings("deprecation")
 	@Test
 	public void testLoadR()
 	{

@@ -10,6 +10,7 @@ import org.apache.lucene.document.StringField;
 import org.apache.lucene.document.TextField;
 
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
+import edu.ncsu.csc.ase.apisim.configuration.Configuration.OOTYPE;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
 import edu.ncsu.csc.ase.apisim.util.StringUtil;
 import edu.ncsu.csc.ase.apisim.webcrawler.AllClassCrawler;
@@ -33,15 +34,15 @@ public class APIClassIndexer extends Indexer<APIType>
 	public Document createDocument(APIType apiType) {
 		Document doc = new Document();
 		
-		doc.add(new StringField("NAME", clean(apiType.getPackage() + "." + apiType.getName()), Field.Store.YES));
-		doc.add(new StringField("NAME_SPLIT", clean(StringUtil.splitCamelCase(apiType.getName())), Field.Store.YES));
-		doc.add(new TextField("SUMMARY", clean(apiType.getSummary()),	Field.Store.YES));
-		doc.add(new TextField("APINAME", clean(apiType.getApiName()),	Field.Store.YES));
-		doc.add(new TextField("TYPE", clean(getElementType(apiType)),	Field.Store.YES));
-		doc.add(new TextField("IMPLEMENTS", clean(getTypeListasString(apiType.getImplementsList())), Field.Store.YES));
-		doc.add(new TextField("EXTENDS",  clean(getTypeListasString(apiType.getExtendsList())), Field.Store.YES));
-		doc.add(new TextField("ANNOTATED",  clean(String.valueOf(apiType.isTypeAnnotated())), Field.Store.YES));
-		doc.add(new TextField("MODIFIER",  clean(apiType.getModifier()), Field.Store.YES));
+		doc.add(new StringField(Configuration.IDX_FIELD_CLASS_NAME, clean(apiType.getPackage() + "." + apiType.getName()), Field.Store.YES));
+		doc.add(new StringField(Configuration.IDX_FIELD_CLASS_BASE_NAME_CCSPLIT, clean(StringUtil.splitCamelCase(apiType.getName())), Field.Store.YES));
+		doc.add(new TextField(Configuration.IDX_FIELD_DESCRIPTION, clean(apiType.getSummary()),	Field.Store.YES));
+		doc.add(new TextField(Configuration.IDX_FIELD_API_NAME, clean(apiType.getApiName()),	Field.Store.YES));
+		doc.add(new TextField(Configuration.IDX_FIELD_OO_TYPE, clean(getElementType(apiType).name()),	Field.Store.YES));
+		doc.add(new TextField(Configuration.IDX_FIELD_IMPLEMENTS, clean(getTypeListasString(apiType.getImplementsList())), Field.Store.YES));
+		doc.add(new TextField(Configuration.IDX_FIELD_EXTENDS,  clean(getTypeListasString(apiType.getExtendsList())), Field.Store.YES));
+		doc.add(new TextField(Configuration.IDX_FIELD_ANNOTATED,  clean(String.valueOf(apiType.isTypeAnnotated())), Field.Store.YES));
+		doc.add(new TextField(Configuration.IDX_FIELD_MODIFIER,  clean(apiType.getModifier()), Field.Store.YES));
 		return doc;
 	}
 
@@ -66,12 +67,12 @@ public class APIClassIndexer extends Indexer<APIType>
 	 * @param apiType
 	 * @return
 	 */
-	private String getElementType(APIType apiType) {
-		String type ="class";
+	private OOTYPE getElementType(APIType apiType) {
+		OOTYPE type = OOTYPE.CLASS;
 		if(apiType.isEnums())
-			type = "enum";
+			type = OOTYPE.ENUM;
 		if(apiType.isInterfaze())
-			type = "interface";
+			type = OOTYPE.INTERFACE;
 		return type;
 	}
 	

@@ -19,11 +19,11 @@ public class IndexBuilder
 			idxr.rebuildIndexes();
 			
 			//BUILD Standard Method Indexes
-			idxr = new APIIndexer();
+			idxr = new APIMtdIndexer();
 			idxr.rebuildIndexes();
 			
 			//BUILD Method INDEX Based on Synonym Analyzer
-			idxr = new APIIndexer();
+			idxr = new APIMtdIndexer();
 			idxr.analyser = new SynonymAnalyzer();
 			idxr.idx_path = Configuration.API_IDX_FILE_SYNONYM;
 			idxr.rebuildIndexes();

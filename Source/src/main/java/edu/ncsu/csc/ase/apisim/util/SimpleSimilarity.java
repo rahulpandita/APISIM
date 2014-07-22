@@ -11,13 +11,13 @@ public class SimpleSimilarity
 {
 	private static List<APIType> clazzListMIDP;
 	
-	private static List<APIType> clazzListCLDC;
+	//private static List<APIType> clazzListCLDC;
 	
 	private static List<APIType> clazzListAndroid;
 	
 	private static List<APIType> clazzListMIDPRed;
 	
-	private static List<APIType> clazzListCLDCRed;
+	//private static List<APIType> clazzListCLDCRed;
 	
 	private static List<APIType> clazzListAndroidRed;
 	

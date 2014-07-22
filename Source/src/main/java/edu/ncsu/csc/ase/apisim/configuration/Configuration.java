@@ -13,8 +13,21 @@ public class Configuration
 		UNKNOWN
 	}
 	
+	public enum OOTYPE{
+		CLASS,
+		INTERFACE,
+		ENUM,
+		UNKNOWN
+	}
+	
 	public static final String PROJECT_PATH = "";
 	
+	public static final Version LUCENE_VERSION =  Version.LUCENE_4_9;
+
+	public static final String API_LIBS_PATH = PROJECT_PATH + "libs"+ File.separator + "API" + File.separator;
+	
+	public static final String ROSETTA_RESULTS = PROJECT_PATH + "data"+ File.separator + "Rosetta_Results.xls";
+
 	public static final String WORDNET_DICTIONARY = PROJECT_PATH + "WordNet-3.0" + File.separator + "dict" + File.separator;
 	
 	public static final String DICTIONARY = PROJECT_PATH + "data" + File.separator + "wn_s.pl"; 
@@ -41,32 +54,46 @@ public class Configuration
 	
 	public static final String API_IDX_CLAZZ_SYN = PROJECT_PATH + "idx" + File.separator + "classidxSyn";
 	
-	public static final String IDX_FIELD_API_NAME = "APINAME";
+	//------------------------------ BEGIN LUCENE IDX FIELDS ----------------------------------------
 	
-	public static final String IDX_FIELD_CLASS_NAME = "CLASSNAME";
+	public static final String IDX_FIELD_API_NAME = "API_NAME";
 	
-	public static final String IDX_FIELD_METHOD_NAME = "METHODNAME";
+	public static final String IDX_FIELD_CLASS_NAME = "CLS_NAME";
 	
-	public static final String IDX_FIELD_METHOD_DESCRIPTION = "MTDDESCRIPTION";
+	public static final String IDX_FIELD_CLASS_BASE_NAME = "CLS_BASE_NAME";
 	
-	public static final String IDX_FIELD_CLASS_NAME1 = "CLASSNAME1";
+	public static final String IDX_FIELD_CLASS_BASE_NAME_CCSPLIT = "CLS_BASE_NAME_CCSPLIT";
 	
-	public static final String IDX_FIELD_METHOD_DESCRIPTION1 = "MTDDESCRIPTION1";
+	public static final String IDX_FIELD_CLASS_NAME_PKG_SPLIT = "CLS_NAME_PKG_SPLIT";
 	
-	public static final String IDX_FIELD_METHOD_RETURN = "METHODRETURNTYPE";
+	public static final String IDX_FIELD_METHOD_NAME = "MTD_NAME";
+	
+	public static final String IDX_FIELD_DESCRIPTION = "DESC";
+	
+	public static final String IDX_FIELD_METHOD_DESCRIPTION_CATCHALL = "DESC_CATCHALL";
+	
+	public static final String IDX_FIELD_METHOD_RETURN = "MTD_RET_TYPE";
 
-	public static final String IDX_FIELD_METHOD_PARAMS = "METHODPARAMS";
+	public static final String IDX_FIELD_METHOD_PARAMS = "MTD_PARAMS";
 	
-	public static final String IDX_FIELD_METHOD_EXCEPTIONS = "METHODEXCEPTIONS";
+	public static final String IDX_FIELD_METHOD_EXCEPTIONS = "MTD_EXPTS";
 
-	public static final String IDX_FIELD_METHOD_BASE_NAME = "METHODBASENAME";
+	public static final String IDX_FIELD_METHOD_BASE_NAME = "MTD_BASE_NAME";
 	
-	public static final String IDX_FIELD_METHOD_BASE_NAME_CAMELCASE_SPLIT = "MTDBASENAMECCSPLIT";
+	public static final String IDX_FIELD_METHOD_BASE_NAME_CAMELCASE_SPLIT = "MTD_BASE_NAME_CCSPLIT";
 	
-	public static final Version LUCENE_VERSION =  Version.LUCENE_4_9;
+	public static final String IDX_FIELD_ANNOTATED = "ANNOTATED";
 
-	public static final String API_LIBS_PATH = PROJECT_PATH + "libs"+ File.separator + "API" + File.separator;
+	public static final String IDX_FIELD_MODIFIER = "MODIFIER";
+
+	public static final String IDX_FIELD_OO_TYPE = "OO_TYPE";
+
+	public static final String IDX_FIELD_IMPLEMENTS = "IMPLEMENTS";
 	
-	public static final String ROSETTA_RESULTS = PROJECT_PATH + "data"+ File.separator + "Rosetta_Results.xls";
+	public static final String IDX_FIELD_EXTENDS = "EXTENDS";
+	
+	
+	//------------------------------ END LUCENE IDX FIELDS ----------------------------------------
+	
 
 }

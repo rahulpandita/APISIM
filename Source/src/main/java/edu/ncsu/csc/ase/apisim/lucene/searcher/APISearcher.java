@@ -59,7 +59,7 @@ public class APISearcher {
 						queryTerm = searchTerm;
 						String[] query = { "android", queryTerm };
 						String[] fields = { Configuration.IDX_FIELD_API_NAME,
-								Configuration.IDX_FIELD_METHOD_DESCRIPTION };
+								Configuration.IDX_FIELD_DESCRIPTION };
 						System.out.println(searchTerm);
 						ConsoleUtil.readConsole("");
 						try {
@@ -106,7 +106,7 @@ public class APISearcher {
 		}
 	}
 
-	private void search1(Query q) throws Exception {
+	public void search1(Query q) throws Exception {
 		int hitsPerPage = 10;
 		Directory index = FSDirectory
 				.open(new File(Configuration.API_IDX_FILE));
@@ -122,12 +122,12 @@ public class APISearcher {
 			if (hits[i].score > 4) {
 
 				System.err.println(hits[i].score + "-->\n" + queryTerm + "\n\t"
-						+ d.get(Configuration.IDX_FIELD_METHOD_DESCRIPTION));
+						+ d.get(Configuration.IDX_FIELD_DESCRIPTION));
 			}
 			FileUtilExcel.getInstance().writeDataToExcel("",
 					d.get(Configuration.IDX_FIELD_CLASS_NAME),
 					d.get(Configuration.IDX_FIELD_METHOD_NAME),
-					d.get(Configuration.IDX_FIELD_METHOD_DESCRIPTION));
+					d.get(Configuration.IDX_FIELD_DESCRIPTION));
 		}
 	}
 	
@@ -149,22 +149,23 @@ public class APISearcher {
 			if (hits[i].score > 4) {
 
 				System.err.println(hits[i].score + "-->\n" + queryTerm + "\n\t"
-						+ d.get(Configuration.IDX_FIELD_METHOD_DESCRIPTION));
+						+ d.get(Configuration.IDX_FIELD_DESCRIPTION));
 			}
 			
 			Result res = new Result(
 					d.get(Configuration.IDX_FIELD_CLASS_NAME),
 					d.get(Configuration.IDX_FIELD_METHOD_NAME),
-					d.get(Configuration.IDX_FIELD_METHOD_DESCRIPTION));
+					d.get(Configuration.IDX_FIELD_DESCRIPTION));
 			retList.add(res);
-			System.out.println(d.get(Configuration.IDX_FIELD_METHOD_DESCRIPTION));
+			System.out.println(d.get(Configuration.IDX_FIELD_DESCRIPTION));
 		}
 		
 		return retList;
 	}
-	private void searchSimilarAPI(String searchTerm) throws Exception {
-		IndexReader ir = IndexReader.open(FSDirectory.open(new File(
-				Configuration.API_IDX_FILE)));
+	public void searchSimilarAPI(String searchTerm) throws Exception {
+		Directory index = FSDirectory
+				.open(new File(Configuration.API_IDX_FILE));
+		IndexReader ir = DirectoryReader.open(index);
 		IndexSearcher is = new IndexSearcher(ir);
 		MoreLikeThis mlt = new MoreLikeThis(ir);
 		// lower some settings to MoreLikeThis will work with very short
@@ -176,7 +177,7 @@ public class APISearcher {
 		// using the string quoteText.
 		Reader reader = new StringReader(searchTerm);
 		// Create the query that we can then use to search the index
-		Query query = mlt.like(reader, "description");
+		Query query = mlt.like("description",reader);
 		// Search the index using the query and get the top 5 results
 		TopDocs topDocs = is.search(query, 5);
 		// Create an array to hold the quotes we are going to
