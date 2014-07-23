@@ -55,7 +55,8 @@ public class ResultEmitter
 					myRow = mySheet.createRow(i);
 					myRow.createCell(0).setCellValue("");
 					myRow.createCell(1).setCellValue(doc.get(Configuration.IDX_FIELD_CLASS_NAME));
-					myRow.createCell(2).setCellValue(doc.get(Configuration.IDX_FIELD_DESCRIPTION));
+					myRow.createCell(2).setCellValue(doc.get(Configuration.IDX_FIELD_METHOD_NAME));
+					myRow.createCell(3).setCellValue(doc.get(Configuration.IDX_FIELD_DESCRIPTION));
 					i++;
 				}
 			}
