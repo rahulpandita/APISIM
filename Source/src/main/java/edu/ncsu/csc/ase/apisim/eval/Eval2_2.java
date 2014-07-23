@@ -59,6 +59,7 @@ public class Eval2_2 extends PremEval<APIMtd>
 		subClassList.add("Layer");
 		subClassList.add("Sprite");
 		subClassList.add("Graphics");
+		subClassList.add("Image");
 	}
 	
 	public boolean inclusionCriteriaMethod(APIMtd mtd) {

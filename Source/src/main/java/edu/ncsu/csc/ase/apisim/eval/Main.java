@@ -13,6 +13,7 @@ import edu.ncsu.csc.ase.apisim.webcrawler.AllClassCrawler;
 
 public class Main 
 {
+	private static final String EXCEL_XTEN = ".xlsx";
 	private static final String ANA_ENG = "ENGANA";
 	private static final String ANA_SYN = "SYNANA";
 	private static final String IDX_ENG = "SIMPLEIDX";
@@ -32,21 +33,21 @@ public class Main
 		String evalFile;
 		List<APIType> clazzList = AllClassCrawler.read(Configuration.MIDP_DUMP_PATH);
 		
-		evalFile = resFolder + File.separator+ IDX_ENG + "_" + ANA_ENG + ".xls";
+		evalFile = resFolder + File.separator+ IDX_ENG + "_" + ANA_ENG + EXCEL_XTEN;
 		PremEval<APIMtd> eval = new Eval1(clazzList, Configuration.API_IDX_FILE);
 		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
 		
-		evalFile = resFolder + File.separator+ IDX_SYN + "_" + ANA_ENG + ".xls";
+		evalFile = resFolder + File.separator+ IDX_SYN + "_" + ANA_ENG + EXCEL_XTEN;
 		eval = new Eval1(clazzList,Configuration.API_IDX_FILE_SYNONYM);
 		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
 		
 		Analyzer analyser = new SynonymAnalyzer(Configuration.LUCENE_VERSION);
 		
-		evalFile = resFolder + File.separator+ IDX_ENG + "_" + ANA_SYN + ".xls";
+		evalFile = resFolder + File.separator+ IDX_ENG + "_" + ANA_SYN + EXCEL_XTEN;
 		eval = new Eval1(clazzList, Configuration.API_IDX_FILE, analyser);
 		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
 		
-		evalFile = resFolder + File.separator+ IDX_SYN + "_" + ANA_SYN + ".xls";
+		evalFile = resFolder + File.separator+ IDX_SYN + "_" + ANA_SYN + EXCEL_XTEN;
 		eval = new Eval1(clazzList, Configuration.API_IDX_FILE_SYNONYM, analyser);
 		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
 	}
@@ -56,21 +57,21 @@ public class Main
 		String evalFile;
 		List<APIType> clazzList = AllClassCrawler.read(Configuration.MIDP_DUMP_PATH);
 		
-		evalFile = resFolder + File.separator+ IDX_ENG + "_" + ANA_ENG + ".xls";
+		evalFile = resFolder + File.separator+ IDX_ENG + "_" + ANA_ENG + EXCEL_XTEN;
 		PremEval<APIMtd> eval = new Eval2(clazzList, Configuration.API_IDX_FILE);
 		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
 		
-		evalFile = resFolder + File.separator+ IDX_SYN + "_" + ANA_ENG + ".xls";
+		evalFile = resFolder + File.separator+ IDX_SYN + "_" + ANA_ENG + EXCEL_XTEN;
 		eval = new Eval2(clazzList,Configuration.API_IDX_FILE_SYNONYM);
 		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
 		
 		Analyzer analyser = new SynonymAnalyzer(Configuration.LUCENE_VERSION);
 		
-		evalFile = resFolder + File.separator+ IDX_ENG + "_" + ANA_SYN + ".xls";
+		evalFile = resFolder + File.separator+ IDX_ENG + "_" + ANA_SYN + EXCEL_XTEN;
 		eval = new Eval2(clazzList, Configuration.API_IDX_FILE, analyser);
 		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
 		
-		evalFile = resFolder + File.separator+ IDX_SYN + "_" + ANA_SYN + ".xls";
+		evalFile = resFolder + File.separator+ IDX_SYN + "_" + ANA_SYN + EXCEL_XTEN;
 		eval = new Eval2(clazzList, Configuration.API_IDX_FILE_SYNONYM, analyser);
 		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
 	}
@@ -80,21 +81,21 @@ public class Main
 		String evalFile;
 		List<APIType> clazzList = AllClassCrawler.read(Configuration.MIDP_DUMP_PATH);
 		
-		evalFile = resFolder + File.separator+ IDX_ENG + "_" + ANA_ENG + ".xls";
+		evalFile = resFolder + File.separator+ IDX_ENG + "_" + ANA_ENG + EXCEL_XTEN;
 		PremEval<APIMtd> eval = new Eval2_1(clazzList, Configuration.API_IDX_FILE);
 		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
 		
-		evalFile = resFolder + File.separator+ IDX_SYN + "_" + ANA_ENG + ".xls";
+		evalFile = resFolder + File.separator+ IDX_SYN + "_" + ANA_ENG + EXCEL_XTEN;
 		eval = new Eval2_1(clazzList,Configuration.API_IDX_FILE_SYNONYM);
 		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
 		
 		Analyzer analyser = new SynonymAnalyzer(Configuration.LUCENE_VERSION);
 		
-		evalFile = resFolder + File.separator+ IDX_ENG + "_" + ANA_SYN + ".xls";
+		evalFile = resFolder + File.separator+ IDX_ENG + "_" + ANA_SYN + EXCEL_XTEN;
 		eval = new Eval2_1(clazzList, Configuration.API_IDX_FILE, analyser);
 		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
 		
-		evalFile = resFolder + File.separator+ IDX_SYN + "_" + ANA_SYN + ".xls";
+		evalFile = resFolder + File.separator+ IDX_SYN + "_" + ANA_SYN + EXCEL_XTEN;
 		eval = new Eval2_1(clazzList, Configuration.API_IDX_FILE_SYNONYM, analyser);
 		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
 	}
@@ -104,21 +105,21 @@ public class Main
 		String evalFile;
 		List<APIType> clazzList = AllClassCrawler.read(Configuration.MIDP_DUMP_PATH);
 		
-		evalFile = resFolder + File.separator+ IDX_ENG + "_" + ANA_ENG + ".xls";
+		evalFile = resFolder + File.separator+ IDX_ENG + "_" + ANA_ENG + EXCEL_XTEN;
 		PremEval<APIMtd> eval = new Eval2_2(clazzList, Configuration.API_IDX_FILE);
 		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
 		
-		evalFile = resFolder + File.separator+ IDX_SYN + "_" + ANA_ENG + ".xls";
+		evalFile = resFolder + File.separator+ IDX_SYN + "_" + ANA_ENG + EXCEL_XTEN;
 		eval = new Eval2_2(clazzList,Configuration.API_IDX_FILE_SYNONYM);
 		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
 		
 		Analyzer analyser = new SynonymAnalyzer(Configuration.LUCENE_VERSION);
 		
-		evalFile = resFolder + File.separator+ IDX_ENG + "_" + ANA_SYN + ".xls";
+		evalFile = resFolder + File.separator+ IDX_ENG + "_" + ANA_SYN + EXCEL_XTEN;
 		eval = new Eval2_2(clazzList, Configuration.API_IDX_FILE, analyser);
 		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
 		
-		evalFile = resFolder + File.separator+ IDX_SYN + "_" + ANA_SYN + ".xls";
+		evalFile = resFolder + File.separator+ IDX_SYN + "_" + ANA_SYN + EXCEL_XTEN;
 		eval = new Eval2_2(clazzList, Configuration.API_IDX_FILE_SYNONYM, analyser);
 		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
 	}
