@@ -28,6 +28,8 @@ public class Configuration
 	
 	public static final String ROSETTA_RESULTS = PROJECT_PATH + "data"+ File.separator + "Rosetta_Results.xls";
 
+	public static final String ORACLE = PROJECT_PATH + "data"+ File.separator + "oracle.xlsx";;
+	
 	public static final String WORDNET_DICTIONARY = PROJECT_PATH + "WordNet-3.0" + File.separator + "dict" + File.separator;
 	
 	public static final String DICTIONARY = PROJECT_PATH + "data" + File.separator + "wn_s.pl"; 
@@ -91,8 +93,7 @@ public class Configuration
 	public static final String IDX_FIELD_IMPLEMENTS = "IMPLEMENTS";
 	
 	public static final String IDX_FIELD_EXTENDS = "EXTENDS";
-	
-	
+
 	//------------------------------ END LUCENE IDX FIELDS ----------------------------------------
 	
 

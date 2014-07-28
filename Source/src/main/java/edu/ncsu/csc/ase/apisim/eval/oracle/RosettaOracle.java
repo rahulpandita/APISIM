@@ -1,4 +1,4 @@
-package edu.ncsu.csc.ase.apisim.eval;
+package edu.ncsu.csc.ase.apisim.eval.oracle;
 
 import java.io.FileInputStream;
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ import edu.ncsu.csc.ase.apisim.configuration.Configuration;
  * @author Rahul Pandita
  *
  */
-public class RosettaComparison 
+public class RosettaOracle 
 {
 	
 	
@@ -38,18 +38,26 @@ public class RosettaComparison
 			row = worksheet.getRow(i);
 			sourceMtd = getStringValue(row.getCell(0)) + "_" + getStringValue(row.getCell(1));
 			targetMtd = getStringValue(row.getCell(2)) + "_" + getStringValue(row.getCell(3));
+			List<String> tgtMtdList = new ArrayList<String>();
+			tgtMtdList.add(targetMtd);
 			if(getStringValue(row.getCell(4))!="")
-				targetMtd = targetMtd + ";" + getStringValue(row.getCell(4)) + "_" + getStringValue(row.getCell(5));
+			{
+				//targetMtd = targetMtd + ";" + getStringValue(row.getCell(4)) + "_" + getStringValue(row.getCell(5));
+				tgtMtdList.add(getStringValue(row.getCell(4)) + "_" + getStringValue(row.getCell(5)));
+			}
+			
 			if(retMap.containsKey(sourceMtd))
 			{
-				retMap.get(sourceMtd).add(targetMtd.trim());
+				retMap.get(sourceMtd).addAll(tgtMtdList);
+				//retMap.get(sourceMtd).add(targetMtd);
 			}
 			else
 			{
 				List<String> targetMtdList = new ArrayList<String>();
-				targetMtdList.add(targetMtd.trim());
+				targetMtdList.addAll(tgtMtdList);
+				//targetMtdList.add(targetMtd);
 				retMap.put(sourceMtd, targetMtdList);
-			}
+			}	
 		}
 		fileInputStream.close();
 		System.out.println("Read "+worksheet.getPhysicalNumberOfRows() + " rows.");
@@ -63,7 +71,7 @@ public class RosettaComparison
 	 */
 	private static String getStringValue(HSSFCell cell) 
 	{
-		return cell==null?"":cell.getStringCellValue();
+		return cell==null?"":cell.getStringCellValue().trim();
 	}
 	
 	public static void main(String[] args) throws Exception {

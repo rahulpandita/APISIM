@@ -1,11 +1,11 @@
-package edu.ncsu.csc.ase.apisim.eval;
+package edu.ncsu.csc.ase.apisim.eval.oracle;
 
 import org.junit.Assert;
 import org.junit.Test;
 
 
 /**
- * Test Class for {@link RosettaComparison}
+ * Test Class for {@link RosettaOracle}
  * 
  * @author Rahul Pandita
  *
@@ -19,7 +19,7 @@ public class RosettaComparisonTest
 	{
 		try
 		{
-			Assert.assertTrue("Test for reading Rossetta Results", RosettaComparison.read().keySet().size()==57);
+			Assert.assertTrue("Test for reading Rossetta Results", RosettaOracle.read().keySet().size()==57);
 		}
 		catch(Exception e)
 		{

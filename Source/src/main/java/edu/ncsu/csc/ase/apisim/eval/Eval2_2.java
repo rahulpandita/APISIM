@@ -2,8 +2,8 @@ package edu.ncsu.csc.ase.apisim.eval;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +19,8 @@ import edu.ncsu.csc.ase.apisim.configuration.Configuration;
 import edu.ncsu.csc.ase.apisim.configuration.Configuration.APITYPE;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIMtd;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
+import edu.ncsu.csc.ase.apisim.eval.util.CustomComparator;
+import edu.ncsu.csc.ase.apisim.eval.util.ResultRep;
 import edu.ncsu.csc.ase.apisim.webcrawler.apiutil.ASTBuilder;
 
 /**
@@ -129,57 +131,25 @@ public class Eval2_2 extends PremEval<APIMtd>
 			e.printStackTrace();	
 		}
 		
-		TreeSet<ResultRep> set = new TreeSet<ResultRep>(new Comparator<ResultRep>() {
-
-			@Override
-			public int compare(ResultRep o1, ResultRep o2) {
-				if(o1.getRank()<=o2.getRank())
-					return 1;
-				return -1;
-			}
-		});
+		TreeSet<ResultRep> set = new TreeSet<ResultRep>(new CustomComparator());
 		
 		for(String key: docMap.keySet())
 			set.add(docMap.get(key));
 		
 		result = new ArrayList<Document>();
-		for(ResultRep rep: set)
+		Iterator<ResultRep> iter = set.descendingIterator();
+		ResultRep rep;
+		while(iter.hasNext())
+		{
+			rep = iter.next();
 			result.add(rep.getDoc());
+		}
+		
 		if(result.size()>10)
 			result = result.subList(0, 10);
 		return result;
 	}
 	
-	class ResultRep
-	{
-		private Document doc;
-		
-		private Float rank;
-		
-		public ResultRep(Document doc, Float rank)
-		{
-			this.doc = doc;
-			this.rank = rank;
-		}
-
-		public void setDoc(Document doc) {
-			this.doc = doc;
-		}
-
-		public void setRank(Float rank) {
-			this.rank = rank;
-		}
-		
-		public Document getDoc() {
-			return doc;
-		}
-
-		public Float getRank() {
-			return rank;
-		}
-	
-	}
-
 	@Override
 	public List<Occur[]> getClauseVector() 
 	{

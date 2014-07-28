@@ -1,4 +1,4 @@
-package edu.ncsu.csc.ase.apisim.eval;
+package edu.ncsu.csc.ase.apisim.eval.util;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -18,6 +18,7 @@ import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIMtd;
+import edu.ncsu.csc.ase.apisim.eval.oracle.MyOracle;
 
 public class ResultEmitter 
 {
@@ -84,28 +85,45 @@ public class ResultEmitter
 		Sheet mySheet;
 		
 		Row myRow = null;
-		int i=0;
+		int i=1;
+		String relavant, exact, srcClass, srcMtd, srcMtdDesc, tgtClass, tgtMtd, tgtMtdDesc;
 		for(String clazz: resultList.keySet())
 		{
-			i=0;
+			
+			i=1;
 			Map<APIMtd, List<Document>> result = resultList.get(clazz);
 			mySheet = myWorkBook.createSheet(clazz);
+			createHeader(mySheet.createRow(0));
 			for(APIMtd mtd : result.keySet())
 			{
-				List<Document> mappingList = result.get(mtd);
-				myRow = mySheet.createRow(i);
-				myRow.createCell(0).setCellValue(mtd.getName());
-				myRow.createCell(1).setCellValue(mtd.getDescription());
-				i++;
-				for(Document doc: mappingList)
+				for(Document doc: result.get(mtd))
 				{
+					
+					srcClass = mtd.getParentClass().getPackage().trim() +"." + mtd.getParentClass().getName().trim();
+					srcMtd = mtd.getName();
+					srcMtdDesc = mtd.getDescription();
+					tgtClass = doc.get(Configuration.IDX_FIELD_CLASS_NAME);
+					tgtMtd = doc.get(Configuration.IDX_FIELD_METHOD_NAME);
+					tgtMtdDesc = doc.get(Configuration.IDX_FIELD_DESCRIPTION);
+					relavant = MyOracle.getInstance().isRelavant(srcClass, srcMtd, tgtClass, tgtMtd);
+					exact = MyOracle.getInstance().isExactMatch(srcClass, srcMtd, tgtClass, tgtMtd);
+					
 					myRow = mySheet.createRow(i);
-					myRow.createCell(0).setCellValue("");
-					myRow.createCell(1).setCellValue(doc.get(Configuration.IDX_FIELD_CLASS_NAME));
-					myRow.createCell(2).setCellValue(doc.get(Configuration.IDX_FIELD_METHOD_NAME));
-					myRow.createCell(3).setCellValue(doc.get(Configuration.IDX_FIELD_DESCRIPTION));
+					
+					myRow.createCell(0).setCellValue(relavant);
+					myRow.createCell(1).setCellValue(exact);
+					myRow.createCell(2).setCellValue(srcClass);
+					myRow.createCell(3).setCellValue(srcMtd);
+					myRow.createCell(4).setCellValue(srcMtdDesc);
+					myRow.createCell(5).setCellValue(tgtClass);
+					myRow.createCell(6).setCellValue(tgtMtd);
+					myRow.createCell(7).setCellValue(tgtMtdDesc);
 					i++;
+					
+					
 				}
+				mySheet.createRow(i);
+				i++;
 			}
 		}
 		FileOutputStream out = new FileOutputStream(fileName);
@@ -113,6 +131,20 @@ public class ResultEmitter
 		out.close();
 	}
 	
+	private static void createHeader(Row myRow) 
+	{
+		myRow.createCell(0).setCellValue("Relevant");
+		myRow.createCell(1).setCellValue("Exact");
+		myRow.createCell(2).setCellValue("Source Class");
+		myRow.createCell(3).setCellValue("Source Method");
+		myRow.createCell(4).setCellValue("Source Method Desc");
+		myRow.createCell(5).setCellValue("Target Class");
+		myRow.createCell(6).setCellValue("Target Method");
+		myRow.createCell(7).setCellValue("Target Method Desc");
+		
+		
+	}
+
 	private static void createResultExcel(String fileName)
 	{
 		File f = new File(fileName);
