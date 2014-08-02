@@ -47,9 +47,44 @@ public class MyOracle {
 		cache = new HashMap<>();
 		try {
 			popluate();
+			popluate1();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+
+	}
+
+	private void popluate1() throws Exception {
+		FileInputStream fileInputStream = new FileInputStream(Configuration.ORACLE1);
+		Workbook workbook = new XSSFWorkbook(fileInputStream);
+		Sheet workSheet;
+		Row row;
+		String srcClassName, srcMtdName, tgtClassName, tgtMtdName;
+		int rel, extMatch;
+		for (int wrkSheetIdx = 0; wrkSheetIdx < workbook.getNumberOfSheets(); wrkSheetIdx++) {
+			workSheet = workbook.getSheetAt(wrkSheetIdx);
+			for (int i = 1; i < workSheet.getPhysicalNumberOfRows(); i++) {
+				row = workSheet.getRow(i);
+				rel = getIntValue(row.getCell(0));
+				extMatch = getIntValue(row.getCell(1));
+				srcClassName = getStringValue(row.getCell(2));
+				srcMtdName = getStringValue(row.getCell(3));
+				tgtClassName = getStringValue(row.getCell(5));
+				tgtMtdName = getStringValue(row.getCell(6));
+				if (tgtMtdName != "") {
+					if (rel == 1) {
+						populateWhiteList(extMatch, srcClassName, srcMtdName,
+								tgtClassName, tgtMtdName);
+					} else {
+						populateBlkList(srcClassName, srcMtdName, tgtClassName,
+								tgtMtdName);
+					}
+
+				}
+
+			}
+
 		}
 
 	}

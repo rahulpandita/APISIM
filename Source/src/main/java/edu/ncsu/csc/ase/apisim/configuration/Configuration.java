@@ -28,7 +28,9 @@ public class Configuration
 	
 	public static final String ROSETTA_RESULTS = PROJECT_PATH + "data"+ File.separator + "Rosetta_Results.xls";
 
-	public static final String ORACLE = PROJECT_PATH + "data"+ File.separator + "oracle.xlsx";;
+	public static final String ORACLE = PROJECT_PATH + "data"+ File.separator + "oracle.xlsx";
+	
+	public static final String ORACLE1 = PROJECT_PATH + "data"+ File.separator + "oracle2.xlsx";
 	
 	public static final String WORDNET_DICTIONARY = PROJECT_PATH + "WordNet-3.0" + File.separator + "dict" + File.separator;
 	
