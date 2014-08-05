@@ -89,7 +89,30 @@ public class AllClassCrawler {
 		}
 		return classList;
 	}
+	
+	public static List<APIType> listClassesWPAPI(String url) {
+		List<APIType> classList = new ArrayList<>();
+		Document doc;
+		try {
+			doc = Jsoup.connect(url).get();
+			Elements links = doc.select("a");
+			for (Element link : links) {
+				try {
+					classList.add(new APICrawlerMIDP().processURL(
+							link.attr("abs:href"), link.text()));
+					System.out.println("processed " + link.text() + " <"
+							+ link.attr("abs:href") + ">");
+				} catch (Exception e) {
+					System.err.println(link);
+				}
+			}
 
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return classList;
+	}
+	
 	public static void writeAndroid(String url, String file) {
 		List<APIType> classList = listClassesAndroid(url);
 		write(classList, file);

@@ -47,7 +47,8 @@ public class MyOracle {
 		cache = new HashMap<>();
 		try {
 			popluate();
-			popluate1();
+			popluateNew(Configuration.ORACLE1);
+			popluateNew(Configuration.ORACLE2);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -55,8 +56,8 @@ public class MyOracle {
 
 	}
 
-	private void popluate1() throws Exception {
-		FileInputStream fileInputStream = new FileInputStream(Configuration.ORACLE1);
+	private void popluateNew(String fileName) throws Exception {
+		FileInputStream fileInputStream = new FileInputStream(fileName);
 		Workbook workbook = new XSSFWorkbook(fileInputStream);
 		Sheet workSheet;
 		Row row;

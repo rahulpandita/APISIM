@@ -30,7 +30,9 @@ public class Configuration
 
 	public static final String ORACLE = PROJECT_PATH + "data"+ File.separator + "oracle.xlsx";
 	
-	public static final String ORACLE1 = PROJECT_PATH + "data"+ File.separator + "oracle2.xlsx";
+	public static final String ORACLE1 = PROJECT_PATH + "data"+ File.separator + "oracle1.xlsx";
+	
+	public static final String ORACLE2 = PROJECT_PATH + "data"+ File.separator + "oracle2.xlsx";
 	
 	public static final String WORDNET_DICTIONARY = PROJECT_PATH + "WordNet-3.0" + File.separator + "dict" + File.separator;
 	
@@ -47,6 +49,8 @@ public class Configuration
 	public static final String CLDC_ALL_CLASS_URL = "http://docs.oracle.com/javame/config/cldc/ref-impl/cldc1.1/jsr139/allclasses-frame.html";
 	
 	public static final String MIDP_ALL_CLASS_URL = "http://docs.oracle.com/javame/config/cldc/ref-impl/midp2.0/jsr118/allclasses-frame.html";
+	
+	public static final String WP_NAMESPACE_URL = "http://msdn.microsoft.com/en-us/library/windows/apps/jj207211(v=vs.105).aspx";
 	
 	public static final String API_IDX_FILE = PROJECT_PATH + "idx" + File.separator + "idx_all";
 	

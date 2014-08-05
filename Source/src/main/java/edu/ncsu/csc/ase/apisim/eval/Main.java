@@ -17,8 +17,6 @@ public class Main
 	private static final String EXCEL_XTEN = ".xlsx";
 	private static final String ANA_ENG = "ENGANA";
 	private static final String ANA_SYN = "SYNANA";
-	private static final String IDX_ENG = "SIMPLEIDX";
-	private static final String IDX_SYN = "SYNIDX";
 	private static final String RESULT_BASE = "premResults";
 	private static Analyzer analyser ;
 	

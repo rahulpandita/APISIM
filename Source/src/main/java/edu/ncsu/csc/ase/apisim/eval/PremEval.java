@@ -9,6 +9,8 @@ import java.util.Map;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.en.EnglishAnalyzer;
 import org.apache.lucene.document.Document;
+import org.apache.lucene.document.Field;
+import org.apache.lucene.document.FloatField;
 import org.apache.lucene.index.DirectoryReader;
 import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
@@ -114,11 +116,13 @@ public abstract class PremEval<T> {
 		IndexSearcher searcher = new IndexSearcher(reader);
 		TopScoreDocCollector collector = TopScoreDocCollector.create(hitsPerPage, true);
 		searcher.search(query, collector);
+		
 		ScoreDoc[] hits = collector.topDocs().scoreDocs;
 		for (int i = 0; i < hits.length; ++i) 
 		{
 			int docId = hits[i].doc;
 			Document d = searcher.doc(docId);
+			d.add(new FloatField("SCORE", hits[i].score, Field.Store.NO));
 			retList.add(d);
 		}
 		return retList;

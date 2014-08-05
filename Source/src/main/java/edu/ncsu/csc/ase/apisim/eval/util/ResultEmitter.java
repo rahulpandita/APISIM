@@ -86,7 +86,7 @@ public class ResultEmitter
 		
 		Row myRow = null;
 		int i=1;
-		String relavant, exact, srcClass, srcMtd, srcMtdDesc, tgtClass, tgtMtd, tgtMtdDesc;
+		String relavant, exact, srcClass, srcMtd, srcMtdDesc, tgtClass, tgtMtd, tgtMtdDesc, score;
 		for(String clazz: resultList.keySet())
 		{
 			
@@ -105,6 +105,7 @@ public class ResultEmitter
 					tgtClass = doc.get(Configuration.IDX_FIELD_CLASS_NAME);
 					tgtMtd = doc.get(Configuration.IDX_FIELD_METHOD_NAME);
 					tgtMtdDesc = doc.get(Configuration.IDX_FIELD_DESCRIPTION);
+					score = doc.get("SCORE");
 					relavant = MyOracle.getInstance().isRelavant(srcClass, srcMtd, tgtClass, tgtMtd);
 					exact = MyOracle.getInstance().isExactMatch(srcClass, srcMtd, tgtClass, tgtMtd);
 					
@@ -118,6 +119,8 @@ public class ResultEmitter
 					myRow.createCell(5).setCellValue(tgtClass);
 					myRow.createCell(6).setCellValue(tgtMtd);
 					myRow.createCell(7).setCellValue(tgtMtdDesc);
+					myRow.createCell(8).setCellValue(score);
+					
 					i++;
 					
 					
