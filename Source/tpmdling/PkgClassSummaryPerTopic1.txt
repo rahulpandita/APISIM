@@ -1,0 +1,74 @@
+154 : view fragment notification override notifications linearlayout state list num null textview container fragment's bundle mnum false builder action fragments version layout retrieve instance create large-format listview empty listactivity vertical viewgroup text listfragment extender extensions position memory remoteinput generating loader hierarchy saved frame id/text inflater watch madapter apis manager notif wearable honeycomb item args instances back clicks manage supply items show loadermanager icon bar individual arrayadapter hold subclasses visible constructing mail reason saving center horizontal getactivity getarguments instance's larger destroyed tabs resource input package pausing extenders instantiation post visited restoring rich red charsequence collected metadata wear mails getid demonstrates cross-task stacks synthetic slightly execution filter archive paged windows break nesting servicecompat prompted canned aspect crashing modularize aliasactivity asynchronous decision compared in-line automatically 
+	(0.08022675796836315)	javax.xml.transform.dom
+	(0.07957410396883757)	android.graphics.drawable.shapes
+	(0.07611463303399087)	org.apache.http.client.protocol
+_________________________________________________________________________________
+170 : rfc urls match url scheme text clickable code matching matched enables converting address web control client tokenizer linkify link matchfilter tokens links strings addresses tel prepended supplied series typed works convert regex turns piece stores represented comment allowed created things list methods hyphen parentheses at-sign actionable smtp utilities supply email 
+	(0.1000366199563134)	android.support.v4.view.accessibility
+	(0.05267956479134092)	android.os.storage
+	(0.03318330390575584)	android.support.v4.view
+	(0.026187480913753947)	android.support.v4.os
+	(0.022989069948016735)	javax.microedition.lcdui.game
+	(0.02280303765378351)	android.support.v4.net
+	(0.020256078162971664)	android.nfc
+	(0.0201670987170999)	org.json
+_________________________________________________________________________________
+225 : response https cookiestore catch caching cookiepolicy store cached storage specific earlier releases caches send improve max-age ioexception memory directly cream ice increasing reused permit clicks conditional numeric froyo sandwich vm-wide opaque non-external sslerror fewer organization preferable date involving high-order bullet consult host's encryption idle served charge inputstream prompts resolved physical waits filenamemap creation restrict encapsulates 
+	(0.08798641211789265)	android.graphics.drawable.shapes
+	(0.08773368900337362)	android.support.v7.view
+	(0.07153880138165719)	android.inputmethodservice
+	(0.06656852439811989)	android.view.inputmethod
+	(0.04469466609895144)	android.support.v7.app
+	(0.04413125755937402)	android.nfc.cardemulation
+	(0.04264033162803711)	java.util.regex
+_________________________________________________________________________________
+263 : objects callback files receive frame callbacks screen constants including sequence drop build flag sources generic works raw notifications tool consists relative post conditions plain facilities optional token heavily params inflation compiled enqueues proceeds items recognized smoothly chain logical received interact editor maximages exifinterface cycling memoryfiles accident handlerthread enqueued decoding resulting stopped deltas significantly delivers comments pulses dedicated referenced body sending 
+	(0.039733028019800755)	java.awt.font
+	(0.026111793481592135)	java.util
+	(0.022271020086605326)	android.content.res
+	(0.01841912897510176)	android.support.v4.view
+	(0.018017939301030777)	java.beans
+	(0.01606999403054121)	org.json
+	(0.012224433252420612)	android.graphics.drawable
+	(0.011991707667036026)	android.view
+_________________________________________________________________________________
+302 : drawables create guide png bounds selects things modify draws gradient intended manages battery imagery series forms assigned number supported corners rounded areas stretchable maximum distance insets fills colordrawable clips stretched object's suporting dealing underlying interact angles icon mutate stretch label ignores clip id/selected cross-fade paintdrawable resizeable format support 
+	(0.03912761520134145)	android.app.backup
+	(0.03201760287040755)	android.inputmethodservice
+	(0.02081772524711028)	java.security
+	(0.015398857865217304)	android.telephony
+	(0.01324580815934745)	java.nio.channels
+_________________________________________________________________________________
+386 : connection represents address type connected server connect protocol remote local port defines network connecting manage sockets streams calling representing internet receive requests host side includes mapping streaming packets configured channel accepted attempt established connections immutable pair abort tcp serversocket safe combination performed sessions wi-fi versa optionally endpoints outgoing management proximity company encapsulating vice metadata detail outputstream address/port enable powerful proposed accepting fitness network's listening file-based functor doubles onservicelost verification establishing solely d's poison enabling block networks predict heap possibly webpage conforms multicast separated legal 
+	(0.05469277208511745)	android.transition
+	(0.04840320593918202)	javax.security.auth.callback
+	(0.045726839914985114)	android.support.v7.view
+	(0.03540378425487615)	javax.microedition.rms
+	(0.034742470782818495)	org.apache.http.client.params
+	(0.03295752146415477)	android.nfc
+	(0.030845321894882118)	java.util.prefs
+	(0.028480217324385357)	javax.crypto
+_________________________________________________________________________________
+411 : url address servers inet expires cacherequest sign-on password username converts storing decide proxyhost honored getallbyname reuse firewall reached bind udp cacheresponse alternatives proxyport brackets square scoped nodes styles extensible long-lived advance destination deny urldecoder locator netpermission 
+	(0.058779953710814264)	org.apache.http.impl.conn.tsccm
+	(0.05156490644612305)	android.support.v7.view
+	(0.03447128946183998)	org.apache.http.conn
+_________________________________________________________________________________
+456 : held pieces responsible accepts disconnect upload loopback x's getcontent badly interface's ace pre-defined set contextmenu earliest jni surrounded families exhausted casting served httpcookies abandoned idn socketoptions center 
+	(0.07017295081409884)	javax.xml.datatype
+	(0.04949813022984423)	javax.security.cert
+	(0.02370016636272975)	javax.microedition.media.control
+	(0.023298684731134195)	java.nio.channels.spi
+	(0.01707055906428025)	javax.microedition.lcdui.game
+	(0.016884181879344585)	java.nio.channels
+	(0.015400174104077475)	android.preference
+_________________________________________________________________________________
+95 : connection manager connections entry route operations wrapper client objects managed entries operated release idle it's synchronized released establish purpose reliably triggered httpclient detect derived encapsulates heart inetaddresses classic handed shutdown pick lies finalizer imperative illustrated green interest stale phenomena comprised move original planned step steps respective initialize tolerate enabling android 
+	(0.07990207588072867)	android.hardware.location
+	(0.07003955866744423)	android.service.dreams
+	(0.0416920286493849)	org.apache.http.impl.cookie
+	(0.02338640500075271)	java.util.logging
+	(0.02281920323901793)	android.accessibilityservice
+	(0.02229962895920515)	android.print
+	(0.021296529322333727)	android.app.backup
+_________________________________________________________________________________

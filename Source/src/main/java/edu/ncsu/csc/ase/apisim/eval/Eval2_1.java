@@ -14,7 +14,6 @@ import org.apache.lucene.document.Document;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.search.BooleanClause.Occur;
 import org.apache.lucene.search.Query;
-import org.apache.lucene.search.ScoreDoc;
 
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
 import edu.ncsu.csc.ase.apisim.configuration.Configuration.APITYPE;

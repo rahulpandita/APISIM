@@ -1,6 +1,7 @@
 package edu.ncsu.csc.ase.apisim.topicModel;
 
 import cc.mallet.types.Instance;
+import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
 
 public class DataInstance extends Instance {
 
@@ -11,7 +12,11 @@ public class DataInstance extends Instance {
 
 	public DataInstance(String data, String source) {
 		super(data, 3, 2, source);
-		// TODO Auto-generated constructor stub
+		
 	}
-
+	
+	public DataInstance(APIType type) 
+	{
+		super(type.getSummary(), 3, 2, type.getApiName()+":"+type.getPackage()+"."+type.getName());
+	}
 }

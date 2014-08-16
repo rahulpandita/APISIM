@@ -50,6 +50,8 @@ public class APIType implements Serializable
 		sbr.append("\n----------SUMMARY---------\n");
 		sbr.append(summary);
 		sbr.append("\n----------METHOD LIST---------\n");
+		for(APIMtd mtd: constructorList)
+			sbr.append(mtd.toString());
 		for(APIMtd mtd: methodList)
 			sbr.append(mtd.toString());
 		

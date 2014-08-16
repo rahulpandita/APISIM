@@ -36,6 +36,16 @@ public class Configuration
 	
 	public static final String WORDNET_DICTIONARY = PROJECT_PATH + "WordNet-3.0" + File.separator + "dict" + File.separator;
 	
+	/**
+	 * Path to folder containing WordNet Files
+	 */
+	public static final String WORD_NET_PATH = PROJECT_PATH + "WordNet-3.0";
+	
+	/**
+	 * Path to WordNet Configuration File
+	 */
+	public static final String WORD_NET_CONFIG_XML_PATH = "wordnet.xml";
+	
 	public static final String DICTIONARY = PROJECT_PATH + "data" + File.separator + "wn_s.pl"; 
 	
 	public static final String ANDROID_DUMP_PATH = PROJECT_PATH + "TEMPFILES" + File.separator + "android.api";

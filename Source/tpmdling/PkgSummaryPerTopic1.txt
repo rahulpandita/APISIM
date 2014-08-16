@@ -1,0 +1,2233 @@
+108 : line lines called limiting headergroup 
+	(0.035960353825038316)	android.nfc.cardemulation
+	(0.021054568447658958)	java.nio.channels.spi
+	(0.013698784664417681)	java.nio.channels
+_________________________________________________________________________________
+111 : texture wrapped dedicated surfaceview meshes eglext similarity gesturepoint scaling focusable 
+	(0.016438922527428713)	dalvik.system
+	(0.008332022179032837)	android.hardware
+	(0.00787999500023823)	android.text
+	(0.0032185860602803097)	android.support.v7.media
+	(0.003180178162342119)	android.content
+	(0.002931755728684065)	android.provider
+_________________________________________________________________________________
+112 : synchronized queues synchronizer exclusion synchronizers fifo similarly variables cover writelock outnumber 
+	(0.060925866828113164)	android.inputmethodservice
+	(0.02837818304570203)	java.util
+	(0.014770421466919923)	java.security.interfaces
+	(0.014668514286000536)	java.util.concurrent
+	(0.006386668473697542)	javax.microedition.rms
+	(0.005916609249461089)	javax.microedition.io
+	(0.005335074967981777)	java.util
+	(0.002686151895302651)	android.view.inputmethod
+	(0.001967634841989436)	android.text.method
+	(0.0019500040006294442)	java.security.spec
+_________________________________________________________________________________
+117 : security code legacy failed exceeds serialize objectinput crlentry typevariable destroying sensitive 
+	(0.041735589765148365)	javax.microedition.lcdui.game
+	(0.03053004643572689)	org.apache.http.io
+	(0.025761397145830416)	android.media.effect
+	(0.019656091325877204)	android.gesture
+	(0.017745152958126533)	org.apache.http.conn
+	(0.016573634037290987)	javax.net.ssl
+	(0.014356530352331427)	android.graphics
+	(0.01422108976868947)	java.security.cert
+	(0.013181405798545364)	android.hardware
+	(0.012922314039070838)	android.graphics.drawable.shapes
+	(0.01084416479778995)	org.apache.http.impl.auth
+	(0.01054234204214989)	org.apache.http.cookie
+	(0.007856957318849975)	org.apache.http.conn.routing
+	(0.005651196458463665)	android.location
+	(0.004868931062011119)	android.content.pm
+	(0.004570716443651652)	javax.microedition.io
+	(0.004568740346728637)	android.media
+_________________________________________________________________________________
+118 : executors successful unbounded collections semaphore timeunit scalable multithreaded arranging 
+	(0.016252526107976034)	android.os.storage
+	(0.013401800051598672)	android.content.res
+	(0.01140374360696045)	java.math
+	(0.00780238209755991)	java.util
+	(0.007123280950619837)	java.util
+	(0.006202858148171082)	java.security.cert
+	(0.006002608803683794)	android.support.v7.widget
+	(0.0049542176999301775)	javax.microedition.rms
+	(0.004660396913348753)	android.location
+	(0.004372710109118194)	android.widget
+	(0.004037402275675332)	javax.microedition.io
+	(0.002339099135406216)	android.text.method
+_________________________________________________________________________________
+120 : children grid layouts size click scaling chronometer labels predictions relative 
+	(0.025564647909778165)	javax.microedition.pki
+	(0.01570891587972017)	java.util.concurrent
+	(0.013239669403934028)	android.net.http
+	(0.009047074202660715)	org.xml.sax.ext
+	(0.006373136096666316)	android.support.v4.app
+	(0.004979194043795407)	android.opengl
+	(0.003813003716876972)	android.support.v7.app
+	(0.0035014373885953686)	android.app
+	(0.0031417296521601434)	javax.microedition.lcdui.game
+_________________________________________________________________________________
+126 : detect shut concrete itu-t achieve essentially pooled replace decouples nanoseconds shutdown existing 
+	(0.12131147776392572)	android.support.v7.media
+	(0.07134971923847819)	android.support.v4.view.accessibility
+	(0.06308185390301646)	android.support.v7.app
+	(0.061613674369372345)	java.util.jar
+	(0.05113287488147679)	android.media
+	(0.049306977390941364)	android.support.v4.view
+	(0.039533921092457576)	android.support.v4.net
+	(0.0325920571113498)	android.support.v4.os
+	(0.028635448353695914)	android.support.v13.app
+	(0.025340948608231446)	javax.microedition.media
+	(0.022324754628854335)	android.support.v4.widget
+	(0.018497442946803423)	android.support.v4.app
+	(0.016389953120344816)	android.support.v4.hardware.display
+	(0.015961082066025003)	android.support.v4.graphics.drawable
+	(0.013904402577857267)	android.mtp
+	(0.013552883946947578)	javax.xml.datatype
+	(0.013320933566786911)	android.support.v4.database
+	(0.013179427399622499)	android.support.v4.accessibilityservice
+	(0.013031872470819056)	android.support.v4.content.pm
+	(0.012724947315835506)	android.print
+	(0.00943742773441598)	android.net.rtp
+	(0.007454274978192714)	org.apache.http
+	(0.006466465104744589)	android.media.audiofx
+	(0.006186005377181488)	android.provider
+	(0.006072904834284376)	android.content.res
+	(0.005295373031770026)	android.support.v4.content
+	(0.004700956018583593)	android.media.effect
+	(0.0043711081845665715)	javax.microedition.rms
+_________________________________________________________________________________
+127 : pendingintent cursor pointer viewparent menus managed keyevent ensure marked lockcanvas observing velocity 
+	(0.04229605941410989)	android
+	(0.016271269109045756)	android.test
+	(0.015415347203136733)	android.support.v7.app
+	(0.013209041775019043)	android.mtp
+	(0.011526126199621048)	android.accessibilityservice
+	(0.010378922651825101)	java.util.concurrent
+	(0.00939409670727876)	org.apache.http.conn
+	(0.009180242025971883)	android.view.animation
+	(0.008479192742418616)	org.apache.http.conn.routing
+	(0.008128121733912197)	android.widget
+_________________________________________________________________________________
+129 : callback drop saved drag listens dispatching menuitem quadratic mediator moved compositor queue inputdevice built surfaceholder 
+	(0.04882093852443274)	org.apache.http.client.methods
+	(0.034203643106945424)	java.text
+	(0.019236978642337376)	java.nio.channels.spi
+	(0.017442815984773145)	org.apache.http.io
+	(0.014574253796981032)	java.lang.reflect
+	(0.012548677718660457)	javax.xml.validation
+	(0.011690603925293655)	javax.xml.parsers
+	(0.011383978824186278)	android.os
+	(0.009026991406751644)	java.util.prefs
+	(0.007857177258999102)	org.apache.http.conn
+	(0.00778510486429648)	org.apache.http.impl.conn.tsccm
+_________________________________________________________________________________
+140 : textureview inflater touchdelegate inputevent viewmanager motion ziperror token 
+	(0.039737251909816626)	javax.xml.transform.sax
+	(0.03699274038524985)	javax.xml.transform.dom
+	(0.010889350423730461)	android.support.v4.widget
+	(0.010649133114927128)	android.text.method
+	(0.008997073055204257)	android.widget
+	(0.005925095476924175)	java.security.spec
+	(0.005224060952201592)	org.json
+	(0.00512932258011578)	java.util
+_________________________________________________________________________________
+145 : subclass pattern facilities holds syntax statement matcher parseposition locates matchresult middle drivermanager 
+	(0.030159851024291966)	javax.microedition.lcdui.game
+	(0.013717065907263504)	android.test.mock
+	(0.012814916271964145)	android.accessibilityservice
+	(0.010436929382512736)	junit.framework
+	(0.010177152694404288)	java.util.prefs
+	(0.009253237326867048)	java.security.cert
+	(0.00816930869440611)	android.print
+	(0.00783073585417339)	android.printservice
+	(0.004744555099682196)	java.net
+	(0.0037089309888099224)	org.apache.http.conn
+	(0.003323795452611135)	android.support.v4.util
+	(0.0026299107512517627)	javax.microedition.media
+	(0.0021918682997037102)	java.io
+	(0.0019285749526368125)	android.support.v7.mediarouter
+	(0.0019121694978210435)	android.support.v7.gridlayout
+	(0.0018957640430052787)	android.support.v7.appcompat
+	(0.0017442646759412452)	android.util
+_________________________________________________________________________________
+150 : result submitted blockingqueue tunable primarily enters navigableset difficult timeout 
+	(0.0062755828456686055)	javax.microedition.media
+	(0.0059039349855493336)	android.support.v7.widget
+	(0.0037423576174175476)	javax.microedition.rms
+	(0.0019377721508398306)	android.media.effect
+_________________________________________________________________________________
+152 : keystore keys principal permissions keystorespi keypair codesigner mechanisms initializing credential principals 
+	(0.04648695406557964)	android.hardware.location
+	(0.031647104916184436)	android.text.style
+	(0.028015835082750924)	android.text.method
+	(0.018301547427640046)	javax.net.ssl
+	(0.013095940583478603)	android.hardware
+	(0.011208184621079937)	javax.crypto.interfaces
+	(0.007098629470690352)	android.graphics
+	(0.006606739278540841)	java.text
+	(0.005802904658628425)	android.transition
+_________________________________________________________________________________
+155 : runners snap areas backgrounds aligned 
+	(0.01716045954029822)	javax.xml.namespace
+	(0.011507185293808595)	org.xml.sax
+	(0.008432532068834509)	org.apache.http.conn.routing
+	(0.0071761566747089375)	android.text.style
+	(0.006794449178284625)	android.media.audiofx
+	(0.006757454459487732)	android.location
+	(0.006516255464440058)	java.util.jar
+	(0.005097657958516466)	android.app
+	(0.004794214855037953)	android.os
+	(0.003439201099566562)	javax.microedition.rms
+	(0.002291599049624123)	android.support.v4.app
+	(0.001823316226414744)	javax.microedition.midlet
+	(4.625376144993104E-4)	android.support.v7.mediarouter
+	(4.4613215968354505E-4)	android.support.v7.appcompat
+	(4.4613215968354147E-4)	android.support.v7.gridlayout
+	(3.9749051326485815E-4)	android.print.pdf
+	(3.9448760590311816E-4)	org.apache.http.conn.util
+	(3.6547490886458365E-4)	android.support.v4.print
+_________________________________________________________________________________
+156 : input key keyboard standard inputmethod keyboards modify behavior derived meta edittext display expose renders full-screen getoriginal alt zero-width accented ime 
+	(0.08711338570267911)	java.security
+	(0.05640579429673607)	javax.security.auth
+	(0.04437902115059717)	java.lang.reflect
+	(0.041164645347344396)	java.util
+	(0.02898671085828956)	android.database
+	(0.02847786049873184)	javax.net.ssl
+	(0.02720213529599578)	javax.security.cert
+	(0.025404452084042285)	javax.microedition.midlet
+	(0.02393988746630919)	java.util.concurrent
+	(0.02117788522353289)	org.apache.http.util
+	(0.01936387103221645)	org.apache.http.client
+	(0.017714130461837587)	java.util
+_________________________________________________________________________________
+16 : preferable time-outs futuretask blockingdeque executed lifo messaging assists 
+	(0.06182485069041785)	java.util.concurrent.locks
+	(0.031615526056763835)	android.security
+	(0.022288434616448614)	java.util
+	(0.02014770761311148)	android.util
+	(0.014053033125366212)	java.nio.channels
+	(0.00971052198224842)	android.text.method
+	(0.009514761119223305)	java.util.concurrent
+	(0.006717872373326353)	android.support.v4.util
+	(0.006659187655561974)	java.util
+	(0.006483265688141185)	javax.microedition.rms
+	(0.004950703898094704)	java.util.logging
+	(0.004838076843563636)	java.util.zip
+	(0.0038855552227346334)	android.appwidget
+_________________________________________________________________________________
+163 : context options laid non-default heuristic libraries glteximage clientcontext prefixes modern preview sizes flinging axis specialized safe 
+	(0.04240683438433333)	android.support.v7.media
+	(0.025653412796591245)	android.accessibilityservice
+	(0.02521849727769446)	android.net.wifi
+	(0.02054380240419771)	android.graphics.pdf
+	(0.0205020786079079)	android.provider
+	(0.018450405093530065)	android.transition
+	(0.017032685390159563)	android.bluetooth
+	(0.015366730058051751)	javax.microedition.pki
+	(0.01354044426589258)	android.appwidget
+	(0.01345710564980815)	android.app
+	(0.01177931007821789)	java.nio
+	(0.011743744169662288)	java.nio.charset
+	(0.011056414396552259)	org.apache.http.params
+	(0.010757391063013322)	android.view.accessibility
+	(0.010482383888653503)	org.xml.sax.ext
+	(0.009963422559388365)	android.view
+	(0.008492998290065142)	android.net
+	(0.008003449399905231)	java.util.concurrent.locks
+	(0.007242998725503305)	android.support.v4.view
+	(0.007050839224945025)	org.w3c.dom
+_________________________________________________________________________________
+165 : view user layout callback views action displays item items button clicked custom screen display tab notify select selected exposes per-child inside showing shown listen scrolled top request dismissed extra collapsed expanded modes optional design interactive top-level icon margins held hiding switches light tabhost thing edges datepicker presentation 
+	(0.052052939518481355)	dalvik.bytecode
+	(0.04197458184126878)	android.support.v7.view
+	(0.03373033165390725)	android.inputmethodservice
+	(0.03293878604373716)	java.util.concurrent.locks
+	(0.02903452829731193)	android.support.v7.app
+	(0.025602966112868542)	java.util.concurrent
+	(0.02193073152838287)	android.app
+	(0.020969282218415704)	android.hardware.display
+	(0.01915597804569384)	javax.security.auth
+	(0.01871054744505485)	javax.microedition.media
+	(0.016811300338443032)	android.support.v7.widget
+_________________________________________________________________________________
+17 : executing sets interprets digits-only 
+	(0.03765643048276019)	java.math
+	(0.010488101594650408)	android.graphics.drawable
+	(0.009012442966430832)	java.awt.font
+	(0.006781681511992548)	org.apache.http.message
+	(0.00603083673457118)	android.media
+_________________________________________________________________________________
+174 : iterator aid time-out executes retrieval one-shot treemap idioms imf 
+	(0.015439103578201836)	android.text
+	(0.01351576481169393)	javax.microedition.rms
+	(0.013072661959013404)	java.util.logging
+	(0.01087790315705194)	java.util.zip
+	(0.008730435302367398)	org.xml.sax.helpers
+	(0.007719679867724235)	java.util
+	(0.006597836685069887)	android.app
+	(0.006187789767790099)	org.apache.http.impl.client
+	(0.005495654021043202)	org.xml.sax
+	(0.005024507490761889)	java.util.jar
+	(0.0049854803922509665)	java.util
+	(0.004687207366500842)	java.lang
+	(0.004138593389576484)	android.support.v4.app
+	(0.004056283640883071)	android.renderscript
+	(0.0025305278057861317)	android.net.wifi
+_________________________________________________________________________________
+178 : network request transmit sessions speaker consists connectivity mediarecorder sockethandler sanitizes 
+	(0.04198651426821991)	java.awt.font
+	(0.03346436808042211)	org.apache.http.conn.params
+	(0.027617199092341994)	org.apache.http.conn.util
+	(0.024699897260233503)	javax.microedition.khronos.egl
+	(0.022407200306824117)	java.lang.reflect
+	(0.013793232169006192)	android.opengl
+	(0.009537616093793493)	java.nio
+	(0.0077882850291684765)	android.webkit
+_________________________________________________________________________________
+180 : bread httpget jaxp seamlessly navigate inputsource indicator 
+	(0.03861091453221656)	javax.xml.transform.dom
+	(0.017510160128171255)	java.text
+	(0.014719490319651083)	android.text.format
+_________________________________________________________________________________
+182 : key algorithm parameters curve elliptic pkcs keys rsa encryption dsa standard signature asn padding crt generate needed parameterspec fips asymmetric multi-prime ecprivatekey dsapublickey des-ede macspi 
+	(0.08800317229863916)	android.support.v4.print
+	(0.054680561395024536)	android.view.inputmethod
+	(0.05089681227858855)	android.net.nsd
+	(0.04049966571415637)	org.apache.http.impl.auth
+	(0.036296606915283344)	android.inputmethodservice
+	(0.035637364629646416)	android.net.rtp
+	(0.029377924839158635)	javax.microedition.io
+	(0.028818493889867236)	android.print
+	(0.024315303488403783)	android.drm
+	(0.02234733190191151)	android.text.method
+	(0.021484605963443086)	javax.microedition.media.control
+	(0.021076491233980213)	android.graphics
+	(0.02032413038387962)	android.printservice
+	(0.02020647459271614)	javax.microedition.midlet
+	(0.019285306343518955)	javax.microedition.media
+	(0.01912114478172244)	javax.microedition.pki
+	(0.017618617967090574)	org.apache.http.conn.scheme
+	(0.014555000328855651)	javax.microedition.lcdui.game
+	(0.012290609739952826)	android.net.http
+	(0.012063476892863856)	android.support.v7.media
+_________________________________________________________________________________
+187 : triggers logic top cellinfolte close minimum modifies 
+	(0.014912277251572272)	android.os
+	(0.006478786166166341)	android.support.v4.util
+	(0.003749487987090866)	android.text
+_________________________________________________________________________________
+190 : observer timezone backing expressions linkedlist bitset ensuring recurring componentname apk primarily dragevent 
+	(0.05218926834550921)	java.sql
+	(0.026390352330961778)	java.util.jar
+	(0.01957259439119175)	org.json
+	(0.016719471525411606)	java.beans
+	(0.013674596355080632)	java.util.concurrent.locks
+	(0.012693267693842427)	java.util.concurrent
+	(0.010942947428597739)	android.test
+	(0.004938232953110335)	java.util
+	(0.004722710692322559)	java.lang
+	(0.002824005380025526)	javax.microedition.rms
+	(0.0022193469174422837)	android.database
+_________________________________________________________________________________
+194 : visible tracks subclasses forms fades messageformat iterate bidi eckey rounded paintdrawable layerdrawable 
+	(0.05845592362966971)	android.media.audiofx
+	(0.05291411801526942)	android.transition
+	(0.026636631622115183)	java.nio
+	(0.022351284464820348)	android.hardware.display
+	(0.020243319593035877)	org.apache.http.conn
+	(0.01922549309995811)	android.os.storage
+	(0.016418647233810268)	java.beans
+	(0.0160799910986967)	android.preference
+	(0.014705741880751539)	android.graphics.drawable
+	(0.011968683202381552)	java.lang
+	(0.0111473449267572)	android.text
+	(0.009356131484497572)	org.apache.http.io
+	(0.009165478302584865)	javax.xml.transform
+_________________________________________________________________________________
+198 : creates shapes error loudness attempts encode identifier ways 
+	(0.019885942639589142)	java.nio.channels
+	(0.014787858346475917)	java.security.acl
+	(0.012251118770286907)	org.apache.http.client.methods
+	(0.010301192525355978)	javax.sql
+	(0.00947993388152849)	org.apache.http.conn.routing
+	(0.007825065618122618)	java.util.logging
+	(0.004698328007050307)	javax.microedition.pki
+	(0.004574628222150598)	android.net.wifi
+	(0.004402330055039821)	javax.microedition.midlet
+	(0.003625086881901954)	android.text
+	(0.0030257850222417853)	javax.xml.transform
+	(0.0020267043772490855)	android.preference
+	(0.0019097521971573155)	android.support.v4.content
+_________________________________________________________________________________
+2 : file written big-endian adds doesn't logprinter sort testcases predefined calendarview sqlite 
+	(0.013176381521745823)	javax.security.auth.login
+	(0.010530535513489139)	java.util.concurrent.atomic
+	(0.009692429105298503)	org.apache.http.util
+	(0.00813764746968919)	android.gesture
+	(0.007772119322935778)	android.graphics
+	(0.0062413964803930445)	java.util.concurrent.locks
+	(0.005732035190396829)	android.nfc.tech
+	(0.0054620582744950436)	java.util.concurrent
+	(0.003577717154614466)	android.telephony
+	(0.0023771668896985427)	java.security
+_________________________________________________________________________________
+202 : checksum zip deflate crc adler gzip format zipfile decompress decompresses compress zipexception zipentry decompressing deflater computed 
+	(0.10708769264786401)	android.graphics.drawable.shapes
+	(0.05005698878072903)	android.text.util
+	(0.04470982897341453)	javax.microedition.media.control
+	(0.04085997309074608)	java.security.acl
+	(0.036353155642665495)	org.apache.http.impl.conn
+	(0.026255596091779746)	android.support.v7.media
+	(0.02443766503079395)	javax.microedition.media
+	(0.02359611457054625)	org.apache.http.impl.client
+	(0.018754987621441274)	org.apache.http.protocol
+	(0.01791235382900894)	android.view.inputmethod
+	(0.016647271605785597)	android.media
+	(0.015926892974616656)	android.printservice
+_________________________________________________________________________________
+203 : windowid sits inflate sizes enhance presses 
+	(0.06271988452135417)	android.support.v8.renderscript
+	(0.057873037786128505)	android.view.inputmethod
+	(0.013247565430215113)	org.w3c.dom.ls
+	(0.012461273695454609)	android.support.v4.app
+	(0.011570684611072494)	android.renderscript
+_________________________________________________________________________________
+206 : unix-domain sanitize finding 
+	(0.058830321923949894)	android.support.v7.view
+	(0.049222150636786935)	java.lang.reflect
+	(0.034635782698213324)	android.accessibilityservice
+	(0.03364683812620206)	javax.security.auth.callback
+	(0.02543838950587259)	org.xmlpull.v1.sax2
+	(0.017420797943536393)	android.bluetooth
+	(0.016914595445365718)	android.speech
+	(0.015035432546374402)	android.support.v4.os
+	(0.011243758377127223)	android.animation
+	(0.00844461476033393)	android.support.v7.widget
+	(0.008271495420308835)	org.xml.sax
+_________________________________________________________________________________
+210 : listens elements element root beginning 
+	(0.049830475093316194)	javax.microedition.lcdui.game
+	(0.011693011140597918)	javax.microedition.rms
+	(0.0024400330085158017)	javax.microedition.media
+_________________________________________________________________________________
+217 : transfer subset lexical submenu 
+	(0.05730277815615403)	android.net.nsd
+	(0.04982647845592971)	android.hardware.location
+	(0.04362545593768132)	android.hardware
+	(0.04100694219581303)	javax.security.auth.callback
+	(0.03832017653506621)	android.view
+	(0.034499495584353786)	android.media
+	(0.03432041638831252)	android.support.v7.media
+	(0.02283313261612654)	android.support.v7.view
+	(0.02186028391500969)	android.widget
+	(0.020632830051181182)	android.support.v7.widget
+	(0.020213708883391517)	android.nfc
+	(0.015757769248010013)	android.drm
+	(0.015657262594488203)	android.security
+	(0.015506652744477507)	android.os
+	(0.014452836704292251)	android.content
+	(0.014241451393656426)	android.webkit
+	(0.011651297766139648)	android.app
+	(0.01158461858019837)	android.support.v4.widget
+	(0.011176929988450922)	android.preference
+	(0.00888801577715341)	android.print
+	(0.00853139018561123)	android.support.v4.view
+	(0.00716763553986886)	android.app.backup
+	(0.007014309118187923)	android.support.v7.app
+	(0.006024691678996804)	org.apache.http.impl.conn.tsccm
+_________________________________________________________________________________
+219 : local remote conjunction camcorder codecs interacts headset profiles buffering strage heterogeneous double-tap urlencoder 
+	(0.026698013697834352)	android.webkit
+	(0.015221370050968831)	java.util.regex
+	(0.014369113434215037)	org.apache.http
+	(0.013859770106679234)	org.apache.http.message
+	(0.013355358722002586)	javax.crypto
+	(0.01229489067677191)	android.net.http
+	(0.010875045313258988)	org.apache.http.client.methods
+	(0.009509239041804588)	javax.security.auth.callback
+	(0.00796630986984091)	java.util.prefs
+	(0.007636783265485055)	org.apache.http.client
+	(0.006425562287058172)	javax.microedition.rms
+	(0.004863281500172002)	java.util.logging
+	(0.004351226070785058)	android.text.util
+	(0.003888377908911139)	android.os
+	(0.0034608806996075246)	android.transition
+	(0.003007202994905917)	android.util
+	(0.0017818240048333683)	javax.microedition.midlet
+	(0.001611354808458307)	android.bluetooth
+_________________________________________________________________________________
+221 : sockets connections layer socket factory protocol manager httpconn hostname timeout opening https hosts layered connection heart re-use trustmanagers eof comprised re-uses textwatcher assigned 
+	(0.05587785702027209)	android.mtp
+	(0.05137529508847181)	android.hardware.input
+	(0.04845340362289061)	android.telephony
+	(0.04574340292867335)	android.bluetooth
+	(0.043264688195322955)	org.apache.http.auth.params
+	(0.033328108541519005)	javax.microedition.lcdui.game
+	(0.026593924214585642)	android.service.notification
+	(0.02496413879776416)	android.hardware.display
+	(0.024659710891026584)	org.apache.http.params
+	(0.02415830142239876)	android.telephony.cdma
+	(0.022733217176904876)	javax.microedition.pki
+	(0.02152487973285203)	org.xmlpull.v1.sax2
+	(0.021203641705982868)	javax.microedition.media
+	(0.021118671824003593)	android.graphics.pdf
+_________________________________________________________________________________
+224 : level api deprecated container enums allowing easily helps encapsulates tools longer density allpermission permanent ram enforced per-client 
+	(0.020093583399455554)	javax.xml.namespace
+	(0.01899045494414028)	javax.xml.validation
+	(0.018154839248699994)	org.apache.http.impl.conn.tsccm
+	(0.015391419201684508)	org.apache.http.util
+	(0.013988143279742711)	org.w3c.dom.ls
+	(0.011855778237405955)	android.support.v7.view
+	(0.011707119087973658)	android.appwidget
+	(0.01125261141425803)	org.w3c.dom
+	(0.009907644573328447)	java.util.concurrent.atomic
+	(0.009610468780618244)	android.preference
+	(0.009328715712216792)	javax.microedition.media
+	(0.008845355574204787)	android.gesture
+	(0.008513495178513134)	java.util.concurrent.locks
+	(0.007605420356102404)	android.drm
+	(0.007269305791307123)	org.xml.sax.helpers
+	(0.007170113621915942)	javax.microedition.pki
+	(0.005735953203408429)	org.apache.http.protocol
+	(0.005483816575283985)	javax.microedition.lcdui.game
+	(0.005330116367663233)	java.util.concurrent
+	(0.005273756164343659)	org.apache.http.entity
+	(0.004678045329173488)	android.media.effect
+	(0.004559105972320423)	android.security
+	(0.0042682480054467365)	android.test
+	(0.004150262880558482)	java.util
+	(0.0038297966993550117)	javax.microedition.midlet
+_________________________________________________________________________________
+225 : view invoked definition menu gestures dispatched viewgroup supplied detects motionevent motionevents visibility placing gravity inputqueue group delivering populate accomplishing measurespec single-tap confirmed 
+	(0.03667034546638792)	android.text.style
+	(0.025329714879707022)	javax.xml.parsers
+	(0.019872889376673586)	android.text.util
+_________________________________________________________________________________
+23 : end entering monitor breaks resize newline animates thread-like strives 
+	(0.019919078655586)	org.apache.http.cookie
+	(0.012256127155914516)	org.w3c.dom.ls
+	(0.011360004564822087)	java.util.zip
+	(0.010693898613014079)	android.support.v7.media
+	(0.010466002468615032)	android.text.util
+	(0.009982051474222263)	org.apache.http.impl.cookie
+	(0.008479651223504374)	android.print
+	(0.007902540671674112)	org.w3c.dom
+	(0.006862405929623079)	javax.crypto.spec
+	(0.0067066272362053805)	javax.microedition.media
+	(0.005755109838808286)	android.support.v4.app
+	(0.00536176715612191)	java.util.logging
+	(0.005092122973418045)	java.lang.reflect
+	(0.005073789253724161)	android.nfc
+	(0.004606500970040398)	android.location
+	(0.004161066877655628)	android.transition
+	(0.003348262444505091)	android.hardware
+	(0.003116902377443172)	android.database
+	(0.0030417831798071784)	javax.microedition.rms
+	(0.0029940638078999123)	android.provider
+	(0.0023604930217399414)	android.media
+_________________________________________________________________________________
+235 : parcelable detached machine's debug room invisible instantiates 
+	(0.021515175843401523)	android.net.rtp
+	(0.01980084030395876)	android.nfc.tech
+	(0.018265349646524563)	javax.xml.transform.sax
+	(0.018071122934759563)	android.support.v4.text
+	(0.015314296235583214)	org.w3c.dom.ls
+	(0.01476857311572181)	android.appwidget
+	(0.014177854953886458)	android.net.wifi
+	(0.014142295506269506)	android
+	(0.013155642445385226)	android.accessibilityservice
+	(0.013154657269169538)	javax.microedition.lcdui.game
+	(0.012874423029207082)	org.xml.sax.helpers
+	(0.012509740540271957)	org.w3c.dom
+	(0.012008351618691009)	javax.xml.transform.dom
+	(0.011266094861903988)	android.test
+	(0.010672925715304184)	java.util.concurrent.atomic
+	(0.010649898187885688)	javax.xml.transform
+	(0.010596844332419482)	org.apache.http.client.methods
+	(0.009480311490670723)	org.apache.http.entity
+	(0.009470695221186175)	android.animation
+	(0.00895430263587182)	android.bluetooth
+	(0.00811386194992192)	android.support.v4.content
+	(0.007906574789843376)	javax.net.ssl
+	(0.007024053364215891)	java.util
+	(0.0063040032823711185)	android.media
+_________________________________________________________________________________
+238 : part communication retrieved general digital channel checking operates equals peak gain hides reg-exp instantiating here's urldecoder extract 
+	(0.03701006351984088)	junit.framework
+	(0.028561029019343955)	android.net.http
+	(0.02229986872070732)	org.apache.http.conn.params
+	(0.021162669709599343)	java.security.cert
+	(0.01916946722464996)	android.transition
+	(0.012718494890315318)	android.net.wifi
+	(0.012197871123241513)	javax.microedition.midlet
+	(0.012108080116330388)	android
+	(0.011246523087653995)	android.content
+	(0.009204231941858482)	org.apache.http.protocol
+	(0.009125598944917235)	android.gesture
+	(0.009100853598618125)	android.text.util
+	(0.00877455514100948)	java.lang.annotation
+	(0.008697069222701952)	android.test.mock
+	(0.008547990573362948)	android.graphics.drawable
+	(0.008472968631231044)	android.text.method
+	(0.008225150622605685)	android.net.rtp
+	(0.008002546012000605)	javax.microedition.rms
+	(0.007737545973297683)	javax.net.ssl
+	(0.007685090123682415)	java.util.concurrent
+_________________________________________________________________________________
+246 : alongside contextual app-specified inside hover 
+	(0.034051020801712746)	java.lang
+	(0.017166818648171253)	java.lang.annotation
+	(0.009409405147580402)	java.io
+	(0.0068208698178405395)	java.util.concurrent.atomic
+	(0.005247229140815679)	android.media.effect
+	(0.005194501628597039)	java.util.concurrent
+_________________________________________________________________________________
+253 : callback image video range focus notification event hardware handles face rating sensormanager rendered unified music supply auto service sign talking sample dalvik accuracy viewoverlay 
+	(0.11704889122786043)	javax.crypto.interfaces
+	(0.09962408722670162)	java.security.spec
+	(0.09796659917890568)	javax.crypto.spec
+	(0.09140169076101334)	java.security.interfaces
+	(0.03997966735022011)	java.security
+	(0.03332379950841327)	android.text.method
+	(0.027167275102348107)	javax.crypto
+_________________________________________________________________________________
+258 : route entry internally work step steps interesting arrows routeinfo determines 
+	(0.01620425197286164)	java.util.concurrent.atomic
+	(0.014135926662939186)	android.media.audiofx
+	(0.013163756763375521)	android.database
+	(0.011527182450990665)	android.drm
+	(0.01075057951494199)	android.nfc
+	(0.010114556951973426)	android.support.v4.app
+	(0.009669975268503354)	java.nio
+	(0.007347104747369527)	java.nio.channels
+	(0.006500386862341194)	org.apache.http.entity
+	(0.006075962752576119)	android.support.v4.util
+	(0.005236338484925164)	java.util.logging
+	(0.0037629369973497507)	android.provider
+_________________________________________________________________________________
+261 : printing builder printerinfo capabilities printjobid involved obtained 
+	(0.08584500642913706)	javax.microedition.midlet
+	(0.03360165004724761)	org.apache.http.conn.ssl
+	(0.03346703518768984)	javax.microedition.rms
+	(0.022539158741881865)	org.apache.http.impl.entity
+	(0.015402693529562656)	javax.microedition.io
+	(0.0127762763400511)	java.io
+	(0.010673232042880185)	android.graphics.drawable.shapes
+	(0.009884691357940916)	android.util
+	(0.0058389646864686)	org.apache.http.impl.io
+	(0.005416748495685243)	javax.xml.transform
+	(0.004789416311781792)	java.util.jar
+	(0.0038383654365616924)	java.util.logging
+	(0.0035701410005707325)	org.apache.http.client.utils
+	(0.002997179579837664)	android.media.effect
+	(0.002897040069977975)	org.apache.http.io
+	(0.0019343551780418038)	javax.crypto
+_________________________________________________________________________________
+262 : identifies cookiepolicy converts responsecache cacherequest attempts directories originally packet 
+	(0.030778325815070354)	android.support.v7.widget
+	(0.02987944957375991)	android.text.method
+	(0.026914852731532914)	org.xml.sax
+	(0.014563492230635097)	org.apache.http.io
+	(0.014324891380366222)	org.apache.http.util
+	(0.014263186552269075)	android.content
+	(0.012880353394660213)	org.apache.http.impl.conn
+	(0.012251268243402742)	java.nio
+	(0.011772288946827364)	dalvik.system
+	(0.011570717209045452)	org.apache.http.params
+	(0.00939408287685206)	android.inputmethodservice
+	(0.00915633617979655)	javax.microedition.midlet
+	(0.008996093299055352)	javax.microedition.pki
+	(0.008159417094613064)	org.apache.http.impl.conn.tsccm
+	(0.007185206839017321)	java.security
+_________________________________________________________________________________
+268 : values callbacks receive notifications notified frame listeners instantiate occur animate automatic mode mechanism logical overlay timeanimator typeevaluator actionmode non-visible voip handlerthread transparent north subclass 
+	(0.02509275249751051)	android.appwidget
+	(0.021773389387844632)	org.xml.sax.ext
+	(0.02131453689230684)	android.hardware.display
+	(0.020820280921792497)	java.beans
+	(0.018151271736136163)	android.app.admin
+	(0.017882333030928937)	javax.security.auth.login
+	(0.017550270037384522)	android.hardware
+	(0.016298311764431903)	android.printservice
+	(0.016126224842014994)	android.print
+	(0.014590404468416423)	android.location
+	(0.014130162985316304)	javax.security.auth.callback
+	(0.013595453463607233)	android.preference
+	(0.013392300420816442)	android.widget
+	(0.01315990007822403)	android.animation
+	(0.012308351069435166)	android.view
+	(0.01171767145095012)	android.webkit
+	(0.010178808787435696)	android.test
+	(0.010150482723088251)	android.nfc.cardemulation
+	(0.00971008312748898)	android.support.v7.widget
+	(0.009706997995470496)	android.support.v4.app
+	(0.009538414157459823)	android.text.method
+	(0.009345566945092509)	android.text
+	(0.008777809150642574)	java.util.concurrent.locks
+_________________________________________________________________________________
+269 : save stroke distances lax containers 
+	(0.006123532771881584)	android.graphics
+	(0.005228898872570705)	android.media
+	(0.0040980687333787656)	android.view.accessibility
+	(0.003097232694423549)	android.hardware
+_________________________________________________________________________________
+278 : stores names splitter drafts triggerevent balance calculating typed 
+	(0.03400008358708258)	android.net.rtp
+	(0.02359446068534677)	org.apache.http.impl.io
+	(0.014214916056158038)	org.apache.http.io
+	(0.008060503634195824)	javax.net.ssl
+	(0.006813097143487328)	org.apache.http.protocol
+	(0.0060720501687991195)	android.support.v7.app
+_________________________________________________________________________________
+283 : build exists non-standard linux unmarshalling counted partition inotify regularly ancillary answers 
+	(0.022923569503082764)	java.lang.reflect
+	(0.02263380039039253)	java.util.concurrent.atomic
+	(0.016726951318871468)	android.printservice
+	(0.015325741264070554)	javax.net.ssl
+	(0.008177551709974583)	javax.microedition.io
+	(0.0060633784592611754)	java.security.cert
+	(0.005986506196847571)	android.net.wifi
+	(0.0054566703723847665)	javax.crypto.spec
+	(0.00501894680910749)	javax.microedition.media
+	(0.0023520668328038405)	javax.microedition.pki
+	(0.002142397183245495)	android.content
+	(0.002031152748852497)	java.lang
+	(0.0014943651670817997)	android.text
+_________________________________________________________________________________
+285 : hierarchy tree larger layoutparams viewstub unused hierarchies inflated guides montiors persisted lazily enhance mouse caller hierarchy's 
+	(0.0854770439626557)	android.nfc.tech
+	(0.04779646704052651)	android.sax
+	(0.035651737186266665)	org.w3c.dom
+	(0.03485250652662057)	java.math
+	(0.022013981940193408)	android.app.backup
+	(0.02191431747652085)	android.renderscript
+	(0.020199902344790226)	java.util.concurrent
+	(0.019233846194905122)	org.apache.http.impl.conn.tsccm
+	(0.018539081990257122)	javax.microedition.media.control
+	(0.018269029359272583)	android.support.v8.renderscript
+	(0.018206538478514826)	javax.microedition.lcdui.game
+	(0.017912580957835735)	android.view.animation
+	(0.017130857912742485)	java.nio.channels
+	(0.01673925694552928)	android.bluetooth
+	(0.016238127037449947)	java.sql
+	(0.015676234291497344)	java.util.concurrent.atomic
+	(0.01557808908565964)	android.nfc.cardemulation
+	(0.014369086841187881)	android.support.v4.content
+_________________________________________________________________________________
+287 : certificate certificates pkix crls jsse revocation anchor crlselector certselector parsed policy serialization certificate's paths crlexception verifying requests 
+	(0.13449213876852567)	java.security.spec
+	(0.08798245751995178)	java.security.interfaces
+	(0.058882145726547284)	android.hardware
+	(0.008023184228543858)	android.graphics
+	(0.006321761799339596)	org.apache.http.client.methods
+	(0.0035187680906737977)	java.util.zip
+	(0.00304121702994908)	android.media.effect
+	(0.001527850645810284)	java.net
+	(0.0014973419932366883)	android.media
+	(0.0014855592401445694)	java.nio.channels
+	(8.472726653552435E-4)	javax.microedition.media.control
+	(8.327199821633527E-4)	org.apache.http.auth.params
+	(5.906033287469921E-4)	android.support.v7.gridlayout
+	(5.741978739312245E-4)	android.support.v7.appcompat
+	(5.741978739312244E-4)	android.support.v7.mediarouter
+	(5.49634632646453E-4)	javax.crypto
+	(5.428983170356642E-4)	org.apache.http.conn.ssl
+	(5.22234696913748E-4)	org.apache.http.conn.util
+	(5.077283483944778E-4)	java.nio.charset.spi
+	(5.077283483944776E-4)	android.support.v4.print
+	(5.07546225259323E-4)	android.print.pdf
+	(4.799487557446534E-4)	android.service.dreams
+_________________________________________________________________________________
+288 : actions tasks concurrent queue execution happen-before execute future prior rejected point delayed schedule barrier designs reach 
+	(0.0294424439376602)	java.io
+	(0.024498798810710376)	android.util
+	(0.02400011284745193)	android.service.notification
+	(0.02231074167934799)	javax.microedition.rms
+	(0.020642245770295026)	org.apache.http.impl.io
+	(0.015698382106337994)	javax.xml.validation
+	(0.013094269251667639)	java.util.logging
+	(0.012911820577317223)	java.util
+	(0.012460422685289315)	android.text.style
+	(0.0121247190820667)	java.util.zip
+	(0.01204070407168156)	android.mtp
+	(0.011532684036442609)	android.content.res
+	(0.007979080015050845)	javax.crypto
+	(0.007518091909643932)	javax.microedition.io
+	(0.004974200076325986)	org.apache.http.entity
+	(0.004585182067109728)	android.support.v7.app
+_________________________________________________________________________________
+294 : connection connections client waiting managed operated idle it's entries waitingthread triggered interfaces watcher allocated 
+	(0.02287384327475311)	android.media
+	(0.01888646211812741)	android.mtp
+	(0.017962899668714755)	android.accessibilityservice
+_________________________________________________________________________________
+299 : assert disabled 
+	(0.030556420609647184)	android.telephony.cdma
+	(0.019605037338122692)	android.telephony.gsm
+	(0.0184597871859501)	org.apache.http.impl.cookie
+	(0.017941099829720447)	android.telephony
+	(0.017044369841929405)	android.text.util
+	(0.009238670622544888)	org.apache.http.cookie
+	(0.008042880253286238)	android.content.pm
+	(0.002900976779978629)	android.provider
+	(0.0010951863864003654)	android.app
+	(3.5072661428182635E-4)	org.apache.http.conn.util
+	(3.38876041144792E-4)	android.support.v7.view
+	(3.127788224375215E-4)	org.json
+	(3.111964948056485E-4)	android.hardware.input
+	(3.041118243149363E-4)	android.service.dreams
+	(2.9820944578116954E-4)	android.support.v7.appcompat
+	(2.832577125695668E-4)	android.hardware.location
+	(2.8180399096540144E-4)	android.support.v7.gridlayout
+_________________________________________________________________________________
+300 : functionality rich watch android's sharecompat support-based i/o-related advanced 
+	(0.014545120222334769)	android.database
+	(0.00971605083769783)	org.apache.http.conn
+	(0.00905826391332446)	java.util.concurrent.locks
+	(0.008885619779884477)	android.animation
+	(0.008519881620251094)	android.net
+	(0.008128700517731508)	javax.microedition.io
+	(0.0074839586072237875)	java.util.concurrent.atomic
+	(0.006785696884108791)	android.content.res
+	(0.006755140403724067)	org.apache.http.message
+	(0.006627206183308879)	android.gesture
+	(0.00662370641417874)	java.sql
+	(0.005257157111292911)	android.content.pm
+	(0.005170320837011803)	android.media.effect
+	(0.004151852587812626)	android.content
+	(0.003976021949520232)	android.provider
+	(0.003293532906881283)	org.apache.http
+	(0.0026591497162244205)	java.security.cert
+	(0.00195757971099749)	android.graphics
+_________________________________________________________________________________
+302 : results controlling classic periodically valuecallback poorer 
+	(0.020399853683246233)	javax.microedition.rms
+	(0.0167185141756058)	javax.xml.validation
+	(0.01642980955003545)	android.test.mock
+	(0.012120443628236985)	android
+	(0.011873419223722327)	javax.microedition.media
+	(0.00596316649581277)	java.util.concurrent.atomic
+	(0.005268596548256292)	java.util
+	(0.004952667975199463)	android.location
+	(0.0033399875268633073)	android.view.accessibility
+	(0.0027518155499788757)	org.w3c.dom
+	(0.0019208371655719308)	android.text.style
+	(0.0017235797136482647)	javax.microedition.io
+	(0.0013595431602804753)	android.text.method
+_________________________________________________________________________________
+303 : tabstopspan preset dhpublickey 
+	(0.028976920745268343)	junit.runner
+	(0.02379295105749325)	javax.microedition.rms
+	(0.021093393757188703)	javax.microedition.midlet
+	(0.010202850073675728)	javax.microedition.io
+	(0.008778164673513172)	android.net.wifi
+	(0.006646216057634506)	android.test
+_________________________________________________________________________________
+310 : configuration permissions manifest communicate including scan declare initiate act deliver factories configured process sourcelocator cycled mistakenly syncresult processed auto-white pictures componentinfo 
+	(0.023316924413378376)	android.telephony.cdma
+	(0.014417688260304986)	org.apache.http.conn
+	(0.013582095676476679)	android.telephony.gsm
+	(0.013537575493425711)	android.graphics.drawable.shapes
+	(0.012449043726477545)	org.xml.sax.helpers
+	(0.010308055940289699)	org.apache.http.impl.io
+	(0.010210692617282545)	android.preference
+	(0.009326423314563643)	android.graphics.drawable
+	(0.009246464056105746)	org.apache.http.conn.routing
+	(0.005475816912024815)	org.apache.http.cookie
+	(0.005469459533751071)	android.os
+	(0.005458300922336535)	javax.microedition.midlet
+	(0.004988401143884606)	android.media.effect
+	(0.004964314919013212)	javax.microedition.rms
+	(0.0034880038549152674)	android.support.v4.util
+	(0.0030268851611245217)	android.media
+_________________________________________________________________________________
+312 : parallel differences treat timed-out auto-exposure component 
+	(0.015867544719620083)	android.transition
+	(0.0114793974169158)	org.apache.http.io
+	(0.006610999838766777)	java.util
+	(0.006154843438036304)	java.text
+	(0.00560646336341052)	android.app.backup
+	(0.004540775236413735)	android.media.effect
+	(0.0040407601244863665)	java.util
+	(0.0029675225797451067)	android.preference
+_________________________________________________________________________________
+314 : hold block necessarily addition choices updatevalue entail encodingutils slidingdrawer sample confined processors exit conventions resettable 
+	(0.042555950549659625)	java.nio.channels.spi
+	(0.030878405933538508)	java.lang.annotation
+	(0.028647912272045377)	java.util
+	(0.026523825993845333)	java.nio.channels
+	(0.0209629245446347)	java.security.acl
+	(0.019438733469310972)	java.util.concurrent
+	(0.013704406658018694)	javax.crypto
+	(0.013202977193626514)	javax.microedition.media
+	(0.01243843015721454)	android.content.pm
+	(0.01053000267981528)	android.support.v7.media
+	(0.008069714864349825)	android.bluetooth
+	(0.00803687490033823)	java.util
+	(0.006550715575227724)	javax.microedition.rms
+	(0.005034036315372251)	java.math
+	(0.004800534701367349)	android.app.backup
+	(0.004424500801190691)	android.media.audiofx
+	(0.004151729796870127)	java.sql
+	(0.0033098833238835654)	android.test
+	(0.003006834398748641)	android.telephony
+	(0.0029627896782826284)	javax.microedition.io
+	(0.002878905113083831)	android.preference
+	(0.0028205608811396376)	android.view
+	(0.0024938663691645964)	java.text
+	(0.0019942694457374885)	android.os
+	(0.0017945099490875606)	android.media
+	(0.0013596603244144473)	android.webkit
+	(0.001321344541223233)	org.apache.http.protocol
+_________________________________________________________________________________
+315 : affect nmea shaders enclosed candidates subscriptspan scalexspan imagespan easyeditspan implementor 
+	(0.04509713857857723)	android.mtp
+	(0.03274139837220331)	android.graphics.drawable.shapes
+	(0.0325888418168205)	org.apache.http.client
+	(0.023982157210030264)	android.support.v7.app
+	(0.02270700529329147)	java.text
+	(0.021858726966628227)	java.util.regex
+	(0.02179941721673265)	java.security.acl
+	(0.020661521066254056)	org.apache.http.conn.routing
+	(0.020105875066519622)	android.support.v7.widget
+	(0.02003548968306934)	org.apache.http.conn.scheme
+	(0.019382980244339695)	android.graphics
+	(0.01540749155538072)	java.math
+	(0.014880522541820061)	android.view.animation
+	(0.012487927395042326)	org.w3c.dom.ls
+_________________________________________________________________________________
+316 : executor thread-safe common supplies throwing cancellable termination await amount 
+	(0.06737154445121374)	javax.microedition.media.control
+	(0.03946722911042795)	javax.microedition.media
+	(0.02984326680294834)	java.lang.reflect
+	(0.01602561458716595)	android.support.v13.app
+	(0.011530568449485358)	android.support.v4.app
+	(0.011462212393723954)	javax.microedition.rms
+	(0.007906324015185241)	android.support.v7.app
+	(0.002212935033856648)	java.util.concurrent
+_________________________________________________________________________________
+32 : enum defines handle required requirements peer programmers optimized 
+	(0.019879423885828564)	android.support.v7.view
+	(0.01730443699644841)	java.math
+	(0.013054729488943507)	java.nio.channels
+	(0.010601887499040272)	javax.sql
+	(0.00893628116670021)	javax.crypto
+_________________________________________________________________________________
+322 : managers selection active applicable applies 
+	(0.021820292546665284)	android.hardware.location
+	(0.014589258665673632)	org.apache.http.impl.conn.tsccm
+	(0.0066289115172675555)	org.w3c.dom.ls
+	(0.0059072981110406715)	java.util.concurrent
+	(0.00427995109890365)	org.xml.sax.ext
+	(0.0017105714798837965)	javax.microedition.midlet
+_________________________________________________________________________________
+323 : non-empty standardized timing silently completes traversal pipeline analog newly restriction 
+	(0.017618452717305316)	javax.microedition.media
+	(0.015549571641586067)	android.media.audiofx
+	(0.014758203239303559)	java.security
+	(0.013828506416465172)	org.apache.http.impl.auth
+	(0.010422574841884467)	javax.microedition.rms
+	(0.009448688901167812)	android.animation
+	(0.005521532622104693)	android.location
+	(0.003479886682242988)	java.util
+	(0.003421244553738221)	javax.microedition.midlet
+	(0.0028363488520914745)	org.apache.http.impl.cookie
+	(0.0025948321400738744)	android.nfc
+_________________________________________________________________________________
+324 : data stream output read existing input inputstream outputstream reading specialized source writing bytes buffers reader readable identifying printwriter severe 
+	(0.04620150485402261)	java.nio.channels
+	(0.04534645788939715)	android.nfc.tech
+	(0.04160413138954083)	org.apache.http.impl.auth
+	(0.03253987677675095)	android.text.util
+	(0.016509602582233517)	org.apache.http.io
+	(0.015785711714297893)	org.w3c.dom
+	(0.009563351740943015)	android.text.method
+	(0.007879581484931114)	org.apache.http.auth
+	(0.007715335686257713)	android.graphics.drawable
+	(0.00666060976257152)	android.text.style
+	(0.00610471148327722)	android.printservice
+	(0.005699973212172365)	javax.microedition.io
+_________________________________________________________________________________
+325 : sensors sensor's magnetic infrared time-stamp sensorevent inclusive carrier auto-focus flush 
+	(0.027747595514066265)	android.accessibilityservice
+	(0.022704303724089506)	javax.sql
+	(0.02073909661434876)	android.support.v4.database
+	(0.020384660191970768)	android.support.v4.accessibilityservice
+	(0.020243563306975285)	android.support.v4.content.pm
+	(0.01487955894541584)	android.support.v4.os
+	(0.012065011028276229)	java.util.concurrent
+_________________________________________________________________________________
+328 : tracking establishing httproute routetracker oldest reaching 
+	(0.04908377538185749)	android.graphics.drawable.shapes
+	(0.026524842931553702)	android.graphics
+	(0.019582869481867677)	java.util.regex
+	(0.015320524638053635)	android.media.audiofx
+	(0.013774714803938225)	android.transition
+	(0.013146552919484283)	javax.xml.validation
+	(0.012485338866691599)	android.renderscript
+	(0.011931831142540194)	javax.xml.datatype
+	(0.011214560908185721)	android.net
+	(0.009336838957742002)	android.animation
+	(0.008843415353216954)	java.security
+	(0.008784169082651361)	android.support.v8.renderscript
+	(0.007315364707280284)	android.support.v7.widget
+	(0.0067671994049208085)	javax.sql
+	(0.006236351617604635)	java.security.cert
+	(0.005139051998213941)	java.text
+	(0.0050419930925674206)	android.content.res
+	(0.004768064242809941)	android.widget
+	(0.004394256449295675)	android.text.style
+	(0.004009086038586181)	javax.microedition.midlet
+	(0.0034111942859707104)	android.os
+	(0.0033398434452400405)	javax.microedition.media
+	(0.0031410205157672236)	java.util.concurrent.atomic
+	(0.002813056073095225)	android.content.pm
+	(0.0015862292960952212)	android.print
+	(0.0014576680731843638)	android.hardware
+	(0.0014400717263898719)	org.apache.http
+_________________________________________________________________________________
+332 : proxies viewasserts unrecognized xmlfilter dtd-related layering tunnel 
+	(0.025637546949954012)	javax.sql
+	(0.024091402462595647)	android.net.rtp
+	(0.02318937726098209)	org.apache.http.impl
+	(0.020813728915454147)	android.support.v7.view
+	(0.020303623499649023)	org.xml.sax
+	(0.01555380639134776)	android.animation
+	(0.013324050303219846)	android.mtp
+_________________________________________________________________________________
+333 : listener state events window accessibility event touch notification parent functionality report feedback tracking prompts thing res/layout observing 
+	(0.05189158587371063)	android.appwidget
+	(0.029543990894725973)	org.xml.sax
+	(0.016775388302019863)	android.support.v4.app
+	(0.013005563436480034)	org.xml.sax.helpers
+	(0.011392798276146743)	android.service.notification
+	(0.008038011034741305)	android.app
+	(0.007425850783351995)	javax.xml.validation
+	(0.006410572401145077)	javax.xml.datatype
+	(0.005632357846012789)	android.hardware
+	(0.00464959513010838)	javax.sql
+	(0.004208589432145384)	android.graphics.drawable
+_________________________________________________________________________________
+334 : entire documenttype reports wipes lineparser extending thin apidemos cloned textual uncompressed 
+	(0.05890637444567657)	org.apache.http.impl.io
+	(0.03356690985650077)	org.apache.http.io
+	(0.012522683661380611)	org.apache.http.impl.cookie
+	(0.011337161925957502)	android.support.v7.media
+	(0.00885814599009505)	java.net
+	(0.008760447071104915)	android.inputmethodservice
+	(0.007528575320175979)	android.text.format
+	(0.007503526379009333)	javax.microedition.io
+	(0.0075034041757728095)	org.apache.http.entity
+	(0.006763831259562295)	android.support.v4.util
+	(0.0063752405566460295)	android.media
+	(0.005151829570295193)	java.text
+	(0.0045878664787633375)	android.text.style
+	(0.004037417067075961)	org.apache.http.cookie
+	(0.0026262959673298523)	android.text.method
+	(0.0024219760425392574)	java.util.concurrent.locks
+	(0.002394726551978915)	java.lang
+	(0.0021457387946025104)	javax.net.ssl
+	(0.0020216968853243975)	android.view.accessibility
+	(0.0017625618192455958)	java.util.concurrent
+	(0.0015286423555183211)	android.net
+	(0.0015236574001641597)	java.security.cert
+	(0.0013352597694969383)	android.webkit
+	(0.001042921053711676)	android.renderscript
+	(9.641354764885622E-4)	android.support.v8.renderscript
+	(7.826996613293358E-4)	android.drm
+	(5.220822446802272E-4)	android.support.v7.gridlayout
+_________________________________________________________________________________
+34 : buffer direct estimated reset intbuffer byteorder memoryhandler argb cuts graphic 
+	(0.033178500421354784)	java.text
+	(0.016592382930589598)	org.apache.http.conn.ssl
+	(0.013877961073716201)	android.util
+	(0.01300640264216786)	java.lang
+	(0.01253953549617427)	org.apache.http.io
+	(0.011721094952232836)	android.net.http
+	(0.010377820435499617)	android.inputmethodservice
+	(0.005686936810227336)	org.apache.http.impl.client
+	(0.0054575144818345255)	org.w3c.dom
+	(0.004141790560326309)	android.opengl
+	(0.004053157732875017)	java.util.concurrent
+	(0.0029658884787573314)	android.graphics
+	(0.0019405227846533582)	android.media.effect
+	(0.001750467571995169)	android.support.v4.widget
+	(0.0016359958668206711)	android.view.accessibility
+	(0.0016047913535293225)	javax.microedition.media
+_________________________________________________________________________________
+340 : action linked supplied telephone retries acted marking reflect flexible 
+	(0.02018235835132434)	org.apache.http.auth
+	(0.01688243914107527)	javax.microedition.rms
+	(0.009807392727817894)	org.apache.http.impl.auth
+	(0.00890896250022075)	java.security.spec
+	(0.008207474675050074)	java.security
+	(0.007564375730834146)	android.sax
+	(0.0056632386524633925)	java.util
+	(0.005172712793919176)	org.apache.http.client
+	(0.004996553773161059)	android.gesture
+	(0.004343831028958203)	android.view
+	(0.002831624459734572)	android.provider
+	(0.002560131671655674)	org.apache.http.cookie
+	(0.00159814693074085)	android.text.style
+	(0.0015298852022875785)	android.preference
+	(0.0013154959118861311)	java.lang
+	(0.0012129711987996482)	java.nio.channels
+	(0.0011975925853153944)	java.util.concurrent
+	(0.0011848736896524974)	javax.net.ssl
+_________________________________________________________________________________
+349 : camera capture sensor frames jpeg trigger preview frequencies contour detection compute 
+	(0.024968054065613064)	java.nio.charset
+	(0.018041882187875863)	android.graphics
+_________________________________________________________________________________
+350 : pools exchanger platform's commands cyclicbarrier unhandled insert mix-in rendezvous tasking scheduling 
+	(0.049329102864698014)	javax.microedition.rms
+	(0.028531465716275985)	org.apache.http.cookie
+	(0.027889012713461503)	android.webkit
+	(0.02304649472783576)	android.text.util
+	(0.021120905582632635)	android.hardware.location
+	(0.017807557954109435)	java.util.jar
+	(0.014707116362511053)	java.util
+	(0.012411433149001732)	javax.microedition.lcdui.game
+	(0.011297955161241172)	org.apache.http.client.methods
+	(0.010933393223923484)	java.util
+	(0.010754793665854199)	org.apache.http.util
+	(0.00959118794386638)	org.apache.http.conn.ssl
+	(0.0067719643674368874)	javax.microedition.media
+	(0.00592213255051149)	android.renderscript
+	(0.0058303647408194225)	javax.microedition.pki
+	(0.0040850686960186905)	android.util
+	(0.003417394155876325)	java.util.zip
+	(0.0032164932617122824)	java.lang.reflect
+	(0.0027518955948306703)	android.text.method
+_________________________________________________________________________________
+351 : parameters builder algorithm stamp chains keychain certpath bytes ldap oval problems images 
+	(0.05595949376204533)	java.security.interfaces
+	(0.0353946115235866)	java.security.spec
+	(0.029357126993490502)	javax.crypto.spec
+	(0.028222480551116064)	java.text
+	(0.021942291814519548)	android.nfc.tech
+	(0.020388973694562267)	android.inputmethodservice
+	(0.01933196874403028)	java.nio.channels.spi
+	(0.01927127706239431)	java.awt.font
+	(0.018430955780830552)	java.util
+	(0.017030223647129576)	java.security
+	(0.012753796569070986)	android.security
+	(0.009287696376629838)	android.text.method
+	(0.008987697762207238)	android.test
+	(0.008567703224907608)	javax.microedition.pki
+	(0.00822726898687525)	org.w3c.dom
+	(0.007472012748798536)	android.media
+_________________________________________________________________________________
+356 : log wire logs resulting 
+	(0.03914595391282771)	org.apache.http.impl.conn.tsccm
+	(0.01929357143971893)	android.animation
+	(0.01599521569789647)	android.app.backup
+	(0.013258995425444679)	org.apache.http.client.params
+	(0.006635087046763721)	android.printservice
+	(0.005786426356674892)	android.app
+	(0.0043021404873318635)	android.support.v7.media
+	(0.0034196790849127475)	android.view.animation
+	(0.002572620513334505)	android.bluetooth
+	(0.0025564230666624108)	javax.net.ssl
+_________________________________________________________________________________
+363 : source tree transformer acts result instructions needed templates holder reporting primarily sax-specific saxsource 
+	(0.018162448124959218)	android.text.style
+	(0.013482065559496896)	android.appwidget
+	(0.0090938204614228)	android.support.v4.app
+	(0.006577049293169993)	org.w3c.dom.ls
+	(0.00630167458821888)	javax.xml.parsers
+	(0.005805050479906358)	android
+	(0.005641822769126835)	android.app.backup
+	(0.004981226226691768)	android.widget
+	(0.0046412767130293185)	javax.microedition.lcdui.game
+	(0.004475062670900243)	org.apache.http.impl.conn.tsccm
+	(0.004387505644165933)	android.support.v4.content.pm
+	(0.004315240370173953)	android.support.v4.database
+	(0.004247873732991425)	android.support.v4.accessibilityservice
+	(0.003621907856657318)	android.support.v4.os
+	(0.003408770831149713)	android.nfc.cardemulation
+	(0.0033224437410373947)	android.app.admin
+	(0.002753143534953547)	javax.security.cert
+_________________________________________________________________________________
+366 : subsystems threadfactory acquiring visible 
+	(0.04394186922246951)	java.util.logging
+	(0.012389419440780638)	java.io
+	(0.011438797660504499)	javax.microedition.rms
+	(0.007676571675557413)	org.apache.http.io
+	(0.007220008379074889)	java.util.concurrent.atomic
+	(0.007027591456490676)	android.app.backup
+	(0.006598367453725193)	android
+	(0.005036896509767215)	android.inputmethodservice
+	(0.004544771850406193)	org.apache.http.entity
+	(0.004156380913504869)	android.hardware
+	(0.0041089743791765405)	java.util.concurrent
+	(0.00354257220557513)	android.os
+	(0.0027642324859055143)	android.view.inputmethod
+	(0.0014058082227812994)	android.util
+	(0.001151203730257412)	org.apache.http.protocol
+_________________________________________________________________________________
+367 : subsequent additionally non-blocking ordinary delayqueue replacement failures eventually throws callables begins 
+	(0.03462191798397138)	java.util.concurrent.atomic
+	(0.030399898208421584)	android.support.v4.util
+	(0.013489432055148647)	android.appwidget
+	(0.010213570733656935)	java.util.concurrent
+	(0.008268263855248403)	android.text.format
+	(0.008267568055730942)	javax.microedition.rms
+	(0.0018530318196255404)	java.sql
+_________________________________________________________________________________
+370 : text characters textview edit spanned displaying appearance login-related capitalize spaces labelview quotespan affected affecting editing 
+	(0.053789523248771946)	org.apache.http.impl.conn.tsccm
+	(0.04777014153321121)	org.apache.http.impl.conn
+	(0.04073087230448414)	android.nfc
+	(0.036362083951153465)	android.app.backup
+	(0.034196313631160144)	org.apache.http.conn
+	(0.02908708580770394)	javax.microedition.lcdui.game
+	(0.02687655330082955)	javax.microedition.media
+	(0.025734586458273867)	android.animation
+	(0.025490772793292645)	android.net.wifi
+	(0.024579600352377527)	android.transition
+	(0.023785393458340073)	javax.crypto
+	(0.023479278060504604)	org.json
+	(0.022517857978732073)	android.service.dreams
+_________________________________________________________________________________
+372 : source controls presented buttons stub foreground volume artwork track's pairwise scanresult deskeyspec radiobutton beam completed 
+	(0.025191141419262004)	dalvik.bytecode
+	(0.02422270846126171)	javax.microedition.khronos.egl
+	(0.023701784734125365)	android.appwidget
+	(0.021674707207214896)	android.text.util
+	(0.021010998540822425)	android.opengl
+	(0.009681468114737217)	android.inputmethodservice
+_________________________________________________________________________________
+374 : sortedset uses-feature notify linkedhashset listiterator moment getcontents mapped wifiinfo declination 
+	(0.04557280634174977)	org.apache.http.conn.params
+	(0.03528757450604431)	org.apache.http.impl.conn.tsccm
+	(0.024511206334495418)	java.util
+	(0.016304486485843758)	javax.xml.datatype
+	(0.01604385027204593)	android.util
+	(0.015291390543841913)	org.apache.http
+	(0.010032145872761886)	org.apache.http.protocol
+	(0.009282132098772804)	android.accessibilityservice
+	(0.008836171030319273)	org.apache.http.client
+	(0.0056512022597269606)	android.content.res
+	(0.005491616112367175)	android.widget
+_________________________________________________________________________________
+379 : print printer job implementing printers printjob perspective printed jobs contract printerid pagerange abstracted printservice dpi 
+	(0.059718640259857875)	android.media.effect
+	(0.05820285420666556)	javax.microedition.pki
+	(0.04532957734523575)	android.graphics.drawable.shapes
+	(0.039368337241282525)	android.text.format
+	(0.027649970621880127)	java.security.cert
+	(0.017620946254472924)	javax.microedition.lcdui.game
+	(0.013534246553342377)	android.media.audiofx
+	(0.0115763737096181)	java.util.concurrent.atomic
+	(0.011165363363786386)	android.graphics
+	(0.0021588781079537062)	android.view
+	(8.357659058243608E-4)	android.webkit
+	(7.417108447661527E-4)	android.app.admin
+	(7.050503158149085E-4)	org.w3c.dom
+_________________________________________________________________________________
+381 : entity content entities associating onerror stringentity determine portion 
+	(0.03268234861561988)	android.location
+_________________________________________________________________________________
+384 : characters character times manner numeric threadgroup getfield txtview equivalent converter 
+	(0.050867238894539146)	javax.xml.transform.dom
+	(0.02842256604142515)	org.w3c.dom.ls
+	(0.026855124400991127)	javax.xml.parsers
+	(0.019032130454877127)	org.w3c.dom
+	(0.018929252126386565)	javax.microedition.midlet
+	(0.01731441637462448)	org.apache.http.impl.cookie
+	(0.01400087862539914)	org.apache.http.cookie
+	(0.01096019490360515)	org.apache.http.impl.auth
+	(0.00793289764192996)	android.gesture
+	(0.005327694132751417)	android.view.inputmethod
+	(0.0036957197866942008)	org.apache.http.conn
+	(0.0031778504240692856)	android.widget
+_________________________________________________________________________________
+390 : run defined resource listener width start extended map add custom performed default lets single relation locale stop task httpoptions presentations component's footer windowinsets concrete 
+	(0.029713753708876554)	android.print.pdf
+	(0.029069254392967814)	android.view.animation
+	(0.023112528002596954)	java.nio.channels
+	(0.018677152333340698)	android.support.v7.widget
+	(0.017133456457118626)	android.inputmethodservice
+	(0.016162471478557924)	android.print
+	(0.014687315879160832)	android.content.res
+	(0.014652064504047145)	android.util
+	(0.013435248336684484)	android.graphics.pdf
+	(0.012476226523497076)	java.io
+	(0.011138781573002424)	android.os
+	(0.0110995391412503)	org.w3c.dom.ls
+	(0.010981232672710318)	java.lang
+_________________________________________________________________________________
+397 : document xml dom nodes abstraction constraining domlocator tree namelist namednodemap informations grammar notes minimal 
+	(0.034614539907605345)	android.provider
+	(0.02139677320678115)	java.nio.channels.spi
+	(0.01912259950539691)	org.apache.http.conn.routing
+	(0.014715407451171949)	javax.microedition.io
+	(0.014217578075680245)	android.mtp
+	(0.01349275187670992)	android.appwidget
+	(0.012643618996402381)	java.nio.channels
+	(0.009412418593396104)	android.text.method
+	(0.009217205498734539)	android.support.v7.widget
+	(0.009213777191194091)	org.apache.http.entity
+	(0.009085212880198236)	org.apache.http.auth
+	(0.008722349279579046)	android.webkit
+	(0.008321448760643141)	android.view.accessibility
+	(0.008091552103580278)	java.net
+	(0.0073490599272492034)	javax.net.ssl
+	(0.006822158691430866)	org.apache.http.message
+	(0.006815371012401079)	android.view
+	(0.005332899987092556)	org.apache.http.impl.conn.tsccm
+	(0.005115548919410376)	android.media.effect
+	(0.0049945128625211565)	android.renderscript
+_________________________________________________________________________________
+40 : surface rendering clients textattribute bridging consumed parents 
+	(0.017010480800645274)	javax.xml.datatype
+	(0.011185204593072677)	android.provider
+	(0.010885528906278702)	android.text.util
+	(0.010382884605084554)	java.util.concurrent.atomic
+	(0.008827756044633008)	android.nfc.cardemulation
+	(0.006898890316696048)	java.util
+	(0.006863960028194471)	java.sql
+	(0.006862572688088251)	java.text
+	(0.005825297307183736)	android.gesture
+	(0.0048487379565099135)	javax.microedition.lcdui.game
+	(0.004088218358469753)	java.io
+	(0.003965672683723433)	android.text.method
+_________________________________________________________________________________
+401 : operations provide methods processing maintains integer locking accessed conditions case greater permits contexts table cdatasection notifyall 
+	(0.029027715860739118)	java.util.concurrent.locks
+	(0.017371930168221254)	android.support.v4.hardware.display
+	(0.01710424694819829)	android.telephony.cdma
+	(0.01672108309549699)	android.support.v4.graphics.drawable
+	(0.015122281154306109)	android.support.v4.content.pm
+	(0.014639189691375008)	android.support.v4.accessibilityservice
+	(0.014430599246097296)	android.support.v4.database
+	(0.014379250647810466)	java.util
+	(0.014349990796531365)	javax.microedition.io
+	(0.014250658065121515)	android.support.v4.net
+	(0.013556014631676145)	android.support.v4.content
+	(0.012774434213606653)	org.apache.http.client.utils
+	(0.011138608305939492)	android.app.admin
+	(0.010357062863153405)	android.telephony.gsm
+	(0.009811147187838104)	android.support.v13.app
+	(0.009213970313893911)	android
+	(0.009130583163266736)	android.net.http
+	(0.00827614936431135)	android.support.v4.os
+	(0.006350096762430489)	android.util
+	(0.0062181477129865746)	org.apache.http.auth
+	(0.006020519254157118)	android.nfc.tech
+	(0.005909238757838298)	javax.microedition.rms
+	(0.0057424883719619)	android.view.inputmethod
+	(0.004724617060697799)	android.support.v4.view.accessibility
+	(0.004723170153831043)	android.support.v7.app
+	(0.004446184544387942)	android.location
+	(0.004074493681871965)	android.net.wifi
+_________________________________________________________________________________
+403 : validation parses checks fields alternate collator serializable administer stream 
+	(0.018411228378106846)	dalvik.system
+	(0.015841435628533213)	android.net.nsd
+	(0.01504432567375176)	java.lang.reflect
+	(0.014283992522828283)	android.view.animation
+	(0.010707983824702406)	android.net
+	(0.010495737590540795)	android.support.v7.media
+	(0.009300006474447942)	android.os
+	(0.008769422408265313)	android.animation
+	(0.008352439442295943)	android.support.v4.util
+	(0.00824518421399027)	javax.microedition.media
+	(0.008103679641597866)	android.text
+	(0.0062117680012461285)	org.apache.http.message
+_________________________________________________________________________________
+405 : state address represented weakly greatly satellite reverse snapshot biginteger personal matchfilter smtp 
+	(0.0170323759282955)	javax.xml.namespace
+	(0.01677657288688332)	android.media.effect
+	(0.014165031816397763)	java.util
+	(0.013845243417779794)	android.content.res
+	(0.01155192913377904)	org.apache.http.conn.ssl
+	(0.01131790830251014)	java.util.concurrent
+	(0.011281492358850573)	android.os
+	(0.00984743946655416)	javax.microedition.rms
+	(0.00667736834991706)	android.nfc.tech
+	(0.005857444390308741)	org.apache.http.conn
+	(0.0056674524972816194)	javax.microedition.midlet
+	(0.005631935021459337)	android.view
+	(0.0040219105129088465)	android.app.backup
+_________________________________________________________________________________
+406 : completion viewanimator zoom systemclock textswitcher project positions start/stop copies smooth 
+	(0.023111269501228607)	java.nio.channels
+	(0.01803562135167348)	java.nio.channels.spi
+	(0.011591956438348419)	android.net.http
+	(0.008423146684809042)	java.io
+	(0.006762300823581006)	android.net.rtp
+	(0.006515636781577656)	android.media.audiofx
+	(0.005554467725908041)	android.renderscript
+	(0.005214926495007966)	android.support.v8.renderscript
+	(0.002250978042475637)	java.util.concurrent
+_________________________________________________________________________________
+408 : type implementors lower socks time/value keyframes 
+	(0.010193522657027408)	javax.sql
+	(0.00985788648999091)	javax.xml.transform
+	(0.009666573857902398)	org.apache.http.conn
+	(0.00922406681003405)	android.nfc.tech
+	(0.00865073754238342)	android.webkit
+	(0.007199320127813301)	android.support.v7.widget
+	(0.006686173409429637)	android.location
+	(0.006431994265247653)	android.appwidget
+	(0.005842276937047611)	android.text
+	(0.005662273119167891)	android.view.inputmethod
+	(0.004916270390729129)	javax.microedition.lcdui.game
+	(0.003584068748371809)	android.view.accessibility
+	(0.003408974199588976)	android.support.v4.view
+	(0.0031006832240641643)	javax.microedition.midlet
+	(0.0026292865893784373)	org.apache.http.message
+	(0.002525074097806164)	java.security.cert
+	(0.0016214270531402745)	android.hardware
+	(0.0014635488144382062)	android.support.v7.mediarouter
+	(0.0014307379048066763)	android.support.v7.appcompat
+	(0.0014307379048066763)	android.support.v7.gridlayout
+_________________________________________________________________________________
+412 : sax api attributes factory parser events locator parse xmlreader works locatorimpl sax-style per-attribute comverts saxexception 
+	(0.024478361830151944)	android.support.v7.media
+	(0.01849134263823174)	android.support.v7.widget
+	(0.017584111654191558)	javax.xml.transform.dom
+	(0.015322395979879408)	java.nio.charset.spi
+	(0.014243763029391369)	android.preference
+_________________________________________________________________________________
+413 : returns performs form iterating syncstats clippeddata substring statistics 
+	(0.016603595711057562)	javax.microedition.rms
+	(0.008264650329340284)	org.apache.http.conn.routing
+	(0.004401480266725165)	java.sql
+	(0.002466268746178552)	android.media.audiofx
+	(0.002154291038278767)	android.preference
+	(0.0012347063387009374)	android.renderscript
+	(0.0010204946677618706)	android.support.v8.renderscript
+	(9.160276104662503E-4)	android.support.v7.gridlayout
+	(9.160276104662502E-4)	android.support.v7.mediarouter
+	(8.996221556504852E-4)	android.support.v7.appcompat
+_________________________________________________________________________________
+422 : spec filterable rectangular defaults overshoot designed draft netscape microsoft 
+	(0.032446656881378995)	android.telephony
+	(0.019029856447701606)	android.view.accessibility
+	(0.01810360727874013)	android.renderscript
+	(0.017016554314892872)	android.support.v8.renderscript
+	(0.014976239170534453)	android.view
+	(0.00934247869662098)	android.support.v4.widget
+	(0.008700640330042761)	android.accessibilityservice
+	(0.00787517151887285)	android.support.v4.view
+	(0.007026990555260379)	java.util.concurrent
+	(0.005470382004231648)	org.apache.http.client
+	(0.005089847351139281)	javax.microedition.media
+	(0.005053658115804156)	android.gesture
+_________________________________________________________________________________
+430 : preferences deleted well-formed validated increment ana non-media 
+	(0.07241919085358063)	android.view.accessibility
+	(0.04072756905533848)	android.accessibilityservice
+	(0.03456362191139879)	java.util.concurrent
+	(0.021452912096455026)	android.support.v7.view
+	(0.02080220287118531)	org.apache.http.impl.conn.tsccm
+	(0.018542685054049407)	java.lang
+	(0.017857469734577552)	android.os
+	(0.014750442188273798)	javax.security.auth.login
+	(0.012144262255294939)	java.nio.channels
+	(0.011939520467052113)	java.util
+	(0.010546162946370872)	android.view
+	(0.009492867887541013)	javax.microedition.midlet
+	(0.009435426822370547)	java.util.concurrent.locks
+	(0.00939706090933442)	android.support.v4.view.accessibility
+	(0.005218225086498238)	java.util.concurrent.atomic
+	(0.002555773972949316)	android.webkit
+_________________________________________________________________________________
+431 : fragment notifications notification activities user navigation generating builder application's remoteinput large-format extender extensions loadermanager constructing platforms title interact instantiation stacks donut fragments 
+	(0.04065116628686086)	org.apache.http.impl.auth
+	(0.030046403879310186)	android.telephony.gsm
+	(0.024905348855428753)	javax.xml.parsers
+	(0.02127627207163744)	android.telephony.cdma
+	(0.01984630794311115)	android.provider
+	(0.01957515725535093)	javax.xml.namespace
+	(0.016365707269944133)	javax.xml.datatype
+	(0.013168042341760222)	android.text.format
+	(0.011883993096637967)	org.apache.http.client.methods
+	(0.011158431955923502)	javax.microedition.pki
+	(0.010599095462854919)	org.apache.http.impl.io
+	(0.00841965927244285)	java.util
+	(0.008154066773595581)	java.util.jar
+	(0.006531270468574716)	java.sql
+	(0.0060304500516845504)	android.widget
+	(0.005974570642918461)	android.transition
+	(0.005427208776237145)	android.content.pm
+	(0.004911104805809205)	android.support.v7.media
+	(0.004899930050484477)	android.app
+	(0.004236197192531897)	java.security.spec
+	(0.00407637939081275)	android.graphics.drawable
+	(0.003766030177475218)	org.apache.http.client.utils
+_________________________________________________________________________________
+433 : animation animations change interpolator view layout simple target receives animated applied flings finally overshoots cached encapsulation total scale played alpha graphics 
+	(0.11838958519435724)	junit.framework
+	(0.043936092152752154)	org.apache.http.util
+	(0.01454017647726621)	android.test
+	(0.012599045228125797)	android.text
+	(0.009866978762599796)	java.io
+	(0.005380405571435508)	org.apache.http.client.protocol
+	(0.0021280953035860977)	android.view.inputmethod
+	(0.001883158602817924)	javax.microedition.midlet
+	(0.001027760698143509)	java.lang
+	(9.611444365401102E-4)	android.support.v7.appcompat
+	(9.611444365401102E-4)	android.support.v7.gridlayout
+	(9.611444365401101E-4)	android.support.v7.mediarouter
+_________________________________________________________________________________
+436 : thread blocking threads wait monitor waiting runnable including units monitors ashmem params indirectly avoid futures shutdown 
+	(0.026441751531959178)	java.sql
+	(0.019330196768492097)	android.support.v4.util
+	(0.018004186211695524)	android.support.v4.content
+	(0.017617598859225536)	android.support.v4.text
+	(0.017363545600734123)	java.security.cert
+	(0.014140764206861141)	android.test.mock
+	(0.012500511945249254)	java.util
+	(0.012123893616835944)	java.nio.charset
+	(0.011463247919610226)	javax.microedition.media
+	(0.010177858491852484)	org.xml.sax.ext
+	(0.009483901035711638)	android.net.rtp
+	(0.009198472144781915)	android.support.v7.widget
+	(0.008987555102083006)	android.graphics
+	(0.0085682446733448)	android.support.v4.hardware.display
+	(0.007887280335463091)	android.support.v4.graphics.drawable
+	(0.007142345287695704)	android.util
+	(0.007116271467318697)	android.support.v4.accessibilityservice
+	(0.006954669843942834)	java.text
+	(0.006834502797950235)	android.app
+	(0.0065464395313314045)	android.support.v4.database
+	(0.0065154686996205585)	android.support.v4.content.pm
+	(0.006454872765265322)	java.util
+	(0.006352613916973823)	android.text.style
+	(0.006119545459378957)	android.content.pm
+	(0.004493243475020441)	android.graphics.drawable
+	(0.004472568918814497)	android.os
+_________________________________________________________________________________
+437 : cookie state cookies specification parsing origin attribute maintain agent session setcookie matching domain httpcookie magic-cookie piece port exchange cookieorigin clientcookie incapsulates ths authparams ensures modifiers domainhandler 
+	(0.14093315434213552)	android.nfc.tech
+	(0.030257169483714014)	android.nfc
+	(0.026341822685714878)	android.support.v4.app
+	(0.021849908180232375)	org.apache.http.conn.params
+	(0.021555209593067393)	org.apache.http.impl.io
+	(0.018081395657899808)	android.telephony
+	(0.01585825648411049)	org.apache.http.auth
+	(0.01481579134324749)	android.mtp
+	(0.012758895706597705)	android.graphics.drawable
+	(0.012200639241670327)	android.app
+	(0.01148521944241829)	javax.microedition.midlet
+	(0.01099748977033723)	android.database
+	(0.010289503545699548)	org.xml.sax.ext
+	(0.010147281815314301)	android.util
+	(0.009987924623183932)	org.apache.http.impl.cookie
+	(0.009636946671281042)	javax.microedition.media
+	(0.0063382313256760995)	javax.security.cert
+_________________________________________________________________________________
+439 : directions generated bassboost alter 
+	(0.008162369892276115)	android.drm
+	(0.0054095164354103905)	android.net.wifi
+	(0.002485360259567435)	android.webkit
+	(0.0022523663351283673)	javax.microedition.pki
+	(0.002137153650463479)	android.print
+	(0.0017511154916886697)	javax.microedition.midlet
+_________________________________________________________________________________
+442 : lock sockets pending throwable 
+_________________________________________________________________________________
+445 : transmitter metering 
+	(0.043765793536869414)	java.nio
+	(0.036699456613346074)	android.graphics
+	(0.014727455753263494)	java.nio.channels
+_________________________________________________________________________________
+447 : releasing reused closing operator stub/no-op resolves releases disable lowest pulls inetaddresses forever coordinating 
+	(0.05355741847751076)	org.xmlpull.v1.sax2
+	(0.02247715543998134)	android.provider
+	(0.012417246679315918)	android.print
+	(0.007313514903943081)	javax.microedition.lcdui.game
+	(0.003470810752385518)	android.app.backup
+	(0.003203275142753314)	javax.microedition.rms
+	(0.0026703393697509676)	org.apache.http.impl.cookie
+	(0.0011605029404062406)	android.widget
+	(7.84777335980504E-4)	android.media
+	(3.975673802037848E-4)	android.support.v7.gridlayout
+_________________________________________________________________________________
+455 : owner acl ownership aclentry 
+	(0.012516616739797534)	android.text.format
+_________________________________________________________________________________
+46 : permission signature definition control registration owners sequence protects drminfo uripermission non-existent principals documentation 
+	(0.024094099999674042)	org.apache.http.impl.conn
+	(0.012632557481069237)	javax.security.auth.callback
+	(0.006744298253384298)	java.util
+	(0.005271214066424206)	org.apache.http.impl.conn.tsccm
+	(0.003718791794103497)	java.sql
+	(0.003319521355267413)	android.animation
+	(0.0031643191048308667)	javax.microedition.midlet
+	(0.002413322647335469)	java.lang
+_________________________________________________________________________________
+466 : storing web groups browser accept synchronize gettextzoom miscellaneous albums meant involve higher-level define cookiemanager 
+	(0.025418679357727597)	org.apache.http.impl.client
+	(0.024777320593806718)	javax.microedition.khronos.opengles
+	(0.01352778909208375)	android
+	(0.009942929670334874)	android.view
+	(0.009206945925423983)	android.view.accessibility
+	(0.008829829786108617)	android.content
+	(0.008736649835140227)	javax.xml.transform
+	(0.008245195010075488)	android.test
+	(0.006204518531925844)	android.opengl
+	(0.006016452439239159)	java.lang.reflect
+	(0.0055989475542649195)	javax.microedition.midlet
+	(0.004857648657751638)	android.os
+	(0.004857604624884609)	java.util.concurrent.atomic
+	(0.004081231518032256)	android.app
+	(0.0031017623776692376)	javax.crypto
+	(0.002276794656304163)	android.renderscript
+	(0.002215955604096059)	javax.microedition.rms
+_________________________________________________________________________________
+467 : attached span formatting added removed paragraph margin potentially direction covered ranges styled belong measuring preserved copy latest bulletspan 
+	(0.04998586820752732)	android.hardware.display
+	(0.03547202328371123)	javax.microedition.lcdui.game
+_________________________________________________________________________________
+468 : vector allocation applying identifier receive allocations sampler converting priority arguments owned filter universally user-defined fieldpacker resource powermanager derive 
+	(0.04058126777842009)	android.text.util
+	(0.021646653328375037)	android.net
+	(0.02055829403665799)	java.net
+	(0.0172038370932511)	javax.microedition.media
+	(0.01719152797018498)	android.support.v7.widget
+	(0.01659481491478514)	android.webkit
+	(0.01494893839571328)	java.security.cert
+	(0.014097934409780483)	android.nfc.cardemulation
+	(0.013488239750552149)	org.apache.http.impl.conn.tsccm
+	(0.013217976975677226)	android.location
+	(0.01080777165708345)	javax.microedition.io
+	(0.00935456368881174)	java.nio.channels
+	(0.007843181946301967)	android.support.v4.widget
+	(0.00703351531070613)	android.support.v4.content
+	(0.0065793588778110795)	javax.xml.transform
+	(0.006539475824870848)	android.provider
+	(0.0062612989878727075)	org.apache.http.conn.routing
+	(0.005616750560600852)	javax.microedition.pki
+	(0.005513246930138426)	org.apache.http.auth
+	(0.005249770201794819)	android.database
+	(0.00489101069253835)	org.apache.http.impl.cookie
+_________________________________________________________________________________
+470 : test case junit testsuite tests suite assertion gpsstatus finish equals 
+	(0.053763383505467166)	android.support.v4.view
+	(0.031989601366100316)	android.support.v4.view.accessibility
+	(0.029200944275656927)	android.support.v4.net
+	(0.02648188038744182)	android.support.v4.os
+	(0.021809730777580583)	android.support.v13.app
+	(0.016408518220056206)	android.support.v4.app
+	(0.014734002016891594)	android.support.v4.widget
+	(0.014584545946509944)	android.support.v4.content
+	(0.011250936139637131)	android.support.v4.hardware.display
+	(0.011146547256490271)	android.support.v4.graphics.drawable
+	(0.01067686253382411)	android.telephony.cdma
+	(0.009073596510669456)	android.support.v4.accessibilityservice
+	(0.008886720318357086)	android.support.v4.database
+	(0.008272298480802676)	org.apache.http.client.utils
+	(0.008081478693875094)	android.support.v4.content.pm
+	(0.007872601879242618)	android.net.rtp
+	(0.007376324675578802)	android.app.admin
+	(0.007143896232597089)	android.hardware
+	(0.007112038381518211)	javax.microedition.media
+_________________________________________________________________________________
+473 : arbitrary policy classloader delegate wake box read-write explore abssavedstate discard 
+	(0.055415884076844744)	android.appwidget
+	(0.03538483967546769)	java.io
+	(0.025067391703466387)	android.widget
+	(0.02180594462075975)	android.text
+	(0.02038988422535719)	android.gesture
+	(0.019338893691609547)	android.transition
+	(0.018815822980268685)	android.view.animation
+	(0.018749354811289788)	android.support.v7.widget
+	(0.015550491020048166)	javax.security.auth.login
+	(0.012922601170282298)	android.view
+	(0.010304293805209542)	android.support.v4.widget
+	(0.00881854506752952)	android.text.util
+	(0.007502738554194535)	android.support.v4.view
+	(0.004527881312123149)	android.support.v7.app
+	(0.004334552636884609)	android.text.style
+	(0.003816442958608766)	android.media.audiofx
+	(0.0026762642562216834)	java.nio.channels
+_________________________________________________________________________________
+474 : internal hash function caused small one-way translate sslexception poor integrated random-access multiway 
+	(0.027994497089451887)	org.apache.http.message
+	(0.022258388231240996)	java.util.concurrent.atomic
+	(0.014969311079916794)	javax.net.ssl
+	(0.010853206724987336)	org.apache.http.client.protocol
+	(0.010276489094017216)	org.apache.http.client.methods
+	(0.007675182778564363)	javax.sql
+	(0.007279375083710128)	javax.microedition.rms
+	(0.005751536554519363)	android.media
+	(0.00554835290037312)	android.view.inputmethod
+	(0.0050888096555351285)	java.util
+	(0.00450157489494897)	android.appwidget
+	(0.004442072629452296)	java.util.concurrent
+	(0.0032490400900813125)	android.support.v7.media
+_________________________________________________________________________________
+477 : extend talk insets database/file rest combine chain adjusts alignmentspan 
+	(0.10087999061327271)	android.text.style
+	(0.08621902683106117)	android.text
+	(0.07036509041709196)	android.text.format
+	(0.06977123753059046)	android.text.method
+	(0.06299550977008982)	android.view.inputmethod
+	(0.04124084654866428)	android.support.v4.text
+	(0.034610765891494914)	android.text.util
+	(0.03323825692100348)	android.sax
+	(0.028834239655370165)	android.support.v4.view
+	(0.022492206717776058)	java.text
+	(0.0218497233392522)	java.util
+	(0.019431022647233953)	org.apache.http.entity
+	(0.018449364755319643)	java.awt.font
+	(0.016574049177751286)	java.security.cert
+	(0.016571531699787968)	org.w3c.dom
+	(0.016033738477387895)	android.speech
+	(0.014731327599613792)	android.widget
+	(0.013332376123429962)	org.apache.http.protocol
+	(0.009989669480459967)	javax.sql
+	(0.009458154227705927)	android.media
+	(0.009051815895602404)	android.graphics
+	(0.008562406289684549)	android.inputmethodservice
+_________________________________________________________________________________
+480 : area reference garbage hard weak areas cleanup diagram basically tricky yellow facing illustrated true 
+	(0.03190769414879952)	android.database
+	(0.012721206820054903)	android.support.v4.database
+	(0.010497610527594212)	android.provider
+_________________________________________________________________________________
+481 : elements parser doubles conversions floats shortbuffer basicheader desired indicators 
+	(0.06590976190116558)	org.apache.http.impl.io
+	(0.03990041353938631)	java.util.zip
+	(0.03400370571625702)	java.util.jar
+	(0.024372654826784718)	java.io
+	(0.015681510622381063)	java.util.logging
+	(0.014029643008755595)	javax.xml.validation
+	(0.01332907595611412)	android.content.res
+	(0.01327292154983977)	javax.crypto
+	(0.013008325618616886)	java.util.concurrent.locks
+	(0.010860600404192663)	javax.microedition.io
+	(0.008083221791676256)	android.graphics
+	(0.0062394716837333875)	android.net.rtp
+	(0.005462599500528382)	java.util.concurrent
+	(0.005340815081366061)	org.apache.http.entity
+	(0.005056471185695462)	org.apache.http.conn
+	(0.004978924078519335)	android.net.wifi
+	(0.0042426491042307285)	java.util
+	(0.0034793915264335774)	java.sql
+	(0.002647565514997719)	android.util
+	(0.002371340549220716)	android.provider
+	(0.0020076624757364185)	java.util.concurrent.atomic
+	(0.0014622559684832085)	java.nio.channels
+	(0.0013825719394438463)	org.w3c.dom
+_________________________________________________________________________________
+483 : bounds child added intentreader tablerow tabhost adjusted colordrawable 
+	(0.03400726443848747)	java.util.logging
+	(0.025311263139688376)	javax.security.auth.callback
+	(0.02172291691755035)	android.service.dreams
+	(0.018370876394346123)	android.support.v4.net
+	(0.014810166212869458)	android.provider
+	(0.014492440016401362)	org.apache.http.io
+	(0.013958197819789788)	android.telephony.gsm
+	(0.013853681369907242)	android.speech
+	(0.009664038081282175)	org.apache.http
+	(0.009538679123539688)	android.os
+	(0.0063346614644487305)	org.apache.http.protocol
+	(0.0062697987230088655)	java.text
+	(0.005409247575726196)	android.telephony
+	(0.005166928735458145)	android.nfc
+	(0.005037911776189347)	android.printservice
+	(0.002358537683990399)	android.renderscript
+	(0.002215880861875611)	java.util.concurrent.locks
+	(0.002189676644695103)	android.support.v8.renderscript
+	(0.001974805464762529)	android.drm
+	(0.0015050871068354437)	android.net
+	(0.001485570651854246)	android.animation
+_________________________________________________________________________________
+49 : task cancel granularity production subpackages tool elapse amount tedious 
+	(0.06014286784777405)	android.support.v13.app
+	(0.04111336449807846)	java.util.concurrent.locks
+	(0.02782090331338448)	android.text.format
+	(0.02517034846990254)	android.app
+	(0.021561936646586073)	android.support.v4.app
+	(0.015029937854843455)	android.support.v7.app
+	(0.008685590449003994)	org.apache.http.client.methods
+	(0.008266533400347591)	android.accessibilityservice
+	(0.008250689887444382)	javax.microedition.media
+	(0.0055896229817125375)	javax.xml.transform
+	(0.004881646130188049)	javax.microedition.rms
+_________________________________________________________________________________
+492 : asynchronous delay computation concurrency discards cancelled exiting unshared determination expressed subinterface placing 
+	(0.053202072594834386)	java.math
+	(0.040207746915397136)	javax.xml.parsers
+	(0.03163893103295332)	android.nfc
+	(0.03129788970220566)	android.telephony
+	(0.028267320478894162)	android.mtp
+	(0.013626986969232023)	android.speech
+	(0.013216813729212693)	javax.microedition.rms
+	(0.01268936702558759)	android.bluetooth
+	(0.010292496277258032)	java.util.concurrent
+	(0.009978821079819707)	javax.xml.validation
+	(0.008781700495957966)	android.database
+	(0.008245148617155458)	javax.xml.datatype
+	(0.008170547203140276)	android.inputmethodservice
+	(0.006442230075340134)	java.nio.channels
+	(0.005106515187924321)	android.text
+	(0.004500547370618148)	android.support.v7.app
+_________________________________________________________________________________
+497 : style typeface spans passwords dialing-only no-copy restricts urlspan 
+	(0.10416751091714344)	android.view.inputmethod
+	(0.07183869324450633)	android.inputmethodservice
+	(0.052705791406768454)	android.hardware.input
+	(0.0335418585127252)	org.apache.http.impl.io
+	(0.02988130649171276)	org.w3c.dom.ls
+	(0.02244395255781477)	java.lang.reflect
+	(0.02079520918741579)	java.io
+	(0.020179197479831875)	java.util.regex
+	(0.019351070677730873)	android.text.method
+	(0.018979716994908843)	android.text
+	(0.01713921811257716)	android.media.effect
+	(0.015977239472006407)	org.w3c.dom
+	(0.01570129444672516)	dalvik.system
+	(0.014945275039456564)	org.apache.http.io
+	(0.013736919510518851)	javax.crypto
+	(0.01357936500485343)	java.util.zip
+	(0.013448345668673808)	java.security
+	(0.011999737409249464)	java.nio.charset
+	(0.01089329256782603)	android.content.pm
+	(0.01072306956918284)	java.util.prefs
+	(0.010679951938667588)	android.net.http
+	(0.010350801153477392)	org.apache.http.impl.auth
+	(0.01005731822081329)	android.preference
+	(0.009771260850992808)	org.xml.sax.ext
+	(0.009640555261852033)	javax.xml.transform
+	(0.009605587563194084)	android.text.format
+	(0.009279798934623478)	android.media
+	(0.009019923541676675)	java.util.concurrent
+_________________________________________________________________________________
+499 : invalid registered signed securerandom forming zero-sized 
+	(0.017723826580257392)	javax.xml.transform.sax
+	(0.01676755152127421)	android.speech
+	(0.01659079466045366)	android.content
+	(0.013666380988980266)	android.content.pm
+	(0.009840527981472419)	android.os
+	(0.008454488056857598)	java.nio
+	(0.008317086564705926)	android.support.v4.content
+	(0.007500469154241242)	android.support.v4.util
+	(0.007148990517119765)	android.app
+	(0.006886705811194931)	android.appwidget
+	(0.0061634512183236885)	java.sql
+	(0.005700220881899786)	android.nfc
+	(0.004750528765428193)	android.location
+	(0.0026289836348533453)	android.support.v4.app
+	(0.002335203868187028)	java.util
+	(0.0018476154767150463)	org.apache.http
+	(0.0017160555191005488)	org.apache.http.conn
+_________________________________________________________________________________
+50 : testresult collects testfailure protectable acts composite caught fixture testlistener collect 
+	(0.041434176809408224)	javax.security.auth.callback
+	(0.03499311060763688)	javax.crypto.interfaces
+	(0.022050084242403147)	java.security.acl
+	(0.021118733405040578)	javax.microedition.khronos.egl
+	(0.0211031133438799)	android.hardware.input
+	(0.021001721628935485)	org.apache.http.cookie.params
+	(0.019656978803039606)	dalvik.bytecode
+	(0.01965160611215991)	android.os.storage
+	(0.019321021888985306)	java.security.interfaces
+	(0.019304559568715133)	android.hardware.display
+	(0.019147744762794218)	javax.microedition.khronos.opengles
+	(0.018268481248748015)	org.apache.http.impl.entity
+	(0.015814790329599412)	org.apache.http.auth.params
+	(0.015550771263502974)	junit.runner
+	(0.015345860817774207)	org.apache.http.impl.conn.tsccm
+	(0.015282825214097268)	java.util.regex
+	(0.014453236827479465)	android.support.v4.text
+	(0.014301221220137451)	android.support.v7.view
+	(0.014252941793578262)	org.apache.http.client.params
+	(0.014157563206006307)	javax.xml.namespace
+	(0.014116320376392814)	java.beans
+	(0.013987685682946189)	org.apache.http.conn.scheme
+	(0.012227456761639112)	android.net.nsd
+	(0.012081927923770094)	javax.xml.transform.sax
+	(0.011486979150802023)	javax.security.auth.login
+	(0.011444223324712571)	javax.security.auth
+_________________________________________________________________________________
+51 : information point time signal represent monitoring edge celllocation cellinfowcdma cellinfo no-op printf booleans transformed 
+	(0.01956984409471327)	java.sql
+	(0.014978478812192586)	android.os
+	(0.009997727926338932)	android.inputmethodservice
+	(0.00854079046599091)	android.text.format
+	(0.008512373561583667)	android.telephony
+	(0.006876900241737422)	android.database
+	(0.005513930917870589)	android.widget
+	(0.0054283596672781995)	javax.xml.datatype
+	(0.004342829217863167)	android.print
+	(0.0031555391831591542)	android.preference
+	(0.0030032907111108217)	android.net.rtp
+	(0.0027505700263212077)	android.nfc
+	(0.0027073780522916123)	android.test
+_________________________________________________________________________________
+54 : rfc compliant ntlm dense explorer mimic bestmatchspec 
+	(0.024830178096452542)	android.telephony
+	(0.021215459374079558)	java.lang
+	(0.019583607629198856)	org.apache.http.auth
+	(0.014351827356530905)	javax.security.cert
+	(0.010463911402485603)	javax.sql
+	(0.008089819135048961)	org.w3c.dom
+	(0.0070520796798917845)	java.text
+	(0.005003147560446314)	android.support.v4.widget
+	(0.004232760277245985)	android.view.accessibility
+	(0.0041800475653502225)	android.animation
+_________________________________________________________________________________
+55 : display helper logged caller meant continue combines 
+	(0.050182156517686816)	java.security
+	(0.042653046324992755)	javax.security.auth
+	(0.021995073414858707)	android.text.util
+	(0.01795513066253795)	android.content
+	(0.015906499522607833)	android.test
+	(0.015153729357073946)	java.util
+	(0.015042332115131334)	java.util.logging
+	(0.013851021063886224)	android.test.mock
+	(0.009643037080924554)	javax.microedition.lcdui.game
+	(0.008720442009938115)	javax.crypto
+	(0.00665685988280199)	java.util
+	(0.006246463925210081)	android.renderscript
+	(0.005389597109634196)	javax.microedition.media.control
+	(0.005183083821597709)	java.util.zip
+	(0.004072263566874304)	java.net
+	(0.0036120788816842364)	java.security.acl
+	(0.003398898070036797)	android.transition
+	(0.0028524054440663992)	java.io
+	(0.002589417391837848)	javax.net.ssl
+	(0.0022371365738123672)	android.nfc
+_________________________________________________________________________________
+59 : resource requested reached router uniform inet authenticator slowness targets socketaddress ace cacheresponse pre-defined 
+	(0.07789602695919842)	org.apache.http.conn.scheme
+	(0.07188891467285412)	org.apache.http.impl.auth
+	(0.05806807359087023)	android.support.v4.util
+	(0.051181024645521406)	java.util.logging
+	(0.05062600606533754)	org.apache.http.auth
+	(0.04073951902692675)	org.apache.http.impl
+	(0.0345535782306923)	android.animation
+	(0.031253736206270935)	android.preference
+	(0.029500751847578673)	org.apache.http.conn.routing
+	(0.029464734410515916)	android.transition
+	(0.0287951072571992)	java.io
+	(0.024580870367841037)	android.opengl
+	(0.02361577536886813)	android.database
+	(0.02329697924238355)	android.graphics.drawable
+	(0.022761570210837793)	org.apache.http.impl.conn.tsccm
+	(0.021768164130420133)	org.w3c.dom.ls
+	(0.019831523814833503)	android.print
+	(0.017343461110845216)	android.graphics
+	(0.015771514124940076)	android.net
+	(0.015727012732661003)	org.apache.http
+	(0.01513343906040037)	javax.net.ssl
+	(0.014639580101918008)	javax.crypto.spec
+	(0.01456438734479017)	junit.runner
+	(0.01431624994895962)	java.text
+	(0.013913127309635853)	android.renderscript
+	(0.013310933563681555)	java.security
+	(0.013268903733791809)	javax.security.auth.login
+	(0.013071193447198171)	android.security
+_________________________________________________________________________________
+63 : deprecated level xml handlers encapsulate error filter namespace replaced warning attributelist timedtext exercising battery handlerbase dtdhandler 
+	(0.04185769436622245)	android.opengl
+	(0.03785679911839385)	java.beans
+	(0.036030967933300934)	android.support.v7.app
+	(0.025894194901156294)	android.support.v4.widget
+	(0.018050556613086455)	android.support.v7.widget
+	(0.013905322996351945)	android.text.method
+	(0.013503564745365623)	android.view.accessibility
+	(0.012992055336164654)	android.app
+_________________________________________________________________________________
+65 : strings tokens regular patterns field token handy zones maliciously chunks expression 
+	(0.09741034459570784)	android.speech
+	(0.01818411552479335)	org.json
+	(0.013368403190723339)	android
+	(0.010733408045560755)	javax.security.cert
+	(0.008022548374742061)	java.security.spec
+	(0.005790342360432775)	java.security.cert
+	(0.005600225329435813)	javax.microedition.lcdui.game
+	(0.004975830431030157)	android.util
+	(0.00469970138262621)	javax.microedition.pki
+	(0.0042894992893150255)	javax.microedition.midlet
+	(0.004144007685332259)	org.apache.http.util
+	(0.0035465439875928617)	javax.security.auth.callback
+	(0.0027805949403851846)	android.text.method
+	(0.0027740521512494305)	javax.xml.transform
+	(0.0021262932521728005)	javax.microedition.media
+	(0.002050662597440418)	android.net
+	(0.0013295105757791953)	java.net
+	(0.0011931255601213037)	android.view.accessibility
+	(0.001105491272059547)	android.print
+	(0.001042648739311436)	org.apache.http.impl.conn.tsccm
+	(9.683138612546757E-4)	android.support.v7.appcompat
+	(9.683138612546757E-4)	android.support.v7.gridlayout
+	(9.519084064389105E-4)	android.support.v7.mediarouter
+	(8.603356495719447E-4)	android.print.pdf
+	(8.56221208442165E-4)	org.apache.http.conn.util
+	(8.417148599228997E-4)	java.nio.charset.spi
+	(8.417148599228993E-4)	android.support.v4.print
+	(8.367996642731127E-4)	android.service.dreams
+_________________________________________________________________________________
+66 : specfactory syncinfo initially comparisons closely 
+	(0.029900163105226023)	java.sql
+	(0.029374098852324018)	javax.sql
+	(0.0031066890112466856)	android.app
+	(0.0018660186958522971)	android.support.v4.app
+_________________________________________________________________________________
+67 : easy height makes anchors underlinespan typefacespan stylespan clickablespan leading distance suporting 
+	(0.08913339599031289)	android.support.v8.renderscript
+	(0.0558821286255969)	android.renderscript
+	(0.04731895952802557)	android.graphics.drawable.shapes
+	(0.035924417110084754)	android.nfc.cardemulation
+	(0.02413541806421707)	java.util.prefs
+	(0.021655686501326293)	android.graphics
+	(0.019806612504348033)	android.text.style
+	(0.017127975101232408)	java.util
+	(0.016493181684249323)	android.text
+	(0.01610790434858431)	android.support.v4.view
+	(0.014451836796766574)	java.util
+	(0.013794380662018588)	javax.security.cert
+	(0.01352588518820531)	java.util.concurrent.locks
+	(0.012650808334377)	java.lang.annotation
+	(0.010911248611863492)	android.text.format
+	(0.010599885690449522)	org.apache.http.client.methods
+	(0.008108177531020094)	org.xml.sax.ext
+_________________________________________________________________________________
+71 : extension declhandler processors mockcursor keymanagers fileentity rgba dtd printhelper 
+	(0.04555294552418949)	javax.microedition.media.control
+	(0.02564294571296714)	android.print
+	(0.022851962633112455)	android.text.util
+	(0.014549247839762417)	java.util
+	(0.012554478845756696)	javax.microedition.lcdui.game
+	(0.01206012053983335)	java.math
+	(0.01126713173164522)	android.content
+	(0.008194318300826555)	android.inputmethodservice
+	(0.0076395884908983455)	javax.security.auth.login
+	(0.006772963707445102)	javax.security.cert
+	(0.00626191621687062)	android.media
+	(0.005826629586459017)	java.nio.charset
+	(0.005672762612414304)	org.xml.sax
+	(0.005646844183625257)	javax.microedition.pki
+	(0.0051894970674703006)	java.util.logging
+	(0.005011996733987254)	javax.microedition.media
+	(0.004073768198699686)	javax.microedition.io
+	(0.0037880794335915144)	javax.microedition.midlet
+	(0.003575551617920259)	android.view.inputmethod
+	(0.0032262554395520227)	javax.microedition.rms
+	(0.0029707015852241535)	android.provider
+_________________________________________________________________________________
+72 : running exist maintain chars activity's linking unrecoverable dhkey 
+	(0.01608377736226444)	android.provider
+	(0.015429587561369574)	java.lang
+	(0.006923084003267169)	javax.xml.transform
+	(0.005454092007014035)	java.util.jar
+	(0.005365174058228472)	java.nio
+	(0.00442045195979032)	java.util.zip
+	(0.002388470547836295)	android.view
+	(0.002125974214318654)	javax.microedition.midlet
+	(0.0019674471396793967)	android.graphics
+	(0.0019355956210227096)	java.io
+	(0.0013155939579635846)	android.graphics.drawable
+_________________________________________________________________________________
+74 : resources resource xml obb asset raw assetmanager application's orientation dex behave theme gradients 
+	(0.06136937616111126)	org.apache.http.message
+	(0.03972019628366343)	android.animation
+	(0.039415356017537546)	android.transition
+	(0.024221013739377184)	android.text.format
+	(0.023655636596114537)	org.apache.http
+	(0.01993692199016608)	org.apache.http.cookie
+	(0.015508803929240433)	org.apache.http.protocol
+	(0.012862940356761948)	android.content.res
+	(0.01273425132858263)	org.json
+	(0.01168281696095782)	org.w3c.dom
+	(0.01140560276178574)	java.util.concurrent.atomic
+	(0.011313047718091915)	java.util.concurrent.locks
+	(0.010790350731386667)	android.widget
+	(0.010787778178294433)	java.awt.font
+	(0.010700578258100528)	java.security.spec
+	(0.010619653462561973)	android.media.audiofx
+	(0.008794265950132305)	javax.xml.datatype
+	(0.008020350096890921)	javax.microedition.io
+	(0.007336533920859902)	java.util
+	(0.00566545239297328)	android.graphics.pdf
+	(0.005575659081276027)	android.print.pdf
+	(0.003957391468953462)	android.database
+	(0.0038782765685194307)	java.util.jar
+	(0.0033822815352703836)	javax.microedition.midlet
+	(0.003211323242373208)	org.xml.sax.helpers
+_________________________________________________________________________________
+76 : sound effects rms noise aec secondary couldn't viewdebug pen haptic contextmenu 
+	(0.021304535904491297)	android.support.v4.util
+	(0.021073334484412003)	android.net.wifi
+	(0.0168366170859782)	org.apache.http.protocol
+	(0.016681552756799355)	android.support.v7.media
+	(0.014963982312163993)	java.io
+	(0.014224870473302184)	android.app.admin
+	(0.014009909814710186)	javax.security.cert
+	(0.013778373541155077)	android
+	(0.009748157929608033)	org.apache.http.client.methods
+_________________________________________________________________________________
+78 : basic parent runtime creates worker obtained createeffect interrupt 
+	(0.029120675393259646)	org.w3c.dom.ls
+	(0.016805345189645195)	org.apache.http.impl.io
+	(0.015740753439628493)	javax.xml.transform
+	(0.012987374521869662)	java.util.logging
+	(0.012573516325891515)	java.util.jar
+	(0.012303018474001044)	org.apache.http.io
+	(0.010660467511842693)	android.gesture
+	(0.009141232401069233)	android.util
+	(0.008025944024823364)	android.media.effect
+	(0.006960048263383193)	javax.crypto
+	(0.006882631609363829)	android.net.wifi
+	(0.005305939624186398)	android.media.audiofx
+	(0.004240463327867104)	android.transition
+	(0.0040952853182301295)	android.text.style
+	(0.0032296066551240634)	android.media
+	(0.0026754331627294654)	android.support.v7.appcompat
+	(0.0026754331627294654)	android.support.v7.gridlayout
+	(0.002675433162729465)	android.support.v7.mediarouter
+	(0.002468464846279064)	android.animation
+	(0.0024092422964160053)	org.apache.http.conn.util
+	(0.002365723250858204)	java.nio.charset.spi
+	(0.0023657232508582033)	android.support.v4.print
+	(0.0023414794928553117)	android.print.pdf
+	(0.0022637115736485304)	android.service.dreams
+	(0.0021592823445294685)	javax.microedition.khronos.egl
+	(0.002133279727617221)	org.apache.http.cookie.params
+	(0.0021046916719921517)	android.service.notification
+	(0.0020920190607878176)	android.support.v4.hardware.display
+_________________________________________________________________________________
+79 : matches parts works turns curl album stores 
+	(0.035423159472108806)	java.awt.font
+	(0.02201107415163281)	java.nio.charset
+	(0.02143602288310546)	org.apache.http.impl
+	(0.016405888489401527)	java.nio.charset.spi
+	(0.015240516958459526)	javax.xml.datatype
+	(0.012816177946458106)	android.security
+	(0.00942854358138305)	org.apache.http.entity
+	(0.008629548851610836)	java.io
+	(0.008556708294259877)	android.text
+	(0.008453371504984483)	java.util.jar
+	(0.007046746889972085)	android.app.backup
+	(0.005579029648787449)	org.apache.http.impl.cookie
+	(0.0047274603372343535)	android.widget
+	(0.004228653152703622)	android.view
+	(0.004125050729024452)	java.util.concurrent.locks
+	(0.003229119048557722)	android.database
+	(0.0030418075593358347)	org.apache.http.io
+	(0.0029718682552156736)	java.lang
+	(0.002873404569029864)	android.net
+	(0.0025995098382634225)	javax.microedition.midlet
+	(0.002510099896708505)	android.media
+	(0.002375440335395636)	android.text.method
+	(0.002285021645737475)	java.security
+	(0.0019958565407685617)	android.support.v4.app
+	(0.0018905482529450108)	org.w3c.dom
+_________________________________________________________________________________
+84 : based specific exceptions components defines created messages needed completed required error encapsulates requires packages make depending simply client prevents 
+	(0.10883935862488095)	junit.framework
+	(0.09434020946464812)	android.test
+	(0.0659678493522305)	junit.runner
+	(0.050472859746103424)	org.apache.http.impl.entity
+	(0.04126053082894123)	java.beans
+	(0.0382963734693518)	javax.xml.transform.sax
+	(0.037208947040348495)	java.nio.charset
+	(0.03208091288860727)	javax.xml.transform
+	(0.030417583758906137)	android.hardware
+	(0.027376212053568987)	android.view.accessibility
+	(0.02691207550487863)	org.xml.sax.helpers
+	(0.025404116425831954)	android.service.dreams
+	(0.024820169167719414)	org.w3c.dom.ls
+	(0.02469123705084953)	java.util.prefs
+	(0.02444462383294581)	java.awt.font
+_________________________________________________________________________________
+86 : identified situations timing inheritance ioerror navigable chapter prevent traversals effort descriptions estimates consumer finger focusfinder choreographer 
+	(0.043939268904154824)	android.media.audiofx
+	(0.03990844665596911)	android.accessibilityservice
+	(0.039662991724349915)	java.beans
+	(0.03088587956037332)	org.apache.http.util
+	(0.02922419134105287)	java.util
+	(0.026052404847849524)	org.xml.sax.helpers
+	(0.022236394838063896)	android.location
+	(0.019761259397710885)	android.text
+	(0.01751273884061634)	java.util.concurrent
+	(0.014808504385146267)	android.graphics.drawable
+	(0.014507715823578649)	org.apache.http.impl.conn.tsccm
+	(0.013070601218971073)	android.text.style
+	(0.012333059405864464)	java.lang.annotation
+	(0.011912226280693843)	java.lang
+	(0.010739959369238394)	java.util
+	(0.00901994425373368)	java.util.concurrent.locks
+_________________________________________________________________________________
+89 : perform started demand ended relationships sequentially frame's telling lifecycle freeze 
+	(0.059112117356809164)	org.apache.http.client.utils
+	(0.03290501807070782)	org.w3c.dom
+	(0.03061351125819763)	java.util
+	(0.028817709115717526)	org.apache.http.conn.util
+	(0.025367748124429993)	org.apache.http.params
+	(0.02016203059505037)	org.apache.http.impl.conn.tsccm
+	(0.015107367565236628)	javax.microedition.rms
+	(0.014667989818275025)	android.opengl
+	(0.011756801494161823)	org.apache.http.conn.ssl
+	(0.010915800476596897)	org.apache.http.impl.client
+	(0.010412022196862733)	java.util.concurrent
+	(0.01016542975703854)	org.apache.http.client.protocol
+	(0.00950790427343565)	org.apache.http.conn.params
+	(0.009057533221296236)	android.provider
+	(0.008971204881043507)	android.view.accessibility
+	(0.008284526849008107)	android.net.rtp
+	(0.007893865255681521)	android.text.util
+	(0.007321591482984677)	android.text
+	(0.004995878222739734)	javax.microedition.media
+	(0.004683603793852971)	android.transition
+	(0.003876497630784224)	java.io
+_________________________________________________________________________________
+90 : clients menu external checked query cursoradapter popupmenu bind progressbar drawer searchview vertical horizontal physical edgeeffect fom cells langutils tablelayout scroller stars anchored comma bottom two-level scroll picker hashcode enable implementing 
+	(0.04587279143628395)	java.security.interfaces
+	(0.03848213329673387)	android.net.wifi
+	(0.0291977450803116)	org.apache.http.util
+	(0.022430662926641216)	android.renderscript
+	(0.022299307634966507)	java.util.prefs
+	(0.019664206335218936)	javax.microedition.pki
+	(0.017363013021438223)	java.security.spec
+	(0.016822707435798664)	android.drm
+	(0.01591137725358579)	android.support.v8.renderscript
+	(0.014227324305522508)	java.util.concurrent
+	(0.01152617537487604)	java.util.concurrent.locks
+	(0.010694448455643067)	android.content.pm
+	(0.01024961334156992)	java.security
+	(0.00907489769951935)	javax.security.auth.callback
+	(0.007640423454749732)	android.test
+	(0.006269003151983301)	java.nio.charset
+	(0.004593597962554929)	javax.microedition.lcdui.game
+	(0.004430879994199192)	android.view
+	(0.004134162580133523)	java.lang.reflect
+	(0.003544574900948266)	android.support.v4.app
+	(0.0034255887190066735)	java.util.regex
+	(0.0031084470467975076)	javax.microedition.media
+	(0.0031060771641847522)	android.gesture
+	(0.0030507618436788992)	javax.microedition.io
+	(0.002821035884523012)	android.app
+	(0.002689066553776749)	android.nfc.cardemulation
+	(0.002269574608065428)	android.graphics
+_________________________________________________________________________________
+91 : includes shared periodic differ tonegenerator putifabsent fast-fail errorhandler stretchable resizeable assigned 
+	(0.05344884889390967)	javax.sql
+	(0.05088323105968565)	android.telephony
+	(0.036902301373342765)	javax.xml.transform.sax
+	(0.024391668108945715)	org.xmlpull.v1.sax2
+	(0.024155138854706954)	java.util.prefs
+	(0.02135008799173442)	org.xml.sax.ext
+	(0.01923050218519968)	android.support.v7.widget
+	(0.018599394248190727)	android.view.inputmethod
+	(0.01781365127457094)	java.beans
+	(0.017504118928963003)	java.util.jar
+	(0.017481431043924384)	java.util.logging
+	(0.016345279598517472)	org.w3c.dom
+	(0.014705204599554222)	android.support.v7.app
+	(0.014479557825707486)	android.speech
+	(0.013986379504002808)	org.apache.http.client.protocol
+	(0.013784579160103679)	android.text.format
+	(0.013721996444126174)	android.view.accessibility
+_________________________________________________________________________________
