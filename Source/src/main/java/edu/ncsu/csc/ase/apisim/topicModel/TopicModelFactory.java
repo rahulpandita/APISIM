@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
@@ -20,6 +21,11 @@ import cc.mallet.types.Instance;
 import cc.mallet.types.InstanceList;
 import cc.mallet.util.Maths;
 
+/**
+ * Code Adapted from <a href="http://mallet.cs.umass.edu/topics-devel.php">Mallet Topic Modeling Tutorial</a>
+ * @author Rahul Pandita
+ *
+ */
 public abstract class TopicModelFactory {
 	
 	private int numTopics = 500;
@@ -159,9 +165,9 @@ public abstract class TopicModelFactory {
 	 * @return
 	 */
 	public final Map<String, List<String>> getRankedListPerSearch(double threshold) {
+		Map<String,List<IDSorter>> returnMap = new LinkedHashMap<String, List<IDSorter>>();
 		InstanceList searchList = getSearchInstanceList();
 		InstanceList targetList = getTargetInstanceList();
-		Map<String,List<IDSorter>> returnMap = new LinkedHashMap<String, List<IDSorter>>();
 		double[] srcProb, targetProb;
 		Instance srcInstance, targetInstance;
 		double distance;
@@ -198,6 +204,53 @@ public abstract class TopicModelFactory {
 		return getFormattedMap(returnMap, targetList);
 	}
 	
+	public final Map<String, List<String>> getSimilarListPerSearch(Map<String, List<String>> finalMap, int topK)
+	{
+		Map<String, List<String>> returnMap = new TreeMap<String, List<String>>();
+		Set<String> srcClassSet = getSrcSet();
+	    List<String> lst;
+		Boolean flag = false;
+		Set<String> tgtPkgSet, tgtPkgSetPerTopic; 
+		
+		String tmp;
+		for(String pkgStr: srcClassSet)
+		{
+			tgtPkgSet = new TreeSet<String>();
+			returnMap.put(pkgStr, new ArrayList<String>());
+			for(String key: finalMap.keySet())
+			{
+				tgtPkgSetPerTopic = new TreeSet<String>();
+				flag = false;
+				lst = finalMap.get(key);
+				for (int i = 0; (i < lst.size() && i< topK); i++) 
+				{
+					tmp = lst.get(i).split("\t")[1];
+					if(lst.get(i).endsWith(pkgStr))
+					{
+						flag = true;
+						break;
+					}
+					if(inclusionCriteria(tmp))
+						tgtPkgSetPerTopic.add(tmp);
+				}
+				if(flag)
+				{
+					tgtPkgSetPerTopic.removeAll(srcClassSet);
+					tgtPkgSet.addAll(tgtPkgSetPerTopic);
+				}
+			}
+			returnMap.get(pkgStr).addAll(tgtPkgSet);
+		}
+		return returnMap;
+	}
+	
+	public abstract boolean inclusionCriteria(String str);
+
+	public Set<String> getSrcSet() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	protected Map<String, List<String>> getFormattedMap(Map<?, List<IDSorter>> finalMap, InstanceList instanceList) 
 	{
 		Map<String, List<String>> returnMap = new TreeMap<String, List<String>>();

@@ -1,414 +1,458 @@
 javax.microedition.midlet
 	android
-	android.animation
-	android.app.admin
 	android.content.pm
-	android.content.res
-	android.drm
-	android.graphics
-	android.graphics.drawable.shapes
-	android.hardware
-	android.net.wifi
-	android.nfc.tech
-	android.opengl
-	android.printservice
-	android.support.v4.content
-	android.support.v4.text
-	android.support.v7.view
-	android.telephony
-	android.telephony.cdma
-	android.telephony.gsm
-	android.test
-	android.text.format
-	android.transition
-	android.view.animation
-	java.io
-	java.lang.annotation
-	java.lang.reflect
-	java.nio
-	java.security.acl
-	java.security.cert
-	java.security.interfaces
-	java.security.spec
-	java.util.jar
-	java.util.prefs
-	java.util.regex
-	javax.crypto
-	javax.crypto.spec
-	javax.net.ssl
-	javax.security.auth.callback
-	javax.security.cert
-	javax.xml.namespace
-	junit.runner
-	org.apache.http.client.params
-	org.apache.http.conn.params
-	org.apache.http.conn.routing
-	org.apache.http.cookie
-	org.apache.http.impl
-	org.apache.http.params
-	org.apache.http.util
-	org.xml.sax.ext
-javax.microedition.lcdui
-	android.accessibilityservice
-	android.app.backup
-	android.content.res
-	android.graphics.drawable
-	android.graphics.drawable.shapes
-	android.hardware.location
-	android.inputmethodservice
-	android.nfc
-	android.nfc.cardemulation
-	android.os
-	android.os.storage
-	android.preference
-	android.service.dreams
-	android.support.v4.net
-	android.support.v4.os
-	android.support.v4.text
-	android.support.v4.view
-	android.support.v4.view.accessibility
-	android.support.v7.app
-	android.support.v7.view
-	android.telephony
-	android.transition
-	android.view
-	android.view.inputmethod
-	java.awt.font
-	java.beans
-	java.nio.channels
-	java.nio.channels.spi
-	java.security
-	java.util.logging
-	java.util.prefs
-	java.util.regex
-	javax.security.auth.callback
-	javax.security.cert
-	javax.xml.datatype
-	javax.xml.transform.dom
-	org.apache.http.client.params
-	org.apache.http.client.protocol
-	org.apache.http.conn
-	org.apache.http.impl.conn.tsccm
-	org.apache.http.impl.cookie
-	org.json
-java.util
-	android.app.backup
 	android.drm
 	android.gesture
+	android.graphics.drawable
 	android.graphics.pdf
 	android.hardware.input
-	android.media
+	android.nfc.cardemulation
+	android.os
+	android.print.pdf
+	android.speech
+	dalvik.bytecode
+	java.awt.font
+	java.lang.reflect
+	java.nio
+	java.security.interfaces
+	java.security.spec
+	java.text
+	java.util.concurrent.atomic
+	java.util.concurrent.locks
+	java.util.jar
+	java.util.logging
+	javax.crypto.spec
+	javax.security.auth.callback
+	javax.xml.namespace
+	org.apache.http.client.protocol
+	org.apache.http.impl.client
+	org.apache.http.impl.conn.tsccm
+	org.apache.http.impl.entity
+	org.json
+javax.microedition.lcdui
+	android.accessibilityservice
+	android.animation
+	android.app
+	android.app.backup
+	android.content.pm
+	android.graphics
+	android.graphics.drawable
+	android.graphics.drawable.shapes
+	android.hardware
+	android.hardware.display
+	android.location
 	android.media.audiofx
 	android.media.effect
-	android.net
-	android.net.http
-	android.net.wifi
-	android.nfc.cardemulation
+	android.nfc.tech
 	android.opengl
-	android.os.storage
-	android.print
-	android.print.pdf
-	android.printservice
-	android.renderscript
-	android.sax
 	android.security
-	android.support.v4.content
-	android.support.v4.util
-	android.support.v4.widget
+	android.speech
+	android.support.v13.app
 	android.support.v7.app
 	android.support.v7.media
+	android.support.v7.view
+	android.telephony
+	android.text.method
+	android.text.style
+	android.transition
+	android.view.accessibility
+	android.view.inputmethod
+	java.beans
+	java.lang.reflect
+	java.nio
+	java.nio.channels
+	java.security.cert
+	java.util.concurrent.locks
+	java.util.regex
+	javax.crypto
+	javax.security.auth.callback
+	javax.xml.transform.dom
+	org.apache.http.client
+	org.apache.http.client.protocol
+	org.apache.http.impl.cookie
+	org.json
+	org.xml.sax.ext
+	org.xmlpull.v1.sax2
+java.util
+	android.animation
+	android.app.backup
+	android.appwidget
+	android.content.pm
+	android.drm
+	android.graphics
+	android.graphics.drawable
+	android.graphics.pdf
+	android.location
+	android.mtp
+	android.net
+	android.net.rtp
+	android.nfc
+	android.nfc.cardemulation
+	android.print
+	android.renderscript
+	android.speech
+	android.support.v7.app
+	android.support.v7.appcompat
+	android.support.v7.gridlayout
+	android.support.v7.media
+	android.support.v7.mediarouter
+	android.support.v7.view
 	android.support.v7.widget
 	android.support.v8.renderscript
 	android.telephony
-	android.telephony.cdma
 	android.test
+	android.test.mock
 	android.text.format
+	android.text.util
+	android.view
+	android.view.inputmethod
+	android.webkit
+	dalvik.bytecode
+	java.awt.font
+	java.beans
+	java.lang.annotation
+	java.lang.reflect
+	java.math
+	java.nio
+	java.nio.channels
+	java.nio.charset
+	java.security.cert
+	java.text
+	java.util.concurrent
+	java.util.concurrent.atomic
+	java.util.concurrent.locks
+	java.util.zip
+	javax.microedition.khronos.opengles
+	javax.net.ssl
+	javax.security.auth
+	javax.security.cert
+	javax.xml.datatype
+	javax.xml.namespace
+	javax.xml.transform.dom
+	org.apache.http.client.protocol
+	org.apache.http.client.utils
+	org.apache.http.conn.params
+	org.apache.http.conn.scheme
+	org.apache.http.cookie
+	org.apache.http.impl.cookie
+	org.apache.http.impl.io
+	org.apache.http.io
+	org.apache.http.message
+	org.apache.http.params
+	org.apache.http.util
+	org.json
+	org.xml.sax.ext
+javax.microedition.rms
+	android
+	android.content.res
+	android.database
+	android.graphics
+	android.graphics.drawable.shapes
+	android.hardware
+	android.location
+	android.media
+	android.media.audiofx
+	android.net.rtp
+	android.net.wifi
+	android.opengl
+	android.os
+	android.print
+	android.provider
+	android.sax
+	android.security
+	android.support.v4.app
+	android.support.v4.content
+	android.support.v4.net
+	android.support.v4.os
+	android.support.v4.util
+	android.support.v4.view.accessibility
+	android.support.v7.app
+	android.support.v7.widget
+	android.telephony
+	android.test.mock
 	android.text.method
 	android.text.style
 	android.view.accessibility
-	dalvik.system
+	android.view.inputmethod
 	java.awt.font
-	java.beans
-	java.lang
-	java.lang.annotation
-	java.lang.reflect
-	java.net
+	java.math
 	java.nio
 	java.nio.charset
-	java.security
 	java.security.cert
 	java.security.interfaces
 	java.security.spec
-	java.sql
+	java.text
+	java.util.concurrent
+	java.util.concurrent.atomic
+	java.util.jar
+	java.util.prefs
+	java.util.regex
+	javax.net.ssl
+	javax.security.auth
+	javax.sql
+	junit.framework
+	org.apache.http
+	org.apache.http.conn.params
+	org.apache.http.cookie
+	org.apache.http.message
+	org.apache.http.protocol
+	org.apache.http.util
+	org.xml.sax.ext
+	org.xml.sax.helpers
+javax.microedition.media
+	android.app.backup
+	android.content
+	android.database
+	android.gesture
+	android.media
+	android.media.audiofx
+	android.net
+	android.net.nsd
+	android.net.rtp
+	android.nfc.cardemulation
+	android.nfc.tech
+	android.print
+	android.printservice
+	android.support.v4.accessibilityservice
+	android.support.v4.content
+	android.support.v4.content.pm
+	android.support.v4.hardware.display
+	android.support.v4.net
+	android.support.v4.os
+	android.support.v4.util
+	android.support.v4.view
+	android.support.v4.view.accessibility
+	android.support.v7.media
+	android.support.v7.widget
+	android.telephony
+	android.telephony.cdma
+	android.telephony.gsm
+	android.text.method
+	android.text.util
+	android.transition
+	android.view.inputmethod
+	java.awt.font
+	java.nio
+	java.nio.channels
+	java.security.interfaces
+	java.security.spec
+	java.text
 	java.util.concurrent
 	java.util.concurrent.atomic
 	java.util.concurrent.locks
 	java.util.regex
 	java.util.zip
-	javax.crypto.interfaces
-	javax.crypto.spec
-	javax.net.ssl
-	javax.security.auth
-	javax.security.cert
+	javax.sql
 	javax.xml.namespace
-	javax.xml.transform
-	org.apache.http.auth
+	org.apache.http
+	org.apache.http.client.methods
+	org.apache.http.impl.entity
+	org.apache.http.protocol
+	org.apache.http.util
+	org.w3c.dom.ls
+	org.xml.sax.helpers
+javax.microedition.io
+	android.appwidget
+	android.bluetooth
+	android.content
+	android.drm
+	android.graphics.pdf
+	android.inputmethodservice
+	android.net.http
+	android.net.nsd
+	android.net.rtp
+	android.provider
+	android.sax
+	android.support.v4.content
+	android.support.v4.content.pm
+	android.support.v4.os
+	android.support.v4.text
+	android.support.v7.app
+	android.text
+	android.view.inputmethod
+	android.webkit
+	dalvik.system
+	java.lang.annotation
+	java.net
+	java.nio.charset
+	java.security.cert
+	java.security.interfaces
+	java.security.spec
+	java.util.concurrent
+	javax.net.ssl
+	javax.security.cert
+	javax.sql
+	javax.xml.namespace
+	org.apache.http
+	org.apache.http.client.methods
 	org.apache.http.client.protocol
 	org.apache.http.conn
 	org.apache.http.conn.params
-	org.apache.http.conn.scheme
+	org.apache.http.conn.routing
+	org.apache.http.conn.ssl
 	org.apache.http.cookie
 	org.apache.http.entity
 	org.apache.http.impl
 	org.apache.http.impl.client
-	org.apache.http.impl.cookie
-	org.apache.http.impl.io
-	org.apache.http.message
-	org.apache.http.params
+	org.apache.http.impl.conn
+	org.apache.http.impl.conn.tsccm
+	org.apache.http.impl.entity
 	org.apache.http.protocol
-	org.apache.http.util
-javax.microedition.rms
-	android.accessibilityservice
-	android.app
-	android.database
-	android.drm
-	android.media
-	android.media.audiofx
-	android.net.rtp
-	android.nfc.tech
-	android.preference
-	android.support.v4.app
-	android.support.v4.text
-	android.support.v7.app
-	android.support.v7.view
-	android.text.style
-	android.transition
-	android.view.accessibility
-	java.lang.reflect
-	java.nio
-	java.nio.channels
-	java.security.acl
-	java.security.interfaces
-	java.security.spec
-	java.text
-	java.util.concurrent.locks
-	java.util.prefs
-	java.util.regex
-	javax.security.auth.callback
-	javax.sql
-	junit.runner
-	org.apache.http.client.methods
-	org.apache.http.conn.routing
-	org.apache.http.conn.scheme
-	org.apache.http.message
-	org.apache.http.params
 	org.apache.http.util
 	org.w3c.dom
-	org.xml.sax.ext
-javax.microedition.media
-	android
-	android.animation
-	android.app
-	android.bluetooth
-	android.content
-	android.content.pm
-	android.content.res
-	android.hardware
-	android.location
-	android.media.audiofx
-	android.mtp
-	android.net
-	android.net.http
-	android.net.nsd
-	android.nfc.cardemulation
-	android.opengl
-	android.printservice
-	android.provider
-	android.sax
-	android.security
-	android.service.notification
-	android.support.v7.app
-	android.support.v7.media
-	android.support.v7.view
-	android.support.v8.renderscript
-	android.test
-	android.text.format
-	android.transition
-	android.util
-	android.view.animation
-	dalvik.system
-	java.security.acl
-	java.util.logging
-	java.util.regex
-	javax.security.cert
-	javax.sql
-	javax.xml.namespace
-	org.apache.http.client.methods
-	org.apache.http.conn
-	org.apache.http.conn.params
-	org.apache.http.conn.scheme
-	org.apache.http.impl
-	org.apache.http.impl.auth
-	org.apache.http.impl.conn
-	org.apache.http.impl.conn.tsccm
-	org.apache.http.impl.cookie
-	org.apache.http.message
-	org.json
-javax.microedition.io
-	android.bluetooth
-	android.drm
-	android.graphics.pdf
-	android.media.effect
-	android.net
-	android.nfc.cardemulation
-	android.print.pdf
-	android.renderscript
-	android.sax
-	android.security
-	android.support.v4.text
-	android.support.v8.renderscript
-	android.text.format
-	java.nio.charset
-	javax.net.ssl
-	javax.sql
-	junit.runner
-	org.apache.http
-	org.apache.http.client.methods
-	org.apache.http.conn
-	org.apache.http.conn.params
-	org.apache.http.conn.ssl
-	org.apache.http.impl
-	org.apache.http.impl.auth
-	org.apache.http.impl.conn
-	org.apache.http.impl.conn.tsccm
-	org.apache.http.message
-	org.apache.http.protocol
-	org.xml.sax.ext
+	org.w3c.dom.ls
 javax.microedition.lcdui.game
-	android.accessibilityservice
-	android.appwidget
+	android.app
+	android.app.backup
+	android.bluetooth
 	android.database
 	android.drm
-	android.gesture
+	android.graphics
+	android.graphics.drawable
+	android.graphics.drawable.shapes
+	android.hardware.display
+	android.hardware.location
 	android.inputmethodservice
-	android.location
-	android.media.effect
+	android.net
 	android.net.nsd
-	android.net.wifi
-	android.os.storage
-	android.print.pdf
-	android.renderscript
+	android.nfc.cardemulation
+	android.nfc.tech
+	android.opengl
+	android.os
+	android.print
+	android.sax
+	android.support.v13.app
+	android.support.v4.app
+	android.support.v4.hardware.display
+	android.support.v4.net
+	android.support.v4.os
+	android.support.v4.print
+	android.support.v4.util
 	android.support.v4.view
 	android.support.v4.view.accessibility
 	android.support.v4.widget
-	android.support.v7.view
-	android.support.v8.renderscript
+	android.support.v7.app
+	android.support.v7.media
+	android.support.v7.widget
 	android.telephony
-	android.telephony.cdma
+	android.telephony.gsm
+	android.test.mock
+	android.text.method
 	android.text.style
-	android.transition
+	android.text.util
 	android.view.accessibility
+	android.view.animation
 	android.view.inputmethod
+	android.webkit
+	java.awt.font
+	java.lang.annotation
 	java.lang.reflect
-	java.net
 	java.nio
-	java.nio.channels.spi
-	java.nio.charset.spi
-	java.security.acl
-	java.security.cert
+	java.nio.channels
 	java.security.interfaces
+	java.security.spec
 	java.util.concurrent.atomic
+	java.util.jar
+	java.util.regex
+	javax.crypto
+	javax.crypto.spec
 	javax.net.ssl
 	javax.security.cert
 	javax.xml.datatype
-	javax.xml.parsers
-	org.apache.http.conn
 	org.apache.http.conn.routing
 	org.apache.http.conn.ssl
-	org.apache.http.impl.conn
-	org.apache.http.impl.conn.tsccm
+	org.apache.http.impl.client
+	org.apache.http.impl.cookie
+	org.apache.http.message
+	org.apache.http.protocol
 	org.w3c.dom.ls
 javax.microedition.media.control
-	android.hardware.display
-	android.hardware.input
-	android.media.audiofx
-	android.mtp
-	android.nfc.tech
-	android.preference
-	android.renderscript
-	android.sax
-	android.support.v4.net
-	android.support.v4.os
-	android.support.v4.view.accessibility
-	android.support.v7.app
-	android.support.v7.media
-	android.test
-	android.test.mock
-	android.util
-	java.lang.reflect
-	java.nio.charset
-	java.security.acl
-	java.util.concurrent.atomic
-	java.util.prefs
-	javax.crypto.interfaces
-	javax.net.ssl
-	javax.security.cert
-	javax.xml.transform
-	org.apache.http.client.methods
-	org.apache.http.conn
-	org.apache.http.conn.routing
-	org.apache.http.conn.scheme
-	org.apache.http.impl.conn
-	org.apache.http.params
-	org.apache.http.protocol
-	org.xml.sax.helpers
-javax.microedition.pki
 	android.accessibilityservice
 	android.app.admin
 	android.app.backup
-	android.bluetooth
-	android.content.res
-	android.hardware.input
-	android.location
-	android.mtp
-	android.net.wifi
-	android.nfc.cardemulation
-	android.opengl
-	android.print.pdf
+	android.content
+	android.hardware.location
+	android.media.audiofx
+	android.net.http
+	android.nfc
+	android.nfc.tech
+	android.preference
+	android.print
+	android.printservice
 	android.renderscript
-	android.support.v4.net
-	android.support.v4.print
-	android.support.v4.text
+	android.service.dreams
+	android.support.v4.os
 	android.support.v4.view.accessibility
-	android.support.v8.renderscript
+	android.support.v4.widget
+	android.support.v7.app
+	android.support.v7.media
+	android.support.v7.widget
+	android.test
+	android.text
 	android.text.format
+	android.text.method
 	android.text.util
-	android.view
-	android.view.accessibility
-	java.lang.annotation
+	android.transition
+	java.beans
+	java.lang.reflect
 	java.math
-	java.nio
-	java.nio.channels.spi
+	java.security.interfaces
+	java.util.zip
+	javax.xml.datatype
+	javax.xml.parsers
+	org.apache.http.auth
+	org.apache.http.client.methods
+	org.apache.http.client.params
+	org.apache.http.client.utils
+	org.apache.http.impl.auth
+	org.apache.http.impl.conn
+	org.apache.http.impl.entity
+	org.apache.http.impl.io
+	org.apache.http.io
+	org.w3c.dom.ls
+	org.xml.sax.helpers
+javax.microedition.pki
+	android.content.pm
+	android.drm
+	android.gesture
+	android.net.rtp
+	android.service.dreams
+	android.support.v4.net
+	android.support.v4.os
+	android.support.v4.util
+	android.support.v4.view.accessibility
+	android.support.v7.view
+	android.text.util
+	dalvik.system
+	java.lang
+	java.net
 	java.security.cert
 	java.security.interfaces
 	java.security.spec
-	java.util.jar
+	java.util.logging
+	java.util.prefs
 	java.util.zip
-	javax.crypto
 	javax.crypto.spec
-	javax.security.auth
-	javax.security.auth.login
-	javax.xml.transform
+	javax.xml.namespace
+	org.apache.http
 	org.apache.http.auth
+	org.apache.http.auth.params
 	org.apache.http.client.methods
-	org.apache.http.conn.routing
-	org.apache.http.entity
+	org.apache.http.conn
+	org.apache.http.conn.params
+	org.apache.http.conn.ssl
+	org.apache.http.cookie
 	org.apache.http.impl
+	org.apache.http.impl.auth
+	org.apache.http.impl.conn
 	org.apache.http.impl.cookie
 	org.apache.http.impl.entity
-	org.apache.http.message
+	org.apache.http.impl.io
+	org.apache.http.io
 	org.apache.http.params
-	org.w3c.dom
-	org.w3c.dom.ls
+	org.apache.http.protocol
+	org.apache.http.util
+	org.xml.sax
 	org.xml.sax.ext
 	org.xml.sax.helpers
+	org.xmlpull.v1.sax2

@@ -74,26 +74,36 @@ public class InstanceCreator {
 		return evalList;
 	}
 	
-	public static InstanceList createInstanceList(String...apiDumpPath) throws Exception {
+	public static InstanceList createInstanceList(boolean includeMtd,String...apiDumpPath) throws Exception {
 		List<Instance> insList = new ArrayList<Instance>();
 		for(String API:apiDumpPath)
 		{
 			for(APIType type: AllClassCrawler.read(API))
-				insList.add(new DataInstance(type));
+			{
+				if(includeMtd)
+					insList.add(new DataInstance(true, type));
+				else
+					insList.add(new DataInstance(type));
+			}
 		}
 		return createInstanceList(insList);
 	}
 	
 	
 
-	public static InstanceList createInstanceList1(List<String> subList, String... apiDumpPath) throws Exception {
+	public static InstanceList createInstanceList1(boolean includeMtd, List<String> subList, String... apiDumpPath) throws Exception {
 		List<Instance> insList = new ArrayList<Instance>();
 		for(String API:apiDumpPath)
 		{
 			for(APIType type: AllClassCrawler.read(API))
 			{
 				if(subList.contains(type.getName().trim()))
-					insList.add(new DataInstance(type));
+				{	
+					if(includeMtd)
+						insList.add(new DataInstance(true, type));
+					else
+						insList.add(new DataInstance(type));
+				}
 			}
 		}
 		return createInstanceList(insList);
@@ -237,5 +247,21 @@ public class InstanceCreator {
 	public static InstanceList createInstanceListandroidpkgClass() throws Exception
 	{
 		return InstanceCreator.createInstanceList(getInsListAndroidPkgCls(getPkgStrMap(Configuration.ANDROID_DUMP_PATH)));
+	}
+
+	public static InstanceList createInstanceList22(boolean includeMtd, String midpDumpPath) throws Exception {
+		List<Instance> insList = new ArrayList<Instance>();
+		for(APIType type: AllClassCrawler.read(midpDumpPath))
+		{
+			if (getEvalList().contains(type.getName().trim()))
+			{
+				if(includeMtd)
+					insList.add(new DataInstance(true, type));
+				else
+					insList.add(new DataInstance(type));
+			}
+		}
+		
+		return createInstanceList(insList);
 	}
 }

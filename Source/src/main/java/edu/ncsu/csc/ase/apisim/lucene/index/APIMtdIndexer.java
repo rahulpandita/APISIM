@@ -53,7 +53,7 @@ public class APIMtdIndexer extends Indexer<APIMtd>{
 		doc.add(new TextField(Configuration.IDX_FIELD_CLASS_NAME, getParentClassName(mtd), Field.Store.YES));
 		doc.add(new TextField(Configuration.IDX_FIELD_CLASS_BASE_NAME, clean(mtd.getParentClass().getName()), Field.Store.YES));
 		doc.add(new TextField(Configuration.IDX_FIELD_CLASS_NAME_PKG_SPLIT, getParentClassName(mtd).replaceAll("\\.", " "), Field.Store.YES));
-		
+		doc.add(new TextField(Configuration.IDX_FIELD_PKG_NAME, mtd.getParentClass().getPackage(), Field.Store.YES));
 		//METHOD RELATED
 		doc.add(new TextField(Configuration.IDX_FIELD_MODIFIER,  clean(mtd.getModifier()), Field.Store.YES));
 		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_NAME, mtd.getName(), Field.Store.YES));

@@ -19,4 +19,8 @@ public class DataInstance extends Instance {
 	{
 		super(type.getSummary(), 3, 2, type.getApiName()+":"+type.getPackage()+"."+type.getName());
 	}
+
+	public DataInstance(boolean b, APIType type) {
+		super(type.toString(), 3, 2, type.getApiName()+":"+type.getPackage()+"."+type.getName());
+	}
 }

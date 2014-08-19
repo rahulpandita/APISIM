@@ -84,6 +84,8 @@ public class Configuration
 	
 	public static final String IDX_FIELD_CLASS_NAME_PKG_SPLIT = "CLS_NAME_PKG_SPLIT";
 	
+	public static final String IDX_FIELD_PKG_NAME = "PKG_NAME";
+	
 	public static final String IDX_FIELD_METHOD_NAME = "MTD_NAME";
 	
 	public static final String IDX_FIELD_DESCRIPTION = "DESC";

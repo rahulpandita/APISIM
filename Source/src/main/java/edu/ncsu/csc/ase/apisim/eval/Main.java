@@ -22,10 +22,12 @@ public class Main
 	
 	public static void main(String[] args) throws Exception {
 		analyser = new SynonymAnalyzer(Configuration.LUCENE_VERSION);
-		eval1(RESULT_BASE + File.separator + "v1");
-		eval2(RESULT_BASE + File.separator + "v2");
-		eval2_1(RESULT_BASE + File.separator + "v3");
-		eval2_2(RESULT_BASE + File.separator+ "v4");
+		//eval1(RESULT_BASE + File.separator + "v1");
+		//eval2(RESULT_BASE + File.separator + "v2");
+		//eval2_1(RESULT_BASE + File.separator + "v3");
+		//eval2_2(RESULT_BASE + File.separator+ "v4");
+		//eval3(RESULT_BASE + File.separator+ "v5");
+		eval4(RESULT_BASE + File.separator+ "v6");
 		//evalRosetta(RESULT_BASE + File.separator+ "v5");
 	}
 	
@@ -82,6 +84,34 @@ public class Main
 		
 		evalFile = resFolder + File.separator+ ANA_SYN + EXCEL_XTEN;
 		eval = new Eval2_2(clazzList, Configuration.API_IDX_FILE_SYNONYM, analyser);
+		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
+	}
+	
+	public static void eval3(String resFolder) throws Exception
+	{
+		String evalFile;
+		List<APIType> clazzList = AllClassCrawler.read(Configuration.MIDP_DUMP_PATH);
+		
+		evalFile = resFolder + File.separator+ ANA_ENG + EXCEL_XTEN;
+		PremEval<APIMtd> eval = new Eval3(clazzList, Configuration.API_IDX_FILE);
+		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
+		
+		evalFile = resFolder + File.separator+ ANA_SYN + EXCEL_XTEN;
+		eval = new Eval3(clazzList, Configuration.API_IDX_FILE_SYNONYM, analyser);
+		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
+	}
+	
+	public static void eval4(String resFolder) throws Exception
+	{
+		String evalFile;
+		List<APIType> clazzList = AllClassCrawler.read(Configuration.MIDP_DUMP_PATH);
+		
+		evalFile = resFolder + File.separator+ ANA_ENG + EXCEL_XTEN;
+		PremEval<APIMtd> eval = new Eval4(clazzList, Configuration.API_IDX_FILE);
+		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
+		
+		evalFile = resFolder + File.separator+ ANA_SYN + EXCEL_XTEN;
+		eval = new Eval4(clazzList, Configuration.API_IDX_FILE_SYNONYM, analyser);
 		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
 	}
 	
