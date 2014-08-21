@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import cc.mallet.types.InstanceList;
@@ -18,23 +20,14 @@ public class TopicModelPkgClass extends TopicModelFactory {
 	
 	public static String OUTPUT_FILE_NAME_3 = "PkgClassSummaryPerPkgSimilarity";
 
-	public static void main(String[] args) throws Exception{
-		TopicModelFactory tm;
-		for(int i =0; i<20; i++)
-		{
-		
-			tm = new TopicModelPkgClass(i);
-			tm.runEval();
-		}
+	public TopicModelPkgClass() throws Exception {
+		super(1000, 5, 20000);
 	}
-
-	public TopicModelPkgClass(int i) throws Exception {
-		super(500, 2, 5000);
-		OUTPUT_FILE_NAME_1 =OUTPUT_FILE_NAME_1+i;
-		OUTPUT_FILE_NAME_2 = OUTPUT_FILE_NAME_2 +i;
-		OUTPUT_FILE_NAME_3 = OUTPUT_FILE_NAME_3 +i;
+	
+	public TopicModelPkgClass(int topics, int numThreads, int numIterations) throws Exception {
+		super(topics, numThreads, numIterations);
 	}
-
+	
 	@Override
 	public InstanceList getInstanceList() {
 		try {
@@ -67,9 +60,10 @@ public class TopicModelPkgClass extends TopicModelFactory {
 
 	@Override
 	public void runEval() throws Exception {
-		//writeToFile(getRankedListPerTopic(0.01), OUTPUT_FILE_NAME_1, 10);
-		//writeToFile(getRankedListPerSearch(0.01), OUTPUT_FILE_NAME_2, 10);
-		writeToFile(getSimilarListPerSearch(getRankedListPerTopic(0.01), 10),OUTPUT_FILE_NAME_3, Integer.MAX_VALUE);
+		Map<String ,List<String>> rankedMap = getRankedListPerTopic(MIN_PROB_DIST);
+		writeToFile(rankedMap, OUTPUT_FILE_NAME_1, TOPK);
+		writeToFile(getRankedListPerSearch(MIN_PROB_DIST), OUTPUT_FILE_NAME_2, TOPK);
+		writeToFile(getSimilarListPerSearch(rankedMap, SIMILARITY_CUTOFF), OUTPUT_FILE_NAME_3, TOPK);
 		
 	}
 	

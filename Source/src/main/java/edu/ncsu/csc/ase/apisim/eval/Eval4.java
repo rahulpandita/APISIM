@@ -18,14 +18,16 @@ import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.QueryParser;
 import org.apache.lucene.search.BooleanClause.Occur;
 import org.apache.lucene.search.BooleanQuery;
+import org.apache.lucene.search.Filter;
 import org.apache.lucene.search.Query;
+import org.apache.lucene.search.QueryWrapperFilter;
 import org.apache.lucene.search.TermQuery;
 
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
 import edu.ncsu.csc.ase.apisim.configuration.Configuration.APITYPE;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIMtd;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
-import edu.ncsu.csc.ase.apisim.eval.oracle.Cons;
+import edu.ncsu.csc.ase.apisim.eval.oracle.TpMdlClsCons;
 import edu.ncsu.csc.ase.apisim.eval.util.CustomComparator;
 import edu.ncsu.csc.ase.apisim.eval.util.ResultRep;
 import edu.ncsu.csc.ase.apisim.webcrawler.apiutil.ASTBuilder;
@@ -109,11 +111,13 @@ public class Eval4 extends PremEval<APIMtd>
 		
 		List<Document> result = new ArrayList<Document>();
 		Map<String , ResultRep> docMap = new LinkedHashMap<String, ResultRep>();
-		//BooleanQuery idFilter = new BooleanQuery();
-		//idFilter.setMinimumNumberShouldMatch(1);
+		BooleanQuery bq = new BooleanQuery();
+		
+		bq.setMinimumNumberShouldMatch(1);
 		Set<String> tgtset = tstSet==null?new HashSet<String>():tstSet; 
-		//for(String clsStr:tgtset)
-		//	idFilter.add(new TermQuery(new Term(Configuration.IDX_FIELD_CLASS_NAME, QueryParser.escape(clsStr))), Occur.SHOULD);
+		for(String clsStr:tgtset)
+			bq.add(new TermQuery(new Term(Configuration.IDX_FIELD_CLASS_NAME, QueryParser.escape(clsStr))), Occur.SHOULD);
+		Filter idFilter = new QueryWrapperFilter(bq);
 		
 		try
 		{
@@ -125,7 +129,7 @@ public class Eval4 extends PremEval<APIMtd>
 				//mainQuery = new BooleanQuery();
 				//mainQuery.add(query, Occur.SHOULD);
 				//mainQuery.add(idFilter, Occur.MUST);
-				result = searcher(query);
+				result = searcher(query,idFilter);
 				for(int i= 0; i<result.size();i++)
 				{
 					Document doc = result.get(i);
@@ -176,12 +180,13 @@ public class Eval4 extends PremEval<APIMtd>
 		Occur[] occur2 = {Occur.MUST, Occur.MUST, Occur.SHOULD, Occur.SHOULD};
 		Occur[] occur3 = {Occur.MUST, Occur.SHOULD, Occur.SHOULD, Occur.SHOULD};
 		Occur[] occur4 = {Occur.MUST, Occur.SHOULD, Occur.SHOULD, Occur.SHOULD};
-
+		Occur[] occur5 = {Occur.MUST, Occur.MUST, Occur.SHOULD, Occur.SHOULD};
+		
 		clauseList.add(occur1);
 		clauseList.add(occur2);
 		clauseList.add(occur3);
 		clauseList.add(occur4);
-		
+		clauseList.add(occur5);
 		return clauseList;
 	}
 
@@ -193,12 +198,17 @@ public class Eval4 extends PremEval<APIMtd>
 				Configuration.IDX_FIELD_CLASS_BASE_NAME,
 				Configuration.IDX_FIELD_METHOD_NAME,
 				Configuration.IDX_FIELD_DESCRIPTION};
+		String[] columnVec1 = new String[] {
+				Configuration.IDX_FIELD_API_NAME,
+				Configuration.IDX_FIELD_CLASS_NAME_PKG_SPLIT,
+				Configuration.IDX_FIELD_METHOD_NAME,
+				Configuration.IDX_FIELD_DESCRIPTION};
 		
 		columnList.add(columnVec);
 		columnList.add(Arrays.copyOf(columnVec, 4));
 		columnList.add(Arrays.copyOf(columnVec, 4));
 		columnList.add(Arrays.copyOf(columnVec, 4));
-		
+		columnList.add(columnVec1);
 		return columnList;
 	}
 	private Set<String> tstSet;
@@ -206,7 +216,7 @@ public class Eval4 extends PremEval<APIMtd>
 
 	@Override
 	public List<String[]> getTermVector(APIMtd mtd) {
-		tstSet = Cons.topicClassMap.get(mtd.getParentClass().getPackage().trim()+"."+mtd.getParentClass().getName().trim());
+		tstSet = TpMdlClsCons.topicClassMap.get(mtd.getParentClass().getPackage().trim()+"."+mtd.getParentClass().getName().trim());
 		List<String[]> termList = new ArrayList<String[]>();
 		String apiName = MultiFieldQueryParser.escape(APITYPE.ANDROID.name().toLowerCase());
 		String clazzName = MultiFieldQueryParser.escape(mtd.getParentClass().getName());
@@ -217,11 +227,13 @@ public class Eval4 extends PremEval<APIMtd>
 		String[] termVec2 = new String[] {apiName, clazzName+"*", methodBaseName, methodDesc};
 		String[] termVec3 = new String[] {apiName, clazzName, methodBaseName, methodDesc};
 		String[] termVec4 = new String[] {apiName, clazzName+"*", methodBaseName, methodDesc};
+		String[] termVec5 = new String[] {apiName, clazzName+"*", methodBaseName, methodDesc};
 		
 		termList.add(termVec1);
 		termList.add(termVec2);
 		termList.add(termVec3);
 		termList.add(termVec4);
+		termList.add(termVec5);
 		
 		return termList;
 	}

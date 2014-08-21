@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
-//import java.util.HashMap;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -27,6 +27,12 @@ import cc.mallet.util.Maths;
  *
  */
 public abstract class TopicModelFactory {
+	
+	public double MIN_PROB_DIST = 0.001;
+	
+	public int TOPK = 200;
+	
+	public int SIMILARITY_CUTOFF = 15;
 	
 	private int numTopics = 500;
 	
@@ -91,11 +97,46 @@ public abstract class TopicModelFactory {
 		
 	}
 
+	/**
+	 * This method will return the object of {@link InstanceList} containing
+	 * the data to create a {@code Topic Model} 
+	 * @return {@link InstanceList}
+	 */
 	public abstract InstanceList getInstanceList();
 	
+	/**
+	 * This method will return the object of {@link InstanceList} containing
+	 * the data to query a {@code Topic Model} to produce Jenson Shanon Distribution. {@code Source} and {@code Target} Data 
+	 * @return {@link InstanceList} Typically a combination of {@code getInstanceList()} and {@code getSearchInstanceList()}
+	 */
 	public abstract InstanceList getTargetInstanceList();
 	
+	/**
+	 * This method will return the object of {@link InstanceList} containing
+	 * the data to query a {@code Topic Model} for custom Similarity. {@code Source} and {@code Target} Data 
+	 * @return {@link InstanceList}
+	 */
 	public abstract InstanceList getSearchInstanceList();
+	
+	public final void eval() throws Exception
+	{
+		Long startTime = System.currentTimeMillis();
+		runEval();
+		
+		long seconds = Math.round((System.currentTimeMillis() - startTime)/1000.0);
+		long minutes = seconds / 60;	seconds %= 60;
+		long hours = minutes / 60;	minutes %= 60;
+		long days = hours / 24;	hours %= 24;
+
+		StringBuilder timeReport = new StringBuilder();
+		timeReport.append("\nTotal time: ");
+		if (days != 0) { timeReport.append(days); timeReport.append(" days "); }
+		if (hours != 0) { timeReport.append(hours); timeReport.append(" hours "); }
+		if (minutes != 0) { timeReport.append(minutes); timeReport.append(" minutes "); }
+		timeReport.append(seconds); timeReport.append(" seconds");
+		
+		System.out.println(timeReport.toString());
+	}
 	
 	public abstract void runEval() throws Exception;
 	
@@ -210,16 +251,18 @@ public abstract class TopicModelFactory {
 		Set<String> srcClassSet = getSrcSet();
 	    List<String> lst;
 		Boolean flag = false;
-		Set<String> tgtPkgSet, tgtPkgSetPerTopic; 
-		
+		Map<String, IDSorter> tgtPkgMap;
+		List<String> vocabList, tgtPkgPerTopicList;
 		String tmp;
+		IDSorter id;
+		double weight;
 		for(String pkgStr: srcClassSet)
 		{
-			tgtPkgSet = new TreeSet<String>();
-			returnMap.put(pkgStr, new ArrayList<String>());
+			tgtPkgMap = new LinkedHashMap<String, IDSorter>();
+			vocabList = new ArrayList<String>();
 			for(String key: finalMap.keySet())
 			{
-				tgtPkgSetPerTopic = new TreeSet<String>();
+				tgtPkgPerTopicList = new ArrayList<String>();
 				flag = false;
 				lst = finalMap.get(key);
 				for (int i = 0; (i < lst.size() && i< topK); i++) 
@@ -228,18 +271,39 @@ public abstract class TopicModelFactory {
 					if(lst.get(i).endsWith(pkgStr))
 					{
 						flag = true;
-						break;
+						//break;
 					}
 					if(inclusionCriteria(tmp))
-						tgtPkgSetPerTopic.add(tmp);
+						tgtPkgPerTopicList.add(tmp);
 				}
 				if(flag)
 				{
-					tgtPkgSetPerTopic.removeAll(srcClassSet);
-					tgtPkgSet.addAll(tgtPkgSetPerTopic);
+					tgtPkgPerTopicList.removeAll(srcClassSet);
+					
+					for(String str: tgtPkgPerTopicList)
+					{
+						weight = Math.log(1.0 + (Double.valueOf(topK)-Double.valueOf(tgtPkgPerTopicList.indexOf(str)))); //   /Double.valueOf(topK));
+						
+						if(!tgtPkgMap.containsKey(str))
+						{
+							vocabList.add(str);
+							tgtPkgMap.put(str, new IDSorter(vocabList.indexOf(str), 0));
+							
+						}
+						
+						id = tgtPkgMap.get(str);
+						id.set(id.getID(), id.getWeight() + weight);
+					}
 				}
 			}
-			returnMap.get(pkgStr).addAll(tgtPkgSet);
+			IDSorter[] sortedArray = new IDSorter[tgtPkgMap.values().size()];
+			sortedArray = tgtPkgMap.values().toArray(sortedArray);
+			Arrays.sort(sortedArray);
+			List<String> resultList = new ArrayList<String>();
+			for (int i = 0; (i < sortedArray.length); i++) {
+				resultList.add(vocabList.get(sortedArray[i].getID()) +"\t("+sortedArray[i].getWeight()+")");
+			}
+			returnMap.put(pkgStr, resultList);
 		}
 		return returnMap;
 	}
@@ -255,21 +319,23 @@ public abstract class TopicModelFactory {
 	{
 		Map<String, List<String>> returnMap = new TreeMap<String, List<String>>();
 		List<IDSorter> lst;
-			
-		IDSorter[] sortedArray;
+		List<String> resultList;
 		for(Object key: finalMap.keySet())
 		{
-			List<String> resultList = new ArrayList<String>();
+			resultList = new ArrayList<String>();
 			lst = finalMap.get(key);
-			sortedArray = new IDSorter[lst.size()];
-			sortedArray = lst.toArray(sortedArray);
-			Arrays.sort(sortedArray);
-			for (int i = 0; (i < sortedArray.length); i++) {
-				resultList.add("(" + sortedArray[i].getWeight()+ ")\t" + instanceList.get(sortedArray[i].getID()).getSource() );
+			sort(lst);
+			for (IDSorter resultObj:lst) {
+				resultList.add("(" + resultObj.getWeight()+ ")\t" + instanceList.get(resultObj.getID()).getSource() );
 			}
 			returnMap.put(key.toString(), resultList);
 		}
 		return returnMap;
+	}
+
+	@SuppressWarnings("unchecked")
+	private void sort(List<IDSorter> lst) {
+		Collections.sort(lst);
 	}
 	
 	protected void abc(Map<String, List<String>> finalMap, String fileID, int topK) {

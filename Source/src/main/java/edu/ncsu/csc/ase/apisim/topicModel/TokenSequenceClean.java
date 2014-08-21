@@ -31,13 +31,13 @@ public class TokenSequenceClean extends Pipe implements Serializable
 	 */
 	public TokenSequenceClean(boolean markDeletions) {
 		this.markDeletions = markDeletions;
-		//populate();
+		populate();
 	}
 
 	public TokenSequenceClean setMarkDeletions (boolean flag)
 	{
 		this.markDeletions = flag;
-		//populate();
+		populate();
 		return this;
 	}
 	
@@ -46,7 +46,7 @@ public class TokenSequenceClean extends Pipe implements Serializable
 		try {
 
 			BufferedReader input = null;
-			input = new BufferedReader (new FileReader ("data\\stopwords.txt"));
+			input = new BufferedReader (new FileReader ("data\\stopwordsNew.txt"));
 			String line;
 
 			while (( line = input.readLine()) != null) {

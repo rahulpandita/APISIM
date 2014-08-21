@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Cons 
+public class TpMdlClsCons 
 {
 	public static HashMap<String, Set<String>> topicClassMap = new HashMap<String, Set<String>>();
 	

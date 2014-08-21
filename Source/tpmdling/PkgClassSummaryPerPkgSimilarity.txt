@@ -1,420 +1,1318 @@
 java.util
-	android.app
-	android.database
-	android.drm
-	android.gesture
-	android.graphics.drawable.shapes
-	android.hardware
-	android.hardware.input
-	android.inputmethodservice
-	android.media.effect
-	android.net.nsd
-	android.nfc.tech
-	android.print
-	android.print.pdf
-	android.printservice
-	android.provider
-	android.renderscript
-	android.sax
-	android.security
-	android.speech
-	android.support.v7.widget
-	android.support.v8.renderscript
-	android.test
-	android.test.mock
-	android.text.format
-	android.text.style
-	android.text.util
-	android.transition
-	android.webkit
-	java.awt.font
-	java.beans
-	java.lang.annotation
-	java.math
-	java.nio
-	java.nio.channels
-	java.security.cert
-	java.security.interfaces
-	java.sql
-	java.text
-	java.util.concurrent
-	java.util.concurrent.atomic
-	java.util.concurrent.locks
-	java.util.jar
-	java.util.regex
-	java.util.zip
-	javax.security.auth
-	javax.security.cert
-	javax.sql
-	javax.xml.namespace
-	javax.xml.parsers
-	javax.xml.transform
-	javax.xml.transform.dom
-	javax.xml.transform.sax
-	junit.framework
-	org.apache.http.auth
-	org.apache.http.auth.params
-	org.apache.http.client.params
-	org.apache.http.client.protocol
-	org.apache.http.client.utils
-	org.apache.http.conn
-	org.apache.http.conn.params
-	org.apache.http.conn.scheme
-	org.apache.http.conn.util
-	org.apache.http.cookie
-	org.apache.http.cookie.params
-	org.apache.http.entity
-	org.apache.http.impl
-	org.apache.http.impl.client
-	org.apache.http.impl.conn.tsccm
-	org.apache.http.impl.cookie
-	org.apache.http.impl.entity
-	org.apache.http.io
-	org.apache.http.message
-	org.apache.http.params
-	org.apache.http.util
-	org.xml.sax.ext
-	org.xml.sax.helpers
+	java.util.concurrent	(21.23200929450808)
+	java.text	(20.980694866227168)
+	org.apache.http.impl.auth	(17.912227304331434)
+	android.nfc.tech	(17.506762196223267)
+	android.widget	(17.019881696629596)
+	android.media.audiofx	(16.86397948376353)
+	android.hardware	(15.98818011324411)
+	javax.xml.datatype	(15.964132953461279)
+	java.security.spec	(15.751370371166086)
+	android.text.format	(15.718847179460528)
+	android.graphics.drawable	(14.725264773284724)
+	android.content.pm	(14.573714875157524)
+	android.net.rtp	(14.506575572319896)
+	android.provider	(14.498607402670716)
+	java.util.concurrent.locks	(14.228943835721617)
+	android.gesture	(14.151754197030487)
+	android.support.v7.app	(14.10111046421173)
+	android.support.v4.content	(13.803276020295932)
+	java.sql	(13.107858691201447)
+	java.util.concurrent.atomic	(12.802158113246987)
+	android.security	(12.792107777393486)
+	android.nfc	(12.396362371973305)
+	android.net.wifi	(12.196022309676673)
+	android.view.accessibility	(12.003650417029217)
+	android.support.v4.text	(11.3975146134589)
+	java.nio.channels	(11.346540247474627)
+	android.graphics	(11.282001726337057)
+	android.graphics.drawable.shapes	(11.24151036498232)
+	android.appwidget	(11.018366813668111)
+	android.support.v7.view	(10.938804990831926)
+	java.nio	(10.923056633863787)
+	java.nio.charset	(10.809727948556782)
+	android.content	(10.791378809888585)
+	android.media	(10.771176102571065)
+	javax.sql	(10.604602902745249)
+	java.util.regex	(10.54006438160768)
+	org.apache.http.client.protocol	(10.51759152575562)
+	android.text.style	(10.22990945330384)
+	org.apache.http.impl.conn.tsccm	(9.95227771670556)
+	android.text.method	(9.821843563495618)
+	android.net.nsd	(9.769727562356604)
+	android.speech	(9.670293665368416)
+	java.lang.reflect	(9.65194452670022)
+	javax.security.auth.callback	(9.41897923708751)
+	android.test.mock	(9.400630098419315)
+	android.view.inputmethod	(9.246479418592056)
+	android.view	(9.084777149000837)
+	android.nfc.cardemulation	(8.948975607841776)
+	javax.security.auth	(8.890135107818843)
+	java.util.zip	(8.881836305004146)
+	javax.xml.transform	(8.861633597686627)
+	android.telephony	(8.794824928014517)
+	android.support.v7.appcompat	(8.658692753689936)
+	android.app.admin	(8.63497622707262)
+	java.security.cert	(8.486940148245218)
+	android.telephony.cdma	(8.484669999710679)
+	android.telephony.gsm	(8.466320861042481)
+	org.w3c.dom	(8.302017809751204)
+	org.json	(8.26565016558033)
+	android.view.animation	(8.215006432761575)
+	org.apache.http.protocol	(8.188689124444203)
+	java.io	(8.006367567650246)
+	android.print.pdf	(7.965545573129992)
+	android.text	(7.7266536648476425)
+	android.sax	(7.7266536648476425)
+	android.support.v4.widget	(7.67786350067821)
+	android.app.backup	(7.560080465021827)
+	org.apache.http.impl.conn	(7.473069088032197)
+	android.os	(7.203405521083095)
+	javax.security.cert	(7.193685818395112)
+	javax.crypto	(7.193685818395112)
+	android.support.v4.util	(7.187657164114956)
+	java.awt.font	(6.8752320872765775)
+	java.security.acl	(6.8752320872765775)
+	org.xml.sax.helpers	(6.80239476332431)
+	java.beans	(6.792344427470811)
+	org.apache.http.impl.cookie	(6.741700694652055)
+	java.math	(6.741700694652055)
+	android.animation	(6.697034247666485)
+	java.util.jar	(6.684611727667928)
+	org.apache.http.auth	(6.64639051484773)
+	android.drm	(6.587550014824796)
+	android.support.v7.widget	(6.556778356158043)
+	android.test	(6.461468176353717)
+	org.apache.http.conn.util	(6.29156913955832)
+	android.renderscript	(6.289715570908998)
+	org.apache.http.cookie.params	(6.204557762568691)
+	java.security.interfaces	(6.182084906716632)
+	android.support.v7.media	(6.173786103901937)
+	android.printservice	(6.086774726912307)
+	android.support.v4.view	(6.00388706710654)
+	java.util.logging	(5.991464547107983)
+	android.support.v7.gridlayout	(5.85793315448346)
+	org.apache.http.util	(5.730099782973575)
+	android.util	(5.703782474656201)
+	junit.runner	(5.575949103146316)
+	android.location	(5.575949103146316)
+	android.support.v7.mediarouter	(5.288267030694535)
+	org.apache.http.client	(5.164785973923514)
+	org.w3c.dom.ls	(5.0106352940962555)
+	android	(4.882801922586371)
+	android.inputmethodservice	(4.836281906951478)
+	android.text.util	(4.700480365792417)
+	android.media.effect	(4.700480365792417)
+	android.net	(4.700480365792417)
+	javax.xml.namespace	(4.700480365792417)
+	android.graphics.pdf	(4.68213122712422)
+	java.security	(4.605170185988092)
+	android.mtp	(4.605170185988092)
+	javax.net.ssl	(4.499809670330265)
+	org.apache.http.impl.io	(4.477336814478207)
+	android.support.v4.app	(4.394449154672439)
+	java.util.prefs	(4.382026634673881)
+	android.hardware.location	(4.343805421853684)
+	org.apache.http.io	(4.276666119016055)
+	javax.xml.parsers	(4.248495242049359)
+	javax.xml.validation	(4.248495242049359)
+	android.support.v13.app	(4.189654742026425)
+	org.apache.http.conn.params	(4.189654742026425)
+	android.accessibilityservice	(4.1588830833596715)
+	org.xml.sax.ext	(4.1588830833596715)
+	org.apache.http.params	(4.143134726391533)
+	org.apache.http.auth.params	(4.143134726391533)
+	javax.crypto.spec	(4.094344562222101)
+	javax.microedition.khronos.opengles	(4.094344562222101)
+	org.apache.http	(4.025351690735149)
+	javax.security.auth.login	(4.007333185232471)
+	org.apache.http.impl.client	(4.007333185232471)
+	android.webkit	(3.9889840465642745)
+	android.print	(3.9120230054281464)
+	org.apache.http.conn.ssl	(3.8918202981106265)
+	java.lang	(3.8712010109078907)
+	java.nio.channels.spi	(3.8066624897703196)
+	android.app	(3.737669618283368)
+	android.content.res	(3.6888794541139367)
+	android.preference	(3.688879454113936)
+	org.apache.http.conn.scheme	(3.688879454113936)
+	org.apache.http.impl.entity	(3.465735902799726)
+	android.opengl	(3.295836866004329)
+	dalvik.bytecode	(2.4849066497880004)
+	org.apache.http.client.methods	(2.3978952727983707)
+	javax.xml.transform.sax	(2.3978952727983707)
+	org.apache.http.conn.routing	(2.302585092994046)
+	org.apache.http.client.params	(2.302585092994046)
+	org.apache.http.message	(2.1972245773362196)
+	org.apache.http.impl	(2.1972245773362196)
+	org.apache.http.cookie	(2.1972245773362196)
+	android.support.v4.net	(2.1972245773362196)
+	org.apache.http.client.utils	(2.0794415416798357)
+	java.lang.annotation	(2.0794415416798357)
+	android.support.v4.graphics.drawable	(2.0794415416798357)
+	java.nio.charset.spi	(2.0794415416798357)
+	android.database	(2.0794415416798357)
+	javax.crypto.interfaces	(1.9459101490553132)
+	junit.framework	(1.9459101490553132)
+	android.support.v4.print	(1.9459101490553132)
+	android.service.notification	(1.791759469228055)
+	org.apache.http.entity	(1.791759469228055)
+	android.service.dreams	(1.791759469228055)
+	org.apache.http.conn	(1.6094379124341003)
+	android.net.http	(1.0986122886681098)
 _________________________________________________________________________________
 javax.microedition.io
-	android.app
-	android.bluetooth
-	android.graphics
-	android.graphics.pdf
-	android.hardware
-	android.media.audiofx
-	android.mtp
-	android.net
-	android.print
-	android.printservice
-	android.service.dreams
-	android.support.v4.content
-	android.support.v7.media
-	android.telephony
-	android.transition
-	android.view.inputmethod
-	android.webkit
-	java.awt.font
-	java.io
-	java.nio
-	java.nio.channels
-	javax.net.ssl
-	javax.security.auth
-	javax.sql
-	org.apache.http.conn
-	org.apache.http.conn.routing
-	org.apache.http.conn.scheme
-	org.apache.http.conn.ssl
-	org.apache.http.impl
-	org.apache.http.impl.conn
-	org.apache.http.impl.conn.tsccm
-	org.apache.http.impl.entity
-	org.json
+	android.provider	(13.94956056608453)
+	org.apache.http.conn	(13.549793479091003)
+	android.content	(13.499429010990795)
+	org.apache.http.impl.cookie	(12.907187995739296)
+	java.util.concurrent	(12.358141159153108)
+	javax.net.ssl	(11.462053134596474)
+	org.xml.sax.ext	(11.184421397998193)
+	java.nio.channels	(11.11542852651124)
+	java.sql	(10.586584397242573)
+	android.util	(10.44859865426867)
+	java.security.acl	(9.536762272743895)
+	android.service.dreams	(9.496270911389157)
+	android.support.v4.content	(9.487972108574462)
+	android.webkit	(9.104979856318359)
+	android.support.v4.text	(9.082507000466299)
+	org.apache.http.impl.conn	(8.98956900480703)
+	java.lang.annotation	(8.977146484808472)
+	java.lang.reflect	(8.890135107818843)
+	org.apache.http.io	(8.890135107818843)
+	org.apache.http.impl.io	(8.738254576526124)
+	android.animation	(8.525161361065415)
+	java.util.concurrent.locks	(8.525161361065415)
+	android.drm	(8.466320861042481)
+	org.apache.http.impl.conn.tsccm	(8.302017809751204)
+	android.support.v13.app	(8.25582842728183)
+	org.apache.http.conn.params	(8.119696252957251)
+	java.util.concurrent.atomic	(8.083328608786376)
+	android.content.res	(7.773173680482536)
+	java.util.logging	(7.560080465021827)
+	java.security.cert	(7.4547199493640015)
+	android.graphics.drawable	(7.3777589082278725)
+	android.sax	(7.098375638590787)
+	javax.xml.namespace	(7.098375638590787)
+	android.bluetooth	(7.033506484287698)
+	android.preference	(6.761572768804056)
+	android.view.accessibility	(6.733401891837358)
+	java.net	(6.697034247666485)
+	android.content.pm	(6.674561391814426)
+	android.inputmethodservice	(6.5998704992128365)
+	javax.xml.transform	(6.587550014824796)
+	org.apache.http.protocol	(6.579251212010101)
+	android.text.method	(6.556778356158042)
+	android.gesture	(6.396929655216147)
+	org.w3c.dom	(6.356107660695891)
+	java.text	(6.289715570908998)
+	java.util.zip	(6.269096283706261)
+	javax.sql	(6.222576268071368)
+	org.apache.http.auth	(6.135564891081739)
+	android.printservice	(6.0867747269123065)
+	android.net	(6.040254711277414)
+	org.apache.http.impl	(5.991464547107983)
+	android.support.v8.renderscript	(5.953243334287785)
+	android.telephony	(5.934894195619588)
+	android.database	(5.934894195619588)
+	org.apache.http.message	(5.78074351579233)
+	javax.xml.transform.sax	(5.768320995793772)
+	android.renderscript	(5.768320995793772)
+	javax.crypto	(5.683579767338681)
+	org.xml.sax	(5.662960480135945)
+	android.test.mock	(5.662960480135945)
+	org.apache.http	(5.529429087511423)
+	android.text.format	(5.48063892334199)
+	android.transition	(5.442417710521794)
+	android.nfc.tech	(5.41610040220442)
+	javax.security.auth.callback	(5.3471075307174685)
+	org.apache.http.client	(4.941642422609304)
+	android.support.v7.app	(4.90527477843843)
+	java.awt.font	(4.795790545596741)
+	android.support.v4.view	(4.595119850134591)
+	android.support.v7.media	(4.499809670330265)
+	android.hardware.display	(4.499809670330265)
+	javax.security.auth	(4.477336814478207)
+	org.apache.http.entity	(4.343805421853684)
+	java.io	(4.276666119016055)
+	java.util.jar	(4.248495242049359)
+	android.graphics.pdf	(4.248495242049359)
+	org.apache.http.cookie	(4.143134726391533)
+	android.media	(4.094344562222101)
+	android.net.rtp	(4.025351690735149)
+	android.net.http	(4.025351690735149)
+	java.util.regex	(4.007333185232471)
+	org.apache.http.conn.scheme	(4.007333185232471)
+	android.hardware.location	(3.9120230054281464)
+	java.security	(3.9120230054281464)
+	android.view.inputmethod	(3.8712010109078907)
+	org.apache.http.conn.routing	(3.8066624897703196)
+	android.text	(3.8066624897703196)
+	org.apache.http.params	(3.7841896339182615)
+	android.widget	(3.737669618283368)
+	android.support.v7.view	(3.58351893845611)
+	android.test	(3.5553480614894135)
+	org.apache.http.client.methods	(3.465735902799726)
+	android.service.notification	(3.465735902799726)
+	android.print.pdf	(3.401197381662156)
+	java.nio	(3.2188758248682006)
+	android.opengl	(2.995732273553991)
+	android.support.v7.mediarouter	(2.8903717578961645)
+	android.telephony.gsm	(2.70805020110221)
+	android.os	(2.70805020110221)
+	org.apache.http.client.utils	(2.3978952727983707)
+	android.telephony.cdma	(2.3978952727983707)
+	org.apache.http.client.protocol	(2.3978952727983707)
+	android.view.animation	(2.3978952727983707)
+	android.accessibilityservice	(2.3978952727983707)
+	javax.xml.transform.dom	(2.3978952727983707)
+	org.apache.http.conn.ssl	(2.3978952727983707)
+	android.mtp	(2.3978952727983707)
+	android.media.effect	(2.302585092994046)
+	org.apache.http.conn.util	(2.302585092994046)
+	android.print	(2.302585092994046)
+	android.hardware.input	(2.302585092994046)
+	android.net.nsd	(2.302585092994046)
+	android.support.v4.util	(2.302585092994046)
+	org.apache.http.util	(2.302585092994046)
+	org.apache.http.cookie.params	(2.302585092994046)
+	org.w3c.dom.ls	(2.1972245773362196)
+	android.nfc.cardemulation	(2.1972245773362196)
+	android.nfc	(2.1972245773362196)
+	android.media.audiofx	(2.1972245773362196)
+	android.support.v4.app	(2.1972245773362196)
+	android.app.backup	(2.1972245773362196)
+	java.math	(2.1972245773362196)
+	javax.crypto.interfaces	(2.0794415416798357)
+	android.support.v7.appcompat	(2.0794415416798357)
+	android.text.util	(2.0794415416798357)
+	android.hardware	(2.0794415416798357)
+	android.app	(2.0794415416798357)
+	javax.xml.datatype	(1.9459101490553132)
+	android.support.v7.gridlayout	(1.9459101490553132)
+	junit.framework	(1.9459101490553132)
+	android.support.v4.widget	(1.791759469228055)
+	javax.security.auth.login	(1.791759469228055)
+	java.nio.channels.spi	(1.791759469228055)
+	android.support.v7.widget	(1.791759469228055)
+	org.apache.http.auth.params	(1.791759469228055)
+	junit.runner	(1.6094379124341003)
+	android.net.wifi	(1.6094379124341003)
+	org.json	(1.3862943611198906)
+	android	(1.3862943611198906)
+	java.security.spec	(1.3862943611198906)
+	java.nio.charset	(1.3862943611198906)
 _________________________________________________________________________________
 javax.microedition.lcdui
-	android.app
-	android.content.pm
-	android.graphics.drawable.shapes
-	android.graphics.pdf
-	android.hardware
-	android.hardware.location
-	android.inputmethodservice
-	android.media.effect
-	android.mtp
-	android.nfc
-	android.preference
-	android.print
-	android.provider
-	android.renderscript
-	android.support.v13.app
-	android.support.v4.app
-	android.support.v4.hardware.display
-	android.support.v4.net
-	android.support.v4.os
-	android.support.v4.view
-	android.support.v4.view.accessibility
-	android.support.v4.widget
-	android.support.v7.app
-	android.support.v7.media
-	android.support.v7.view
-	android.telephony.cdma
-	android.view
-	android.view.accessibility
-	android.widget
-	java.beans
-	java.lang.reflect
-	java.nio
-	java.nio.channels
-	java.security
-	java.sql
-	java.util.concurrent
-	java.util.prefs
-	javax.net.ssl
-	javax.sql
-	javax.xml.transform.dom
-	org.apache.http.auth
-	org.apache.http.client.protocol
-	org.apache.http.cookie
-	org.apache.http.impl.cookie
-	org.apache.http.io
+	android.graphics.drawable	(24.92293029960155)
+	android.widget	(24.375965629219685)
+	android.gesture	(20.776002489191676)
+	android.support.v7.app	(19.776722061901236)
+	android.support.v7.widget	(19.46396635189734)
+	android.graphics	(18.562698921721797)
+	java.nio.channels	(17.91782328983555)
+	android.hardware	(17.866950959461796)
+	android.nfc.cardemulation	(17.64849035605197)
+	android.preference	(16.95511457793702)
+	android.app.backup	(16.78668780946188)
+	java.text	(16.76264064967905)
+	android.view	(16.432613647223206)
+	java.util.concurrent.locks	(16.185006356240947)
+	android.graphics.drawable.shapes	(15.988510746409627)
+	java.beans	(15.919517874922677)
+	org.apache.http.conn.params	(15.583045638301467)
+	java.security.acl	(15.46753275117962)
+	android.accessibilityservice	(15.181704247377162)
+	javax.xml.datatype	(14.10338061274627)
+	android.transition	(13.882421263246904)
+	android.text.method	(13.882421263246902)
+	android.content.pm	(13.849796035930824)
+	android.inputmethodservice	(13.549793479091004)
+	java.security.cert	(13.392214926683646)
+	org.apache.http.conn	(13.253812603824526)
+	android.app	(13.053141908362376)
+	android.text.style	(12.783808974578792)
+	android.support.v7.media	(12.753037315912037)
+	org.apache.http.conn.routing	(12.676594890271643)
+	android.print	(12.191567959327292)
+	android.support.v4.view	(11.83934736573794)
+	java.nio.channels.spi	(11.749735207048252)
+	org.apache.http.client.protocol	(11.575712453068993)
+	android.support.v7.view	(11.520893634619407)
+	java.util.regex	(11.462053134596472)
+	android.content.res	(11.336820544786645)
+	android.net.rtp	(11.269681241949018)
+	javax.xml.transform	(11.25156070083582)
+	java.math	(11.087359685155063)
+	android.view.inputmethod	(11.05089000537367)
+	android.print.pdf	(10.945529489715843)
+	org.xml.sax.helpers	(10.714417768752458)
+	java.nio.charset	(10.694215061434939)
+	java.lang	(10.60460290274525)
+	android.view.accessibility	(10.468801361586188)
+	org.xml.sax	(10.434703865949855)
+	org.apache.http.impl.conn	(10.340967990076305)
+	android.support.v4.widget	(10.116580767996837)
+	android.speech	(10.075758773476581)
+	java.util.logging	(10.044987114809828)
+	android.renderscript	(9.978595025022933)
+	android.media	(9.915910072534686)
+	android.support.v4.text	(9.893437216682626)
+	org.apache.http.impl.conn.tsccm	(9.824444345195676)
+	android.location	(9.490242257109001)
+	org.json	(9.405084448768694)
+	android.appwidget	(9.323669057283187)
+	org.apache.http.client.methods	(9.20029003612268)
+	android.text	(9.149315670138408)
+	javax.security.auth	(9.094929520464856)
+	android.bluetooth	(9.084777149000837)
+	java.util.concurrent.atomic	(8.930626469173578)
+	org.apache.http.entity	(8.707813551024888)
+	android.service.dreams	(8.594154232552365)
+	android.hardware.location	(8.502688505213357)
+	java.lang.annotation	(8.502688505213357)
+	org.apache.http.impl.cookie	(8.476371196895983)
+	android.drm	(8.466320861042481)
+	android.nfc.tech	(8.283999304248526)
+	android.provider	(8.1886891244442)
+	javax.xml.namespace	(8.160518247477505)
+	android.sax	(7.89095671613892)
+	android.os	(7.847762537473608)
+	org.apache.http.message	(7.686162303492906)
+	android.text.util	(7.649692623711514)
+	android.view.animation	(7.3901814282264295)
+	android.opengl	(6.993015122932961)
+	org.apache.http.params	(6.897704943128636)
+	android.mtp	(6.779921907472252)
+	javax.xml.transform.dom	(6.697034247666485)
+	javax.xml.validation	(6.697034247666485)
+	android.app.admin	(6.684611727667926)
+	android.media.audiofx	(6.674561391814426)
+	java.util.zip	(6.579251212010101)
+	java.awt.font	(6.386879319362645)
+	android.hardware.display	(6.309918278226517)
+	org.apache.http.client.params	(6.222576268071369)
+	javax.xml.transform.sax	(6.173786103901937)
+	android.database	(6.135564891081739)
+	android.telephony	(6.1092475827643655)
+	java.io	(6.109247582764365)
+	javax.security.auth.login	(6.040254711277415)
+	android.support.v8.renderscript	(6.00388706710654)
+	android.support.v4.app	(5.950642552587727)
+	javax.security.cert	(5.894402834264851)
+	java.nio	(5.863631175598098)
+	javax.xml.parsers	(5.6937321388027)
+	android.net.http	(5.48063892334199)
+	android.security	(5.4116460518550396)
+	org.apache.http.client	(5.375278407684165)
+	android.animation	(5.375278407684165)
+	org.apache.http	(5.241747015059643)
+	javax.net.ssl	(5.087596335232384)
+	android.printservice	(5.075173815233827)
+	org.apache.http.impl.io	(4.787491742782046)
+	android.net.wifi	(4.605170185988092)
+	android.support.v13.app	(4.595119850134591)
+	android.nfc	(4.499809670330265)
+	org.apache.http.protocol	(4.499809670330265)
+	android.hardware.input	(4.477336814478207)
+	android.media.effect	(4.343805421853684)
+	javax.crypto	(4.31748811353631)
+	android.os.storage	(4.276666119016055)
+	java.net	(4.248495242049359)
+	org.apache.http.conn.scheme	(4.248495242049359)
+	android.text.format	(4.189654742026425)
+	junit.runner	(4.1588830833596715)
+	android.test.mock	(4.143134726391533)
+	org.apache.http.impl.client	(4.143134726391533)
+	java.security.spec	(4.094344562222101)
+	javax.sql	(4.094344562222101)
+	javax.crypto.spec	(4.094344562222101)
+	android.support.v7.appcompat	(4.0943445622221)
+	org.xml.sax.ext	(4.025351690735149)
+	android.net.nsd	(3.9889840465642745)
+	java.util.concurrent	(3.8918202981106265)
+	android.util	(3.8712010109078907)
+	android.test	(3.8712010109078907)
+	android.support.v4.os	(3.8066624897703196)
+	java.security	(3.737669618283368)
+	org.apache.http.impl	(3.6888794541139367)
+	org.apache.http.auth	(3.6888794541139367)
+	org.apache.http.io	(3.688879454113936)
+	org.apache.http.cookie	(3.688879454113936)
+	dalvik.system	(3.58351893845611)
+	java.sql	(3.465735902799726)
+	org.w3c.dom.ls	(3.465735902799726)
+	org.w3c.dom	(2.8903717578961645)
+	android.support.v7.mediarouter	(2.4849066497880004)
+	android.service.notification	(2.3978952727983707)
+	org.apache.http.conn.ssl	(2.3978952727983707)
+	javax.security.auth.callback	(2.3978952727983707)
+	java.util.jar	(2.3978952727983707)
+	android.webkit	(2.3978952727983707)
+	android.graphics.pdf	(2.302585092994046)
+	android.telephony.gsm	(2.302585092994046)
+	java.nio.charset.spi	(2.302585092994046)
+	org.xmlpull.v1.sax2	(2.302585092994046)
+	org.apache.http.conn.util	(2.302585092994046)
+	java.util.prefs	(2.302585092994046)
+	org.apache.http.util	(2.302585092994046)
+	org.apache.http.auth.params	(2.1972245773362196)
+	android.telephony.cdma	(2.0794415416798357)
+	java.lang.reflect	(2.0794415416798357)
+	android.net	(2.0794415416798357)
+	android.support.v4.database	(2.0794415416798357)
+	android.support.v4.content	(1.9459101490553132)
+	junit.framework	(1.9459101490553132)
+	android.support.v4.util	(1.791759469228055)
+	javax.microedition.khronos.opengles	(1.791759469228055)
+	android	(1.6094379124341003)
+	android.content	(1.6094379124341003)
+	dalvik.bytecode	(1.3862943611198906)
 _________________________________________________________________________________
 javax.microedition.lcdui.game
-	android.accessibilityservice
-	android.content.pm
-	android.drm
-	android.gesture
-	android.inputmethodservice
-	android.media.effect
-	android.mtp
-	android.net.wifi
-	android.nfc
-	android.nfc.tech
-	android.renderscript
-	android.text
-	android.text.format
-	android.text.util
-	android.transition
-	java.awt.font
-	java.lang.reflect
-	java.net
-	java.nio
-	java.nio.channels
-	java.security
-	java.security.acl
-	java.security.interfaces
-	java.text
-	java.util.regex
-	javax.crypto
-	javax.net.ssl
-	javax.security.auth.login
-	org.apache.http.conn.routing
-	org.apache.http.cookie
-	org.apache.http.impl.conn.tsccm
-	org.apache.http.impl.cookie
-	org.apache.http.impl.io
-	org.apache.http.io
-	org.w3c.dom.ls
+	android.app.backup	(15.19972275287984)
+	android.graphics	(15.140882252856908)
+	android.view.accessibility	(14.141932458731986)
+	android.database	(13.418013619505288)
+	java.util.concurrent	(12.832599138748224)
+	android.view	(12.165250651009917)
+	android.view.animation	(11.44218106044447)
+	android.media	(11.11988287686062)
+	javax.crypto.interfaces	(10.276429468938733)
+	java.lang.reflect	(10.171068953280907)
+	android.graphics.drawable	(9.911455722185304)
+	java.text	(9.035986984831405)
+	android.animation	(8.97941663334301)
+	android.renderscript	(8.938925271988275)
+	java.nio	(8.84361509218395)
+	org.json	(8.776475789346321)
+	android.content.pm	(8.620471540869739)
+	android.text.style	(8.594154232552366)
+	org.apache.http.impl.cookie	(8.294049640102028)
+	android.inputmethodservice	(8.1786387885907)
+	java.util.concurrent.atomic	(8.1786387885907)
+	java.nio.charset	(8.032684875967622)
+	java.nio.channels	(8.014335737299424)
+	android.os	(8.014335737299424)
+	java.sql	(7.927324360309793)
+	java.lang	(7.7142311448490855)
+	javax.sql	(7.560080465021828)
+	java.security.acl	(7.503840746698952)
+	android.print	(7.495541943884255)
+	org.w3c.dom.ls	(7.154615356913663)
+	android.graphics.drawable.shapes	(7.098375638590787)
+	org.xml.sax.ext	(6.897704943128636)
+	android.nfc	(6.897704943128636)
+	javax.crypto	(6.779921907472252)
+	android.support.v7.widget	(6.684611727667927)
+	android.test.mock	(6.579251212010101)
+	java.security.cert	(6.541029999189904)
+	android.service.notification	(6.473890696352274)
+	android.app	(6.42324696353352)
+	org.apache.http.impl.conn.tsccm	(6.405228458030842)
+	android.text.method	(6.356107660695891)
+	android.gesture	(6.29156913955832)
+	android.accessibilityservice	(6.182084906716632)
+	android.support.v7.appcompat	(6.173786103901937)
+	android.support.v4.widget	(6.173786103901936)
+	javax.security.auth.login	(6.086774726912307)
+	org.xml.sax	(6.068425588244111)
+	android.text.util	(6.040254711277414)
+	java.nio.channels.spi	(5.991464547107982)
+	android.opengl	(5.981414211254481)
+	java.net	(5.85793315448346)
+	android.content	(5.703782474656201)
+	android.preference	(5.575949103146316)
+	org.apache.http.impl.io	(5.529429087511423)
+	android.content.res	(5.529429087511423)
+	android.provider	(5.41610040220442)
+	javax.xml.parsers	(5.278114659230517)
+	org.xmlpull.v1.sax2	(4.795790545596741)
+	android.widget	(4.787491742782046)
+	android.support.v4.text	(4.700480365792417)
+	android.support.v8.renderscript	(4.700480365792417)
+	org.apache.http.auth	(4.700480365792417)
+	javax.xml.namespace	(4.700480365792417)
+	android.mtp	(4.605170185988092)
+	org.apache.http.client.methods	(4.595119850134591)
+	android.nfc.tech	(4.595119850134591)
+	org.apache.http.conn.routing	(4.499809670330265)
+	android.hardware.location	(4.499809670330265)
+	android.webkit	(4.382026634673881)
+	android.os.storage	(4.382026634673881)
+	android.support.v7.view	(4.382026634673881)
+	android.speech	(4.343805421853684)
+	javax.xml.transform.dom	(4.276666119016055)
+	org.apache.http.params	(4.248495242049359)
+	org.apache.http.impl	(4.248495242049359)
+	android.support.v7.app	(4.189654742026425)
+	javax.xml.datatype	(4.143134726391533)
+	junit.runner	(4.025351690735149)
+	android.net.rtp	(4.025351690735149)
+	android.service.dreams	(4.025351690735149)
+	java.awt.font	(3.9889840465642745)
+	android.nfc.cardemulation	(3.9120230054281464)
+	org.apache.http.util	(3.8918202981106265)
+	org.apache.http.io	(3.8712010109078907)
+	org.apache.http.cookie	(3.8066624897703196)
+	android.view.inputmethod	(3.737669618283368)
+	android.appwidget	(3.688879454113936)
+	android.support.v7.mediarouter	(3.58351893845611)
+	android.support.v4.view	(3.58351893845611)
+	javax.xml.transform.sax	(3.58351893845611)
+	android.net.http	(3.58351893845611)
+	android.support.v7.gridlayout	(3.5553480614894135)
+	java.util.jar	(3.4965075614664807)
+	android.security	(3.401197381662156)
+	java.security.interfaces	(3.401197381662155)
+	java.security	(3.401197381662155)
+	java.util.logging	(3.1780538303479453)
+	org.apache.http.conn	(3.1780538303479453)
+	android.support.v7.media	(3.044522437723423)
+	android.printservice	(2.995732273553991)
+	android.support.v4.app	(2.3978952727983707)
+	android.hardware.display	(2.3978952727983707)
+	junit.framework	(2.3978952727983707)
+	android.support.v4.print	(2.3978952727983707)
+	org.apache.http.impl.entity	(2.3978952727983707)
+	android.media.effect	(2.3978952727983707)
+	javax.net.ssl	(2.3978952727983707)
+	android.location	(2.3978952727983707)
+	android.util	(2.302585092994046)
+	android.transition	(2.302585092994046)
+	android.hardware	(2.302585092994046)
+	org.xml.sax.helpers	(2.302585092994046)
+	org.apache.http.client.protocol	(2.302585092994046)
+	android.telephony.cdma	(2.302585092994046)
+	java.beans	(2.1972245773362196)
+	javax.xml.transform	(2.1972245773362196)
+	android.test	(2.1972245773362196)
+	android.sax	(2.1972245773362196)
+	android.telephony.gsm	(2.1972245773362196)
+	android.support.v13.app	(2.0794415416798357)
+	android.graphics.pdf	(2.0794415416798357)
+	java.util.zip	(2.0794415416798357)
+	android.telephony	(2.0794415416798357)
+	org.apache.http.client.utils	(1.9459101490553132)
+	javax.security.auth.callback	(1.9459101490553132)
+	javax.microedition.khronos.opengles	(1.9459101490553132)
+	java.lang.annotation	(1.9459101490553132)
+	org.apache.http.client	(1.9459101490553132)
+	org.apache.http	(1.791759469228055)
+	javax.crypto.spec	(1.791759469228055)
+	android.net.wifi	(1.791759469228055)
+	org.apache.http.impl.conn	(1.6094379124341003)
+	org.apache.http.impl.client	(1.6094379124341003)
+	android.app.admin	(1.6094379124341003)
+	org.apache.http.conn.ssl	(1.6094379124341003)
+	javax.xml.validation	(1.6094379124341003)
+	android.bluetooth	(1.3862943611198906)
+	java.util.concurrent.locks	(1.3862943611198906)
+	android.net	(1.0986122886681098)
 _________________________________________________________________________________
 javax.microedition.media
-	android
-	android.accessibilityservice
-	android.animation
-	android.gesture
-	android.hardware
-	android.inputmethodservice
-	android.media.audiofx
-	android.mtp
-	android.net.nsd
-	android.net.rtp
-	android.nfc.cardemulation
-	android.nfc.tech
-	android.preference
-	android.renderscript
-	android.security
-	android.service.dreams
-	android.support.v4.content
-	android.support.v4.net
-	android.support.v4.os
-	android.support.v4.view
-	android.support.v4.view.accessibility
-	android.support.v7.media
-	android.support.v8.renderscript
-	android.test
-	android.text.method
-	android.text.util
-	android.transition
-	android.view.accessibility
-	java.security
-	java.security.acl
-	java.util.zip
-	javax.net.ssl
-	javax.xml.namespace
-	org.apache.http.client.methods
-	org.apache.http.client.protocol
-	org.apache.http.conn
-	org.apache.http.conn.scheme
-	org.apache.http.cookie
-	org.apache.http.params
-	org.xml.sax
+	android.net.rtp	(16.776535437997865)
+	android.media	(16.15683547927425)
+	java.text	(14.46038618985052)
+	java.util.concurrent	(13.187420514037631)
+	org.apache.http.impl.cookie	(12.529893764597828)
+	java.util.concurrent.locks	(12.234660102382087)
+	javax.sql	(10.892284975197033)
+	android.support.v7.media	(10.768905954036526)
+	android.net.nsd	(10.673595774232204)
+	android.content.pm	(10.586584397242571)
+	org.apache.http.entity	(10.325219633108164)
+	android.hardware	(10.207436597451782)
+	org.json	(9.65194452670022)
+	java.net	(8.894258825002705)
+	android.transition	(8.571681376700308)
+	android.print	(8.476371196895983)
+	org.apache.http.impl.entity	(8.411832675758411)
+	android.provider	(8.237479288613635)
+	android.view.animation	(8.215006432761575)
+	org.apache.http.client.methods	(8.166216268592143)
+	java.io	(8.166216268592143)
+	android.test.mock	(8.150467911624004)
+	android.preference	(8.060855752934316)
+	org.apache.http.impl.io	(7.996317231796747)
+	org.apache.http.conn.scheme	(7.813995675002792)
+	java.nio.channels	(7.7266536648476425)
+	android.app.backup	(7.696212639346408)
+	java.security.acl	(7.639642287858013)
+	java.util.logging	(7.5600804650218265)
+	java.util.concurrent.atomic	(7.339537695407675)
+	org.apache.http.impl.conn.tsccm	(6.779921907472253)
+	javax.xml.transform.dom	(6.684611727667927)
+	org.apache.http.conn	(6.64639051484773)
+	android.accessibilityservice	(6.587550014824796)
+	android.nfc.tech	(6.492239835020471)
+	android.text.method	(6.461468176353717)
+	android.support.v4.text	(6.4457198193855785)
+	java.security	(6.4457198193855785)
+	android.content	(6.4457198193855785)
+	android.media.audiofx	(6.42324696353352)
+	android.drm	(6.356107660695891)
+	org.apache.http.cookie	(6.356107660695891)
+	java.util.zip	(6.1862086239004945)
+	android.graphics.drawable	(6.1737861039019375)
+	org.apache.http.client.protocol	(6.135564891081739)
+	org.xml.sax.ext	(6.104793232414985)
+	android.nfc.cardemulation	(6.068425588244111)
+	android.telephony	(5.991464547107983)
+	android.test	(5.886104031450156)
+	android.nfc	(5.730099782973575)
+	android.net	(5.529429087511423)
+	android.view.accessibility	(5.5012582105447265)
+	android.printservice	(5.41610040220442)
+	android.widget	(5.3471075307174685)
+	android.app	(5.2574953720277815)
+	javax.crypto	(5.164785973923514)
+	android.text.util	(4.795790545596741)
+	javax.xml.namespace	(4.795790545596741)
+	android.bluetooth	(4.787491742782046)
+	android.sax	(4.700480365792417)
+	android.opengl	(4.700480365792417)
+	android.gesture	(4.605170185988092)
+	java.util.regex	(4.605170185988092)
+	android.service.dreams	(4.595119850134591)
+	android.animation	(4.595119850134591)
+	android.telephony.gsm	(4.595119850134591)
+	android.text.format	(4.564348191467836)
+	javax.security.auth.login	(4.499809670330265)
+	android.text	(4.499809670330265)
+	org.apache.http.client.params	(4.382026634673881)
+	org.apache.http	(4.276666119016055)
+	org.xml.sax	(4.276666119016055)
+	android.media.effect	(4.276666119016055)
+	javax.security.auth	(4.189654742026425)
+	org.apache.http.io	(4.189654742026425)
+	java.math	(4.143134726391533)
+	org.apache.http.message	(4.143134726391533)
+	javax.xml.datatype	(4.143134726391533)
+	android.text.style	(4.143134726391533)
+	java.awt.font	(4.094344562222101)
+	javax.net.ssl	(4.094344562222101)
+	org.apache.http.conn.params	(4.094344562222101)
+	android.webkit	(4.094344562222101)
+	javax.xml.transform	(4.007333185232471)
+	org.apache.http.impl.conn	(3.9889840465642745)
+	junit.framework	(3.9120230054281464)
+	android.support.v4.content	(3.9120230054281464)
+	android.app.admin	(3.9120230054281464)
+	android.database	(3.8066624897703196)
+	org.w3c.dom	(3.8066624897703196)
+	android.mtp	(3.7841896339182615)
+	android.support.v4.util	(3.7841896339182615)
+	android.graphics	(3.737669618283368)
+	dalvik.system	(3.58351893845611)
+	java.nio	(3.58351893845611)
+	android.inputmethodservice	(3.5553480614894135)
+	android.hardware.location	(3.5553480614894135)
+	javax.xml.parsers	(3.401197381662156)
+	org.w3c.dom.ls	(3.332204510175204)
+	java.lang	(3.1780538303479453)
+	java.security.spec	(2.995732273553991)
+	java.lang.reflect	(2.3978952727983707)
+	android.telephony.cdma	(2.3978952727983707)
+	android.service.notification	(2.3978952727983707)
+	javax.security.cert	(2.3978952727983707)
+	android.support.v7.view	(2.3978952727983707)
+	javax.xml.transform.sax	(2.3978952727983707)
+	android.os.storage	(2.3978952727983707)
+	org.apache.http.impl	(2.3978952727983707)
+	org.apache.http.cookie.params	(2.3978952727983707)
+	android.support.v7.widget	(2.3978952727983707)
+	android.hardware.display	(2.302585092994046)
+	android.net.http	(2.302585092994046)
+	android.support.v4.accessibilityservice	(2.302585092994046)
+	android.hardware.input	(2.1972245773362196)
+	android.support.v4.widget	(2.1972245773362196)
+	org.apache.http.impl.client	(2.1972245773362196)
+	org.apache.http.conn.routing	(2.1972245773362196)
+	org.apache.http.auth.params	(2.1972245773362196)
+	android.support.v13.app	(2.1972245773362196)
+	android.support.v4.content.pm	(2.1972245773362196)
+	dalvik.bytecode	(2.0794415416798357)
+	android.support.v4.app	(2.0794415416798357)
+	java.beans	(2.0794415416798357)
+	android.support.v7.app	(2.0794415416798357)
+	android.graphics.pdf	(2.0794415416798357)
+	junit.runner	(2.0794415416798357)
+	java.util.prefs	(2.0794415416798357)
+	org.apache.http.protocol	(2.0794415416798357)
+	java.util.jar	(2.0794415416798357)
+	android.support.v4.database	(2.0794415416798357)
+	javax.microedition.khronos.opengles	(1.9459101490553132)
+	java.security.cert	(1.9459101490553132)
+	android.appwidget	(1.9459101490553132)
+	android.util	(1.9459101490553132)
+	org.xml.sax.helpers	(1.9459101490553132)
+	org.apache.http.params	(1.9459101490553132)
+	android.os	(1.9459101490553132)
+	android.support.v4.os	(1.9459101490553132)
+	android.content.res	(1.791759469228055)
+	org.apache.http.conn.ssl	(1.791759469228055)
+	java.nio.channels.spi	(1.791759469228055)
+	android.graphics.drawable.shapes	(1.791759469228055)
+	android.support.v4.hardware.display	(1.791759469228055)
+	android.support.v7.appcompat	(1.6094379124341003)
+	android.support.v4.graphics.drawable	(1.6094379124341003)
+	android.view.inputmethod	(1.3862943611198906)
+	java.nio.charset.spi	(1.3862943611198906)
+	org.apache.http.util	(1.3862943611198906)
+	org.apache.http.impl.auth	(1.0986122886681098)
+	android.view	(1.0986122886681098)
 _________________________________________________________________________________
 javax.microedition.media.control
-	android.gesture
-	android.hardware.input
-	android.mtp
-	android.nfc.tech
-	android.service.dreams
-	android.support.v4.content
-	android.support.v4.view.accessibility
-	android.telephony
-	android.view
-	android.view.inputmethod
-	java.nio.channels
-	java.security.acl
-	javax.microedition.khronos.egl
-	javax.net.ssl
-	javax.xml.datatype
-	org.apache.http.cookie
-	org.apache.http.cookie.params
-	org.apache.http.impl.conn.tsccm
-	org.apache.http.impl.cookie
+	android.print	(11.695247021764182)
+	org.apache.http.impl.entity	(11.397514613458902)
+	javax.security.cert	(11.346870880640147)
+	android.media.audiofx	(8.419800845407588)
+	org.apache.http.impl.io	(8.419800845407588)
+	java.util.concurrent.atomic	(8.215006432761575)
+	junit.runner	(7.832014180505469)
+	org.apache.http.client.methods	(7.049254841255836)
+	android.media	(7.0030654587864625)
+	java.security.acl	(7.0030654587864625)
+	javax.xml.namespace	(6.741700694652055)
+	javax.xml.datatype	(6.386879319362645)
+	android.hardware	(6.327936783729195)
+	android.printservice	(6.269096283706261)
+	java.security	(6.222576268071368)
+	android.support.v7.media	(6.20455776256869)
+	java.util.concurrent.locks	(6.1737861039019375)
+	android.provider	(5.934894195619588)
+	java.lang	(5.817111159963204)
+	android.support.v4.util	(5.575949103146316)
+	org.apache.http.impl.cookie	(5.298317366548037)
+	android.support.v13.app	(5.298317366548036)
+	android.support.v7.appcompat	(4.941642422609304)
+	org.apache.http.impl	(4.795790545596741)
+	android.accessibilityservice	(4.700480365792417)
+	javax.security.auth.login	(4.68213122712422)
+	java.util.regex	(4.605170185988092)
+	org.json	(4.477336814478207)
+	android.animation	(4.477336814478207)
+	android.drm	(4.477336814478207)
+	java.util.concurrent	(4.343805421853684)
+	org.apache.http.impl.conn	(4.276666119016055)
+	android.preference	(4.276666119016055)
+	org.apache.http.conn	(4.248495242049359)
+	java.util.prefs	(4.248495242049359)
+	javax.net.ssl	(4.189654742026425)
+	java.security.cert	(4.189654742026425)
+	javax.sql	(4.1588830833596715)
+	android.view.animation	(4.143134726391533)
+	org.xml.sax.helpers	(4.143134726391533)
+	android.net.http	(4.094344562222101)
+	android.graphics	(4.094344562222101)
+	android.graphics.drawable	(4.094344562222101)
+	javax.crypto	(4.025351690735149)
+	java.text	(4.007333185232471)
+	android.os	(3.9889840465642745)
+	org.w3c.dom	(3.9120230054281464)
+	android.util	(3.8918202981106265)
+	org.apache.http.protocol	(3.8712010109078907)
+	org.apache.http.message	(3.8066624897703196)
+	android.text.util	(3.8066624897703196)
+	android.support.v4.print	(3.7841896339182615)
+	android.text.format	(3.7841896339182615)
+	android.content.pm	(3.6888794541139367)
+	android.mtp	(3.6888794541139367)
+	java.util.logging	(3.688879454113936)
+	android.content	(3.58351893845611)
+	android.support.v4.content	(3.401197381662156)
+	android.hardware.location	(3.401197381662155)
+	android.support.v7.gridlayout	(3.401197381662155)
+	android.support.v4.graphics.drawable	(3.401197381662155)
+	android.nfc	(3.332204510175204)
+	android.bluetooth	(3.1780538303479453)
+	android.content.res	(3.1780538303479453)
+	android.view.accessibility	(2.995732273553991)
+	android.support.v7.mediarouter	(2.70805020110221)
+	org.apache.http.impl.conn.tsccm	(2.3978952727983707)
+	android.sax	(2.3978952727983707)
+	javax.crypto.interfaces	(2.3978952727983707)
+	org.apache.http.auth.params	(2.3978952727983707)
+	android.support.v7.app	(2.3978952727983707)
+	android.graphics.drawable.shapes	(2.3978952727983707)
+	android.nfc.tech	(2.3978952727983707)
+	android.support.v8.renderscript	(2.3978952727983707)
+	java.nio	(2.3978952727983707)
+	android.renderscript	(2.302585092994046)
+	java.nio.charset	(2.302585092994046)
+	org.apache.http.entity	(2.302585092994046)
+	java.util.zip	(2.302585092994046)
+	org.apache.http.auth	(2.302585092994046)
+	android.security	(2.302585092994046)
+	android.support.v4.accessibilityservice	(2.302585092994046)
+	android.os.storage	(2.1972245773362196)
+	android.support.v4.view	(2.1972245773362196)
+	org.w3c.dom.ls	(2.1972245773362196)
+	java.math	(2.1972245773362196)
+	java.net	(2.1972245773362196)
+	java.lang.annotation	(2.1972245773362196)
+	javax.xml.transform.dom	(2.1972245773362196)
+	java.security.spec	(2.1972245773362196)
+	android.media.effect	(2.1972245773362196)
+	android.app.backup	(2.1972245773362196)
+	android.support.v4.content.pm	(2.1972245773362196)
+	java.io	(2.0794415416798357)
+	org.apache.http	(2.0794415416798357)
+	org.apache.http.impl.auth	(2.0794415416798357)
+	org.apache.http.client	(2.0794415416798357)
+	android.text.method	(2.0794415416798357)
+	android.net.rtp	(2.0794415416798357)
+	android.service.notification	(2.0794415416798357)
+	android.support.v4.database	(2.0794415416798357)
+	android.support.v4.app	(1.9459101490553132)
+	java.sql	(1.9459101490553132)
+	junit.framework	(1.9459101490553132)
+	org.apache.http.params	(1.9459101490553132)
+	android.app	(1.9459101490553132)
+	android.inputmethodservice	(1.9459101490553132)
+	org.apache.http.conn.params	(1.9459101490553132)
+	android.service.dreams	(1.9459101490553132)
+	android.support.v4.os	(1.9459101490553132)
+	android.support.v4.widget	(1.791759469228055)
+	java.nio.channels.spi	(1.791759469228055)
+	java.nio.channels	(1.791759469228055)
+	android.transition	(1.791759469228055)
+	org.apache.http.util	(1.791759469228055)
+	org.apache.http.io	(1.791759469228055)
+	android.support.v4.hardware.display	(1.791759469228055)
+	android.view	(1.6094379124341003)
+	org.apache.http.conn.scheme	(1.6094379124341003)
+	javax.xml.parsers	(1.6094379124341003)
+	javax.microedition.khronos.egl	(1.0986122886681098)
+	android.net.nsd	(1.0986122886681098)
+	dalvik.system	(1.0986122886681098)
 _________________________________________________________________________________
 javax.microedition.midlet
-	android
-	android.app.backup
-	android.appwidget
-	android.database
-	android.hardware
-	android.media.effect
-	android.net.nsd
-	android.nfc
-	android.opengl
-	android.os
-	android.os.storage
-	android.print
-	android.printservice
-	android.service.notification
-	android.support.v4.accessibilityservice
-	android.support.v4.graphics.drawable
-	android.support.v4.hardware.display
-	android.support.v4.net
-	android.support.v4.os
-	android.support.v4.view.accessibility
-	android.telephony.gsm
-	android.text.format
-	android.transition
-	java.awt.font
-	java.lang
-	java.lang.annotation
-	java.lang.reflect
-	java.math
-	java.text
-	java.util.concurrent.locks
-	java.util.jar
-	javax.security.auth
-	javax.security.cert
-	javax.sql
-	javax.xml.transform.dom
-	junit.runner
-	org.apache.http.conn
-	org.apache.http.cookie
-	org.apache.http.impl
-	org.apache.http.impl.conn.tsccm
-	org.apache.http.impl.entity
-	org.apache.http.message
-	org.apache.http.params
-	org.w3c.dom.ls
-	org.xml.sax
-	org.xml.sax.helpers
+	android.support.v7.appcompat	(14.670776588000654)
+	android.content.res	(14.241366355720173)
+	android.hardware.location	(12.494273333477688)
+	android.support.v7.gridlayout	(12.43273001614418)
+	java.util.jar	(11.575712453068993)
+	android.support.v7.media	(10.896739325546411)
+	android.support.v7.mediarouter	(10.868339851024713)
+	android.test	(10.357742824813727)
+	dalvik.system	(9.775654181026244)
+	android	(9.64212278840172)
+	android.support.v7.widget	(9.467769401256943)
+	android.os.storage	(9.13129716463573)
+	android.transition	(9.094929520464856)
+	java.util.concurrent	(8.754002933494261)
+	java.util.zip	(8.738254576526124)
+	android.text.style	(8.671115273688494)
+	org.apache.http.message	(8.369157112588834)
+	android.media.audiofx	(8.332789468417959)
+	android.service.dreams	(8.283999304248528)
+	android.support.v4.app	(8.215006432761575)
+	android.content.pm	(8.166216268592143)
+	android.net.rtp	(8.11969625295725)
+	java.nio.channels	(8.014335737299424)
+	android.media.effect	(7.973844375944687)
+	org.apache.http.impl.io	(7.901007051992421)
+	java.text	(7.872836175025724)
+	android.gesture	(7.832014180505469)
+	android.support.v8.renderscript	(7.813995675002791)
+	android.hardware	(7.803843303538772)
+	javax.security.auth.callback	(7.2848209125686045)
+	java.awt.font	(7.098375638590787)
+	android.support.v4.content	(7.021083964289141)
+	android.support.v7.app	(7.0030654587864625)
+	javax.security.auth	(7.0030654587864625)
+	android.renderscript	(6.931471805599452)
+	android.graphics.drawable.shapes	(6.897704943128636)
+	org.apache.http.cookie	(6.828712071641685)
+	junit.framework	(6.64639051484773)
+	javax.xml.transform	(6.64639051484773)
+	javax.xml.transform.sax	(6.579251212010101)
+	android.net.wifi	(6.579251212010101)
+	android.media	(6.541029999189904)
+	android.support.v4.util	(6.492239835020471)
+	android.print.pdf	(6.461468176353717)
+	java.nio.charset.spi	(6.396929655216147)
+	java.io	(6.29156913955832)
+	android.location	(6.086774726912307)
+	android.test.mock	(6.0867747269123065)
+	android.provider	(6.068425588244111)
+	org.apache.http.impl.cookie	(5.991464547107983)
+	android.support.v4.text	(5.991464547107983)
+	android.graphics.drawable	(5.950642552587727)
+	android.telephony	(5.886104031450156)
+	android.printservice	(5.886104031450156)
+	org.apache.http.conn.util	(5.616771097666572)
+	org.apache.http.params	(5.529429087511423)
+	java.util.concurrent.locks	(5.480638923341991)
+	java.security	(5.4116460518550396)
+	android.text.format	(5.3471075307174685)
+	org.apache.http.auth	(5.164785973923514)
+	org.apache.http	(5.123963979403259)
+	android.print	(5.0875963352323845)
+	java.nio	(5.0106352940962555)
+	android.text.method	(4.795790545596741)
+	android.accessibilityservice	(4.700480365792417)
+	org.apache.http.util	(4.700480365792417)
+	android.support.v4.os	(4.700480365792417)
+	java.math	(4.595119850134591)
+	android.nfc.cardemulation	(4.499809670330265)
+	android.webkit	(4.499809670330265)
+	java.net	(4.499809670330265)
+	java.util.logging	(4.430816798843313)
+	org.w3c.dom.ls	(4.394449154672439)
+	org.apache.http.impl	(4.382026634673881)
+	android.view.accessibility	(4.343805421853684)
+	java.util.regex	(4.276666119016055)
+	android.telephony.cdma	(4.1588830833596715)
+	android.service.notification	(4.1588830833596715)
+	android.bluetooth	(4.143134726391533)
+	java.lang.reflect	(4.094344562222101)
+	android.support.v4.widget	(4.094344562222101)
+	org.apache.http.impl.conn	(4.094344562222101)
+	java.sql	(3.9889840465642745)
+	android.speech	(3.9889840465642745)
+	android.animation	(3.9889840465642745)
+	android.graphics	(3.8918202981106265)
+	dalvik.bytecode	(3.8712010109078907)
+	junit.runner	(3.8712010109078907)
+	android.nfc.tech	(3.8712010109078907)
+	android.inputmethodservice	(3.7841896339182615)
+	org.apache.http.conn.params	(3.737669618283368)
+	org.apache.http.impl.conn.tsccm	(3.688879454113936)
+	javax.security.auth.login	(3.688879454113936)
+	org.xml.sax	(3.688879454113936)
+	android.support.v4.print	(3.58351893845611)
+	org.apache.http.client.utils	(3.4965075614664807)
+	android.view.inputmethod	(3.4965075614664807)
+	java.util.concurrent.atomic	(3.4965075614664807)
+	java.util.prefs	(3.465735902799726)
+	javax.security.cert	(3.401197381662156)
+	org.apache.http.conn.scheme	(3.401197381662155)
+	android.graphics.pdf	(3.295836866004329)
+	org.apache.http.conn	(3.1780538303479453)
+	android.view.animation	(3.1780538303479453)
+	java.security.cert	(3.044522437723423)
+	javax.crypto	(3.044522437723423)
+	android.os	(2.995732273553991)
+	javax.microedition.khronos.egl	(2.4849066497880004)
+	android.support.v13.app	(2.3978952727983707)
+	android.net.nsd	(2.3978952727983707)
+	org.apache.http.protocol	(2.3978952727983707)
+	java.lang.annotation	(2.3978952727983707)
+	org.apache.http.cookie.params	(2.3978952727983707)
+	javax.crypto.spec	(2.3978952727983707)
+	org.json	(2.302585092994046)
+	org.apache.http.client.params	(2.302585092994046)
+	javax.xml.namespace	(2.302585092994046)
+	java.security.spec	(2.302585092994046)
+	android.drm	(2.1972245773362196)
+	android.widget	(2.1972245773362196)
+	android.nfc	(2.1972245773362196)
+	org.apache.http.conn.routing	(2.1972245773362196)
+	org.apache.http.auth.params	(2.1972245773362196)
+	org.apache.http.client	(2.1972245773362196)
+	org.w3c.dom	(2.1972245773362196)
+	javax.xml.validation	(2.0794415416798357)
+	java.nio.charset	(2.0794415416798357)
+	android.support.v7.view	(2.0794415416798357)
+	android.text.util	(2.0794415416798357)
+	java.nio.channels.spi	(2.0794415416798357)
+	org.apache.http.client.protocol	(2.0794415416798357)
+	android.hardware.input	(1.9459101490553132)
+	java.security.acl	(1.9459101490553132)
+	javax.xml.transform.dom	(1.9459101490553132)
+	android.database	(1.9459101490553132)
+	android.net	(1.791759469228055)
+	android.security	(1.791759469228055)
+	android.app.backup	(1.791759469228055)
+	android.content	(1.791759469228055)
+	org.apache.http.io	(1.791759469228055)
+	org.apache.http.impl.entity	(1.6094379124341003)
+	android.opengl	(1.6094379124341003)
+	org.apache.http.impl.auth	(1.6094379124341003)
+	javax.sql	(1.3862943611198906)
+	android.text	(1.3862943611198906)
+	java.beans	(1.3862943611198906)
+	android.app.admin	(1.0986122886681098)
+	android.mtp	(1.0986122886681098)
+	android.appwidget	(1.0986122886681098)
+	org.xml.sax.ext	(1.0986122886681098)
 _________________________________________________________________________________
 javax.microedition.pki
-	android.app.admin
-	android.content.pm
-	android.content.res
-	android.drm
-	android.gesture
-	android.graphics.drawable
-	android.hardware.input
-	android.media.effect
-	android.net.nsd
-	android.net.rtp
-	android.nfc.cardemulation
-	android.nfc.tech
-	android.os.storage
-	android.print.pdf
-	android.provider
-	android.renderscript
-	android.sax
-	android.support.v13.app
-	android.support.v4.print
-	android.support.v7.media
-	android.support.v8.renderscript
-	android.test
-	android.test.mock
-	android.text
-	android.text.format
-	android.text.util
-	dalvik.bytecode
-	java.awt.font
-	java.beans
-	java.lang
-	java.lang.annotation
-	java.nio.charset
-	java.security.cert
-	java.security.interfaces
-	java.security.spec
-	java.util.concurrent.atomic
-	java.util.jar
-	java.util.zip
-	javax.crypto.interfaces
-	javax.crypto.spec
-	javax.security.auth
-	javax.security.auth.login
-	javax.security.cert
-	javax.xml.transform.dom
-	javax.xml.transform.sax
-	javax.xml.validation
-	junit.runner
-	org.apache.http
-	org.apache.http.client.protocol
-	org.apache.http.conn
-	org.apache.http.conn.ssl
-	org.apache.http.cookie
-	org.apache.http.impl.conn.tsccm
-	org.apache.http.impl.cookie
-	org.apache.http.impl.entity
-	org.apache.http.io
-	org.apache.http.message
-	org.w3c.dom.ls
-	org.xml.sax.ext
-	org.xml.sax.helpers
+	java.util.concurrent	(10.88668898969291)
+	javax.net.ssl	(10.604602902745249)
+	android.service.notification	(8.302017809751204)
+	android.support.v7.gridlayout	(8.168486417126681)
+	java.util.concurrent.locks	(8.11969625295725)
+	android.location	(8.09162741160107)
+	android.speech	(8.014335737299424)
+	android.support.v7.mediarouter	(7.832014180505469)
+	android.support.v7.appcompat	(7.560080465021827)
+	android.database	(7.426549072397304)
+	org.apache.http.impl.io	(7.321188556739479)
+	android.view.inputmethod	(6.897704943128636)
+	java.util.jar	(6.897704943128636)
+	java.security.cert	(6.697034247666485)
+	android.telephony	(6.461468176353717)
+	org.apache.http.client.methods	(6.386879319362645)
+	android.telephony.cdma	(6.327936783729195)
+	android.content	(6.29156913955832)
+	android.gesture	(6.2915691395583195)
+	android.telephony.gsm	(6.20455776256869)
+	org.xml.sax.ext	(6.086774726912307)
+	java.lang	(5.991464547107983)
+	org.apache.http.impl.cookie	(5.950642552587727)
+	java.math	(5.886104031450156)
+	android.support.v13.app	(5.886104031450156)
+	java.io	(5.703782474656201)
+	java.text	(5.616771097666572)
+	android.bluetooth	(5.393627546352361)
+	javax.xml.transform.dom	(5.347107530717469)
+	org.w3c.dom.ls	(4.941642422609304)
+	android.accessibilityservice	(4.795790545596741)
+	java.security.interfaces	(4.795790545596741)
+	android.media	(4.718498871295094)
+	javax.xml.transform.sax	(4.700480365792417)
+	org.apache.http.impl.conn.tsccm	(4.700480365792417)
+	android.nfc.tech	(4.700480365792417)
+	javax.security.auth	(4.605170185988092)
+	android.support.v4.text	(4.605170185988092)
+	android.text.method	(4.595119850134591)
+	org.apache.http.conn.routing	(4.595119850134591)
+	javax.security.cert	(4.595119850134591)
+	java.net	(4.499809670330265)
+	android.net.wifi	(4.499809670330265)
+	android.drm	(4.477336814478207)
+	android.webkit	(4.382026634673881)
+	org.apache.http.conn.scheme	(4.343805421853684)
+	javax.crypto	(4.343805421853684)
+	java.util.concurrent.atomic	(4.248495242049359)
+	android.text.util	(4.189654742026425)
+	org.apache.http.impl.entity	(4.189654742026425)
+	java.lang.reflect	(4.143134726391533)
+	android.renderscript	(4.143134726391533)
+	android.security	(4.143134726391533)
+	java.nio.channels	(4.094344562222101)
+	java.security	(4.094344562222101)
+	java.security.spec	(4.094344562222101)
+	java.nio.channels.spi	(4.007333185232471)
+	android.app.backup	(4.007333185232471)
+	android.nfc	(3.9889840465642745)
+	android.nfc.cardemulation	(3.9889840465642745)
+	javax.security.auth.callback	(3.8918202981106265)
+	java.lang.annotation	(3.8712010109078907)
+	org.xml.sax	(3.8712010109078907)
+	java.util.zip	(3.8066624897703196)
+	org.apache.http.impl.client	(3.8066624897703196)
+	android.appwidget	(3.7841896339182615)
+	android.app	(3.7841896339182615)
+	android.net.rtp	(3.737669618283368)
+	android.support.v7.widget	(3.6888794541139367)
+	org.apache.http.cookie	(3.6888794541139367)
+	android.media.audiofx	(3.688879454113936)
+	java.nio.charset	(3.58351893845611)
+	org.apache.http.io	(3.58351893845611)
+	javax.xml.validation	(3.5553480614894135)
+	org.apache.http.client	(3.5553480614894135)
+	android.support.v7.view	(3.465735902799726)
+	android.net.nsd	(3.1780538303479453)
+	android.support.v4.content	(3.1780538303479453)
+	org.apache.http.message	(3.044522437723423)
+	java.beans	(2.3978952727983707)
+	java.awt.font	(2.3978952727983707)
+	dalvik.system	(2.3978952727983707)
+	android.os.storage	(2.3978952727983707)
+	org.apache.http.util	(2.3978952727983707)
+	org.apache.http.impl	(2.3978952727983707)
+	android.view.animation	(2.3978952727983707)
+	org.apache.http.client.utils	(2.3978952727983707)
+	android.service.dreams	(2.3978952727983707)
+	org.apache.http.params	(2.302585092994046)
+	android.mtp	(2.302585092994046)
+	android.view.accessibility	(2.302585092994046)
+	javax.microedition.khronos.opengles	(2.302585092994046)
+	android.support.v8.renderscript	(2.302585092994046)
+	android.graphics.drawable	(2.302585092994046)
+	android.test.mock	(2.1972245773362196)
+	android.inputmethodservice	(2.1972245773362196)
+	org.w3c.dom	(2.1972245773362196)
+	android.support.v4.app	(2.1972245773362196)
+	junit.framework	(2.1972245773362196)
+	org.apache.http.conn	(2.0794415416798357)
+	android.printservice	(2.0794415416798357)
+	java.util.prefs	(2.0794415416798357)
+	android.graphics.pdf	(2.0794415416798357)
+	org.json	(2.0794415416798357)
+	android.net	(2.0794415416798357)
+	android.graphics	(2.0794415416798357)
+	javax.xml.namespace	(2.0794415416798357)
+	android.net.http	(2.0794415416798357)
+	org.apache.http.conn.ssl	(2.0794415416798357)
+	java.security.acl	(1.9459101490553132)
+	android.hardware	(1.9459101490553132)
+	android.animation	(1.9459101490553132)
+	android.content.res	(1.9459101490553132)
+	javax.xml.transform	(1.9459101490553132)
+	android.support.v7.media	(1.9459101490553132)
+	android.text	(1.9459101490553132)
+	org.apache.http.protocol	(1.791759469228055)
+	android.hardware.location	(1.791759469228055)
+	android.support.v4.view	(1.791759469228055)
+	org.apache.http.entity	(1.791759469228055)
+	android.text.format	(1.791759469228055)
+	android.provider	(1.6094379124341003)
+	org.apache.http.auth	(1.6094379124341003)
+	android	(1.6094379124341003)
+	android.app.admin	(1.6094379124341003)
+	org.apache.http	(1.6094379124341003)
+	java.nio.charset.spi	(1.6094379124341003)
+	android.test	(1.6094379124341003)
+	org.apache.http.conn.util	(1.3862943611198906)
+	android.hardware.input	(1.3862943611198906)
+	android.sax	(1.3862943611198906)
+	javax.security.auth.login	(1.0986122886681098)
+	android.support.v4.print	(1.0986122886681098)
+	java.nio	(1.0986122886681098)
 _________________________________________________________________________________
 javax.microedition.rms
-	android.accessibilityservice
-	android.app.backup
-	android.inputmethodservice
-	android.media.audiofx
-	android.net
-	android.net.nsd
-	android.nfc
-	android.nfc.tech
-	android.print.pdf
-	android.speech
-	android.support.v4.net
-	android.support.v4.os
-	android.support.v4.print
-	android.support.v4.text
-	android.support.v4.view
-	android.support.v4.view.accessibility
-	android.support.v7.app
-	android.support.v7.widget
-	android.telephony
-	android.test
-	android.test.mock
-	android.text
-	android.text.format
-	android.text.method
-	android.view
-	android.view.accessibility
-	java.math
-	java.nio
-	java.nio.channels
-	java.security
-	java.security.acl
-	java.security.cert
-	java.security.interfaces
-	java.security.spec
-	java.text
-	java.util.concurrent.atomic
-	java.util.jar
-	java.util.prefs
-	javax.security.auth
-	org.apache.http.auth.params
-	org.apache.http.client.params
-	org.apache.http.conn.params
-	org.apache.http.cookie
-	org.apache.http.impl.conn
-	org.apache.http.impl.cookie
-	org.apache.http.params
-	org.xml.sax
-	org.xml.sax.ext
+	java.util.concurrent	(16.008799400446847)
+	android.net.rtp	(14.830625288942551)
+	android.provider	(14.660726252147153)
+	java.util.concurrent.locks	(13.872268891782882)
+	android.content	(13.718118211955623)
+	java.nio.channels	(13.640928573264496)
+	java.security.acl	(13.48340138930411)
+	org.apache.http.message	(12.086207443669466)
+	android.nfc.tech	(12.021668922531896)
+	java.text	(10.868568448579715)
+	org.apache.http.cookie	(10.787255092704722)
+	java.nio	(9.623773649733526)
+	org.apache.http.impl.cookie	(8.881836305004146)
+	org.apache.http.conn	(8.620471540869739)
+	android.support.v13.app	(8.612503371220562)
+	android.support.v7.app	(8.612503371220562)
+	org.apache.http.conn.scheme	(8.602453035367061)
+	android.net.http	(8.1886891244442)
+	org.apache.http.client	(8.132118772955808)
+	android.net.nsd	(8.119696252957251)
+	android.graphics.drawable	(8.11969625295725)
+	org.json	(8.083328608786376)
+	org.apache.http.util	(7.832014180505469)
+	android.webkit	(7.60887062919126)
+	javax.crypto	(7.562681246721885)
+	android.support.v7.widget	(7.4547199493640015)
+	android.net	(7.3777589082278725)
+	android.location	(7.321188556739479)
+	android.nfc.cardemulation	(7.069874128458572)
+	android.support.v4.text	(6.907755278982138)
+	android.media	(6.897704943128636)
+	android.support.v7.gridlayout	(6.887552571664617)
+	android.os.storage	(6.8752320872765775)
+	android.text.util	(6.779921907472252)
+	android.hardware.location	(6.674561391814427)
+	android.media.audiofx	(6.556778356158043)
+	java.security.cert	(6.541029999189903)
+	android.support.v4.util	(6.423246963533519)
+	javax.xml.namespace	(6.405228458030842)
+	java.beans	(6.405228458030842)
+	android.support.v7.appcompat	(6.396929655216146)
+	android.app.backup	(6.309918278226517)
+	java.sql	(6.29156913955832)
+	java.nio.channels.spi	(6.109247582764366)
+	android.drm	(6.068425588244111)
+	android.content.res	(6.040254711277415)
+	org.xml.sax.ext	(5.991464547107983)
+	android.database	(5.953243334287784)
+	android.support.v4.content	(5.886104031450156)
+	java.lang.reflect	(5.817111159963204)
+	android.graphics	(5.780743515792329)
+	android.view.accessibility	(5.6937321388027)
+	java.util.regex	(5.480638923341992)
+	org.apache.http.client.methods	(5.480638923341992)
+	android.test.mock	(5.375278407684165)
+	android.gesture	(5.2574953720277815)
+	java.util.zip	(5.241747015059643)
+	org.apache.http.auth	(5.010635294096256)
+	dalvik.system	(4.941642422609304)
+	android.bluetooth	(4.836281906951478)
+	java.math	(4.795790545596741)
+	java.util.prefs	(4.700480365792417)
+	android.net.wifi	(4.605170185988092)
+	android.media.effect	(4.595119850134591)
+	android	(4.595119850134591)
+	org.apache.http.impl.io	(4.595119850134591)
+	android.support.v7.media	(4.595119850134591)
+	org.apache.http.conn.routing	(4.595119850134591)
+	java.security.spec	(4.499809670330265)
+	android.support.v7.mediarouter	(4.499809670330265)
+	javax.xml.transform.sax	(4.477336814478207)
+	android.support.v4.app	(4.477336814478207)
+	org.apache.http.conn.params	(4.477336814478207)
+	java.io	(4.477336814478207)
+	android.test	(4.394449154672439)
+	java.net	(4.394449154672439)
+	android.graphics.drawable.shapes	(4.382026634673881)
+	org.apache.http.impl.entity	(4.382026634673881)
+	android.widget	(4.276666119016055)
+	android.preference	(4.276666119016055)
+	javax.net.ssl	(4.276666119016055)
+	org.xml.sax.helpers	(4.248495242049359)
+	android.sax	(4.248495242049359)
+	org.apache.http.impl.conn	(4.248495242049359)
+	android.print	(4.1588830833596715)
+	org.apache.http.impl.auth	(4.1588830833596715)
+	org.apache.http.impl.conn.tsccm	(4.094344562222101)
+	android.nfc	(3.9889840465642745)
+	android.telephony	(3.9889840465642745)
+	junit.runner	(3.8712010109078907)
+	javax.xml.datatype	(3.8066624897703196)
+	android.printservice	(3.7841896339182615)
+	org.apache.http.impl	(3.7841896339182615)
+	android.animation	(3.737669618283368)
+	android.view.animation	(3.58351893845611)
+	android.util	(3.401197381662156)
+	java.util.logging	(3.401197381662155)
+	android.security	(2.772588722239781)
+	java.security.interfaces	(2.3978952727983707)
+	javax.security.auth	(2.3978952727983707)
+	org.w3c.dom	(2.3978952727983707)
+	android.accessibilityservice	(2.3978952727983707)
+	java.nio.charset	(2.3978952727983707)
+	javax.xml.transform	(2.3978952727983707)
+	android.mtp	(2.302585092994046)
+	dalvik.bytecode	(2.302585092994046)
+	java.lang	(2.302585092994046)
+	java.util.jar	(2.302585092994046)
+	javax.xml.transform.dom	(2.302585092994046)
+	javax.sql	(2.302585092994046)
+	javax.crypto.spec	(2.302585092994046)
+	android.app.admin	(2.302585092994046)
+	org.apache.http.client.params	(2.1972245773362196)
+	android.view.inputmethod	(2.1972245773362196)
+	android.service.notification	(2.1972245773362196)
+	android.text.style	(2.1972245773362196)
+	org.apache.http.entity	(2.0794415416798357)
+	android.text.method	(2.0794415416798357)
+	android.transition	(2.0794415416798357)
+	org.xml.sax	(2.0794415416798357)
+	org.apache.http.protocol	(2.0794415416798357)
+	android.inputmethodservice	(1.9459101490553132)
+	javax.security.auth.login	(1.9459101490553132)
+	javax.security.cert	(1.9459101490553132)
+	org.apache.http.io	(1.9459101490553132)
+	android.os	(1.9459101490553132)
+	android.support.v4.widget	(1.791759469228055)
+	android.support.v4.view	(1.791759469228055)
+	org.apache.http.conn.ssl	(1.791759469228055)
+	android.hardware	(1.791759469228055)
+	java.security	(1.6094379124341003)
+	android.print.pdf	(1.6094379124341003)
+	android.content.pm	(1.6094379124341003)
+	android.support.v7.view	(1.6094379124341003)
+	android.app	(1.6094379124341003)
+	junit.framework	(1.0986122886681098)
+	android.support.v4.print	(1.0986122886681098)
 _________________________________________________________________________________

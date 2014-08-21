@@ -1,1048 +1,716 @@
 javax.microedition.lcdui.Alert
-	ANDROID:android.accessibilityservice.AccessibilityService
-	ANDROID:android.animation.AnimatorSet
-	ANDROID:android.app.Application
-	ANDROID:android.app.DownloadManager
-	ANDROID:android.app.Notification.Builder
-	ANDROID:android.app.ProgressDialog
-	ANDROID:android.bluetooth.BluetoothHealth
-	ANDROID:android.bluetooth.BluetoothHealthAppConfiguration
-	ANDROID:android.content.BroadcastReceiver
-	ANDROID:android.content.ComponentName
-	ANDROID:android.content.Context
-	ANDROID:android.content.MutableContextWrapper
-	ANDROID:android.content.RestrictionEntry
-	ANDROID:android.content.pm.ApplicationInfo
-	ANDROID:android.content.pm.ConfigurationInfo
-	ANDROID:android.content.pm.FeatureInfo
-	ANDROID:android.drm.DrmInfo
-	ANDROID:android.gesture.Gesture
-	ANDROID:android.gesture.GestureOverlayView
-	ANDROID:android.gesture.GesturePoint
-	ANDROID:android.gesture.GestureStroke
-	ANDROID:android.gesture.GestureUtils
-	ANDROID:android.graphics.BitmapShader
-	ANDROID:android.graphics.Paint.FontMetricsInt
-	ANDROID:android.graphics.drawable.Animatable
-	ANDROID:android.graphics.drawable.AnimationDrawable
-	ANDROID:android.media.AsyncPlayer
-	ANDROID:android.media.AudioRecord
-	ANDROID:android.media.ExifInterface
-	ANDROID:android.media.JetPlayer
-	ANDROID:android.media.MediaCodec
-	ANDROID:android.media.MediaPlayer.OnTimedTextListener
-	ANDROID:android.media.audiofx.EnvironmentalReverb
-	ANDROID:android.media.audiofx.PresetReverb
-	ANDROID:android.opengl.GLSurfaceView.GLWrapper
-	ANDROID:android.os.Environment
-	ANDROID:android.preference.PreferenceScreen
-	ANDROID:android.print.PrintAttributes.Resolution
-	ANDROID:android.print.PrintJob
-	ANDROID:android.print.PrintJobInfo
-	ANDROID:android.provider.CalendarContract.ExtendedProperties
-	ANDROID:android.provider.Contacts.Phones
-	ANDROID:android.provider.ContactsContract.Settings
-	ANDROID:android.provider.ContactsContract.StreamItemsColumns
-	ANDROID:android.sax.RootElement
-	ANDROID:android.support.annotation.InterpolatorRes
-	ANDROID:android.support.v4.app.FragmentActivity
-	ANDROID:android.support.v4.os.EnvironmentCompat
-	ANDROID:android.support.v4.view.accessibility.AccessibilityManagerCompat.AccessibilityStateChangeListenerCompat
-	ANDROID:android.support.v4.widget.ContentLoadingProgressBar
-	ANDROID:android.support.v7.app.MediaRouteDiscoveryFragment
-	ANDROID:android.support.v7.media.MediaItemStatus
-	ANDROID:android.text.Html
-	ANDROID:android.text.Html.ImageGetter
-	ANDROID:android.text.Html.TagHandler
-	ANDROID:android.text.util.Rfc822Tokenizer
-	ANDROID:android.util.AttributeSet
-	ANDROID:android.util.JsonReader
-	ANDROID:android.util.JsonWriter
-	ANDROID:android.view.DragEvent
-	ANDROID:android.view.MenuItem
-	ANDROID:android.view.ScaleGestureDetector
-	ANDROID:android.view.accessibility.AccessibilityNodeProvider
-	ANDROID:android.view.accessibility.CaptioningManager.CaptioningChangeListener
-	ANDROID:android.view.inputmethod.CompletionInfo
-	ANDROID:android.webkit.JsResult
-	ANDROID:android.widget.Advanceable
-	ANDROID:android.widget.AutoCompleteTextView.OnDismissListener
-	ANDROID:android.widget.CursorTreeAdapter
-	ANDROID:android.widget.ExpandableListView
-	ANDROID:android.widget.ImageButton
-	ANDROID:android.widget.LinearLayout
-	ANDROID:android.widget.MediaController
-	ANDROID:android.widget.PopupWindow.OnDismissListener
-	ANDROID:android.widget.ProgressBar
-	ANDROID:android.widget.RatingBar
-	ANDROID:android.widget.RatingBar.OnRatingBarChangeListener
-	ANDROID:java.beans.PropertyChangeListener
-	ANDROID:java.beans.PropertyChangeSupport
-	ANDROID:java.lang.Character
-	ANDROID:java.lang.ClassLoader
-	ANDROID:java.lang.NullPointerException
-	ANDROID:java.lang.Object
-	ANDROID:java.lang.Runtime
-	ANDROID:java.lang.annotation.RetentionPolicy
-	ANDROID:java.net.Authenticator
-	ANDROID:java.net.InetAddress
-	ANDROID:java.net.ResponseCache
-	ANDROID:java.nio.Buffer
-	ANDROID:java.sql.BatchUpdateException
-	ANDROID:java.sql.Connection
-	ANDROID:java.sql.Date
-	ANDROID:java.text.BreakIterator
-	ANDROID:java.text.NumberFormat
-	ANDROID:java.util.EventListener
-	ANDROID:java.util.Locale
-	ANDROID:java.util.concurrent.CountDownLatch
-	ANDROID:java.util.concurrent.ScheduledExecutorService
-	ANDROID:java.util.logging.Handler
-	ANDROID:java.util.logging.LogRecord
+	ANDROID:android.app.DialogFragment	(4.143134726391533)
+	ANDROID:android.support.v4.widget.ContentLoadingProgressBar	(3.8066624897703196)
+	ANDROID:java.beans.PropertyChangeSupport	(2.3978952727983707)
+	ANDROID:android.widget.ProgressBar	(2.3978952727983707)
+	ANDROID:java.sql.BatchUpdateException	(2.3978952727983707)
+	ANDROID:java.lang.annotation.RetentionPolicy	(2.3978952727983707)
+	ANDROID:android.content.RestrictionEntry	(2.3978952727983707)
+	ANDROID:android.app.Dialog	(2.3978952727983707)
+	ANDROID:android.app.Presentation	(2.3978952727983707)
+	ANDROID:android.widget.PopupMenu	(2.3978952727983707)
+	ANDROID:android.media.MediaRecorder	(2.302585092994046)
+	ANDROID:android.app.ProgressDialog	(2.302585092994046)
+	ANDROID:android.provider.ContactsContract.Data	(2.302585092994046)
+	ANDROID:org.apache.http.impl.client.DefaultConnectionKeepAliveStrategy	(2.302585092994046)
+	ANDROID:android.util.NoSuchPropertyException	(2.302585092994046)
+	ANDROID:android.app.AlertDialog	(2.302585092994046)
+	ANDROID:android.hardware.display.DisplayManager	(2.302585092994046)
+	ANDROID:android.widget.PopupWindow	(2.302585092994046)
+	ANDROID:javax.sql.RowSetEvent	(2.1972245773362196)
+	ANDROID:android.view.inputmethod.InputConnection	(2.1972245773362196)
+	ANDROID:android.support.annotation.InterpolatorRes	(2.1972245773362196)
+	ANDROID:android.drm.DrmSupportInfo	(2.1972245773362196)
+	ANDROID:android.app.LauncherActivity	(2.1972245773362196)
+	ANDROID:android.widget.PopupWindow.OnDismissListener	(2.1972245773362196)
+	ANDROID:android.widget.PopupMenu.OnMenuItemClickListener	(2.0794415416798357)
+	ANDROID:android.os.CancellationSignal	(2.0794415416798357)
+	ANDROID:android.accessibilityservice.AccessibilityService	(2.0794415416798357)
+	ANDROID:android.widget.CursorTreeAdapter	(2.0794415416798357)
+	ANDROID:android.webkit.JsPromptResult	(2.0794415416798357)
+	ANDROID:org.apache.http.impl.client.BasicResponseHandler	(2.0794415416798357)
+	ANDROID:android.widget.MediaController	(2.0794415416798357)
+	ANDROID:android.widget.RatingBar	(1.9459101490553132)
+	ANDROID:android.text.util.Linkify.TransformFilter	(1.9459101490553132)
+	ANDROID:android.support.v7.app.MediaRouteDialogFactory	(1.9459101490553132)
+	ANDROID:android.provider.MediaStore.Audio	(1.9459101490553132)
+	ANDROID:java.util.IllegalFormatException	(1.791759469228055)
+	ANDROID:android.content.DialogInterface.OnKeyListener	(1.791759469228055)
+	ANDROID:android.drm.DrmStore.Action	(1.791759469228055)
+	ANDROID:android.widget.AutoCompleteTextView.OnDismissListener	(1.791759469228055)
+	ANDROID:org.apache.http.conn.ConnectionPoolTimeoutException	(1.6094379124341003)
+	ANDROID:android.preference.EditTextPreference	(1.6094379124341003)
+	ANDROID:android.app.DatePickerDialog	(1.3862943611198906)
 _________________________________________________________________________________
 javax.microedition.lcdui.Canvas
-	ANDROID:android.animation.AnimatorSet.Builder
-	ANDROID:android.app.ActionBar
-	ANDROID:android.app.ActivityManager
-	ANDROID:android.app.AlarmManager
-	ANDROID:android.app.DownloadManager.Request
-	ANDROID:android.app.backup.BackupDataInput
-	ANDROID:android.bluetooth.BluetoothClass
-	ANDROID:android.content.BroadcastReceiver
-	ANDROID:android.content.ClipData
-	ANDROID:android.content.DialogInterface.OnCancelListener
-	ANDROID:android.content.pm.FeatureInfo
-	ANDROID:android.database.CursorJoiner
-	ANDROID:android.database.MatrixCursor.RowBuilder
-	ANDROID:android.database.MergeCursor
-	ANDROID:android.drm.DrmInfoStatus
-	ANDROID:android.gesture.GestureUtils
-	ANDROID:android.graphics.drawable.Animatable
-	ANDROID:android.graphics.drawable.Drawable
-	ANDROID:android.inputmethodservice.ExtractEditText
-	ANDROID:android.location.LocationManager
-	ANDROID:android.media.CamcorderProfile
-	ANDROID:android.media.MediaDrm
-	ANDROID:android.media.MediaDrm.CryptoSession
-	ANDROID:android.net.http.HttpResponseCache
-	ANDROID:android.nfc.NfcAdapter.OnNdefPushCompleteCallback
-	ANDROID:android.opengl.GLSurfaceView
-	ANDROID:android.os.Build.VERSION_CODES
-	ANDROID:android.os.Environment
-	ANDROID:android.os.Messenger
-	ANDROID:android.preference.PreferenceCategory
-	ANDROID:android.print.PrintAttributes
-	ANDROID:android.print.PrintAttributes.Margins
-	ANDROID:android.provider.Contacts.ContactMethodsColumns
-	ANDROID:android.provider.ContactsContract.CommonDataKinds.Organization
-	ANDROID:android.provider.ContactsContract.FullNameStyle
-	ANDROID:android.provider.ContactsContract.Groups
-	ANDROID:android.provider.ContactsContract.PhoneticNameStyle
-	ANDROID:android.provider.ContactsContract.StatusUpdates
-	ANDROID:android.support.annotation.ColorRes
-	ANDROID:android.support.v7.app.ActionBar
-	ANDROID:android.support.v7.app.ActionBarActivity
-	ANDROID:android.support.v7.view.ActionMode
-	ANDROID:android.support.v7.view.ActionMode.Callback
-	ANDROID:android.test.AndroidTestCase
-	ANDROID:android.text.InputFilter.AllCaps
-	ANDROID:android.text.InputFilter.LengthFilter
-	ANDROID:android.text.format.DateUtils
-	ANDROID:android.text.method.ArrowKeyMovementMethod
-	ANDROID:android.text.method.HideReturnsTransformationMethod
-	ANDROID:android.text.method.MetaKeyKeyListener
-	ANDROID:android.text.util.Linkify
-	ANDROID:android.util.EventLog
-	ANDROID:android.util.MonthDisplayHelper
-	ANDROID:android.util.Patterns
-	ANDROID:android.view.ActionMode
-	ANDROID:android.view.ActionMode.Callback
-	ANDROID:android.view.Choreographer
-	ANDROID:android.view.Display
-	ANDROID:android.view.KeyEvent
-	ANDROID:android.view.MenuItem
-	ANDROID:android.view.MotionEvent
-	ANDROID:android.view.ScaleGestureDetector.SimpleOnScaleGestureListener
-	ANDROID:android.view.accessibility.AccessibilityNodeInfo
-	ANDROID:android.view.accessibility.AccessibilityNodeProvider
-	ANDROID:android.view.accessibility.CaptioningManager
-	ANDROID:android.view.animation.AnimationSet
-	ANDROID:android.view.animation.Interpolator
-	ANDROID:android.view.inputmethod.CompletionInfo
-	ANDROID:android.view.inputmethod.InputConnection
-	ANDROID:android.view.inputmethod.InputMethodManager
-	ANDROID:android.webkit.JsResult
-	ANDROID:android.widget.CalendarView
-	ANDROID:android.widget.ExpandableListView
-	ANDROID:android.widget.FrameLayout
-	ANDROID:android.widget.HorizontalScrollView
-	ANDROID:android.widget.RatingBar
-	ANDROID:java.awt.font.NumericShaper
-	ANDROID:java.io.DataInput
-	ANDROID:java.io.IOException
-	ANDROID:java.lang.Character
-	ANDROID:java.lang.Character.UnicodeBlock
-	ANDROID:java.lang.LinkageError
-	ANDROID:java.lang.Object
-	ANDROID:java.net.DatagramSocket
-	ANDROID:java.nio.BufferOverflowException
-	ANDROID:java.nio.charset.Charset
-	ANDROID:java.security.KeyFactory
-	ANDROID:java.security.KeyFactorySpi
-	ANDROID:java.sql.BatchUpdateException
-	ANDROID:java.text.Bidi
-	ANDROID:java.text.DateFormat
-	ANDROID:java.text.NumberFormat
-	ANDROID:java.util.IllegalFormatCodePointException
-	ANDROID:java.util.Locale
-	ANDROID:java.util.Scanner
-	ANDROID:java.util.concurrent.Delayed
-	ANDROID:java.util.concurrent.ScheduledExecutorService
-	ANDROID:java.util.concurrent.ScheduledThreadPoolExecutor
-	ANDROID:java.util.concurrent.locks.LockSupport
-	ANDROID:java.util.jar.Attributes.Name
+	ANDROID:java.util.Scanner	(4.276666119016055)
+	ANDROID:android.media.MediaActionSound	(2.3978952727983707)
+	ANDROID:java.sql.BatchUpdateException	(2.3978952727983707)
+	ANDROID:org.apache.http.auth.AuthScheme	(2.3978952727983707)
+	ANDROID:android.util.Patterns	(2.3978952727983707)
+	ANDROID:java.awt.font.NumericShaper	(2.3978952727983707)
+	ANDROID:android.app.admin.DeviceAdminInfo	(2.3978952727983707)
+	ANDROID:android.app.AlarmManager	(2.3978952727983707)
+	ANDROID:android.view.MotionEvent	(2.3978952727983707)
+	ANDROID:android.media.AudioTrack	(2.302585092994046)
+	ANDROID:android.provider.ContactsContract.Data	(2.302585092994046)
+	ANDROID:android.content.ClipData	(2.302585092994046)
+	ANDROID:java.util.regex.PatternSyntaxException	(2.302585092994046)
+	ANDROID:android.text.LoginFilter.PasswordFilterGMail	(2.302585092994046)
+	ANDROID:android.app.admin.DeviceAdminReceiver	(2.302585092994046)
+	ANDROID:android.provider.AlarmClock	(2.302585092994046)
+	ANDROID:android.media.MediaDrm	(2.302585092994046)
+	ANDROID:android.telephony.CellIdentityWcdma	(2.1972245773362196)
+	ANDROID:android.view.inputmethod.InputConnection	(2.1972245773362196)
+	ANDROID:android.view.ScaleGestureDetector.SimpleOnScaleGestureListener	(2.1972245773362196)
+	ANDROID:android.os.Build.VERSION_CODES	(2.1972245773362196)
+	ANDROID:android.content.RestrictionEntry	(2.1972245773362196)
+	ANDROID:android.provider.CalendarContract.CalendarAlerts	(2.1972245773362196)
+	ANDROID:android.nfc.NfcAdapter.OnNdefPushCompleteCallback	(2.1972245773362196)
+	ANDROID:org.apache.http.HttpEntity	(2.0794415416798357)
+	ANDROID:java.util.regex.Pattern	(2.0794415416798357)
+	ANDROID:org.w3c.dom.DOMException	(2.0794415416798357)
+	ANDROID:android.location.LocationProvider	(2.0794415416798357)
+	ANDROID:android.telephony.PhoneNumberFormattingTextWatcher	(2.0794415416798357)
+	ANDROID:android.view.KeyEvent	(2.0794415416798357)
+	ANDROID:android.app.ActivityManager.MemoryInfo	(1.9459101490553132)
+	ANDROID:android.util.Config	(1.9459101490553132)
+	ANDROID:java.lang.Character	(1.9459101490553132)
+	ANDROID:java.util.Locale	(1.9459101490553132)
+	ANDROID:android.location.LocationManager	(1.9459101490553132)
+	ANDROID:android.telephony.PhoneNumberUtils	(1.9459101490553132)
+	ANDROID:android.provider.ContactsContract.Contacts.Entity	(1.9459101490553132)
+	ANDROID:java.net.HttpURLConnection	(1.791759469228055)
+	ANDROID:android.graphics.ComposeShader	(1.791759469228055)
+	ANDROID:android.text.util.Linkify	(1.791759469228055)
+	ANDROID:android.text.method.MetaKeyKeyListener	(1.791759469228055)
+	ANDROID:android.content.PeriodicSync	(1.791759469228055)
+	ANDROID:android.media.RingtoneManager	(1.791759469228055)
+	ANDROID:android.preference.PreferenceFragment	(1.791759469228055)
+	ANDROID:org.apache.http.conn.BasicManagedEntity	(1.6094379124341003)
+	ANDROID:android.util.EventLog	(1.6094379124341003)
+	ANDROID:android.content.pm.ActivityInfo	(1.6094379124341003)
+	ANDROID:android.widget.RadioGroup	(1.6094379124341003)
+	ANDROID:android.hardware.display.DisplayManager.DisplayListener	(1.6094379124341003)
+	ANDROID:android.appwidget.AppWidgetProvider	(1.3862943611198906)
+	ANDROID:android.media.AudioRecord.OnRecordPositionUpdateListener	(1.3862943611198906)
+	ANDROID:java.security.acl.Owner	(1.0986122886681098)
 _________________________________________________________________________________
 javax.microedition.lcdui.Command
-	ANDROID:android.accounts.AbstractAccountAuthenticator
-	ANDROID:android.app.AlertDialog
-	ANDROID:android.app.MediaRouteActionProvider
-	ANDROID:android.app.Notification.Builder
-	ANDROID:android.bluetooth.BluetoothGattCharacteristic
-	ANDROID:android.content.ActivityNotFoundException
-	ANDROID:android.content.ComponentName
-	ANDROID:android.database.CursorJoiner
-	ANDROID:android.database.MatrixCursor.RowBuilder
-	ANDROID:android.graphics.drawable.Drawable
-	ANDROID:android.graphics.drawable.DrawableContainer.DrawableContainerState
-	ANDROID:android.graphics.drawable.GradientDrawable
-	ANDROID:android.graphics.drawable.GradientDrawable.Orientation
-	ANDROID:android.media.AudioRecord
-	ANDROID:android.media.RemoteControlClient
-	ANDROID:android.os.ConditionVariable
-	ANDROID:android.os.Debug.InstructionCount
-	ANDROID:android.os.PowerManager
-	ANDROID:android.preference.PreferenceActivity.Header
-	ANDROID:android.print.PrintAttributes.Margins
-	ANDROID:android.provider.ContactsContract.ContactsColumns
-	ANDROID:android.renderscript.RenderScript.Priority
-	ANDROID:android.speech.RecognizerResultsIntent
-	ANDROID:android.support.v4.app.NotificationCompat.Action
-	ANDROID:android.support.v4.app.NotificationCompat.Builder
-	ANDROID:android.support.v4.view.PagerAdapter
-	ANDROID:android.support.v4.widget.AutoScrollHelper
-	ANDROID:android.support.v4.widget.ContentLoadingProgressBar
-	ANDROID:android.support.v7.app.MediaRouteActionProvider
-	ANDROID:android.support.v7.app.MediaRouteButton
-	ANDROID:android.support.v7.app.MediaRouteChooserDialog
-	ANDROID:android.support.v7.app.MediaRouteDiscoveryFragment
-	ANDROID:android.support.v7.view.ActionMode.Callback
-	ANDROID:android.support.v8.renderscript.RenderScript.Priority
-	ANDROID:android.test.AndroidTestCase
-	ANDROID:android.test.LoaderTestCase
-	ANDROID:android.test.mock.MockContext
-	ANDROID:android.text.method.LinkMovementMethod
-	ANDROID:android.view.ActionMode.Callback
-	ANDROID:android.view.KeyCharacterMap
-	ANDROID:android.view.KeyEvent
-	ANDROID:android.widget.Button
-	ANDROID:android.widget.CompoundButton
-	ANDROID:android.widget.CompoundButton.OnCheckedChangeListener
-	ANDROID:android.widget.ExpandableListView.OnGroupExpandListener
-	ANDROID:android.widget.ImageButton
-	ANDROID:android.widget.MediaController
-	ANDROID:android.widget.NumberPicker
-	ANDROID:java.io.ByteArrayOutputStream
-	ANDROID:java.io.CharArrayWriter
-	ANDROID:java.io.ObjectOutputStream.PutField
-	ANDROID:java.io.ObjectStreamException
-	ANDROID:java.lang.Character
-	ANDROID:java.lang.ExceptionInInitializerError
-	ANDROID:java.lang.Runnable
-	ANDROID:java.net.InetAddress
-	ANDROID:java.nio.channels.ClosedSelectorException
-	ANDROID:java.nio.channels.IllegalSelectorException
-	ANDROID:java.nio.charset.Charset
-	ANDROID:java.security.GuardedObject
-	ANDROID:java.security.KeyStore.Builder
-	ANDROID:java.security.PolicySpi
-	ANDROID:java.security.cert.CRLSelector
-	ANDROID:java.security.cert.CertPathBuilderException
-	ANDROID:java.security.cert.CertStoreException
-	ANDROID:java.sql.BatchUpdateException
-	ANDROID:java.sql.DriverManager
-	ANDROID:java.sql.Savepoint
-	ANDROID:java.text.Bidi
-	ANDROID:java.text.DateFormat
-	ANDROID:java.text.NumberFormat
-	ANDROID:java.util.Calendar
-	ANDROID:java.util.Formatter
-	ANDROID:java.util.concurrent.Delayed
-	ANDROID:java.util.concurrent.ScheduledExecutorService
-	ANDROID:java.util.jar.JarException
-	ANDROID:org.apache.http.HttpException
-	ANDROID:org.apache.http.conn.EofSensorInputStream
-	ANDROID:org.w3c.dom.NamedNodeMap
+	ANDROID:android.widget.CompoundButton	(2.3978952727983707)
+	ANDROID:java.sql.BatchUpdateException	(2.3978952727983707)
+	ANDROID:android.nfc.cardemulation.CardEmulation	(2.3978952727983707)
+	ANDROID:android.view.Display	(2.3978952727983707)
+	ANDROID:android.os.PatternMatcher	(2.3978952727983707)
+	ANDROID:android.media.audiofx.AudioEffect	(2.3978952727983707)
+	ANDROID:android.widget.RelativeLayout	(2.3978952727983707)
+	ANDROID:java.sql.Savepoint	(2.3978952727983707)
+	ANDROID:android.widget.ImageButton	(2.302585092994046)
+	ANDROID:android.provider.ContactsContract.Data	(2.302585092994046)
+	ANDROID:java.util.concurrent.locks.AbstractQueuedLongSynchronizer	(2.302585092994046)
+	ANDROID:android.widget.HorizontalScrollView	(2.302585092994046)
+	ANDROID:java.security.cert.CertStore	(2.302585092994046)
+	ANDROID:android.view.animation.GridLayoutAnimationController	(2.302585092994046)
+	ANDROID:android.content.ComponentCallbacks2	(2.302585092994046)
+	ANDROID:org.xml.sax.ext.Attributes2	(2.302585092994046)
+	ANDROID:android.widget.Button	(2.1972245773362196)
+	ANDROID:android.view.inputmethod.InputConnection	(2.1972245773362196)
+	ANDROID:android.nfc.cardemulation.HostApduService	(2.1972245773362196)
+	ANDROID:android.widget.FrameLayout	(2.1972245773362196)
+	ANDROID:java.text.Annotation	(2.1972245773362196)
+	ANDROID:android.provider.ContactsContract.DisplayNameSources	(2.1972245773362196)
+	ANDROID:android.provider.ContactsContract.CommonDataKinds.Relation	(2.1972245773362196)
+	ANDROID:android.support.v7.app.MediaRouteButton	(2.0794415416798357)
+	ANDROID:android.test.IsolatedContext	(2.0794415416798357)
+	ANDROID:android.hardware.display.DisplayManager.DisplayListener	(2.0794415416798357)
+	ANDROID:android.app.backup.FullBackupDataOutput	(2.0794415416798357)
+	ANDROID:java.text.CollationElementIterator	(2.0794415416798357)
+	ANDROID:android.media.RemoteControlClient	(1.9459101490553132)
+	ANDROID:android.nfc.cardemulation.OffHostApduService	(1.9459101490553132)
+	ANDROID:android.widget.AnalogClock	(1.9459101490553132)
+	ANDROID:java.net.IDN	(1.9459101490553132)
+	ANDROID:org.apache.http.conn.ConnectionKeepAliveStrategy	(1.9459101490553132)
+	ANDROID:android.widget.CompoundButton.OnCheckedChangeListener	(1.791759469228055)
+	ANDROID:android.graphics.DrawFilter	(1.791759469228055)
+	ANDROID:android.util.DisplayMetrics	(1.791759469228055)
+	ANDROID:android.view.inputmethod.InputMethodManager	(1.791759469228055)
+	ANDROID:android.graphics.Camera	(1.791759469228055)
+	ANDROID:android.widget.NumberPicker	(1.6094379124341003)
+	ANDROID:android.print.PrintDocumentInfo	(1.6094379124341003)
+	ANDROID:android.media.MediaPlayer.OnTimedTextListener	(1.6094379124341003)
+	ANDROID:java.net.NetworkInterface	(1.6094379124341003)
+	ANDROID:android.media.RemoteControlClient.MetadataEditor	(1.6094379124341003)
+	ANDROID:android.view.KeyEvent	(1.3862943611198906)
+	ANDROID:android.test.FlakyTest	(1.3862943611198906)
+	ANDROID:android.graphics.Bitmap.Config	(1.3862943611198906)
+	ANDROID:android.net.http.HttpResponseCache	(1.3862943611198906)
+	ANDROID:org.apache.http.impl.client.DefaultConnectionKeepAliveStrategy	(1.3862943611198906)
+	ANDROID:android.app.DialogFragment	(1.0986122886681098)
 _________________________________________________________________________________
 javax.microedition.lcdui.Display
-	ANDROID:android.animation.Animator.AnimatorPauseListener
-	ANDROID:android.app.KeyguardManager.KeyguardLock
-	ANDROID:android.app.LauncherActivity.IconResizer
-	ANDROID:android.app.Presentation
-	ANDROID:android.content.ComponentCallbacks2
-	ANDROID:android.content.ContentUris
-	ANDROID:android.content.DialogInterface.OnShowListener
-	ANDROID:android.content.res.AssetManager
-	ANDROID:android.content.res.Configuration
-	ANDROID:android.content.res.Resources.Theme
-	ANDROID:android.gesture.Gesture
-	ANDROID:android.graphics.BitmapRegionDecoder
-	ANDROID:android.hardware.Camera.Area
-	ANDROID:android.media.MediaPlayer
-	ANDROID:android.media.Ringtone
-	ANDROID:android.nfc.NfcAdapter.ReaderCallback
-	ANDROID:android.opengl.GLSurfaceView
-	ANDROID:android.opengl.GLSurfaceView.EGLConfigChooser
-	ANDROID:android.os.PowerManager
-	ANDROID:android.preference.CheckBoxPreference
-	ANDROID:android.preference.PreferenceActivity
-	ANDROID:android.preference.PreferenceFragment
-	ANDROID:android.preference.PreferenceScreen
-	ANDROID:android.provider.AlarmClock
-	ANDROID:android.provider.Contacts.Phones
-	ANDROID:android.provider.ContactsContract
-	ANDROID:android.provider.ContactsContract.Groups
-	ANDROID:android.provider.ContactsContract.Settings
-	ANDROID:android.support.v4.widget.AutoScrollHelper
-	ANDROID:android.support.v4.widget.ContentLoadingProgressBar
-	ANDROID:android.support.v7.media.MediaControlIntent
-	ANDROID:android.support.v7.media.MediaRouteProviderDescriptor
-	ANDROID:android.telephony.PhoneNumberFormattingTextWatcher
-	ANDROID:android.test.FlakyTest
-	ANDROID:android.text.Html
-	ANDROID:android.text.Html.ImageGetter
-	ANDROID:android.text.Html.TagHandler
-	ANDROID:android.text.method.CharacterPickerDialog
-	ANDROID:android.util.JsonReader
-	ANDROID:android.util.JsonWriter
-	ANDROID:android.view.ContextThemeWrapper
-	ANDROID:android.view.OrientationEventListener
-	ANDROID:android.view.OrientationListener
-	ANDROID:android.view.accessibility.AccessibilityEvent
-	ANDROID:android.view.accessibility.CaptioningManager.CaptionStyle
-	ANDROID:android.webkit.CookieSyncManager
-	ANDROID:android.webkit.GeolocationPermissions
-	ANDROID:android.widget.AdapterViewFlipper
-	ANDROID:android.widget.AnalogClock
-	ANDROID:android.widget.Button
-	ANDROID:android.widget.Chronometer
-	ANDROID:android.widget.ImageView
-	ANDROID:android.widget.NumberPicker
-	ANDROID:android.widget.PopupMenu
-	ANDROID:java.io.InvalidClassException
-	ANDROID:java.lang.InstantiationError
-	ANDROID:java.lang.annotation.AnnotationFormatError
-	ANDROID:java.lang.annotation.Retention
-	ANDROID:java.nio.MappedByteBuffer
-	ANDROID:java.nio.channels.FileChannel
-	ANDROID:java.nio.channels.FileLock
-	ANDROID:java.nio.channels.spi.AbstractInterruptibleChannel
-	ANDROID:java.security.IdentityScope
-	ANDROID:java.text.CollationKey
-	ANDROID:java.text.DecimalFormat
-	ANDROID:java.util.Locale
-	ANDROID:java.util.concurrent.ScheduledThreadPoolExecutor
-	ANDROID:javax.xml.namespace.NamespaceContext
-	ANDROID:org.apache.http.auth.AuthScope
-	ANDROID:org.apache.http.client.protocol.RequestAddCookies
-	ANDROID:org.apache.http.conn.ClientConnectionOperator
-	ANDROID:org.apache.http.cookie.CookieOrigin
-	ANDROID:org.apache.http.message.ParserCursor
-	ANDROID:org.xml.sax.ContentHandler
+	ANDROID:android.support.v4.widget.ContentLoadingProgressBar	(4.595119850134591)
+	ANDROID:android.hardware.display.DisplayManager.DisplayListener	(3.9120230054281464)
+	ANDROID:android.widget.NumberPicker.OnValueChangeListener	(3.401197381662155)
+	ANDROID:android.widget.ProgressBar	(2.3978952727983707)
+	ANDROID:android.widget.NumberPicker	(2.3978952727983707)
+	ANDROID:android.app.Presentation	(2.3978952727983707)
+	ANDROID:android.os.PowerManager	(2.3978952727983707)
+	ANDROID:android.view.accessibility.AccessibilityManager.TouchExplorationStateChangeListener	(2.3978952727983707)
+	ANDROID:android.app.KeyguardManager.KeyguardLock	(2.3978952727983707)
+	ANDROID:android.view.MotionEvent	(2.3978952727983707)
+	ANDROID:android.app.ProgressDialog	(2.302585092994046)
+	ANDROID:javax.xml.namespace.NamespaceContext	(2.302585092994046)
+	ANDROID:android.appwidget.AppWidgetHost	(2.302585092994046)
+	ANDROID:android.animation.LayoutTransition	(2.302585092994046)
+	ANDROID:android.view.accessibility.AccessibilityManager.AccessibilityStateChangeListener	(2.302585092994046)
+	ANDROID:android.content.BroadcastReceiver	(2.302585092994046)
+	ANDROID:android.media.MediaDrm	(2.302585092994046)
+	ANDROID:android.content.ClipboardManager	(2.1972245773362196)
+	ANDROID:android.widget.AnalogClock	(2.1972245773362196)
+	ANDROID:android.gesture.Gesture	(2.1972245773362196)
+	ANDROID:android.provider.ContactsContract.Groups	(2.1972245773362196)
+	ANDROID:android.widget.NumberPicker.OnScrollListener	(2.1972245773362196)
+	ANDROID:android.app.Activity	(2.1972245773362196)
+	ANDROID:android.nfc.NfcAdapter.OnNdefPushCompleteCallback	(2.1972245773362196)
+	ANDROID:android.os.CancellationSignal	(2.0794415416798357)
+	ANDROID:android.content.res.AssetManager	(2.0794415416798357)
+	ANDROID:android.media.MediaCodecList	(2.0794415416798357)
+	ANDROID:android.app.ActivityGroup	(2.0794415416798357)
+	ANDROID:android.provider.ContactsContract.Contacts	(2.0794415416798357)
+	ANDROID:android.net.nsd.NsdManager	(2.0794415416798357)
+	ANDROID:android.os.PowerManager.WakeLock	(2.0794415416798357)
+	ANDROID:android.view.KeyEvent	(2.0794415416798357)
+	ANDROID:android.widget.RatingBar	(1.9459101490553132)
+	ANDROID:android.view.inputmethod.InputMethodManager	(1.9459101490553132)
+	ANDROID:android.app.AlertDialog	(1.9459101490553132)
+	ANDROID:android.view.accessibility.AccessibilityEvent	(1.9459101490553132)
+	ANDROID:android.support.v4.view.accessibility.AccessibilityManagerCompat.AccessibilityStateChangeListenerCompat	(1.9459101490553132)
+	ANDROID:android.view.accessibility.CaptioningManager.CaptionStyle	(1.9459101490553132)
+	ANDROID:android.provider.ContactsContract.Contacts.Entity	(1.9459101490553132)
+	ANDROID:android.provider.MediaStore.Audio.AudioColumns	(1.791759469228055)
+	ANDROID:android.content.ContextWrapper	(1.791759469228055)
+	ANDROID:android.accessibilityservice.AccessibilityService	(1.791759469228055)
+	ANDROID:android.gesture.GestureOverlayView	(1.791759469228055)
+	ANDROID:android.preference.PreferenceFragment	(1.791759469228055)
+	ANDROID:android.preference.PreferenceActivity	(1.6094379124341003)
+	ANDROID:android.util.DisplayMetrics	(1.6094379124341003)
+	ANDROID:android.view.animation.AlphaAnimation	(1.6094379124341003)
+	ANDROID:android.transition.AutoTransition	(1.6094379124341003)
+	ANDROID:android.widget.NumberPicker.Formatter	(1.3862943611198906)
+	ANDROID:android.content.ClipboardManager.OnPrimaryClipChangedListener	(1.3862943611198906)
+	ANDROID:android.telephony.PhoneStateListener	(1.3862943611198906)
 _________________________________________________________________________________
 javax.microedition.lcdui.Displayable
-	ANDROID:android.accounts.AccountAuthenticatorActivity
-	ANDROID:android.app.DialogFragment
-	ANDROID:android.app.Fragment
-	ANDROID:android.app.Instrumentation
-	ANDROID:android.app.Presentation
-	ANDROID:android.appwidget.AppWidgetHost
-	ANDROID:android.content.EntityIterator
-	ANDROID:android.content.IntentFilter.AuthorityEntry
-	ANDROID:android.database.CursorJoiner
-	ANDROID:android.database.DefaultDatabaseErrorHandler
-	ANDROID:android.drm.DrmSupportInfo
-	ANDROID:android.drm.DrmUtils.ExtendedMetadataParser
-	ANDROID:android.hardware.Camera.Parameters
-	ANDROID:android.hardware.Camera.PreviewCallback
-	ANDROID:android.media.MediaCodecInfo.CodecCapabilities
-	ANDROID:android.media.MediaScannerConnection
-	ANDROID:android.net.http.AndroidHttpClient
-	ANDROID:android.net.rtp.AudioCodec
-	ANDROID:android.nfc.NfcAdapter
-	ANDROID:android.provider.ContactsContract.Profile
-	ANDROID:android.provider.ContactsContract.RawContacts.DisplayPhoto
-	ANDROID:android.provider.ContactsContract.RawContacts.Entity
-	ANDROID:android.provider.ContactsContract.StatusUpdates
-	ANDROID:android.support.annotation.NonNull
-	ANDROID:android.support.annotation.Nullable
-	ANDROID:android.support.v4.app.FragmentTabHost
-	ANDROID:android.support.v4.text.BidiFormatter
-	ANDROID:android.support.v4.util.Pools
-	ANDROID:android.telephony.CellSignalStrengthWcdma
-	ANDROID:android.test.RenamingDelegatingContext
-	ANDROID:android.text.BidiFormatter
-	ANDROID:android.text.Html
-	ANDROID:android.text.Html.ImageGetter
-	ANDROID:android.text.Html.TagHandler
-	ANDROID:android.text.method.KeyListener
-	ANDROID:android.view.Display
-	ANDROID:android.view.accessibility.AccessibilityNodeProvider
-	ANDROID:android.view.animation.AccelerateDecelerateInterpolator
-	ANDROID:android.view.animation.AlphaAnimation
-	ANDROID:android.widget.FrameLayout
-	ANDROID:android.widget.HorizontalScrollView
-	ANDROID:android.widget.ImageView
-	ANDROID:android.widget.MultiAutoCompleteTextView.CommaTokenizer
-	ANDROID:android.widget.RatingBar
-	ANDROID:java.beans.PropertyChangeListener
-	ANDROID:java.io.FileInputStream
-	ANDROID:java.io.FileOutputStream
-	ANDROID:java.io.LineNumberInputStream
-	ANDROID:java.io.LineNumberReader
-	ANDROID:java.lang.Override
-	ANDROID:java.nio.channels.Channel
-	ANDROID:java.sql.BatchUpdateException
-	ANDROID:java.text.AttributedCharacterIterator
-	ANDROID:java.text.BreakIterator
-	ANDROID:java.text.CharacterIterator
-	ANDROID:java.text.CollationElementIterator
-	ANDROID:java.util.ConcurrentModificationException
-	ANDROID:java.util.GregorianCalendar
-	ANDROID:java.util.NoSuchElementException
-	ANDROID:java.util.concurrent.ScheduledExecutorService
-	ANDROID:java.util.logging.ConsoleHandler
-	ANDROID:java.util.logging.LogRecord
-	ANDROID:javax.xml.namespace.QName
-	ANDROID:org.apache.http.HeaderElementIterator
-	ANDROID:org.apache.http.HeaderIterator
-	ANDROID:org.apache.http.HttpEntity
-	ANDROID:org.apache.http.params.BasicHttpParams
-	ANDROID:org.apache.http.params.DefaultedHttpParams
-	ANDROID:org.apache.http.protocol.BasicHttpContext
-	ANDROID:org.apache.http.protocol.DefaultedHttpContext
-	ANDROID:org.w3c.dom.ls.DOMImplementationLS
-	ANDROID:org.w3c.dom.ls.LSParserFilter
-	ANDROID:org.xml.sax.ContentHandler
+	ANDROID:android.hardware.display.DisplayManager.DisplayListener	(6.684611727667927)
+	ANDROID:android.widget.AnalogClock	(6.340359303727752)
+	ANDROID:android.util.DisplayMetrics	(5.3471075307174685)
+	ANDROID:android.app.NativeActivity	(4.795790545596741)
+	ANDROID:android.view.inputmethod.InputConnection	(3.9889840465642745)
+	ANDROID:android.location.GpsStatus.NmeaListener	(3.8066624897703196)
+	ANDROID:android.media.MediaPlayer.OnTimedTextListener	(3.688879454113936)
+	ANDROID:android.graphics.Bitmap.Config	(3.1780538303479453)
+	ANDROID:java.util.Date	(3.044522437723423)
+	ANDROID:android.net.http.AndroidHttpClient	(2.3978952727983707)
+	ANDROID:java.io.LineNumberInputStream	(2.3978952727983707)
+	ANDROID:android.widget.ProgressBar	(2.3978952727983707)
+	ANDROID:java.sql.BatchUpdateException	(2.3978952727983707)
+	ANDROID:android.content.Intent	(2.3978952727983707)
+	ANDROID:android.app.Presentation	(2.3978952727983707)
+	ANDROID:android.appwidget.AppWidgetHost	(2.3978952727983707)
+	ANDROID:java.text.BreakIterator	(2.3978952727983707)
+	ANDROID:android.media.MediaScannerConnection	(2.3978952727983707)
+	ANDROID:android.view.Display	(2.3978952727983707)
+	ANDROID:android.drm.DrmSupportInfo	(2.3978952727983707)
+	ANDROID:org.apache.http.impl.conn.AbstractPoolEntry	(2.302585092994046)
+	ANDROID:java.io.LineNumberReader	(2.302585092994046)
+	ANDROID:android.app.ProgressDialog	(2.302585092994046)
+	ANDROID:android.provider.ContactsContract.Data	(2.302585092994046)
+	ANDROID:org.apache.http.impl.auth.NTLMEngine	(2.302585092994046)
+	ANDROID:android.content.ClipData	(2.302585092994046)
+	ANDROID:android.app.Fragment	(2.302585092994046)
+	ANDROID:android.nfc.tech.NfcBarcode	(2.302585092994046)
+	ANDROID:java.util.InputMismatchException	(2.302585092994046)
+	ANDROID:android.widget.HorizontalScrollView	(2.302585092994046)
+	ANDROID:android.media.MediaCodecInfo.CodecCapabilities	(2.302585092994046)
+	ANDROID:java.util.logging.Level	(2.1972245773362196)
+	ANDROID:java.util.PropertyResourceBundle	(2.1972245773362196)
+	ANDROID:android.support.v4.widget.ContentLoadingProgressBar	(2.1972245773362196)
+	ANDROID:android.media.JetPlayer.OnJetEventListener	(2.1972245773362196)
+	ANDROID:android.provider.ContactsContract.CommonDataKinds.Note	(2.1972245773362196)
+	ANDROID:android.app.Instrumentation	(2.1972245773362196)
+	ANDROID:java.util.Scanner	(2.1972245773362196)
+	ANDROID:android.widget.FrameLayout	(2.1972245773362196)
+	ANDROID:android.media.audiofx.LoudnessEnhancer	(2.1972245773362196)
+	ANDROID:android.printservice.PrintService	(2.0794415416798357)
+	ANDROID:java.util.regex.Pattern	(2.0794415416798357)
+	ANDROID:android.os.CancellationSignal	(2.0794415416798357)
+	ANDROID:android.location.GpsStatus	(2.0794415416798357)
+	ANDROID:java.util.concurrent.locks.AbstractQueuedLongSynchronizer	(2.0794415416798357)
+	ANDROID:android.media.MediaCodecList	(2.0794415416798357)
+	ANDROID:android.nfc.NfcEvent	(2.0794415416798357)
+	ANDROID:android.animation.AnimatorSet.Builder	(2.0794415416798357)
+	ANDROID:android.media.MediaDrm.CryptoSession	(1.9459101490553132)
+	ANDROID:java.nio.charset.Charset	(1.9459101490553132)
+	ANDROID:android.widget.RatingBar	(1.9459101490553132)
+	ANDROID:java.security.KeyFactory	(1.9459101490553132)
+	ANDROID:android.app.KeyguardManager.OnKeyguardExitResult	(1.9459101490553132)
+	ANDROID:android.app.AlertDialog	(1.9459101490553132)
+	ANDROID:android.accessibilityservice.AccessibilityService	(1.791759469228055)
+	ANDROID:org.apache.http.message.BasicTokenIterator	(1.791759469228055)
+	ANDROID:android.provider.ContactsContract.CommonDataKinds.Organization	(1.791759469228055)
+	ANDROID:android.provider.MediaStore.Audio.AudioColumns	(1.791759469228055)
+	ANDROID:org.xml.sax.ErrorHandler	(1.791759469228055)
+	ANDROID:java.net.HttpURLConnection	(1.6094379124341003)
+	ANDROID:android.view.InputDevice	(1.6094379124341003)
+	ANDROID:android.widget.NumberPicker	(1.6094379124341003)
+	ANDROID:java.net.NoRouteToHostException	(1.3862943611198906)
+	ANDROID:java.security.AlgorithmParameters	(1.3862943611198906)
+	ANDROID:org.apache.http.impl.conn.tsccm.RefQueueWorker	(1.3862943611198906)
+	ANDROID:android.graphics.drawable.AnimationDrawable	(1.3862943611198906)
+	ANDROID:android.view.HapticFeedbackConstants	(1.0986122886681098)
+	ANDROID:android.drm.DrmInfo	(1.0986122886681098)
 _________________________________________________________________________________
 javax.microedition.lcdui.Font
-	ANDROID:android.app.Activity
-	ANDROID:android.app.DialogFragment
-	ANDROID:android.app.KeyguardManager.KeyguardLock
-	ANDROID:android.app.Notification.Style
-	ANDROID:android.app.Presentation
-	ANDROID:android.appwidget.AppWidgetProviderInfo
-	ANDROID:android.content.BroadcastReceiver
-	ANDROID:android.content.ComponentCallbacks2
-	ANDROID:android.content.res.Resources.Theme
-	ANDROID:android.database.MatrixCursor
-	ANDROID:android.database.MatrixCursor.RowBuilder
-	ANDROID:android.drm.DrmManagerClient
-	ANDROID:android.graphics.Camera
-	ANDROID:android.graphics.ComposeShader
-	ANDROID:android.graphics.Paint
-	ANDROID:android.graphics.Paint.FontMetrics
-	ANDROID:android.graphics.Path
-	ANDROID:android.graphics.drawable.InsetDrawable
-	ANDROID:android.hardware.Camera.Face
-	ANDROID:android.hardware.Camera.FaceDetectionListener
-	ANDROID:android.media.FaceDetector.Face
-	ANDROID:android.media.MediaCodecInfo.CodecProfileLevel
-	ANDROID:android.media.MediaDrm
-	ANDROID:android.media.MediaFormat
-	ANDROID:android.media.MediaPlayer
-	ANDROID:android.media.MediaPlayer.OnBufferingUpdateListener
-	ANDROID:android.media.MediaRecorder
-	ANDROID:android.media.Rating
-	ANDROID:android.nfc.NfcAdapter.ReaderCallback
-	ANDROID:android.os.BatteryManager
-	ANDROID:android.os.IBinder.DeathRecipient
-	ANDROID:android.os.MemoryFile
-	ANDROID:android.os.RecoverySystem.ProgressListener
-	ANDROID:android.preference.PreferenceManager
-	ANDROID:android.print.PrintAttributes
-	ANDROID:android.print.PrintDocumentAdapter
-	ANDROID:android.provider.ContactsContract.ContactOptionsColumns
-	ANDROID:android.provider.ContactsContract.Contacts.AggregationSuggestions
-	ANDROID:android.provider.ContactsContract.SettingsColumns
-	ANDROID:android.renderscript.Element
-	ANDROID:android.renderscript.Element.DataType
-	ANDROID:android.renderscript.ScriptIntrinsicColorMatrix
-	ANDROID:android.sax.Element
-	ANDROID:android.service.dreams.DreamService
-	ANDROID:android.support.annotation.IntDef
-	ANDROID:android.support.v4.app.NavUtils
-	ANDROID:android.support.v4.app.NotificationCompat.Style
-	ANDROID:android.support.v7.widget.GridLayout
-	ANDROID:android.support.v8.renderscript.Element
-	ANDROID:android.support.v8.renderscript.Element.DataType
-	ANDROID:android.support.v8.renderscript.ScriptIntrinsicColorMatrix
-	ANDROID:android.telephony.PhoneNumberFormattingTextWatcher
-	ANDROID:android.text.InputType
-	ANDROID:android.text.method.MetaKeyKeyListener
-	ANDROID:android.text.method.NumberKeyListener
-	ANDROID:android.text.util.Linkify.TransformFilter
-	ANDROID:android.transition.AutoTransition
-	ANDROID:android.util.DisplayMetrics
-	ANDROID:android.util.Patterns
-	ANDROID:android.view.Display
-	ANDROID:android.view.KeyCharacterMap
-	ANDROID:android.view.KeyCharacterMap.KeyData
-	ANDROID:android.view.accessibility.CaptioningManager.CaptionStyle
-	ANDROID:android.view.inputmethod.InputMethodSubtype
-	ANDROID:android.webkit.GeolocationPermissions
-	ANDROID:android.widget.Button
-	ANDROID:android.widget.Filter.FilterResults
-	ANDROID:android.widget.GridLayout
-	ANDROID:android.widget.ProgressBar
-	ANDROID:java.beans.IndexedPropertyChangeEvent
-	ANDROID:java.lang.ArrayIndexOutOfBoundsException
-	ANDROID:java.lang.Character
-	ANDROID:java.lang.Exception
-	ANDROID:java.lang.Number
-	ANDROID:java.math.BigDecimal
-	ANDROID:java.math.RoundingMode
-	ANDROID:java.net.IDN
-	ANDROID:java.net.JarURLConnection
-	ANDROID:java.net.PasswordAuthentication
-	ANDROID:java.security.KeyStore.CallbackHandlerProtection
-	ANDROID:java.sql.Date
-	ANDROID:java.text.AttributedCharacterIterator
-	ANDROID:java.text.CollationElementIterator
-	ANDROID:java.text.DecimalFormat
-	ANDROID:java.text.DecimalFormatSymbols
-	ANDROID:java.text.Format
-	ANDROID:java.text.MessageFormat
-	ANDROID:java.text.RuleBasedCollator
-	ANDROID:java.util.BitSet
-	ANDROID:java.util.Calendar
-	ANDROID:java.util.IllegalFormatPrecisionException
-	ANDROID:java.util.IllegalFormatWidthException
-	ANDROID:java.util.concurrent.Delayed
-	ANDROID:javax.crypto.CipherSpi
-	ANDROID:javax.sql.RowSet
-	ANDROID:javax.xml.datatype.DatatypeConstants
-	ANDROID:org.apache.http.auth.AuthScope
-	ANDROID:org.apache.http.client.HttpRequestRetryHandler
-	ANDROID:org.apache.http.client.params.AllClientPNames
-	ANDROID:org.apache.http.client.params.ClientPNames
+	ANDROID:android.graphics.ComposeShader	(4.025351690735149)
+	ANDROID:android.content.BroadcastReceiver	(2.3978952727983707)
+	ANDROID:java.text.RuleBasedCollator	(2.3978952727983707)
+	ANDROID:android.graphics.Paint.FontMetrics	(2.3978952727983707)
+	ANDROID:android.hardware.Camera.FaceDetectionListener	(2.3978952727983707)
+	ANDROID:android.support.annotation.IntDef	(2.3978952727983707)
+	ANDROID:java.util.jar.Attributes	(2.3978952727983707)
+	ANDROID:org.w3c.dom.DocumentFragment	(2.302585092994046)
+	ANDROID:android.provider.ContactsContract.CommonDataKinds.Relation	(2.302585092994046)
+	ANDROID:java.nio.Buffer	(2.302585092994046)
+	ANDROID:android.hardware.Camera.Face	(2.302585092994046)
+	ANDROID:android.text.InputType	(2.302585092994046)
+	ANDROID:java.text.NumberFormat.Field	(2.302585092994046)
+	ANDROID:android.net.LocalSocketAddress.Namespace	(2.1972245773362196)
+	ANDROID:org.json.JSONTokener	(2.1972245773362196)
+	ANDROID:android.database.MatrixCursor	(2.1972245773362196)
+	ANDROID:android.media.FaceDetector.Face	(2.1972245773362196)
+	ANDROID:java.math.BigDecimal	(2.1972245773362196)
+	ANDROID:android.content.res.Resources.Theme	(2.1972245773362196)
+	ANDROID:android.app.Instrumentation	(2.0794415416798357)
+	ANDROID:android.util.DisplayMetrics	(2.0794415416798357)
+	ANDROID:android.support.v4.view.GravityCompat	(2.0794415416798357)
+	ANDROID:android.os.PowerManager	(2.0794415416798357)
+	ANDROID:java.text.DateFormat.Field	(2.0794415416798357)
+	ANDROID:org.w3c.dom.NameList	(1.9459101490553132)
+	ANDROID:android.inputmethodservice.AbstractInputMethodService	(1.9459101490553132)
+	ANDROID:java.util.IllegalFormatWidthException	(1.9459101490553132)
+	ANDROID:android.graphics.drawable.ColorDrawable	(1.9459101490553132)
+	ANDROID:org.w3c.dom.Element	(1.9459101490553132)
+	ANDROID:javax.crypto.AEADBadTagException	(1.791759469228055)
+	ANDROID:android.util.MalformedJsonException	(1.791759469228055)
+	ANDROID:java.util.IllegalFormatPrecisionException	(1.791759469228055)
+	ANDROID:android.mtp.MtpDevice	(1.791759469228055)
+	ANDROID:android.text.method.MetaKeyKeyListener	(1.791759469228055)
+	ANDROID:org.xml.sax.ext.Attributes2Impl	(1.791759469228055)
+	ANDROID:android.drm.DrmManagerClient.OnErrorListener	(1.6094379124341003)
+	ANDROID:org.apache.http.conn.ConnectionKeepAliveStrategy	(1.6094379124341003)
+	ANDROID:org.w3c.dom.Attr	(1.6094379124341003)
+	ANDROID:android.graphics.ColorMatrix	(1.3862943611198906)
+	ANDROID:android.widget.AdapterView.OnItemLongClickListener	(1.3862943611198906)
+	ANDROID:org.xml.sax.AttributeList	(1.3862943611198906)
+	ANDROID:android.widget.RelativeLayout	(1.0986122886681098)
+	ANDROID:org.apache.http.impl.client.DefaultConnectionKeepAliveStrategy	(1.0986122886681098)
+	ANDROID:android.print.PrintAttributes	(1.0986122886681098)
 _________________________________________________________________________________
 javax.microedition.lcdui.Graphics
-	ANDROID:android.accessibilityservice.AccessibilityService
-	ANDROID:android.animation.AnimatorSet
-	ANDROID:android.animation.LayoutTransition
-	ANDROID:android.app.AppOpsManager.OnOpChangedListener
-	ANDROID:android.app.DownloadManager.Request
-	ANDROID:android.app.FragmentBreadCrumbs
-	ANDROID:android.app.backup.RestoreObserver
-	ANDROID:android.bluetooth.BluetoothDevice
-	ANDROID:android.content.AbstractThreadedSyncAdapter
-	ANDROID:android.content.ClipData
-	ANDROID:android.content.ClipData.Item
-	ANDROID:android.content.ClipDescription
-	ANDROID:android.content.ClipboardManager
-	ANDROID:android.content.ClipboardManager.OnPrimaryClipChangedListener
-	ANDROID:android.content.pm.InstrumentationInfo
-	ANDROID:android.content.res.Resources
-	ANDROID:android.database.CursorIndexOutOfBoundsException
-	ANDROID:android.database.MatrixCursor.RowBuilder
-	ANDROID:android.drm.DrmManagerClient
-	ANDROID:android.gesture.Gesture
-	ANDROID:android.gesture.GestureOverlayView
-	ANDROID:android.gesture.GesturePoint
-	ANDROID:android.gesture.GestureStroke
-	ANDROID:android.gesture.GestureUtils
-	ANDROID:android.gesture.OrientedBoundingBox
-	ANDROID:android.graphics.Bitmap.CompressFormat
-	ANDROID:android.graphics.BitmapRegionDecoder
-	ANDROID:android.graphics.BitmapShader
-	ANDROID:android.graphics.Color
-	ANDROID:android.graphics.NinePatch
-	ANDROID:android.graphics.Paint.Align
-	ANDROID:android.graphics.Paint.Cap
-	ANDROID:android.graphics.Paint.FontMetrics
-	ANDROID:android.graphics.Paint.Join
-	ANDROID:android.graphics.Paint.Style
-	ANDROID:android.graphics.Path
-	ANDROID:android.graphics.Path.Direction
-	ANDROID:android.graphics.Path.FillType
-	ANDROID:android.graphics.Point
-	ANDROID:android.graphics.drawable.BitmapDrawable
-	ANDROID:android.graphics.drawable.ClipDrawable
-	ANDROID:android.graphics.drawable.ColorDrawable
-	ANDROID:android.graphics.drawable.GradientDrawable
-	ANDROID:android.graphics.drawable.GradientDrawable.Orientation
-	ANDROID:android.graphics.drawable.InsetDrawable
-	ANDROID:android.graphics.drawable.NinePatchDrawable
-	ANDROID:android.graphics.drawable.PaintDrawable
-	ANDROID:android.graphics.drawable.shapes.ArcShape
-	ANDROID:android.graphics.drawable.shapes.OvalShape
-	ANDROID:android.graphics.drawable.shapes.PathShape
-	ANDROID:android.graphics.drawable.shapes.RectShape
-	ANDROID:android.graphics.drawable.shapes.RoundRectShape
-	ANDROID:android.hardware.Camera.Area
-	ANDROID:android.hardware.Camera.OnZoomChangeListener
-	ANDROID:android.inputmethodservice.KeyboardView
-	ANDROID:android.location.Geocoder
-	ANDROID:android.location.Location
-	ANDROID:android.media.FaceDetector
-	ANDROID:android.media.JetPlayer
-	ANDROID:android.media.MediaDrm
-	ANDROID:android.media.MediaExtractor
-	ANDROID:android.media.MediaFormat
-	ANDROID:android.media.MediaPlayer
-	ANDROID:android.media.MediaPlayer.OnBufferingUpdateListener
-	ANDROID:android.media.MediaPlayer.OnTimedTextListener
-	ANDROID:android.media.MediaRecorder
-	ANDROID:android.media.RemoteControlClient
-	ANDROID:android.net.http.HttpResponseCache
-	ANDROID:android.net.nsd.NsdManager.ResolveListener
-	ANDROID:android.net.rtp.AudioStream
-	ANDROID:android.net.rtp.RtpStream
-	ANDROID:android.opengl.ETC1
-	ANDROID:android.os.CancellationSignal
-	ANDROID:android.os.OperationCanceledException
-	ANDROID:android.os.Parcel
-	ANDROID:android.preference.PreferenceActivity
-	ANDROID:android.preference.PreferenceScreen
-	ANDROID:android.print.PrintAttributes
-	ANDROID:android.print.PrintAttributes.Resolution
-	ANDROID:android.print.pdf.PrintedPdfDocument
-	ANDROID:android.provider.ContactsContract.AggregationExceptions
-	ANDROID:android.provider.ContactsContract.CommonDataKinds.StructuredPostal
-	ANDROID:android.provider.ContactsContract.FullNameStyle
-	ANDROID:android.provider.ContactsContract.StreamItemsColumns
-	ANDROID:android.provider.DocumentsProvider
-	ANDROID:android.renderscript.Element.DataKind
-	ANDROID:android.renderscript.Element.DataType
-	ANDROID:android.support.annotation.ColorRes
-	ANDROID:android.support.annotation.DrawableRes
-	ANDROID:android.support.v4.graphics.drawable.DrawableCompat
-	ANDROID:android.support.v4.widget.ExploreByTouchHelper
-	ANDROID:android.support.v7.media.MediaItemStatus
-	ANDROID:android.support.v7.widget.GridLayout
-	ANDROID:android.support.v7.widget.GridLayout.Alignment
-	ANDROID:android.support.v7.widget.GridLayout.LayoutParams
-	ANDROID:android.support.v8.renderscript.Element.DataKind
-	ANDROID:android.support.v8.renderscript.Element.DataType
-	ANDROID:android.telephony.PhoneNumberFormattingTextWatcher
-	ANDROID:android.text.AlteredCharSequence
-	ANDROID:android.text.ClipboardManager
+	ANDROID:android.provider.ContactsContract.CommonDataKinds.StructuredPostal	(4.394449154672439)
+	ANDROID:android.graphics.drawable.ClipDrawable	(4.189654742026425)
+	ANDROID:android.graphics.drawable.GradientDrawable.Orientation	(4.143134726391533)
+	ANDROID:android.content.ClipDescription	(2.3978952727983707)
+	ANDROID:android.gesture.GestureStroke	(2.3978952727983707)
+	ANDROID:android.hardware.Camera.Area	(2.3978952727983707)
+	ANDROID:android.media.FaceDetector	(2.3978952727983707)
+	ANDROID:android.app.DownloadManager	(2.3978952727983707)
+	ANDROID:java.util.Calendar	(2.3978952727983707)
+	ANDROID:android.location.Geocoder	(2.3978952727983707)
+	ANDROID:javax.crypto.EncryptedPrivateKeyInfo	(2.3978952727983707)
+	ANDROID:android.widget.RatingBar	(2.3978952727983707)
+	ANDROID:android.gesture.OrientedBoundingBox	(2.3978952727983707)
+	ANDROID:android.text.method.LinkMovementMethod	(2.3978952727983707)
+	ANDROID:android.view.accessibility.AccessibilityEvent	(2.3978952727983707)
+	ANDROID:java.nio.charset.CharsetEncoder	(2.3978952727983707)
+	ANDROID:android.content.ClipboardManager	(2.302585092994046)
+	ANDROID:android.gesture.Gesture	(2.302585092994046)
+	ANDROID:android.support.v4.widget.AutoScrollHelper	(2.302585092994046)
+	ANDROID:android.graphics.NinePatch	(2.302585092994046)
+	ANDROID:android.app.DownloadManager.Request	(2.302585092994046)
+	ANDROID:java.util.GregorianCalendar	(2.302585092994046)
+	ANDROID:android.graphics.drawable.ScaleDrawable	(2.302585092994046)
+	ANDROID:android.location.Location	(2.302585092994046)
+	ANDROID:android.graphics.Picture	(2.302585092994046)
+	ANDROID:android.widget.ExpandableListView	(2.302585092994046)
+	ANDROID:android.text.method.ReplacementTransformationMethod	(2.302585092994046)
+	ANDROID:android.text.util.Linkify	(2.302585092994046)
+	ANDROID:java.beans.PropertyChangeListener	(2.302585092994046)
+	ANDROID:java.nio.charset.CharsetDecoder	(2.302585092994046)
+	ANDROID:android.content.ClipData.Item	(2.1972245773362196)
+	ANDROID:android.gesture.GesturePoint	(2.1972245773362196)
+	ANDROID:android.widget.ImageView.ScaleType	(2.1972245773362196)
+	ANDROID:android.graphics.drawable.NinePatchDrawable	(2.1972245773362196)
+	ANDROID:android.app.DownloadManager.Query	(2.1972245773362196)
+	ANDROID:android.net.http.HttpResponseCache	(2.1972245773362196)
+	ANDROID:java.security.MessageDigest	(2.1972245773362196)
+	ANDROID:android.graphics.Paint.Style	(2.1972245773362196)
+	ANDROID:javax.crypto.NullCipher	(2.1972245773362196)
+	ANDROID:android.provider.ContactsContract.Settings	(2.1972245773362196)
+	ANDROID:java.nio.InvalidMarkException	(2.1972245773362196)
+	ANDROID:android.content.ClipboardManager.OnPrimaryClipChangedListener	(2.0794415416798357)
+	ANDROID:android.inputmethodservice.KeyboardView	(2.0794415416798357)
+	ANDROID:android.hardware.Camera.Face	(2.0794415416798357)
+	ANDROID:android.graphics.BitmapShader	(2.0794415416798357)
+	ANDROID:android.provider.ContactsContract.CommonDataKinds.Photo	(2.0794415416798357)
+	ANDROID:android.text.Editable	(2.0794415416798357)
+	ANDROID:android.support.v4.view.GravityCompat	(2.0794415416798357)
+	ANDROID:android.media.FaceDetector.Face	(2.0794415416798357)
+	ANDROID:java.nio.charset.Charset	(2.0794415416798357)
+	ANDROID:android.view.accessibility.CaptioningManager.CaptioningChangeListener	(2.0794415416798357)
+	ANDROID:android.os.DropBoxManager.Entry	(2.0794415416798357)
+	ANDROID:org.apache.http.client.methods.HttpHead	(2.0794415416798357)
+	ANDROID:java.io.Reader	(2.0794415416798357)
+	ANDROID:java.nio.channels.spi.AbstractInterruptibleChannel	(2.0794415416798357)
+	ANDROID:android.content.ClipData	(1.9459101490553132)
+	ANDROID:android.gesture.GestureStore	(1.9459101490553132)
+	ANDROID:android.graphics.drawable.BitmapDrawable	(1.9459101490553132)
+	ANDROID:java.net.DatagramPacket	(1.9459101490553132)
+	ANDROID:android.location.GpsStatus.Listener	(1.9459101490553132)
+	ANDROID:android.widget.FrameLayout	(1.9459101490553132)
+	ANDROID:android.text.InputType	(1.9459101490553132)
+	ANDROID:java.nio.CharBuffer	(1.9459101490553132)
+	ANDROID:java.util.concurrent.Delayed	(1.9459101490553132)
+	ANDROID:android.util.PrintStreamPrinter	(1.9459101490553132)
+	ANDROID:android.widget.ExpandableListAdapter	(1.9459101490553132)
+	ANDROID:android.media.JetPlayer.OnJetEventListener	(1.9459101490553132)
+	ANDROID:android.widget.OverScroller	(1.9459101490553132)
+	ANDROID:android.widget.RatingBar.OnRatingBarChangeListener	(1.791759469228055)
+	ANDROID:android.widget.AbsListView.SelectionBoundsAdjuster	(1.791759469228055)
+	ANDROID:junit.framework.ComparisonFailure	(1.791759469228055)
+	ANDROID:org.w3c.dom.ls.LSOutput	(1.791759469228055)
+	ANDROID:java.util.prefs.InvalidPreferencesFormatException	(1.791759469228055)
+	ANDROID:java.util.logging.Filter	(1.791759469228055)
+	ANDROID:android.view.InputDevice	(1.791759469228055)
+	ANDROID:android.widget.AbsSpinner	(1.791759469228055)
+	ANDROID:android.graphics.Path.FillType	(1.791759469228055)
+	ANDROID:java.util.Formatter	(1.791759469228055)
+	ANDROID:org.apache.http.conn.ssl.AllowAllHostnameVerifier	(1.791759469228055)
+	ANDROID:javax.crypto.spec.PSource	(1.791759469228055)
+	ANDROID:java.awt.font.NumericShaper	(1.791759469228055)
+	ANDROID:android.text.ClipboardManager	(1.6094379124341003)
+	ANDROID:android.media.MediaPlayer.OnTimedTextListener	(1.6094379124341003)
+	ANDROID:android.graphics.Bitmap.CompressFormat	(1.6094379124341003)
+	ANDROID:javax.sql.PooledConnection	(1.6094379124341003)
+	ANDROID:java.lang.annotation.AnnotationTypeMismatchException	(1.6094379124341003)
+	ANDROID:java.security.AccessControlException	(1.6094379124341003)
+	ANDROID:android.graphics.Path	(1.6094379124341003)
+	ANDROID:android.media.MediaRecorder.VideoSource	(1.6094379124341003)
+	ANDROID:java.nio.ReadOnlyBufferException	(1.6094379124341003)
+	ANDROID:android.text.GetChars	(1.3862943611198906)
+	ANDROID:android.gesture.GestureOverlayView	(1.3862943611198906)
+	ANDROID:android.bluetooth.BluetoothManager	(1.3862943611198906)
+	ANDROID:android.widget.CompoundButton.OnCheckedChangeListener	(1.3862943611198906)
+	ANDROID:org.apache.http.message.HeaderValueFormatter	(1.3862943611198906)
+	ANDROID:android.media.MediaRecorder.AudioSource	(1.3862943611198906)
+	ANDROID:android.os.Debug.InstructionCount	(1.3862943611198906)
+	ANDROID:android.view.MotionEvent	(1.0986122886681098)
+	ANDROID:org.apache.http.impl.client.DefaultHttpClient	(1.0986122886681098)
+	ANDROID:android.content.DialogInterface.OnShowListener	(1.0986122886681098)
 _________________________________________________________________________________
 javax.microedition.lcdui.Image
-	ANDROID:android.animation.ArgbEvaluator
-	ANDROID:android.app.DownloadManager
-	ANDROID:android.app.DownloadManager.Request
-	ANDROID:android.app.NativeActivity
-	ANDROID:android.app.Notification
-	ANDROID:android.app.NotificationManager
-	ANDROID:android.appwidget.AppWidgetHostView
-	ANDROID:android.bluetooth.BluetoothGattCharacteristic
-	ANDROID:android.content.ActivityNotFoundException
-	ANDROID:android.content.ContentProvider
-	ANDROID:android.content.res.AssetFileDescriptor
-	ANDROID:android.content.res.Resources
-	ANDROID:android.database.MatrixCursor
-	ANDROID:android.gesture.GestureOverlayView
-	ANDROID:android.graphics.Bitmap.CompressFormat
-	ANDROID:android.graphics.Bitmap.Config
-	ANDROID:android.graphics.Camera
-	ANDROID:android.graphics.Canvas
-	ANDROID:android.graphics.Color
-	ANDROID:android.graphics.ColorMatrix
-	ANDROID:android.graphics.Matrix
-	ANDROID:android.graphics.PathEffect
-	ANDROID:android.graphics.PixelXorXfermode
-	ANDROID:android.graphics.drawable.Animatable
-	ANDROID:android.graphics.drawable.AnimationDrawable
-	ANDROID:android.graphics.drawable.Drawable
-	ANDROID:android.graphics.drawable.DrawableContainer
-	ANDROID:android.graphics.drawable.GradientDrawable
-	ANDROID:android.graphics.drawable.NinePatchDrawable
-	ANDROID:android.hardware.display.DisplayManager.DisplayListener
-	ANDROID:android.hardware.location.GeofenceHardware
-	ANDROID:android.inputmethodservice.KeyboardView
-	ANDROID:android.location.Location
-	ANDROID:android.media.CameraProfile
-	ANDROID:android.media.Image
-	ANDROID:android.media.Image.Plane
-	ANDROID:android.media.ImageReader
-	ANDROID:android.media.ImageReader.OnImageAvailableListener
-	ANDROID:android.media.JetPlayer
-	ANDROID:android.media.MediaDrm.KeyRequest
-	ANDROID:android.media.MediaDrm.ProvisionRequest
-	ANDROID:android.media.MediaFormat
-	ANDROID:android.media.MediaPlayer.OnBufferingUpdateListener
-	ANDROID:android.net.ConnectivityManager
-	ANDROID:android.net.Credentials
-	ANDROID:android.net.LocalSocketAddress
-	ANDROID:android.net.NetworkInfo
-	ANDROID:android.net.NetworkInfo.DetailedState
-	ANDROID:android.net.NetworkInfo.State
-	ANDROID:android.net.nsd.NsdManager
-	ANDROID:android.nfc.NdefMessage
-	ANDROID:android.nfc.NdefRecord
-	ANDROID:android.nfc.cardemulation.HostApduService
-	ANDROID:android.nfc.tech.MifareClassic
-	ANDROID:android.nfc.tech.MifareUltralight
-	ANDROID:android.nfc.tech.NfcBarcode
-	ANDROID:android.nfc.tech.NfcF
-	ANDROID:android.opengl.EGLSurface
-	ANDROID:android.opengl.GLSurfaceView
-	ANDROID:android.opengl.Matrix
-	ANDROID:android.os.ConditionVariable
-	ANDROID:android.print.PrintJob
-	ANDROID:android.print.PrintJobInfo
-	ANDROID:android.printservice.PrinterDiscoverySession
-	ANDROID:android.provider.CalendarContract.Colors
-	ANDROID:android.provider.CallLog
-	ANDROID:android.provider.ContactsContract.ContactsColumns
-	ANDROID:android.provider.ContactsContract.Directory
-	ANDROID:android.provider.ContactsContract.Groups
-	ANDROID:android.provider.ContactsContract.RawContacts.DisplayPhoto
-	ANDROID:android.provider.MediaStore.Files
-	ANDROID:android.renderscript.Element.DataKind
-	ANDROID:android.renderscript.Element.DataType
-	ANDROID:android.renderscript.ScriptGroup.Builder
-	ANDROID:android.renderscript.ScriptIntrinsic
-	ANDROID:android.renderscript.ScriptIntrinsicBlend
-	ANDROID:android.renderscript.ScriptIntrinsicBlur
-	ANDROID:android.security.KeyPairGeneratorSpec
-	ANDROID:android.security.KeyStoreParameter
-	ANDROID:android.support.v4.app.FragmentActivity
-	ANDROID:android.support.v7.media.MediaRouteDescriptor
-	ANDROID:android.support.v8.renderscript.Element.DataKind
-	ANDROID:android.support.v8.renderscript.Element.DataType
-	ANDROID:android.support.v8.renderscript.ScriptGroup.Builder
-	ANDROID:android.support.v8.renderscript.ScriptIntrinsic
-	ANDROID:android.support.v8.renderscript.ScriptIntrinsicBlend
-	ANDROID:android.support.v8.renderscript.ScriptIntrinsicBlur
-	ANDROID:android.support.v8.renderscript.ScriptIntrinsicColorMatrix
-	ANDROID:android.text.format.DateUtils
-	ANDROID:android.text.method.ReplacementTransformationMethod
-	ANDROID:android.text.style.EasyEditSpan
-	ANDROID:android.text.style.LeadingMarginSpan.Standard
-	ANDROID:android.util.Base64OutputStream
-	ANDROID:android.util.DisplayMetrics
-	ANDROID:android.view.Choreographer
-	ANDROID:android.view.InflateException
-	ANDROID:android.view.animation.AlphaAnimation
-	ANDROID:android.view.inputmethod.EditorInfo
-	ANDROID:android.webkit.CookieSyncManager
-	ANDROID:android.widget.AnalogClock
+	ANDROID:android.net.LocalSocket	(4.276666119016055)
+	ANDROID:android.app.Activity	(3.8066624897703196)
+	ANDROID:java.util.MissingFormatWidthException	(3.737669618283368)
+	ANDROID:java.text.MessageFormat	(2.3978952727983707)
+	ANDROID:android.support.v8.renderscript.ScriptIntrinsicBlur	(2.3978952727983707)
+	ANDROID:android.media.ImageReader.OnImageAvailableListener	(2.3978952727983707)
+	ANDROID:android.net.Credentials	(2.3978952727983707)
+	ANDROID:android.content.IntentFilter	(2.3978952727983707)
+	ANDROID:java.util.prefs.InvalidPreferencesFormatException	(2.3978952727983707)
+	ANDROID:android.content.res.Resources	(2.3978952727983707)
+	ANDROID:android.renderscript.Element.DataKind	(2.3978952727983707)
+	ANDROID:android.graphics.Color	(2.3978952727983707)
+	ANDROID:android.view.accessibility.AccessibilityEvent	(2.3978952727983707)
+	ANDROID:android.transition.Fade	(2.3978952727983707)
+	ANDROID:android.gesture.GestureOverlayView	(2.3978952727983707)
+	ANDROID:java.text.Format	(2.302585092994046)
+	ANDROID:android.renderscript.ScriptIntrinsicBlur	(2.302585092994046)
+	ANDROID:android.media.Image.Plane	(2.302585092994046)
+	ANDROID:android.net.LocalSocketAddress	(2.302585092994046)
+	ANDROID:org.apache.http.impl.auth.BasicScheme	(2.302585092994046)
+	ANDROID:android.print.PrinterCapabilitiesInfo.Builder	(2.302585092994046)
+	ANDROID:org.w3c.dom.Comment	(2.302585092994046)
+	ANDROID:android.support.v8.renderscript.Element.DataKind	(2.302585092994046)
+	ANDROID:android.graphics.ColorMatrix	(2.302585092994046)
+	ANDROID:java.beans.PropertyChangeListener	(2.302585092994046)
+	ANDROID:android.content.ComponentCallbacks2	(2.302585092994046)
+	ANDROID:java.io.ObjectOutputStream.PutField	(2.302585092994046)
+	ANDROID:java.text.ChoiceFormat	(2.1972245773362196)
+	ANDROID:android.renderscript.ScriptIntrinsicBlend	(2.1972245773362196)
+	ANDROID:android.media.Image	(2.1972245773362196)
+	ANDROID:org.apache.http.impl.auth.RFC2617Scheme	(2.1972245773362196)
+	ANDROID:org.w3c.dom.DOMConfiguration	(2.1972245773362196)
+	ANDROID:android.os.Process	(2.1972245773362196)
+	ANDROID:android.opengl.ETC1	(2.1972245773362196)
+	ANDROID:android.provider.CalendarContract.Colors	(2.1972245773362196)
+	ANDROID:android.provider.ContactsContract.Settings	(2.1972245773362196)
+	ANDROID:java.io.ObjectInputStream.GetField	(2.1972245773362196)
+	ANDROID:android.widget.NumberPicker.Formatter	(2.0794415416798357)
+	ANDROID:android.support.v8.renderscript.ScriptIntrinsicBlend	(2.0794415416798357)
+	ANDROID:android.media.ImageReader	(2.0794415416798357)
+	ANDROID:android.net.LocalServerSocket	(2.0794415416798357)
+	ANDROID:org.w3c.dom.ls.LSSerializer	(2.0794415416798357)
+	ANDROID:android.widget.RemoteViews	(2.0794415416798357)
+	ANDROID:android.opengl.ETC1Util.ETC1Texture	(2.0794415416798357)
+	ANDROID:android.graphics.PixelXorXfermode	(2.0794415416798357)
+	ANDROID:java.io.Reader	(2.0794415416798357)
+	ANDROID:java.lang.InstantiationError	(2.0794415416798357)
+	ANDROID:android.os.DropBoxManager	(2.0794415416798357)
+	ANDROID:android.graphics.BlurMaskFilter	(1.9459101490553132)
+	ANDROID:android.graphics.BitmapRegionDecoder	(1.9459101490553132)
+	ANDROID:android.view.animation.DecelerateInterpolator	(1.9459101490553132)
+	ANDROID:java.util.zip.InflaterOutputStream	(1.9459101490553132)
+	ANDROID:android.view.inputmethod.InputMethod	(1.9459101490553132)
+	ANDROID:android.opengl.ETC1Util	(1.9459101490553132)
+	ANDROID:android.graphics.Bitmap.Config	(1.9459101490553132)
+	ANDROID:android.media.JetPlayer.OnJetEventListener	(1.9459101490553132)
+	ANDROID:java.io.InvalidClassException	(1.9459101490553132)
+	ANDROID:org.apache.http.impl.client.DefaultHttpClient	(1.9459101490553132)
+	ANDROID:java.util.jar.JarFile	(1.791759469228055)
+	ANDROID:android.graphics.MaskFilter	(1.791759469228055)
+	ANDROID:android.widget.ImageButton	(1.791759469228055)
+	ANDROID:java.io.FileDescriptor	(1.791759469228055)
+	ANDROID:java.util.zip.DeflaterInputStream	(1.791759469228055)
+	ANDROID:android.graphics.Bitmap.CompressFormat	(1.791759469228055)
+	ANDROID:android.content.res.ColorStateList	(1.791759469228055)
+	ANDROID:javax.crypto.spec.PSource	(1.791759469228055)
+	ANDROID:javax.sql.RowSetWriter	(1.791759469228055)
+	ANDROID:org.xml.sax.helpers.LocatorImpl	(1.791759469228055)
+	ANDROID:android.provider.MediaStore.Files.FileColumns	(1.6094379124341003)
+	ANDROID:android.provider.ContactsContract.ContactsColumns	(1.6094379124341003)
+	ANDROID:android.graphics.NinePatch	(1.6094379124341003)
+	ANDROID:java.io.ObjectStreamClass	(1.6094379124341003)
+	ANDROID:java.text.AttributedString	(1.6094379124341003)
+	ANDROID:android.renderscript.ScriptIntrinsic3DLUT	(1.6094379124341003)
+	ANDROID:android.animation.ArgbEvaluator	(1.6094379124341003)
+	ANDROID:android.media.MediaRecorder.VideoSource	(1.6094379124341003)
+	ANDROID:android.support.v4.widget.ContentLoadingProgressBar	(1.6094379124341003)
+	ANDROID:android.app.backup.FullBackupDataOutput	(1.3862943611198906)
+	ANDROID:android.os.Debug	(1.3862943611198906)
+	ANDROID:android.widget.ImageView	(1.3862943611198906)
+	ANDROID:android.net.LocalSocketAddress.Namespace	(1.3862943611198906)
+	ANDROID:java.lang.CharSequence	(1.3862943611198906)
+	ANDROID:android.graphics.BitmapShader	(1.3862943611198906)
+	ANDROID:android.view.accessibility.CaptioningManager.CaptionStyle	(1.3862943611198906)
+	ANDROID:android.media.MediaRecorder.AudioSource	(1.3862943611198906)
+	ANDROID:android.graphics.drawable.ClipDrawable	(1.3862943611198906)
+	ANDROID:android.widget.HorizontalScrollView	(1.3862943611198906)
+	ANDROID:java.util.zip.GZIPOutputStream	(1.0986122886681098)
+	ANDROID:java.nio.channels.NotYetBoundException	(1.0986122886681098)
+	ANDROID:android.text.method.HideReturnsTransformationMethod	(1.0986122886681098)
+	ANDROID:android.graphics.Canvas	(1.0986122886681098)
+	ANDROID:android.app.Notification	(1.0986122886681098)
 _________________________________________________________________________________
 javax.microedition.lcdui.game.GameCanvas
-	ANDROID:android.app.DownloadManager
-	ANDROID:android.app.Notification.BigPictureStyle
-	ANDROID:android.content.ClipData
-	ANDROID:android.content.ComponentCallbacks2
-	ANDROID:android.content.ContentQueryMap
-	ANDROID:android.content.res.ColorStateList
-	ANDROID:android.database.AbstractWindowedCursor
-	ANDROID:android.database.CrossProcessCursor
-	ANDROID:android.database.CrossProcessCursorWrapper
-	ANDROID:android.database.Cursor
-	ANDROID:android.database.CursorIndexOutOfBoundsException
-	ANDROID:android.database.CursorWindow
-	ANDROID:android.database.CursorWrapper
-	ANDROID:android.graphics.Bitmap.CompressFormat
-	ANDROID:android.graphics.BitmapRegionDecoder
-	ANDROID:android.graphics.BitmapShader
-	ANDROID:android.graphics.BlurMaskFilter
-	ANDROID:android.graphics.NinePatch
-	ANDROID:android.graphics.Path.Op
-	ANDROID:android.graphics.drawable.BitmapDrawable
-	ANDROID:android.graphics.drawable.InsetDrawable
-	ANDROID:android.graphics.drawable.NinePatchDrawable
-	ANDROID:android.hardware.Camera.Parameters
-	ANDROID:android.hardware.Camera.PictureCallback
-	ANDROID:android.hardware.Camera.Size
-	ANDROID:android.hardware.display.DisplayManager
-	ANDROID:android.hardware.display.DisplayManager.DisplayListener
-	ANDROID:android.inputmethodservice.InputMethodService
-	ANDROID:android.location.Geocoder
-	ANDROID:android.media.AudioRecord
-	ANDROID:android.media.AudioTrack
-	ANDROID:android.media.CamcorderProfile
-	ANDROID:android.media.FaceDetector
-	ANDROID:android.media.Image
-	ANDROID:android.media.ImageReader
-	ANDROID:android.media.MediaCodec
-	ANDROID:android.media.audiofx.BassBoost
-	ANDROID:android.media.audiofx.NoiseSuppressor
-	ANDROID:android.nfc.NfcAdapter
-	ANDROID:android.nfc.tech.MifareUltralight
-	ANDROID:android.opengl.ETC1
-	ANDROID:android.opengl.GLSurfaceView
-	ANDROID:android.opengl.GLSurfaceView.Renderer
-	ANDROID:android.os.AsyncTask.Status
-	ANDROID:android.os.Looper
-	ANDROID:android.os.MemoryFile
-	ANDROID:android.print.PrintAttributes
-	ANDROID:android.print.PrintAttributes.Margins
-	ANDROID:android.print.PrintDocumentAdapter
-	ANDROID:android.print.PrintDocumentInfo
-	ANDROID:android.print.PrintManager
-	ANDROID:android.print.PrinterCapabilitiesInfo
-	ANDROID:android.print.PrinterInfo
-	ANDROID:android.provider.Contacts.People.ContactMethods
-	ANDROID:android.provider.Contacts.PresenceColumns
-	ANDROID:android.provider.ContactsContract.AggregationExceptions
-	ANDROID:android.provider.ContactsContract.CommonDataKinds.Photo
-	ANDROID:android.provider.ContactsContract.Contacts
-	ANDROID:android.provider.ContactsContract.Contacts.Photo
-	ANDROID:android.provider.ContactsContract.Data
-	ANDROID:android.provider.ContactsContract.Directory
-	ANDROID:android.provider.ContactsContract.DisplayPhoto
-	ANDROID:android.provider.ContactsContract.FullNameStyle
-	ANDROID:android.provider.ContactsContract.RawContacts.DisplayPhoto
-	ANDROID:android.provider.ContactsContract.StatusColumns
-	ANDROID:android.provider.ContactsContract.StatusUpdates
-	ANDROID:android.provider.ContactsContract.StreamItemPhotos
-	ANDROID:android.support.v4.app.NotificationCompat.BigPictureStyle
-	ANDROID:android.support.v4.content.FileProvider
-	ANDROID:android.support.v4.view.ActionProvider
-	ANDROID:android.support.v7.media.MediaControlIntent
-	ANDROID:android.test.IsolatedContext
-	ANDROID:android.test.mock.MockCursor
-	ANDROID:android.text.Html.TagHandler
-	ANDROID:android.text.method.HideReturnsTransformationMethod
-	ANDROID:android.text.util.Linkify.TransformFilter
-	ANDROID:android.transition.Fade
-	ANDROID:android.util.Base64
-	ANDROID:android.util.Base64InputStream
-	ANDROID:android.util.EventLog
-	ANDROID:android.view.Display
-	ANDROID:android.view.Menu
-	ANDROID:android.view.inputmethod.InputConnection
-	ANDROID:android.webkit.ConsoleMessage
-	ANDROID:android.webkit.CookieManager
-	ANDROID:android.widget.AlphabetIndexer
-	ANDROID:android.widget.ExpandableListView.OnGroupCollapseListener
-	ANDROID:android.widget.ExpandableListView.OnGroupExpandListener
-	ANDROID:android.widget.FrameLayout
-	ANDROID:android.widget.Gallery
-	ANDROID:android.widget.HorizontalScrollView
-	ANDROID:java.io.File
-	ANDROID:java.io.Flushable
-	ANDROID:java.lang.Character
-	ANDROID:java.net.InterfaceAddress
-	ANDROID:java.nio.Buffer
-	ANDROID:java.nio.BufferOverflowException
-	ANDROID:java.nio.MappedByteBuffer
-	ANDROID:java.nio.charset.CharacterCodingException
-	ANDROID:java.nio.charset.Charset
+	ANDROID:java.util.concurrent.locks.Condition	(4.143134726391533)
+	ANDROID:java.util.concurrent.ScheduledExecutorService	(4.007333185232471)
+	ANDROID:android.media.MediaActionSound	(2.3978952727983707)
+	ANDROID:javax.xml.parsers.DocumentBuilder	(2.3978952727983707)
+	ANDROID:android.media.FaceDetector	(2.3978952727983707)
+	ANDROID:android.support.v4.view.ScaleGestureDetectorCompat	(2.3978952727983707)
+	ANDROID:android.provider.ContactsContract.StatusUpdates	(2.3978952727983707)
+	ANDROID:java.nio.BufferUnderflowException	(2.3978952727983707)
+	ANDROID:java.util.concurrent.locks.LockSupport	(2.3978952727983707)
+	ANDROID:android.media.AudioTrack	(2.302585092994046)
+	ANDROID:javax.xml.parsers.SAXParser	(2.302585092994046)
+	ANDROID:android.graphics.NinePatch	(2.302585092994046)
+	ANDROID:android.app.AlarmManager	(2.302585092994046)
+	ANDROID:android.provider.ContactsContract.Contacts	(2.302585092994046)
+	ANDROID:java.util.concurrent.ScheduledThreadPoolExecutor	(2.302585092994046)
+	ANDROID:java.nio.BufferOverflowException	(2.302585092994046)
+	ANDROID:android.net.rtp.AudioGroup	(2.302585092994046)
+	ANDROID:android.telephony.CellIdentityWcdma	(2.1972245773362196)
+	ANDROID:android.graphics.BitmapFactory	(2.1972245773362196)
+	ANDROID:android.graphics.drawable.NinePatchDrawable	(2.1972245773362196)
+	ANDROID:android.app.NotificationManager	(2.1972245773362196)
+	ANDROID:android.graphics.drawable.Drawable.Callback	(2.1972245773362196)
+	ANDROID:java.nio.Buffer	(2.1972245773362196)
+	ANDROID:android.database.CrossProcessCursor	(2.1972245773362196)
+	ANDROID:org.apache.http.HttpEntity	(2.0794415416798357)
+	ANDROID:java.net.Authenticator	(2.0794415416798357)
+	ANDROID:android.graphics.BitmapShader	(2.0794415416798357)
+	ANDROID:java.util.Locale	(2.0794415416798357)
+	ANDROID:android.provider.ContactsContract.Data	(2.0794415416798357)
+	ANDROID:android.os.Handler	(2.0794415416798357)
+	ANDROID:org.apache.http.message.HeaderValueFormatter	(2.0794415416798357)
+	ANDROID:java.net.HttpCookie	(2.0794415416798357)
+	ANDROID:android.app.ActivityManager.MemoryInfo	(1.9459101490553132)
+	ANDROID:org.w3c.dom.ls.LSParser	(1.9459101490553132)
+	ANDROID:android.graphics.drawable.BitmapDrawable	(1.9459101490553132)
+	ANDROID:android.support.v4.view.GestureDetectorCompat	(1.9459101490553132)
+	ANDROID:android.os.AsyncTask.Status	(1.9459101490553132)
+	ANDROID:java.util.concurrent.Executor	(1.9459101490553132)
+	ANDROID:java.nio.MappedByteBuffer	(1.9459101490553132)
+	ANDROID:java.net.HttpURLConnection	(1.791759469228055)
+	ANDROID:android.os.DropBoxManager	(1.791759469228055)
+	ANDROID:junit.framework.ComparisonFailure	(1.791759469228055)
+	ANDROID:android.widget.Gallery	(1.791759469228055)
+	ANDROID:android.webkit.CookieSyncManager	(1.791759469228055)
+	ANDROID:org.apache.http.message.LineFormatter	(1.791759469228055)
+	ANDROID:android.net.http.HttpResponseCache	(1.791759469228055)
+	ANDROID:org.xml.sax.EntityResolver	(1.6094379124341003)
+	ANDROID:android.graphics.Bitmap.CompressFormat	(1.6094379124341003)
+	ANDROID:android.app.Notification	(1.6094379124341003)
+	ANDROID:android.media.Image	(1.6094379124341003)
+	ANDROID:java.lang.Object	(1.6094379124341003)
+	ANDROID:org.w3c.dom.DOMImplementationSource	(1.3862943611198906)
+	ANDROID:android.provider.Contacts.PresenceColumns	(1.3862943611198906)
+	ANDROID:android.media.AudioRecord	(1.3862943611198906)
+	ANDROID:android.view.animation.CycleInterpolator	(1.3862943611198906)
+	ANDROID:org.apache.http.conn.ManagedClientConnection	(1.0986122886681098)
+	ANDROID:android.provider.ContactsContract.AggregationExceptions	(1.0986122886681098)
+	ANDROID:java.lang.annotation.ElementType	(1.0986122886681098)
+	ANDROID:android.text.Annotation	(1.0986122886681098)
 _________________________________________________________________________________
 javax.microedition.lcdui.game.Layer
-	ANDROID:android.accounts.OnAccountsUpdateListener
-	ANDROID:android.animation.AnimatorSet.Builder
-	ANDROID:android.app.Application.OnProvideAssistDataListener
-	ANDROID:android.app.Dialog
-	ANDROID:android.app.Instrumentation.ActivityMonitor
-	ANDROID:android.app.IntentService
-	ANDROID:android.app.MediaRouteActionProvider
-	ANDROID:android.app.NativeActivity
-	ANDROID:android.app.Presentation
-	ANDROID:android.bluetooth.BluetoothAdapter
-	ANDROID:android.bluetooth.BluetoothClass
-	ANDROID:android.bluetooth.BluetoothDevice
-	ANDROID:android.bluetooth.BluetoothGattServer
-	ANDROID:android.bluetooth.BluetoothGattService
-	ANDROID:android.content.ComponentCallbacks2
-	ANDROID:android.content.ContentResolver
-	ANDROID:android.content.pm.ConfigurationInfo
-	ANDROID:android.database.MatrixCursor
-	ANDROID:android.graphics.Bitmap.CompressFormat
-	ANDROID:android.graphics.BitmapFactory
-	ANDROID:android.graphics.BitmapRegionDecoder
-	ANDROID:android.graphics.BitmapShader
-	ANDROID:android.graphics.NinePatch
-	ANDROID:android.graphics.drawable.AnimationDrawable
-	ANDROID:android.graphics.drawable.BitmapDrawable
-	ANDROID:android.graphics.drawable.Drawable
-	ANDROID:android.graphics.drawable.GradientDrawable.Orientation
-	ANDROID:android.graphics.drawable.LevelListDrawable
-	ANDROID:android.graphics.drawable.NinePatchDrawable
-	ANDROID:android.hardware.Camera
-	ANDROID:android.hardware.Camera.Area
-	ANDROID:android.hardware.location.GeofenceHardware
-	ANDROID:android.hardware.location.GeofenceHardwareCallback
-	ANDROID:android.hardware.location.GeofenceHardwareMonitorCallback
-	ANDROID:android.inputmethodservice.AbstractInputMethodService
-	ANDROID:android.inputmethodservice.Keyboard.Key
-	ANDROID:android.location.LocationManager
-	ANDROID:android.location.LocationProvider
-	ANDROID:android.media.AudioTrack
-	ANDROID:android.media.AudioTrack.OnPlaybackPositionUpdateListener
-	ANDROID:android.media.CamcorderProfile
-	ANDROID:android.media.FaceDetector
-	ANDROID:android.media.FaceDetector.Face
-	ANDROID:android.media.Image
-	ANDROID:android.media.ImageReader
-	ANDROID:android.media.MediaCodec
-	ANDROID:android.media.MediaCrypto
-	ANDROID:android.media.MediaCryptoException
-	ANDROID:android.media.MediaDrm
-	ANDROID:android.media.MediaMuxer
-	ANDROID:android.media.RemoteControlClient.OnPlaybackPositionUpdateListener
-	ANDROID:android.media.ResourceBusyException
-	ANDROID:android.media.effect.Effect
-	ANDROID:android.net.NetworkInfo
-	ANDROID:android.net.nsd.NsdManager
-	ANDROID:android.net.nsd.NsdManager.DiscoveryListener
-	ANDROID:android.net.nsd.NsdServiceInfo
-	ANDROID:android.nfc.tech.MifareClassic
-	ANDROID:android.os.AsyncTask.Status
-	ANDROID:android.os.MemoryFile
-	ANDROID:android.provider.ContactsContract.CommonDataKinds.Identity
-	ANDROID:android.provider.ContactsContract.ContactOptionsColumns
-	ANDROID:android.provider.ContactsContract.Contacts.AggregationSuggestions
-	ANDROID:android.security.KeyChainAliasCallback
-	ANDROID:android.service.dreams.DreamService
-	ANDROID:android.support.v4.widget.AutoScrollHelper
-	ANDROID:android.support.v7.media.MediaItemStatus
-	ANDROID:android.support.v7.media.MediaItemStatus.Builder
-	ANDROID:android.support.v7.media.MediaSessionStatus.Builder
-	ANDROID:android.support.v7.view.ActionMode.Callback
-	ANDROID:android.text.LoginFilter.UsernameFilterGMail
-	ANDROID:android.text.style.LeadingMarginSpan
-	ANDROID:android.transition.Fade
-	ANDROID:android.view.ActionMode.Callback
-	ANDROID:android.view.Choreographer.FrameCallback
-	ANDROID:android.view.ContextMenu.ContextMenuInfo
-	ANDROID:android.view.KeyCharacterMap.UnavailableException
-	ANDROID:android.view.accessibility.CaptioningManager
-	ANDROID:android.view.accessibility.CaptioningManager.CaptionStyle
-	ANDROID:android.view.accessibility.CaptioningManager.CaptioningChangeListener
-	ANDROID:android.view.animation.CycleInterpolator
-	ANDROID:android.view.animation.LayoutAnimationController
-	ANDROID:android.view.inputmethod.InputMethodSubtype
-	ANDROID:android.webkit.JsResult
-	ANDROID:android.widget.EditText
-	ANDROID:android.widget.ImageButton
-	ANDROID:android.widget.ImageView
-	ANDROID:android.widget.ProgressBar
-	ANDROID:java.io.InputStream
-	ANDROID:java.io.InvalidClassException
-	ANDROID:java.io.ObjectOutputStream
-	ANDROID:java.io.Reader
-	ANDROID:java.lang.Character
-	ANDROID:java.lang.ClassCircularityError
-	ANDROID:java.lang.ClassFormatError
-	ANDROID:java.nio.Buffer
-	ANDROID:java.nio.channels.Channel
-	ANDROID:java.security.KeyStore.LoadStoreParameter
-	ANDROID:java.text.Format.Field
-	ANDROID:java.text.ParsePosition
+	ANDROID:java.text.BreakIterator	(4.499809670330265)
+	ANDROID:android.content.ComponentCallbacks2	(4.094344562222101)
+	ANDROID:android.support.v4.widget.ContentLoadingProgressBar	(4.007333185232471)
+	ANDROID:javax.crypto.Mac	(3.1780538303479453)
+	ANDROID:android.hardware.Camera.Area	(2.3978952727983707)
+	ANDROID:android.media.CameraProfile	(2.3978952727983707)
+	ANDROID:android.location.Geocoder	(2.3978952727983707)
+	ANDROID:java.lang.Character	(2.3978952727983707)
+	ANDROID:android.support.v4.text.BidiFormatter	(2.3978952727983707)
+	ANDROID:java.text.ParsePosition	(2.3978952727983707)
+	ANDROID:android.view.accessibility.CaptioningManager.CaptionStyle	(2.3978952727983707)
+	ANDROID:android.transition.Fade	(2.3978952727983707)
+	ANDROID:android.support.v4.widget.AutoScrollHelper	(2.302585092994046)
+	ANDROID:android.provider.MediaStore.Audio.Genres	(2.302585092994046)
+	ANDROID:android.location.Location	(2.302585092994046)
+	ANDROID:java.util.concurrent.CyclicBarrier	(2.302585092994046)
+	ANDROID:java.lang.Error	(2.302585092994046)
+	ANDROID:android.text.BidiFormatter	(2.302585092994046)
+	ANDROID:android.view.accessibility.CaptioningManager	(2.302585092994046)
+	ANDROID:android.widget.ImageView.ScaleType	(2.1972245773362196)
+	ANDROID:java.text.ChoiceFormat	(2.1972245773362196)
+	ANDROID:android.provider.ContactsContract.CommonDataKinds.StructuredPostal	(2.1972245773362196)
+	ANDROID:org.apache.http.impl.io.ContentLengthInputStream	(2.1972245773362196)
+	ANDROID:org.apache.http.io.HttpMessageWriter	(2.1972245773362196)
+	ANDROID:java.util.NoSuchElementException	(2.1972245773362196)
+	ANDROID:android.text.AndroidCharacter	(2.1972245773362196)
+	ANDROID:android.app.Activity	(2.1972245773362196)
+	ANDROID:android.hardware.Camera.Face	(2.0794415416798357)
+	ANDROID:org.apache.http.impl.conn.tsccm.ConnPoolByRoute	(2.0794415416798357)
+	ANDROID:android.media.FaceDetector.Face	(2.0794415416798357)
+	ANDROID:org.w3c.dom.CDATASection	(2.0794415416798357)
+	ANDROID:android.content.EntityIterator	(2.0794415416798357)
+	ANDROID:org.apache.http.message.ParserCursor	(2.0794415416798357)
+	ANDROID:android.view.accessibility.CaptioningManager.CaptioningChangeListener	(2.0794415416798357)
+	ANDROID:java.lang.InstantiationError	(2.0794415416798357)
+	ANDROID:android.graphics.drawable.GradientDrawable.Orientation	(1.9459101490553132)
+	ANDROID:java.text.AttributedCharacterIterator	(1.9459101490553132)
+	ANDROID:android.text.InputType	(1.9459101490553132)
+	ANDROID:java.io.InterruptedIOException	(1.9459101490553132)
+	ANDROID:android.util.NoSuchPropertyException	(1.9459101490553132)
+	ANDROID:org.apache.http.message.AbstractHttpMessage	(1.9459101490553132)
+	ANDROID:android.print.PageRange	(1.9459101490553132)
+	ANDROID:java.io.IOException	(1.9459101490553132)
+	ANDROID:java.io.InvalidClassException	(1.9459101490553132)
+	ANDROID:android.widget.AbsListView.SelectionBoundsAdjuster	(1.791759469228055)
+	ANDROID:android.view.InputDevice	(1.791759469228055)
+	ANDROID:android.net.rtp.AudioStream	(1.791759469228055)
+	ANDROID:android.app.Instrumentation	(1.791759469228055)
+	ANDROID:org.apache.http.io.HttpMessageParser	(1.791759469228055)
+	ANDROID:java.text.FieldPosition	(1.791759469228055)
+	ANDROID:javax.sql.RowSet	(1.791759469228055)
+	ANDROID:javax.sql.RowSetWriter	(1.791759469228055)
+	ANDROID:android.media.audiofx.BassBoost	(1.6094379124341003)
+	ANDROID:android.media.MediaDrm.CryptoSession	(1.6094379124341003)
+	ANDROID:org.apache.http.impl.io.AbstractMessageParser	(1.6094379124341003)
+	ANDROID:android.security.KeyPairGeneratorSpec.Builder	(1.6094379124341003)
+	ANDROID:java.util.PropertyResourceBundle	(1.6094379124341003)
+	ANDROID:android.media.AudioTrack	(1.3862943611198906)
+	ANDROID:android.view.InputQueue	(1.3862943611198906)
+	ANDROID:java.net.PortUnreachableException	(1.3862943611198906)
+	ANDROID:android.sax.EndElementListener	(1.3862943611198906)
+	ANDROID:javax.xml.transform.OutputKeys	(1.3862943611198906)
+	ANDROID:android.graphics.drawable.ClipDrawable	(1.3862943611198906)
+	ANDROID:android.graphics.drawable.RotateDrawable	(1.0986122886681098)
 _________________________________________________________________________________
 javax.microedition.lcdui.game.Sprite
-	ANDROID:android.animation.Animator.AnimatorPauseListener
-	ANDROID:android.animation.PropertyValuesHolder
-	ANDROID:android.app.ActionBar.OnMenuVisibilityListener
-	ANDROID:android.app.DatePickerDialog
-	ANDROID:android.app.ListActivity
-	ANDROID:android.app.PendingIntent
-	ANDROID:android.appwidget.AppWidgetHostView
-	ANDROID:android.bluetooth.BluetoothDevice
-	ANDROID:android.bluetooth.BluetoothGattCharacteristic
-	ANDROID:android.content.DialogInterface.OnShowListener
-	ANDROID:android.content.pm.ConfigurationInfo
-	ANDROID:android.database.CursorWrapper
-	ANDROID:android.graphics.Bitmap.CompressFormat
-	ANDROID:android.graphics.BitmapRegionDecoder
-	ANDROID:android.graphics.drawable.ColorDrawable
-	ANDROID:android.graphics.drawable.GradientDrawable.Orientation
-	ANDROID:android.graphics.drawable.LayerDrawable
-	ANDROID:android.graphics.drawable.LevelListDrawable
-	ANDROID:android.graphics.drawable.RotateDrawable
-	ANDROID:android.hardware.Camera
-	ANDROID:android.hardware.Camera.Area
-	ANDROID:android.hardware.Camera.AutoFocusCallback
-	ANDROID:android.hardware.Camera.CameraInfo
-	ANDROID:android.hardware.Camera.ErrorCallback
-	ANDROID:android.hardware.Camera.FaceDetectionListener
-	ANDROID:android.hardware.Camera.PreviewCallback
-	ANDROID:android.hardware.Camera.ShutterCallback
-	ANDROID:android.hardware.location.GeofenceHardware
-	ANDROID:android.hardware.location.GeofenceHardwareMonitorCallback
-	ANDROID:android.location.Criteria
-	ANDROID:android.location.Geocoder
-	ANDROID:android.location.LocationListener
-	ANDROID:android.location.LocationProvider
-	ANDROID:android.media.AudioRecord
-	ANDROID:android.media.AudioTrack
-	ANDROID:android.media.CamcorderProfile
-	ANDROID:android.media.CameraProfile
-	ANDROID:android.media.FaceDetector.Face
-	ANDROID:android.media.Image
-	ANDROID:android.media.MediaActionSound
-	ANDROID:android.media.MediaRecorder
-	ANDROID:android.media.MediaRecorder.OnErrorListener
-	ANDROID:android.media.MediaRecorder.OnInfoListener
-	ANDROID:android.media.ResourceBusyException
-	ANDROID:android.media.audiofx.AutomaticGainControl
-	ANDROID:android.media.effect.Effect
-	ANDROID:android.net.rtp.AudioCodec
-	ANDROID:android.nfc.NfcAdapter.CreateNdefMessageCallback
-	ANDROID:android.nfc.tech.NfcF
-	ANDROID:android.opengl.ETC1
-	ANDROID:android.opengl.Matrix
-	ANDROID:android.os.Parcel
-	ANDROID:android.os.PowerManager.WakeLock
-	ANDROID:android.preference.PreferenceScreen
-	ANDROID:android.print.PageRange
-	ANDROID:android.print.PrintDocumentAdapter
-	ANDROID:android.provider.ContactsContract.AggregationExceptions
-	ANDROID:android.provider.ContactsContract.Presence
-	ANDROID:android.provider.ContactsContract.StreamItemPhotos
-	ANDROID:android.renderscript.Element.DataKind
-	ANDROID:android.sax.Element
-	ANDROID:android.support.v4.widget.AutoScrollHelper
-	ANDROID:android.support.v7.media.MediaItemStatus
-	ANDROID:android.support.v7.media.RemotePlaybackClient.ItemActionCallback
-	ANDROID:android.support.v7.media.RemotePlaybackClient.SessionActionCallback
-	ANDROID:android.support.v8.renderscript.Element.DataKind
-	ANDROID:android.support.v8.renderscript.ScriptIntrinsicColorMatrix
-	ANDROID:android.telephony.NeighboringCellInfo
-	ANDROID:android.test.mock.MockContentResolver
-	ANDROID:android.text.method.LinkMovementMethod
-	ANDROID:android.view.Choreographer
-	ANDROID:android.view.Choreographer.FrameCallback
-	ANDROID:android.view.DragEvent
-	ANDROID:android.view.InputDevice
-	ANDROID:android.view.accessibility.AccessibilityEventSource
-	ANDROID:android.view.accessibility.AccessibilityNodeInfo.RangeInfo
-	ANDROID:android.view.animation.AlphaAnimation
-	ANDROID:android.view.animation.Animation
-	ANDROID:android.view.animation.CycleInterpolator
-	ANDROID:android.view.animation.Interpolator
-	ANDROID:android.view.animation.RotateAnimation
-	ANDROID:android.view.animation.ScaleAnimation
-	ANDROID:android.view.inputmethod.InputMethodSubtype.InputMethodSubtypeBuilder
-	ANDROID:android.widget.AbsListView.SelectionBoundsAdjuster
-	ANDROID:android.widget.AdapterViewFlipper
-	ANDROID:android.widget.AlphabetIndexer
-	ANDROID:android.widget.Button
-	ANDROID:android.widget.EdgeEffect
-	ANDROID:android.widget.ExpandableListView
-	ANDROID:android.widget.FrameLayout
-	ANDROID:android.widget.ImageButton
-	ANDROID:android.widget.ImageView.ScaleType
-	ANDROID:android.widget.MultiAutoCompleteTextView.CommaTokenizer
-	ANDROID:java.io.InterruptedIOException
-	ANDROID:java.io.Reader
-	ANDROID:java.lang.CharSequence
-	ANDROID:java.lang.ClassFormatError
-	ANDROID:java.lang.Deprecated
-	ANDROID:java.lang.IncompatibleClassChangeError
-	ANDROID:java.lang.IndexOutOfBoundsException
+	ANDROID:android.bluetooth.BluetoothAssignedNumbers	(4.276666119016055)
+	ANDROID:org.w3c.dom.DOMStringList	(2.3978952727983707)
+	ANDROID:android.view.animation.ScaleAnimation	(2.3978952727983707)
+	ANDROID:android.graphics.drawable.LevelListDrawable	(2.3978952727983707)
+	ANDROID:android.location.Geocoder	(2.3978952727983707)
+	ANDROID:org.apache.http.conn.ConnectionReleaseTrigger	(2.3978952727983707)
+	ANDROID:javax.crypto.EncryptedPrivateKeyInfo	(2.3978952727983707)
+	ANDROID:android.util.FloatMath	(2.3978952727983707)
+	ANDROID:android.renderscript.Element.DataKind	(2.3978952727983707)
+	ANDROID:android.media.CamcorderProfile	(2.3978952727983707)
+	ANDROID:org.apache.http.message.BufferedHeader	(2.3978952727983707)
+	ANDROID:android.view.Choreographer	(2.3978952727983707)
+	ANDROID:org.w3c.dom.DOMImplementationList	(2.302585092994046)
+	ANDROID:android.view.animation.RotateAnimation	(2.302585092994046)
+	ANDROID:android.support.v7.app.MediaRouteDiscoveryFragment	(2.302585092994046)
+	ANDROID:android.location.Location	(2.302585092994046)
+	ANDROID:java.util.concurrent.locks.ReentrantReadWriteLock	(2.302585092994046)
+	ANDROID:android.graphics.Picture	(2.302585092994046)
+	ANDROID:android.view.InputQueue.Callback	(2.302585092994046)
+	ANDROID:android.support.v8.renderscript.Element.DataKind	(2.302585092994046)
+	ANDROID:android.media.MediaCodecList	(2.302585092994046)
+	ANDROID:org.apache.http.impl.entity.LaxContentLengthStrategy	(2.302585092994046)
+	ANDROID:android.view.Choreographer.FrameCallback	(2.302585092994046)
+	ANDROID:org.w3c.dom.NameList	(2.1972245773362196)
+	ANDROID:android.view.animation.AlphaAnimation	(2.1972245773362196)
+	ANDROID:java.util.MissingFormatArgumentException	(2.1972245773362196)
+	ANDROID:android.provider.ContactsContract.CommonDataKinds.StructuredPostal	(2.1972245773362196)
+	ANDROID:java.security.MessageDigest	(2.1972245773362196)
+	ANDROID:android.provider.Contacts.ContactMethodsColumns	(2.1972245773362196)
+	ANDROID:android.opengl.ETC1	(2.1972245773362196)
+	ANDROID:android.media.AudioTimestamp	(2.1972245773362196)
+	ANDROID:org.apache.http.impl.DefaultConnectionReuseStrategy	(2.1972245773362196)
+	ANDROID:android.text.style.LeadingMarginSpan.Standard	(2.1972245773362196)
+	ANDROID:org.w3c.dom.NodeList	(2.0794415416798357)
+	ANDROID:android.view.animation.Interpolator	(2.0794415416798357)
+	ANDROID:android.media.FaceDetector.Face	(2.0794415416798357)
+	ANDROID:java.nio.charset.Charset	(2.0794415416798357)
+	ANDROID:javax.sql.RowSet	(2.0794415416798357)
+	ANDROID:android.opengl.ETC1Util.ETC1Texture	(2.0794415416798357)
+	ANDROID:android.media.MediaFormat	(2.0794415416798357)
+	ANDROID:android.drm.DrmConvertedStatus	(2.0794415416798357)
+	ANDROID:android.hardware.Camera.FaceDetectionListener	(2.0794415416798357)
+	ANDROID:android.widget.AlphabetIndexer	(1.9459101490553132)
+	ANDROID:android.graphics.drawable.RotateDrawable	(1.9459101490553132)
+	ANDROID:android.content.Entity	(1.9459101490553132)
+	ANDROID:android.text.InputType	(1.9459101490553132)
+	ANDROID:java.nio.CharBuffer	(1.9459101490553132)
+	ANDROID:java.sql.ResultSetMetaData	(1.9459101490553132)
+	ANDROID:android.opengl.ETC1Util	(1.9459101490553132)
+	ANDROID:android.net.rtp.AudioCodec	(1.9459101490553132)
+	ANDROID:android.transition.Scene	(1.9459101490553132)
+	ANDROID:android.media.ImageReader.OnImageAvailableListener	(1.9459101490553132)
+	ANDROID:android.support.v4.widget.ExploreByTouchHelper	(1.791759469228055)
+	ANDROID:android.gesture.GestureUtils	(1.791759469228055)
+	ANDROID:android.view.InputDevice	(1.791759469228055)
+	ANDROID:android.widget.AbsSpinner	(1.791759469228055)
+	ANDROID:java.nio.charset.CharsetEncoder	(1.791759469228055)
+	ANDROID:android.graphics.Bitmap.CompressFormat	(1.791759469228055)
+	ANDROID:android.media.MediaMuxer	(1.791759469228055)
+	ANDROID:android.widget.HeaderViewListAdapter	(1.791759469228055)
+	ANDROID:android.app.NativeActivity	(1.791759469228055)
+	ANDROID:java.nio.Buffer	(1.6094379124341003)
+	ANDROID:android.support.v8.renderscript.Allocation.MipmapControl	(1.6094379124341003)
+	ANDROID:android.renderscript.ScriptIntrinsic3DLUT	(1.6094379124341003)
+	ANDROID:android.media.MediaCodecInfo	(1.6094379124341003)
+	ANDROID:org.w3c.dom.ls.LSParserFilter	(1.6094379124341003)
+	ANDROID:android.inputmethodservice.KeyboardView	(1.6094379124341003)
+	ANDROID:android.view.animation.Animation	(1.3862943611198906)
+	ANDROID:android.graphics.BitmapShader	(1.3862943611198906)
+	ANDROID:android.media.MediaRecorder.OutputFormat	(1.3862943611198906)
+	ANDROID:org.apache.http.HeaderIterator	(1.3862943611198906)
+	ANDROID:android.app.AlarmManager	(1.3862943611198906)
+	ANDROID:android.media.MediaCodec	(1.0986122886681098)
 _________________________________________________________________________________

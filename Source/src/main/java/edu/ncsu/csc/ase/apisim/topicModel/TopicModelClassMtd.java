@@ -1,5 +1,7 @@
 package edu.ncsu.csc.ase.apisim.topicModel;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -14,31 +16,23 @@ public class TopicModelClassMtd extends TopicModelFactory {
 	
 	public static final String OUTPUT_FILE_NAME_2 = "ClassMtdSummaryPerClass";
 	
-	public static final String OUTPUT_FILE_NAME_3 = "ClassMtdSummaryPerClassSimilarity1";
-	
-	public static void main(String[] args) {
-		TopicModelFactory tm;
-		try {
-			tm = new TopicModelClassMtd();
-			tm.runEval();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-	}
+	public static final String OUTPUT_FILE_NAME_3 = "ClassMtdSummaryPerClassSimilarity";
 	
 	public TopicModelClassMtd() throws Exception {
-		super(2500, 2, 10000);
-		
+		super(1000, 5, 20000);
 	}
-
+	
+	public TopicModelClassMtd(int topics, int numThreads, int numIterations) throws Exception {
+		super(topics, numThreads, numIterations);
+	}
+	
 	@Override
 	public void runEval() throws Exception
 	{
-		
-		writeToFile(getRankedListPerTopic(0.001), OUTPUT_FILE_NAME_1, 30);
-		writeToFile(getRankedListPerSearch(0.001), OUTPUT_FILE_NAME_2, 30);
-		writeToFile(getSimilarListPerSearch(getRankedListPerTopic(0), 10), OUTPUT_FILE_NAME_3, 100);
+		Map<String ,List<String>> rankedMap = getRankedListPerTopic(MIN_PROB_DIST);
+		writeToFile(rankedMap, OUTPUT_FILE_NAME_1, TOPK);
+		writeToFile(getRankedListPerSearch(MIN_PROB_DIST), OUTPUT_FILE_NAME_2, TOPK);
+		writeToFile(getSimilarListPerSearch(rankedMap, SIMILARITY_CUTOFF), OUTPUT_FILE_NAME_3, TOPK);
 	}
 
 	@Override

@@ -16,6 +16,7 @@ import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.queryparser.classic.MultiFieldQueryParser;
 import org.apache.lucene.queryparser.classic.ParseException;
 import org.apache.lucene.search.BooleanClause.Occur;
+import org.apache.lucene.search.Filter;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
@@ -108,14 +109,21 @@ public abstract class PremEval<T> {
 		return resultMap;
 	}
 
-	protected final List<Document> searcher(Query query) throws Exception {
+	public final List<Document> searcher(Query query) throws Exception {
+		return searcher(query, null);
+	}
+	
+	public final List<Document> searcher(Query query, Filter filter) throws Exception {
 		// System.err.println("here");
 		List<Document> retList = new ArrayList<>();
 		Directory index = FSDirectory.open(new File(idxLoc));
 		IndexReader reader = DirectoryReader.open(index);
 		IndexSearcher searcher = new IndexSearcher(reader);
 		TopScoreDocCollector collector = TopScoreDocCollector.create(hitsPerPage, true);
-		searcher.search(query, collector);
+		if(filter!=null)
+			searcher.search(query, collector);
+		else
+			searcher.search(query, filter, collector);
 		
 		ScoreDoc[] hits = collector.topDocs().scoreDocs;
 		for (int i = 0; i < hits.length; ++i) 
@@ -127,6 +135,8 @@ public abstract class PremEval<T> {
 		}
 		return retList;
 	}
+
+	
 
 	public abstract List<Document> customRanking(List<Query> queryList)
 			throws Exception;
