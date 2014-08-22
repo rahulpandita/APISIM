@@ -28,7 +28,9 @@ public class Main
 		//eval2_2(RESULT_BASE + File.separator+ "v4");
 		//eval3(RESULT_BASE + File.separator+ "v5");
 		//eval4(RESULT_BASE + File.separator+ "v6");
-		eval5(RESULT_BASE + File.separator+ "v7");
+		//eval5(RESULT_BASE + File.separator+ "v7");
+		eval6(RESULT_BASE + File.separator+ "v8");
+		eval7(RESULT_BASE + File.separator+ "v9");
 		//evalRosetta(RESULT_BASE + File.separator+ "v5");
 	}
 	
@@ -127,6 +129,34 @@ public class Main
 		
 		evalFile = resFolder + File.separator+ ANA_SYN + EXCEL_XTEN;
 		eval = new Eval5(clazzList, Configuration.API_IDX_FILE_SYNONYM, analyser);
+		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
+	}
+	
+	public static void eval6(String resFolder) throws Exception
+	{
+		String evalFile;
+		List<APIType> clazzList = AllClassCrawler.read(Configuration.MIDP_DUMP_PATH);
+		
+		evalFile = resFolder + File.separator+ ANA_ENG + EXCEL_XTEN;
+		PremEval<APIMtd> eval = new Eval6(clazzList, Configuration.API_IDX_FILE);
+		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
+		
+		evalFile = resFolder + File.separator+ ANA_SYN + EXCEL_XTEN;
+		eval = new Eval6(clazzList, Configuration.API_IDX_FILE_SYNONYM, analyser);
+		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
+	}
+	
+	public static void eval7(String resFolder) throws Exception
+	{
+		String evalFile;
+		List<APIType> clazzList = AllClassCrawler.read(Configuration.MIDP_DUMP_PATH);
+		
+		evalFile = resFolder + File.separator+ ANA_ENG + EXCEL_XTEN;
+		PremEval<APIMtd> eval = new Eval7(clazzList, Configuration.API_IDX_FILE);
+		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
+		
+		evalFile = resFolder + File.separator+ ANA_SYN + EXCEL_XTEN;
+		eval = new Eval7(clazzList, Configuration.API_IDX_FILE_SYNONYM, analyser);
 		ResultEmitter.writeDataToExcel(eval.eval(), evalFile);
 	}
 	

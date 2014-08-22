@@ -27,9 +27,9 @@ import edu.ncsu.csc.ase.apisim.configuration.Configuration;
 import edu.ncsu.csc.ase.apisim.configuration.Configuration.APITYPE;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIMtd;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
-import edu.ncsu.csc.ase.apisim.eval.oracle.TpMdlClsCons;
 import edu.ncsu.csc.ase.apisim.eval.util.CustomComparator;
 import edu.ncsu.csc.ase.apisim.eval.util.ResultRep;
+import edu.ncsu.csc.ase.apisim.topicModel.TMResults;
 import edu.ncsu.csc.ase.apisim.webcrawler.apiutil.ASTBuilder;
 
 /**
@@ -43,6 +43,8 @@ public class Eval4 extends PremEval<APIMtd>
 	private List<String> subClassList;
 	
 	private List<APIType> clazzList ;
+	
+	public static HashMap<String, Set<String>> topicClassMap = new HashMap<String, Set<String>>();
 	
 	public Eval4(List<APIType> clazzList, String idxFileLoc) 
 	{
@@ -72,6 +74,21 @@ public class Eval4 extends PremEval<APIMtd>
 		subClassList.add("Sprite");
 		subClassList.add("Graphics");
 		subClassList.add("Image");
+		try {
+			Map<String, List<String>> mm = TMResults.read(TMResults.clsSum);
+			List<String> lst;
+			
+			for(String key:mm.keySet())
+			{
+				lst = mm.get(key);
+				if(lst.size()>100)
+					lst = lst.subList(0, 100);
+				topicClassMap.put(key, new TreeSet<String>(lst));
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public boolean inclusionCriteriaMethod(APIMtd mtd) {
@@ -216,7 +233,7 @@ public class Eval4 extends PremEval<APIMtd>
 
 	@Override
 	public List<String[]> getTermVector(APIMtd mtd) {
-		tstSet = TpMdlClsCons.topicClassMap.get(mtd.getParentClass().getPackage().trim()+"."+mtd.getParentClass().getName().trim());
+		tstSet = topicClassMap.get(mtd.getParentClass().getPackage().trim()+"."+mtd.getParentClass().getName().trim());
 		List<String[]> termList = new ArrayList<String[]>();
 		String apiName = MultiFieldQueryParser.escape(APITYPE.ANDROID.name().toLowerCase());
 		String clazzName = MultiFieldQueryParser.escape(mtd.getParentClass().getName());

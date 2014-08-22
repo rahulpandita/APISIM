@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Utility class for handling File related operations
@@ -49,14 +51,24 @@ public class FileUtil {
 	
 	public static String readString(File file) {
 		StringBuffer buff = new StringBuffer();
+		List<String> lines = readLines(file);
+		for(String line: lines)
+		{
+			buff.append(line);
+			buff.append("\n");
+		}
+		return buff.toString().trim();
+	}
+	
+	public static List<String> readLines(File file) {
+		List<String> buff = new ArrayList<String>();
 		BufferedReader reader = null;
 		try {
 			reader = new BufferedReader(new FileReader(file));
 
 			String line = null;
 			while ((line = reader.readLine()) != null) {
-				buff.append(line);
-				buff.append("\n");
+				buff.add(line);
 			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -70,6 +82,6 @@ public class FileUtil {
 				e.printStackTrace();
 			}
 		}
-		return buff.toString().trim();
+		return buff;
 	}
 }
