@@ -12,26 +12,26 @@ import java.util.Set;
 import cc.mallet.types.InstanceList;
 import edu.ncsu.csc.ase.apisim.webcrawler.apiutil.PackageSummaryCrawler;
 
-public class TopicModelPkgClass extends TopicModelFactory {
+public class TopicModelPkgClassMtd extends TopicModelFactory {
 
-	public static String OUTPUT_FILE_NAME_1 = "PkgClassSummaryPerTopic";
+	public static String OUTPUT_FILE_NAME_1 = "PkgClassMtdSummaryPerTopic";
 
-	public static String OUTPUT_FILE_NAME_2 = "PkgClassSummaryPerPkg";
+	public static String OUTPUT_FILE_NAME_2 = "PkgClassMtdSummaryPerPkg";
 	
-	public static String OUTPUT_FILE_NAME_3 = "PkgClassSummaryPerPkgSimilarity";
+	public static String OUTPUT_FILE_NAME_3 = "PkgClassMtdSummaryPerPkgSimilarity";
 
-	public TopicModelPkgClass() throws Exception {
+	public TopicModelPkgClassMtd() throws Exception {
 		super(1000, 5, 20000);
 	}
 	
-	public TopicModelPkgClass(int topics, int numThreads, int numIterations) throws Exception {
+	public TopicModelPkgClassMtd(int topics, int numThreads, int numIterations) throws Exception {
 		super(topics, numThreads, numIterations);
 	}
 	
 	@Override
 	public InstanceList getInstanceList() {
 		try {
-			return InstanceCreator.createInstanceListandroidpkgClass(false);
+			return InstanceCreator.createInstanceListandroidpkgClass(true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -41,7 +41,7 @@ public class TopicModelPkgClass extends TopicModelFactory {
 	@Override
 	public InstanceList getTargetInstanceList() {
 		try {
-			return InstanceCreator.createInstanceListPkgCls(false);
+			return InstanceCreator.createInstanceListPkgCls(true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -51,7 +51,7 @@ public class TopicModelPkgClass extends TopicModelFactory {
 	@Override
 	public InstanceList getSearchInstanceList() {
 		try {
-			return InstanceCreator.createInstanceListmidppkgClass(false);
+			return InstanceCreator.createInstanceListmidppkgClass(true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

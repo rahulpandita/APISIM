@@ -148,10 +148,10 @@ public class InstanceCreator {
 		return InstanceCreator.createInstanceList(insList);
 	}
 	
-	public static InstanceList createInstanceListPkgCls() throws Exception {
+	public static InstanceList createInstanceListPkgCls(boolean includeMtd) throws Exception {
 		List<Instance> insList = new ArrayList<Instance>();
-		insList.addAll(getInsListMidpPkgCls(getPkgStrMap(Configuration.MIDP_DUMP_PATH)));
-	    insList.addAll(getInsListAndroidPkgCls(getPkgStrMap(Configuration.ANDROID_DUMP_PATH)));
+		insList.addAll(getInsListMidpPkgCls(getPkgStrMap(Configuration.MIDP_DUMP_PATH, includeMtd)));
+	    insList.addAll(getInsListAndroidPkgCls(getPkgStrMap(Configuration.ANDROID_DUMP_PATH, includeMtd)));
 		return InstanceCreator.createInstanceList(insList);
 	}
 
@@ -200,7 +200,7 @@ public class InstanceCreator {
 		return insList;
 	}
 
-	private static Map<String, String> getPkgStrMap(String apiDumpPath) {
+	private static Map<String, String> getPkgStrMap(String apiDumpPath, boolean includeMtd) {
 		List<APIType> typeList = AllClassCrawler.read(apiDumpPath);
 		Map<String, String> pkgMap = new HashMap<String, String>();
 		String pkgStr;
@@ -208,7 +208,10 @@ public class InstanceCreator {
 		for(APIType type: typeList)
 		{
 			pkgStr = type.getPackage();
-			data = type.getSummary()==null?"":type.getSummary();
+			if(includeMtd)
+				data = type.toString();
+			else
+				data = type.getSummary()==null?"":type.getSummary();
 			if(!pkgMap.containsKey(pkgStr))
 				pkgMap.put(type.getPackage(), "");
 			pkgMap.put(pkgStr, pkgMap.get(pkgStr)+"\n"+data);
@@ -239,14 +242,14 @@ public class InstanceCreator {
 		return insList;
 	}
 
-	public static InstanceList createInstanceListmidppkgClass() throws Exception
+	public static InstanceList createInstanceListmidppkgClass(boolean includeMtd) throws Exception
 	{
-		return InstanceCreator.createInstanceList(getInsListMidpPkgCls(getPkgStrMap(Configuration.MIDP_DUMP_PATH)));
+		return InstanceCreator.createInstanceList(getInsListMidpPkgCls(getPkgStrMap(Configuration.MIDP_DUMP_PATH, includeMtd)));
 	}
 	
-	public static InstanceList createInstanceListandroidpkgClass() throws Exception
+	public static InstanceList createInstanceListandroidpkgClass(boolean includeMtd) throws Exception
 	{
-		return InstanceCreator.createInstanceList(getInsListAndroidPkgCls(getPkgStrMap(Configuration.ANDROID_DUMP_PATH)));
+		return InstanceCreator.createInstanceList(getInsListAndroidPkgCls(getPkgStrMap(Configuration.ANDROID_DUMP_PATH, includeMtd)));
 	}
 
 	public static InstanceList createInstanceList22(boolean includeMtd, String midpDumpPath) throws Exception {
@@ -264,4 +267,5 @@ public class InstanceCreator {
 		
 		return createInstanceList(insList);
 	}
+
 }

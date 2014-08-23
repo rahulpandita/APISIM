@@ -24,6 +24,7 @@ public class TMResults
 	public static final String clsMtdSum = "tpmdling"+ File.separator +"ClassMtdSummaryPerClassSimilarity.txt";
 	public static final String pkgSum = "tpmdling"+ File.separator +"PkgSummaryPerPkgSimilarity.txt";
 	public static final String pkgClsSum = "tpmdling"+ File.separator +"PkgClassSummaryPerPkgSimilarity.txt";
+	public static final String pkgClsMtdSum = "tpmdling"+ File.separator + "PkgClassMtdSummaryPerPkgSimilarity.txt";
 	
 	
 	public static Map<String, List<String>> read(String fileName) throws Exception

@@ -72,6 +72,7 @@ public abstract class TopicModelFactory {
 		model.addInstances(instances);
 		model.setNumThreads(numThreads);
 		model.setNumIterations(numIterations);
+		//model.o
 		model.estimate();
 		inferencer = model.getInferencer();
 		
