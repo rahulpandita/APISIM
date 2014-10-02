@@ -32,6 +32,7 @@ public class APIMtdIndexer extends Indexer<APIMtd>{
 		clazzList.addAll(AllClassCrawler.read(Configuration.ANDROID_DUMP_PATH));
 		clazzList.addAll(AllClassCrawler.read(Configuration.CLDC_DUMP_PATH));
 		clazzList.addAll(AllClassCrawler.read(Configuration.MIDP_DUMP_PATH));
+		clazzList.addAll(AllClassCrawler.read(Configuration.JAVA_DUMP_PATH));
 		
 		for (APIType clazz : clazzList) {
 			mtdList.addAll(clazz.getConstructors());
@@ -72,6 +73,8 @@ public class APIMtdIndexer extends Indexer<APIMtd>{
 	
 	private void decorator(Document doc, APIMtd mtd) {
 		String name = ASTBuilder.getJavaMethodName(mtd.getName());
+		if(name==null)
+			name = mtd.getName();
 		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_BASE_NAME,name, Field.Store.YES));
 		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_BASE_NAME_CAMELCASE_SPLIT, StringUtil.splitCamelCase(name), Field.Store.YES));
 

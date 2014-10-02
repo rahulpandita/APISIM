@@ -83,6 +83,7 @@ public class APIClassIndexer extends Indexer<APIType>
 		clazzList.addAll(AllClassCrawler.read(Configuration.ANDROID_DUMP_PATH));
 		clazzList.addAll(AllClassCrawler.read(Configuration.CLDC_DUMP_PATH));
 		clazzList.addAll(AllClassCrawler.read(Configuration.MIDP_DUMP_PATH));
+		clazzList.addAll(AllClassCrawler.read(Configuration.JAVA_DUMP_PATH));
 		return clazzList;
 	}
 }

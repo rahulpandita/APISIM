@@ -1,6 +1,9 @@
 package edu.ncsu.csc.ase.apisim.dataStructure;
 
-public class APIField 
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class APIField implements Serializable 
 {
 	private String modifier;
 	
