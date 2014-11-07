@@ -1,0 +1,1204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--                   -->
+<!-- java.io.mappingml -->
+<!--                   -->
+<mapping>
+	<!--          -->
+	<!-- packages -->
+	<!--          -->
+	<packages>
+		<!--                 -->
+		<!-- package java.io -->
+		<!--                 -->
+		<package name="java.io">
+			<target name="System.IO" />
+
+			<!--                                    -->
+			<!-- class UnsupportedEncodingException -->
+			<!--                                    -->
+			<class name="UnsupportedEncodingException">
+				<target packageName="System.IO" name="IOException">
+				</target>
+			</class>
+
+			<!--                      -->
+			<!-- class java.io.Writer -->
+			<!--                      -->
+			<class name="Writer">
+				<target packageName="System.IO" name="TextWriter">
+				</target>
+				<!--                                        -->
+				<!-- method write(java.lang.String,int,int) -->
+				<!--                                        -->
+				<method signature="(java.lang.String,int,int)" name="write">
+					<target>
+						<format>
+<![CDATA[@0.Write(@1,@2,@1.Substring(@2,@3))]]>
+						</format>
+					</target>
+				</method>
+				<!--                   -->
+				<!-- method write(int) -->
+				<!--                   -->
+				<method signature="(int)" name="write">
+					<target>
+						<format>
+<![CDATA[@0.Write((char)@1)]]>
+						</format>
+					</target>
+				</method>
+			</class>
+
+			<!--                                -->
+			<!-- class java.io.DataOutputStream -->
+			<!--                                -->
+			<class name="DataOutputStream">
+				<target packageName="ILOG.J2CsMapping.IO" name="DataOutputStream">
+				</target>
+			</class>
+
+			<!--                                     -->
+			<!-- class java.io.FileNotFoundException -->
+			<!--                                     -->
+			<class name="FileNotFoundException">
+				<target packageName="System.IO" name="FileNotFoundException">
+				</target>
+			</class>
+
+			<!--                         -->
+			<!-- class java.io.Closeable -->
+			<!--                         -->
+			<class name="Closeable">
+				<target packageName="System.IO" name="Stream">
+				</target>
+			</class>
+
+			<!--                                 -->
+			<!-- class java.io.ObjectInputStream -->
+			<!--                                 -->
+			<class name="ObjectInputStream">
+				<target packageName="ILOG.J2CsMapping.IO" name="IlObjectInputStream">
+				</target>
+			</class>
+
+			<!--                         -->
+			<!-- class java.io.DataInput -->
+			<!--                         -->
+			<class name="DataInput">
+				<target packageName="ILOG.J2CsMapping.IO" name="DataInput">
+				</target>
+			</class>
+
+			<!--                               -->
+			<!-- class java.io.DataInputStream -->
+			<!--                               -->
+			<class name="DataInputStream">
+				<target packageName="ILOG.J2CsMapping.IO" name="DataInputStream">
+				</target>
+			</class>
+
+			<!--                    -->
+			<!-- class java.io.File -->
+			<!--                    -->
+			<class name="File">
+				<target packageName="System.IO" name="FileInfo">
+				</target>
+				<!--                 -->
+				<!-- method length() -->
+				<!--                 -->
+				<method signature="()" name="length">
+					<target propertyGet="Length" />
+				</method>
+				<!--                 -->
+				<!-- method mkdirs() -->
+				<!--                 -->
+				<method signature="()" name="mkdirs">
+					<target>
+						<format>
+<![CDATA[System.IO.Directory.CreateDirectory(@0.FullName)]]>
+						</format>
+					</target>
+				</method>
+				<!--                           -->
+				<!-- method File(File, String) -->
+				<!--                           -->
+				<constructor signature="(java.io.File,java.lang.String)">
+					<target>
+						<format>
+<![CDATA[new FileInfo(System.IO.Path.Combine(@1.FullName,@2))]]>
+						</format>
+					</target>
+				</constructor>
+				
+				<!--                 -->
+				<!-- method exists() -->
+				<!--                 -->
+				<method signature="()" name="exists">
+					<target propertyGet="Exists" />
+				</method>
+				
+				<!--                            -->
+				<!-- method File(String,String) -->
+				<!--                            -->
+				<constructor signature="(java.lang.String,java.lang.String)">
+					<target>
+						<format>
+<![CDATA[new FileInfo(@1+@2)]]>
+						</format>
+					</target>
+				</constructor>
+				
+				<!--                      -->
+				<!-- method isDirectory() -->
+				<!--                      -->
+				<method signature="()" name="isDirectory">
+					<target>
+						<format>
+<![CDATA[System.IO.Directory.Exists(@0.DirectoryName)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                   -->
+				<!-- method canWrite() -->
+				<!--                   -->
+				<method signature="()" name="canWrite">
+					<target>
+						<format>
+<![CDATA[(@0.Exists && !@0.IsReadOnly)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                       -->
+				<!-- method lastModified() -->
+				<!--                       -->
+				<method signature="()" name="lastModified">
+					<target>
+						<format>
+<![CDATA[@0.LastWriteTime.Ticks]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                              -->
+				<!-- method setLastModified(long) -->
+				<!--                              -->
+				<method signature="(long)" name="setLastModified">
+					<target propertySet="LastWriteTime" />
+				</method>
+				
+				<!--                        -->
+				<!-- method createNewFile() -->
+				<!--                        -->
+				<method signature="()" name="createNewFile">
+					<target>
+						<format>
+<![CDATA[@0.Create()]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                  -->
+				<!-- method getName() -->
+				<!--                  -->
+				<method signature="()" name="getName">
+					<target propertyGet="Name" />
+				</method>
+				
+				<!--                  -->
+				<!-- method getPath() -->
+				<!--                  -->
+				<method signature="()" name="getPath">
+					<target>
+						<format>
+<![CDATA[System.IO.Path.GetFullPath(@0.Name)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                           -->
+				<!-- method getCanonicalPath() -->
+				<!--                           -->
+				<method signature="()" name="getCanonicalPath">
+					<target propertyGet="FullName" />
+				</method>
+				
+				<!--                          -->
+				<!-- method getAbsolutePath() -->
+				<!--                          -->
+				<method signature="()" name="getAbsolutePath">
+					<target propertyGet="FullName" />
+				</method>
+				
+				<!--                     -->
+				<!-- Field separatorChar -->
+				<!--                     -->
+				<field name="separatorChar">
+					<target>
+						<format>
+<![CDATA[Path.PathSeparator]]>
+						</format>
+					</target>
+				</field>
+				
+				<!--                 -->
+				<!-- Field separator -->
+				<!--                 -->
+				<field name="separator">
+					<target>
+						<format>
+<![CDATA[System.IO.Path.DirectorySeparatorChar]]>
+						</format>
+					</target>
+				</field>
+			</class>
+
+			<!--                              -->
+			<!-- class java.io.BufferedWriter -->
+			<!--                              -->
+			<class name="BufferedWriter">
+				<target packageName="System.IO" name="BufferedStream"
+					isRemove="true">
+				</target>
+			</class>
+
+			<!--                      -->
+			<!-- class java.io.Reader -->
+			<!--                      -->
+			<class name="Reader">
+				<target packageName="System.IO" name="TextReader">
+				</target>
+				
+				<!--                     -->
+				<!-- method read(char[]) -->
+				<!--                     -->
+				<method signature="(char[])" name="read">
+					<target>
+						<format>
+<![CDATA[@0.Read(@1,0,@1.Length)]]>
+						</format>
+					</target>
+				</method>
+				
+			</class>
+
+			<!--                            -->
+			<!-- class java.io.Serializable -->
+			<!--                            -->
+			<class name="Serializable">
+				<target packageName="System.Runtime.Serialization" name="ISerializable">
+				</target>
+			</class>
+
+			<!--                          -->
+			<!-- class java.io.FileWriter -->
+			<!--                          -->
+			<class name="FileWriter">
+				<target packageName="System.IO" name="StreamWriter">
+				</target>
+				<!--                                 -->
+				<!-- method FileWriter(java.io.File) -->
+				<!--                                 -->
+				<constructor signature="(java.io.File)">
+					<target>
+						<format>
+<![CDATA[new System.IO.StreamWriter(@1.OpenRead())]]>
+						</format>
+					</target>
+				</constructor>
+			</class>
+
+			<!--                                 -->
+			<!-- class java.io.FilterInputStream -->
+			<!--                                 -->
+			<class name="FilterInputStream" isExcluded="true">
+				<target packageName="ILOG.J2CsMapping.IO" name="IlFilterInputStream"
+					isRemove="true">
+				</target>
+			</class>
+
+			<!--                                  -->
+			<!-- class java.io.ObjectOutputStream -->
+			<!--                                  -->
+			<class name="ObjectOutputStream">
+				<target packageName="ILOG.J2CsMapping.IO" name="IlObjectOutputStream">
+				</target>
+			</class>
+
+			<!--                                    -->
+			<!-- class java.io.BufferedOutputStream -->
+			<!--                                    -->
+			<class name="BufferedOutputStream">
+				<target packageName="System.IO" name="BufferedStream">
+				</target>
+				<!--                                               -->
+				<!-- method BufferedOutputStream(OutputStream,int) -->
+				<!--                                               -->
+				<constructor signature="(java.io.OutputStream,int)">
+					<target>
+						<format>
+<![CDATA[new BufferedStream(@1,@2)]]>
+						</format>
+					</target>
+				</constructor>
+				<!--                                           -->
+				<!-- method BufferedOutputStream(OutputStream) -->
+				<!--                                           -->
+				<constructor signature="(java.io.OutputStream)">
+					<target>
+						<format>
+<![CDATA[new BufferedStream(@1)]]>
+						</format>
+					</target>
+				</constructor>
+			</class>
+
+			<!--                          -->
+			<!-- class java.io.DataOutput -->
+			<!--                          -->
+			<class name="DataOutput">
+				<target packageName="ILOG.J2CsMapping.IO" name="DataOutput">
+				</target>
+			</class>
+
+			<!--                                -->
+			<!-- class java.io.RandomAccessFile -->
+			<!--                                -->
+			<class name="RandomAccessFile">
+				<target packageName="System.IO" name="BinaryWriter">
+				</target>
+				
+				<!--                   -->
+				<!-- method seek(long) -->
+				<!--                   -->
+				<method signature="(long)" name="seek">
+					<target>
+						<format>
+<![CDATA[@0.BaseStream.Seek(@1,System.IO.SeekOrigin.Begin)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                        -->
+				<!-- method setLength(long) -->
+				<!--                        -->
+				<method signature="(long)" name="setLength">
+					<target>
+						<format>
+<![CDATA[@0.BaseStream.SetLength(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                   -->
+				<!-- method readByte() -->
+				<!--                   -->
+				<method signature="()" name="readByte">
+					<target>
+						<format>
+<![CDATA[(byte)@0.BaseStream.ReadByte()]]>
+						</format>
+					</target>
+				</method>
+			</class>
+
+			<!--                                  -->
+			<!-- class java.io.OutputStreamWriter -->
+			<!--                                  -->
+			<class name="OutputStreamWriter">
+				<target packageName="System.IO" name="StreamWriter">
+				</target>
+				
+				<!--                                                     -->
+				<!-- constructor OutputStreamWriter(OutputStream,String) -->
+				<!--                                                     -->
+				<constructor signature="(java.io.OutputStream,java.lang.String)">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.IO.IOUtility.NewStreamWriter(@1,System.Text.Encoding.GetEncoding(@2))]]>
+						</format>
+					</target>
+				</constructor>
+				
+				<!--                                         -->
+				<!-- method OutputStreamWriter(OutputStream) -->
+				<!--                                         -->
+				<constructor signature="(java.io.OutputStream)">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.IO.IOUtility.NewStreamWriter(@1)]]>
+						</format>
+					</target>
+				</constructor>
+			</class>
+
+			<!--                                -->
+			<!-- class java.io.FileOutputStream -->
+			<!--                                -->
+			<class name="FileOutputStream">
+				<target packageName="System.IO" name="FileStream">
+				</target>
+				
+				<!--                                      -->
+				<!-- constructor FileOutputStream(String) -->
+				<!--                                      -->
+				<constructor signature="(java.lang.String)">
+					<target>
+						<format>
+<![CDATA[File.OpenWrite(@1)]]>
+						</format>
+					</target>
+				</constructor>
+				
+				<!--                                         -->
+				<!-- method FileOutputStream(String,boolean) -->
+				<!--                                         -->
+				<constructor signature="(java.lang.String,boolean)">
+					<target>
+						<format>
+<![CDATA[new FileStream(@1,FileMode.Append)]]>
+						</format>
+					</target>
+				</constructor>
+				
+				<!--                               -->
+				<!-- method FileOutputStream(File) -->
+				<!--                               -->
+				<constructor signature="(java.io.File)">
+					<target>
+						<format>
+<![CDATA[@1.OpenWrite()]]>
+						</format>
+					</target>
+				</constructor>
+			</class>
+
+			<!--                                     -->
+			<!-- class java.io.ObjectStreamException -->
+			<!--                                     -->
+			<class name="ObjectStreamException">
+				<target packageName="System.IO" name="IOException">
+				</target>
+			</class>
+
+			<!--                           -->
+			<!-- class java.io.InputStream -->
+			<!--                           -->
+			<class name="InputStream">
+				<target packageName="System.IO" name="Stream">
+				</target>
+				
+				<!--               -->
+				<!-- method read() -->
+				<!--               -->
+				<method signature="()" name="read">
+					<target name="ReadByte" />
+				</method>
+				
+				<!--                     -->
+				<!-- method read(byte[]) -->
+				<!--                     -->
+				<method signature="(byte[])" name="read">
+					<target>
+						<format>
+<![CDATA[@0.Read(@1,0,@1.Length)]]>
+						</format>
+					</target>
+				</method>
+			</class>
+
+			<!--                            -->
+			<!-- class java.io.FilterWriter -->
+			<!--                            -->
+			<class name="FilterWriter" isExcluded="true">
+				<target packageName="ILOG.J2CsMapping.IO" name="IlFilterWriter"
+					isRemove="true">
+				</target>
+			</class>
+
+			<!--                            -->
+			<!-- class java.io.StringWriter -->
+			<!--                            -->
+			<class name="StringWriter">
+				<target packageName="System.IO" name="StringWriter">
+				</target>
+				
+				<!--                               -->
+				<!-- constructor StringWriter(int) -->
+				<!--                               -->
+				<constructor signature="(int)">
+					<target>
+						<format>
+<![CDATA[new StringWriter()]]>
+						</format>
+					</target>
+				</constructor>
+				
+				<!--                    -->
+				<!-- method getBuffer() -->
+				<!--                    -->
+				<method signature="()" name="getBuffer">
+					<target name="GetStringBuilder" />
+				</method>
+				
+				<!--                            -->
+				<!-- constructor StringWriter() -->
+				<!--                            -->
+				<constructor signature="()">
+					<target>
+						<format>
+<![CDATA[new StringWriter(System.Globalization.NumberFormatInfo.InvariantInfo)]]>
+						</format>
+					</target>
+				</constructor>
+			</class>
+
+			<!--                               -->
+			<!-- class java.io.CharArrayWriter -->
+			<!--                               -->
+			<class name="CharArrayWriter">
+				<target packageName="System.IO" name="StringWriter">
+				</target>
+				
+				<!--                      -->
+				<!-- method toCharArray() -->
+				<!--                      -->
+				<method signature="()" name="toCharArray">
+					<target>
+						<format>
+<![CDATA[@0.ToString().ToCharArray()]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                -->
+				<!-- method reset() -->
+				<!--                -->
+				<method signature="()" name="reset">
+					<target>
+						<format>
+<![CDATA[@0.GetStringBuilder().Length=0]]>
+						</format>
+					</target>
+				</method>
+			</class>
+
+			<!--                              -->
+			<!-- class java.io.BufferedReader -->
+			<!--                              -->
+			<class name="BufferedReader">
+				<target packageName="System.IO" name="TextReader">
+				</target>
+				
+				<!--                                        -->
+				<!-- constructor BufferedReader(Reader,int) -->
+				<!--                                        -->
+				<constructor signature="(java.io.Reader,int)">
+					<target>
+						<format>
+<![CDATA[@1]]>
+						</format>
+					</target>
+				</constructor>
+				
+				<!--                                    -->
+				<!-- constructor BufferedReader(Reader) -->
+				<!--                                    -->
+				<constructor signature="(java.io.Reader)">
+					<target>
+						<format>
+<![CDATA[@1]]>
+						</format>
+					</target>
+				</constructor>
+			</class>
+
+			<!--                                   -->
+			<!-- class java.io.BufferedInputStream -->
+			<!--                                   -->
+			<class name="BufferedInputStream">
+				<target packageName="System.IO" name="BufferedStream">
+				</target>
+				
+				<!--                                                  -->
+				<!-- constructor BufferedInputStream(InputStream,int) -->
+				<!--                                                  -->
+				<constructor signature="(java.io.InputStream,int)">
+					<target>
+						<format>
+<![CDATA[new BufferedStream(@1,@2)]]>
+						</format>
+					</target>
+				</constructor>
+				
+				<!--                                              -->
+				<!-- constructor BufferedInputStream(InputStream) -->
+				<!--                                              -->
+				<constructor signature="(java.io.InputStream)">
+					<target>
+						<format>
+<![CDATA[new BufferedStream(@1)]]>
+						</format>
+					</target>
+				</constructor>
+			</class>
+
+			<!--                           -->
+			<!-- class java.io.IOException -->
+			<!--                           -->
+			<class name="IOException">
+				<target packageName="System.IO" name="IOException">
+				</target>
+			</class>
+
+			<!--                                  -->
+			<!-- class java.io.FilterOutputStream -->
+			<!--                                  -->
+			<class name="FilterOutputStream" isExcluded="true">
+				<target packageName="ILOG.J2CsMapping.IO" name="IlFilterOutputStream"
+					isRemove="true">
+				</target>
+			</class>
+
+			<!--                               -->
+			<!-- class java.io.FileInputStream -->
+			<!--                               -->
+			<class name="FileInputStream">
+				<target packageName="System.IO" name="FileStream">
+				</target>
+				<!--                                -->
+				<!-- method FileInputStream(String) -->
+				<!--                                -->
+				<constructor signature="(java.lang.String)">
+					<target>
+						<format>
+<![CDATA[File.OpenRead(@1)]]>
+						</format>
+					</target>
+				</constructor>
+				
+				<!--                              -->
+				<!-- method FileInputStream(File) -->
+				<!--                              -->
+				<constructor signature="(java.io.File)">
+					<target>
+						<format>
+<![CDATA[@1.OpenRead()]]>
+						</format>
+					</target>
+				</constructor>
+			</class>
+
+			<!--                            -->
+			<!-- class java.io.OutputStream -->
+			<!--                            -->
+			<class name="OutputStream">
+				<target packageName="System.IO" name="Stream">
+				</target>
+				<!--                      -->
+				<!-- method write(byte[]) -->
+				<!--                      -->
+				<method signature="(byte[])" name="write">
+					<target>
+						<format>
+<![CDATA[@0.Write(@1,0,@1.Length)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                   -->
+				<!-- method write(int) -->
+				<!--                   -->
+				<method signature="(int)" name="write">
+					<target>
+						<format>
+<![CDATA[@0.WriteByte((byte)@1)]]>
+						</format>
+					</target>
+				</method>
+			</class>
+
+			<!--                         -->
+			<!-- class java.io.Flushable -->
+			<!--                         -->
+			<class name="Flushable">
+				<target packageName="System.IO" name="Stream">
+				</target>
+			</class>
+
+			<!--                          -->
+			<!-- class java.io.FileReader -->
+			<!--                          -->
+			<class name="FileReader">
+				<target packageName="System.IO" name="StreamReader">
+				</target>
+				<!--                                 -->
+				<!-- method FileReader(java.io.File) -->
+				<!--                                 -->
+				<constructor signature="(java.io.File)">
+					<target>
+						<format>
+<![CDATA[new System.IO.StreamReader(@1.OpenWrite())]]>
+						</format>
+					</target>
+				</constructor>
+			</class>
+
+			<!--                                    -->
+			<!-- class java.io.ByteArrayInputStream -->
+			<!--                                    -->
+			<class name="ByteArrayInputStream">
+				<target packageName="System.IO" name="MemoryStream">
+				</target>
+			</class>
+
+			<!--                            -->
+			<!-- class java.io.StringReader -->
+			<!--                            -->
+			<class name="StringReader">
+				<target packageName="System.IO" name="StringReader">
+				</target>
+			</class>
+
+			<!--                           -->
+			<!-- class java.io.PrintWriter -->
+			<!--                           -->
+			<class name="PrintWriter">
+				<target packageName="System.IO" name="StreamWriter">
+				</target>
+				
+				<!--                                               -->
+				<!-- constructor PrintWriter(java.io.OutputStream) -->
+				<!--                                               -->
+				<constructor signature="(java.io.OutputStream)">
+					<target>
+						<format>
+<![CDATA[new StreamWriter(@1)]]>
+						</format>
+					</target>
+				</constructor>		
+						
+				<!--                                                 -->
+				<!-- constructor PrintWriter(java.io.Writer,boolean) -->
+				<!--                                                 -->
+				<constructor signature="(java.io.Writer,boolean)">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.IO.IOUtility.NewStreamWriter(@1, @2) /* Warning: if writer (first arg) is a StringWriter exception raised */]]>
+						</format>
+					</target>
+				</constructor>
+				
+				<!--                                         -->
+				<!-- constructor PrintWriter(java.io.Writer) -->
+				<!--                                         -->
+				<constructor signature="(java.io.Writer)">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.IO.IOUtility.NewStreamWriter(@1) /* Warning: if writer (arg) is a StringWriter exception raised */]]>
+						</format>
+					</target>
+				</constructor>
+				
+				<!--                                                       -->
+				<!-- constructor PrintWriter(java.io.OutputStream,boolean) -->
+				<!--                                                       -->
+				<constructor signature="(java.io.OutputStream,boolean)">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.IO.IOUtility.NewStreamWriter(@1, @2)]]>
+						</format>
+					</target>
+				</constructor>
+				
+				<!--                                           -->
+				<!-- constructor PrintWriter(java.lang.String) -->
+				<!--                                           -->
+				<constructor signature="(java.lang.String)">
+				    <!-- since JDK1.5 BR3106477 -->
+					<target>
+						<format>
+<![CDATA[File.CreateText(@1)]]>
+						</format>
+					</target>
+				</constructor>
+				
+				<!--                                         -->
+				<!-- constructor PrintWriter(String, String) -->
+				<!--                                         -->
+				<constructor signature="(java.lang.String, java.lang.String)">			
+					<target>
+						<format>
+<![CDATA[File.CreateText(@1) /* FIXME: loose the charset:@2 arg */]]>
+						</format>
+					</target>
+				</constructor>				
+				
+				<!--                                       -->
+				<!-- constructor PrintWriter(java.io.File) -->
+				<!--                                       -->
+				<constructor signature="(java.io.File)">
+					<target>
+						<format>
+<![CDATA[@1.AppendText()]]>
+						</format>
+					</target>
+				</constructor>				
+				
+				<!--                     -->
+				<!-- method append(char) -->
+				<!--                     -->
+				<method signature="(char)" name="append">
+					<target name="Write" />
+				</method>
+				<!--                                       -->
+				<!-- method append(java.lang.CharSequence) -->
+				<!--                                       -->
+				<method signature="(java.lang.CharSequence)" name="append">
+					<target name="Write" />
+				</method>				
+				<!--                       -->
+				<!-- method println(float) -->
+				<!--                       -->
+				<method signature="(float)" name="println">
+					<target name="WriteLine" />
+				</method>
+				<!--                     -->
+				<!-- method println(int) -->
+				<!--                     -->
+				<method signature="(int)" name="println">
+					<target name="WriteLine" />
+				</method>				
+				<!--                      -->
+				<!-- method println(long) -->
+				<!--                      -->
+				<method signature="(long)" name="println">
+					<target name="WriteLine" />
+				</method>
+				<!--                               -->
+				<!-- method println(java.lang.Object) -->
+				<!--                               -->
+				<method signature="(java.lang.Object)" name="println">
+					<target name="WriteLine" />
+				</method>
+				<!--                                  -->
+				<!-- method println(java.lang.String) -->
+				<!--                                  -->
+				<method signature="(java.lang.String)" name="println">
+					<target name="WriteLine" />
+				</method>
+				<!--                        -->
+				<!-- method println(char[]) -->
+				<!--                        -->
+				<method signature="(char[])" name="println">
+					<target name="WriteLine" />
+				</method>
+				<!--                        -->
+				<!-- method println(double) -->
+				<!--                        -->
+				<method signature="(double)" name="println">
+					<target name="WriteLine" />
+				</method>
+				<!--                         -->
+				<!-- method println(boolean) -->
+				<!--                         -->
+				<method signature="(boolean)" name="println">
+					<target name="WriteLine" />
+				</method>
+				<!--                    -->
+				<!-- method print(long) -->
+				<!--                    -->
+				<method signature="(long)" name="print">
+					<target name="Write" />
+				</method>				
+				<!--                  -->
+				<!-- method println() -->
+				<!--                  -->
+				<method signature="()" name="println">
+					<target name="WriteLine" />
+				</method>		
+				<!--                   -->
+				<!-- method print(int) -->
+				<!--                   -->
+				<method signature="(int)" name="print">
+					<target name="Write" />
+				</method>
+				<!--                      -->
+				<!-- method print(char[]) -->
+				<!--                      -->
+				<method signature="(char[])" name="print">
+					<target name="Write" />
+				</method>
+				<!--                      -->
+				<!-- method print(double) -->
+				<!--                      -->
+				<method signature="(double)" name="print">
+					<target name="Write" />
+				</method>						
+				<!--                                -->
+				<!-- method print(java.lang.Object) -->
+				<!--                                -->
+				<method signature="(java.lang.Object)" name="print">
+					<target name="Write" />
+				</method>
+				<!--                     -->
+				<!-- method print(float) -->
+				<!--                     -->
+				<method signature="(float)" name="print">
+					<target name="Write" />
+				</method>
+				<!--                                -->
+				<!-- method print(java.lang.String) -->
+				<!--                                -->
+				<method signature="(java.lang.String)" name="print">
+					<target name="Write" />
+				</method>
+				<!--                       -->
+				<!-- method print(boolean) -->
+				<!--                       -->
+				<method signature="(boolean)" name="print">
+					<target name="Write" />
+				</method>
+				<!--           -->
+				<!-- Field out -->
+				<!--           -->
+				<field name="out">
+					<target name="Out">
+					</target>
+				</field>
+			</class>
+
+			<!--                           -->
+			<!-- class java.io.PrintStream -->
+			<!--                           -->
+			<class name="PrintStream">
+				<target packageName="System.IO" name="TextWriter">
+				</target>
+				<!--                                               -->
+				<!-- constructor PrintStream(OutputStream,boolean) -->
+				<!--                                               -->
+				<constructor signature="(java.io.OutputStream,boolean)">
+					<target>
+						<format>
+<![CDATA[new StreamWriter(@1)]]>
+						</format>
+					</target>
+				</constructor>
+				<!--                                       -->
+				<!-- constructor PrintStream(OutputStream) -->
+				<!--                                       -->
+				<constructor signature="(java.io.OutputStream)">
+					<target>
+						<format>
+<![CDATA[new StreamWriter(@1)]]>
+						</format>
+					</target>
+				</constructor>		
+				<!--                                 -->
+				<!-- constructor PrintStream(String) -->
+				<!--                                 -->
+				<constructor signature="(String)">
+					<target>
+						<format>
+<![CDATA[ File.CreateText(@1)]]>
+						</format>
+					</target>
+				</constructor>								
+				<!--                       -->
+				<!-- method println(float) -->
+				<!--                       -->
+				<method signature="(float)" name="println">
+					<target name="WriteLine" />
+				</method>
+				<!--                     -->
+				<!-- method println(int) -->
+				<!--                     -->
+				<method signature="(int)" name="println">
+					<target name="WriteLine" />
+				</method>
+				<!--                      -->
+				<!-- method println(long) -->
+				<!--                      -->
+				<method signature="(long)" name="println">
+					<target name="WriteLine" />
+				</method>
+				<!--                        -->
+				<!-- method println(Object) -->
+				<!--                        -->
+				<method signature="(java.lang.Object)" name="println">
+					<target name="WriteLine" />
+				</method>
+				<!--                        -->
+				<!-- method println(String) -->
+				<!--                        -->
+				<method signature="(java.lang.String)" name="println">
+					<target name="WriteLine" />
+				</method>
+				<!--                        -->
+				<!-- method println(char[]) -->
+				<!--                        -->
+				<method signature="(char[])" name="println">
+					<target name="WriteLine" />
+				</method>
+				<!--                        -->
+				<!-- method println(double) -->
+				<!--                        -->
+				<method signature="(double)" name="println">
+					<target name="WriteLine" />
+				</method>
+				<!--                         -->
+				<!-- method println(boolean) -->
+				<!--                         -->
+				<method signature="(boolean)" name="println">
+					<target name="WriteLine" />
+				</method>
+				<!--                  -->
+				<!-- method println() -->
+				<!--                  -->
+				<method signature="()" name="println">
+					<target name="WriteLine" />
+				</method>				
+				<!--                    -->
+				<!-- method print(long) -->
+				<!--                    -->
+				<method signature="(long)" name="print">
+					<target name="Write" />
+				</method>
+				<!--                   -->
+				<!-- method print(int) -->
+				<!--                   -->
+				<method signature="(int)" name="print">
+					<target name="Write" />
+				</method>
+				<!--                      -->
+				<!-- method print(char[]) -->
+				<!--                      -->
+				<method signature="(char[])" name="print">
+					<target name="Write" />
+				</method>
+				<!--                      -->
+				<!-- method print(double) -->
+				<!--                      -->
+				<method signature="(double)" name="print">
+					<target name="Write" />
+				</method>
+				<!--                      -->
+				<!-- method print(Object) -->
+				<!--                      -->
+				<method signature="(java.lang.Object)" name="print">
+					<target name="Write" />
+				</method>
+				<!--                     -->
+				<!-- method print(float) -->
+				<!--                     -->
+				<method signature="(float)" name="print">
+					<target name="Write" />
+				</method>
+				<!--                      -->
+				<!-- method print(String) -->
+				<!--                      -->
+				<method signature="(java.lang.String)" name="print">
+					<target name="Write" />
+				</method>
+				<!--                       -->
+				<!-- method print(boolean) -->
+				<!--                       -->
+				<method signature="(boolean)" name="print">
+					<target name="Write" />
+				</method>
+			</class>
+
+			<!--                                 -->
+			<!-- class java.io.InputStreamReader -->
+			<!--                                 -->
+			<class name="InputStreamReader">
+				<target packageName="System.IO" name="StreamReader">
+				</target>
+				<!--                                               -->
+				<!-- method InputStreamReader(InputStream, String) -->
+				<!--                                               -->
+				<constructor signature="(java.io.InputStream,java.lang.String)">
+					<target>
+						<format>
+<![CDATA[new StreamReader(@1,System.Text.Encoding.GetEncoding(@2))]]>
+						</format>
+					</target>
+				</constructor>
+				<!--                                       -->
+				<!-- method InputStreamReader(InputStream) -->
+				<!--                                       -->
+				<constructor signature="(java.io.InputStream)">
+					<target>
+						<format>
+<![CDATA[new StreamReader(@1)]]>
+						</format>
+					</target>
+				</constructor>
+			</class>
+
+			<!--                               -->
+			<!-- class java.io.CharArrayReader -->
+			<!--                               -->
+			<class name="CharArrayReader">
+				<target packageName="ILOG.J2CSMapping.IO" name="CharArrayReader">
+				</target>
+				
+				<!--                 -->
+				<!-- Field markedPos -->
+				<!--                 -->
+				<field name="markedPos">
+					<target name="curMarkedPos">
+					</target>
+				</field>
+				
+				<!--             -->
+				<!-- Field count -->
+				<!--             -->
+				<field name="count">
+					<target name="length">
+					</target>
+				</field>
+				
+				<!--           -->
+				<!-- Field buf -->
+				<!--           -->
+				<field name="buf">
+					<target name="buffer">
+					</target>
+				</field>
+				
+				<!--           -->
+				<!-- Field pos -->
+				<!--           -->
+				<field name="pos">
+					<target name="position">
+					</target>
+				</field>
+			</class>
+
+			<!--                                     -->
+			<!-- class java.io.ByteArrayOutputStream -->
+			<!--                                     -->
+			<class name="ByteArrayOutputStream">
+				<target packageName="System.IO" name="MemoryStream">
+				</target>
+				<!--                      -->
+				<!-- method toByteArray() -->
+				<!--                      -->
+				<method signature="()" name="toByteArray">
+					<target name="ToArray" />
+				</method>
+			</class>
+
+			<!--                                      -->
+			<!-- class java.io.InvalidObjectException -->
+			<!--                                      -->
+			<class name="InvalidObjectException">
+				<target packageName="System.IO" name="IOException">
+				</target>
+			</class>
+		</package>
+
+	</packages>
+</mapping>

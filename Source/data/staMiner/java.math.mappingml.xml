@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--                     -->
+<!-- java.math.mappingml -->
+<!--                     -->
+<mapping>
+	<!--          -->
+	<!-- packages -->
+	<!--          -->
+	<packages>
+		<!--                   -->
+		<!-- package java.math -->
+		<!--                   -->
+		<package name="java.math">
+			<target name="System" />
+
+			<!--                            -->
+			<!-- class java.math.BigInteger -->
+			<!--                            -->
+			<class name="BigInteger">
+				<target packageName="System" name="Int64">
+				</target>
+				<!--                      -->
+				<!-- method valueOf(long) -->
+				<!--                      -->
+				<method signature="(long)" name="valueOf">
+					<target>
+						<format>
+<![CDATA[@1M]]>
+						</format>
+					</target>
+				</method>
+				<!--                                     -->
+				<!-- method BigInteger(java.lang.String) -->
+				<!--                                     -->
+				<constructor signature="(java.lang.String)">
+					<target>
+						<format>
+<![CDATA[Int64.Parse(@1)]]>
+						</format>
+					</target>
+				</constructor>
+				<!--                 -->
+				<!-- method pow(int) -->
+				<!--                 -->
+				<method signature="(int)" name="pow">
+					<target>
+						<format>
+<![CDATA[Math.Pow(@0,@1)]]>
+						</format>
+					</target>
+				</method>
+			</class>
+
+			<!--                            -->
+			<!-- class java.math.BigDecimal -->
+			<!--                            -->
+			<class name="BigDecimal">
+				<target packageName="System" name="Decimal">
+				</target>
+				<!--                -->
+				<!-- method scale() -->
+				<!--                -->
+				<method signature="()" name="scale">
+					<target>
+						<format>
+<![CDATA[(int)@0]]>
+						</format>
+					</target>
+				</method>
+				<!--                                     -->
+				<!-- method BigDecimal(java.lang.String) -->
+				<!--                                     -->
+				<constructor signature="(java.lang.String)">
+					<target>
+						<format>
+<![CDATA[Decimal.Parse(@1)]]>
+						</format>
+					</target>
+				</constructor>
+				<!--                 -->
+				<!-- method signum() -->
+				<!--                 -->
+				<method signature="()" name="signum">
+					<target>
+						<format>
+<![CDATA[(int)@0]]>
+						</format>
+					</target>
+				</method>
+				<!--                          -->
+				<!-- method setScale(int,int) -->
+				<!--                          -->
+				<method signature="(int,int)" name="setScale">
+					<target>
+						<format>
+<![CDATA[@0]]>
+						</format>
+					</target>
+				</method>
+				<!--                        -->
+				<!-- method unscaledValue() -->
+				<!--                        -->
+				<method signature="()" name="unscaledValue">
+					<target>
+						<format>
+<![CDATA[@0]]>
+						</format>
+					</target>
+				</method>
+				<!--                            -->
+				<!-- method movePointRight(int) -->
+				<!--                            -->
+				<method signature="(int)" name="movePointRight">
+					<target>
+						<format>
+<![CDATA[@0]]>
+						</format>
+					</target>
+				</method>
+				<!--                      -->
+				<!-- method valueOf(long) -->
+				<!--                      -->
+				<method signature="(long)" name="valueOf">
+					<target>
+						<format>
+<![CDATA[@1M]]>
+						</format>
+					</target>
+				</method>
+				<!--                           -->
+				<!-- method movePointLeft(int) -->
+				<!--                           -->
+				<method signature="(int)" name="movePointLeft">
+					<target>
+						<format>
+<![CDATA[@0]]>
+						</format>
+					</target>
+				</method>
+				<!--                                       -->
+				<!-- method multiply(java.math.BigDecimal) -->
+				<!--                                       -->
+				<method signature="(java.math.BigDecimal)" name="multiply">
+					<target>
+						<format>
+<![CDATA[Decimal.Multiply(@0,@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                                         -->
+				<!-- method divide(java.math.BigDecimal,int) -->
+				<!--                                         -->
+				<method signature="(java.math.BigDecimal,int)" name="divide">
+					<target>
+						<format>
+<![CDATA[Decimal.Round(Decimal.Divide(@0,@1),@2)]]>
+						</format>
+					</target>
+				</method>
+			</class>
+
+		</package>
+	</packages>
+</mapping>

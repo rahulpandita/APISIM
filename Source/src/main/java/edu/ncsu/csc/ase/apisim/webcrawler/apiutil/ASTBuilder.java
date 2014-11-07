@@ -32,6 +32,23 @@ public class ASTBuilder {
 		return "";
 	}
 	
+	public static void decorateAPIMtd(String methodDecStr, APIMtd mtd)
+	{
+		if(methodDecStr=="")
+			return;
+		CompilationUnit cu = createCompilationUnit(methodDecStr);
+		if(cu !=null)
+		{
+			MethodVerifier visitor = new MethodVerifier();
+			visitor.mtd = mtd;
+			cu.accept(visitor);
+			System.out.println("here");
+			
+		} 
+		
+		
+		
+	}
 	
 	private static CompilationUnit createCompilationUnit(String methodDecStr)
 	{

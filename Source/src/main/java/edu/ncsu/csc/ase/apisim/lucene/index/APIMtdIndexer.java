@@ -33,6 +33,7 @@ public class APIMtdIndexer extends Indexer<APIMtd>{
 		clazzList.addAll(AllClassCrawler.read(Configuration.CLDC_DUMP_PATH));
 		clazzList.addAll(AllClassCrawler.read(Configuration.MIDP_DUMP_PATH));
 		clazzList.addAll(AllClassCrawler.read(Configuration.JAVA_DUMP_PATH));
+		clazzList.addAll(AllClassCrawler.read(Configuration.DOTNET_DUMP_PATH));
 		
 		for (APIType clazz : clazzList) {
 			mtdList.addAll(clazz.getConstructors());

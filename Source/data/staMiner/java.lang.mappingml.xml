@@ -1,0 +1,2552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--                     -->
+<!-- java.lang.mappingml -->
+<!--                     -->
+<mapping>
+	<!--          -->
+	<!-- packages -->
+	<!--          -->
+	<packages>
+	
+		<!--                           -->
+		<!-- package java.lang.reflect -->
+		<!--                           -->
+		<package name="java.lang.reflect">
+			<target name="System.Reflection" />
+
+			<!--                                                   -->
+			<!-- class java.lang.reflect.InvocationTargetException -->
+			<!--                                                   -->
+			<class name="InvocationTargetException">
+				<target packageName="System.Reflection" name="TargetInvocationException">
+				</target>
+				<!--                             -->
+				<!-- method getTargetException() -->
+				<!--                             -->
+				<method signature="()" name="getTargetException">
+					<target propertyGet="InnerException" />
+				</method>
+			</class>
+
+			<!--                               -->
+			<!-- class java.lang.reflect.Proxy -->
+			<!--                               -->
+			<class name="Proxy">
+				<target packageName="ILOG.J2CsMapping.Reflect" name="Proxy">
+				</target>
+			</class>
+
+			<!--                                           -->
+			<!-- class java.lang.reflect.InvocationHandler -->
+			<!--                                           -->
+			<class name="InvocationHandler">
+				<target packageName="ILOG.J2CsMapping.Reflect" name="InvocationHandler">
+				</target>
+			</class>
+
+			<!--                                -->
+			<!-- class java.lang.reflect.Method -->
+			<!--                                -->
+			<class name="Method">
+				<target packageName="System.Reflection" name="MethodInfo">
+				</target>
+				
+				<!--                            -->
+				<!-- method getExceptionTypes() -->
+				<!--                            -->
+				<method signature="()" name="getExceptionTypes">
+					<target propertyGet="Attributes" />
+				</method>
+				
+				<!--                            -->
+				<!-- method getParameterTypes() -->
+				<!--                            -->
+				<method signature="()" name="getParameterTypes">
+					<target>
+						<format>
+<![CDATA[new ILOG.J2CsMapping.Reflect.IlrMethodInfoAdapter(@0.GetParameters()).GetTypes()]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                       -->
+				<!-- method getModifiers() -->
+				<!--                       -->
+				<method signature="()" name="getModifiers">
+					<target>
+						<format>
+<![CDATA[new ILOG.J2CsMapping.Reflect.IlrModifier(@0).GetModifiers()]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method getGenericReturnType() -->
+				<!--                               -->
+				<method signature="()" name="getGenericReturnType">
+					<target propertyGet="ReturnType" />
+				</method>
+				
+				<!--                                   -->
+				<!-- method getGenericParameterTypes() -->
+				<!--                                   -->
+				<method signature="()" name="getGenericParameterTypes">
+					<target name="GetGenericArguments" />
+				</method>
+				
+				<!--                                                    -->
+				<!-- method invoke(java.lang.Object,java.lang.Object[]) -->
+				<!--                                                    -->
+				<method signature="(java.lang.Object,java.lang.Object[])"
+					name="invoke">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.Helper.Invoke(@0,@1,@2)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                        -->
+				<!-- method getReturnType() -->
+				<!--                        -->
+				<method signature="()" name="getReturnType">
+					<target propertyGet="ReturnType" />
+				</method>
+				
+				<!--                  -->
+				<!-- method getName() -->
+				<!--                  -->
+				<method signature="()" name="getName">
+					<target propertyGet="Name" />
+				</method>
+				
+			</class>
+
+			<!--                                  -->
+			<!-- class java.lang.reflect.Modifier -->
+			<!--                                  -->
+			<class name="Modifier">
+				<target packageName="ILOG.J2CsMapping.Reflect" name="IlrModifier">
+				</target>
+				
+				<!--                         -->
+				<!-- method isTransient(int) -->
+				<!--                         -->
+				<method signature="(int)" name="isTransient">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.IlrModifier.IsTransient(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                            -->
+				<!-- method isSynchronized(int) -->
+				<!--                            -->
+				<method signature="(int)" name="isSynchronized">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.IlrModifier.IsSynchronized(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                        -->
+				<!-- method isAbstract(int) -->
+				<!--                        -->
+				<method signature="(int)" name="isAbstract">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.IlrModifier.IsAbstract(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                        -->
+				<!-- method isVolatile(int) -->
+				<!--                        -->
+				<method signature="(int)" name="isVolatile">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.IlrModifier.IsVolatile(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method isInterface(int) -->
+				<!--                               -->
+				<method signature="(int)" name="isInterface">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.IlrModifier.IsInterface(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method isFinal(int) -->
+				<!--                               -->
+				<method signature="(int)" name="isFinal">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.IlrModifier.IsFinal(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method isPrivate(int) -->
+				<!--                               -->
+				<method signature="(int)" name="isPrivate">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.IlrModifier.IsPrivate(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method isNative(int) -->
+				<!--                               -->
+				<method signature="(int)" name="isNative">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.IlrModifier.IsNative(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method isPublic(int) -->
+				<!--                               -->
+				<method signature="(int)" name="isPublic">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.IlrModifier.IsPublic(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method isStatic(int) -->
+				<!--                               -->
+				<method signature="(int)" name="isStatic">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.IlrModifier.IsStatic(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method isStrict(int) -->
+				<!--                               -->
+				<method signature="(int)" name="isStrict">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.IlrModifier.IsStrict(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+			</class>
+
+			<!--                               -->
+			<!-- class java.lang.reflect.Field -->
+			<!--                               -->
+			<class name="Field">
+				<target packageName="System.Reflection" name="FieldInfo">
+				</target>
+				
+				<!--                               -->
+				<!-- method get(java.lang.Object) -->
+				<!--                               -->
+				<method signature="(java.lang.Object)" name="get">
+					<target name="GetValue" />
+				</method>
+				
+				<!--                               -->
+				<!-- method getLong(java.lang.Object) -->
+				<!--                               -->
+				<method signature="(java.lang.Object)" name="getLong">
+					<target>
+						<format>
+<![CDATA[(long)@0.GetValue(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method getShort(java.lang.Object) -->
+				<!--                               -->
+				<method signature="(java.lang.Object)" name="getShort">
+					<target>
+						<format>
+<![CDATA[(short)@0.GetValue(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method set(java.lang.Object,java.lang.Object) -->
+				<!--                               -->
+				<method signature="(java.lang.Object,java.lang.Object)" name="set">
+					<target name="SetValue" />
+				</method>
+				
+				<!--                               -->
+				<!-- method getModifiers() -->
+				<!--                               -->
+				<method signature="()" name="getModifiers">
+					<target>
+						<format>
+<![CDATA[new ILOG.J2CsMapping.Reflect.IlrModifier(@0).GetModifiers()]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method getInt(java.lang.Object) -->
+				<!--                               -->
+				<method signature="(java.lang.Object)" name="getInt">
+					<target>
+						<format>
+<![CDATA[(int)@0.GetValue(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method getChar(java.lang.Object) -->
+				<!--                               -->
+				<method signature="(java.lang.Object)" name="getChar">
+					<target>
+						<format>
+<![CDATA[(char)@0.GetValue(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method getGenericType() -->
+				<!--                               -->
+				<method signature="()" name="getGenericType">
+					<target propertyGet="FieldType" />
+				</method>
+				
+				<!--                               -->
+				<!-- method getBoolean(java.lang.Object) -->
+				<!--                               -->
+				<method signature="(java.lang.Object)" name="getBoolean">
+					<target>
+						<format>
+<![CDATA[(bool)@0.GetValue(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method getFloat(java.lang.Object) -->
+				<!--                               -->
+				<method signature="(java.lang.Object)" name="getFloat">
+					<target>
+						<format>
+<![CDATA[(float)@0.GetValue(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method getByte(java.lang.Object) -->
+				<!--                               -->
+				<method signature="(java.lang.Object)" name="getByte">
+					<target>
+						<format>
+<![CDATA[(byte)@0.GetValue(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method getDouble(java.lang.Object) -->
+				<!--                               -->
+				<method signature="(java.lang.Object)" name="getDouble">
+					<target>
+						<format>
+<![CDATA[(double)@0.GetValue(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method getType() -->
+				<!--                               -->
+				<method signature="()" name="getType">
+					<target propertyGet="FieldType" />
+				</method>
+				
+				<!--                               -->
+				<!-- method getName() -->
+				<!--                               -->
+				<method signature="()" name="getName">
+					<target propertyGet="Name" />
+				</method>
+				
+			</class>
+
+			<!--                                -->
+			<!-- class java.lang.reflect.Member -->
+			<!--                                -->
+			<class name="Member">
+				<target packageName="System.Reflection" name="MemberInfo">
+				</target>
+				
+				<!--                               -->
+				<!-- method getName() -->
+				<!--                               -->
+				<method signature="()" name="getName">
+					<target propertyGet="Name" />
+				</method>
+				
+				<!--                               -->
+				<!-- method getDeclaringClass() -->
+				<!--                               -->
+				<method signature="()" name="getDeclaringClass">
+					<target propertyGet="DeclaringType" />
+				</method>
+				
+			</class>
+
+			<!--                               -->
+			<!-- class java.lang.reflect.Array -->
+			<!--                               -->
+			<class name="Array">
+				<target packageName="System.Reflection" name="Arrays">
+				</target>
+				
+				<!--                                    -->
+				<!-- method getLength(java.lang.Object) -->
+				<!--                                    -->
+				<method signature="(java.lang.Object)" name="getLength">
+					<target>
+						<format>
+<![CDATA[((Array)@1).Length]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                  -->
+				<!-- method get(java.lang.Object,int) -->
+				<!--                                  -->
+				<method signature="(java.lang.Object,int)" name="get">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Collections.Arrays.Get(@1,@2)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                                    -->
+				<!-- method newInstance(java.lang.Class&lt;?&gt;,int[]) -->
+				<!--                                                    -->
+				<method signature="(java.lang.Class&lt;?&gt;,int[])" name="newInstance">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Collections.Arrays.NewInstance(@1,@2)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                                   -->
+				<!-- method set(java.lang.Object,int,java.lang.Object) -->
+				<!--                                                   -->
+				<method signature="(java.lang.Object,int,java.lang.Object)"
+					name="set">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Collections.Arrays.Set(@1,@2,@3)]]>
+						</format>
+					</target>
+				</method>
+				
+			</class>
+
+			<!--                                     -->
+			<!-- class java.lang.reflect.Constructor -->
+			<!--                                     -->
+			<class name="Constructor">
+				<target packageName="System.Reflection" name="ConstructorInfo">
+				</target>
+				
+				<!--                               -->
+				<!-- method getDeclaringClass() -->
+				<!--                               -->
+				<method signature="()" name="getDeclaringClass">
+					<target propertyGet="DeclaringType" />
+				</method>
+				
+				<!--                               -->
+				<!-- method getExceptionTypes() -->
+				<!--                               -->
+				<method signature="()" name="getExceptionTypes">
+					<target propertyGet="Attributes" />
+				</method>
+				
+				<!--                               -->
+				<!-- method getParameterTypes() -->
+				<!--                               -->
+				<method signature="()" name="getParameterTypes">
+					<target>
+						<format>
+<![CDATA[new ILOG.J2CsMapping.Reflect.IlrMethodInfoAdapter(@0.GetParameters()).GetTypes()]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method getModifiers() -->
+				<!--                               -->
+				<method signature="()" name="getModifiers">
+					<target>
+						<format>
+<![CDATA[new ILOG.J2CsMapping.Reflect.IlrModifier(@0).GetModifiers()]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method getGenericParameterTypes() -->
+				<!--                               -->
+				<method signature="()" name="getGenericParameterTypes">
+					<target name="GetGenericArguments" />
+				</method>
+				
+				<!--                               -->
+				<!-- method newInstance(java.lang.Object[]) -->
+				<!--                               -->
+				<method signature="(java.lang.Object[])" name="newInstance">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.Helper.Invoke(@0,@1)]]>
+						</format>
+					</target>
+				</method>
+				
+			</class>
+
+			<!--                              -->
+			<!-- class java.lang.reflect.Type -->
+			<!--                              -->
+			<class name="Type">
+				<target packageName="System" name="Type">
+				</target>
+			</class>
+
+			<!--                                          -->
+			<!-- class java.lang.reflect.AccessibleObject -->
+			<!--                                          -->
+			<class name="AccessibleObject">
+				
+				<!--                               -->
+				<!-- method setAccessible(boolean) -->
+				<!--                               -->
+				<method signature="(boolean)" name="setAccessible">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.AccessibleObject.SetAccessible(@0,@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method isAccessible() -->
+				<!--                               -->
+				<method signature="()" name="isAccessible">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.AccessibleObject.IsAccessible(@0)]]>
+						</format>
+					</target>
+				</method>
+				
+			</class>
+		</package>
+
+		<!--                              -->
+		<!-- package java.lang.annotation -->
+		<!--                              -->
+		<package name="java.lang.annotation">
+			<target name="System" />
+
+			<!--                                   -->
+			<!-- class java.lang.annotation.Target -->
+			<!--                                   -->
+			<class name="Target">
+				<target packageName="System" name="AttributeTargets">
+				</target>
+			</class>
+
+		</package>
+
+		<!--                       -->
+		<!-- package java.lang.ref -->
+		<!--                       -->
+		<package name="java.lang.ref">
+			<target name="System" />
+
+			<!--                               -->
+			<!-- class java.lang.ref.Reference -->
+			<!--                               -->
+			<class name="Reference">
+				<!--                               -->
+				<!-- method get() -->
+				<!--                               -->
+				<method signature="()" name="get">
+					<target propertyGet="Target" />
+				</method>
+			</class>
+
+			<!--                                   -->
+			<!-- class java.lang.ref.WeakReference -->
+			<!--                                   -->
+			<class name="WeakReference">
+				<target packageName="System" name="WeakReference"
+					removeGenerics="true">
+				</target>
+			</class>
+
+			<!--                                   -->
+			<!-- class java.lang.ref.SoftReference -->
+			<!--                                   -->
+			<class name="SoftReference">
+				<target packageName="System" name="WeakReference">
+				</target>
+			</class>
+		</package>
+
+		<!--                      -->
+		<!-- package java.lang -->
+		<!--                      -->
+		<package name="java.lang">
+			<target name="System" />
+
+			<!--                                      -->
+			<!-- class java.lang.NullPointerException -->
+			<!--                                      -->
+			<class name="NullPointerException">
+				<target packageName="System" name="NullReferenceException">
+				</target>
+			</class>
+			
+			<!--                          -->
+			<!-- class java.lang.Runnable -->
+			<!--                          -->
+			<class name="Runnable">
+				<target packageName="ILOG.J2CsMapping.Util" name="IRunnable">
+				</target>
+			</class>
+
+			<!--                        -->
+			<!-- class java.lang.Thread -->
+			<!--                        -->
+			<class name="Thread">
+				<target packageName="ILOG.J2CsMapping.Threading" name="ThreadWrapper">
+				</target>
+				
+				<!--                        -->
+				<!-- method currentThread() -->
+				<!--                        -->
+				<method signature="()" name="currentThread">
+					<target propertyGet="CurrentThread" />
+				</method>
+				
+				<!--                  -->
+				<!-- method getName() -->
+				<!--                  -->
+				<method signature="()" name="getName">
+					<target propertyGet="Name" />
+				</method>
+				
+				<!--                        -->
+				<!-- method setName(String) -->
+				<!--                        -->
+				<method signature="(java.lang.String)" name="setName">
+					<target propertySet="Name" />
+				</method>
+				
+				<!--                      -->
+				<!-- method getPriority() -->
+				<!--                      -->
+				<method signature="()" name="getPriority">
+					<target propertyGet="Priority" />
+				</method>
+				
+				<!--                         -->
+				<!-- method setPriority(int) -->
+				<!--                         -->
+				<method signature="(int)" name="setPriority">
+					<target propertySet="Priority" />
+				</method>
+				
+				<!--                  -->
+				<!-- method isAlive() -->
+				<!--                  -->
+				<method signature="()" name="isAlive">
+					<target propertyGet="IsAlive" />
+				</method>
+				
+				<!--                   -->
+				<!-- method isDaemon() -->
+				<!--                   -->
+				<method signature="()" name="isDaemon">
+					<target propertyGet="IsDaemon" />
+				</method>
+				
+				<!--                           -->
+				<!-- method setDaemon(boolean) -->
+				<!--                           -->
+				<method signature="(boolean)" name="setDaemon">
+					<target propertySet="IsDaemon" />
+				</method>
+			</class>
+
+			<!--                                      -->
+			<!-- class java.lang.NoSuchFieldException -->
+			<!--                                      -->
+			<class packageName="java.lang" name="NoSuchFieldException">
+				<target packageName="System" name="Exception">
+				</target>
+			</class>
+
+			<!--                      -->
+			<!-- class java.lang.Void -->
+			<!--                      -->
+			<class packageName="java.lang" name="Void">
+				<target packageName="ILOG.J2CsMapping" name="ObjectVoid">
+				</target>
+				<!--            -->
+				<!-- Field TYPE -->
+				<!--            -->
+				<field name="TYPE">
+					<target>
+						<format>
+<![CDATA[typeof(void)]]>
+						</format>
+					</target>
+				</field>
+			</class>
+
+			<!--                        -->
+			<!-- class java.lang.Object -->
+			<!--                        -->
+			<class name="Object">
+				<target packageName="System" name="Object">
+				</target>
+				
+				<!--                   -->
+				<!-- method hashCode() -->
+				<!--                   -->
+				<method signature="()" name="hashCode">
+					<target name="GetHashCode" />
+				</method>
+				
+				<!--                -->
+				<!-- method clone() -->
+				<!--                -->
+				<method signature="()" name="clone">
+					<target name="Clone" />
+				</method>
+				
+				<!--                   -->
+				<!-- method getClass() -->
+				<!--                   -->
+				<method signature="()" name="getClass">
+					<target name="GetType" />
+				</method>
+				
+				<!--                    -->
+				<!-- method notifyAll() -->
+				<!--                    -->
+				<method signature="()" name="notifyAll">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Threading.ThreadUtil.NotifyAll(@0)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--               -->
+				<!-- method wait() -->
+				<!--               -->
+				<method signature="()" name="wait">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Threading.ThreadUtil.Wait(@0)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                   -->
+				<!-- method wait(long) -->
+				<!--                   -->
+				<method signature="(long)" name="wait">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Threading.ThreadUtil.Wait(@0,@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                        -->
+				<!-- method wait(long, int) -->
+				<!--                        -->
+				<method signature="(long, int)" name="wait">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Threading.ThreadUtil.Wait(@0,@1,@2)]]>
+						</format>
+					</target>
+				</method>
+			</class>
+
+			<!--                                     -->
+			<!-- class java.lang.ArrayStoreException -->
+			<!--                                     -->
+			<class name="ArrayStoreException">
+				<target packageName="System" name="ArrayTypeMismatchException">
+				</target>
+			</class>
+
+			<!--                                           -->
+			<!-- class java.lang.IndexOutOfBoundsException -->
+			<!--                                           -->
+			<class name="IndexOutOfBoundsException">
+				<target packageName="System" name="IndexOutOfRangeException">
+				</target>
+				<!--                               -->
+				<!-- method IndexOutOfBoundsException(java.lang.String) -->
+				<!--                               -->
+				<constructor signature="(java.lang.String)">
+					<target>
+						<format>
+<![CDATA[new IndexOutOfRangeException(@1.ToString())]]>
+						</format>
+					</target>
+				</constructor>
+			</class>
+
+			<!--                                                 -->
+			<!-- class java.lang.StringIndexOutOfBoundsException -->
+			<!--                                                 -->
+			<class name="StringIndexOutOfBoundsException">
+				<target packageName="System" name="ArgumentOutOfRangeException">
+				</target>
+				<!--                               -->
+				<!-- method StringIndexOutOfBoundsException(java.lang.String) -->
+				<!--                               -->
+				<constructor signature="(java.lang.String)">
+					<target>
+						<format>
+<![CDATA[new ArgumentOutOfRangeException(@1.ToString())]]>
+						</format>
+					</target>
+				</constructor>
+			</class>
+
+			<!--                                     -->
+			<!-- class java.lang.ArithmeticException -->
+			<!--                                     -->
+			<class name="ArithmeticException">
+				<target packageName="System" name="ArithmeticException">
+				</target>
+			</class>
+
+			<!--                                      -->
+			<!-- class java.lang.NoClassDefFoundError -->
+			<!--                                      -->
+			<class name="NoClassDefFoundError">
+				<target packageName="System.Reflection" name="ReflectionTypeLoadException">
+				</target>
+				<!--                                     -->
+				<!-- method NoClassDefFoundError(String) -->
+				<!--                                     -->
+				<constructor signature="(java.lang.String)">
+					<target>
+						<format>
+<![CDATA[new Exception(@1)]]>
+						</format>
+					</target>
+				</constructor>
+			</class>
+
+			<!--                                              -->
+			<!-- class java.lang.IncompatibleClassChangeError -->
+			<!--                                              -->
+			<class name="IncompatibleClassChangeError">
+				<target packageName="System" name="InvalidProgramException">
+				</target>
+			</class>
+
+			<!--                                  -->
+			<!-- class java.lang.RuntimeException -->
+			<!--                                  -->
+			<class name="RuntimeException">
+				<target packageName="System" name="Exception">
+				</target>
+
+				<constructor signature="(java.lang.Throwable)">
+					<target>
+						<format>
+<![CDATA[new Exception(@1.Message, @1)]]>
+						</format>
+					</target>
+				</constructor>			
+				
+			</class>
+
+			<!--                              -->
+			<!-- class java.lang.CharSequence -->
+			<!--                              -->
+			<class name="CharSequence">
+				<target packageName="System" name="String">
+				</target>
+				<!--                               -->
+				<!-- method charAt(int) -->
+				<!--                               -->
+				<method signature="(int)" name="charAt">
+					<target>
+						<format>
+<![CDATA[@0[@1]]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                               -->
+				<!-- method length() -->
+				<!--                               -->
+				<method signature="()" name="length">
+					<target propertyGet="Length" />
+				</method>
+			</class>
+
+			<!--                            -->
+			<!-- class java.lang.Comparable -->
+			<!--                            -->
+			<class name="Comparable">
+				<target packageName="System" name="IComparable">
+				</target>
+			</class>
+
+			<!--                       -->
+			<!-- class java.lang.Class -->
+			<!--                       -->
+			<class name="Class">
+				<target packageName="System" name="Type">
+				</target>
+				<!--                               -->
+				<!-- method getGenericSuperclass() -->
+				<!--                               -->
+				<method signature="()" name="getGenericSuperclass">
+					<target propertyGet="BaseType" />
+				</method>
+				<!--                               -->
+				<!-- method getDeclaredConstructor(java.lang.Class&lt;?&gt;[]) -->
+				<!--                               -->
+				<method signature="(java.lang.Class&lt;?&gt;[])" name="getDeclaredConstructor">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.Helper.GetConstructor(@0,@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method isInstance(java.lang.Object) -->
+				<!--                               -->
+				<method signature="(java.lang.Object)" name="isInstance">
+					<target name="IsInstanceOfType" />
+				</method>
+				<!--                               -->
+				<!-- method isInterface() -->
+				<!--                               -->
+				<method signature="()" name="isInterface">
+					<target propertyGet="IsInterface" />
+				</method>
+				<!--                               -->
+				<!-- method getCanonicalName() -->
+				<!--                               -->
+				<method signature="()" name="getCanonicalName">
+					<target propertyGet="FullName" />
+				</method>
+				<!--                               -->
+				<!-- method isPrimitive() -->
+				<!--                               -->
+				<method signature="()" name="isPrimitive">
+					<target propertyGet="IsPrimitive" />
+				</method>
+				<!--                               -->
+				<!-- method getDeclaredMethods() -->
+				<!--                               -->
+				<method signature="()" name="getDeclaredMethods">
+					<target>
+						<format>
+<![CDATA[@0.GetMethods(BindingFlags.Instance|BindingFlags.NonPublic|BindingFlags.Public|BindingFlags.Static)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!--
+					method
+					getDeclaredMethod(java.lang.String,java.lang.Class&lt;?&gt;[])
+				-->
+				<!--                               -->
+				<method signature="(java.lang.String,java.lang.Class&lt;?&gt;[])"
+					name="getDeclaredMethod">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.Helper.GetMethod(@0,@1,@2)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method getClassLoader() -->
+				<!--                               -->
+				<method signature="()" name="getClassLoader">
+					<target propertyGet="Assembly" />
+				</method>
+				<!--                               -->
+				<!-- method getGenericInterfaces() -->
+				<!--                               -->
+				<method signature="()" name="getGenericInterfaces">
+					<target name="GetInterfaces" />
+				</method>
+				<!--                               -->
+				<!-- method getSimpleName() -->
+				<!--                               -->
+				<method signature="()" name="getSimpleName">
+					<target propertyGet="Name" />
+				</method>
+				<!--                               -->
+				<!-- method forName(java.lang.String) -->
+				<!--                               -->
+				<method signature="(java.lang.String)" name="forName">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.Helper.GetNativeType(@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method getName() -->
+				<!--                               -->
+				<method signature="()" name="getName">
+					<target propertyGet="FullName" />
+				</method>
+				<!--                               -->
+				<!-- method getDeclaringClass() -->
+				<!--                               -->
+				<method signature="()" name="getDeclaringClass">
+					<target propertyGet="DeclaringType" />
+				</method>
+				<!--                               -->
+				<!-- method getComponentType() -->
+				<!--                               -->
+				<method signature="()" name="getComponentType">
+					<target name="GetElementType" />
+				</method>
+				<!--                               -->
+				<!-- method getMethod(java.lang.String,java.lang.Class&lt;?&gt;[]) -->
+				<!--                               -->
+				<method signature="(java.lang.String,java.lang.Class&lt;?&gt;[])"
+					name="getMethod">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.Helper.GetMethod(@0,@1,@2)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method isArray() -->
+				<!--                               -->
+				<method signature="()" name="isArray">
+					<target propertyGet="IsArray" />
+				</method>
+				<!--                               -->
+				<!-- method getPackage() -->
+				<!--                               -->
+				<method signature="()" name="getPackage">
+					<target propertyGet="Namespace" />
+				</method>
+				<!--                               -->
+				<!-- method getResourceAsStream(java.lang.String) -->
+				<!--                               -->
+				<method signature="(java.lang.String)" name="getResourceAsStream">
+					<target>
+						<format>
+<![CDATA[@0.Assembly.GetFile(@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method forName(java.lang.String,boolean,java.lang.ClassLoader) -->
+				<!--                               -->
+				<method signature="(java.lang.String,boolean,java.lang.ClassLoader)"
+					name="forName">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.Helper.GetNativeType(@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method getDeclaredConstructors() -->
+				<!--                               -->
+				<method signature="()" name="getDeclaredConstructors">
+					<target>
+						<format>
+<![CDATA[@0.GetConstructors(BindingFlags.Instance|BindingFlags.NonPublic|BindingFlags.Public|BindingFlags.Static)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method getModifiers() -->
+				<!--                               -->
+				<method signature="()" name="getModifiers">
+					<target>
+						<format>
+<![CDATA[new ILOG.J2CsMapping.Reflect.IlrModifier(@0).GetModifiers()]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method getDeclaredFields() -->
+				<!--                               -->
+				<method signature="()" name="getDeclaredFields">
+					<target>
+						<format>
+<![CDATA[@0.GetFields(BindingFlags.Instance|BindingFlags.NonPublic|BindingFlags.Public|BindingFlags.Static)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method getSuperclass() -->
+				<!--                               -->
+				<method signature="()" name="getSuperclass">
+					<target propertyGet="BaseType" />
+				</method>
+				<!--                               -->
+				<!-- method getConstructor(java.lang.Class&lt;?&gt;[]) -->
+				<!--                               -->
+				<method signature="(java.lang.Class&lt;?&gt;[])" name="getConstructor">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Reflect.Helper.GetConstructor(@0,@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method newInstance() -->
+				<!--                               -->
+				<method signature="()" name="newInstance">
+					<target>
+						<format>
+<![CDATA[Activator.CreateInstance(@0)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method getDeclaredField(java.lang.String) -->
+				<!--                               -->
+				<method signature="(java.lang.String)" name="getDeclaredField">
+					<target name="GetField" />
+				</method>
+			</class>
+
+			<!--                                        -->
+			<!-- class java.lang.ClassNotFoundException -->
+			<!--                                        -->
+			<class name="ClassNotFoundException">
+				<target packageName="System" name="TypeLoadException">
+				</target>
+			</class>
+
+			<!--                                       -->
+			<!-- class java.lang.IllegalStateException -->
+			<!--                                       -->
+			<class name="IllegalStateException">
+				<target packageName="System" name="InvalidOperationException">
+				</target>
+				<!--                               -->
+				<!-- method IllegalStateException(java.lang.Throwable) -->
+				<!--                               -->
+				<constructor signature="(java.lang.Throwable)">
+					<target>
+						<format>
+<![CDATA[new InvalidOperationException(@1.ToString())]]>
+						</format>
+					</target>
+				</constructor>
+			</class>
+			<!--                    -->
+			<!-- class java.lang.NumberFormatException -->
+			<!--                    -->
+			<class packageName="java.lang" name="NumberFormatException">
+				<target packageName="System" name="FormatException">
+				</target>
+			</class>
+
+			<!--                                               -->
+			<!-- class java.lang.UnsupportedOperationException -->
+			<!--                                               -->
+			<class name="UnsupportedOperationException">
+				<target packageName="System" name="NotSupportedException">
+				</target>
+			</class>
+
+			<!--                              -->
+			<!-- class java.lang.StringBuffer -->
+			<!--                              -->
+			<class name="StringBuffer">
+				<target packageName="System.Text" name="StringBuilder">
+				</target>
+				<!--                               -->
+				<!-- method charAt(int) -->
+				<!--                               -->
+				<method signature="(int)" name="charAt">
+					<target>
+						<format>
+<![CDATA[@0[@1]]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method substring(int,int) -->
+				<!--                               -->
+				<method signature="(int,int)" name="substring">
+					<target>
+						<format>
+<![CDATA[@0.ToString(@1,@2-@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method deleteCharAt(int) -->
+				<!--                               -->
+				<method signature="(int)" name="deleteCharAt">
+					<target>
+						<format>
+<![CDATA[@0.Remove(@1,1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method substring(int) -->
+				<!--                               -->
+				<method signature="(int)" name="substring">
+					<target>
+						<format>
+<![CDATA[@0.ToString(@1,@0.Length-@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method delete(int,int) -->
+				<!--                               -->
+				<method signature="(int,int)" name="delete">
+					<target>
+						<format>
+<![CDATA[@0.Remove(@1,@2-(@1))]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method setCharAt(int,char) -->
+				<!--                               -->
+				<method signature="(int,char)" name="setCharAt">
+					<target>
+						<format>
+<![CDATA[@0[@1]=@2]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method length() -->
+				<!--                               -->
+				<method signature="()" name="length">
+					<target propertyGet="Length" />
+				</method>
+				<!--                               -->
+				<!-- method setLength(int) -->
+				<!--                               -->
+				<method signature="(int)" name="setLength">
+					<target>
+						<format>
+<![CDATA[@0.Length=@1]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method getChars(int,int,char[],int) -->
+				<!--                               -->
+				<method signature="(int,int,char[],int)" name="getChars">
+					<target>
+						<format>
+<![CDATA[@0.CopyTo(@1,@3,@4,@2}]]>
+						</format>
+					</target>
+				</method>
+			</class>
+
+			<!--                      -->
+			<!-- class java.lang.Math -->
+			<!--                      -->
+			<class name="Math">
+				<target packageName="System" name="Math">
+				</target>
+				<!--                               -->
+				<!-- method log(double) -->
+				<!--                               -->
+				<method signature="(double)" name="log">
+					<target>
+						<format>
+<![CDATA[Math.Log(@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method floor(double) -->
+				<!--                               -->
+				<method signature="(double)" name="floor">
+					<target>
+						<format>
+<![CDATA[Math.Floor(@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method toDegrees(double) -->
+				<!--                               -->
+				<method signature="(double)" name="toDegrees">
+					<target>
+						<format>
+<![CDATA[(@1*180/Math.PI)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method abs(double) -->
+				<!--                               -->
+				<method signature="(double)" name="abs">
+					<target>
+						<format>
+<![CDATA[Math.Abs(@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method pow(double,double) -->
+				<!--                               -->
+				<method signature="(double,double)" name="pow">
+					<target>
+						<format>
+<![CDATA[Math.Pow(@1,@2)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method ceil(double) -->
+				<!--                               -->
+				<method signature="(double)" name="ceil">
+					<target>
+						<format>
+<![CDATA[Math.Ceiling(@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method round(double) -->
+				<!--                               -->
+				<method signature="(double)" name="round">
+					<target>
+						<format>
+<![CDATA[Math.Round(@1,MidpointRounding.AwayFromZero)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method min(int,int) -->
+				<!--                               -->
+				<method signature="(int,int)" name="min">
+					<target>
+						<format>
+<![CDATA[Math.Min(@1,@2)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method max(int,int) -->
+				<!--                               -->
+				<method signature="(int,int)" name="max">
+					<target>
+						<format>
+<![CDATA[Math.Max(@1,@2)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method rint(double) -->
+				<!--                               -->
+				<method signature="(double)" name="rint">
+					<target>
+						<format>
+<![CDATA[Math.Round(@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method random() -->
+				<!--                               -->
+				<method signature="()" name="random">
+					<target>
+						<format>
+<![CDATA[(new Random()).Next()]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method abs(int) -->
+				<!--                               -->
+				<method signature="(int)" name="abs">
+					<target>
+						<format>
+<![CDATA[Math.Abs(@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method abs(float) -->
+				<!--                               -->
+				<method signature="(float)" name="abs">
+					<target>
+						<format>
+<![CDATA[Math.Abs(@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method max(double,double) -->
+				<!--                               -->
+				<method signature="(double,double)" name="max">
+					<target>
+						<format>
+<![CDATA[Math.Max(@1,@2)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method min(long,long) -->
+				<!--                               -->
+				<method signature="(long,long)" name="min">
+					<target>
+						<format>
+<![CDATA[Math.Min(@1,@2)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method sqrt(double) -->
+				<!--                               -->
+				<method signature="(double)" name="sqrt">
+					<target>
+						<format>
+<![CDATA[Math.Sqrt(@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method min(double,double) -->
+				<!--                               -->
+				<method signature="(double,double)" name="min">
+					<target>
+						<format>
+<![CDATA[Math.Min(@1,@2)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method exp(double) -->
+				<!--                               -->
+				<method signature="(double)" name="exp">
+					<target>
+						<format>
+<![CDATA[Math.Exp(@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method min(float,float) -->
+				<!--                               -->
+				<method signature="(float,float)" name="min">
+					<target>
+						<format>
+<![CDATA[Math.Min(@1,@2)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method max(long,long) -->
+				<!--                               -->
+				<method signature="(long,long)" name="max">
+					<target>
+						<format>
+<![CDATA[Math.Max(@1,@2)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method abs(long) -->
+				<!--                               -->
+				<method signature="(long)" name="abs">
+					<target>
+						<format>
+<![CDATA[Math.Abs(@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method max(float,float) -->
+				<!--                               -->
+				<method signature="(float,float)" name="max">
+					<target>
+						<format>
+<![CDATA[Math.Max(@1,@2)]]>
+						</format>
+					</target>
+				</method>
+			</class>
+
+			<!-- ********************** -->
+			<!-- class java.lang.System -->
+			<!-- ********************** -->
+			<class name="System">
+				<target packageName="System" name="Console">
+				</target>
+				
+				<!--                  -->
+				<!-- method exit(int) -->
+				<!--                  -->
+				<method signature="(int)" name="exit">
+					<target>
+						<format>
+<![CDATA[Environment.Exit(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                                       -->
+				<!-- method getProperty(java.lang.String,java.lang.String) -->
+				<!--                                                       -->
+				<method signature="(java.lang.String,java.lang.String)" name="getProperty">
+					<target>
+						<format>
+<![CDATA[System.Environment.GetEnvironmentVariable(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                   -->
+				<!-- method nanoTime() -->
+				<!--                   -->
+				<method signature="()" name="nanoTime">
+					<target>
+						<format>
+<![CDATA[(System.DateTime.Now.Ticks*100)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                           -->
+				<!-- method identityHashCode(java.lang.Object) -->
+				<!--                                           -->
+				<method signature="(java.lang.Object)" name="identityHashCode">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Util.HashCodeUtil.IdentityHashCode(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                                       -->
+				<!-- method setProperty(java.lang.String,java.lang.String) -->
+				<!--                                                       -->
+				<method signature="(java.lang.String,java.lang.String)" name="setProperty">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Util.Properties props = new ILOG.J2CsMapping.Util.Properties(); props.SetProperty( @1, @2 )]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                             -->
+				<!-- method getSecurityManager() -->
+				<!--                             -->
+				<method signature="()" name="getSecurityManager">
+					<target>
+						<format>
+<![CDATA[new ILOG.J2CsMapping.Security.IlrSecurityManager()]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                            -->
+				<!-- method currentTimeMillis() -->
+				<!--                            -->
+				<method signature="()" name="currentTimeMillis">
+					<target>
+						<format>
+<![CDATA[DateTime.Now.Millisecond]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                                                 -->
+				<!-- method arraycopy(java.lang.Object,int,java.lang.Object,int,int) -->
+				<!--                                                                 -->
+				<method signature="(java.lang.Object,int,java.lang.Object,int,int)"
+					name="arraycopy">
+					<target>
+						<format>
+<![CDATA[System.Array.Copy((Array)(@1),@2,(Array)(@3),@4,@5)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                      -->
+				<!-- method getProperty(java.lang.String) -->
+				<!--                                      -->
+				<method signature="(java.lang.String)" name="getProperty">
+					<target>
+						<format>
+<![CDATA[System.Environment.GetEnvironmentVariable(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                 -->
+				<!-- method getEnv(java.lang.String) -->
+				<!--                                 -->
+				<method signature="(java.lang.String)" name="getenv">
+					<target>
+						<format>
+<![CDATA[System.Environment.GetEnvironmentVariable(@1)]]>
+						</format>
+					</target>
+				</method>				
+				
+				<!--           -->
+				<!-- Field err -->
+				<!--           -->
+				<field name="err">
+					<target name="Error">
+					</target>
+				</field>
+				
+				<!--          -->
+				<!-- Field in -->
+				<!--          -->
+				<field name="in">
+					<target name="In">
+					</target>
+				</field>
+				
+				<!--           -->
+				<!-- Field out -->
+				<!--           -->
+				<field name="out">
+					<target name="Out">
+					</target>
+				</field>
+			</class>
+
+			<!--                              -->
+			<!-- class java.lang.LinkageError -->
+			<!--                              -->
+			<class name="LinkageError">
+				<target packageName="System" name="Exception">
+				</target>
+			</class>
+
+			<!--                      -->
+			<!-- class java.lang.Enum -->
+			<!--                      -->
+			<class name="Enum">
+				<!--                               -->
+				<!-- method name() -->
+				<!--                               -->
+				<method signature="()" name="name">
+					<target name="ToString" />
+				</method>
+				<!--                               -->
+				<!-- method valueOf(java.lang.Class&lt;T&gt;,java.lang.String) -->
+				<!--                               -->
+				<method signature="(java.lang.Class&lt;T&gt;,java.lang.String)"
+					name="valueOf">
+					<target>
+						<format>
+<![CDATA[(%1)Enum.Parse(@1,@2)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method ordinal() -->
+				<!--                               -->
+				<method signature="()" name="ordinal">
+					<target>
+						<format>
+<![CDATA[(int)@0]]>
+						</format>
+					</target>
+				</method>
+			</class>
+
+			<!--                                      -->
+			<!-- class java.lang.InterruptedException -->
+			<!--                                      -->
+			<class name="InterruptedException">
+				<target packageName="System.Threading" name="ThreadInterruptedException">
+				</target>
+			</class>
+
+			<!--                                             -->
+			<!-- class java.lang.ExceptionInInitializerError -->
+			<!--                                             -->
+			<class name="ExceptionInInitializerError">
+				<target packageName="System" name="ReflectionTypeLoadException">
+				</target>
+			</class>
+
+			<!--                                                -->
+			<!-- class java.lang.ArrayIndexOutOfBoundsException -->
+			<!--                                                -->
+			<class name="ArrayIndexOutOfBoundsException">
+				<target packageName="System" name="IndexOutOfRangeException">
+				</target>
+				<!--                               -->
+				<!-- method ArrayIndexOutOfBoundsException(int) -->
+				<!--                               -->
+				<constructor signature="(int)">
+					<target>
+						<format>
+<![CDATA[new IndexOutOfRangeException(@1.ToString())]]>
+						</format>
+					</target>
+				</constructor>
+				<!--                               -->
+				<!-- method ArrayIndexOutOfBoundsException(java.lang.String) -->
+				<!--                               -->
+				<constructor signature="(java.lang.String)">
+					<target>
+						<format>
+<![CDATA[new IndexOutOfRangeException(@1.ToString())]]>
+						</format>
+					</target>
+				</constructor>
+			</class>
+
+			<!--                                        -->
+			<!-- class java.lang.InstantiationException -->
+			<!--                                        -->
+			<class name="InstantiationException">
+				<target packageName="System.Reflection" name="TargetException">
+				</target>
+			</class>
+
+			<!--                                          -->
+			<!-- class java.lang.IllegalArgumentException -->
+			<!--                                          -->
+			<class name="IllegalArgumentException">
+				<target packageName="System" name="ArgumentException">
+				</target>
+			</class>
+
+			<!--                    -->
+			<!-- class java.lang.StackTraceElement -->
+			<!--                    -->
+			<class packageName="java.lang" name="StackTraceElement">
+				<target packageName="System" name="String">
+				</target>
+			</class>
+
+			<!--                          -->
+			<!-- class java.lang.Iterable -->
+			<!--                          -->
+			<class name="Iterable">
+				<target packageName="System.Collections" name="IEnumerable">
+				</target>
+				<!--                               -->
+				<!-- method iterator() -->
+				<!--                               -->
+				<method signature="()" name="iterator">
+					<target>
+						<format>
+<![CDATA[new ILOG.J2CsMapping.Collections.IteratorAdapter(@0.GetEnumerator())]]>
+						</format>
+					</target>
+				</method>
+			</class>
+
+			<!--                                       -->
+			<!-- class java.lang.AbstractStringBuilder -->
+			<!--                                       -->
+			<class name="AbstractStringBuilder">
+				<target packageName="System.Text" name="StringBuilder">
+				</target>
+				<!--                               -->
+				<!-- method deleteCharAt(int) -->
+				<!--                               -->
+				<method signature="(int)" name="deleteCharAt">
+					<target>
+						<format>
+<![CDATA[@0.Remove(@1,1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method charAt(int) -->
+				<!--                               -->
+				<method signature="(int)" name="charAt">
+					<target>
+						<format>
+<![CDATA[@0[@1]]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method delete(int,int) -->
+				<!--                               -->
+				<method signature="(int,int)" name="delete">
+					<target>
+						<format>
+<![CDATA[@0.Remove(@1,@2)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method substring(int,int) -->
+				<!--                               -->
+				<method signature="(int,int)" name="substring">
+					<target>
+						<format>
+<![CDATA[@0.ToString(@1,@2-@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method substring(int) -->
+				<!--                               -->
+				<method signature="(int)" name="substring">
+					<target>
+						<format>
+<![CDATA[@0.ToString(@1,@0.Length-@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method setCharAt(int,char) -->
+				<!--                               -->
+				<method signature="(int,char)" name="setCharAt">
+					<target>
+						<format>
+<![CDATA[@0[@1]=@2]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method length() -->
+				<!--                               -->
+				<method signature="()" name="length">
+					<target propertyGet="Length" />
+				</method>
+				<!--                               -->
+				<!-- method setLength(int) -->
+				<!--                               -->
+				<method signature="(int)" name="setLength">
+					<target>
+						<format>
+<![CDATA[@0.Length=@1]]>
+						</format>
+					</target>
+				</method>
+			</class>
+
+			<!-- ********************** -->
+			<!-- class java.lang.String -->
+			<!-- ********************** -->
+			<class packageName="java.lang" name="String">
+				<target packageName="System" name="String">
+				</target>
+				
+				<!--                                -->
+				<!-- method split(java.lang.String) -->
+				<!--                                -->
+				<method signature="(java.lang.String)" name="split">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Text.RegExUtil.Split(@0, @1)]]>
+						</format>
+					</target>
+				</method>
+
+				<!--                                    -->
+				<!-- method split(java.lang.String,int) -->
+				<!--                                    -->
+				<method signature="(java.lang.String,int)" name="split">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Text.RegExUtil.Split(@0, @1 ,@2)]]>
+						</format>
+					</target>
+				</method>				
+				
+				<!--                    -->
+				<!-- method charAt(int) -->
+				<!--                    -->
+				<method signature="(int)" name="charAt">
+					<target>
+						<format>
+<![CDATA[@0[@1]]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                           -->
+				<!-- method equalsIgnoreCase(java.lang.String) -->
+				<!--                                           -->
+				<method signature="(java.lang.String)" name="equalsIgnoreCase">
+					<target>
+						<format>
+<![CDATA[@0.Equals(@1,StringComparison.InvariantCultureIgnoreCase)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                      -->
+				<!-- method toLowerCase(java.util.Locale) -->
+				<!--                                      -->
+				<method signature="(java.util.Locale)" name="toLowerCase">
+					<target>
+						<format>
+<![CDATA[@0.ToLower(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                 -->
+				<!-- method length() -->
+				<!--                 -->
+				<method signature="()" name="length">
+					<target propertyGet="Length" />
+				</method>
+				
+				<!--                                        -->
+				<!-- method String(byte[],java.lang.String) -->
+				<!--                                        -->
+				<constructor signature="(byte[],java.lang.String)">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Util.StringUtil.NewString(@1,@2)]]>
+						</format>
+					</target>
+				</constructor>
+				
+				<!--                       -->
+				<!-- method substring(int) -->
+				<!--                       -->
+				<method signature="(int)" name="substring">
+					<target>
+						<format>
+<![CDATA[@0.Substring(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                 -->
+				<!-- method String() -->
+				<!--                 -->
+				<constructor signature="()">
+					<target>
+						<format>
+<![CDATA[String.Empty]]>
+						</format>
+					</target>
+				</constructor>
+				
+				<!--                                   -->
+				<!-- method getBytes(java.lang.String) -->
+				<!--                                   -->
+				<method signature="(java.lang.String)" name="getBytes">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Util.StringUtil.GetBytes(@0,@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                  -->
+				<!-- method matches(java.lang.String) -->
+				<!--                                  -->
+				<method signature="(java.lang.String)" name="matches">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Util.StringUtil.Matches(@0,@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                     -->
+				<!-- method valueOf(int) -->
+				<!--                     -->
+				<method signature="(int)" name="valueOf">
+					<target>
+						<format>
+<![CDATA[@1.ToString()]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                      -->
+				<!-- method toUpperCase(java.util.Locale) -->
+				<!--                                      -->
+				<method signature="(java.util.Locale)" name="toUpperCase">
+					<target name="ToUpper" />
+				</method>
+				
+				<!--                       -->
+				<!-- method String(char[]) -->
+				<!--                       -->
+				<constructor signature="(char[])">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Util.StringUtil.NewString(@1)]]>
+						</format>
+					</target>
+				</constructor>
+				
+				<!--                                     -->
+				<!-- method getChars(int,int,char[],int) -->
+				<!--                                     -->
+				<method signature="(int,int,char[],int)" name="getChars">
+					<target>
+						<format>
+<![CDATA[@0.CopyTo(@1,@3,@4,@2-@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                 -->
+				<!-- method concat(java.lang.String) -->
+				<!--                                 -->
+				<method signature="(java.lang.String)" name="concat">
+					<target>
+						<format>
+<![CDATA[String.Concat(@0,@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                 -->
+				<!-- method String(java.lang.String) -->
+				<!--                                 -->
+				<constructor signature="(java.lang.String)">
+					<target>
+						<format>
+<![CDATA[@1]]>
+						</format>
+					</target>
+				</constructor>
+				
+				<!--                                              -->
+				<!-- method compareToIgnoreCase(java.lang.String) -->
+				<!--                                              -->
+				<method signature="(java.lang.String)" name="compareToIgnoreCase">
+					<target>
+						<format>
+<![CDATA[String.Compare(@0,@1,true)]]>
+						</format>
+					</target>				
+				</method>
+				
+				<!--                         -->
+				<!-- method codePointAt(int) -->
+				<!--                         -->
+				<method signature="(int)" name="codePointAt">
+					<target>
+						<format>
+<![CDATA[@0[@1]]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                   -->
+				<!-- method getBytes() -->
+				<!--                   -->
+				<method signature="()" name="getBytes">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Util.StringUtil.GetBytes(@0)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                      -->
+				<!-- method indexOf(java.lang.String,int) -->
+				<!--                                      -->
+				<method signature="(java.lang.String,int)" name="indexOf">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Util.StringUtil.IndexOf(@0,@1,@2)]]>
+						</format>
+					</target>
+					
+				</method>
+				<!--                                     -->
+				<!-- method startsWith(java.lang.String) -->
+				<!--                                     -->
+				<method signature="(java.lang.String)" name="startsWith">
+					<target>
+						<format>
+<![CDATA[@0.StartsWith(@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                      -->
+				<!-- method toUpperCase() -->
+				<!--                      -->
+				<method signature="()" name="toUpperCase">
+					<target name="ToUpper" />
+				</method>
+				
+				<!--                                                        -->
+				<!-- method replaceFirst(java.lang.String,java.lang.String) -->
+				<!--                                                        -->
+				<method signature="(java.lang.String,java.lang.String)" name="replaceFirst">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Util.StringUtil.ReplaceFirst(@0,@1,@2)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                      -->
+				<!-- method valueOf(char) -->
+				<!--                      -->
+				<method signature="(char)" name="valueOf">
+					<target>
+						<format>
+<![CDATA[@1.ToString()]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                       -->
+				<!-- method String(byte[]) -->
+				<!--                       -->
+				<constructor signature="(byte[])">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Util.StringUtil.NewString(@1)]]>
+						</format>
+					</target>
+				</constructor>
+				
+				<!--                       -->
+				<!-- method valueOf(float) -->
+				<!--                       -->
+				<method signature="(float)" name="valueOf">
+					<target>
+						<format>
+<![CDATA[@1.ToString()]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                  -->
+				<!-- method valueOf(java.lang.Object) -->
+				<!--                                  -->
+				<method signature="(java.lang.Object)" name="valueOf">
+					<target>
+						<format>
+<![CDATA[@1.ToString()]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                      -->
+				<!-- method toLowerCase() -->
+				<!--                      -->
+				<method signature="()" name="toLowerCase">
+					<target name="ToLower" />
+				</method>
+				
+				<!--                                    -->
+				<!-- method compareTo(java.lang.String) -->
+				<!--                                    -->
+				<method signature="(java.lang.String)" name="compareTo">
+					<target>
+						<format>
+<![CDATA[String.CompareOrdinal(@0,@1)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                                      -->
+				<!-- method replaceAll(java.lang.String,java.lang.String) -->
+				<!--                                                      -->
+				<method signature="(java.lang.String,java.lang.String)" name="replaceAll">
+					<target name="Replace" />
+				</method>
+				
+				<!--                 -->
+				<!-- method intern() -->
+				<!--                 -->
+				<method signature="()" name="intern">
+					<target>
+						<format>
+<![CDATA[string.Intern(@0)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                                    -->
+				<!-- method format(java.lang.String,java.lang.Object[]) -->
+				<!--                                                    -->
+				<method signature="(java.lang.String,java.lang.Object[])"
+					name="format">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Util.StringUtil.Format(@1,@2...)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                           -->
+				<!-- method substring(int,int) -->
+				<!--                           -->
+				<method signature="(int,int)" name="substring">
+					<target>
+						<format>
+<![CDATA[@0.Substring(@1,(@2)-(@1))]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                      -->
+				<!-- method valueOf(long) -->
+				<!--                      -->
+				<method signature="(long)" name="valueOf">
+					<target>
+						<format>
+<![CDATA[@1.ToString()]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                        -->
+				<!-- method valueOf(double) -->
+				<!--                        -->
+				<method signature="(double)" name="valueOf">
+					<target>
+						<format>
+<![CDATA[@1.ToString()]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                                         -->
+				<!-- method startsWith(java.lang.String,int) -->
+				<!--                                         -->
+				<method signature="(java.lang.String,int)" name="startsWith">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.Util.StringUtil.StartsWith(@0,@1,@2)]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                         -->
+				<!-- method valueOf(boolean) -->
+				<!--                         -->
+				<method signature="(boolean)" name="valueOf">
+					<target>
+						<format>
+<![CDATA[@1.ToString()]]>
+						</format>
+					</target>
+				</method>
+				
+				<!--                  -->
+				<!-- method isEmpty() -->
+				<!--                  -->
+				<method signature="()" name="isEmpty">
+					<target>
+						<format>
+<![CDATA[@0.Length == 0]]>
+						</format>
+					</target>
+				</method>
+			</class>
+
+			<!--                                 -->
+			<!-- class java.lang.SecurityManager -->
+			<!--                                 -->
+			<class name="SecurityManager">
+				<target packageName="ILOG.J2CsMapping.Security" name="IlrSecurityManager">
+				</target>
+				<!--                               -->
+				<!-- method checkCreateClassLoader() -->
+				<!--                               -->
+				<method signature="()" name="checkCreateClassLoader">
+					<target name="CheckCreateAssembly" />
+				</method>
+			</class>
+
+			<!--                                   -->
+			<!-- class java.lang.SecurityException -->
+			<!--                                   -->
+			<class name="SecurityException">
+				<target packageName="System.Security" name="SecurityException">
+				</target>
+			</class>
+
+			<!--                                       -->
+			<!-- class java.lang.NoSuchMethodException -->
+			<!--                                       -->
+			<class name="NoSuchMethodException">
+				<target packageName="System.Reflection" name="AmbiguousMatchException">
+				</target>
+			</class>
+
+			<!--                       -->
+			<!-- class java.lang.Error -->
+			<!--                       -->
+			<class name="Error">
+				<target packageName="System" name="Exception">
+				</target>
+			</class>
+			
+			<!--                                  -->
+			<!-- class java.lang.OutOfMemoryError -->
+			<!--                                  -->
+			<class name="OutOfMemoryError">
+			    <target packageName="System" name="OutOfMemoryException"/>
+			</class>
+
+			<!--                                        -->
+			<!-- class java.lang.IllegalAccessException -->
+			<!--                                        -->
+			<class name="IllegalAccessException">
+				<target packageName="System" name="MemberAccessException">
+				</target>
+			</class>
+
+			<!--                           -->
+			<!-- class java.lang.Throwable -->
+			<!--                           -->
+			<class name="Throwable">
+				<target packageName="System" name="Exception">
+				</target>
+				<!--                               -->
+				<!-- method getStackTrace() -->
+				<!--                               -->
+				<method signature="()" name="getStackTrace">
+					<target>
+						<format>
+<![CDATA[@0.StackTrace]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method getCause() -->
+				<!--                               -->
+				<method signature="()" name="getCause">
+					<target propertyGet="InnerException" />
+				</method>
+				<!--                               -->
+				<!-- method getLocalizedMessage() -->
+				<!--                               -->
+				<method signature="()" name="getLocalizedMessage">
+					<target propertyGet="Message" />
+				</method>
+				<!--                               -->
+				<!-- method getMessage() -->
+				<!--                               -->
+				<method signature="()" name="getMessage">
+					<target propertyGet="Message" />
+				</method>
+				<!--                               -->
+				<!-- method printStackTrace(java.io.PrintStream) -->
+				<!--                               -->
+				<method signature="(java.io.PrintStream)" name="printStackTrace">
+					<target>
+						<format>
+<![CDATA[@1.WriteLine(@0.StackTrace)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method printStackTrace(java.io.PrintWriter) -->
+				<!--                               -->
+				<method signature="(java.io.PrintWriter)" name="printStackTrace">
+					<target>
+						<format>
+<![CDATA[@1.WriteLine(@0.StackTrace)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method printStackTrace() -->
+				<!--                               -->
+				<method signature="()" name="printStackTrace">
+					<target>
+						<format>
+<![CDATA[Console.Error.WriteLine(@0.StackTrace)]]>
+						</format>
+					</target>
+				</method>
+			</class>
+
+			<!--                           -->
+			<!-- class java.lang.Cloneable -->
+			<!--                           -->
+			<class name="Cloneable">
+				<target packageName="System" name="ICloneable">
+				</target>
+			</class>
+
+			<!--                                            -->
+			<!-- class java.lang.CloneNotSupportedException -->
+			<!--                                            -->
+			<class name="CloneNotSupportedException">
+				<target packageName="System" name="Exception">
+				</target>
+			</class>
+
+			<!--                                    -->
+			<!-- class java.lang.ClassCastException -->
+			<!--                                    -->
+			<class name="ClassCastException">
+				<target packageName="System" name="InvalidCastException">
+				</target>
+			</class>
+
+			<!--                             -->
+			<!-- class java.lang.ClassLoader -->
+			<!--                             -->
+			<class name="ClassLoader">
+				<target packageName="System.Reflection" name="Assembly">
+				</target>
+				<!--                               -->
+				<!-- method getSystemClassLoader() -->
+				<!--                               -->
+				<method signature="()" name="getSystemClassLoader">
+					<target name="GetEntryAssembly" />
+				</method>
+				<!--                               -->
+				<!-- method getResource(java.lang.String) -->
+				<!--                               -->
+				<method signature="(java.lang.String)" name="getResource">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.IO.IOUtility.GetResource(@0,@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method loadClass(java.lang.String,boolean) -->
+				<!--                               -->
+				<method signature="(java.lang.String,boolean)" name="loadClass">
+					<target name="GetType" />
+				</method>
+				<!--                               -->
+				<!-- method getResourceAsStream(java.lang.String) -->
+				<!--                               -->
+				<method signature="(java.lang.String)" name="getResourceAsStream">
+					<target>
+						<format>
+<![CDATA[ILOG.J2CsMapping.IO.IOUtility.GetResourceAsStream(@0,@1)]]>
+						</format>
+					</target>
+				</method>
+				<!--                               -->
+				<!-- method loadClass(java.lang.String) -->
+				<!--                               -->
+				<method signature="(java.lang.String)" name="loadClass">
+					<target name="GetType" />
+				</method>
+			</class>
+
+			<!--                         -->
+			<!-- class java.lang.Runtime -->
+			<!--                         -->
+			<class name="Runtime">
+				<!--                               -->
+				<!-- method availableProcessors() -->
+				<!--                               -->
+				<method signature="()" name="availableProcessors">
+					<target>
+						<format>
+<![CDATA[(int)(Math.Log((double)((int)System.Diagnostics.Process.GetCurrentProcess().ProcessorAffinity+1),2))]]>
+						</format>
+					</target>
+				</method>
+			</class>
+
+			<!--                                            -->
+			<!-- class java.lang.NegativeArraySizeException -->
+			<!--                                            -->
+			<class name="NegativeArraySizeException">
+				<target packageName="System" name="IndexOutOfRangeException">
+				</target>
+			</class>
+
+			<!--                               -->
+			<!-- class java.lang.StringBuilder -->
+			<!--                               -->
+			<class name="StringBuilder">
+				<target packageName="System.Text" name="StringBuilder">
+				</target>
+				<!--                               -->
+				<!-- method delete(int,int) -->
+				<!--                               -->
+				<method signature="(int,int)" name="delete">
+					<target>
+						<format>
+<![CDATA[@0.Remove(@1,@2)]]>
+						</format>
+					</target>
+				</method>
+			</class>
+
+			<!--                           -->
+			<!-- class java.lang.Exception -->
+			<!--                           -->
+			<class name="Exception">
+				<target packageName="System" name="Exception">
+				</target>
+
+				<constructor signature="(java.lang.Throwable)">
+					<target>
+						<format>
+<![CDATA[new Exception(@1.Message, @1)]]>
+						</format>
+						<formatForSuperInvocation>
+<![CDATA[@1.Message, @1]]>
+						</formatForSuperInvocation>
+					</target>
+				</constructor>
+			</class>
+		</package>
+
+	</packages>
+</mapping>

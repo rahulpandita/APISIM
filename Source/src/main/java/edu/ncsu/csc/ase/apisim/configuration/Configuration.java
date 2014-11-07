@@ -11,6 +11,7 @@ public class Configuration
 		MIDP,
 		CLDC,
 		JAVA,
+		DOTNET,
 		UNKNOWN
 	}
 	
@@ -56,6 +57,8 @@ public class Configuration
 	public static final String MIDP_DUMP_PATH = PROJECT_PATH + "TEMPFILES" + File.separator + "midp.api";
 	
 	public static final String JAVA_DUMP_PATH = PROJECT_PATH + "TEMPFILES" + File.separator + "java.api";
+	
+	public static final String DOTNET_DUMP_PATH = PROJECT_PATH + "TEMPFILES" + File.separator + "DONET.api";
 	
 	public static final String ANDROID_ALL_CLASS_URL = "http://developer.android.com/reference/classes.html";
 	
