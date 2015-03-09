@@ -1,56 +1,90 @@
-\vspace*{-2ex}
 \section{Introduction}
 \label{sec:introduction}
-\vspace*{-1ex}
-
-%Thus, specifications  play an important role in software reuse. They capture the important features regrading behavior of a reused method.
-With ever increasing computing platforms finding there way to consumers, software developers increasingly release different versions of their application either to address a business requirement or to survive in competing market.
-
-For example, a mobile software developers often release their applications for all the popular mobile platforms such as Android, iOS, and Windows. In context of desktop software, many well-known projects such as JUnit, Hibernate provide multiple versions in different languages, in an attempt to lure developer community to use these libraries across different languages.
-
-Manually migrating a software from one platform(/language) to another is prohibitively time consuming and may be error prone. Recent researches partially alleviate the issue. As they require a programmer to manually describe how Application Programming Interfaces (APIs) of a source platform(/language) maps to API's of the target platform(/language). 
-
-Given a typical platform(/language) expose a large number of API's for developers to reuse, manually writing these mappings is prohibitively resource intensive and may result in manual error. Thus the aforementioned researches and tools typically support a limited subset of API's.
-
-In the literature, there exists approaches that address the problem finding mapping between API's, leveraging static~\cite{Zhong2010ICSE} and dynamic~\cite{Gokhale2013ICSE} analysis. However, these approach rely existence of manually ported (or at least functionally similar) software across source and target API's. 
 
 
-However, for two arbitrary libraries, there may not be implementations of the same project in these two libraries, and the APIs used in such projects may be limited. What if such mapping software pairs are not available. Moreover, does existence of such pair guarantee coverage of all API elements? More detail's about pro- and cons in related work section.
-
-To address these shortcomings we propose a different approach for inferring likely mapping between API's. In particular, we propose the use of Natural Language processing of API documents to infer such mapping.  
-
-  
-API documentation provides developers with useful information about class/interface hierarchies within the software. Additionally, API documents also provides information about how to use a particular method within a class by means of method descriptions. Method descriptions typically describe specifications in terms of the expectations of the method arguments and functionality of method in general.
-
-
-We plan to leverage these method descriptions to find the likely mapping. However, it is not trivial to use natural langauge processing on API documents to infer likely mappings. In particular, our technique addresses the following technical challenges to infer likely mappings:
-
-\begin{enumerate}
-	\item \textit{Programming Keywords}. Method descriptions often contain programming keywords (e.g., \CodeIn{true, null, buffer}), which have a different meaning in the context of programs, in contrast to general linguistics. For instance,\textit{``This method also returns false if path is null''}. In this sentence, words `false' and `null' are nouns in the context of object-oriented languages such as Java and C\#, whereas in general linguistics these words are adjectives. Thus, these keywords need to be handled differently.
-		
-	\item \textit{Semantic Equivalence}. A legal usage in natural language can be described in different words and semantic structures. For instance, consider the following two fragments that describe the similar functionality specification: \textit{``Flushes this data output stream. This forces any buffered output bytes to be written out to the stream.'}' and \textit{``Writes buffered data to the target stream and calls the flush method of the target stream.''}. Thus, there is a need to identify the semantic equivalence of legal usage described in different ways.
-		
-		To address this challenge, we propose a new technique called \textit{equivalence analysis} based on identified grammatical relationships (main nouns and verbs) of a sentence.
-	
-	\item \textit {Partial Functionality}. There are significant number of cases when the functionality in a source API method is broken across multiple methods in target API. For instance \CodeIn{Graphics.drawChar()} method in J2ME API is mapped to methods \CodeIn{Paint.setColor();Canvas.drawText()}in Android API.
-	
-		To address this challenge, we propose a lightweight \CodeIn{Type} analysis.
-		
-\end{enumerate}
+Software is ubiquitous and lately people are increasingly interacting with applications
+that run on variety of software platforms through their consumer devices on daily basis.
+For instance, a typical user may view emails on his/her android or iOS or windowsPhone handheld
+device such as a mobile phone or a tablet while on the go. 
+The user then can switch to a desktop environment such as Windows or Linux or OSX 
+in an office like setting through either a web browser or 
+a standalone application such as Microsoft Outlook or Mozilla Thunderbird.
 
 
+To retain users across different platforms,
+developers are increasingly releasing different versions of their applications.
+For example, a mobile software developers often release their applications
+for all the popular mobile platforms such as Android, iOS, and Windows.
+In context of desktop software, many well-known projects such as JUnit,
+Hibernate provide multiple versions in different languages,
+in an attempt to attract developer community to use these
+libraries across different languages.
 
 
-In summary, our approach leverages natural language description of API's to infer likely mapping thus facilitating cross API migration of applications. As our approach analyzes API documents in natural language, it can be reused independent of the programming language of the library. To the best of our knowledge, ours is the first approach that analyzes natural language API descriptions to infer likely mapping across API's.
+However, manually migrating a software from one platform (/language) to another
+can be time consuming and may be error prone.
+Existing language migration tools such as Java2CSTranslator~\cite{java2cstranslator}
+partially alleviate the problem, as they require a programmer to manually describe how Application Programming Interfaces (APIs) of a source platform(/language) maps to API's of the target platform(/language). 
+Given a typical platform(/language) expose a large number of API's for developers to reuse, manually writing these mappings is prohibitively resource intensive and may result in manual error.
 
-Our paper makes the following major contributions:
+
+\textit{The goal of this research is to support software developers 
+in migrating an application from one API to another
+by automatically inferring method mappings across API using text mining
+on the natural language API method descriptions}
+
+
+In the literature, there exist approaches that address the problem of finding mapping between  software API's using static~\cite{Zhong2010ICSE} and dynamic~\cite{Gokhale2013ICSE} analysis. 
+Recently Nguyen et al.~\cite{nguyen2014statistical} also proposed to apply statistical language translation techniques to achieve language mapping by mining large open source software repositories.  
+However, aforementioned approaches rely on the presence of manually ported (or at least functionally similar) software across source and target API's.
+Furthermore, accuracy of static analysis and mining based approaches~\cite{Zhong2010ICSE,nguyen2014statistical} is dependent upon the quality of the code under analysis.
+Likewise, accuracy of dynamic approaches like \cite{Gokhale2013ICSE} is function of the quality and completeness of test case to execute the comprehensive API behavior dynamically. 
+
+
+To address the shortcomings of existing program-analysis based approaches,
+we propose to use the natural language API method descriptions
+to infer method mappings across APIs.
+Our key intuition is:
+\textit{``since the documentation is targeted towards developers,
+	there may be an overlap in the language used to describe similar concepts that can be leveraged.''}
+In general, API documentation provides developers with useful information
+about class/interface hierarchies within the software.
+Additionally, API documents also provides information about
+how to use a particular method within a class by means of method descriptions.
+Method descriptions typically describe specifications in terms of
+the expectations of the method arguments and functionality of method in general.
+
+
+This paper presents  \tool : An approach that leverages the natural language method descriptions to find the likely mapping.
+In particular, \tool\ proposes to create a vector space model~\cite{singhal2001modern,manning2008introduction} of the target API method descriptions. 
+\tool\ then queries the vector space model of target API using  
+automatically generated queries from the source API method descriptions.
+\tool\ automates the query generation in source API using the concepts from text mining such as emphasizing (or de-emphasizing) certain keywords over others and querying multiple facets (such as class description, package names etc...).
+
+
+We pose the following research question :
+\textit{How accurately can the similarity in the language of API method descriptions
+	be leveraged to infer API Mappings?}
+To answer our question, we apply \tool\ to infer API mappings across:
+1) \CodeIn{Java} and \CodeIn{C\# API}; 2) \CodeIn{J2ME} and \CodeIn{Android} API.
+We next compare the inferred mappings with state-of-the-art code mining based approaches~\cite{nguyen2014statistical,Gokhale2013ICSE}.
+Our results indicate that \tool\ is effective in inferring API mappings with the more than XX accuracy.
+
+In summary, \tool\ leverages natural language description of API's to infer likely mapping thus facilitating cross API migration of applications. As our approach analyzes API documents in natural language, it can be reused independent of the programming language of the library. Our paper makes the following major contributions:
 \begin{itemize}
 	\item A technique that effectively infers mapping across source and target API.
-	\item A prototype implementation of our approach based on extending the Stanford Parser~\cite{SNLP,SNLP1}, which is a natural language parser to derive the grammatical structure of sentences. An open source implementation of our prototype can be found at our website\footnote{\url{http://research.csc.ncsu.edu/ase/projects/pint/}}. 
-	\item An evaluation of our approach on J2ME and Android API
+	\item A prototype implementation of our approach based on extending the Apache Lucene~\cite{lucene} and Mallet~\cite{mccallum2002mallet}.
+	An open source implementation of our prototype can be found at our website\footnote{\url{http://research.csc.ncsu.edu/ase/projects/pint/}}. 
+	\item An evaluation of our approach on J2ME to Android API and Java to C\# API
 \end{itemize}
 
 
-The rest of the paper is organized as follows. Section~\ref{sec:background} presents the  background on code contracts as well as NLP. Section~\ref{sec:example} presents an real world examples that motivate our approach. Section~\ref{sec:approach} presents our approach. Section~\ref{sec:evaluation} presents evaluation of our approach. Section~\ref{sec:discussion} presents a brief discussion and future work. Section~\ref{sec:related} discusses related work. Finally, Section~\ref{sec:conclusion} concludes.
+The rest of the paper is organized as follows.
+Section~\ref{sec:example} presents an real world examples that motivate our approach. Section~\ref{sec:related} discusses related work.
+Section~\ref{sec:background} presents the  background on Text Mining.
+Section~\ref{sec:approach} presents our approach.
+Section~\ref{sec:evaluation} presents evaluation of our approach.
+Section~\ref{sec:discussion} presents a brief discussion and future work.
+Finally, Section~\ref{sec:conclusion} concludes.
 
 

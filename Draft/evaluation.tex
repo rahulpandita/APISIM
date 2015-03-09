@@ -14,9 +14,198 @@ We conducted an evaluation to assess the effectiveness of our approach. In our e
 \subsection{Subjects}
 \label{sub:subject}
 
-We used the API documents of the following two libraries as subjects for our evaluation. 
+We used the API documents of the following library pairs as subjects for our evaluation. 
 
 
-\textbf{J2ME}. Java Platform, Micro Edition, or Java ME, is a Java platform designed for embedded systems (mobile devices are one kind of such systems). Target devices range from industrial controls to mobile phones (especially feature phones) and set-top boxes. Java ME was formerly known as Java 2 Platform, Micro Edition (J2ME).
+\textbf{J2ME-Android}. Java Platform, Micro Edition, or Java ME, is a Java platform designed for embedded systems (mobile devices are one kind of such systems). Target devices range from industrial controls to mobile phones (especially feature phones) and set-top boxes. Java ME was formerly known as Java 2 Platform, Micro Edition (J2ME).
 
-\textbf{Android}.Android is a Linux-based operating system designed primarily for touchscreen mobile devices such as smartphones and tablet computers.
+Android is a Linux-based operating system designed primarily for touchscreen mobile devices such as smartphones and tablet computers.
+
+\textbf{Java -C\#}
+
+
+
+
+Effectiveness in free form queries:
+
+\begin{table}
+	\begin{center}	
+		\caption{Comparison with SNIFF}
+			\begin{tabular}{lrr}
+				\topline
+				\headcol Query	& \multicolumn{2}{c}{Relevant Mtd rank}\\
+				\headcol 		& SNIFF	& \tool \\
+				\midline 
+				
+				\rowcol get active editor window from eclipse workbench	& 1 & 1\\
+				\rowpln parse a java source and create ast & 1 & 1\\
+				\rowcol connect to a database using jdbc & 1 & 1\\
+				\rowpln display directory dialog from viewer in eclipse & 1 & 1\\
+				\rowcol read a line of text from a file & 1 & 1\\
+				\rowpln return an audio clip from url & 1 & 1\\
+				\rowcol execute SQL query & 2 & 1\\
+				\rowpln current selection from eclipse workbench & 1 & 1\\ 
+				\bottomline
+				%----------------- END TABLE DATA ------------------------ 
+			\end{tabular}
+			\label{tab:SNIFFComp}
+	\end{center}
+\end{table}
+
+
+\begin{table}
+	\begin{center}	
+		\caption{Comparison with Rosetta}
+		\begin{tabular}{rlr}
+			\topline
+			\headcol S. No.	& Method & \tool\ Rank\\
+			\midline
+
+				\rowcol	1	&	Alert.setTimeout	&	\\
+				\rowpln	2	&	Alert.setType	&	\\
+				\rowcol	3	&	Canvas.getHeight	&	\\
+				\rowpln	4	&	Canvas.getWidth	&	\\
+				\rowcol	5	&	Canvas.repaint	&	\\
+				\rowpln	6	&	Canvas.serviceRepaints	&	\\
+				\rowcol	7	&	Canvas.setFullScreenMode	&	\\
+				\rowpln	8	&	Command.getCommandType	&	\\
+				\rowcol	9	&	Command.getLabel	&	\\
+				\rowpln	10	&	Display.getCurrent	&	\\
+				\rowcol	11	&	Display.getDisplay	&	\\
+				\rowpln	12	&	Display.setCurrent	&	\\
+				\rowcol	13	&	Displayable.addCommand	&	\\
+				\rowpln	14	&	Displayable.getHeight	&	\\
+				\rowcol	15	&	Displayable.getWidth	&	\\
+				\rowpln	16	&	Displayable.removeCommand	&	\\
+				\rowcol	17	&	Font.charWidth	&	\\
+				\rowpln	18	&	Font.getHeight	&	\\
+				\rowcol	19	&	Font.stringWidth	&	\\
+				\rowpln	20	&	Form.addCommand	&	\\
+				\rowcol	21	&	Form.setCommandListener	&	\\
+				\rowpln	22	&	game.GameCanvas.getHeight	&	\\
+				\rowcol	23	&	game.GameCanvas.getWidth	&	\\
+				\rowpln	24	&	game.GameCanvas.repaint	&	\\
+				\rowcol	25	&	game.GameCanvas.serviceRepaints	&	\\
+				\rowpln	26	&	game.GameCanvas.setFullScreenMode	&	\\
+				\rowcol	27	&	game.Layer.getHeight	&	\\
+				\rowpln	28	&	game.Layer.getWidth	&	\\
+				\rowcol	29	&	game.Layer.setPostion	&	\\
+				\rowpln	30	&	game.Sprite.paint	&	\\
+				\rowcol	31	&	game.Sprite.setFrame	&	\\
+				\rowpln	32	&	game.Sprite.setPosition	&	\\
+				\rowcol	33	&	game.Sprite.setRefPixelPosition	&	\\
+				\rowpln	34	&	Graphics.clipRect	&	\\
+				\rowcol	35	&	Graphics.drawArc	&	\\
+				\rowpln	36	&	Graphics.drawChar	&	\\
+				\rowcol	37	&	Graphics.drawImage	&	\\
+				\rowpln	38	&	Graphics.drawLine	&	\\
+				\rowcol	39	&	Graphics.drawRect	&	\\
+				\rowpln	40	&	Graphics.drawString	&	\\
+				\rowcol	41	&	Graphics.fillArc	&	\\
+				\rowpln	42	&	Graphics.fillRect	&	\\
+				\rowcol	43	&	Graphics.fillRoundRect	&	\\
+				\rowpln	44	&	Graphics.fillTriangle	&	\\
+				\rowcol	45	&	Graphics.getClipHeight	&	\\
+				\rowpln	46	&	Graphics.getClipWidth	&	\\
+				\rowcol	47	&	Graphics.getClipX	&	\\
+				\rowpln	48	&	Graphics.getClipY	&	\\
+				\rowcol	49	&	Graphics.setClip	&	\\
+				\rowpln	50	&	Graphics.setColor	&	\\
+				\rowcol	51	&	Graphics.setFont	&	\\
+				\rowpln	52	&	Image.createImage	&	\\
+				\rowcol	53	&	Image.getGraphics	&	\\
+				\rowpln	54	&	Image.getHeight	&	\\
+				\rowcol	55	&	Image.getWidth	&	\\
+				\bottomline
+				%----------------- END TABLE DATA ------------------------ 
+		\end{tabular}
+		\label{tab:SNIFFComp}
+	\end{center}
+\end{table}
+
+Discussion with Authors
+
+None of the mapping methods point to AlertDIalog Class in Android that seems to be the class implementing alert functionality.
+Furthermore, consider the first-mapping
+
+\CodeIn{Alert.setString Paint.setAlpha; CompundButton.setChecked}
+
+None of the mapped methods set text in the alert. How to interpret the mapping in such cases?
+
+Amruta's Response :
+
+
+First, a note of clarification. As explained in the paper, we restricted ourselves to sequences of length up to 2 when inferring mappings (i.e., {A->p;q}, or {A->p}). So this might mean that p-q only implements some of the functionality of A on the target platform, and we still count this as a valid mapping.
+
+With that said, let me answer your questions: Let's consider the mapping: "Alert.setString -> Paint.setAlpha; CompundButton.setChecked". In many of our traces, we observed that setting a string first involves setting the attributes of the paint (with is used to draw the text), followed by a call to setText method, which led us to believe that the sequence "Paint.setAlpha; CompundButton.setChecked" could be a likely mapping, if at least in part. The same reasoning applies to mappings of the other two methods in your list. 
+
+Technically, you're right that "Alert" related methods would be implemented using methods of the "AlertDialog" class. However, "Alert" is used to display messages, and we considered Android methods/sequences that could also be used to display messages as valid mappings. These methods/sequences may not strictly be considered "AlertDialogs" in the Android sense, but can still be part of rendering a text message on the screen. 
+
+\begin{table*}
+	\begin{center}	
+		\caption{Comparison with Tien Nyugen}
+		\begin{tabular}{rllr}
+			\topline
+			\headcol S.No.	&	Source Class	&	Target Class	&	\tool\ Ranking \\
+			\midline
+
+				\rowcol	
+				\rowpln	1	&	java.util.concurrent.atomic.AtomicBoolean	&		&	\\
+				\rowcol	2	&	java.util.jar.JarInputStream	&		&	\\
+				\rowpln	3	&	java.util.jar.Attributes	&		&	\\
+				\rowcol	4	&	java.util.jar.Manifest	&		&	\\
+				\rowpln	5	&	java.util.LinkedHashMap	&	System.Collections.Hashtable	&	\\
+				\rowcol	6	&	java.util.AbstractCollection	&	System.Collections.ICollection	&	\\
+				\rowpln	7	&	java.util.Date	&	System.DateTime	&	\\
+				\rowcol	8	&	java.util.HashSet	&	ILOG.J2CsMapping.Collections.HashedSet	&	\\
+				\rowpln	9	&	java.util.SortedSet	&	ILOG.J2CsMapping.Collections.SortedSet	&	\\
+				\rowcol	10	&	java.util.Set	&	ILOG.J2CsMapping.Collections.ISet	&	\\
+				\rowpln	11	&	java.util.TreeSet	&	ILOG.J2CsMapping.Collections.SortedSet	&	\\
+				\rowcol	12	&	java.util.BitSet	&	ILOG.J2CsMapping.Collections.BitSet	&	\\
+				\rowpln	13	&	java.util.Hashtable	&	System.Collections.Hashtable	&	\\
+				\rowcol	14	&	java.util.TreeMap	&	System.Collections.SortedList	&	\\
+				\rowpln	15	&	java.util.SortedMap	&	System.Collections.SortedList	&	\\
+				\rowcol	16	&	java.util.Iterator	&	ILOG.J2CsMapping.Collections.IIterator	&	\\
+				\rowpln	17	&	java.util.IdentityHashMap	&	System.Collections.Hashtable	&	\\
+				\rowcol	18	&	java.util.Vector	&	System.Collections.ArrayList	&	\\
+				\rowpln	19	&	java.util.WeakHashMap	&	System.Collections.Hashtable	&	\\
+				\rowcol	20	&	java.util.StringTokenizer	&	ILOG.J2CsMapping.Util.StringTokenizer	&	\\
+				\rowpln	21	&	java.util.EventObject	&	ILOG.J2CsMapping.Util.EventObject	&	\\
+				\rowcol	22	&	java.util.Locale	&	System.Globalization.CultureInfo	&	\\
+				\rowpln	23	&	java.util.Map.Entry	&	System.Collections.DictionaryEntry	&	\\
+				\rowcol	24	&	java.util.UUID	&	System.Guid	&	\\
+				\rowpln	25	&	java.util.EventListener	&	ILOG.J2CsMapping.Util.IEventListener	&	\\
+				\rowcol	26	&	java.util.AbstractList	&	System.Collections.ArrayList	&	\\
+				\rowpln	27	&	java.util.TimerTask	&	ILOG.J2CsMapping.Util.IlTimerTask	&	\\
+				\rowcol	28	&	java.util.Timer	&	ILOG.J2CsMapping.Util.IlTimer	&	\\
+				\rowpln	29	&	java.util.EmptyStackException	&	System.Exception	&	\\
+				\rowcol	30	&	java.util.Collections	&	ILOG.J2CsMapping.Collections.Collections	&	\\
+				\rowpln	31	&	java.util.ListIterator	&	ILOG.J2CsMapping.Collections.IListIterator	&	\\
+				\rowcol	32	&	java.util.HashMap	&	System.Collections.Hashtable	&	\\
+				\rowpln	33	&	java.util.Calendar	&	ILOG.J2CsMapping.Util.Calendar	&	\\
+				\rowcol	34	&	java.util.ResourceBundle	&	System.Resources.ResourceManager	&	\\
+				\rowpln	35	&	java.util.Properties	&	ILOG.J2CsMapping.Util.Properties	&	\\
+				\rowcol	36	&	java.util.Stack	&	System.Collections.Stack	&	\\
+				\rowpln	37	&	java.util.MissingResourceException	&	System.Resources.MissingManifestResourceException	&	\\
+				\rowcol	38	&	java.util.Comparator	&	System.Collections.IComparer	&	\\
+				\rowpln	39	&	java.util.ArrayList	&	System.Collections.ArrayList	&	\\
+				\rowcol	40	&	java.util.Collection	&	System.Collections.ICollection	&	\\
+				\rowpln	41	&	java.util.Map	&	System.Collections.IDictionary	&	\\
+				\rowcol	42	&	java.util.ConcurrentModificationException	&	System.InvalidOperationException	&	\\
+				\rowpln	43	&	java.util.Arrays	&	System.Array	&	\\
+				\rowcol	44	&	java.util.Currency	&		&	\\
+				\rowpln	45	&	java.util.NoSuchElementException	&	System.InvalidOperationException	&	\\
+				\rowcol	46	&	java.util.Enumeration	&	ILOG.J2CsMapping.Collections.IIterator	&	\\
+				\rowpln	47	&	java.util.LinkedList	&	ILOG.J2CsMapping.Collections.LinkedList	&	\\
+				\rowcol	48	&	java.util.GregorianCalendar	&	ILOG.J2CsMapping.Util.GregorianCalendar	&	\\
+				\rowpln	49	&	java.util.Random	&	System.Random	&	\\
+				\rowcol	50	&	java.util.PropertyResourceBundle	&		&	\\
+				\rowpln	51	&	java.util.List	&	System.Collections.IList	&	\\
+				\rowcol	52	&	java.util.regex.Pattern	&	ILOG.J2CsMapping.Text.Pattern	&	\\
+				\rowpln	53	&	java.util.regex.Matcher	&	ILOG.J2CsMapping.Text.Matcher	&	\\
+				\bottomline
+				%----------------- END TABLE DATA ------------------------ 
+			\end{tabular}
+			\label{tab:J2CSharpComp}
+		\end{center}
+	\end{table*}

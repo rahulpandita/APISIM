@@ -1,15 +1,85 @@
 \section{Background}
 \label{sec:background}
 
-Although, well suited for human communication, converting natural language into unambiguous specifications that can be processed and understood by computers is very difficult.  Recently, a lot of exciting work has been carried out in the area of Natural Language Processing (NLP), with existing NLP techniques proving to be fairly accurate in highlighting grammatical structure of a natural language sentence. However, existing NLP techniques are still in the processing phase and not in understanding phase.  We briefly introduce the NLP techniques used in this work.
+
+Text mining is a broad research area including but not limited to the techniques facilitating retrieval/manipulation of useful information from a large corpus to text. 
+It is claimed that more than 80\% of business intelligence is captured in unstructured data \textbf{need citation}. A large part of this is in documents containing narrative text, such as reports, presentations, web data, design documents, etc. Text mining is used to unearth the knowledge buried in these documents through a combination of extraction and analytical methods. 
+
+As opposed to traditional data mining, text mining analyzes free-form text spread across a large number of documents (rather than data localized and maintained within a database). In order to analyze this data, text mining uses concepts from traditional data analytics, natural language processing, and data modeling.
+
+We next introduce the concepts from text mining that have been used in the presented approach.
 
 
-\textbf{Parts Of Speech (POS) tagging}~\cite{Klein03,KleinNIPS03}. Also known as \textit{`word tagging'}, \textit{`grammatical tagging'} and \textit{`word-sense disambiguation'}, these techniques aim to identify the part of speech (such as noun, verbs, etc.), a particular word in a sentence belongs to. The most commonly used technique is to train a classification parser over a previously known data set. Current state of the art approaches been have demonstrated to achieve 97\%~\cite{SNLP1} accuracy in classifying POS tags for well written news articles.
+\textbf{Indexing}~\cite{frakes1992introduction,manning2008introduction}: Indexing is the process of extracting text data from source documents and storing them in well-defined indexes. Indexing process constitutes of following steps.
 
-\textbf{Phrase and clause parsing}. Also known as chunking, this technique divides a sentence into a constituent set of words (or phrases) that logically belong together (such as a Noun Phrase and Verb Phrase). Chunking thus further enhances the syntax of a sentence on top of POS tagging. Current state-of-the-art approaches can achieve around 90\%~\cite{SNLP1} accuracy in classifying phrases and clauses over well written news articles.
+A document is divided into constituent unit, known as tokens, based on a well-defined criterion. A token is usually an individually identifiable unit of the document (such as a word) and relates to the individual terms stored in the index.Once the tokens within each document are identified, they are added to the index, with the corresponding link to the document and associated term frequencies. An optional pre-processing step further assists with indexing: such as removing stop-words, grouping similar words together. 
 
-\textbf{Typed Dependencies}~\cite{Marneffe06LREC,Marneffe08COLING}. The Stanford typed dependencies representation  is designed to provide a simple description of grammatical relationships directed towards non-linguistics experts to perform NLP related tasks. It provides a hierarchical structure for the dependencies with precise definitions of what each dependency means, thus facilitating machine based manipulation of natural language text.
+%However, simply adding all identified tokens to the index can introduce a number of inefficiencies, primarily because of the commonly used terms (like articles, prepositions, conjunctions, etc.), which not only bloat the index, but can also adversely affect the search/retrieval results. To avoid this, a common strategy is to clean the tokens to eliminate unwanted words before populating the index. Another pre-processing strategy that is commonly employed is to group together similar words (based on their meanings) to provide a semantic search capability and improve the hit rate when searching for related terms.\textbf{Describe attribute definition}
 
-\textbf{Named Entity Recognition}~\cite{Finkel05ACL}. Also known as \textit{`entity identification'} and \textit{`entity extraction'}, these techniques are a subtask of IE that aims to classify words in a sentence into predefined categories such as names, quantities, expression of times, etc. These techniques help in associating predefined semantic meaning to a word or a group of words (phrase), thus facilitating semantic processing of named entities. 
+Among various indexing strategies,
+use of inverted file indexing~\cite{frakes1992introduction} is well suited for large
+document collections. In its simplest form inverted file index maintains the
+mapping of terms and their location in a text collection. For
+instance a text document can be thought of as a collection
+of $m$ words. It is made up of a sequence of $n$ unique words
+such that $n <= m$. The number n is usually far less than
+$m$ as most of the words are repeated while forming a document. 
+For instance the word ``the'' is repeated many times in
+this paper. The set of unique words within an index forms
+the ``Term List'' $v$ of the index. If a pointer (say numeric
+location) is associated with each word in $v$ to the location
+of that word in text document, the resultant data structure
+is a form of inverted file index. As the document collection
+grows, the number of documents matching a word in the
+index becomes sparser.
 
-\textbf{Co-reference Resolution}~\cite{RaghunathanEMNLP10,LeeCoNLL11}. Also known as \textit{`anaphora resolution'}, these techniques aim to identify multiple expressions present across (or within) the sentences, that point out to the same thing or \textit{`referant'}. These techniques are useful for extracting information; especially if the information encompasses many sentences in a document. 
+The index is oftentimes annotated with the information of the frequency of
+occurrence of each term in the document. This representation of a document
+as a vector of frequencies of terms is referred to as \textit{vector space model}~\cite{singhal2001modern,frakes1992introduction}.
+
+\textbf{TF-IDF Similarity}\cite{manning2008introduction}: Term -frequency inverse-document-frequency (\CodeIn{tf-idf}) is a numerical statistic that is intended to capture the importance of a term to a document in a corpus.
+Often used as a weighting metric in information retrieval and text mining,
+the \CodeIn{tf-idf} weight increases proportionally to frequency of the occurrence of a term in a document, however the weight is also offset by the frequency of occurrence the term in the corpus.
+
+\textbf{Cosine Similarity}\cite{singhal2001modern}: In mathematics Cosine similarity is a numerical statistic to measure the similarity between two vector.
+Cosine similarity is defined as a dot product of magnitude of two vectors.
+In context of text mining, the Cosine similarity is used to capture the similarity between two documents represented as term frequency vectors.
+
+\textbf{Topic Modelling}: Latent Drichilet Allocation (LDA)~\cite{blei2003latent,panichella2013effectively} is an Information Retrieval (IR) 
+model to fit a probabilistic model on the term occurrences in a corpus of documents.
+Given a corpus of $n$ documents, a dictionary is created.
+The dictionary consists a list of all the unique terms ($m$) occurring in all $n$ documents.
+Next, a term-to-document matrix $M$ of size $(m\ X\ n)$ is generated, where each row represents all the terms occurring the corpus and columns representing the all the documents in the corpus.
+Each cell of $M$ ($M[i,j]$) contains the weight of the $i^{th}$ term in $m$ in the $j^{th}$ document in $n$.
+In the simplest implementation \CodeIn{tf-idf} is used to calculate the weight of a term in a document.
+
+
+Next LDA transforms term-to-document matrix $M$ into a topic-to-document matrix $\theta$ of size $(k\ X\ n)$,
+where each row represents the topics occurring in the corpus and columns representing the all the documents in the corpus. 
+This transformation is achieved by identifying latent variables (topics) in the documents. 
+The parameter $k$ is independently provided as an argument to the LDA algorithm.
+Each cell of $\theta\ (\theta[i,j])$ contains the probability of the $i^{th}$ topic in $k$ occurring in the $j^{th}$ document in $n$. Since $k\ <<\ m$, LDA is a mapping of the documents from the term space $m$ to the topic space $k$~\cite{panichella2013effectively}.
+
+
+\begin{enumerate}
+	\item $k$, the total number of topics to be extracted from a corpus of documents.  
+	\item $n$, the total number of gibbs iteration, where a single iteration involves a gibbs sampler sampling a topic for each term occurring in the corpus.
+	\item $\alpha$, this parameter affects the distribution of topics across documents. A high $\alpha$ means that each document is likely to contain a mixture of most of the topics. Conversely, a low $\alpha$ means each document is likely to contain mixture of fewer or one topic. 
+	\item $\beta$, this parameter affects the distribution of terms in each topic. A high $\beta$ means that each topic is likely to contain a uniform distribution of terms. Conversely, a low $\beta$ means terms are not uniformly distributed across topics. 
+	
+\end{enumerate}
+
+
+
+%Although, well suited for human communication, converting natural language into unambiguous specifications that can be processed and understood by computers is very difficult.  Recently, a lot of exciting work has been carried out in the area of Natural Language Processing (NLP), with existing NLP techniques proving to be fairly accurate in highlighting grammatical structure of a natural language sentence. However, existing NLP techniques are still in the processing phase and not in understanding phase.  We briefly introduce the NLP techniques used in this work.
+%
+%
+%\textbf{Parts Of Speech (POS) tagging}~\cite{Klein03,KleinNIPS03}. Also known as \textit{`word tagging'}, \textit{`grammatical tagging'} and \textit{`word-sense disambiguation'}, these techniques aim to identify the part of speech (such as noun, verbs, etc.), a particular word in a sentence belongs to. The most commonly used technique is to train a classification parser over a previously known data set. Current state of the art approaches been have demonstrated to achieve 97\%~\cite{SNLP1} accuracy in classifying POS tags for well written news articles.
+%
+%\textbf{Phrase and clause parsing}. Also known as chunking, this technique divides a sentence into a constituent set of words (or phrases) that logically belong together (such as a Noun Phrase and Verb Phrase). Chunking thus further enhances the syntax of a sentence on top of POS tagging. Current state-of-the-art approaches can achieve around 90\%~\cite{SNLP1} accuracy in classifying phrases and clauses over well written news articles.
+%
+%\textbf{Typed Dependencies}~\cite{Marneffe06LREC,Marneffe08COLING}. The Stanford typed dependencies representation  is designed to provide a simple description of grammatical relationships directed towards non-linguistics experts to perform NLP related tasks. It provides a hierarchical structure for the dependencies with precise definitions of what each dependency means, thus facilitating machine based manipulation of natural language text.
+%
+%\textbf{Named Entity Recognition}~\cite{Finkel05ACL}. Also known as \textit{`entity identification'} and \textit{`entity extraction'}, these techniques are a subtask of IE that aims to classify words in a sentence into predefined categories such as names, quantities, expression of times, etc. These techniques help in associating predefined semantic meaning to a word or a group of words (phrase), thus facilitating semantic processing of named entities. 
+%
+%\textbf{Co-reference Resolution}~\cite{RaghunathanEMNLP10,LeeCoNLL11}. Also known as \textit{`anaphora resolution'}, these techniques aim to identify multiple expressions present across (or within) the sentences, that point out to the same thing or \textit{`referant'}. These techniques are useful for extracting information; especially if the information encompasses many sentences in a document. 

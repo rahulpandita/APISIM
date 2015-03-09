@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{blei2003latent}
+D.~M. Blei, A.~Y. Ng, and M.~I. Jordan.
+\newblock Latent dirichlet allocation.
+\newblock {\em the Journal of machine Learning research}, 3:993--1022, 2003.
+
 \bibitem{Marneffe06LREC}
 M.~C. de~Marneffe, B.~MacCartney, and C.~D. Manning.
 \newblock Generating typed dependency parses from phrase structure parses.
@@ -81,6 +86,12 @@ R.~Pandita, X.~Xiao, H.~Zhong, T.~Xie, S.~Oney, and A.~Paradkar.
 \newblock Inferring method specifications from natural language {API}
   descriptions.
 \newblock In {\em Proc. 34th ICSE}, 2012.
+
+\bibitem{panichella2013effectively}
+A.~Panichella, B.~Dit, R.~Oliveto, M.~Di~Penta, D.~Poshyvanyk, and A.~De~Lucia.
+\newblock How to effectively use topic models for software engineering tasks?
+  an approach based on genetic algorithms.
+\newblock In {\em Proc. 35th ICSE}, pages 522--531, 2013.
 
 \bibitem{RaghunathanEMNLP10}
 K.~Raghunathan, H.~Lee, S.~Rangarajan, N.~Chambers, M.~Surdeanu, D.~Jurafsky,

@@ -1,3 +1,46 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: Draft.aux
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: Draft.aux
 The style file: abbrv.bst
 Database file #1: rahul.bib
+You've used 29 entries,
+            2118 wiz_defined-function locations,
+            674 strings with 8584 characters,
+and the built_in function-call counts, 12077 in all, are:
+= -- 1166
+> -- 538
+< -- 16
++ -- 216
+- -- 182
+* -- 767
+:= -- 1807
+add.period$ -- 86
+call.type$ -- 29
+change.case$ -- 179
+chr.to.int$ -- 0
+cite$ -- 29
+duplicate$ -- 530
+empty$ -- 1017
+format.name$ -- 182
+if$ -- 2679
+int.to.chr$ -- 0
+int.to.str$ -- 29
+missing$ -- 28
+newline$ -- 147
+num.names$ -- 56
+pop$ -- 249
+preamble$ -- 1
+purify$ -- 150
+quote$ -- 0
+skip$ -- 423
+stack$ -- 0
+substring$ -- 790
+swap$ -- 198
+text.length$ -- 16
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 116
+warning$ -- 0
+while$ -- 109
+width$ -- 31
+write$ -- 311
