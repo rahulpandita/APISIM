@@ -152,6 +152,7 @@ public class AllClassCrawler {
 			ObjectInputStream ois = new ObjectInputStream(fin);
 			while (fin.available() > 0) {
 				clazz = (APIType) ois.readObject();
+				sanitize(clazz);
 				classList.add(clazz);
 			}
 			ois.close();
@@ -160,5 +161,18 @@ public class AllClassCrawler {
 		}
 		System.err.println("Read " + classList.size() + " documents from file");
 		return classList;
+	}
+
+	private static void sanitize(APIType clazz) {
+		if(clazz.getName()==null)
+			clazz.setName("");
+		if(clazz.getPackage()==null)
+			clazz.setPackage("");
+		if(clazz.getApiName()==null)
+			clazz.setApiName("");
+		if(clazz.getSummary()==null)
+			clazz.setSummary("");
+		
+		
 	}
 }

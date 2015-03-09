@@ -23,6 +23,10 @@ public class APIMtdIndexer extends Indexer<APIMtd>{
 		idx_path = Configuration.API_IDX_FILE;
 	}
 	
+	public APIMtdIndexer(String idxPath) {
+		idx_path = idxPath;
+	}
+
 	@Override
 	public List<APIMtd> readObjects() throws Exception {
 		List<APIMtd> mtdList = new ArrayList<>();
@@ -30,10 +34,11 @@ public class APIMtdIndexer extends Indexer<APIMtd>{
 		List<APIType> clazzList = new ArrayList<>();
 		
 		clazzList.addAll(AllClassCrawler.read(Configuration.ANDROID_DUMP_PATH));
-		clazzList.addAll(AllClassCrawler.read(Configuration.CLDC_DUMP_PATH));
-		clazzList.addAll(AllClassCrawler.read(Configuration.MIDP_DUMP_PATH));
-		clazzList.addAll(AllClassCrawler.read(Configuration.JAVA_DUMP_PATH));
-		clazzList.addAll(AllClassCrawler.read(Configuration.DOTNET_DUMP_PATH));
+		//clazzList.addAll(AllClassCrawler.read(Configuration.CLDC_DUMP_PATH));
+		//clazzList.addAll(AllClassCrawler.read(Configuration.MIDP_DUMP_PATH));
+		//clazzList.addAll(AllClassCrawler.read(Configuration.JAVA_DUMP_PATH));
+		//clazzList.addAll(AllClassCrawler.read(Configuration.DOTNET_DUMP_PATH));
+		//clazzList.addAll(AllClassCrawler.read(Configuration.ECLIPSE_DUMP_PATH));
 		
 		for (APIType clazz : clazzList) {
 			mtdList.addAll(clazz.getConstructors());
@@ -55,7 +60,9 @@ public class APIMtdIndexer extends Indexer<APIMtd>{
 		doc.add(new TextField(Configuration.IDX_FIELD_CLASS_NAME, getParentClassName(mtd), Field.Store.YES));
 		doc.add(new TextField(Configuration.IDX_FIELD_CLASS_BASE_NAME, clean(mtd.getParentClass().getName()), Field.Store.YES));
 		doc.add(new TextField(Configuration.IDX_FIELD_CLASS_NAME_PKG_SPLIT, getParentClassName(mtd).replaceAll("\\.", " "), Field.Store.YES));
+		doc.add(new TextField(Configuration.IDX_FIELD_CLASS_BASE_NAME_CCSPLIT, mtd.getParentClass().getPackage().replaceAll("\\.", " ") + " " + StringUtil.splitCamelCase(mtd.getParentClass().getName()), Field.Store.YES));
 		doc.add(new TextField(Configuration.IDX_FIELD_PKG_NAME, mtd.getParentClass().getPackage(), Field.Store.YES));
+		doc.add(new TextField(Configuration.IDX_FIELD_CLASS_DESCRIPTION, mtd.getParentClass().getSummary()==null?"":mtd.getParentClass().getSummary(), Field.Store.YES));
 		//METHOD RELATED
 		doc.add(new TextField(Configuration.IDX_FIELD_MODIFIER,  clean(mtd.getModifier()), Field.Store.YES));
 		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_NAME, mtd.getName(), Field.Store.YES));

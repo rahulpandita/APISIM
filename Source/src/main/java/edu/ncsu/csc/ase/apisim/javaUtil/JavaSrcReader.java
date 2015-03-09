@@ -1,5 +1,6 @@
 package edu.ncsu.csc.ase.apisim.javaUtil;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -17,6 +18,7 @@ import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
+import edu.ncsu.csc.ase.apisim.configuration.Configuration.APITYPE;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
 import edu.ncsu.csc.ase.apisim.webcrawler.AllClassCrawler;
 
@@ -29,19 +31,38 @@ public class JavaSrcReader {
 	
 	private static Map<String, APIType> typeMap = new HashMap<String, APIType>();
 	
+	private APITYPE api_type;
 	
-	public static void main(String[] args) throws Exception{
-		String srcPath = "data\\src.zip";
-		String extention = ".java";
-		JavaSrcReader jsr = new JavaSrcReader();
-		jsr.readSrcZip(srcPath, extention);
+	public JavaSrcReader(APITYPE type) {
+		api_type = type;
 	}
 
+	public static void main(String[] args) throws Exception{
+		processJava();
+		//processEclipse();
+	}
+	
+	public static void processJava() throws Exception
+	{
+		String srcPath = "data"+File.separator+"src.zip";
+		String extention = ".java";
+		JavaSrcReader jsr = new JavaSrcReader(APITYPE.JAVA);
+		jsr.readSrcZip(srcPath, extention, Configuration.JAVA_DUMP_PATH);
+	}
+	
+	public static void processEclipse() throws Exception
+	{
+		String srcPath = "data"+File.separator+"eclipse.zip";
+		String extention = ".java";
+		JavaSrcReader jsr = new JavaSrcReader(APITYPE.ECLIPSE);
+		jsr.readSrcZip(srcPath, extention, Configuration.ECLIPSE_DUMP_PATH);
+	}
+	
 	/**
 	 * @param srcPath
 	 * @throws IOException
 	 */
-	public void readSrcZip(String srcPath, String extention) throws IOException {
+	public void readSrcZip(String srcPath, String extention, String op_path) throws IOException {
 		try(ZipFile zipFile = new ZipFile(srcPath);)
 		{
 		    Enumeration<? extends ZipEntry> entries = zipFile.entries();
@@ -77,14 +98,14 @@ public class JavaSrcReader {
 		   
 		    List<APIType> typLst = new ArrayList<APIType>();
 		    typLst.addAll(typeMap.values());
-		    AllClassCrawler.write(typLst, Configuration.JAVA_DUMP_PATH);
+		    AllClassCrawler.write(typLst, op_path);
 		    
 		}
 	    
 	}
 	
 	private List<APIType> getAPIType(CompilationUnit cu) {
-		JavaAPITypeVisitor visitor = new JavaAPITypeVisitor();
+		JavaAPITypeVisitor visitor = new JavaAPITypeVisitor(api_type);
 		cu.accept(visitor);
 		//TODO Decorate with TypeInformation
 		return visitor.getApiTypeList();

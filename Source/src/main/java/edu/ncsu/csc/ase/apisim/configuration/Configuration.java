@@ -12,7 +12,8 @@ public class Configuration
 		CLDC,
 		JAVA,
 		DOTNET,
-		UNKNOWN
+		ECLIPSE,
+		UNKNOWN 
 	}
 	
 	public enum OOTYPE{
@@ -26,7 +27,7 @@ public class Configuration
 	
 	public static final Version LUCENE_VERSION =  Version.LUCENE_4_9;
 
-	public static final String API_LIBS_PATH = PROJECT_PATH + "libs"+ File.separator + "API" + File.separator;
+	public static final String API_LIBS_PATH = PROJECT_PATH + "libs"+  "API" + File.separator;
 	
 	public static final String ROSETTA_RESULTS = PROJECT_PATH + "data"+ File.separator + "Rosetta_Results.xls";
 
@@ -57,6 +58,8 @@ public class Configuration
 	public static final String MIDP_DUMP_PATH = PROJECT_PATH + "TEMPFILES" + File.separator + "midp.api";
 	
 	public static final String JAVA_DUMP_PATH = PROJECT_PATH + "TEMPFILES" + File.separator + "java.api";
+	
+	public static final String ECLIPSE_DUMP_PATH = PROJECT_PATH + "TEMPFILES" + File.separator + "eclipse.api";
 	
 	public static final String DOTNET_DUMP_PATH = PROJECT_PATH + "TEMPFILES" + File.separator + "DONET.api";
 	
@@ -95,6 +98,8 @@ public class Configuration
 	public static final String IDX_FIELD_METHOD_NAME = "MTD_NAME";
 	
 	public static final String IDX_FIELD_DESCRIPTION = "DESC";
+	
+	public static final String IDX_FIELD_CLASS_DESCRIPTION = "CLASS_DESC";
 	
 	public static final String IDX_FIELD_METHOD_DESCRIPTION_CATCHALL = "DESC_CATCHALL";
 	

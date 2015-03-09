@@ -111,6 +111,22 @@
 			<artifactId>mallet</artifactId>
 			<version>2.0.7</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.eclipse.ui.workbench</groupId>
+			<artifactId>texteditor</artifactId>
+			<version>3.3.0-v20070606-0010</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.swt.carbon</groupId>
+			<artifactId>macosx</artifactId>
+			<version>3.3.0-v3346</version>
+		</dependency>
+		<dependency>
+			<groupId>eclipse</groupId>
+			<artifactId>eclipse-workbench</artifactId>
+			<version>2.1.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

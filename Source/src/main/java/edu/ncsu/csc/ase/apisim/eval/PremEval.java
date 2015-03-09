@@ -79,8 +79,12 @@ public abstract class PremEval<T> {
 		Query query = null;
 		try
 		{
-		query = MultiFieldQueryParser.parse(Configuration.LUCENE_VERSION,
-				termVector, columnVector, clauseVector, analyser);
+			
+			query = MultiFieldQueryParser.parse(Configuration.LUCENE_VERSION,
+					termVector, columnVector, clauseVector, analyser);
+			
+						
+			
 		}
 		catch(Exception e)
 		{
@@ -124,7 +128,6 @@ public abstract class PremEval<T> {
 			searcher.search(query, collector);
 		else
 			searcher.search(query, filter, collector);
-		
 		ScoreDoc[] hits = collector.topDocs().scoreDocs;
 		for (int i = 0; i < hits.length; ++i) 
 		{

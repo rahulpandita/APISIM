@@ -29,10 +29,10 @@ import edu.ncsu.csc.ase.apisim.webcrawler.apiutil.PackageSummaryCrawler;
 
 public class InstanceCreator {
 
-	private static final String STOP_WORD_FILE_LOC = "data\\en.txt"; 
+	private static final String STOP_WORD_FILE_LOC = "data"+ File.separator + "en.txt"; 
 	
 	private static List<String> evalList;
-	
+	private static List<String> evalList1;
 	public static InstanceList createInstanceList(List<Instance> trainList) throws Exception {
 		
 		// Begin by importing documents from text to feature sequences
@@ -266,6 +266,37 @@ public class InstanceCreator {
 		}
 		
 		return createInstanceList(insList);
+	}
+	
+	public static InstanceList createSearchInstanceListJava(boolean includeMtd, String javaDumpPath) throws Exception {
+		List<Instance> insList = new ArrayList<Instance>();
+		for(APIType type: AllClassCrawler.read(javaDumpPath))
+		{
+			if (getEvalList1().contains(type.getPackage().trim()))
+			{
+				if(includeMtd)
+					insList.add(new DataInstance(true, type));
+				else
+					insList.add(new DataInstance(type));
+			}
+		}
+		
+		return createInstanceList(insList);
+	}
+	
+	public synchronized static List<String> getEvalList1()
+	{
+		if(evalList1 == null)
+		{
+			evalList1 = new ArrayList<String>();
+			evalList1.add("java.io");
+			evalList1.add("java.lang");
+			evalList1.add("java.math");
+			evalList1.add("java.net");
+			evalList1.add("java.sql");
+			evalList1.add("java.util");
+		}
+		return evalList1;
 	}
 
 }

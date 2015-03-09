@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: APISIM Draft.aux
+The style file: abbrv.bst
+Database file #1: rahul.bib
+Warning--empty journal in mccallum2002mallet
+Warning--empty journal in treudeextracting
+Warning--empty year in treudeextracting
+You've used 31 entries,
+            2118 wiz_defined-function locations,
+            679 strings with 8695 characters,
+and the built_in function-call counts, 12425 in all, are:
+= -- 1225
+> -- 528
+< -- 19
++ -- 212
+- -- 178
+* -- 790
+:= -- 1866
+add.period$ -- 95
+call.type$ -- 31
+change.case$ -- 183
+chr.to.int$ -- 0
+cite$ -- 34
+duplicate$ -- 544
+empty$ -- 1037
+format.name$ -- 178
+if$ -- 2761
+int.to.chr$ -- 0
+int.to.str$ -- 31
+missing$ -- 30
+newline$ -- 155
+num.names$ -- 58
+pop$ -- 255
+preamble$ -- 1
+purify$ -- 153
+quote$ -- 0
+skip$ -- 428
+stack$ -- 0
+substring$ -- 808
+swap$ -- 201
+text.length$ -- 19
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 122
+warning$ -- 3
+while$ -- 115
+width$ -- 33
+write$ -- 332
+(There were 3 warnings)

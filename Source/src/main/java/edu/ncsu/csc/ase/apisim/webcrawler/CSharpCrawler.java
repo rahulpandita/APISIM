@@ -14,6 +14,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import edu.ncsu.csc.ase.apisim.configuration.Configuration;
 import edu.ncsu.csc.ase.apisim.configuration.Configuration.APITYPE;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIMtd;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
@@ -38,7 +39,7 @@ public class CSharpCrawler
 		{
 		CSharpCrawler crawler = new CSharpCrawler();
 		List<APIType> abc = crawler.crawl();
-		AllClassCrawler.write(abc, "DONET.api");
+		AllClassCrawler.write(abc, Configuration.DOTNET_DUMP_PATH);
 		}catch(Exception e)
 		{
 			e.printStackTrace();
@@ -59,6 +60,7 @@ public class CSharpCrawler
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	public static void read() {
 		try {
 			FileInputStream fis = new FileInputStream("hashmap.ser");
@@ -104,6 +106,7 @@ public class CSharpCrawler
 
 	private APIType crawlAPIType(String typeUrl) {
 		assert typeUrl!=null && typeUrl!="";
+		
 		Element ele = getContent(typeUrl,0);
 		
 		Element element = ele;
@@ -122,6 +125,7 @@ public class CSharpCrawler
 				break;
 			case "Interface":
 				type.setInterfaze(true);
+				break;
 			case "Method":
 				return null;
 			case "Event":
@@ -136,9 +140,11 @@ public class CSharpCrawler
 		
 		type.setApiName(APITYPE.DOTNET.name());
 		type.setName(element.text().split("\\s")[0].trim());
+		//if(type.getName().contains("IComparer"))
+		//	System.out.println("here!!");
 		type.setPackage(nameSpaceExtactor(typeUrl));
 		
-		if(!(type.isEnums()||type.isInterfaze()))	
+		if(!(type.isEnums()))	
 		{
 			String memberUrl = getMmeberUrl(ele, type.getName()+ " Members");
 			assert memberUrl.length()>0;
@@ -259,7 +265,6 @@ public class CSharpCrawler
 			if(hmap.containsKey(url))
 			{
 				doc = Jsoup.parse(hmap.get(url));
-				System.out.println("cache hit!");
 			}
 			else
 			{
@@ -284,7 +289,6 @@ public class CSharpCrawler
 				getContent(url, recursion+1);
 		}
 		assert element!=null;
-		System.err.println("LAST URL Crawled " + url);
 		return element;
 	}
 	
@@ -324,7 +328,7 @@ public class CSharpCrawler
 			elements = ele.getElementsByClass(HTML_CSS_TABLEDIV_CLASS);
 		}catch(Exception e)
 		{
-			System.out.println("here");
+			//System.out.println("here");
 		}
 		assert elements!=null;
 		assert elements.size()>0;

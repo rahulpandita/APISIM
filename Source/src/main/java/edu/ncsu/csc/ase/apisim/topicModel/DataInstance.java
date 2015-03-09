@@ -21,6 +21,11 @@ public class DataInstance extends Instance {
 	}
 
 	public DataInstance(boolean b, APIType type) {
-		super(type.toString(), 3, 2, type.getApiName()+":"+type.getPackage()+"."+type.getName());
+		super(type.toString()==null?"":type.toString(), 
+				3, 
+				2, 
+				type.getApiName()==null?"":type.getApiName()+":"+
+				type.getPackage()==null?"":type.getPackage()+"."+
+				type.getName()==null?"":type.getName());
 	}
 }

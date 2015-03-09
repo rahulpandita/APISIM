@@ -42,8 +42,7 @@ public class ASTBuilder {
 			MethodVerifier visitor = new MethodVerifier();
 			visitor.mtd = mtd;
 			cu.accept(visitor);
-			System.out.println("here");
-			
+			//System.out.println("here");
 		} 
 		
 		

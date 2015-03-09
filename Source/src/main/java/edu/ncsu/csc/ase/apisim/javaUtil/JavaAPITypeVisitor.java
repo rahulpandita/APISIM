@@ -4,22 +4,28 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+import java.util.regex.Pattern;
 
 import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.FieldDeclaration;
 import org.eclipse.jdt.core.dom.Javadoc;
+import org.eclipse.jdt.core.dom.MemberRef;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
+import org.eclipse.jdt.core.dom.MethodRef;
 import org.eclipse.jdt.core.dom.Name;
 import org.eclipse.jdt.core.dom.PackageDeclaration;
 import org.eclipse.jdt.core.dom.SingleVariableDeclaration;
 import org.eclipse.jdt.core.dom.TagElement;
+import org.eclipse.jdt.core.dom.TextElement;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
+import org.jsoup.Jsoup;
 
-import edu.ncsu.csc.ase.apisim.configuration.Configuration;
+import edu.ncsu.csc.ase.apisim.configuration.Configuration.APITYPE;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIField;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIMtd;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
+import edu.ncsu.csc.ase.apisim.util.StringUtil;
 
 /**
  * 
@@ -34,7 +40,10 @@ public class JavaAPITypeVisitor extends ASTVisitor{
 	
 	private String pkgStr = "";
 	
-	public JavaAPITypeVisitor() {
+	private APITYPE api_type;
+	
+	public JavaAPITypeVisitor(APITYPE type) {
+		this.api_type = type;
 		apiTypeList = new ArrayList<>();
 	}
 	
@@ -55,8 +64,12 @@ public class JavaAPITypeVisitor extends ASTVisitor{
 		//Only looking for public API
 		if(Modifier.isPublic(node.getModifiers()))
 		{
+			
+			if(node.getName().getFullyQualifiedName().equalsIgnoreCase("LinkedHashMap"))
+				System.out.println("here");
+			
 			APIType type = new APIType(pkgStr, node.getName().getIdentifier());
-			type.setApiName(Configuration.APITYPE.JAVA.name());
+			type.setApiName(api_type.name());
 			apiTypeList.add(type);
 			type.setModifier(Modifier.toString(node.getModifiers()));
 			curType.push(type);
@@ -103,8 +116,8 @@ public class JavaAPITypeVisitor extends ASTVisitor{
 	
 	public boolean visit(MethodDeclaration node) 
 	{
-		//Only looking for public API
-		if(Modifier.isPublic(node.getModifiers()))
+		if(Modifier.isPublic(node.getModifiers())
+				||(curType.peek().isInterfaze() && (Modifier.toString(node.getModifiers())).trim().equals("")))
 		{
 			APIMtd mtd = new APIMtd(Modifier.toString(node.getModifiers()), node.getName().getIdentifier());
 			mtd.setParentClass(curType.peek());
@@ -151,6 +164,7 @@ public class JavaAPITypeVisitor extends ASTVisitor{
 	
 
 	private String getJavadocAsString(Javadoc javadoc) {
+		
 		if(javadoc==null)
 			return "";
 		List<?> slt = javadoc.tags();
@@ -167,15 +181,70 @@ public class JavaAPITypeVisitor extends ASTVisitor{
 			for(Object subObj: te.fragments())
 			{
 				if(subObj instanceof Name)
+				{
 					buff.append(((Name)subObj).getFullyQualifiedName());
-				else
+				}
+				else if(subObj instanceof TextElement)
+				{
 					buff.append(subObj.toString());
-				buff.append("\n");
+				}
+				else if((subObj instanceof MemberRef) || (subObj instanceof MethodRef))
+				{
+					buff.append((subObj.toString().replaceAll(Pattern.quote("#"), " ")).trim());
+				}
+				else if(subObj instanceof TagElement)
+				{
+					TagElement subte = (TagElement)subObj;
+					switch (subte.getTagName()) {
+					case TagElement.TAG_LINK:
+						if(subte.fragments().size()<=1)
+							buff.append(subte.fragments().get(0));						
+						else
+						{
+							for(Object obj:subte.fragments().subList(1,subte.fragments().size()))
+								buff.append(obj.toString()).append(" ");
+						}
+						break;
+					case TagElement.TAG_LINKPLAIN:
+						if(subte.fragments().size()<=1)
+							buff.append(subte.fragments().get(0));						
+						else
+						{
+							for(Object obj:subte.fragments().subList(1,subte.fragments().size()))
+								buff.append(obj.toString()).append(" ");
+						}
+						break;
+					case TagElement.TAG_INHERITDOC:
+						break;
+					case TagElement.TAG_DOCROOT:
+						break;
+					case TagElement.TAG_LITERAL:
+						if(subte.fragments().size()==1)
+							buff.append(subte.fragments().get(0));						
+						else if(subte.fragments().size()>2)
+							buff.append(subte.fragments().get(0));						
+						else
+							buff.append(subte.fragments().get(1));
+						break;
+					case TagElement.TAG_CODE:
+						for(Object obj:subte.fragments())
+							buff.append(obj.toString()).append(" ");
+						break;
+					default:
+							buff.append(subte.toString());
+						break;
+					}
+				}
+				else
+				{
+					System.out.println(subObj.getClass());
+				}
+				buff.append(" ");
 			}
 			
 			buff.append("\n");
 		}
-		return buff.toString();
+		return buff.toString().replaceAll("\\s+", " ").trim();
 	}
 	
 

@@ -46,7 +46,7 @@ public class TokenSequenceClean extends Pipe implements Serializable
 		try {
 
 			BufferedReader input = null;
-			input = new BufferedReader (new FileReader ("data\\stopwordsNew.txt"));
+			input = new BufferedReader (new FileReader ("data/stopwordsNew.txt"));
 			String line;
 
 			while (( line = input.readLine()) != null) {
