@@ -61,7 +61,7 @@ public class IndexBuilder
 		try 
 		{
 			//BUILD Standard Index
-			Indexer<?> idxr = new APIMtdIndexer(Configuration.PROJECT_PATH + "idx" + File.separator + "tmp");
+			Indexer<?> idxr = new APIMtdIndexer(Configuration.PROJECT_PATH + "idx" + File.separator + "dotnet");
 			idxr.rebuildIndexes();
 		} 
 		catch (Exception e) {

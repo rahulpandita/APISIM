@@ -1,93 +1,136 @@
 \section{Approach}
 \label{sec:approach}
 
+We next present our approach for inferring 
+likely mappings of API methods  across APIs. 
+Figure~\ref{fig:approachOverview} provides an overview of \tool\ approach. 
+\tool\ consists of three major components: 1) an Indexer; 2) Query Builder; and 3) Searcher components.
+
+
+The Indexer accepts the API documents of the target API
+and creates indexes (a vector space model) of these documents 
+by extracting intermediate contents from the method descriptions. 
+The Query Builder accepts the API documents of the source API
+and creates queries to be executed on the indexes (a vector space model).
+Finally, Searcher component execute the queries on the indexes and 
+generates an ordered set of the API methods from target API documents as
+mapping results to be presented to the developers for confirmation. 
+We next describe each component in detail.
+
+
 \begin{figure}
 	\begin{center}
 		%\begin{framed}
-		\includegraphics[scale=0.45,clip=true, trim=100pt 80pt 100pt 100pt]{ApproahOverview.eps}
+		\includegraphics[scale=0.45,clip=true, trim=120pt 80pt 10pt 80pt]{ApproahOverview.eps}
 		%\end{framed}
 		\caption{\label{fig:approachOverview} Overview of \tool\ approach}
 	\end{center}
 \end{figure}
 
 
+\subsection{Indexer}
+\label{sub:Approach_Indexer}
+
+This component accepts the API method descriptions of the target API
+and creates indexes (a vector space model) of these documents.
+In particular, Indexer extracts the following fields from the API method descriptions:
+
+\begin{itemize} 
+	\item \textbf{F1) Type Name}: The name of enclosing class/interface of the method. For the method description of \CodeIn{drawString} shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the type Name as ``Graphics''.
+	
+	\item \textbf{F2) Package Name}: The package name of the enclosing type. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the package name as ``javax.microedition.lcdui''.
+	
+	\item \textbf{F3) Method Name}: The name of the method. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the method name as ``drawString''.
+	
+	\item \textbf{F4) Method Modifiers}: The access modifiers of the method. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the method modifiers as ``public''.
+	
+	\item \textbf{F5) Method Return Type}: The return type of the method. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the return type as ``void''.
+	
+	\item \textbf{F6) Exceptions Thrown}: Name of the exceptions thrown by the method. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the exception names as ``NullPointerException'' and ``IllegalArgumentException''.
+	
+	\item \textbf{F7) Parameters}: The name and type information of parameters. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the parameter name and type information as ``String str'',``int x'',``int y'', and ``int anchor''.
+	
+	\item \textbf{F8) Class Description}: The description of enclosing type. Class description is not shown in Figure~\ref{fig:drawStringJavadoc} for the space considerations.
+	
+	\item \textbf{F9) Method Description}: The description of the method. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the method description as the all the text except method deceleration in Line 1.
+			 
+\end{itemize}
+
+This step is required to extract the desired descriptive text from the API method descriptions.
+Additionally, this step allows \tool\ to deal with the \textit{structure} issue as presented in Section~\ref{sec:example}.
+Different API documents may have different styles of presenting information to developers.
+Such stylistic differences may also include the difference in the level of the details presented to developers.
+\tool\ relies only on basic fields that are generally available for API methods across different presentation styles. 
+
+After extracting desired information, extracted text is further preprocessed.
+The preprocessing steps are required to make the text amenable to text mining techniques
+that are used in the subsequent phases of the \tool\ approach.
+In particular, \tool\ performs the following basic prepossessing steps: 
+
+\begin{itemize}
+	
+	\item \textbf{P1) Presentation Elements}: A typical API method description is often interleaved with presentation elements for better readability. For instance, \CodeIn{JavaDoc} provides a list of identifiers such as  \CodeIn{@Code} and  \CodeIn{@link}. These identifiers are automatically translated into presentation markup such as links and fonts. Although such elements are part of the description text, these elements often cause noise in the text mining techniques to compute similarity. Therefore, this preprocessing step cleans the method descriptions to remove such elements. We use a static list of presentation elements to achieve cleaning in this step with relatively high accuracy.
+	
+	\item \textbf{P2) Split Package Notation}: In method descriptions, the ``.'' character is used as a separator character for package names like ``javax.microedition.lcdui''. We use regular expressions to split the package name into constituent words to facilitate search on individual words in the package name. For example, ``javax.microedition.lcdui'' is broken into ``javax microedition lcdui''.
+
+	\item \textbf{P3) Split CamelCase Notation}: API method descriptions are often interleaved with programming identifiers such as class names and method names.
+	Oftentimes these identifiers use CamelCase notation.
+	The CamelCase notation is the \textit{de facto} mechanism used by programmers for combining phrases into a single word, such that each word in the phrase begins with a capital letter.
+	Previous research~\cite{Little2009} demonstrated the benefit of splitting the CameCase word into its constituent phrase for automated code completion.
+	\tool\ splits such identifiers into constituent phrase to better facilitate searching.
+	\tool\ leverages the well-formed structure of CamelCase notations to encode a regular expression to achieve splitting with relatively high accuracy.
+	For example, ``drawString'' is broken into ``draw String''.   
+
+	\item \textbf{P4) Lowercase}: This step involves converting the text description to lower case. The step is performed to normalize the text for making the keyword match case intensive, further increasing the range of queries.
+	
+	\item \textbf{P5) Stemming}: This steps transforms the words in the description to their base form. Stemming is very effective in extending the range of keyword based queries to match various operational forms of the words. For instance, ``has'', ``have'', and ``had'' are are reduced to the stem ``ha''.  
+	
+\end{itemize}
 
 
-We first preprocess the API documents
-
-In particular we extract the fields listed in Table~\ref{tab:extractedFields} fields from API documents
-
-\begin{table}
-	\begin{center}
-		\caption{Extracted Fields}
-		\begin{small}
-			\begin{tabular}{rll}
-				\topline
-				\headcol 	S No. 	& Name	& Description \\
-				\midline 
-				
-				\rowpln 1	& Type Name				& Enclosing class/interface name of the method \\
-				\rowcol 2	& Package Name			& Package name of the enclosing class\\
-				\rowpln 3	& Method Name			& Name of the method \\
-				\rowcol 4	& Method Modifiers		& Access modifiers of the method \\
-				\rowpln 5	& Exceptions Thrown		& Name of the exceptions thrown by the method \\
-				\rowcol 6	& Parameters			& Name and type information of parameters \\
-				\rowpln 7	& Class Description		& Description of enclosing type \\
-				\rowcol 8	& Method Description	& Description of the method \\			
-				\bottomline
-				%----------------- END TABLE DATA ------------------------ 
-			\end{tabular}
-			\label{tab:extractedFields}
-		\end{small}
-		
-	\end{center}
-\end{table}
-
-We perform the following pre-processing
-
-\begin{enumerate}
-	\item \textbf{Lowercase} Convert the text to lowercase
-	\item \textbf{Split Camelcase} Split the camelcase notation of the class name and method name
-	\item \textbf{Split package Notation} Split the package notation
-	\item \textbf{Remove href and other javadoc identifiers} remove the \CodeIn{@Code, @link}... like \CodeIn{JavaDoc} identifers
-\end{enumerate}
+After preprocessing, \tool\ next creates indexes of the API method descriptions.
+An index is collection of documents where each document is made up of 
+values organized into well defined fields.
+\tool\ considers every method description as an individual document and 
+uses the following major fields (as previously described) :
+1) combination of package and class name;
+2) class description;
+3) method signature;
+4) method name; and
+5) method description.
+The values are of these fields is text after preprocessing.
+\tool\ uses a vector space model representation of the documents for each field. 
+Vector space model or term vector model is an algebraic model for representing text documents (and any objects, in general) as vectors of identifiers and their frequency of occurrence. 
+In case of \tool, each word is considered as a term except the stop words such as ``a'', ``the'', and ``and''.
 
 
-First we parse the API documents of source and target API library and store it in intermediate representation for analysis. In particular, we extract class, interface and corresponding method descriptions from API documents. Second, we then create a term vector representation of each class description and method descriptions. Vector space model or term vector model is an algebraic model for representing text documents (and any objects, in general) as vectors of identifiers, such as, for example, index terms. In our case, each word is considered as a term barring the stop words such as (a, the, and ...). 
+  
 
-Finally we use the term vector representation of a method description in a source API to query term vector representation of the the method description in target API. The results are ranked based on the Term Frequency-Inverse Document Frequency (TF-IDF) measure. TF-IDF is a numerical statistic which reflects how important a word is to a document in a collection or corpus. It is often used as a weighting factor in information retrieval and text mining.
+\subsection{Query Builder}
+\label{sub:Approach_Searcher}
 
-
-We next build indexes 
-
-Lucene Indexes 
-
-using Standard English Analyzer
-
-following fields:
-
-Class Base Name Camel Case Split
-
-Class Description
-
-Method base Name Camel Case Split
-
-Method Description
+This component accepts the API method descriptions of the source API
+and creates queries for method descriptions.
+These queries are executed on the target API index to retrieve 
+an ordered list relevant API methods.
+In particular Query Builder uses the same preprocessing steps followed by Indexer
+(listed in Section~\ref{sub:Approach_Indexer}).
+After extracted desired descriptive text from the API method descriptions,
+this component systematically creates search queries to search for different fields in Indexes.
+Keywords for searching in ``Type Name'', ``Type Description'', ``Method Name'', and ``Method Description'' fields are derived from their equivalents extracted descriptive text.
 
 
-Query formulation:
-
-heuristics 1 : first two sentences are provide a reasonable approximation of the most important keywords of an method
-
-heuristics 2 : first paragraph provides a reasonable approximation of the most important keywords of a class.
+For instance consider the method description shown in  Figure~\ref{fig:hasNextJavadoc} 
+and equivalent query in shown in Figure~\ref{fig:hasNextJavaQuery}.
+The Keywords for ``Type Name'' are derived from preprocessing ``java.util.Iterator'', that results in ``\CodeIn{java util iter}''. Notice the package notation is split into individual words and ``Iterator'' is further transformed to lower case and its stem ``iter''.
+Likewise, keywords for field ``Method Name'' is derived by preprocesing ``hasNext'', which is first split into ``has Next'' and then transformed using stemming into ``\CodeIn{ha next}''.
 
 \begin{figure}
 	\begin{framed}	
-		\textbf{Class Name}: \CodeIn{java util iter}\\
-		\textbf{Class Description}: \CodeIn{iter over collect iter take enumer java collect framework}\\
-		\textbf{Method Name}$^*$: \CodeIn{ha next}\\
-		\textbf{Method Description}: \CodeIn{return true iter ha more element other word return true next would return elementrather than throw except}\\ \\
-		$^*$ Names are Camel-case split
+		\textbf{Type Name}: \CodeIn{java util iter}\\
+		\textbf{Type Description}: \CodeIn{iter over collect iter take enumer java collect framework}\\
+		\textbf{Method Name}: \CodeIn{ha next}\\
+		\textbf{Method Description}: \CodeIn{return true iter ha more element other word return true next would return element rather than throw except}
 	\end{framed}
 	\caption{Query}
 	\label{fig:hasNextJavaQuery}
@@ -96,6 +139,7 @@ heuristics 2 : first paragraph provides a reasonable approximation of the most i
 
 \begin{figure}
 	\begin{framed}
+		{\small java.util} Interface Iterator\\
 		{\LARGE hasNext}\\
 		\CodeIn{boolean hasNext()}\\
 		Returns \CodeIn{true} if the iteration has more elements. (In other words, returns true if \CodeIn{next()} would return an element rather than throwing an exception.)\\
@@ -105,3 +149,59 @@ heuristics 2 : first paragraph provides a reasonable approximation of the most i
 	\caption{hasNext method of Iterator}
 	\label{fig:hasNextJavadoc}
 \end{figure}
+
+
+For generating keywords to query the ``Type Description'' field \tool\ considers following heuristic:
+\textit{Heuristic H1 :  the first paragraph or the first five sentences of the type description (whichever is shorter) provides reasonable keywords for searching equivalent class in target API.} 
+
+Likewise for generating the keywords to query the ``Method Description'' field, we consider the following heuristic: \textit{Heuristic H2 : the first paragraph or the first two sentences of the method description (whichever is shorter) provides reasonable keywords for searching equivalent method in target API.}
+
+\tool\ uses these heuristics to improve the performance of searching infrastructure
+that tends to be inversely proportional to the complexity and length of the query.
+Furthermore, our insight is that the document writers tend to describe the general
+overview of class and method description in the first few sentences followed by implementation and design specific
+details later. \textbf{Need citation from the summarization}
+
+
+\textbf{Weigths for terms}. As mentioned in Section~\ref{sec:example} that all terms in a description are not equally importance keywords. 
+\tool\ further enhances the query by quantifying the importance of a term in description and then translating that importance into a weight of that keyword in the query.
+In particular, we propose to use tf-idf\cite{manning2008introduction} as a means to quantify importance of a term.
+For each term in the method description \tool\ calculates the number of times the term occurs in that method description $freq_{mtd}$.
+\tool\ then calculates the number of documents in the corpus that contains the term $freq_{doc}$.
+\tool\ then calculates the tf-idf sore of the term as :
+$(1\ +\ log(freq_{mtd})\ * (1\ +\ log(total_{mtd}/freq_{doc}))$.
+The tf-idf sore of the top-k term as used as the weights for the terms occurring in the query.
+
+For the API method description  shown in Figure~\ref{fig:hasNextJavadoc}, \tool\ calculates ``iter'', ``element'', and ``more'' as most important terms with tf-idf scores of 9, 8.2, and 7.9 respectively. We augment the query shown in Figure\ref{fig:hasNextJavaQuery} with the computed weights for the keywords respectively.
+
+\subsection{Searcher}
+\label{sub:approach_searcher}
+
+The searcher components accepts the query from Query Builder component and queries the index generated by Indexer component.
+The results are then ranked and presented to end user for review.
+In searcher is realized as follows. 
+First all the documents that match the keywords and clauses in a query are returned.
+Then, the returned documents are ranked using the cosine similarity\cite{singhal2001modern} of the terms in query and the terms in returned documents. In mathematics Cosine similarity is a numerical statistic to measure the similarity between two vectors. 
+In information theory~\cite{manning2008introduction}, cosine similarity is the standard statistic to rank relevant documents.
+
+
+
+
+    
+
+
+\subsection{Implementation}
+\label{sub:Approach_implementation}
+
+We implemented a prototype version the \tool\ approach.
+We first manually download the HTML version of API documents of libraries. 
+We then implemented a parser for extracting the requisite text from these documents using 
+Jsoup~\footnote{\url{http://jsoup.org/}}, which is a java library for working with HTML documents.
+In particular our prototype implementation parses: 
+1) Oracles Javadoc style;
+2) Android style documentation; and
+3) Microsoft's  MSDN documentation.
+
+We next implemented the indexing, query building, and searching infrastructure using Lucene~\cite{lucene}.
+Lucene is a high-performance, full-featured text search engine library written entirely in Java..
+Our prototype implementation and evaluation subjects are publicly available on the project website.  

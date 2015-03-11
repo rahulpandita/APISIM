@@ -33,11 +33,11 @@ public class APIMtdIndexer extends Indexer<APIMtd>{
 		
 		List<APIType> clazzList = new ArrayList<>();
 		
-		clazzList.addAll(AllClassCrawler.read(Configuration.ANDROID_DUMP_PATH));
+		//clazzList.addAll(AllClassCrawler.read(Configuration.ANDROID_DUMP_PATH));
 		//clazzList.addAll(AllClassCrawler.read(Configuration.CLDC_DUMP_PATH));
 		//clazzList.addAll(AllClassCrawler.read(Configuration.MIDP_DUMP_PATH));
 		//clazzList.addAll(AllClassCrawler.read(Configuration.JAVA_DUMP_PATH));
-		//clazzList.addAll(AllClassCrawler.read(Configuration.DOTNET_DUMP_PATH));
+		clazzList.addAll(AllClassCrawler.read(Configuration.DOTNET_DUMP_PATH));
 		//clazzList.addAll(AllClassCrawler.read(Configuration.ECLIPSE_DUMP_PATH));
 		
 		for (APIType clazz : clazzList) {
@@ -67,6 +67,7 @@ public class APIMtdIndexer extends Indexer<APIMtd>{
 		doc.add(new TextField(Configuration.IDX_FIELD_MODIFIER,  clean(mtd.getModifier()), Field.Store.YES));
 		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_NAME, mtd.getName(), Field.Store.YES));
 		doc.add(new TextField(Configuration.IDX_FIELD_DESCRIPTION, mtd.getDescription(), Field.Store.YES));
+		doc.add(new Field(Configuration.IDX_FIELD_DESCRIPTION+"11", mtd.getDescription(), Field.Store.YES, Field.Index.ANALYZED, Field.TermVector.YES));
 		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_RETURN, clean(mtd.getReturnType()), Field.Store.YES));
 		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_PARAMS,getTypeListasString(mtd.getParameterList()), Field.Store.YES));
 		doc.add(new TextField(Configuration.IDX_FIELD_METHOD_EXCEPTIONS,getTypeListasString(mtd.getExceptionList()), Field.Store.YES));

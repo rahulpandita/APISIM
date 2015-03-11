@@ -3,7 +3,7 @@
 
 
 Software is ubiquitous and lately people are increasingly interacting with applications
-that run on variety of software platforms through their consumer devices on daily basis.
+that run on variety of software platforms on their consumer devices on daily basis.
 For instance, a typical user may view emails on his/her android or iOS or windowsPhone handheld
 device such as a mobile phone or a tablet while on the go. 
 The user then can switch to a desktop environment such as Windows or Linux or OSX 
@@ -24,8 +24,8 @@ libraries across different languages.
 However, manually migrating a software from one platform (/language) to another
 can be time consuming and may be error prone.
 Existing language migration tools such as Java2CSTranslator~\cite{java2cstranslator}
-partially alleviate the problem, as they require a programmer to manually describe how Application Programming Interfaces (APIs) of a source platform(/language) maps to API's of the target platform(/language). 
-Given a typical platform(/language) expose a large number of API's for developers to reuse, manually writing these mappings is prohibitively resource intensive and may result in manual error.
+partially alleviate the problem, as they require a programmer to manually describe how Application Programming Interfaces (APIs) of a source platform(/language) maps to API's of the target platform (/language). 
+Given a typical platform (/language) expose a large number of API methods for developers to reuse, manually writing these mappings is prohibitively resource intensive and may result in manual error.
 
 
 \textit{The goal of this research is to support software developers 
@@ -73,8 +73,7 @@ Our results indicate that \tool\ is effective in inferring API mappings with the
 In summary, \tool\ leverages natural language description of API's to infer likely mapping thus facilitating cross API migration of applications. As our approach analyzes API documents in natural language, it can be reused independent of the programming language of the library. Our paper makes the following major contributions:
 \begin{itemize}
 	\item A technique that effectively infers mapping across source and target API.
-	\item A prototype implementation of our approach based on extending the Apache Lucene~\cite{lucene} and Mallet~\cite{mccallum2002mallet}.
-	An open source implementation of our prototype can be found at our website\footnote{\url{http://research.csc.ncsu.edu/ase/projects/pint/}}. 
+	\item A prototype implementation of our approach based on extending the Apache Lucene~\cite{lucene}. An open source implementation of our prototype can be found at our website~\footnote{\url{http://xx.com/}}. 
 	\item An evaluation of our approach on J2ME to Android API and Java to C\# API
 \end{itemize}
 

@@ -19,30 +19,13 @@ This example is from real Java Platform, Micro Edition (JME) formerly known as J
 			\textit{NullPointerException} - if str is null\\
 			\textit{IllegalArgumentException} - if anchor is not a legal value\\
 			\textbf{See Also}\\
-			\CodeIn{drawChars(char[], int, int, int, int, int)}\\
+			\CodeIn{drawChars(char[], int, int, int, int, int)}
 		\end{small}
 	\end{framed}
 	\caption{drawString method of Graphics class in J2ME}
 	\label{fig:drawStringJavadoc}
 \end{figure}
 
-
-
-\begin{figure}
-	\begin{framed}
-		\begin{small}
-			\CodeIn{public void drawText (String text, float x, float y, Paint paint)}\\
-			Draw the text, with origin at (x,y), using the specified paint. The origin is interpreted based on the Align setting in the paint.\\
-			\textbf{Parameters}\\
-			\textit{text} - The text to be drawn\\
-			\textit{x} - The x-coordinate of the origin of the text being drawn\\
-			\textit{y} - The y-coordinate of the origin of the text being drawn\\
-			\textit{paint} - The paint used for the text (e.g. color, size, style)\\
-		\end{small}
-	\end{framed}
-	\caption{drawText method of Canvas class in Android}
-	\label{fig:drawTextJavadoc}
-\end{figure}
 
 
 Figure~\ref{fig:drawStringJavadoc} shows the API method description of \CodeIn{drawString} method from J2ME API.
@@ -56,12 +39,28 @@ Manually going through each method description is impractical.
 Provided we are given a keyword based search framework (a very basic text mining infrastructure) for querying the Android API method descriptions, the next step is: \textit{what does the query look like?}.
 
 Table~\ref{tab:exampleQueries} lists some of the queries we tried on an index of Android API method descriptions to find a mapping for the J2ME method \CodeIn{drawString} shown in Figure~\ref{fig:drawStringJavadoc}. 
-Column ``Query'' describes the query we executed on the index. Column ``Hits'' lists the number of matches found, and Column ``Relevant 10'' lists the rank of the first relevant method in top ten results. For instance, when we searched for the class name ``Graphics'' in Android API we did not get any hits. We also did not get any hits for when we searched for method name ``drawString''. 
+Column ``Query'' describes the keywords we used to query the index. Column ``Hits'' lists the number of matches found, and Column ``Top-10'' lists the rank of the first relevant method in top ten results. For instance, when we queried for the class name ``Graphics'' in Android API we did not get any hits. We also did not get any hits for when we queried for method name using keywords ``drawString''. 
 
-When we searched for the method signatures we got a 23,547 hits (almost all methods in Android API), mostly because of the confounding effects of keywords such as ``public''. Most of the methods signatures will have the keyword ``public''. 
+\begin{figure}
+	\begin{framed}
+		\begin{small}
+			\CodeIn{public void drawText (String text, float x, float y, Paint paint)}\\
+			Draw the text, with origin at (x,y), using the specified paint. The origin is interpreted based on the Align setting in the paint.\\
+			\textbf{Parameters}\\
+			\textit{text} - The text to be drawn\\
+			\textit{x} - The x-coordinate of the origin of the text being drawn\\
+			\textit{y} - The y-coordinate of the origin of the text being drawn\\
+			\textit{paint} - The paint used for the text (e.g. color, size, style)
+		\end{small}
+	\end{framed}
+	\caption{drawText method of Canvas class in Android}
+	\label{fig:drawTextJavadoc}
+\end{figure}
+
+When we queried for the method signatures we got a 23,547 hits (almost all methods in Android API), mostly because of the confounding effects of keywords such as ``public''. Most of the methods signatures will have the keyword ``public''. 
 Although the ranking mechanism did push methods with most keyword matches first, we did not find a relevant method in top 10.
 Likewise the method descriptions as a whole or in parts also did not yield better results.
-In this case a combination of various attributes such as method name split in camel case, keywords from class description and method description resulted in the Android API equivalent method \CodeIn{drawText} shown in Figure~\ref{fig:drawTextJavadoc} in the top ten results.
+In this example a combination of various attributes such as method name split in camel case notation ``draw String'', keywords from both class and method description resulted in the Android API equivalent method \CodeIn{drawText} shown in Figure~\ref{fig:drawTextJavadoc} in the top ten results.
 
  \begin{table}
 	\begin{center}
@@ -69,7 +68,7 @@ In this case a combination of various attributes such as method name split in ca
 		\begin{small}
 			\begin{tabular}{rlrr}
 				\topline
-				\headcol 	S No. 	& Query	& Hits & Relevant 10\\
+				\headcol 	\# 	& Query	& Hits & Top-10\\
 				\midline 
 				
 				\rowpln 1	& Class Name: ``Graphics''					& 0 & -\\
@@ -77,7 +76,7 @@ In this case a combination of various attributes such as method name split in ca
 				\rowcol 3	& Method Signature							& 23547 & - \\
 				\rowpln 4	& Method Description: (Complete)			& 16820 & \\
 				\rowcol 5	& Method Description: (summary sentences)	& 94230 & - \\
-				\rowpln 6	& Combination								& 1479 & 3 \\			
+				\rowpln 6	& Combination								& 1479 & \textbf{3} \\			
 				\bottomline
 				%----------------- END TABLE DATA ------------------------ 
 			\end{tabular}
@@ -92,7 +91,7 @@ The examples demonstrates difficulties faced by simple keyword-based searches an
  
 \begin{enumerate}
 		
-	\item \textit{Confounding effects}. Certain method names have an confounding effects. For instance \CodeIn{toString()}, \CodeIn{get()}, \CodeIn{set()} are too generic and tend to have similar descriptions across different method definitions. These generic methods often cause interference with the output of text mining based approaches.
+	\item \textit{Confounding effects}. Certain method names have an confounding effects. For instance \CodeIn{toString()}, \CodeIn{get()}, \CodeIn{set()} are too generic and tend to have similar descriptions across different method definitions. These generic methods often cause interference with the output of text mining based approaches. The problem is to automatically identify such methods to de-emphasize their importance in the query. 
 	
 	\item \textit{Weights}. Not all terms in a method descriptions are equally important keywords. For instance, the term ``zip'' in the sentence ``opens a zip file'' is more important than the terms ``opens'' and ``files'' as the term empathizes on the specific type of file. The problem is to automatically identify the importance of a term.
 	

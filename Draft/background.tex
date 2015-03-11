@@ -37,37 +37,37 @@ The index is oftentimes annotated with the information of the frequency of
 occurrence of each term in the document. This representation of a document
 as a vector of frequencies of terms is referred to as \textit{vector space model}~\cite{singhal2001modern,frakes1992introduction}.
 
-\textbf{TF-IDF Similarity}\cite{manning2008introduction}: Term -frequency inverse-document-frequency (\CodeIn{tf-idf}) is a numerical statistic that is intended to capture the importance of a term to a document in a corpus.
+\textbf{TF-IDF}\cite{manning2008introduction}: Term -frequency inverse-document-frequency (\CodeIn{tf-idf}) is a numerical statistic that is intended to capture the importance of a term to a document in a corpus.
 Often used as a weighting metric in information retrieval and text mining,
 the \CodeIn{tf-idf} weight increases proportionally to frequency of the occurrence of a term in a document, however the weight is also offset by the frequency of occurrence the term in the corpus.
 
-\textbf{Cosine Similarity}\cite{singhal2001modern}: In mathematics Cosine similarity is a numerical statistic to measure the similarity between two vector.
+\textbf{Cosine Similarity}\cite{singhal2001modern}: In mathematics Cosine similarity is a numerical statistic to measure the similarity between two vectors.
 Cosine similarity is defined as a dot product of magnitude of two vectors.
 In context of text mining, the Cosine similarity is used to capture the similarity between two documents represented as term frequency vectors.
 
-\textbf{Topic Modelling}: Latent Drichilet Allocation (LDA)~\cite{blei2003latent,panichella2013effectively} is an Information Retrieval (IR) 
-model to fit a probabilistic model on the term occurrences in a corpus of documents.
-Given a corpus of $n$ documents, a dictionary is created.
-The dictionary consists a list of all the unique terms ($m$) occurring in all $n$ documents.
-Next, a term-to-document matrix $M$ of size $(m\ X\ n)$ is generated, where each row represents all the terms occurring the corpus and columns representing the all the documents in the corpus.
-Each cell of $M$ ($M[i,j]$) contains the weight of the $i^{th}$ term in $m$ in the $j^{th}$ document in $n$.
-In the simplest implementation \CodeIn{tf-idf} is used to calculate the weight of a term in a document.
-
-
-Next LDA transforms term-to-document matrix $M$ into a topic-to-document matrix $\theta$ of size $(k\ X\ n)$,
-where each row represents the topics occurring in the corpus and columns representing the all the documents in the corpus. 
-This transformation is achieved by identifying latent variables (topics) in the documents. 
-The parameter $k$ is independently provided as an argument to the LDA algorithm.
-Each cell of $\theta\ (\theta[i,j])$ contains the probability of the $i^{th}$ topic in $k$ occurring in the $j^{th}$ document in $n$. Since $k\ <<\ m$, LDA is a mapping of the documents from the term space $m$ to the topic space $k$~\cite{panichella2013effectively}.
-
-
-\begin{enumerate}
-	\item $k$, the total number of topics to be extracted from a corpus of documents.  
-	\item $n$, the total number of gibbs iteration, where a single iteration involves a gibbs sampler sampling a topic for each term occurring in the corpus.
-	\item $\alpha$, this parameter affects the distribution of topics across documents. A high $\alpha$ means that each document is likely to contain a mixture of most of the topics. Conversely, a low $\alpha$ means each document is likely to contain mixture of fewer or one topic. 
-	\item $\beta$, this parameter affects the distribution of terms in each topic. A high $\beta$ means that each topic is likely to contain a uniform distribution of terms. Conversely, a low $\beta$ means terms are not uniformly distributed across topics. 
-	
-\end{enumerate}
+%\textbf{Topic Modelling}: Latent Drichilet Allocation (LDA)~\cite{blei2003latent,panichella2013effectively} is an Information Retrieval (IR) 
+%model to fit a probabilistic model on the term occurrences in a corpus of documents.
+%Given a corpus of $n$ documents, a dictionary is created.
+%The dictionary consists a list of all the unique terms ($m$) occurring in all $n$ documents.
+%Next, a term-to-document matrix $M$ of size $(m\ X\ n)$ is generated, where each row represents all the terms occurring the corpus and columns representing the all the documents in the corpus.
+%Each cell of $M$ ($M[i,j]$) contains the weight of the $i^{th}$ term in $m$ in the $j^{th}$ document in $n$.
+%In the simplest implementation \CodeIn{tf-idf} is used to calculate the weight of a term in a document.
+%
+%
+%Next LDA transforms term-to-document matrix $M$ into a topic-to-document matrix $\theta$ of size $(k\ X\ n)$,
+%where each row represents the topics occurring in the corpus and columns representing the all the documents in the corpus. 
+%This transformation is achieved by identifying latent variables (topics) in the documents. 
+%The parameter $k$ is independently provided as an argument to the LDA algorithm.
+%Each cell of $\theta\ (\theta[i,j])$ contains the probability of the $i^{th}$ topic in $k$ occurring in the $j^{th}$ document in $n$. Since $k\ <<\ m$, LDA is a mapping of the documents from the term space $m$ to the topic space $k$~\cite{panichella2013effectively}.
+%
+%
+%\begin{enumerate}
+%	\item $k$, the total number of topics to be extracted from a corpus of documents.  
+%	\item $n$, the total number of gibbs iteration, where a single iteration involves a gibbs sampler sampling a topic for each term occurring in the corpus.
+%	\item $\alpha$, this parameter affects the distribution of topics across documents. A high $\alpha$ means that each document is likely to contain a mixture of most of the topics. Conversely, a low $\alpha$ means each document is likely to contain mixture of fewer or one topic. 
+%	\item $\beta$, this parameter affects the distribution of terms in each topic. A high $\beta$ means that each topic is likely to contain a uniform distribution of terms. Conversely, a low $\beta$ means terms are not uniformly distributed across topics. 
+%	
+%\end{enumerate}
 
 
 
