@@ -45,7 +45,7 @@
 
 \begin{document}
 
-\title{Inferring Likely Mappings Between APIs using Text Mining}
+\title{Discovering Likely Mappings between APIs using Text Mining}
 %\subtitle{[Extended Abstract]
 %\titlenote{A full version of this paper is available as
 %\textit{Author's Guide to Preparing ACM SIG Proceedings Using
@@ -93,10 +93,10 @@
 %
 % 1st. author
 \alignauthor
-{\large Rahul Pandita$^\dagger$, Raoul Jetley$^\mp$, Sithu D Surarsan$^\mp$, and Laurie Williams$^\dagger$}\\%\titlenote{Dr.~Trovato insisted his name be first.}\\
+{\large Rahul Pandita$^\dagger$, Raoul Praful Jetley$^\mp$, Sithu D Sudarsan$^\mp$, and Laurie Williams$^\dagger$}\\%\titlenote{Dr.~Trovato insisted his name be first.}\\
 \affaddr{$^\dagger$North Carolina State University, Raleigh, NC, USA}\\
-\affaddr{$^\mp$ABB Corporate Research, Bangalore, KA, India}\\
-\email{{\normalsize rpandit@ncsu.edu, abc@xyz.com, sudarsan.sd@in.abb.com, williams@csc.ncsu.edu}}
+\affaddr{$^\mp$ABB Corporate Research, Bangalore, India}\\
+\email{{\normalsize rpandit@ncsu.edu, raoul.jetley@in.abb.com, sudarsan.sd@in.abb.com, williams@csc.ncsu.edu}}
 }
 
 
@@ -107,32 +107,35 @@
 
 \maketitle
 
-\newcommand{\tool}{{\sc tmAP}}
+\newcommand{\tool}{{\sc TMAP}}
 \input{abstract}
 
 
 % A category with the (minimum) three required fields
-\category{H.4}{Information Systems Applications}{Miscellaneous}
+%\category{H.4}{Information Systems Applications}{Miscellaneous}
 %A category including the fourth, optional field follows...
-\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
+\category{D.2.7}{Software Engineering}{Distribution, Maintenance, and Enhancement}[Documentation, Restructuring, reverse engineering, and reengineering]
 
-\terms{Theory}
 
-\keywords{ACM proceedings, \LaTeX, text tagging} % NOT required for Proceedings
+%\terms{Theory}
+
+\keywords{API documents, text mining} % NOT required for Proceedings
 
 \input{introduction}
-\input{example}
-\input{related}
 \input{background}
+\input{example}
 \input{approach}
 \input{evaluation}
 \input{discussion}
+\input{related}
 \input{conclusion}
 
 
 %ACKNOWLEDGMENTS are optional
 \section{Acknowledgments}
-This work is supported by xx. Any opinions expressed in this report are those of the author(s) and do not necessarily reflect the views of XX. Finally, we thank the Realsearch research group for providing helpful feedback on this work.
+This work is funded by the USA National Security Agency (NSA)
+Science of Security Lablet.
+Any opinions expressed in this report are those of the author(s) and do not necessarily reflect the views of the NSA. We also thank the Realsearch research group for providing helpful feedback on this work.
 
 %
 % The following two commands are all you need in the

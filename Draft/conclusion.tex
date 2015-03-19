@@ -7,12 +7,15 @@
 %Specifications described in natural language in API documents are not amenable to formal verification by existing verification tools. In this paper, we have presented a novel approach for inferring formal specifications from API documents targeted towards code contract generation. Our evaluation results show that our approach has an average of 92\% precision and 93\% recall in identifying sentences describing code contracts from over 2500 sentences. Furthermore, our results also show that our approach has an average of 83.4\% accuracy in inferring specifications from sentences describing code contracts out of over 1600 sentences. 
 
 API mapping across different platforms/languages mappings facilitate machine-based migration
-of an application from one API to another.
-Thus automated inference of such mappings is highly desirable.
+of an application from a one API to another.
+Thus tool assisted discovery of such mappings is highly desirable.
 In this paper, we presented \tool : a lightweight text-mining based approach
 to infer API mappings.
-\tool\ compliments existing mapping inference techniques by leveraging natural language descriptions in API documents instead of relying on existence of manually ported
-(or at least functionally similar) code across source and target API's.
+\tool\ compliments existing mapping inference techniques by leveraging natural language descriptions in API documents instead of relying on source code.
+We applied \tool\ to discover API mappings for 15 types across: 
+1) \CodeIn{Java} and \CodeIn{C\#} API,
+2) \CodeIn{Java ME} and \CodeIn{Android} API.
 We demonstrated the effectiveness of \tool\ by 
-comparing the inferred mappings with state-of-the-art code mining based approaches.
-Our results indicate that \tool\ is effective in inferring API mappings (from over human-annotated API sentences) with the more than XX accuracy.
+comparing the discovered mappings with state-of-the-art code analysis based approaches.
+Our results indicate that \tool\ on an average found relevant mappings for 57\% more methods compared to previous approaches. 
+Furthermore, our results also indicate that \tool\ found on average exact mappings for 6.5 more methods per type with a maximum of 21 additional exact mappings for a single type as compared to previous approaches.

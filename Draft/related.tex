@@ -1,15 +1,16 @@
 \section{Related work}
 \label{sec:related}
 
-Language migration has been an active area of research~\cite{Hassan2005LAM, Mossienko2003ACJ, vanDeursen1999ICSE, WatersIEEEtranSE88}, with myriad techniques that have been proposed over time to achieve automation. However, most of these approaches focus on syntactical and structural differences across languages. For instance, Deursen et al.~\cite{vanDeursen1999ICSE} proposed an approach to automatically infer objects in legacy code to effectively deal with differences between object-oriented and procedural languages.
+Language migration is an active area of research~\cite{Hassan2005LAM,Mossienko2003ACJ,vanDeursen1999ICSE,WatersIEEEtranSE88,Zhong2010ICSE,Gokhale2013ICSE,nguyen2014statistical}, with myriad techniques that have been proposed over time to achieve automation. However, most of these approaches focus on syntactical and structural differences across languages. For instance, Deursen et al.~\cite{vanDeursen1999ICSE} proposed an approach to automatically infer objects in legacy code to effectively deal with differences between object-oriented and procedural languages.
 
-However, El-Ramly et al.~\cite{Ramly2006CSA}'s experience points out that most of these approaches support only a subset of API's for migration. Another recently published survey by Robillard et al.~\cite{RobillardIEEEtranSE13} provides a detailed overview of techniques dealing with mining API mappings.Among other works described in ~\cite{RobillardIEEEtranSE13}, Mining API Mapping (MAM)~\cite{Zhong2010ICSE} is most directly related to our work.
+However, El-Ramly et al.~\cite{Ramly2006CSA} points out that most of these approaches support only a subset of API's for migration. Another recently published survey by Robillard et al.~\cite{RobillardIEEEtranSE13} provides a detailed overview of techniques dealing with mining API mappings. Among other works described in ~\cite{RobillardIEEEtranSE13}, Mining API Mapping~\cite{Zhong2010ICSE} (MAM) is most directly related to our work.
 
 
 MAM mines API mapping relations across different languages for language migration,
 however there is a significant difference between MAM and \tool.
-MAM takes into input a software $S$ written in source language and manually ported version of $S'$ written in target language.  
-MAM then applies a technique called ``method alignment'' that pairs the methods with similar functionality across $s$ and $S'$. These methods are then statically analyzed to detect mappings between source and target language API. While MAM relies on existence of software that has been ported manually from a source to target API, our approach is independent of such requirement. In contrast, our approach relies on text mining of source and target API document to achieve the same. Furthermore, we demonstrate that our approach also infers equally good mappings if not better \textbf{pending evaluation}.
+MAM takes into input a software ($S$) written in source language and manually ported version of $S$ ($S'$) written in target language.
+MAM then applies a technique called ``method alignment'' that pairs the methods with similar functionality across $S$ and $S'$. These methods are then statically analyzed to detect mappings between source and target language API. While MAM requires as input software that has been manually ported from a source to target API (both $S$ and $S'$), our approach is independent of such requirement.
+In contrast, \tool\ relies on text mining of source and target API method descriptions (that are typically publicly available) to discover likely mappings. %Furthermore, we demonstrate that our approach also infers equally good mappings if not better \textbf{pending evaluation}.
 
 
 Gokhle et al.'s~\cite{Gokhale2013ICSE} approach Rosetta addresses
@@ -17,64 +18,65 @@ the limitations of MAM to infer method mappings.
 In particular, Rosetta relaxes the constraint of having 
 software that has been manually ported from a source to target API.
 Instead, they use functionally similar software in source and target API.
-For instance, they use two different `tic-tac-toe' game applications in J2ME and Android API not necessarily manually ported.
-They then manually execute these applications under identical (or near identical) inputs and collect execution traces.
-Finally they analyze the collected execution traces to infer method mappings.
-In contrast our approach is independent of both rthe requirements: 1) to have functionally similar applications, 2) to manually execute such applications using similar inputs.
+For instance, they use two different `tic-tac-toe' game applications in Java ME and Android API not necessarily manually ported.
+Rosetta approach then requires user to manually execute these applications under identical (or near identical) inputs and collect execution traces.
+Finally Rosetta analyses the collected execution traces to infer method mappings.
+In contrast, \tool\ is independent of both the requirements: 1) to have functionally similar applications, 2) to manually execute such applications using similar inputs.
 
 
 
-Recently Nguyen et al.~\cite{nguyen2014migrating,nguyen2014statistical} proposed
-to apply statistical machine translation based techniques to achieve language migration.
+Recently Nguyen et al.~\cite{nguyen2014migrating,nguyen2014statistical} proposed StaMiner,
+an approach that applies statistical machine translation based techniques to achieve language migration.
 Their approach builds upon a previous result~\cite{hindle2012naturalness} that demonstrates the effectiveness of using
-a n-gram model to predict the next token in software source file
+an n-gram model to predict the next token in software source file
 given a large corpus of software source files to learn from.
 Similar to MAM~\cite{Zhong2010ICSE} approach they
-need a software $S$ written in source language and manually ported version of $S'$ written in target language. 
-They then consider source code as a sequence of lexical tokens and
+require a software $S$ written in source language and manually ported version of $S'$ written in target language as input. 
+They then consider source code as a sequence of lexical tokens (lexemes) and
 apply a phrase-based statistical machine translation model on the lexemes of those tokens.
-In contrast our approach is independent of such requirement(presence of $S$ and $S'$).
+In contrast, \tool\ is independent of such requirement (presence of $S$ and $S'$).
 
 
-Furthermore, from an infrastructure perspective, \tool\ is independent of the programming language or API under consideration. In contrast program analysis based approaches like~\cite{Zhong2010ICSE,Gokhale2013ICSE,nguyen2014statistical} may need significant
-efforts for adding support to additional API's.
+Furthermore, from an infrastructure perspective, \tool\ is independent of the programming language or API under consideration. In contrast, program analysis based approaches like~\cite{Zhong2010ICSE,Gokhale2013ICSE,nguyen2014statistical} may need significant
+efforts for adding support to additional APIs and programming language.
 
-Zheng at al.~\cite{Zheng2011FSE} mine search results of web search engines
+Zheng at al.~\cite{Zheng2011FSE} mine search results of a web search engine,
 such as Google to recommend related APIs of different libraries. 
 In particular, they propose heuristics to formulate keywords using the
-name of the source API, and the name of target API to query web search engine.
+name of the source API, and the name of target API to query a web search engine.
 For instance, to search for an equivalent class in C\# for the \CodeIn{HashMap} class in Java,
 a user may manually enter ``HashMap C\#'' in a web search engine.
 The results are computed one by one and candidates are ranked by relevance,
 mainly according to their frequency of the appearance of keywords in the query.
-This work provides only preliminary results and queries proposed are of a coarse grain. 
-Furthermore, the results are susceptible to influence by the outcome of the web search engines.
-In contrast, our approach is independent of the web search engine. Furthermore, the queries used in our approach are more sophisticated than the heuristics proposed by their approach.
+However, authors provides only preliminary results and queries proposed are of a coarse grain. 
+Furthermore, the results are susceptible to influence by the webpages returned by a web search engine.
+In contrast, \tool\ is independent of the web search engine results. %Furthermore, the queries used in our approach are more sophisticated than the heuristics proposed by their approach.
 
 
 %Web Query~\cite{Zheng2011FSE}
 
-%\textbf{Library migration}. With evolution of libraries, some APIs may become incompatible across library versions. To address this problem, Henkel and Diwan [5] proposed an approach that captures and replays API refactoring actions to update the client code. Xing and Stroulia [17] proposed an approach that recognizes the changes of APIs by comparing the differences between two versions of libraries. Balaban et al. [2] proposed an approach to migrate client code when mapping relations of libraries are available. In contrast to these approaches, our approach focuses on mapping relations of APIs across different languages. In addition, since our approach uses ATGs to mine API mapping relations, our approach can also mine mapping relations between API methods with different parameters or between API methods whose functionalities are split among several API methods in the other language.
+%\textbf{Library migration}. With evolution of libraries, some APIs may become incompatible across library versions. To address this problem, Henkel and Diwan [5] proposed an approach that captures and replays API refactoring actions to update the client code. Xing and Stroulia [17] proposed an approach that recognizes the changes of APIs by comparing the differences between two versions of libraries. Balaban et al. [2] proposed an approach to migrate client code when mapping relations of libraries are available. In contrast, to these approaches, our approach focuses on mapping relations of APIs across different languages. In addition, since our approach uses ATGs to mine API mapping relations, our approach can also mine mapping relations between API methods with different parameters or between API methods whose functionalities are split among several API methods in the other language.
 
 
 %\textbf{Mining specifications.} Some of our previous approaches [1, 12, 13, 19, 20] focus on mining specifications. MAM mines API mapping relations across different languages for language migration, whereas the previous approaches mine API properties of a single language to detect defects or to assist programming.
 
 
 Information retrieval techniques~\cite{chatterjee2009sniff,grechanik2010search,kim2010towards,Reiss2009SCS} are also being increasingly used in Code Search. We next describe some relevant approaches.
-Sniff~\cite{chatterjee2009sniff} annotates the source code with API document descriptions. 
+Chatterjee et al.'s~\cite{chatterjee2009sniff} approach Sniff annotates the source code with API document descriptions. 
 Sniff then performs additional type analysis on the source code to rank relevant code snippets. 
-Exemplar~\cite{grechanik2010search} uses the text in API documents to construct a set of keywords associated with an API call. Exemplar then uses the keywords list to perform query expansion to achieve code search. However, these approaches are targeted towards code search in a single API. In contrast \tool\ works on inferring mappings across multiple APIs. 
+Grechanik et al.'s~\cite{grechanik2010search} approach Exemplar uses the text in API documents to construct a set of keywords associated with an API call.
+Exemplar then uses the keywords list to facilitate query expansion to achieve code search.
+However, these approaches are targeted towards code search in a one API.
+In contrast, \tool\ discovers method mappings across multiple APIs. 
 
 
-Text analysis~\cite{Dekel2009, pandita12:inferring,Zhou2008,Little2009, zhong09SE} of API documentation is increasing being used to infer interesting properties. We next describe most relevant approaches.
-
-\textbf{API property inference}
-Zhong et al.~\cite{zhong09SE} employ NLP and ML techniques to infer resource specifications from API documents.
+Text analysis~\cite{Dekel2009, pandita12:inferring,Zhou2008,Little2009, zhong09SE} of API documentation is increasing being used to infer interesting properties from software engineering perspective.
+For instance, Zhong et al.~\cite{zhong09SE} employ natural language processing (NLP) and machine learning (ML) techniques to infer resource specifications from API documents.
 They define resource specifications as the rules governing the usage of resources such as File.
-Recently Treude et al.~\cite{treudeextracting} leverage rule-based NLP approaches to infer action (programming task) oriented properties from an API document. They describe tasks as specific programming actions that have been described in the documentation. 
-First, \tool\ uses text mining stead of sophisticated NLP techniques used in these approaches.
-Second, \tool\ infers API mapping relations across different API for language migration, whereas the previous approaches mine API properties of a single API to detect defects or to assist programming.
-Finally, the performance of the preceding ML-based approaches is dependent on the quality of the training sets used for ML. In contrast, our approach is independent of such training set and thus can be easily extended to target respective problems addressed by these approaches.
+Treude et al.~\cite{treudeextracting} also leverage rule-based NLP approaches to infer action (programming task) oriented properties from an API document. They describe tasks as specific programming actions that have been described in the documentation. 
+In contrast, \tool\ uses text mining a comparatively lightweight-approach instead of sophisticated NLP techniques used in these approaches.
+Furthermore, \tool\ discovers API mapping relations across different API for language migration, whereas the previous approaches mine properties of a single API.
+%In contrast, \tool\ is dependent on the quality of the documentation for each API being mapped.
 
 %Code search is yet another active area of research that benefits from API documents
 %API documents have been used to perform information retrival task most noti Chatterjee et al.~\cite{chatterjee2009sniff} proposed to interleave API method descriptions in the source code to perform code search using free form queries. 
