@@ -25,7 +25,7 @@ import org.apache.lucene.store.FSDirectory;
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIMtd;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
-import edu.ncsu.csc.ase.apisim.spring.mvc.displayBeans.Result;
+import edu.ncsu.csc.ase.apisim.dataStructure.Result;
 import edu.ncsu.csc.ase.apisim.util.ConsoleUtil;
 import edu.ncsu.csc.ase.apisim.util.FileUtilExcel;
 import edu.ncsu.csc.ase.apisim.webcrawler.AllClassCrawler;

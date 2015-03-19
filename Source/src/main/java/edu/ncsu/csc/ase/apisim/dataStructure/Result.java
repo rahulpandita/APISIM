@@ -1,4 +1,4 @@
-package edu.ncsu.csc.ase.apisim.spring.mvc.displayBeans;
+package edu.ncsu.csc.ase.apisim.dataStructure;
 
 public class Result {
 	
