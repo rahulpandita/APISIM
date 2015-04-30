@@ -72,6 +72,7 @@ public class APIMtdIndexer extends Indexer<APIMtd>{
 	}
 
 	
+	@SuppressWarnings("deprecation")
 	@Override
 	public Document createDocument(APIMtd mtd) {
 		
@@ -105,6 +106,7 @@ public class APIMtdIndexer extends Indexer<APIMtd>{
 		return doc;
 	}
 	
+	@SuppressWarnings("deprecation")
 	private void decorator(Document doc, APIMtd mtd) {
 		String name = ASTBuilder.getJavaMethodName(mtd.getName());
 		if(name==null)
