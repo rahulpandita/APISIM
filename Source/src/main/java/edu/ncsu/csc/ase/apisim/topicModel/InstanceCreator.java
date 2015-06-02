@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,6 +25,7 @@ import cc.mallet.pipe.TokenSequenceRemoveStopwords;
 import cc.mallet.types.Instance;
 import cc.mallet.types.InstanceList;
 import edu.ncsu.csc.ase.apisim.configuration.Configuration;
+import edu.ncsu.csc.ase.apisim.dataStructure.APIMtd;
 import edu.ncsu.csc.ase.apisim.dataStructure.APIType;
 import edu.ncsu.csc.ase.apisim.webcrawler.AllClassCrawler;
 import edu.ncsu.csc.ase.apisim.webcrawler.apiutil.PackageSummaryCrawler;
@@ -89,7 +92,27 @@ public class InstanceCreator {
 		return createInstanceList(insList);
 	}
 	
-	
+	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
+		PrintWriter writer;
+		List<APIMtd> mtdList;
+		Double i = new Double("0");
+		for(APIType type: AllClassCrawler.read(Configuration.ECLIPSE_DUMP_PATH))
+		{
+			mtdList = new ArrayList<APIMtd>();
+			mtdList.addAll(type.getConstructors());
+			mtdList.addAll(type.getMethod());
+			for(APIMtd mtd:mtdList)
+			{
+				if(mtd.getDescription().length()>100)
+				{
+					writer = new PrintWriter("ecl" + File.separatorChar +(i++).toString());
+				
+					writer.println(mtd.getDescription());
+					writer.close();
+				}
+			}
+		}
+	}
 
 	public static InstanceList createInstanceList1(boolean includeMtd, List<String> subList, String... apiDumpPath) throws Exception {
 		List<Instance> insList = new ArrayList<Instance>();

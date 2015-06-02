@@ -164,7 +164,7 @@ We next describe our evaluation results to demonstrate the effectiveness of \too
 				\rowpln	Total&		& 		& 							& 549	& 73	& 382 	& 73 	& 171	& 0.57$^{**}$ 	& 22	& 149	\\
 				\bottomline
 				\rowpln \multicolumn{12}{r}{{$^*$=Previous approach reported a manually constructed class as mapping; $^{**}$=Average}} \\
-				\rowpln \multicolumn{12}{r}{{\small Prev= previous approach; Previous approach for Java ME-Android mappings is Rosetta~\cite{Gokhale2013ICSE}; Previous approach for Java-C\# mappings is StaMiner~\cite{nguyen2014statistical}}} \\
+				\rowpln \multicolumn{12}{r}{{\footnotesize Prev= previous approach; Previous approach for Java ME-Android mappings is Rosetta~\cite{Gokhale2013ICSE}; Previous approach for Java-C\# mappings is StaMiner~\cite{nguyen2014statistical}}} \\
 				%----------------- END TABLE DATA ------------------------ 
 		\end{tabular}
 		\label{tab:RosettaComp}
@@ -277,8 +277,8 @@ Sniff is targeted towards searching for relavant method snippets from source-cod
 Since \tool\ does not report method sequences, we consider a method reported by \tool\ as relevant iff:
 
 \begin{enumerate}
-	\vspace{-2ex}\item the method is in top-10 results.
-	\vspace{-2ex}\item the method is one of the methods in the code fragment reported by Sniff.
+	\item the method is in top-10 results.
+	\item the method is one of the methods in the code fragment reported by Sniff.
 \end{enumerate}
 
 Table~\ref{tab:SNIFFComp} shows the effectiveness of \tool\ using free form queries.
