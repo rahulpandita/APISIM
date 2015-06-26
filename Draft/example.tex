@@ -2,8 +2,13 @@
 \label{sec:example}
 
 We next present an example to motivate our work and list the considerations for applying text mining techniques on API documents. 
-The example is from the real Java Platform Micro Edition (Java ME) formerly known as J2ME and the Android API. Both Java ME and Android use Java as the language of implementation and are targeted towards hand-held devices. However, our approach is independent of language of implementation and thus can be used for any source and target API.  
-
+The example is from the Java ME and the Android API. Both Java ME and Android use Java as the language of implementation and are targeted towards hand-held devices.
+Figure~\ref{fig:drawStringJavadoc} shows the API method description
+of \CodeIn{drawString} method from
+\CodeIn{javax.microedition.lcdui.Graphics} class in Java ME API.
+Figure~\ref{fig:drawTextJavadoc} shows the API method description
+of method \CodeIn{drawText} method from
+\CodeIn{android.graphics.Canvas} class in Android API.
 
 \begin{figure}
 	\begin{framed}
@@ -29,16 +34,8 @@ The example is from the real Java Platform Micro Edition (Java ME) formerly know
 \end{figure}
 
 
-
-Figure~\ref{fig:drawStringJavadoc} shows the API method description
-of \CodeIn{drawString} method from
-\CodeIn{javax.microedition.lcdui.Graphics} class in Java ME API.
-Figure~\ref{fig:drawTextJavadoc} shows the API method description
-of method \CodeIn{drawText} method from
-\CodeIn{android.graphics.Canvas} class in Android API.
-
 Notice the overlap in the language of these two methods.
-From a human perspective, it is easy to conclude that
+A developer can easily conclude that
 the two methods offer similar functionality.
 However, the Android API has more than 23,000 public methods.
 Manually going through each method description to find similar methods
