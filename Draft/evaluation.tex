@@ -7,9 +7,9 @@ We conducted an evaluation to assess the effectiveness of \tool. In our evaluati
 	
 \item\textbf{RQ1}: What is the effectiveness of \tool\ in leveraging the similarity in the language of API method descriptions to discover likely API Mappings?
 
-\item\textbf{RQ2}: How do the mappings inferred by \tool\ compare with the human written mappings?
+\item\textbf{RQ2}: How do the mappings discovered by \tool\ compare with the human written mappings?
 
-\item\textbf{RQ3}: What is the effectiveness of using free form queries using \tool?
+%\item\textbf{RQ3}: What is the effectiveness of using free form queries using \tool?
 
 \end{itemize}
 
@@ -17,22 +17,23 @@ We conducted an evaluation to assess the effectiveness of \tool. In our evaluati
 \label{sub:subject}
 
 
-We evaluated \tool\ using a snapshot of the API documents of Java, C\#, Android, and Java ME downloaded on Jan 2015. 
+We evaluated \tool\ using a snapshot of the publicly available API documents of Java, C\#, Android, and Java ME downloaded on Jan 2015. 
 
 Java Platform Micro Edition, or Java ME, is a Java platform designed for embedded systems (such as mobile devices). Target devices range from industrial controls to mobile phones (especially feature phones) and set-top boxes.
 Android is a linux-based operating system designed primarily for touchscreen mobile devices, such as smartphones and tablet computers.
-API documents for both Java ME and Android are publicly available at
-\url{http://docs.oracle.com/javame/config/cldc/ref-impl/midp2.0/jsr118/index.html}
-and 
-\url{http://developer.android.com/reference/packages.html}
-respectively.
+%API documents for both Java ME and Android are publicly available at
+%\url{http://docs.oracle.com/javame/config/cldc/ref-impl/midp2.0/jsr118/index.html}
+%and 
+%\url{http://developer.android.com/reference/packages.html}
+%respectively.
 
 Java and C\# are general-purpose programming languages from Oracle and Microsoft respectively. Java applications are typically compiled to bytecode that run on any Java Virtual Machine (JVM) irrespective of underlying computer architecture.
-Likewise, C\# is compiled into intermediate representation that run on Microsoft's common language infrastructure. API documents for both Java and C\# are publicly available at
-\url{http://docs.oracle.com/javase/8/docs/api/}
-and
-\url{https://msdn.microsoft.com/en-us/library/gg145045(v=vs.110).aspx}
-respectively.
+Likewise, C\# is compiled into intermediate representation that run on Microsoft's common language infrastructure.
+%API documents for both Java and C\# are publicly available at
+%\url{http://docs.oracle.com/javase/8/docs/api/}
+%and
+%\url{https://msdn.microsoft.com/en-us/library/gg145045(v=vs.110).aspx}
+%respectively.
 
 
 Particularly we used the API documents of the following library pairs as subjects for our evaluation. 
@@ -45,7 +46,7 @@ For our evaluation we considered the methods in the following Java ME Types as t
 \CodeIn{Command},
 \CodeIn{Graphics}, and
 \CodeIn{Font}
-Classes in \CodeIn{javax.} \CodeIn{microedition.} \CodeIn{lcdui}.
+Classes in \CodeIn{javax.} \CodeIn{microedition.} \CodeIn{lcdui} package.
 
 
 The listed types provides methods for supporting graphics related functionality in Java ME.
@@ -54,7 +55,7 @@ mapping for methods in theses types along with seven others (twelve types in tot
 thus providing for a baseline comparison with dynamic analysis based approaches.
 Rosetta approach requires a user to manually execute functionally similar applications using source and target API with identical (or near identical) inputs and collect execution traces.
 Finally Rosetta analyses the collected execution traces to infer method mappings.
-We focused our evaluation on the listed five types which we perceived important among the twelve types reported by Rosetta.
+We focused our evaluation on the listed five types which first three authors perceived as frequently used types among the twelve types reported by Rosetta.
 In the future, we plan to evaluate \tool\ approach on all the twelve reported types. 
 
 \textbf{Java (to C\#) API}:
@@ -76,13 +77,13 @@ Types in \CodeIn{java.sql} provide the API methods for accessing and processing 
 We selected these particular packages in Java programming languages because Nguyen et al.~\cite{nguyen2014statistical} in their work (StaMiner) for statistical language migration find mappings for the types in these packages.
 Their mappings provides for a external baseline comparison.
 Although, Nguyen et al.~\cite{nguyen2014statistical} report on all the classes in these packages,
-due to the amount of effort, we focused our analysis on the listed types which we perceived as important in their respective packages.
+due to the amount of effort, we focused our analysis on the listed types which first three authors perceived as frequently used types in their respective packages.
 
 
 \subsection{Evaluation Setup}
 
 
-We first downloaded the publicly available API documents from the respective websites of the projects. We then cleaned and extracted the desired fields as described in the Section~\ref{sub:Approach_Indexer}. We then indexed the extracted text into the Lucene indexes.
+We first downloaded the publicly available API documents from the respective websites of the subject APIs. We then cleaned and extracted the desired fields as described in the Section~\ref{sub:Approach_Indexer}. We then indexed the extracted text into the Lucene indexes.
 We created a separate index for every API type: Java ME, Android, Java, and C\#. 
 
 
@@ -253,13 +254,13 @@ Rosetta reports method sequence \CodeIn{Paint.setAlpha} \CodeIn{CompundButton.} 
 In contrast, \tool\ discovers \CodeIn{AlertDialog.setTitle} method in Android API as a likely mapping.
 
 The lead author of Rosetta approach responded that they restricted the output of
-Rosetta to sequences of length up to 2 when inferring mappings (i.e., {A->p;q}, or {A->p}). Furthermore, authors count a reported method sequence as a valid mapping
+Rosetta to sequences of length up to 2 when inferring mappings (i.e., {A$\rightarrow$p;q}, or {A$\rightarrow$p}). Furthermore, authors count a reported method sequence as a valid mapping
 if the reported sequence implements some of the functionality of a source method on the target platform.
 With regards to our query, Rosetta authors observed that in many of the traces, setting a \CodeIn{string} first involves setting the attributes of the \CodeIn{Paint} (with is used to draw the text), followed by a call to \CodeIn{setText} method, which led them to believe that the sequence \CodeIn{Paint.setAlpha} \CodeIn{CompundButton.} \CodeIn{setChecked} could be a likely mapping, if at least in part.
 Although, author did confirm that technically \CodeIn{AlertDialog.setTitle} method in Android API as a likely mapping.
 
 The exchange with Rosetta approach's lead author points out that
-that the mappings discovered by \tool\ generally point to
+the mappings discovered by \tool\ generally point to
 the closest aggregate API in contrast to the individual smaller API calls
 that achieve same functionality.
 Furthermore, exchange also demonstrates the reliance of the
@@ -267,51 +268,51 @@ code analysis approaches on the quality of the code under analysis.
 In contrast, \tool\ relies on the quality of the API method descriptions.
 
 
-\subsubsection{RQ3: Effectiveness in free form queries}
-
-RQ3 demonstrates the effectiveness of text-mining in general for API related information retrieval tasks.
-In particular, we show the effectiveness of creating vector space representation of
-API method descriptions by using free form queries.
-For evaluating RQ3, we use the same queries as used by Chatterjee et al.'s~\cite{chatterjee2009sniff} in evaluation of their approach Sniff.
-Sniff is targeted towards searching for relavant method snippets from source-code repositories. Sniff first annotates the source code with API document descriptions and uses the hybrid representation of source code to get relevant code fragments. 
-Since \tool\ does not report method sequences, we consider a method reported by \tool\ as relevant iff:
-
-\begin{enumerate}
-	\item the method is in top-10 results.
-	\item the method is one of the methods in the code fragment reported by Sniff.
-\end{enumerate}
-
-Table~\ref{tab:SNIFFComp} shows the effectiveness of \tool\ using free form queries.
-The column `Query' lists the query used in evaluation.
-The column `Sniff' lists the ranking of relevant code fragment by Sniff as reported in their work.
-The column `\tool' lists the ranking of first relevant method returned by \tool.
-
-
-Our evaluation results show that in \tool\ returns the relevant method in top 10 results (except one) demonstrating effectiveness of \tool\ with free form queries. For the query `read a line of text from a file' all the reported result methods did support the functionality of reading lines from file, however were not reported as relevant code fragment by Sniff.
-
-\begin{table}
-	\begin{center}	
-		\caption{Comparison with Sniff}
-		\begin{tabular}{lrr}
-			\topline
-			\headcol Query	& \multicolumn{2}{c}{Method Rank}\\
-			\headcol 		& {\small Sniff}	& {\small \tool} \\
-			\midline 
-			
-			\rowcol get active editor window from eclipse workbench	& 1 & 1\\
-			\rowpln parse a java source and create ast & 1 & 2\\
-			\rowcol connect to a database using jdbc & 1 & 6\\
-			\rowpln display directory dialog from viewer in eclipse & 1 & 1\\
-			\rowcol read a line of text from a file & 1 & -\\
-			\rowpln return an audio clip from url & 1 & 1\\
-			\rowcol execute SQL query & 2 & 3\\
-			\rowpln current selection from eclipse workbench & 1 & 1\\ 
-			\bottomline
-			%----------------- END TABLE DATA ------------------------ 
-			\rowpln \multicolumn{3}{r}{{\small `-'=No Match in top-10 results.}}\\ 
-			\bottomline
-		\end{tabular}
-		\label{tab:SNIFFComp}
-	\end{center}
-\end{table}
+%\subsubsection{RQ3: Effectiveness in free form queries}
+%
+%RQ3 demonstrates the effectiveness of text-mining in general for API related information retrieval tasks.
+%In particular, we show the effectiveness of creating vector space representation of
+%API method descriptions by using free form queries.
+%For evaluating RQ3, we use the same queries as used by Chatterjee et al.'s~\cite{chatterjee2009sniff} in evaluation of their approach Sniff.
+%Sniff is targeted towards searching for relavant method snippets from source-code repositories. Sniff first annotates the source code with API document descriptions and uses the hybrid representation of source code to get relevant code fragments. 
+%Since \tool\ does not report method sequences, we consider a method reported by \tool\ as relevant iff:
+%
+%\begin{enumerate}
+%	\item the method is in top-10 results.
+%	\item the method is one of the methods in the code fragment reported by Sniff.
+%\end{enumerate}
+%
+%Table~\ref{tab:SNIFFComp} shows the effectiveness of \tool\ using free form queries.
+%The column `Query' lists the query used in evaluation.
+%The column `Sniff' lists the ranking of relevant code fragment by Sniff as reported in their work.
+%The column `\tool' lists the ranking of first relevant method returned by \tool.
+%
+%
+%Our evaluation results show that in \tool\ returns the relevant method in top 10 results (except one) demonstrating effectiveness of \tool\ with free form queries. For the query `read a line of text from a file' all the reported result methods did support the functionality of reading lines from file, however were not reported as relevant code fragment by Sniff.
+%
+%\begin{table}
+%	\begin{center}	
+%		\caption{Comparison with Sniff}
+%		\begin{tabular}{lrr}
+%			\topline
+%			\headcol Query	& \multicolumn{2}{c}{Method Rank}\\
+%			\headcol 		& {\small Sniff}	& {\small \tool} \\
+%			\midline 
+%			
+%			\rowcol get active editor window from eclipse workbench	& 1 & 1\\
+%			\rowpln parse a java source and create ast & 1 & 2\\
+%			\rowcol connect to a database using jdbc & 1 & 6\\
+%			\rowpln display directory dialog from viewer in eclipse & 1 & 1\\
+%			\rowcol read a line of text from a file & 1 & -\\
+%			\rowpln return an audio clip from url & 1 & 1\\
+%			\rowcol execute SQL query & 2 & 3\\
+%			\rowpln current selection from eclipse workbench & 1 & 1\\ 
+%			\bottomline
+%			%----------------- END TABLE DATA ------------------------ 
+%			\rowpln \multicolumn{3}{r}{{\small `-'=No Match in top-10 results.}}\\ 
+%			\bottomline
+%		\end{tabular}
+%		\label{tab:SNIFFComp}
+%	\end{center}
+%\end{table}
 
