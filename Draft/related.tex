@@ -9,7 +9,13 @@ Among other works described in ~\cite{RobillardIEEEtranSE13}, Mining API Mapping
 %MAM mines API mapping relations across different languages for language migration,
 %however there is a significant difference between MAM and \tool.
 MAM takes into input a software ($S$) written in source language and manually ported version of $S$ ($S'$) written in target language.
-MAM then applies a technique called ``method alignment'' that pairs the methods with similar functionality across $S$ and $S'$. These methods are then statically analyzed to detect mappings between source and target language API. While MAM requires as input software that has been manually ported from a source to target API (both $S$ and $S'$), our approach is independent of such requirement.
+MAM then applies a technique called ``method alignment'' that pairs the methods with similar functionality across $S$ and $S'$. These methods are then statically analyzed to detect mappings between source and target language API.
+Recently, Nguyen et al.~\cite{nguyen2014migrating,nguyen2014statistical} proposed StaMiner,
+an approach that applies statistical-machine-translation based techniques to achieve language migration.
+They consider source code as a sequence of lexical tokens (lexemes) and
+apply a phrase-based statistical-machine-translation model on the lexemes of those tokens
+to achieve migration.
+While MAM and StaMiner require as input software that has been manually ported from a source to target API (both $S$ and $S'$), our approach is independent of such requirement.
 In contrast, \tool\ relies on text mining of source and target API method descriptions (that are typically publicly available) to discover likely mappings. %Furthermore, we demonstrate that our approach also infers equally good mappings if not better \textbf{pending evaluation}.
 
 
@@ -25,16 +31,7 @@ In contrast, \tool\ is independent of both the requirements: 1) to have function
 
 
 
-Recently, Nguyen et al.~\cite{nguyen2014migrating,nguyen2014statistical} proposed StaMiner,
-an approach that applies statistical machine translation based techniques to achieve language migration.
-Their approach builds upon a previous result~\cite{hindle2012naturalness} that demonstrates the effectiveness of using
-an n-gram model to predict the next token in software source file
-given a large corpus of software source files to learn from.
-Like MAM~\cite{Zhong2010ICSE} approach, they
-require a software $S$ written in source language and manually ported version of $S'$ written in target language as input. 
-They then consider source code as a sequence of lexical tokens (lexemes) and
-apply a phrase-based statistical machine translation model on the lexemes of those tokens.
-In contrast, \tool\ is does not require $S$ and $S'$.
+
 
 
 Furthermore, from an infrastructure perspective, \tool\ is independent of the programming language or API under consideration. In contrast, program analysis based approaches like~\cite{Zhong2010ICSE,Gokhale2013ICSE,nguyen2014statistical} may need significant
@@ -71,9 +68,8 @@ In contrast, \tool\ discovers method mappings across multiple APIs.
 
 
 Text analysis~\cite{Dekel2009, pandita12:inferring,Zhou2008,Little2009, zhong09SE} of API documentation is increasing being used to infer interesting properties from software engineering perspective.
-For instance, Zhong et al.~\cite{zhong09SE} employ natural language processing (NLP) and machine learning (ML) techniques to infer resource specifications from API documents.
-They define resource specifications as the rules governing the usage of resources such as File.
-Treude et al.~\cite{treudeextracting} also leverage rule-based NLP approaches to infer action (programming task) oriented properties from an API document. They describe tasks as specific programming actions that have been described in the documentation. 
+For instance, Zhong et al.~\cite{zhong09SE} employ natural language processing (NLP) and machine learning (ML) techniques to infer resource specifications (rules governing the usage of resources) from API documents.
+Treude et al.~\cite{treudeextracting} also leverage rule-based NLP approaches to infer action (programming actions described in documentation) oriented properties from an API document.
 In contrast, \tool\ uses text mining a comparatively lightweight-approach instead of sophisticated NLP techniques used in these approaches.
 Furthermore, \tool\ discovers API mapping relations across different API for language migration, whereas the previous approaches mine properties of one API.
 %In contrast, \tool\ is dependent on the quality of the documentation for each API being mapped.

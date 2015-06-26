@@ -12,8 +12,8 @@ and creates indexes (a vector space model) of these documents
 by extracting intermediate contents from the method descriptions. 
 The Query Builder accepts the API documents of the source API
 and creates queries to be executed on the indexes (a vector space model).
-Finally, Searcher component execute the queries on the indexes and 
-generates an ordered set of the API methods from target API documents as
+Finally, Searcher component executes the queries on the indexes and 
+generates a ranked list of the API methods from target API documents as
 mapping results to be presented to the developers for confirmation. 
 We next describe each component in detail.
 
@@ -21,10 +21,12 @@ We next describe each component in detail.
 \begin{figure}
 	\begin{center}
 		%\begin{framed}
-		\includegraphics[scale=0.46,clip=true, trim=120pt 80pt 10pt 80pt]{ApproahOverview.eps}
+		\includegraphics[scale=0.45,clip=true, trim=120pt 80pt 10pt 80pt]{ApproahOverview.eps}
 		%\end{framed}
+		\vspace*{-4ex}
 		\caption{\label{fig:approachOverview} Overview of \tool\ approach}
 	\end{center}
+	\vspace*{-4ex}
 \end{figure}
 
 
@@ -35,26 +37,25 @@ This component accepts the API method descriptions of the target API
 and creates indexes (a vector space model) of these documents.
 In particular, Indexer extracts the following fields from the API method descriptions:
 
-\begin{itemize} 
-	\item \textbf{F1) Type Name}: The name of enclosing class/interface of the method. For the method description of \CodeIn{drawString} shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the type Name as ``Graphics''.
+ 
+\textbf{F1) Type Name}: The name of enclosing class/interface of the method. For the method description of \CodeIn{drawString} shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the type Name as ``Graphics''.
 	
-	\item \textbf{F2) Package Name}: The package name of the enclosing type. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the package name as ``javax.microedition.lcdui''.
+\textbf{F2) Package Name}: The package name of the enclosing type. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the package name as ``javax.microedition.lcdui''.
 	
-	\item \textbf{F3) Method Name}: The name of the method. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the method name as ``drawString''.
+\textbf{F3) Method Name}: The name of the method. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the method name as ``drawString''.
 	
-	\item \textbf{F4) Method Modifiers}: The access modifiers of the method. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the method modifiers as ``public''.
+%	\item \textbf{F4) Method Modifiers}: The access modifiers of the method. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the method modifiers as ``public''.
+%	
+%	\item \textbf{F5) Method Return Type}: The return type of the method. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the return type as ``void''.
+%	
+%	\item \textbf{F6) Exceptions Thrown}: Name of the exceptions thrown by the method. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the exception names as ``NullPointerException'' and ``IllegalArgumentException''.
+%	
+%	\item \textbf{F7) Parameters}: The name and type information of parameters. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the parameter name and type information as ``String str'',``int x'',``int y'', and ``int anchor''.
 	
-	\item \textbf{F5) Method Return Type}: The return type of the method. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the return type as ``void''.
+\textbf{F4) Class Description}: The description of enclosing type. Class description is not shown in Figure~\ref{fig:drawStringJavadoc} for the space considerations.
 	
-	\item \textbf{F6) Exceptions Thrown}: Name of the exceptions thrown by the method. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the exception names as ``NullPointerException'' and ``IllegalArgumentException''.
-	
-	\item \textbf{F7) Parameters}: The name and type information of parameters. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the parameter name and type information as ``String str'',``int x'',``int y'', and ``int anchor''.
-	
-	\item \textbf{F8) Class Description}: The description of enclosing type. Class description is not shown in Figure~\ref{fig:drawStringJavadoc} for the space considerations.
-	
-	\item \textbf{F9) Method Description}: The description of the method. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the method description as the all the text except method deceleration in Line 1.
-			 
-\end{itemize}
+\textbf{F5) Method Description}: The description of the method. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the method description as the all the text except method declaration in Line 1.
+
 
 This step is required to extract the desired descriptive text from the API method descriptions.
 Getting structured descriptions facilitates searching on individual categories.
@@ -68,25 +69,22 @@ The preprocessing steps are required to make the text amenable to text mining te
 that are used in the subsequent phases of the \tool\ approach.
 In particular, \tool\ performs the following basic prepossessing steps: 
 
-\begin{itemize}
+\textbf{P1) Presentation Elements}: A typical API method description is often interleaved with presentation elements for better readability. For instance, \CodeIn{JavaDoc} provides a list of identifiers such as  \CodeIn{@Code} and  \CodeIn{@link}. These identifiers are automatically translated into presentation markup, such as links and fonts. Although such elements are part of the description text, these elements often cause noise in the text mining techniques to compute relevance based on the query. Therefore, this preprocessing step cleans the method descriptions to remove such elements. We use a static list of presentation elements to achieve cleaning in this step with relatively high accuracy.
 	
-	\item \textbf{P1) Presentation Elements}: A typical API method description is often interleaved with presentation elements for better readability. For instance, \CodeIn{JavaDoc} provides a list of identifiers such as  \CodeIn{@Code} and  \CodeIn{@link}. These identifiers are automatically translated into presentation markup, such as links and fonts. Although such elements are part of the description text, these elements often cause noise in the text mining techniques to compute relevance based on the query. Therefore, this preprocessing step cleans the method descriptions to remove such elements. We use a static list of presentation elements to achieve cleaning in this step with relatively high accuracy.
-	
-	\item \textbf{P2) Split Package Notation}: In method descriptions, the ``.'' character is used as a separator character for package names like ``\CodeIn{javax.microedition.lcdui}''. We use regular expressions to split the package name into constituent words to facilitate search on individual words in the package name. For example, ``\CodeIn{javax.microedition.lcdui}'' is split into ``javax microedition lcdui''.
+\textbf{P2) Split Package Notation}: In method descriptions, the ``.'' character is used as a separator character for package names like ``\CodeIn{javax.microedition.lcdui}''. We use regular expressions to split the package name into constituent words to facilitate search on individual words in the package name. For example, ``\CodeIn{javax.microedition.lcdui}'' is split into ``javax microedition lcdui''.
 
-	\item \textbf{P3) Split CamelCase Notation}: API method descriptions are often interleaved with programming identifiers, such as class names and method names.
-	Oftentimes these identifiers use CamelCase notation.
-	The CamelCase notation is the \textit{de facto} mechanism used by programmers for combining phrases into a single word, such that each word in the phrase begins with a capital letter.
-	Previous research~\cite{Little2009} demonstrated the benefit of splitting the CamelCase word into its constituent phrase for automated code completion.
-	\tool\ splits such identifiers into constituent phrases to better facilitate searching.
-	\tool\ leverages the well-formed structure of CamelCase notations to encode a regular expression to achieve splitting with relatively high accuracy.
-	For example, ``\CodeIn{drawString}'' is split into ``draw String''.   
+\textbf{P3) Split CamelCase Notation}: API method descriptions are often interleaved with programming identifiers, such as class names and method names.
+Oftentimes these identifiers use CamelCase notation.
+The CamelCase notation is the \textit{de facto} mechanism used by programmers for combining phrases into a single word, such that each word in the phrase begins with a capital letter.
+Previous research~\cite{Little2009} demonstrated the benefit of splitting the CamelCase word into its constituent phrase for automated code completion.
+\tool\ splits such identifiers into constituent phrases to better facilitate searching.
+\tool\ leverages the well-formed structure of CamelCase notations to encode a regular expression to achieve splitting with relatively high accuracy.
+For example, ``\CodeIn{drawString}'' is split into ``draw String''.   
 
-	\item \textbf{P4) Lowercase}: This step involves converting the text description to lower case. The step is performed to normalize the text for making the keyword match case intensive, further increasing the range of queries.
+\textbf{P4) Lowercase}: This step involves converting the text description to lower case. The step is performed to normalize the text for making the keyword match case intensive, further increasing the range of queries.
 	
-	\item \textbf{P5) Stemming}: This steps transforms the words in the description to their base form. Stemming is very effective in extending the range of keyword based queries to match various operational forms of the words. For instance, ``has'', ``have'', and ``had'' are mapped to the stem ``ha''.  
+\textbf{P5) Stemming}: This steps transforms the words in the description to their base form. Stemming is very effective in extending the range of keyword based queries to match various operational forms of the words. For instance, ``has'', ``have'', and ``had'' are mapped to the stem ``ha''.  
 	
-\end{itemize}
 
 
 After preprocessing, \tool\ next creates indexes for the API method descriptions.
@@ -137,6 +135,7 @@ Likewise, keywords for field ``Method Name'' is derived by preprocessing ``hasNe
 	\vspace{-2ex}
 	\caption{API Method Description of \CodeIn{hasNext} method in \CodeIn{Iterator Interface} from Java API}
 	\label{fig:hasNextJavadoc}
+	\vspace{-2ex}
 \end{figure}
 
 \begin{figure}
@@ -149,6 +148,7 @@ Likewise, keywords for field ``Method Name'' is derived by preprocessing ``hasNe
 	\vspace{-2ex}
 	\caption{Query based on API method description of \CodeIn{hasNext} method in \CodeIn{Iterator Interface} from Java API}
 	\label{fig:hasNextJavaQuery}
+	\vspace{-4ex}
 \end{figure}
 
 
