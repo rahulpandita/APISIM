@@ -2,21 +2,21 @@
 
 %Mapping across different platform or language Application Programming Interfaces (APIs)
 %is highly desirable.
-Developers often migrate applications to release different versions for supporting application programming interfaces (APIs) of various platforms/programming-languages.
-To migrate an application written using one API (source) to another API (target), a developer needs to know
+Developers often release different versions of their applications to support various platform/programming-language application programming interfaces (APIs).
+To migrate an application written using one API (source) to another API (target), a developer must know
 how the methods in the source API map to the methods in the target API.
-Given a typical platform or language exposes a large number of API methods for developers to reuse,
-manually writing these mappings is prohibitively resource-intensive
+Given a typical platform or language exposes a large number of API methods,
+manually writing API mappings is prohibitively resource-intensive
 and may be error prone.
-Recently, researchers proposed to automate the process by mining API mappings from existing code-bases.
-However, these approaches require as input a manually ported (or at least functionally similar) code across source and target API's.
+Recently, researchers proposed to automate the mapping process by mining API mappings from existing code-bases.
+However, these approaches require as input a manually ported (or at least functionally similar) code across source and target APIs.
 To address the shortcoming, this paper proposes \tool: \textit{\textbf{T}ext \textbf{M}ining
 based approach to discover likely \textbf{AP}I mappings} using the 
 similarity in the textual description of the source and target API documents.
-To evaluate our approach, we apply \tool\ to discover API mappings for 15 classes across: 
-1) \CodeIn{Java} and \CodeIn{C\#} API,
+To evaluate our approach, we used \tool\ to discover API mappings for 15 classes across: 
+1) \CodeIn{Java} and \CodeIn{C\#} API, and
 2) \CodeIn{Java ME} and \CodeIn{Android} API.
-We next compare the discovered mappings with state-of-the-art source code analysis based approaches: Rosetta and StaMiner.
-Our results indicate that \tool\ on an average found relevant mappings for 57\% more methods compared to previous approaches. 
-Furthermore, our results also indicate that \tool\ found on average exact mappings for 6.5 more methods per class with a maximum of 21 additional exact mappings for a single class as compared to previous approaches.
+We compared the discovered mappings with state-of-the-art source code analysis based approaches: Rosetta and StaMiner.
+Our results indicate that \tool\ on average found relevant mappings for 57\% more methods compared to previous approaches. 
+Furthermore, our results also indicate that \tool\ on average found exact mappings for 6.5 more methods per class with a maximum of 21 additional exact mappings for a single class as compared to previous approaches.
 \end{abstract}
