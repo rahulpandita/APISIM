@@ -7,7 +7,7 @@ We conducted an evaluation to assess the effectiveness of \tool. In our evaluati
 	
 \item\textbf{RQ1}: What is the effectiveness of \tool\ in leveraging the similarity in the language of API method descriptions to discover likely API Mappings?
 
-\item\textbf{RQ2}: How do the mappings discovered by \tool\ compare with the human written mappings?
+\item\textbf{RQ2}: How do the mappings discovered by \tool\ compare with the mappings discovered by existing program-analysis based approaches?
 
 %\item\textbf{RQ3}: What is the effectiveness of using free form queries using \tool?
 
@@ -40,7 +40,7 @@ Particularly we used the API documents of the following library pairs as subject
 
 
 \textbf{Java ME (to Android) API}:
-For our evaluation we considered the methods in the following Java ME Types as the source API methods to discover mapping methods in Android API: 
+For our evaluation we considered the methods in the following Java ME \CodeIn{types} as the source API methods to discover mapping methods in Android API: 
 \CodeIn{Alert},
 \CodeIn{Canvas},
 \CodeIn{Command},
@@ -49,17 +49,17 @@ For our evaluation we considered the methods in the following Java ME Types as t
 Classes in \CodeIn{javax.} \CodeIn{microedition.} \CodeIn{lcdui} package.
 
 
-The listed types provides methods for supporting graphics related functionality in Java ME.
-Furthermore, Gokhale et al.~\cite{Gokhale2013ICSE} approach Rossetta reports the
-mapping for methods in theses types along with seven others (twelve types in total) as a part of their evaluation,
-thus providing for a baseline comparison with dynamic analysis based approaches.
+The listed \CodeIn{types} provides methods for supporting graphics related functionality in Java ME.
+Furthermore, Rosetta approach by Gokhale et al.~\cite{Gokhale2013ICSE} reports the
+mapping for methods in these \CodeIn{types} along with seven others (twelve \CodeIn{types} in total) as a part of their evaluation,
+thus allowing a comparison with dynamic-analysis based approaches.
 Rosetta approach requires a user to manually execute functionally similar applications using source and target API with identical (or near identical) inputs and collect execution traces.
 Finally Rosetta analyses the collected execution traces to infer method mappings.
 We focused our evaluation on the listed five types which first three authors perceived as frequently used types among the twelve types reported by Rosetta.
 In the future, we plan to evaluate \tool\ approach on all the twelve reported types. 
 
 \textbf{Java (to C\#) API}:
-For our evaluation we considered the methods in the following Java Types as the source API methods to discover mapping methods in C\# API: 
+For our evaluation we considered the methods in the following Java \CodeIn{types} as the source API methods to discover mapping methods in C\# API: 
 1) \CodeIn{File},
 \CodeIn{Reader}, and 
 \CodeIn{Writer} in \CodeIn{java.io} package;
@@ -71,11 +71,11 @@ For our evaluation we considered the methods in the following Java Types as the 
 \CodeIn{ResultSet}, and 
 \CodeIn{Statement} classes in \CodeIn{java.sql} package.
  
-Types in \CodeIn{java.io} provide the API methods for accessing and manipulating the file system.
+The \CodeIn{types} in \CodeIn{java.io} provide the API methods for accessing and manipulating the file system.
 Types in \CodeIn{java.util} provide API methods for miscellaneous utilities, such as text manipulation, collections frameworks and other data structures.
 Types in \CodeIn{java.sql} provide the API methods for accessing and processing data stored in databases.
-We selected these particular packages in Java programming languages because Nguyen et al.~\cite{nguyen2014statistical} in their work (StaMiner) for statistical language migration find mappings for the types in these packages.
-Their mappings provides for a external baseline comparison.
+We selected these particular packages in Java programming languages because Nguyen et al.~\cite{nguyen2014statistical} in their work (StaMiner) for statistical language migration find mappings for the \CodeIn{types} in these packages.
+Their mapping results allow comparison of \tool\ with static-analysis based approach.
 Although, Nguyen et al.~\cite{nguyen2014statistical} report on all the classes in these packages,
 due to the amount of effort, we focused our analysis on the listed types which first three authors perceived as frequently used types in their respective packages.
 
@@ -87,18 +87,20 @@ We first downloaded the publicly available API documents from the respective web
 We created a separate index for every API type: Java ME, Android, Java, and C\#. 
 
 
-For every class/interface under consideration (as listed in Section~\ref{sub:subject}),
+For every \CodeIn{type} (class/interface) under consideration (as listed in Section~\ref{sub:subject}),
 we extracted the publicly listed methods from API documents.
-For a given type, we only consider the methods that are explicitly listed in the public API.
-We exclude the methods that are inherited from a parent type without modification.
-For instance, we exclude the \CodeIn{equals} method from the parent class \CodeIn{Object} which is the parent class for majority of Java types.
-Since, the inherited methods are part of the parent type,
-\tool\ will find the mapping when considering the parent type.
+For a given \CodeIn{type}, we only consider the methods that are listed in the public API.
+We only consider the methods explicitly declared or overridden by a type and ignore the inherited methods.
 We then use \tool\ to create the queries form the descriptions of the considered methods as described in Section~\ref{sub:Approach_Searcher}.
 Finally, we execute the formulated queries on the index and collect results
 We only consider top-10 results for each query.
 Previous approaches~\cite{chatterjee2009sniff,Gokhale2013ICSE}
 also only consider the top-10 results suggested by their approach for evaluation.
+%We exclude the methods that are inherited from a parent type without modification.
+%For instance, we exclude the \CodeIn{equals} method from the parent class \CodeIn{Object} which is the parent class for majority of Java types.
+%Since, the inherited methods are part of the parent type,
+%\tool\ will find the mapping when considering the parent type.
+
 
 
 The top-10 matches found by the \tool\ are then analyzed/reviewed manually to determine the effectiveness of the matched results.
@@ -114,12 +116,12 @@ Authors next annotated each match as `relevant' and/or `exact' based on the foll
 	The target method is reported by the previous approaches~\cite{Gokhale2013ICSE,nguyen2014statistical} as a mapping.
 \end{enumerate}
 
-For example, the method \CodeIn{getInt} in the type \CodeIn{java.sql.ResultSet} has an exact match in the C\# method \CodeIn{GetInt32} from \CodeIn{system.data.} \CodeIn{sqlclient.SqlDataReader} type, since it provides the same functionality of extracting the value stored in a specified column as a 32-bit signed integer.
-On the other hand, the method \CodeIn{getClob} in type \CodeIn{java.sql.ResultSet} does not have an exact corresponding method in C\#. The closest functionality available is the C\# method \CodeIn{GetValues} in the class \CodeIn{system.data.sqlclient.SqlDataReader}. 
+For example, \CodeIn{getInt} method in \CodeIn{java.sql.ResultSet} type has an exact match in the C\# method \CodeIn{GetInt32} from \CodeIn{system.data.sqlclient.SqlDataReader} type, since both methods provide the same functionality of extracting the 32-bit signed integer value stored in a specified column.
+In contrast, \CodeIn{getClob} method in \CodeIn{java.sql.ResultSet} type does not have an exact corresponding method in C\#. The closest functionality available is the C\# method \CodeIn{GetValues} in \CodeIn{system.data.sqlclient.SqlDataReader} type. 
 Thus the method \CodeIn{GetValues} is marked as relevant, but not an exact match.
 
 
-We then calculate coverage ($Cov$) as the ratio of the number of source methods in a type to the number of methods that \tool\ found \textit{at-least} one relevant mapping.
+We then calculate coverage ($Cov$) as the ratio of the number of methods in a type that \tool\ found \textit{at-least} one relevant mapping to the total number of source methods in that type.
 We also calculate the $\Delta_{Cov}$ as increase in the $Cov$ in comparison to results reported by previous approaches~\cite{Gokhale2013ICSE,nguyen2014statistical}. High value of $\Delta_{Cov}$ indicates the effectiveness of \tool\ in finding API method mappings.
 
 Finally we measure the common methods between the exact mappings suggested by \tool\ for a source method with the mappings suggested by previous approaches.
@@ -177,7 +179,6 @@ The columns `API' lists the name of source API under `Source' and target API und
 The column `Type' lists the class or interface in source API
 under consideration for finding mappings in target API.
 The column `No. Methods' lists the number of methods in the class or interface under consideration.
-We only consider the methods explicitly declared or overridden by a type and ignore the inherited methods.
 The column `Relevant' lists the number of methods for which at least one relevant mapping is reported.
 The sub-column `Prev.' reports relevancy numbers by previous approaches.
 The previous approach for comparison of Java ME-Android mappings is Rosetta~\cite{Gokhale2013ICSE}.
@@ -190,7 +191,7 @@ The sub-columns `\tool' reports exact numbers by \tool\ (at least one exact meth
 Column `$\Delta_{Cov}$' lists the ratio of increase in the number of methods for which a relevant mapping was found by \tool\ to the total number of methods in the type.
 
 
-Our evaluation results indicate the \tool\ on an average finds relevant mappings for 57\% (Column `$\Delta_{Cov}$') more methods. 
+Our evaluation results indicate the \tool\ on average finds relevant mappings for 57\% (Column `$\Delta_{Cov}$') more methods. 
 For the Java ME-Android mappings \tool\ performs best for \CodeIn{Alert}
 and \CodeIn{Font} classes from \CodeIn{javax.} \CodeIn{microedition.lcdui}
 package in Java ME API with 75\% increase in number of methods
@@ -216,7 +217,7 @@ In Java ME API, `command' is used to refer the user interface construct `button'
 In Android API, `command' is used in more conventional sense of the term.
 This inconsistent use of terminology causes \tool\ to return irrelevant results. 
 When we manually replaced the term `command' with `button' in the generated queries,
-we observed a relevant method appeared in top ten results for every method \CodeIn{Command} class in Java ME API.
+we observed a relevant method appeared in top ten results for every method in the \CodeIn{Command} class in Java ME API.
 However, we refrain from including such modifications to stay true to \tool\ approach for evaluation.
 In the future, we plan to investigate techniques to automatically suggest alternate keywords.
 
@@ -248,7 +249,7 @@ The ranked set of results helps the developer use the best suited or most approp
 
 
 We also contacted the authors of Rosetta approach~\cite{Gokhale2013ICSE} to report the difference in the mappings.
-Specifically, we inquired that Rosetta does not report any method form \CodeIn{AlertDialog} in the Android API as a possible mapping for
+Specifically, we inquired that Rosetta does not report any method form \CodeIn{AlertDialog} class in the Android API as a possible mapping for
 \CodeIn{Alert.setString} method in Java ME API.
 Rosetta reports method sequence \CodeIn{Paint.setAlpha} \CodeIn{CompundButton.} \CodeIn{setChecked} as one of the likely mappings.
 In contrast, \tool\ discovers \CodeIn{AlertDialog.setTitle} method in Android API as a likely mapping.
