@@ -2,12 +2,12 @@
 \label{sec:related}
 
 Language migration is an active area of research~\cite{Hassan2005LAM,Mossienko2003ACJ,vanDeursen1999ICSE,WatersIEEEtranSE88,Zhong2010ICSE,Gokhale2013ICSE,nguyen2014statistical}, with myriad techniques that have been proposed over time to achieve automation. However, most of these approaches focus on syntactical and structural differences across languages. For instance, Deursen et al.~\cite{vanDeursen1999ICSE} proposed an approach to automatically infer objects in legacy code to effectively deal with differences between object-oriented and procedural languages.
+However, El-Ramly et al.~\cite{Ramly2006CSA} suggest that most of these approaches support only a subset of API's for migration. A recently published survey by Robillard et al.~\cite{RobillardIEEEtranSE13} provides a detailed overview of techniques dealing with mining API mappings.
+%
 
-However, El-Ramly et al.~\cite{Ramly2006CSA} points out that most of these approaches support only a subset of API's for migration. Another recently published survey by Robillard et al.~\cite{RobillardIEEEtranSE13} provides a detailed overview of techniques dealing with mining API mappings. Among other works described in ~\cite{RobillardIEEEtranSE13}, Mining API Mapping~\cite{Zhong2010ICSE} (MAM) is most directly related to our work.
-
-
-MAM mines API mapping relations across different languages for language migration,
-however there is a significant difference between MAM and \tool.
+Among other works described in ~\cite{RobillardIEEEtranSE13}, Mining API Mapping across different languages~\cite{Zhong2010ICSE} (MAM) is most directly related to our work.
+%MAM mines API mapping relations across different languages for language migration,
+%however there is a significant difference between MAM and \tool.
 MAM takes into input a software ($S$) written in source language and manually ported version of $S$ ($S'$) written in target language.
 MAM then applies a technique called ``method alignment'' that pairs the methods with similar functionality across $S$ and $S'$. These methods are then statically analyzed to detect mappings between source and target language API. While MAM requires as input software that has been manually ported from a source to target API (both $S$ and $S'$), our approach is independent of such requirement.
 In contrast, \tool\ relies on text mining of source and target API method descriptions (that are typically publicly available) to discover likely mappings. %Furthermore, we demonstrate that our approach also infers equally good mappings if not better \textbf{pending evaluation}.
@@ -25,16 +25,16 @@ In contrast, \tool\ is independent of both the requirements: 1) to have function
 
 
 
-Recently Nguyen et al.~\cite{nguyen2014migrating,nguyen2014statistical} proposed StaMiner,
+Recently, Nguyen et al.~\cite{nguyen2014migrating,nguyen2014statistical} proposed StaMiner,
 an approach that applies statistical machine translation based techniques to achieve language migration.
 Their approach builds upon a previous result~\cite{hindle2012naturalness} that demonstrates the effectiveness of using
 an n-gram model to predict the next token in software source file
 given a large corpus of software source files to learn from.
-Similar to MAM~\cite{Zhong2010ICSE} approach they
+Like MAM~\cite{Zhong2010ICSE} approach, they
 require a software $S$ written in source language and manually ported version of $S'$ written in target language as input. 
 They then consider source code as a sequence of lexical tokens (lexemes) and
 apply a phrase-based statistical machine translation model on the lexemes of those tokens.
-In contrast, \tool\ is independent of such requirement (presence of $S$ and $S'$).
+In contrast, \tool\ is does not require $S$ and $S'$.
 
 
 Furthermore, from an infrastructure perspective, \tool\ is independent of the programming language or API under consideration. In contrast, program analysis based approaches like~\cite{Zhong2010ICSE,Gokhale2013ICSE,nguyen2014statistical} may need significant
@@ -66,7 +66,7 @@ Chatterjee et al.'s~\cite{chatterjee2009sniff} approach Sniff annotates the sour
 Sniff then performs additional type analysis on the source code to rank relevant code snippets. 
 Grechanik et al.'s~\cite{grechanik2010search} approach Exemplar uses the text in API documents to construct a set of keywords associated with an API call.
 Exemplar then uses the keywords list to facilitate query expansion to achieve code search.
-However, these approaches are targeted towards code search in a one API.
+However, these approaches are targeted towards code search in one API.
 In contrast, \tool\ discovers method mappings across multiple APIs. 
 
 
@@ -75,7 +75,7 @@ For instance, Zhong et al.~\cite{zhong09SE} employ natural language processing (
 They define resource specifications as the rules governing the usage of resources such as File.
 Treude et al.~\cite{treudeextracting} also leverage rule-based NLP approaches to infer action (programming task) oriented properties from an API document. They describe tasks as specific programming actions that have been described in the documentation. 
 In contrast, \tool\ uses text mining a comparatively lightweight-approach instead of sophisticated NLP techniques used in these approaches.
-Furthermore, \tool\ discovers API mapping relations across different API for language migration, whereas the previous approaches mine properties of a single API.
+Furthermore, \tool\ discovers API mapping relations across different API for language migration, whereas the previous approaches mine properties of one API.
 %In contrast, \tool\ is dependent on the quality of the documentation for each API being mapped.
 
 %Code search is yet another active area of research that benefits from API documents
