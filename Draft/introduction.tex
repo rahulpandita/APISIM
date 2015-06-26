@@ -38,7 +38,7 @@ by automatically discovering likely method mappings across APIs using text minin
 on the natural language API method descriptions}
 
 
-Existing approaches in literature
+Existing approaches
 address the problem of finding method mapping between APIs using
 static~\cite{Zhong2010ICSE} and dynamic~\cite{Gokhale2013ICSE} analysis. 
 Recently Nguyen et al.~\cite{nguyen2014statistical} further proposed to
@@ -75,7 +75,7 @@ In particular, \tool\ proposes to create a vector space model~\cite{singhal2001m
 \tool\ then queries the vector space model of target API using
 automatically generated queries from the source API method descriptions.
 \tool\ automates the query generation in source API using the concepts from text mining, such as emphasizing (or omitting) certain keywords over others and querying multiple facets (such as class description, package names, and method description).
-
+Since \tool\ analyzes API documents in natural language, the proposed approach is reusable, independent of the programming language of the library.
 
 We pose the following research question:
 \textit{How accurately can the similarity in the language of API method descriptions
@@ -83,10 +83,12 @@ We pose the following research question:
 To answer our question, we apply \tool\ to discover likely API mappings for 15 classes across:
 1) \CodeIn{Java} and \CodeIn{C\#} API; 2) \CodeIn{Java ME}~\footnote{Java Platform Micro Edition} and \CodeIn{Android} API.
 We also compare the discovered mappings with two state-of-the-art static and dynamic analysis based approaches: Rosetta~\cite{Gokhale2013ICSE} and StaMiner~\cite{nguyen2014statistical}.
-Our results indicate that \tool\ on an average found relevant mappings for 57\% more methods compared to Rosetta and StaMiner. 
-Furthermore, our results also indicate that \tool\ found on average exact mappings for 6.5 more methods per class with a maximum of 21 additional exact mappings for a single class as compared to previous approaches.
+%Our results indicate that \tool\ on an average found relevant mappings for 57\% more methods compared to Rosetta and StaMiner. 
+%Furthermore, our results also indicate that \tool\ found on average exact mappings for 6.5 more methods per class with a maximum of 21 additional exact mappings for a single class as compared to previous approaches.
 
-In summary, \tool\ leverages natural language description of APIs to discover likely mapping thus facilitating cross API migration of applications. Since \tool\ analyzes API documents in natural language, the proposed approach is reusable, independent of the programming language of the library. This paper makes the following major contributions:
+%In summary, \tool\ leverages natural language description of APIs to discover likely mapping thus facilitating cross API migration of applications. Since \tool\ analyzes API documents in natural language, the proposed approach is reusable, independent of the programming language of the library. 
+
+This paper makes the following major contributions:
 \begin{itemize}
 	\item A text mining based approach that effectively discovers mapping between source and target API.
 	\item A prototype implementation of our approach based on extending the Apache Lucene~\cite{lucene}. An open source implementation of our prototype can be found at our website~\footnote{\url{https://sites.google.com/a/ncsu.edu/apisim/}}. 
