@@ -122,7 +122,8 @@ Thus the method \CodeIn{GetValues} is marked as relevant, but not an exact match
 
 
 We then calculate coverage ($Cov$) as the ratio of the number of methods in a type that \tool\ found \textit{at-least} one relevant mapping to the total number of source methods in that type.
-We also calculate the $\Delta_{Cov}$ as increase in the $Cov$ in comparison to results reported by previous approaches~\cite{Gokhale2013ICSE,nguyen2014statistical}. High value of $\Delta_{Cov}$ indicates the effectiveness of \tool\ in finding API method mappings.
+We also calculate the $\Delta_{Cov}$ as increase in the $Cov$ in comparison to results reported by previous approaches~\cite{Gokhale2013ICSE,nguyen2014statistical} as : $\Delta_{Cov}\ =\  TMAP_{cov} - Prev_{cov}$.
+High value of $\Delta_{Cov}$ indicates the effectiveness of \tool\ in finding API method mappings.
 
 Finally we measure the common methods between the exact mappings suggested by \tool\ for a source method with the mappings suggested by previous approaches.
 We then calculate, the number of new mappings a the number of exact mappings minus the common mappings.
@@ -247,7 +248,7 @@ reflecting that often there are multiple ways to solve a problem, or to implemen
 Further, choice of using multiple APIs gives a developer the flexibility to use different approaches when porting an application from one platform to another. 
 
 When more than one match is found for a given source method, the results in \tool\ are ranked according to the similarity score, with the more relevant (or exact matches) ranked higher. 
-The ranked set of results helps the developer use the best suited or most appropriate target method in their implementation. This approach is different from earlier approaches \cite{Gokhale2013ICSE,nguyen2014statistical} that focused on only exact matches between different classes based on the number of methods within them that are similar. 
+The ranked set of results helps the developer use the best suited or most appropriate target method in their implementation. This approach is different from earlier approaches \cite{Gokhale2013ICSE,nguyen2014statistical} that focused on only exact matches between different classes using the number of similar methods as a basis. 
 
 
 We also contacted the authors of Rosetta approach~\cite{Gokhale2013ICSE} to report the difference in the mappings.
@@ -265,8 +266,8 @@ Although, author did confirm that technically \CodeIn{AlertDialog.setTitle} meth
 The exchange with Rosetta approach's lead author points out that
 the mappings discovered by \tool\ generally point to
 the closest aggregate API in contrast to the individual smaller API calls
-that achieve same functionality.
-Furthermore, exchange also demonstrates the reliance of the
+that achieve the same functionality.
+Furthermore, the exchange also demonstrates the reliance of the
 code analysis approaches on the quality of the code under analysis.
 In contrast, \tool\ relies on the quality of the API method descriptions.
 

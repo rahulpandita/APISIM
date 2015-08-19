@@ -23,9 +23,8 @@ We next introduce the concepts from text mining that have been used in the prese
 \textbf{Indexing}~\cite{frakes1992introduction,manning2008introduction}:
 Indexing is the process of extracting text data from source documents
 and storing them in well-defined indexes.
-The indexing process constitutes of following steps.
-
-A document is divided into its constituent units, known as tokens, based on a well-defined criterion. A token is usually an individually identifiable unit of the document (such as a word) and relates to the individual terms stored in an index. Once the tokens within each document are identified, they are added to the index, with the corresponding link to the document and associated term frequencies.
+During the indexing process, a document (a sequence of text) is divided into its constituent units, known as tokens, based on a well-defined criterion. 
+A token is usually an individually identifiable unit of the document (such as a word) and relates to the individual terms stored in an index. Once the tokens within each document are identified, they are added to the index, with the corresponding link to the document and associated term frequencies.
 Term frequency is the simple count of the occurrence of a term in a document.
 An optional pre-processing step further assists with indexing, such as removing stop-words, grouping similar words together. 
 
@@ -34,9 +33,9 @@ An optional pre-processing step further assists with indexing, such as removing 
 Among various indexing strategies,
 the use of \textit{inverted file indexing}~\cite{frakes1992introduction}
 is well suited for large document collections.
-In the simplest form, inverted file index maintains the
-mapping of terms and their location in a text collection.
-For instance, a text document can be thought of as a collection of $m$ words.
+In the simplest form, an inverted file index provides
+a mapping from content, such as words or numbers, to its locations in a text document.
+A document can be thought of as a collection of $m$ words.
 Typically a document is made up of a sequence of $n$ unique words
 such that $n <= m$.
 The number n is usually far less than
@@ -58,7 +57,7 @@ of terms is referred to as \textit{vector space model}~\cite{singhal2001modern,f
 \textbf{TF-IDF}\cite{manning2008introduction}:
 Term -frequency inverse-document-frequency (\CodeIn{tf-idf}) is a numerical statistic that is intended to capture the importance of a term to a document in a corpus.
 Often used as a weighting metric in information retrieval and text mining,
-the \CodeIn{tf-idf} weight increases proportionally to frequency of the occurrence of a term in a document, however the weight is also offset by the frequency of occurrence the term in the corpus.
+the \CodeIn{tf-idf} weight increases proportionally to frequency of the occurrence of a term in a document; however, the weight is also offset by the count of the number of documents that contain the word.
 
 \textbf{Cosine Similarity}\cite{singhal2001modern}: In mathematics, Cosine similarity is a numerical statistic to measure the similarity between two vectors.
 Cosine similarity is defined as a dot product of magnitude of two vectors.

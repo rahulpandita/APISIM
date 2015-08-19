@@ -59,7 +59,7 @@ In particular, Indexer extracts the following fields from the API method descrip
 
 This step is required to extract the desired descriptive text from the API method descriptions.
 Getting structured descriptions facilitates searching on individual categories.
-Thus step allows \tool\ to deal with the \textit{structure} issue as presented in Section~\ref{sec:example}.
+This step allows \tool\ to deal with the \textit{structure} issue as presented in Section~\ref{sec:example}.
 Different API documents may have different styles of presenting information to developers.
 Such stylistic differences may also include the difference in the level of the details presented to developers.
 \tool\ relies only on basic fields that are generally available for API methods across different presentation styles. 
@@ -81,9 +81,9 @@ Previous research~\cite{Little2009} demonstrated the benefit of splitting the Ca
 \tool\ leverages the well-formed structure of CamelCase notations to encode a regular expression to achieve splitting with relatively high accuracy.
 For example, ``\CodeIn{drawString}'' is split into ``draw String''.   
 
-\textbf{P4) Lowercase}: This step involves converting the text description to lower case. The step is performed to normalize the text for making the keyword match case intensive, further increasing the range of queries.
+\textbf{P4) Lowercase}: This step involves converting the text description to lower case. The step is performed to normalize the text for making the keyword match case insensitive, further increasing the range of queries.
 	
-\textbf{P5) Stemming}: This steps transforms the words in the description to their base form. Stemming is very effective in extending the range of keyword based queries to match various operational forms of the words. For instance, ``has'', ``have'', and ``had'' are mapped to the stem ``ha''.  
+\textbf{P5) Stemming}: This steps transforms the words in the description to their base form. Stemming is very effective in extending the range of keyword based queries to match various operational forms of the words. For instance, ``has'', ``have'', and ``had'' are mapped to the stem ``ha''. We use the default implementation of the Lucene Porter stemmer for indexer. 
 	
 
 
@@ -114,7 +114,7 @@ These queries are executed on the target API index to retrieve
 an ordered list relevant API methods.
 In particular, Query Builder uses the same preprocessing steps followed by Indexer
 (listed in Section~\ref{sub:Approach_Indexer}).
-After extracted desired descriptive text from the API method descriptions,
+After extracting the desired descriptive text from the API method descriptions,
 this component systematically creates search queries to search for different fields in Indexes.
 Keywords for searching in ``Type Name'', ``Type Description'', ``Method Name'', and ``Method Description'' fields are derived from their equivalents in the extracted descriptive text.
 
@@ -183,7 +183,7 @@ For each term in the method description \tool\ calculates the number of times th
 The calculated tf-idf values of terms are normalized to a range of 0 to 1 (both 0 and 1 inclusive) for each document.
 The normalized tf-idf sore of the top-k term is then used as the weights for the corresponding  keywords occurring in the query.
 
-For the API method description  shown in Figure~\ref{fig:hasNextJavadoc}, \tool\ calculates ``iter'', ``has'', and ``element'' as most the important terms with normalized tf-idf scores of 1.0, 1.0, and 0,6 respectively. We augment the query shown in Figure~\ref{fig:hasNextJavaQuery} with the computed weights for the keywords respectively.
+For the API method description  shown in Figure~\ref{fig:hasNextJavadoc}, \tool\ calculates ``iter'', ``ha'' (Lemma of ``has''), and ``element'' as most the important terms with normalized tf-idf scores of 1.0, 1.0, and 0,6 respectively. We augment the query shown in Figure~\ref{fig:hasNextJavaQuery} with the computed weights for the keywords respectively.
 
 \subsection{Searcher}
 \label{sub:approach_searcher}
@@ -215,4 +215,4 @@ In particular our prototype implementation parses:
 
 We next implemented the indexing, query building, and searching infrastructure using the Apache Lucene~\cite{lucene}.
 Lucene is a high-performance, full-featured text search engine library written entirely in Java.
-Our prototype implementation and evaluation subjects are publicly available on the project website.~\footnote{\url{https://sites.google.com/a/ncsu.edu/apisim/}}  
+Our prototype implementation and evaluation subjects are publicly available on the project website~\footnote{\url{https://sites.google.com/a/ncsu.edu/apisim/}}. 
