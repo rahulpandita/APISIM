@@ -1,5 +1,7 @@
+\vspace*{-1ex}
 \section{Evaluation}
 \label{sec:evaluation}
+\vspace*{-1ex}
 
 We conducted an evaluation to assess the effectiveness of \tool. In our evaluation, we address following research questions:
 
@@ -17,7 +19,7 @@ We conducted an evaluation to assess the effectiveness of \tool. In our evaluati
 \label{sub:subject}
 
 
-We evaluated \tool\ using a snapshot of the publicly available API documents of Java, C\#, Android, and Java ME downloaded on Jan 2015. 
+We evaluated \tool\ using a snapshot of the publicly available API documents of Java, C\#, Android, and Java ME downloaded on January 2015. 
 
 Java Platform Micro Edition, or Java ME, is a Java platform designed for embedded systems (such as mobile devices). Target devices range from industrial controls to mobile phones (especially feature phones) and set-top boxes.
 Android is a linux-based operating system designed primarily for touchscreen mobile devices, such as smartphones and tablet computers.
@@ -46,7 +48,7 @@ For our evaluation we considered the methods in the following Java ME \CodeIn{ty
 \CodeIn{Command},
 \CodeIn{Graphics}, and
 \CodeIn{Font}
-Classes in \CodeIn{javax.} \CodeIn{microedition.} \CodeIn{lcdui} package.
+Classes in \CodeIn{javax.microedition.lcdui} package.
 
 
 The listed \CodeIn{types} provides methods for supporting graphics related functionality in Java ME.
@@ -107,11 +109,11 @@ The top-10 matches found by the \tool\ are then analyzed/reviewed manually to de
 For a given method in the source API, a match is characterized by a class and a method within that class that is determined to be the corresponding implementation in the target API.
 Authors next annotated each match as `relevant' and/or `exact' based on the following acceptance criteria:
 \begin{enumerate}
-	\item{\textbf{Relevant}} If the target method in the top-10 list can be used to implement the same (or similar) functionality as the source method, we classify the result as relevant.\\
+	\item{\textbf{Relevant}}: If the target method in the top-10 list can be used to implement the same (or similar) functionality as the source method, we classify the result as relevant.\\
 	OR\\
 	The target method is reported by the previous approaches~\cite{Gokhale2013ICSE,nguyen2014statistical} as a mapping.
 
-	\item{\textbf{Exact}} If the target method is a relevant method and the target method accurately captures the functionality of the source method, and implements the same feature/function, the resultant match is classified as an `exact' match.\\
+	\item{\textbf{Exact}}: If the target method is a relevant method and the target method accurately captures the functionality of the source method, and implements the same feature/function, the resultant match is classified as an `exact' match.\\
 	OR\\
 	The target method is reported by the previous approaches~\cite{Gokhale2013ICSE,nguyen2014statistical} as a mapping.
 \end{enumerate}
@@ -121,12 +123,11 @@ In contrast, \CodeIn{getClob} method in \CodeIn{java.sql.ResultSet} type does no
 Thus the method \CodeIn{GetValues} is marked as relevant, but not an exact match.
 
 
-We then calculate coverage ($Cov$) as the ratio of the number of methods in a type that \tool\ found \textit{at-least} one relevant mapping to the total number of source methods in that type.
+We then calculate coverage ($Cov$) as the ratio of the number of methods in a type that \tool\ found \textit{at-least} one \textbf{relevant} mapping to the total number of source methods in that type.
 We also calculate the $\Delta_{Cov}$ as increase in the $Cov$ in comparison to results reported by previous approaches~\cite{Gokhale2013ICSE,nguyen2014statistical} as : $\Delta_{Cov}\ =\  TMAP_{cov} - Prev_{cov}$.
 High value of $\Delta_{Cov}$ indicates the effectiveness of \tool\ in finding API method mappings.
-
 Finally we measure the common methods between the exact mappings suggested by \tool\ for a source method with the mappings suggested by previous approaches.
-We then calculate, the number of new mappings a the number of exact mappings minus the common mappings.
+We then calculate, the number of new mappings a the number of exact mappings sans the common mappings.
 
 \subsection {Results}
 
@@ -182,7 +183,7 @@ The columns `API' lists the name of source API under `Source' and target API und
 The column `Type' lists the class or interface in source API
 under consideration for finding mappings in target API.
 The column `No. Methods' lists the number of methods in the class or interface under consideration.
-The column `Relevant' lists the number of methods for which at least one relevant mapping is reported.
+The columns `Relevant' lists the number of methods for which at least one relevant mapping is reported.
 The sub-column `Prev.' reports relevancy numbers by previous approaches.
 The previous approach for comparison of Java ME-Android mappings is Rosetta~\cite{Gokhale2013ICSE}.
 The previous approach for comparison of Java-C\# mappings is StaMiner~\cite{nguyen2014statistical}.
@@ -234,7 +235,7 @@ previous approach for comparison of Java-C\# mappings is StaMiner~\cite{nguyen20
 Our results show that out of 171 discovered exact mappings only 22 are in common with previous approaches.
 We next discuss some of the implications of the results.
 
-Before carrying out this evaluation, we had hoped that
+Before carrying out this evaluation, we expected that
 the mappings discovered by \tool\ would significantly
 overlap with the mappings discovered by the Rosetta and StaMiner,
 as these approaches infer mappings from actual source code.

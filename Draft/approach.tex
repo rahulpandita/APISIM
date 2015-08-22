@@ -1,5 +1,7 @@
+\vspace*{-1ex}
 \section{Approach}
 \label{sec:approach}
+\vspace*{-1ex}
 
 We next present our approach for discovering 
 likely mappings of API methods  across APIs. 
@@ -54,7 +56,7 @@ In particular, Indexer extracts the following fields from the API method descrip
 	
 \textbf{F4) Class Description}: The description of enclosing type. Class description is not shown in Figure~\ref{fig:drawStringJavadoc} for the space considerations.
 	
-\textbf{F5) Method Description}: The description of the method. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the method description as the all the text except method declaration in Line 1.
+\textbf{F5) Method Description}: The description of the method. For the method description shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the method description as all the text except method declaration in Line 1.
 
 
 This step is required to extract the desired descriptive text from the API method descriptions.
@@ -69,7 +71,7 @@ The preprocessing steps are required to make the text amenable to text mining te
 that are used in the subsequent phases of the \tool\ approach.
 In particular, \tool\ performs the following basic prepossessing steps: 
 
-\textbf{P1) Presentation Elements}: A typical API method description is often interleaved with presentation elements for better readability. For instance, \CodeIn{JavaDoc} provides a list of identifiers such as  \CodeIn{@Code} and  \CodeIn{@link}. These identifiers are automatically translated into presentation markup, such as links and fonts. Although such elements are part of the description text, these elements often cause noise in the text mining techniques to compute relevance based on the query. Therefore, this preprocessing step cleans the method descriptions to remove such elements. We use a static list of presentation elements to achieve cleaning in this step with relatively high accuracy.
+\textbf{P1) Presentation Elements}: A typical API method description is often interleaved with presentation elements for improved readability. For instance, \CodeIn{JavaDoc} provides a list of identifiers such as  \CodeIn{@Code} and  \CodeIn{@link}. These identifiers are automatically translated into presentation markup, such as links and fonts. Although such elements are part of the description text, these elements often cause noise in the text mining techniques to compute relevance based on the query. Therefore, this preprocessing step cleans the method descriptions to remove such elements. We use a static list of presentation elements to achieve cleaning in this step with relatively high accuracy.
 	
 \textbf{P2) Split Package Notation}: In method descriptions, the ``.'' character is used as a separator character for package names like ``\CodeIn{javax.microedition.lcdui}''. We use regular expressions to split the package name into constituent words to facilitate search on individual words in the package name. For example, ``\CodeIn{javax.microedition.lcdui}'' is split into ``javax microedition lcdui''.
 
@@ -83,7 +85,7 @@ For example, ``\CodeIn{drawString}'' is split into ``draw String''.
 
 \textbf{P4) Lowercase}: This step involves converting the text description to lower case. The step is performed to normalize the text for making the keyword match case insensitive, further increasing the range of queries.
 	
-\textbf{P5) Stemming}: This steps transforms the words in the description to their base form. Stemming is very effective in extending the range of keyword based queries to match various operational forms of the words. For instance, ``has'', ``have'', and ``had'' are mapped to the stem ``ha''. We use the default implementation of the Lucene Porter stemmer for indexer. 
+\textbf{P5) Stemming}: This steps transforms the words in the description to their base form. Stemming is very effective in extending the range of keyword based queries to match various operational forms of the words. For instance, ``has'', ``have'', and ``had'' are mapped to the stem ``ha''. We use the default implementation of the Lucene Porter stemmer for pre-processing. 
 	
 
 
@@ -207,7 +209,7 @@ In information theory~\cite{manning2008introduction}, cosine similarity is the s
 We implemented a prototype version of the \tool\ approach.
 We first manually download the HTML version of API documents of libraries. 
 We then implemented a parser for extracting the requisite text from these documents using 
-Jsoup~\footnote{\url{http://jsoup.org/}}, which is a java library for working with HTML documents.
+Jsoup\footnote{\url{http://jsoup.org/}}, which is a java library for working with HTML documents.
 In particular our prototype implementation parses: 
 1) Oracle's Javadoc style;
 2) Android style documentation; and
@@ -215,4 +217,4 @@ In particular our prototype implementation parses:
 
 We next implemented the indexing, query building, and searching infrastructure using the Apache Lucene~\cite{lucene}.
 Lucene is a high-performance, full-featured text search engine library written entirely in Java.
-Our prototype implementation and evaluation subjects are publicly available on the project website~\footnote{\url{https://sites.google.com/a/ncsu.edu/apisim/}}. 
+Our prototype implementation and evaluation subjects are publicly available on the project website\footnote{\url{https://sites.google.com/a/ncsu.edu/apisim/}}. 

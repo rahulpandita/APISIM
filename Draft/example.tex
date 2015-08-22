@@ -1,5 +1,7 @@
+\vspace*{-1ex}
 \section{Example}
 \label{sec:example}
+\vspace*{-1ex}
 
 We next present an example to motivate our work and list the considerations for applying text mining techniques on API documents. 
 The example is from the Java ME and the Android API. Both Java ME and Android use Java as the language of implementation and are targeted towards hand-held devices.
@@ -38,7 +40,7 @@ of method \CodeIn{drawText} method from
 Notice the overlap in the language of these two methods.
 A developer can easily conclude that
 the two methods offer similar functionality.
-However, the Android API has more than 23,000 public methods.
+However, Android API has more than 23,000 public methods.
 Manually going through each method description to find similar methods
 is prohibitively time consuming, supporting the need for automation.
 A naive solution to automate the task is to perform keyword-based search. 
@@ -113,7 +115,7 @@ The example demonstrates difficulties faced by simple keyword-based searches and
  
 \begin{enumerate}
 		
-	\item \textit{Confounding effects}. Certain method names have a confounding effects. For instance, \CodeIn{toString()}, \CodeIn{get()}, \CodeIn{set()} are too generic and tend to have similar descriptions across different method definitions. These generic methods often cause interference with the output of text mining based approaches. The problem is to automatically identify such methods to de-emphasize their importance in a query. 
+	\item \textit{Confounding effects}. Certain method names have a confounding effects. For instance, \CodeIn{toString()}, \CodeIn{get()}, \CodeIn{set()} are too generic and tend to have similar descriptions across different method definitions. These generic methods often cause interference with the output of text mining based approaches. The problem is to automatically identify such method names to de-emphasize their importance in a query. 
 	
 	\item \textit{Weights}. Not all terms in a method descriptions are equally important keywords. For instance, the term ``zip'' in the sentence ``opens a zip file'' is more important than the terms ``opens'' and ``files'' as the term emphasizes on the specific type of file. The problem is to automatically identify the importance of a term.
 	

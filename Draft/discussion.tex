@@ -1,5 +1,7 @@
+\vspace*{-1.5ex}
 \section{Limitation and Future work}
 \label{sec:discussion}
+\vspace*{-1ex}
 
 We next describe the limitations and future work of \tool,
 followed by discussions on threats to validity.
@@ -8,7 +10,7 @@ followed by discussions on threats to validity.
 A key limitation of the presented work is its reliance on the human developer
 to confirm or refute mappings.
 In the future, we plan to extend the \tool\ infrastructure to achieve an end-to-end automation. 
-Particularly, we plan on using the program analysis techniques, 
+Particularly, we plan on using the program-analysis techniques, 
 such as type-analysis proposed in
 existing approaches~\cite{nguyen2014statistical,zhong09SE}.
 
@@ -36,7 +38,7 @@ and in future iterations of \tool\ implementations we plan to include API fields
 Finally, \tool\ operates under the assumption of the availability of the API documents.
 Thus \tool\ is not applicable in situations where API documents are of low quality or are unavailable altogether.
 In the future, we plan to extend \tool\ infrastructure to workaround such situations
-by integrating with existing source code mining based approaches.
+by integrating with existing source-code-mining based approaches.
 Specifically we plan to leverage techniques like code summarisation~\cite{sridhara2011ICPC} and IR based approaches like Exoa~\cite{kim2010towards}.
 %We do not guarantee the exhaustive mapping
 
@@ -55,4 +57,4 @@ Our chief threat to internal validity is the accuracy of \tool\ in identifying A
 To minimize this threat we compared the mappings inferred by \tool\ with
 the mappings provided by previous approaches. We thank Gokhale et al.~\cite{Gokhale2013ICSE} for sharing with us the Java ME and Android API mappings inferred by their Rosetta approach. We also thank Nguyen et al.~\cite{nguyen2014statistical} for making their mappings publicly available. Furthermore, authors did manually identify some of the mappings that could not be compared to previous work.
 Thus, human errors may affect our results. 
-To minimized the effect, each annotation was independently agreed upon by two authors.
+To minimize the effect, each annotation was independently agreed upon by two authors.

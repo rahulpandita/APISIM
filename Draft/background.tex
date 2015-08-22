@@ -1,6 +1,7 @@
+\vspace*{-1ex}
 \section{Background}
 \label{sec:background}
-
+\vspace*{-1ex}
 
 Text mining is a broad research area, 
 including but not limited to the techniques 
@@ -13,7 +14,7 @@ facilitating retrieval/manipulation of useful information from a large corpus to
 %Text mining is used to infer the knowledge
 %in these documents through a combination of extraction and analytical methods. 
 As opposed to traditional data mining, text mining analyzes
-free-form text spread across documents
+free-form text distributed across documents
 (rather than data localized and maintained within a database).
 To analyze this data, text mining uses concepts from traditional
 data analytics, natural language processing, and data modeling.
@@ -23,10 +24,10 @@ We next introduce the concepts from text mining that have been used in the prese
 \textbf{Indexing}~\cite{frakes1992introduction,manning2008introduction}:
 Indexing is the process of extracting text data from source documents
 and storing them in well-defined indexes.
-During the indexing process, a document (a sequence of text) is divided into its constituent units, known as tokens, based on a well-defined criterion. 
-A token is usually an individually identifiable unit of the document (such as a word) and relates to the individual terms stored in an index. Once the tokens within each document are identified, they are added to the index, with the corresponding link to the document and associated term frequencies.
+During the indexing process, a document (a sequence of text) is divided into its constituent units, known as tokens or terms, based on a well-defined criterion. 
+A term is typically an individually identifiable unit of the document (such as a word) and relates to the individual terms stored in an index. Once the terms within each document are identified, they are added to the index, with the corresponding link to the document and associated term frequencies.
 Term frequency is the simple count of the occurrence of a term in a document.
-An optional pre-processing step further assists with indexing, such as removing stop-words, grouping similar words together. 
+An optional pre-processing step further assists with indexing, such as removing stop-words. 
 
 %However, simply adding all identified tokens to the index can introduce a number of inefficiencies, primarily because of the commonly used terms (like articles, prepositions, conjunctions, etc.), which not only bloat the index, but can also adversely affect the search/retrieval results. To avoid this, a common strategy is to clean the tokens to eliminate unwanted words before populating the index. Another pre-processing strategy that is commonly employed is to group together similar words (based on their meanings) to provide a semantic search capability and improve the hit rate when searching for related terms.\textbf{Describe attribute definition}
 
@@ -34,20 +35,20 @@ Among various indexing strategies,
 the use of \textit{inverted file indexing}~\cite{frakes1992introduction}
 is well suited for large document collections.
 In the simplest form, an inverted file index provides
-a mapping from content, such as words or numbers, to its locations in a text document.
-A document can be thought of as a collection of $m$ words.
-Typically a document is made up of a sequence of $n$ unique words
+a mapping of terms, such as words, to its locations in a text document.
+A document can be thought of as a collection of $m$ terms.
+Typically a document is made up of a sequence of $n$ unique terms
 such that $n <= m$.
 The number n is usually far less than
-$m$ as most of the words are repeated while forming a document. 
-For instance, the word ``the'' is repeated many times in this paper.
-The set of unique words within an index forms
+$m$ as most of the terms are repeated while forming a document. 
+For instance, the term ``the'' is repeated many times in this paper.
+The set of unique terms within an index forms
 the ``Term List'' $v$ of the index.
-If a pointer (say numeric location) is associated with each word in $v$ to the location
-of that word in text document, the resultant data structure
+If a pointer (say numeric location) is associated with each term in $v$ to the location
+of that term in text document, the resultant data structure
 is a form of inverted file index.
 As the document collection grows,
-the number of documents matching a word in the index becomes sparser.
+the number of documents matching a term in the index becomes sparser.
 
 The index is oftentimes annotated with the information regarding 
 the frequency of occurrence of each term in the document. 
@@ -57,7 +58,7 @@ of terms is referred to as \textit{vector space model}~\cite{singhal2001modern,f
 \textbf{TF-IDF}\cite{manning2008introduction}:
 Term -frequency inverse-document-frequency (\CodeIn{tf-idf}) is a numerical statistic that is intended to capture the importance of a term to a document in a corpus.
 Often used as a weighting metric in information retrieval and text mining,
-the \CodeIn{tf-idf} weight increases proportionally to frequency of the occurrence of a term in a document; however, the weight is also offset by the count of the number of documents that contain the word.
+the \CodeIn{tf-idf} weight increases proportionally to frequency of the occurrence of a term in a document; however, the weight is also offset by the count of the number of documents that contain the term.
 
 \textbf{Cosine Similarity}\cite{singhal2001modern}: In mathematics, Cosine similarity is a numerical statistic to measure the similarity between two vectors.
 Cosine similarity is defined as a dot product of magnitude of two vectors.
