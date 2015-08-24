@@ -99,7 +99,7 @@ uses the following major fields (as previously described):
 3) method signature;
 4) method name; and
 5) method description.
-The values are of these fields is text after preprocessing.
+The values of these fields are the text after preprocessing.
 \tool\ uses a vector space model representation of the documents for each field. 
 Vector space model or term vector model is an algebraic model for representing text documents (and any objects, in general) as vectors of identifiers and their frequency of occurrence. 
 In case of \tool, each word is considered as a term except the stop words, such as ``a'', ``the'', and ``and''.
@@ -113,7 +113,7 @@ In case of \tool, each word is considered as a term except the stop words, such 
 This component accepts the API method descriptions of the source API
 and creates queries for method descriptions.
 These queries are executed on the target API index to retrieve 
-an ordered list relevant API methods.
+an ordered list of relevant API methods.
 In particular, Query Builder uses the same preprocessing steps followed by Indexer
 (listed in Section~\ref{sub:Approach_Indexer}).
 After extracting the desired descriptive text from the API method descriptions,
@@ -161,7 +161,7 @@ Likewise, for generating the keywords to query the ``Method Description'' field,
 
 \tool\ uses these heuristics to improve the performance of searching infrastructure
 that tends to be inversely proportional to the complexity and length of the query.
-Using all the descriptive text as keywords results in a verbose query.
+Using all the descriptive text as keywords often results in a verbose query.
 As the number of keywords in a query increases the effectiveness of the query decreases.
 A large number of keywords have higher probability of matching large number of documents in comparison to a query with fewer keywords.
 In contrast, we observed that the document writers tend to describe the general
@@ -183,7 +183,7 @@ For each term in the method description \tool\ calculates the number of times th
 \end{center}
 
 The calculated tf-idf values of terms are normalized to a range of 0 to 1 (both 0 and 1 inclusive) for each document.
-The normalized tf-idf sore of the top-k term is then used as the weights for the corresponding  keywords occurring in the query.
+The normalized tf-idf sore of the top-k terms is then used as the weights for the corresponding  keywords occurring in the query.
 
 For the API method description  shown in Figure~\ref{fig:hasNextJavadoc}, \tool\ calculates ``iter'', ``ha'' (Lemma of ``has''), and ``element'' as most the important terms with normalized tf-idf scores of 1.0, 1.0, and 0,6 respectively. We augment the query shown in Figure~\ref{fig:hasNextJavaQuery} with the computed weights for the keywords respectively.
 
