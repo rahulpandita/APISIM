@@ -13,7 +13,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>WN</groupId>
@@ -51,8 +51,8 @@
 			<artifactId>lucene-queryparser</artifactId>
 			<version>4.9.0</version>
 		</dependency>
-		
-		
+
+
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
@@ -74,7 +74,7 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>3.10-FINAL</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.eclipse.core</groupId>
 			<artifactId>org.eclipse.core.resources</artifactId>
@@ -96,9 +96,9 @@
 			<version>1.4_rc3</version>
 		</dependency>
 		<dependency>
-		    <groupId>com.sksamuel.diff</groupId>
-		    <artifactId>diff</artifactId>
-		    <version>1.1.11</version>
+			<groupId>com.sksamuel.diff</groupId>
+			<artifactId>diff</artifactId>
+			<version>1.1.11</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-io</groupId>
@@ -131,6 +131,19 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>com.github.ekryd.sortpom</groupId>
+				<artifactId>sortpom-maven-plugin</artifactId>
+				<version>2.4.0</version>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>sort</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
@@ -139,6 +152,7 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 </project>
