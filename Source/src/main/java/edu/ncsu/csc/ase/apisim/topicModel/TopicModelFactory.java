@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -208,42 +209,51 @@ public abstract class TopicModelFactory {
 	 */
 	public final Map<String, List<String>> getRankedListPerSearch(double threshold) {
 		Map<String,List<IDSorter>> returnMap = new LinkedHashMap<String, List<IDSorter>>();
-		InstanceList searchList = getSearchInstanceList();
 		InstanceList targetList = getTargetInstanceList();
-		double[] srcProb, targetProb;
-		Instance srcInstance, targetInstance;
+		double[] targetProb;
+		Instance targetInstance;
 		double distance;
 		IDSorter[] rankSorter = new IDSorter[numTopics];
 		String key;
-		for(int srcIdx=0; srcIdx<searchList.size();srcIdx++)
+		Map<Instance, double[]> cmpMap = getBaseInferences();
+		
+		for(int idx=0;idx<targetList.size();idx++)
 		{
-			srcInstance = searchList.get(srcIdx);
-			srcProb = inferencer.getSampledDistribution(srcInstance, 100, 1, 5);
-			for(int i=0; i< srcProb.length;i++)
+			targetInstance = targetList.get(idx);
+			targetProb = inferencer.getSampledDistribution(targetInstance, 100, 1, 5);
+			for(int i=0; i< targetProb.length;i++)
 			{
-				rankSorter[i] = new IDSorter(i, srcProb[i]);
+				rankSorter[i] = new IDSorter(i, targetProb[i]);
 			}
-			Arrays.sort(rankSorter);
-			key = (String)srcInstance.getSource() 
+			key = (String)targetInstance.getSource() 
 					+ " <" + rankSorter[0].getID() 
 					+ ", " + rankSorter[1].getID() 
 					+ ", " + rankSorter[2].getID() 
 					+ ", " + rankSorter[3].getID()
 					+ ", " + rankSorter[4].getID() + ">";
 			returnMap.put(key, new ArrayList<IDSorter>());
-			for(int idx=0;idx<targetList.size();idx++)
+			
+			for(Instance ins : cmpMap.keySet())
 			{
-				targetInstance = targetList.get(idx);
-				targetProb = inferencer.getSampledDistribution(targetInstance, 100, 1, 5);
-				
-				distance = Maths.jensenShannonDivergence(srcProb, targetProb);
+				distance = Maths.jensenShannonDivergence(targetProb,cmpMap.get(ins));
 				if(distance >=threshold)
-				returnMap.get(key).add(new IDSorter(idx, distance));
-					
+					returnMap.get(key).add(new IDSorter(idx, distance));
 			}
+				
 		}
 		
 		return getFormattedMap(returnMap, targetList);
+	}
+
+	private Map<Instance, double[]> getBaseInferences() {
+		InstanceList srchList = getInstanceList();
+		Map<Instance, double[]> cmpMap = new HashMap<Instance, double[]>();
+		for(Instance ins : srchList)
+		{
+			//TODO get to know parameters better
+			cmpMap.put(ins, inferencer.getSampledDistribution(ins, 100, 1, 5));
+		}
+		return cmpMap;
 	}
 	
 	public final Map<String, List<String>> getSimilarListPerSearch(Map<String, List<String>> finalMap, int topK)

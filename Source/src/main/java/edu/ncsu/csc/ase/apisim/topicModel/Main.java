@@ -3,15 +3,16 @@ package edu.ncsu.csc.ase.apisim.topicModel;
 
 public class Main {
 	public static void main(String[] args) {
-		//evalPkgSum();
-		//evalPkgClsSum();
-		//evalClassSum();
-		//evalClassMtdSum();
-		evalPkgClsMtdSum();
+		Main mn = new Main();
+		mn.evalPkgSum();
+		mn.evalPkgClsSum();
+		mn.evalClassSum();
+		mn.evalClassMtdSum();
+		mn.evalPkgClsMtdSum();
 		
 	}
 
-	private static void evalClassMtdSum() {
+	void evalClassMtdSum() {
 		TopicModelFactory tm;
 		try 
 		{
@@ -22,7 +23,7 @@ public class Main {
 		}
 	}
  
-	private static void evalClassSum() {
+	void evalClassSum() {
 		TopicModelFactory tm;
 		try 
 		{
@@ -33,7 +34,7 @@ public class Main {
 		}
 	}
 
-	private static void evalPkgClsSum() {
+	void evalPkgClsSum() {
 		TopicModelFactory tm;
 		try 
 		{
@@ -44,7 +45,7 @@ public class Main {
 		}
 	}
 	
-	private static void evalPkgClsMtdSum() {
+	void evalPkgClsMtdSum() {
 		TopicModelFactory tm;
 		try 
 		{
@@ -55,7 +56,7 @@ public class Main {
 		}
 	}
 
-	private static void evalPkgSum() {
+	void evalPkgSum() {
 		TopicModelFactory tm;
 		try 
 		{
