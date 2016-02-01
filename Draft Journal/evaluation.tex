@@ -1,7 +1,5 @@
-\vspace*{-1ex}
 \section{Evaluation}
 \label{sec:evaluation}
-\vspace*{-1ex}
 
 We conducted an evaluation to assess the effectiveness of \tool. In our evaluation, we address following research questions:
 
@@ -11,7 +9,7 @@ We conducted an evaluation to assess the effectiveness of \tool. In our evaluati
 
 \item\textbf{RQ2}: How do the mappings discovered by \tool\ compare with the mappings discovered by existing program-analysis based approaches?
 
-%\item\textbf{RQ3}: What is the effectiveness of using free form queries using \tool?
+\item\textbf{RQ3}: What is the effectiveness of using free form queries using \tool?
 
 \end{itemize}
 
@@ -23,19 +21,19 @@ We evaluated \tool\ using a snapshot of the publicly available API documents of 
 
 Java Platform Micro Edition, or Java ME, is a Java platform designed for embedded systems (such as mobile devices). Target devices range from industrial controls to mobile phones (especially feature phones) and set-top boxes.
 Android is a linux-based operating system designed primarily for touchscreen mobile devices, such as smartphones and tablet computers.
-%API documents for both Java ME and Android are publicly available at
-%\url{http://docs.oracle.com/javame/config/cldc/ref-impl/midp2.0/jsr118/index.html}
-%and 
-%\url{http://developer.android.com/reference/packages.html}
-%respectively.
+API documents for both Java ME and Android are publicly available at
+\url{http://docs.oracle.com/javame/config/cldc/ref-impl/midp2.0/jsr118/index.html}
+and 
+\url{http://developer.android.com/reference/packages.html}
+respectively.
 
 Java and C\# are general-purpose programming languages from Oracle and Microsoft respectively. Java applications are typically compiled to bytecode that run on any Java Virtual Machine (JVM) irrespective of underlying computer architecture.
 Likewise, C\# is compiled into intermediate representation that run on Microsoft's common language infrastructure.
-%API documents for both Java and C\# are publicly available at
-%\url{http://docs.oracle.com/javase/8/docs/api/}
-%and
-%\url{https://msdn.microsoft.com/en-us/library/gg145045(v=vs.110).aspx}
-%respectively.
+API documents for both Java and C\# are publicly available at
+\url{http://docs.oracle.com/javase/8/docs/api/}
+and
+\url{https://msdn.microsoft.com/en-us/library/gg145045(v=vs.110).aspx}
+respectively.
 
 
 Particularly we used the API documents of the following library pairs as subjects for our evaluation. 
@@ -135,10 +133,10 @@ We next describe our evaluation results to demonstrate the effectiveness of \too
 
 \subsubsection{RQ1: Effectiveness of \tool\ }
 
+\begin{landscape}	
 \begin{table*}
 	\begin{center}	
 		\caption{Evaluation Results}
-		\vspace{-2ex}
 		\begin{tabular}{rlllr|rr|rr|rrr}
 				\topline
 				\headcol 		& \multicolumn{2}{c}{API}	&		& No.		& \multicolumn{2}{c|}{Relevant} 	& \multicolumn{2}{c|}{Exact} &					&			&		\\
@@ -175,8 +173,8 @@ We next describe our evaluation results to demonstrate the effectiveness of \too
 		\end{tabular}
 		\label{tab:RosettaComp}
 	\end{center}
-	\vspace{-4ex}
 \end{table*}
+\end{landscape}
 
 Table~\ref{tab:RosettaComp} presents our evaluation results for answering RQ1. 
 The columns `API' lists the name of source API under `Source' and target API under `Target'. 
@@ -273,51 +271,51 @@ code analysis approaches on the quality of the code under analysis.
 In contrast, \tool\ relies on the quality of the API method descriptions.
 
 
-%\subsubsection{RQ3: Effectiveness in free form queries}
-%
-%RQ3 demonstrates the effectiveness of text-mining in general for API related information retrieval tasks.
-%In particular, we show the effectiveness of creating vector space representation of
-%API method descriptions by using free form queries.
-%For evaluating RQ3, we use the same queries as used by Chatterjee et al.'s~\cite{chatterjee2009sniff} in evaluation of their approach Sniff.
-%Sniff is targeted towards searching for relavant method snippets from source-code repositories. Sniff first annotates the source code with API document descriptions and uses the hybrid representation of source code to get relevant code fragments. 
-%Since \tool\ does not report method sequences, we consider a method reported by \tool\ as relevant iff:
-%
-%\begin{enumerate}
-%	\item the method is in top-10 results.
-%	\item the method is one of the methods in the code fragment reported by Sniff.
-%\end{enumerate}
-%
-%Table~\ref{tab:SNIFFComp} shows the effectiveness of \tool\ using free form queries.
-%The column `Query' lists the query used in evaluation.
-%The column `Sniff' lists the ranking of relevant code fragment by Sniff as reported in their work.
-%The column `\tool' lists the ranking of first relevant method returned by \tool.
-%
-%
-%Our evaluation results show that in \tool\ returns the relevant method in top 10 results (except one) demonstrating effectiveness of \tool\ with free form queries. For the query `read a line of text from a file' all the reported result methods did support the functionality of reading lines from file, however were not reported as relevant code fragment by Sniff.
-%
-%\begin{table}
-%	\begin{center}	
-%		\caption{Comparison with Sniff}
-%		\begin{tabular}{lrr}
-%			\topline
-%			\headcol Query	& \multicolumn{2}{c}{Method Rank}\\
-%			\headcol 		& {\small Sniff}	& {\small \tool} \\
-%			\midline 
-%			
-%			\rowcol get active editor window from eclipse workbench	& 1 & 1\\
-%			\rowpln parse a java source and create ast & 1 & 2\\
-%			\rowcol connect to a database using jdbc & 1 & 6\\
-%			\rowpln display directory dialog from viewer in eclipse & 1 & 1\\
-%			\rowcol read a line of text from a file & 1 & -\\
-%			\rowpln return an audio clip from url & 1 & 1\\
-%			\rowcol execute SQL query & 2 & 3\\
-%			\rowpln current selection from eclipse workbench & 1 & 1\\ 
-%			\bottomline
-%			%----------------- END TABLE DATA ------------------------ 
-%			\rowpln \multicolumn{3}{r}{{\small `-'=No Match in top-10 results.}}\\ 
-%			\bottomline
-%		\end{tabular}
-%		\label{tab:SNIFFComp}
-%	\end{center}
-%\end{table}
+\subsubsection{RQ3: Effectiveness in free form queries}
+
+RQ3 demonstrates the effectiveness of text-mining in general for API related information retrieval tasks.
+In particular, we show the effectiveness of creating vector space representation of
+API method descriptions by using free form queries.
+For evaluating RQ3, we use the same queries as used by Chatterjee et al.'s~\cite{chatterjee2009sniff} in evaluation of their approach Sniff.
+Sniff is targeted towards searching for relavant method snippets from source-code repositories. Sniff first annotates the source code with API document descriptions and uses the hybrid representation of source code to get relevant code fragments. 
+Since \tool\ does not report method sequences, we consider a method reported by \tool\ as relevant iff:
+
+\begin{enumerate}
+	\item the method is in top-10 results.
+	\item the method is one of the methods in the code fragment reported by Sniff.
+\end{enumerate}
+
+Table~\ref{tab:SNIFFComp} shows the effectiveness of \tool\ using free form queries.
+The column `Query' lists the query used in evaluation.
+The column `Sniff' lists the ranking of relevant code fragment by Sniff as reported in their work.
+The column `\tool' lists the ranking of first relevant method returned by \tool.
+
+
+Our evaluation results show that in \tool\ returns the relevant method in top 10 results (except one) demonstrating effectiveness of \tool\ with free form queries. For the query `read a line of text from a file' all the reported result methods did support the functionality of reading lines from file, however were not reported as relevant code fragment by Sniff.
+
+\begin{table}
+	\begin{center}	
+		\caption{Comparison with Sniff}
+		\begin{tabular}{lrr}
+			\topline
+			\headcol Query	& \multicolumn{2}{c}{Method Rank}\\
+			\headcol 		& {\small Sniff}	& {\small \tool} \\
+			\midline 
+			
+			\rowcol get active editor window from eclipse workbench	& 1 & 1\\
+			\rowpln parse a java source and create ast & 1 & 2\\
+			\rowcol connect to a database using jdbc & 1 & 6\\
+			\rowpln display directory dialog from viewer in eclipse & 1 & 1\\
+			\rowcol read a line of text from a file & 1 & -\\
+			\rowpln return an audio clip from url & 1 & 1\\
+			\rowcol execute SQL query & 2 & 3\\
+			\rowpln current selection from eclipse workbench & 1 & 1\\ 
+			\bottomline
+			%----------------- END TABLE DATA ------------------------ 
+			\rowpln \multicolumn{3}{r}{{\small `-'=No Match in top-10 results.}}\\ 
+			\bottomline
+		\end{tabular}
+		\label{tab:SNIFFComp}
+	\end{center}
+\end{table}
 
