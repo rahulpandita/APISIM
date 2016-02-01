@@ -10,6 +10,7 @@ import java.util.Map;
 import java.util.Set;
 
 import cc.mallet.types.InstanceList;
+import edu.ncsu.csc.ase.apisim.configuration.Configuration.EvalMode;
 import edu.ncsu.csc.ase.apisim.webcrawler.apiutil.PackageSummaryCrawler;
 
 public class TopicModelPkgClass extends TopicModelFactory {
@@ -20,16 +21,23 @@ public class TopicModelPkgClass extends TopicModelFactory {
 	
 	public static String OUTPUT_FILE_NAME_3 = "PkgClassSummaryPerPkgSimilarity";
 
-	public TopicModelPkgClass() throws Exception {
-		super(1000, 5, 20000);
-	}
-	
-	public TopicModelPkgClass(int topics, int numThreads, int numIterations) throws Exception {
-		super(topics, numThreads, numIterations);
+	public TopicModelPkgClass(EvalMode mode) throws Exception {
+		super(mode);
 	}
 	
 	@Override
 	public InstanceList getInstanceList() {
+		try {
+			return InstanceCreator.createInstanceListmidppkgClass(false);
+			//return InstanceCreator.createInstanceListandroidpkgClass(false);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public InstanceList getSInstanceList() {
 		try {
 			return InstanceCreator.createInstanceListandroidpkgClass(false);
 		} catch (Exception e) {

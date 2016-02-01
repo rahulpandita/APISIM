@@ -23,6 +23,11 @@ public class Configuration
 		UNKNOWN
 	}
 	
+	public enum EvalMode{
+		ANDROID_J2ME,
+		CSHARP_JAVA,
+		UNKNOWN
+	}
 	public static final String PROJECT_PATH = "";
 	
 	public static final Version LUCENE_VERSION =  Version.LUCENE_4_9;

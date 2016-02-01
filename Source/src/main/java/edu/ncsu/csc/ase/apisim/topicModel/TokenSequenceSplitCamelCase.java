@@ -17,8 +17,9 @@ import cc.mallet.types.IDSorter;
 import cc.mallet.types.Instance;
 import cc.mallet.types.Token;
 import cc.mallet.types.TokenSequence;
+import edu.ncsu.csc.ase.apisim.util.StringUtil;
 
-public class TokenSequenceClean extends Pipe implements Serializable
+public class TokenSequenceSplitCamelCase extends Pipe implements Serializable
 {
 	boolean markDeletions = false;
 	
@@ -30,12 +31,12 @@ public class TokenSequenceClean extends Pipe implements Serializable
 	 *  @param encoding        The encoding of the stoplist file (eg UTF-8)
 	 *  @param includeDefault  Whether to include the standard mallet English stoplist
 	 */
-	public TokenSequenceClean(boolean markDeletions) {
+	public TokenSequenceSplitCamelCase(boolean markDeletions) {
 		this.markDeletions = markDeletions;
 		populate();
 	}
 
-	public TokenSequenceClean setMarkDeletions (boolean flag)
+	public TokenSequenceSplitCamelCase setMarkDeletions (boolean flag)
 	{
 		this.markDeletions = flag;
 		populate();
@@ -76,20 +77,24 @@ public class TokenSequenceClean extends Pipe implements Serializable
 		Token t;
 		for (int i = 0; i < ts.size(); i++) {
 			t = ts.get(i);
-			if(termFreqMap.containsKey(t.getText()))
-				termFreq =  termFreqMap.get(t.getText());
-			else
-				termFreq = new IDSorter(t.getText().hashCode(), 0);
+			for(String wrd : StringUtil.splitCamelCase(t.getText()).split("\\s+"))
+			{
+				if(termFreqMap.containsKey(wrd))
+					termFreq =  termFreqMap.get(wrd);
+				else
+					termFreq = new IDSorter(wrd.hashCode(), 0);
 			
-			termFreq.set(termFreq.getID(), termFreq.getWeight()+1);
-			termFreqMap.put(t.getText(), termFreq);
-			if (t.getText().matches("^[A-Za-z_][A-Za-z\\d_]*$")) {
-				// xxx Should we instead make and add a copy of the Token?
-				ret.add (t);
-				prevToken = t;
-			}
-			else if (markDeletions && prevToken != null)
-				prevToken.setProperty (FeatureSequenceWithBigrams.deletionMark, t.getText());
+				termFreq.set(termFreq.getID(), termFreq.getWeight()+1);
+				termFreqMap.put(wrd, termFreq);
+				
+				if (t.getText().matches("^[A-Za-z_][A-Za-z\\d_]*$")) {
+					// xxx Should we instead make and add a copy of the Token?
+					ret.add (t);
+					prevToken = t;
+				}
+				else if (markDeletions && prevToken != null)
+					prevToken.setProperty (FeatureSequenceWithBigrams.deletionMark, t.getText());
+				}
 		}
 		carrier.setData(ret);
 		return carrier;

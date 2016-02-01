@@ -1,0 +1,89 @@
+\vspace*{-1ex}
+\section{Background}
+\label{sec:background}
+\vspace*{-1ex}
+
+Text mining is a broad research area, 
+including but not limited to the techniques 
+facilitating retrieval/manipulation of useful information from a large corpus to text. 
+%A recent study~\cite{russom2011big} indicates that 
+%a significant (35\%) of business information is captured in unstructured data.
+%A large part of this information is in 
+%documents containing narrative text, such as reports,
+%presentations, web data, and design documents.
+%Text mining is used to infer the knowledge
+%in these documents through a combination of extraction and analytical methods. 
+As opposed to traditional data mining, text mining analyzes
+free-form text distributed across documents
+(rather than data localized and maintained within a database).
+To analyze this data, text mining uses concepts from traditional
+data analytics, natural language processing, and data modeling.
+We next introduce the concepts from text mining that have been used in the presented approach.
+
+
+\textbf{Indexing}~\cite{frakes1992introduction,manning2008introduction}:
+Indexing is the process of extracting text data from source documents
+and storing them in well-defined indexes.
+During the indexing process, a document (a sequence of text) is divided into its constituent units, known as tokens or terms, based on a well-defined criterion. 
+A term is typically an individually identifiable unit of the document (such as a word) and relates to the individual terms stored in an index. Once the terms within each document are identified, they are added to the index, with the corresponding link to the document and associated term frequencies.
+Term frequency is the simple count of the occurrence of a term in a document.
+An optional pre-processing step further assists with indexing, such as removing stop-words. 
+
+%However, simply adding all identified tokens to the index can introduce a number of inefficiencies, primarily because of the commonly used terms (like articles, prepositions, conjunctions, etc.), which not only bloat the index, but can also adversely affect the search/retrieval results. To avoid this, a common strategy is to clean the tokens to eliminate unwanted words before populating the index. Another pre-processing strategy that is commonly employed is to group together similar words (based on their meanings) to provide a semantic search capability and improve the hit rate when searching for related terms.\textbf{Describe attribute definition}
+
+Among various indexing strategies,
+the use of \textit{inverted file indexing}~\cite{frakes1992introduction}
+is well suited for large document collections.
+In the simplest form, an inverted file index provides
+a mapping of terms, such as words, to its locations in a text document.
+A document can be thought of as a collection of $m$ terms.
+Typically a document is made up of a sequence of $n$ unique terms
+such that $n <= m$.
+The number n is usually far less than
+$m$ as most of the terms are repeated while forming a document. 
+For instance, the term ``the'' is repeated many times in this paper.
+The set of unique terms within an index forms
+the ``Term List'' $v$ of the index.
+If a pointer (say numeric location) is associated with each term in $v$ to the location
+of that term in text document, the resultant data structure
+is a form of inverted file index.
+As the document collection grows,
+the number of documents matching a term in the index becomes sparser.
+
+The index is oftentimes annotated with the information regarding 
+the frequency of occurrence of each term in the document. 
+The representation of a document as a vector of frequencies
+of terms is referred to as \textit{vector space model}~\cite{singhal2001modern,frakes1992introduction}.
+
+\textbf{TF-IDF}\cite{manning2008introduction}:
+Term -frequency inverse-document-frequency (\CodeIn{tf-idf}) is a numerical statistic that is intended to capture the importance of a term to a document in a corpus.
+Often used as a weighting metric in information retrieval and text mining,
+the \CodeIn{tf-idf} weight increases proportionally to frequency of the occurrence of a term in a document; however, the weight is also offset by the count of the number of documents that contain the term.
+
+\textbf{Cosine Similarity}\cite{singhal2001modern}: In mathematics, Cosine similarity is a numerical statistic to measure the similarity between two vectors.
+Cosine similarity is defined as a dot product of magnitude of two vectors.
+In the context of text mining, the Cosine similarity is used to capture the similarity between two documents represented as term frequency vectors.
+
+%\textbf{Topic Modelling}: Latent Drichilet Allocation (LDA)~\cite{blei2003latent,panichella2013effectively} is an Information Retrieval (IR) 
+%model to fit a probabilistic model on the term occurrences in a corpus of documents.
+%Given a corpus of $n$ documents, a dictionary is created.
+%The dictionary consists a list of all the unique terms ($m$) occurring in all $n$ documents.
+%Next, a term-to-document matrix $M$ of size $(m\ X\ n)$ is generated, where each row represents all the terms occurring the corpus and columns representing the all the documents in the corpus.
+%Each cell of $M$ ($M[i,j]$) contains the weight of the $i^{th}$ term in $m$ in the $j^{th}$ document in $n$.
+%In the simplest implementation \CodeIn{tf-idf} is used to calculate the weight of a term in a document.
+%
+%
+%Next LDA transforms term-to-document matrix $M$ into a topic-to-document matrix $\theta$ of size $(k\ X\ n)$,
+%where each row represents the topics occurring in the corpus and columns representing the all the documents in the corpus. 
+%This transformation is achieved by identifying latent variables (topics) in the documents. 
+%The parameter $k$ is independently provided as an argument to the LDA algorithm.
+%Each cell of $\theta\ (\theta[i,j])$ contains the probability of the $i^{th}$ topic in $k$ occurring in the $j^{th}$ document in $n$. Since $k\ <<\ m$, LDA is a mapping of the documents from the term space $m$ to the topic space $k$~\cite{panichella2013effectively}.
+%
+%
+%\begin{enumerate}
+%	\item $k$, the total number of topics to be extracted from a corpus of documents.
+%	\item $n$, the total number of gibbs iteration, where a single iteration involves a gibbs sampler sampling a topic for each term occurring in the corpus.
+%	\item $\alpha$, this parameter affects the distribution of topics across documents. A high $\alpha$ means that each document is likely to contain a mixture of most of the topics. Conversely, a low $\alpha$ means each document is likely to contain mixture of fewer or one topic. 
+%	\item $\beta$, this parameter affects the distribution of terms in each topic. A high $\beta$ means that each topic is likely to contain a uniform distribution of terms. Conversely, a low $\beta$ means terms are not uniformly distributed across topics. 
+%	
+%\end{enumerate}

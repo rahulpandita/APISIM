@@ -1,0 +1,71 @@
+% smrdoc.tex V2.10, 13 July 2012
+
+\documentclass[times]{smrauth}
+
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{alltt}
+\usepackage{algorithm}
+
+\usepackage{algorithmic}
+\usepackage{cite}
+\usepackage{flushend}
+\usepackage{tabularx}
+\usepackage{framed}
+\usepackage{moreverb}
+
+
+\usepackage[colorlinks,bookmarksopen,bookmarksnumbered,citecolor=red,urlcolor=red]{hyperref}
+
+\input{macros}
+
+\newcommand\BibTeX{{\rmfamily B\kern-.05em \textsc{i\kern-.025em b}\kern-.08em
+T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\def\volumeyear{2012}
+
+\begin{document}
+
+\runningheads{R. Pandita, R. P. Jetley, S. D. Sudarsan, T. Menzies, and L. Williams}{Discovering Likely Mappings between APIs using Text Mining}
+
+\title{Discovering Likely Mappings between APIs using Text Mining}
+
+\author{Rahul Pandita\affil{1}, Raoul Praful Jetley\affil{2}, Sithu D Sudarsan\affil{2}, Tim Menzies\affil{1}, and Laurie Williams\affil{1}}
+
+\address{\affilnum{1}North Carolina State University, Raleigh, NC, USA \break
+\affilnum{2} ABB Corporate Research, Bangalore, India} 
+%\address{
+%rpandit@ncsu.edu, raoul.jetley@in.abb.com, sudarsan.sd@in.abb.com, williams@csc.ncsu.edu}
+
+\corraddr{North Carolina State University, 890 Oval Drive Campus Box 8206, 3228 EB-II, Raleigh, NC 27695-8206. Email: rpandit@ncsu.edu}
+
+\newcommand{\tool}{{\sc TMAP}}
+
+\input{abstract}
+
+\keywords{API documents, text mining}
+
+\maketitle
+
+
+\input{introduction}
+\input{background}
+\input{example}
+\input{approach}
+\input{evaluation}
+\input{discussion}
+\input{related}
+\input{conclusion}
+
+
+
+\ack 
+This work is funded by the USA National Security Agency (NSA)
+Science of Security Lablet.
+Any opinions expressed in this report are those of the author(s) and do not necessarily reflect the views of the NSA. We also thank the Realsearch research group for providing helpful feedback on this work.
+
+\bibliographystyle{abbrv}
+\bibliography{rahul}
+
+\end{document}

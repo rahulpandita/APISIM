@@ -1,22 +1,31 @@
 package edu.ncsu.csc.ase.apisim.topicModel;
 
+import edu.ncsu.csc.ase.apisim.configuration.Configuration.EvalMode;
 
 public class Main {
+	
+	private EvalMode mode = EvalMode.UNKNOWN;
+	
 	public static void main(String[] args) {
-		Main mn = new Main();
-		mn.evalPkgSum();
-		mn.evalPkgClsSum();
-		mn.evalClassSum();
-		mn.evalClassMtdSum();
-		mn.evalPkgClsMtdSum();
+		Main mn = new Main(EvalMode.ANDROID_J2ME);
 		
+		
+		//mn.evalPkgSum();
+		//mn.evalPkgClsSum();
+		//mn.evalClassSum();
+		mn.evalClassMtdSum();
+		//mn.evalPkgClsMtdSum();
+		
+	}
+	public Main(EvalMode mode) {
+		this.mode = mode;
 	}
 
 	void evalClassMtdSum() {
 		TopicModelFactory tm;
 		try 
 		{
-			tm = new TopicModelClassMtd();
+			tm = new TopicModelClassMtd(mode);
 			tm.eval();
 		} catch (Exception e) {
 	 		e.printStackTrace();
@@ -27,7 +36,7 @@ public class Main {
 		TopicModelFactory tm;
 		try 
 		{
-			tm = new TopicModelClass();
+			tm = new TopicModelClass(mode);
 			tm.eval();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -38,7 +47,7 @@ public class Main {
 		TopicModelFactory tm;
 		try 
 		{
-			tm = new TopicModelPkgClass();
+			tm = new TopicModelPkgClass(mode);
 			tm.eval();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -49,7 +58,7 @@ public class Main {
 		TopicModelFactory tm;
 		try 
 		{
-			tm = new TopicModelPkgClassMtd();
+			tm = new TopicModelPkgClassMtd(mode);
 			tm.eval();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -60,7 +69,7 @@ public class Main {
 		TopicModelFactory tm;
 		try 
 		{
-			tm = new TopicModelPackage();
+			tm = new TopicModelPackage(mode);
 			tm.eval();
 		} catch (Exception e) {
 			e.printStackTrace();

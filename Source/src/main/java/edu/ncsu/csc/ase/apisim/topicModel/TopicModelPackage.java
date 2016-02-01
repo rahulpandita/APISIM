@@ -11,6 +11,7 @@ import java.util.Map;
 import java.util.Set;
 
 import cc.mallet.types.InstanceList;
+import edu.ncsu.csc.ase.apisim.configuration.Configuration.EvalMode;
 import edu.ncsu.csc.ase.apisim.webcrawler.apiutil.PackageSummaryCrawler;
 
 public class TopicModelPackage extends TopicModelFactory {
@@ -21,25 +22,24 @@ public class TopicModelPackage extends TopicModelFactory {
 
 	public static final String OUTPUT_FILE_NAME_3 = "PkgSummaryPerPkgSimilarity";
 	
-	public TopicModelPackage() throws Exception {
-		super(500, 5, 20000);
-		setup();
-
-	}
-
-	public TopicModelPackage(int topics, int numThreads, int numIterations) throws Exception {
-		super(topics, numThreads, numIterations);
-		setup();
-	}
-
-	private void setup() {
-		MIN_PROB_DIST = 0.01;
-		TOPK = 200;
-		SIMILARITY_CUTOFF = 10;
+	public TopicModelPackage (EvalMode mode) throws Exception {
+		super(500/2, 5, 20000,mode);
 	}
 	
 	@Override
 	public InstanceList getInstanceList() {
+
+		try {
+			return InstanceCreator.createInstanceListmidp();
+			//return InstanceCreator.createInstanceListAndroid();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public InstanceList getSInstanceList() {
 
 		try {
 			return InstanceCreator.createInstanceListAndroid();

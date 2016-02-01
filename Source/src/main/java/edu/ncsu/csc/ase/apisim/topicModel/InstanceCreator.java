@@ -18,6 +18,8 @@ import org.jsoup.nodes.Element;
 
 import cc.mallet.pipe.CharSequence2TokenSequence;
 import cc.mallet.pipe.CharSequenceLowercase;
+import cc.mallet.pipe.CharSequenceRemoveHTML;
+import cc.mallet.pipe.FeatureSequenceConvolution;
 import cc.mallet.pipe.Pipe;
 import cc.mallet.pipe.SerialPipes;
 import cc.mallet.pipe.TokenSequence2FeatureSequence;
@@ -42,13 +44,16 @@ public class InstanceCreator {
 		ArrayList<Pipe> pipeList = new ArrayList<Pipe>();
 
 		// Pipes: lowercase, tokenize, remove stopwords, map to features
+		pipeList.add(new CharSequenceRemoveHTML());
 		pipeList.add(new CharSequenceLowercase());
-		//pipeList.add(new CharSequenceClean());
 		pipeList.add(new CharSequence2TokenSequence(Pattern.compile("\\p{L}[\\p{L}\\p{P}]+\\p{L}")));
 		pipeList.add(new TokenSequenceRemoveStopwords(new File(STOP_WORD_FILE_LOC),"UTF-8", false, false, false));
 		pipeList.add(new TokenSequenceClean(false));
 		//pipeList.add(new TokenSequenceSyn(false));
 		pipeList.add(new TokenSequence2FeatureSequence());
+		//pipeList.add(new FeatureSequenceConvolution());
+		//pipeList.add(new FeatureSequence2AugmentableFeatureVector());
+		//pipeList.add(new AugmentableFeatureVectorLogScale());
 
 		InstanceList instances = new InstanceList(new SerialPipes(pipeList));
 
@@ -57,25 +62,6 @@ public class InstanceCreator {
 		return instances;
 	}
 	
-	public synchronized static List<String> getEvalList()
-	{
-		if(evalList == null)
-		{
-			evalList = new ArrayList<String>();
-			evalList.add("Alert");
-			evalList.add("Command");
-			evalList.add("Font");
-			evalList.add("Displayable");
-			evalList.add("Display");
-			evalList.add("Canvas");
-			evalList.add("GameCanvas");
-			evalList.add("Layer");
-			evalList.add("Sprite");
-			evalList.add("Graphics");
-			evalList.add("Image");
-		}
-		return evalList;
-	}
 	
 	public static InstanceList createInstanceList(boolean includeMtd,String...apiDumpPath) throws Exception {
 		List<Instance> insList = new ArrayList<Instance>();
@@ -275,11 +261,11 @@ public class InstanceCreator {
 		return InstanceCreator.createInstanceList(getInsListAndroidPkgCls(getPkgStrMap(Configuration.ANDROID_DUMP_PATH, includeMtd)));
 	}
 
-	public static InstanceList createInstanceList22(boolean includeMtd, String midpDumpPath) throws Exception {
+	public static InstanceList createInstanceListMIDP_Eval(boolean includeMtd) throws Exception {
 		List<Instance> insList = new ArrayList<Instance>();
-		for(APIType type: AllClassCrawler.read(midpDumpPath))
+		for(APIType type: AllClassCrawler.read(Configuration.MIDP_DUMP_PATH))
 		{
-			if (getEvalList().contains(type.getName().trim()))
+			if (getEvalListMidp().contains(type.getName().trim()))
 			{
 				if(includeMtd)
 					insList.add(new DataInstance(true, type));
@@ -291,11 +277,11 @@ public class InstanceCreator {
 		return createInstanceList(insList);
 	}
 	
-	public static InstanceList createSearchInstanceListJava(boolean includeMtd, String javaDumpPath) throws Exception {
+	public static InstanceList createSearchInstanceListJava_Eval(boolean includeMtd, String javaDumpPath) throws Exception {
 		List<Instance> insList = new ArrayList<Instance>();
 		for(APIType type: AllClassCrawler.read(javaDumpPath))
 		{
-			if (getEvalList1().contains(type.getPackage().trim()))
+			if (getEvalListJava().contains(type.getPackage().trim()))
 			{
 				if(includeMtd)
 					insList.add(new DataInstance(true, type));
@@ -307,7 +293,7 @@ public class InstanceCreator {
 		return createInstanceList(insList);
 	}
 	
-	public synchronized static List<String> getEvalList1()
+	public synchronized static List<String> getEvalListJava()
 	{
 		if(evalList1 == null)
 		{
@@ -321,5 +307,26 @@ public class InstanceCreator {
 		}
 		return evalList1;
 	}
+	
+	public synchronized static List<String> getEvalListMidp()
+	{
+		if(evalList == null)
+		{
+			evalList = new ArrayList<String>();
+			evalList.add("Alert");
+			evalList.add("Command");
+			evalList.add("Font");
+			evalList.add("Displayable");
+			evalList.add("Display");
+			evalList.add("Canvas");
+			evalList.add("GameCanvas");
+			evalList.add("Layer");
+			evalList.add("Sprite");
+			evalList.add("Graphics");
+			evalList.add("Image");
+		}
+		return evalList;
+	}
+	
 
 }

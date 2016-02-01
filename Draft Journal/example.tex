@@ -1,0 +1,125 @@
+\vspace*{-1ex}
+\section{Example}
+\label{sec:example}
+\vspace*{-1ex}
+
+We next present an example to motivate our work and list the considerations for applying text mining techniques on API documents. 
+The example is from the Java ME and the Android API. Both Java ME and Android use Java as the language of implementation and are targeted towards hand-held devices.
+Figure~\ref{fig:drawStringJavadoc} shows the API method description
+of \CodeIn{drawString} method from
+\CodeIn{javax.microedition.lcdui.Graphics} class in Java ME API.
+Figure~\ref{fig:drawTextJavadoc} shows the API method description
+of method \CodeIn{drawText} method from
+\CodeIn{android.graphics.Canvas} class in Android API.
+
+\begin{figure}
+	\begin{framed}
+		\begin{small}
+			{\small javax.microedition.lcdui} {\normalsize Class Graphics} {\large drawString}\\
+			\CodeIn{public void drawString(String str,int x,int y,int anchor)}\\
+			Draws the specified String using the current font and color. The x,y position is the position of the anchor point. See anchor points.\\
+			\textbf{Parameters}\\
+			\textit{str} - the String to be drawn\\
+			\textit{x} - the x coordinate of the anchor point\\
+			\textit{y} - the y coordinate of the anchor point\\
+			\textit{anchor} - the anchor point for positioning the text\\
+			\textbf{Throws}\\
+			\textit{NullPointerException} - if str is null\\
+			\textit{IllegalArgumentException} - if anchor is not a legal value\\
+			\textbf{See Also}\\
+			\CodeIn{drawChars(char[], int, int, int, int, int)}
+		\end{small}
+	\end{framed}
+	\vspace{-2ex}
+	\caption{\CodeIn{drawString} API method description of \CodeIn{Graphics} class in the Java ME API}
+	\label{fig:drawStringJavadoc}
+	\vspace*{-2ex}
+\end{figure}
+
+
+Notice the overlap in the language of these two methods.
+A developer can easily conclude that
+the two methods offer similar functionality.
+However, Android API has more than 23,000 public methods.
+Manually going through each method description to find similar methods
+is prohibitively time consuming, supporting the need for automation.
+A naive solution to automate the task is to perform keyword-based search. 
+ 
+To demonstrate the difficulties faced by keyword-based search in above example,
+we searched the Android API description with the keywords listed in Table~\ref{tab:exampleQueries} using the Apache Lucene~\cite{lucene} framework.
+Lucene is a high-performance, full-featured text search engine library written entirely in Java.
+The column ``Query'' describes the keywords we used to perform keyword-based search,
+The column ``Hits'' lists the number of matches found, and
+The column ``Top-10'' lists the rank of the first relevant method in top-ten results.
+For instance, when we searched for the class name ``Graphics'' in the Android API,
+we did not get any results.
+We also did not get any results for when we searched for method name using keywords ``drawString''. 
+
+\begin{figure}
+	\begin{framed}
+		\begin{small}
+			{\small android.graphics} {\normalsize Class Canvas} {\large drawText}\\
+			\CodeIn{public void drawText (String text, float x, float y, Paint paint)}\\
+			Draw the text, with origin at (x,y), using the specified paint. The origin is interpreted based on the Align setting in the paint.\\
+			\textbf{Parameters}\\
+			\textit{text} - The text to be drawn\\
+			\textit{x} - The x-coordinate of the origin of the text being drawn\\
+			\textit{y} - The y-coordinate of the origin of the text being drawn\\
+			\textit{paint} - The paint used for the text (e.g. color, size, style)
+		\end{small}
+	\end{framed}
+	\vspace{-2ex}
+	\caption{\CodeIn{drawText} API method description of \CodeIn{Canvas} class in the Android API}
+	\label{fig:drawTextJavadoc}
+	\vspace*{-4ex}
+\end{figure}
+
+When we searched the Android API using the words in the method signature as keywords,
+we got a 23,547 results (almost all methods in Android API).
+The high number of results is because of the confounding effects of keywords, such as ``public''. Most of the methods signatures have the keyword ``public''. 
+Although the ranking mechanisms in Lucene did rearrange the results
+moving methods with most keyword matches first, we did not find a relevant method in top-ten results.
+Likewise, the words in method descriptions as a whole or in parts also did not yield better results.
+In the example, a combination of various attributes, such as method name split in camel case notation ``draw String'', keywords from both class and method description resulted in the Android API equivalent method \CodeIn{drawText} shown in Figure~\ref{fig:drawTextJavadoc} in the top ten results.
+
+ \begin{table}
+	\begin{center}
+		\caption{Query Results}
+		\vspace*{-4ex}
+		\begin{small}
+			\begin{tabular}{rlrr}
+				\topline
+				\headcol 	\# 	& Query	& Hits & Top-10\\
+				\midline 
+				
+				\rowpln 1	& Class Name: ``Graphics''					& 0 & -\\
+				\rowcol 2	& Method Name: ``drawString''				& 0 & -\\
+				\rowcol 3	& Method Signature							& 23547 & - \\
+				\rowpln 4	& Method Description: (Complete)			& 16820 & - \\
+				\rowcol 5	& Method Description: (summary sentences)	& 94230 & - \\
+				\rowpln 6	& Combination								& 1479 & \textbf{3} \\			
+				\bottomline
+				%----------------- END TABLE DATA ------------------------ 
+				\rowpln \multicolumn{4}{r}{{\small `-'=No Match in Top-10 results.}}\\ 
+				\bottomline
+			\end{tabular}
+			\label{tab:exampleQueries}
+		\end{small}
+		
+	\end{center}
+	\vspace*{-4ex}
+\end{table}
+
+
+The previous example demonstrates difficulties faced by simple keyword-based searches and text mining in general to discover likely method mappings. The \tool\ approach in general addresses the following difficulties in applying text mining approaches on natural language API method descriptions:
+ 
+\begin{enumerate}
+		
+	\item \textit{Confounding effects}. Certain method names have a confounding effects. For instance, \CodeIn{toString()}, \CodeIn{get()}, \CodeIn{set()} are too generic and tend to have similar descriptions across different method definitions. These generic methods often cause interference with the output of text mining based approaches. The problem is to automatically identify such method names to de-emphasize their importance in a query. 
+	
+	\item \textit{Weights}. Not all terms in a method descriptions are equally important keywords. For instance, the term ``zip'' in the sentence ``opens a zip file'' is more important than the terms ``opens'' and ``files'' as the term emphasizes on the specific type of file. The problem is to automatically identify the importance of a term.
+	
+	\item \textit{Structure}. API documents are not flat contiguous text blobs. They have well defined structure, that is often shared by method descriptions. Ignoring the structure may cause ineffective queries negatively affecting the results. The problem is to effectively aggregate the results of querying individual API document elements (such as class description, class names, method names, method descriptions).
+			
+	
+\end{enumerate}

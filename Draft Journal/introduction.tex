@@ -1,0 +1,107 @@
+\section{Introduction}
+\label{sec:introduction}
+
+%For instance, a typical user may view emails on his/her Android or iOS or WindowsPhone handheld
+%device, such as a mobile phone or a tablet. 
+%The user then can switch to a desktop environment, such as Windows or Linux or OSX 
+%in an workplace like setting through either a web browser or 
+%a standalone application, such as Microsoft Outlook or Mozilla Thunderbird.
+
+Software is ubiquitous and of late people are increasingly interacting
+with software applications
+that run on variety of software platforms on daily basis.
+To retain existing users (and attract new users) across different platforms,
+developers are increasingly releasing different versions of their applications.
+For example, a typical mobile software developer often releases his/her applications
+on all the popular mobile platforms, such as Android, iOS, and Windows,
+which often involves rewriting applications in different languages.
+For instance, Java is preferred language for implementing Android applications
+and Objective-C for iOS application.
+In context of desktop software, many well-known projects, such as JUnit and
+Hibernate provide multiple versions in different programming languages,
+to attract developer community to use these
+libraries across those languages.
+
+
+%However, manually migrating a software from one platform (/language) to another
+%can be time consuming and may be error prone.
+To assist developers with software migration
+there are existing language migration tools, such as Java2CSTranslator~\cite{java2cstranslator}.
+However, such tools require a programmer to manually input
+how methods in a source language's Application Programming Interfaces (API) maps to the methods of the target language's API. 
+Given a typical language (or platform) exposes a large number of API methods for developers to reuse, manually writing these mappings is prohibitively resource intensive and may be error prone.
+
+
+\textit{The goal of this research is to support software developers 
+in migrating an application from a source API to a target API
+by automatically discovering likely method mappings across APIs using text mining
+on the natural language API method descriptions.}
+
+
+Existing approaches
+address the problem of finding method mapping between APIs using
+static~\cite{Zhong2010ICSE} and dynamic~\cite{Gokhale2013ICSE} analysis. 
+Recently Nguyen et al.~\cite{nguyen2014statistical} further proposed to
+apply statistical language translation techniques to achieve language migration
+by mining large corpora of open source software repositories.
+However, these approaches require as an input manually ported
+(or at least functionally similar) software across source and target APIs.
+Since static analysis and mining approaches~\cite{Zhong2010ICSE,nguyen2014statistical}
+leverage source code analysis, 
+accuracy of such approaches is dependent on the quality of the code under consideration.
+Likewise, accuracy of dynamic approaches~\cite{Gokhale2013ICSE} is dependent on
+the quality and completeness of test inputs
+to dynamically execute the API behavior comprehensively. 
+
+
+To address the shortcomings of existing program-analysis based approaches,
+we propose to use the natural language API method descriptions
+to discover the method mappings across APIs.
+Our intuition is:
+\textit{since the API documents are targeted towards developers,
+	there may be an overlap in the language used to describe similar concepts that can be leveraged.}
+In general, API documentation provides developers with useful information
+about class/interface hierarchies within the software.
+Additionally, API documents also provide information about
+how to use a particular method within a class by means of method descriptions.
+A method description typically outlines specifications in terms of
+the expectations of the method arguments and functionality of method in general.
+
+
+This paper presents \tool : An approach that leverages the natural language method descriptions to discover the likely method mapping between APIs.
+\tool\ stands for \textit{\textbf{T}ext \textbf{M}ining
+	based approach to discover likely \textbf{AP}I method mappings}.
+In particular, \tool\ proposes to create a vector space model~\cite{singhal2001modern,manning2008introduction} of the target API method descriptions. 
+\tool\ then queries the vector space model of target API using
+automatically generated queries from the source API method descriptions.
+\tool\ automates the query generation in source API using the concepts from text mining, such as emphasizing (or omitting) certain keywords over others and querying multiple facets (such as class description, package names, and method description).
+Since \tool\ analyzes API documents in natural language, the proposed approach is reusable, independent of the programming language of the library.
+
+We pose the following research question:
+\textit{How accurately can the similarity in the language of API method descriptions
+	be leveraged to discover likely API Mappings?}
+To answer our question, we apply \tool\ to discover likely API mappings for 15 classes across:
+1) \CodeIn{Java} and \CodeIn{C\#} API; 2) \CodeIn{Java ME}~\footnote{Java Platform Micro Edition} and \CodeIn{Android} API.
+We also compare the discovered mappings with two state-of-the-art static and dynamic analysis based approaches: Rosetta~\cite{Gokhale2013ICSE} and StaMiner~\cite{nguyen2014statistical}.
+%Our results indicate that \tool\ on an average found relevant mappings for 57\% more methods compared to Rosetta and StaMiner. 
+%Furthermore, our results also indicate that \tool\ found on average exact mappings for 6.5 more methods per class with a maximum of 21 additional exact mappings for a single class as compared to previous approaches.
+
+%In summary, \tool\ leverages natural language description of APIs to discover likely mapping thus facilitating cross API migration of applications. Since \tool\ analyzes API documents in natural language, the proposed approach is reusable, independent of the programming language of the library. 
+
+This paper makes the following major contributions:
+\begin{itemize}
+	\item A text mining based approach that effectively discovers mapping between source and target API.
+	\item A prototype implementation of our approach based on extending the Apache Lucene~\cite{lucene}. An open source implementation of our prototype can be found at our website\footnote{\url{https://sites.google.com/a/ncsu.edu/apisim/}}. 
+	\item An evaluation of our approach on 5 classes in Java ME to Android API and 10 Classes Java to C\# API. The evaluation results and artifacts are publicly available on the project website.
+\end{itemize}
+
+
+The rest of the paper is organized as follows.
+Section~\ref{sec:background} presents the background on Text Mining.
+Section~\ref{sec:example} presents a real world example that motivates our approach. Section~\ref{sec:approach} presents \tool\ approach.
+Section~\ref{sec:evaluation} presents evaluation of \tool.
+Section~\ref{sec:discussion} presents a brief discussion and future work.
+Section~\ref{sec:related} discusses the related work.
+Finally, Section~\ref{sec:conclusion} concludes the paper.
+
+

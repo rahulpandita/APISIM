@@ -1,0 +1,60 @@
+\vspace*{-1.5ex}
+\section{Limitation and Future work}
+\label{sec:discussion}
+\vspace*{-1ex}
+
+We next describe the limitations and future work of \tool,
+followed by discussions on threats to validity.
+
+
+A key limitation of the presented work is its reliance on the human developer
+to confirm or refute mappings.
+In the future, we plan to extend the \tool\ infrastructure to achieve an end-to-end automation. 
+Particularly, we plan on using the program-analysis techniques, 
+such as type-analysis proposed in
+existing approaches~\cite{nguyen2014statistical,zhong09SE}.
+
+
+
+Sometimes the functionality achieved by a method call in a source API,
+is achieved by a sequence of method calls in the destination API and vice versa.
+Although \tool\ may return individual methods as relevant, 
+\tool\ does not provide explicit sequences of method calls as relevant suggestions.
+In the future, we plan to extend the current text mining infrastructure
+to provide method sequences as relevant suggestions when applicable. 
+In particular, we plan to leverage the NLP techniques, such as
+specification inference~\cite{pandita12:inferring} to identify method sequences. 
+
+
+
+From an implementation perspective, \tool\ does not take into account 
+the API fields,
+which limits \tool s ability in reporting mappings involving API fields.
+%For instance, the functionality achieved by a method call in a source API
+%may be achieved by accessing a API field in destination API.
+However, disregarding API fields is a limitation of the current implementation 
+and in future iterations of \tool\ implementations we plan to include API fields in the indexes as well.
+
+Finally, \tool\ operates under the assumption of the availability of the API documents.
+Thus \tool\ is not applicable in situations where API documents are of low quality or are unavailable altogether.
+In the future, we plan to extend \tool\ infrastructure to workaround such situations
+by integrating with existing source-code-mining based approaches.
+Specifically we plan to leverage techniques like code summarisation~\cite{sridhara2011ICPC} and IR based approaches like Exoa~\cite{kim2010towards}.
+%We do not guarantee the exhaustive mapping
+
+%limitations with respect to most commonly occurring method names like \CodeIn{get} \CodeIn{set}
+
+
+ 
+
+\textbf{Threats to Validity}: The primary threat to external validity is the representativeness of our experimental subjects to the real world software.
+To address this threat we chose real world API pairs:
+1) Java ME and Android APIs are two Java based platforms to develop mobile applications; 
+2) Java and C\# APIs are the top object-oriented programming language APIs used for generic application development. 
+The threat can be further minimized by evaluating \tool\ on more APIs from different domains. 
+
+Our chief threat to internal validity is the accuracy of \tool\ in identifying API mappings. 
+To minimize this threat we compared the mappings inferred by \tool\ with
+the mappings provided by previous approaches. We thank Gokhale et al.~\cite{Gokhale2013ICSE} for sharing with us the Java ME and Android API mappings inferred by their Rosetta approach. We also thank Nguyen et al.~\cite{nguyen2014statistical} for making their mappings publicly available. Furthermore, authors did manually identify some of the mappings that could not be compared to previous work.
+Thus, human errors may affect our results. 
+To minimize the effect, each annotation was independently agreed upon by two authors.

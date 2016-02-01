@@ -1,4 +1,4 @@
-package edu.ncsu.csc.ase.apisim.topicModel;
+/*package edu.ncsu.csc.ase.apisim.topicModel;
 
 import java.util.List;
 import java.util.Map;
@@ -79,7 +79,7 @@ public class TopicModelJavaClass extends TopicModelFactory {
 		
 		for(APIType type: AllClassCrawler.read(Configuration.JAVA_DUMP_PATH))
 		{
-			if (InstanceCreator.getEvalList1().contains(type.getPackage().trim()))
+			if (InstanceCreator.getEvalListJava().contains(type.getPackage().trim()))
 				returnSet.add(type.getPackage()+"."+type.getName());
 		}
 		
@@ -97,4 +97,4 @@ public class TopicModelJavaClass extends TopicModelFactory {
 		tc.eval();
 	}
 
-}
+}*/

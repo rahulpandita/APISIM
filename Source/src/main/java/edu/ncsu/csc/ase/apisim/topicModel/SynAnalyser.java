@@ -18,7 +18,7 @@ public class SynAnalyser {
 		Map<String, String> dict = new LinkedHashMap<String, String>();
 		WNSim wnsim = WNSim.getInstance(Configuration.WORD_NET_PATH, Configuration.WORD_NET_CONFIG_XML_PATH);
 		BufferedReader reader = null;
-		reader = new BufferedReader(new FileReader("tpmdling\\Alphabet.txt"));
+		reader = new BufferedReader(new FileReader("tpmdling/Alphabet.txt"));
 		String line = null;
 		List<String> alpLst = new ArrayList<String>(); 
 		while ((line = reader.readLine()) != null) {
@@ -44,7 +44,7 @@ public class SynAnalyser {
 			}
 		}
 		
-		BufferedWriter writer = new BufferedWriter(new FileWriter(new File("tpmdling\\AlphabetSyn.txt")));
+		BufferedWriter writer = new BufferedWriter(new FileWriter(new File("tpmdling/AlphabetSyn.txt")));
 		for(String key: dict.keySet())
 		{
 			writer.append(key +"\t" + dict.get(key));
