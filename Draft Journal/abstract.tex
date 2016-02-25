@@ -1,22 +1,23 @@
 \begin{abstract}
 
-%Mapping across different platform or language Application Programming Interfaces (APIs)
-%is highly desirable.
-Developers often release different versions of their applications to support various platform/programming-language application programming interfaces (APIs).
-To migrate an application written using one API (source) to another API (target), a developer must know
-how the methods in the source API map to the methods in the target API.
-Given a typical platform or language exposes a large number of API methods,
-manually writing API mappings is prohibitively resource-intensive
-and may be error prone.
-Recently, researchers proposed to automate the mapping process by mining API mappings from existing code-bases.
-However, these approaches require as input a manually ported (or at least functionally similar) code across source and target APIs.
-To address the shortcoming, this paper proposes \tool: \textit{\textbf{T}ext \textbf{M}ining
-based approach to discover likely \textbf{AP}I mappings} using the 
-similarity in the textual description of the source and target API documents.
+Developers often migrate their applications to support various platform/programming-language application programming interfaces (APIs) to retain existing users and attract new users.
+For example, a typical mobile software developer often releases his/her applications
+on all the popular mobile platforms, such as Android, iOS, and Windows.
+To migrate an application written using one API (source) to another API (target), a developer must know how the methods in the source API map to the methods in the target API.
+Given a typical platform or language exposes a large number of API methods, manually writing API mappings is prohibitively resource-intensive and may be error prone.
+\textit{The goal of this research is to support software developers 
+	in migrating an application from a source API to a target API
+	by automatically discovering relevant method mappings across APIs using text mining
+	on the natural language API method descriptions.}
+This paper proposes \tool: \textbf{T}ext \textbf{M}ining based approach to discover relevant \textbf{AP}I mappings.
+Since, \tool\ uses as input the natural language text in API documents instead of source code,
+our approach compliments existing program-analysis based approaches such as Rosetta and StaMiner
+that require as input a manually ported software or at least functionally similar software across source and target APIs to find method mappings.
 To evaluate our approach, we used \tool\ to discover API mappings for 15 classes across: 
-1) \CodeIn{Java} and \CodeIn{C\#} API, and
-2) \CodeIn{Java ME} and \CodeIn{Android} API.
-We compared the discovered mappings with state-of-the-art source code analysis based approaches: Rosetta and StaMiner.
-Our results indicate that \tool\ on average found relevant mappings for 57\% more methods compared to previous approaches. 
-Furthermore, our results also indicate that \tool\ on average found exact mappings for 6.5 more methods per class with a maximum of 21 additional exact mappings for a single class as compared to previous approaches.
+ 1) \CodeIn{Java} and \CodeIn{C\#} API, and
+ 2) \CodeIn{Java ME} and \CodeIn{Android} API.
+ We compared the discovered mappings with state-of-the-art source code analysis based approaches: Rosetta and StaMiner.
+ Our results indicate that \tool\ on average found relevant mappings for 57\% more methods compared to Rosetta and StaMiner approaches. 
+ Furthermore, our results also indicate that \tool\ on average found exact mappings for 6.5 more methods per class with a maximum of 21 additional exact mappings for a single class as compared to previous approaches.
+ 
 \end{abstract}

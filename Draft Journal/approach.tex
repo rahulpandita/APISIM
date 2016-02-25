@@ -1,4 +1,4 @@
-\section{Approach}
+\section{TMAP}
 \label{sec:approach}
 
 We next present our approach for discovering 
@@ -12,16 +12,19 @@ and creates indexes (a vector space model) of these documents
 by extracting intermediate contents from the method descriptions. 
 The Query Builder accepts the API documents of the source API
 and creates queries to be executed on the indexes (a vector space model).
-Finally, Searcher component executes the queries on the indexes and 
+In addition, the Query Builder component also accepts feedback from the
+user it terms of confirmed mappings to further refine the query. 
+Finally, the Searcher component executes the queries on the indexes and 
 generates a ranked list of the API methods from target API documents as
-mapping results to be presented to the developers for confirmation. 
+mapping results to be presented to the developers for confirmation.
+
 We next describe each component in detail.
 
 
 \begin{figure}
 	\begin{center}
 		%\begin{framed}
-		\includegraphics[scale=0.45,clip=true, trim=120pt 80pt 10pt 80pt]{ApproahOverview.eps}
+		\includegraphics[scale=0.45]{ApproahOverview.eps}
 		%\end{framed}
 		\caption{\label{fig:approachOverview} Overview of \tool\ approach}
 	\end{center}
@@ -108,6 +111,8 @@ In case of \tool, each word is considered as a term except the stop words, such 
 
 This component accepts the API method descriptions of the source API
 and creates queries for method descriptions.
+The queries are further refined by leveraging the feedback provided by the end user in the form of confirmed mappings.
+The confirmed mappings are used to prune the search space of the queries.
 These queries are executed on the target API index to retrieve 
 an ordered list of relevant API methods.
 In particular, Query Builder uses the same preprocessing steps followed by Indexer
@@ -115,6 +120,7 @@ In particular, Query Builder uses the same preprocessing steps followed by Index
 After extracting the desired descriptive text from the API method descriptions,
 this component systematically creates search queries to search for different fields in Indexes.
 Keywords for searching in ``Type Name'', ``Type Description'', ``Method Name'', and ``Method Description'' fields are derived from their equivalents in the extracted descriptive text.
+
 
 
 For instance, consider the method description shown in  Figure~\ref{fig:hasNextJavadoc} 
@@ -179,6 +185,57 @@ The normalized tf-idf sore of the top-k terms is then used as the weights for th
 
 For the API method description  shown in Figure~\ref{fig:hasNextJavadoc}, \tool\ calculates ``iter'', ``ha'' (Lemma of ``has''), and ``element'' as most the important terms with normalized tf-idf scores of 1.0, 1.0, and 0,6 respectively. We augment the query shown in Figure~\ref{fig:hasNextJavaQuery} with the computed weights for the keywords respectively.
 
+\subsubsection{Feedback}
+\label{subsub:querybuilder:feedback}
+
+
+The Query Builder component also accepts feedback from an end user in the form of confirmed mappings to further refine the query.
+In particular, this component seeks to prune the search space of a given query.
+Without proposed feedback, the search space for the queries is all the public methods of the target API.
+Given a typical API exposes a large number of methods, a large search space may result noise in the search results.
+Consider for example, Android API level 23 exposes 4404~\footnote{\url{http://developer.android.com/reference/classes.html}} classes
+and Java 8 exposes 4240~\footnote{\url{https://docs.oracle.com/javase/8/docs/api/allclasses-noframe.html}} classes.
+Furthermore, each class exposes several methods resulting in large search space for each query resulting in a low effectiveness of search.
+
+A well designed API is typically modular~\cite{Bloch:2006:OOPSLA:APIDesign} and
+we seek to leverage the modularity in the API to prune the search space of queries.
+API methods are modular as they arranged according to the functionality provided by the methods. This arrangement manifests as methods groups appearing in class and class groups appearing in a package.
+Our key intuition is that mappings of methods localized in source API will also be localized in the target API.
+The intuition is based on the statistical model translation theory~\cite{brown1993mathematics} that given a context, a set of closely related words and the set of their translations are likely to occur frequently together in different languages. 
+
+
+\tool\ operationalizes our intuition using topic modelling~\cite{blei2003latent,panichella2013effectively}.
+Topic Modeling has been demonstrated to be useful in many information-retrieval-related software engineering tasks~\cite{Panichella2013:ICSE:TopicModel,Binkley:2014:ULS:2597008.2597150}.
+In particular, \tool\ use LDA as the choice of topic modelling implementation. 
+LDA creates a probabilistic statistical model that estimates distributions of latent topics from textual documents.
+\tool\ considers each package as an individual document. 
+In particular, we concatenate the package description with the descriptions of the classes and methods occurring within the package to form the document.
+
+\tool\ first creates a topic model $T$ of source API documents with $m$ topics.
+Next, \tool\ uses the model ($T$) to get the topic distribution vector of the source package document $V_{S}$.
+A topic distribution vector quantifies the contribution each topic ($m$) in the document.
+The model is next used to get the topic distribution vectors of the target package documents $\{V_{T}\}:=\{V_{T1},V_{T2},...,V_{Tn}\}$.
+The set $\{V_{T}\}$ is then queried to find ranked list of the target topic distribution vectors similar to $V_{S}$.
+In particular \tool\ use the Jensen–Shannon divergence~\cite{lin1991divergence} function to measure the similarity between two probability distributions. 
+Finally, \tool\ uses top-10 of the resultant documents to prune the search space of the query to those packages.
+
+However, LDA requires setting up a lot of parameters for effectively generating a topic model.
+For instance, a typical implementation of LDA requires user to set following four parameters : 1) Number of topics, 2) Number of iterations, 3) Dirichlet distribution parameters $\alpha$, and 4) Dirichlet distribution parameter $\beta$.
+Finding optimal values for these parameters is an active area of research.
+\tool\ uses the recomendation by Arun et al.~\cite{arun2010finding} of optimizing for number of topics $m$ by running LDA under different values of $m$, while maintaining rest of the parameters as constant.
+\tool\ then use a fitness function to find the optimal value of $m$.
+
+
+\tool\ uses hyperparameter optimization~\cite{mccallum2002mallet} to optimize values for $\alpha$ and $\beta$ ($\alpha$ and $\beta$ are initialized to recommended~\cite{mccallum2002mallet} $1.0$ and $0.01$ respectively).
+The parameter ``number of iterations'' is initialized to 10000 (arbitrarily large for hyperparameter optimization to be effective).
+\tool\ next creates a set of topic models by running LDA with following values of $m$: 10, 50, 100, 500, 1000, 2500, 5000.
+The following fitness function is then used to select an optimal topic model:
+
+Given a mapping from the feedback; \textit{that methods in source package ($P_S$) are mapped to methods in target packages ($P_{T_1}...P_{T_n}$)}, all the generated topic models are queried with $P_S$.
+The topic model with minimum $m$ containing most of ($P_{T_1}...P_{T_n}$) in top-10 results for similarity described previously is selected as the optimal model.
+
+
+
 \subsection{Searcher}
 \label{sub:approach_searcher}
 
@@ -188,6 +245,7 @@ The searcher is realized as follows.
 First all the documents that match the keywords and clauses in a query are returned.
 Then, the returned documents are ranked using the cosine similarity\cite{singhal2001modern} of the terms in query and the terms in returned documents. In mathematics, Cosine similarity is a numerical statistic to measure the similarity between two vectors. 
 In information theory~\cite{manning2008introduction}, cosine similarity is the standard statistic to rank relevant documents.
+The search space pruning using end user feedback was implemented using Mallet~\cite{mccallum2002mallet}.
 
 
 
@@ -209,4 +267,4 @@ In particular our prototype implementation parses:
 
 We next implemented the indexing, query building, and searching infrastructure using the Apache Lucene~\cite{lucene}.
 Lucene is a high-performance, full-featured text search engine library written entirely in Java.
-Our prototype implementation and evaluation subjects are publicly available on the project website\footnote{\url{https://sites.google.com/a/ncsu.edu/apisim/}}. 
+Our prototype implementation and evaluation subjects are publicly available on the project website~\cite{projectWeb}. 
