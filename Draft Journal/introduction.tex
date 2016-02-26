@@ -12,9 +12,9 @@ For example, a typical mobile software developer often releases his/her applicat
 on all the popular mobile platforms, such as Android, iOS, and Windows,
 which often involves rewriting applications in different languages.
 For instance, Java is preferred language for implementing Android applications
-and Objective-C for iOS application.
+and Objective-C for iOS applications.
 In context of desktop software, many well-known projects, such as JUnit and
-Hibernate provide multiple versions in different programming languages,
+Hibernate, provide multiple versions in different programming languages
 to attract the developer community to use these
 libraries across those languages.
 
@@ -22,29 +22,29 @@ libraries across those languages.
 %However, manually migrating a software from one platform (/language) to another
 %can be time consuming and may be error prone.
 
-Existing tools such as Java2CSTranslator~\cite{java2cstranslator}
+Existing tools, such as Java2CSTranslator~\cite{java2cstranslator},
 assist developers by automating the process of software migration.
 However, such tools require a programmer to manually input
 how methods in a source language's Application Programming Interfaces (API) maps to the methods of the target language's API. 
-Given a typical language (or platform) exposes a large number of API methods for developers to reuse, manually writing these mappings is prohibitively resource intensive and may be error prone.
+Given a typical language (or platform) exposes a large number of API methods for developers to reuse, manually discovering these mappings is prohibitively resource intensive and may be error prone.
 
 
-Existing program-analysis based approaches
+Existing program analysis-based approaches
 address the problem of finding method mapping between APIs using
 static~\cite{Zhong2010ICSE} and dynamic~\cite{Gokhale2013ICSE} analysis. 
 Recently Nguyen et al.~\cite{nguyen2014statistical} further proposed to
 apply statistical language translation techniques to achieve language migration
 by mining large corpora of open source software repositories.
-However, these approaches require as an input manually ported software
-or at least functionally similar software across source and target APIs.
-Since static analysis and mining approaches~\cite{Zhong2010ICSE,nguyen2014statistical}
+However, these approaches require as an input manually-ported software
+or at least functionally-similar software across source and target APIs.
+Since static analysis approaches~\cite{Zhong2010ICSE,nguyen2014statistical}
 leverage source code analysis, 
 accuracy of such approaches is dependent on the quality of the code under consideration.
 Likewise, accuracy of dynamic approaches~\cite{Gokhale2013ICSE} is dependent on
 the quality and completeness of test inputs
 to dynamically execute the API behavior comprehensively. 
-Furthermore, such program-analysis approaches are often sensitive to the nuances of
-the programming language of the source-code under analysis, thus require significant effort
+Furthermore, such program analysis approaches are often sensitive to the nuances of
+the programming language of the source code under analysis, thus require significant effort
 for accommodating new programming languages.  
 
 
@@ -71,24 +71,24 @@ This paper presents \tool : An approach that leverages the natural language meth
 	based approach to discover likely \textbf{AP}I method mappings}.
 \tool\ accepts as input the the API doucments of source and target API.
 In particular, \tool\ proposes to create a vector space model~\cite{singhal2001modern,manning2008introduction} of the target API method descriptions. 
-\tool\ then queries the vector space model of target API using
-automatically generated queries from the source API method descriptions.
+\tool\ then queries the vector space model of the target API using
+automatically-generated queries from the source API method descriptions.
 \tool\ automates the query generation in source API using the concepts from text mining, such as emphasizing and de-emphasizing certain keywords over others and querying multiple facets, such as class description, package names, and method description.
-The output of \tool\ is a ranked list of methods of the target API that are candidates for the mapping of the method from the source API that was used to generate query.
+The output of \tool\ is a ranked list of methods of the target API that are candidates for the mapping of the method from the source API that was used to generate the query.
 Since \tool\ analyzes API documents in natural language, the proposed approach is reusable, independent of the programming language of the library.
 
 
-However, its challenging to automatically generate the queries. In particular, given a typical API exposes a large number of methods, a large search space may result noise in the search results.
+However, automatic query generation is challenging. In particular, given a typical API exposes a large number of methods, a large search space may result in noise in the search results.
 Consider for example, Android API level 23 exposes 4404~\footnote{\url{http://developer.android.com/reference/classes.html}} classes
 and Java 8 exposes 4240~\footnote{\url{https://docs.oracle.com/javase/8/docs/api/allclasses-noframe.html}} classes.
-Furthermore, each class exposes several methods resulting in large search space for each query resulting in a low effectiveness of search. 
+Furthermore, each class exposes several methods resulting in large search space for each query, resulting in a low effectiveness of search. 
 \tool\ addresses this challenge by leveraging user feedback in the form of confirmed mappings to prune the search space using topic modelling~\cite{blei2003latent,panichella2013effectively}. 
 
 
 We pose the following research questions:
 \begin{itemize}
 	
-	\item\textbf{RQ1}: Does \tool\ discover additional method mappings in comparison to existing program-analysis based approaches?
+	\item\textbf{RQ1}: Does \tool\ discover additional method mappings in comparison to existing program analysis-based approaches?
 	
 	\item\textbf{RQ2}: What is the improvement in the rankings of the method mappings in \tool\ output by leveraging the use feedback?
 	
@@ -99,7 +99,7 @@ We pose the following research questions:
 	
 \end{itemize}
 To answer our questions, we apply \tool\ to discover likely API mappings for 15 classes across:
-1) \CodeIn{Java} and \CodeIn{C\#} API; 2) \CodeIn{Java ME}~\footnote{Java Platform Micro Edition} and \CodeIn{Android} API.
+1) \CodeIn{Java} and \CodeIn{C\#} API; and 2) \CodeIn{Java ME}~\footnote{Java Platform Micro Edition} and \CodeIn{Android} API.
 We also compare the discovered mappings with two state-of-the-art program-analysis based approaches: Rosetta~\cite{Gokhale2013ICSE} and StaMiner~\cite{nguyen2014statistical}.
 %Our results indicate that \tool\ on an average found relevant mappings for 57\% more methods compared to Rosetta and StaMiner. 
 %Furthermore, our results also indicate that \tool\ found on average exact mappings for 6.5 more methods per class with a maximum of 21 additional exact mappings for a single class as compared to previous approaches.
@@ -109,7 +109,7 @@ We also compare the discovered mappings with two state-of-the-art program-analys
 This paper makes the following major contributions:
 \begin{itemize}
 	\item A text mining (queries on vector space model) based approach that effectively discovers mapping between source and target API.
-	\item A topic modeling based approach to prune the search space of queries by using end user feedback to improve the effectiveness of discovering mapping between source and target API. 
+	\item A topic modeling based approach to prune the search space of queries by using end user feedback to prune irrelevant suggestions in discovering mapping between source and target API. 
 	\item A prototype implementation of our approach based on extending the Apache Lucene~\cite{lucene} and Mallet~\cite{McCallumMALLET}. An open source implementation of our prototype can be found at our website~\cite{projectWeb}. 
 	\item An evaluation of our approach on 5 classes in Java ME to Android API and 10 Classes Java to C\# API. The evaluation results and artifacts are publicly available on the project website.
 \end{itemize}
@@ -127,6 +127,7 @@ Finally, Section~\ref{sec:conclusion} concludes the paper.
 \begin{framed}
 This paper is a revised, expanded version of a paper (Pandita et al.~\cite{pandita2015discovering}) presented at the 15th
 IEEE working conference on Source code analysis and Maintenance (SCAM 2015).
+In particular, this paper builds on the previous version by proposing and evaluating a new technique to leverage user feedback to prune the irrelevant \tool\ suggestions. Additionally, this paper also evaluates the effectiveness of text-mining in general for API related information retrieval tasks.
 \end{framed}
 
 
