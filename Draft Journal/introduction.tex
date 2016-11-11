@@ -11,9 +11,9 @@ Developers are increasingly releasing different versions of their applications t
 For example, a typical mobile software developer often releases his/her applications
 on all the popular mobile platforms, such as Android, iOS, and Windows,
 which often involves rewriting applications in different languages.
-For instance, Java is preferred language for implementing Android applications
-and Objective-C for iOS applications.
-In context of desktop software, many well-known projects, such as JUnit and
+For instance, Java is the preferred language for implementing Android applications
+and Swift for iOS applications.
+In the context of desktop software, many well-known projects, such as JUnit and
 Hibernate, provide multiple versions in different programming languages
 to attract the developer community to use these
 libraries across those languages.
@@ -30,19 +30,20 @@ Given a typical language (or platform) exposes a large number of API methods for
 
 
 Existing program analysis-based approaches
-address the problem of finding method mapping between APIs using
+address the problem of finding method mappings between APIs using
 static~\cite{Zhong2010ICSE} and dynamic~\cite{Gokhale2013ICSE} analysis. 
-Recently Nguyen et al.~\cite{nguyen2014statistical} further proposed to
+Recently, Nguyen et al.~\cite{nguyen2014statistical} further proposed to
 apply statistical language translation techniques to achieve language migration
 by mining large corpora of open source software repositories.
 However, these approaches require as an input manually-ported software
-or at least functionally-similar software across source and target APIs.
+or at least functionally-similar software artrifcats(source-code or binaries)
+across source and target APIs.
 Since static analysis approaches~\cite{Zhong2010ICSE,nguyen2014statistical}
 leverage source code analysis, 
 accuracy of such approaches is dependent on the quality of the code under consideration.
 Likewise, accuracy of dynamic approaches~\cite{Gokhale2013ICSE} is dependent on
 the quality and completeness of test inputs
-to dynamically execute the API behavior comprehensively. 
+to exercise the API behavior comprehensively. 
 Furthermore, such program analysis approaches are often sensitive to the nuances of
 the programming language of the source code under analysis, thus require significant effort
 for accommodating new programming languages.  
@@ -69,11 +70,11 @@ the expectations of the method arguments and functionality of method in general.
 This paper presents \tool : An approach that leverages the natural language method descriptions to discover the likely method mapping between APIs.
 \tool\ stands for \textit{\textbf{T}ext \textbf{M}ining
 	based approach to discover likely \textbf{AP}I method mappings}.
-\tool\ accepts as input the the API doucments of source and target API.
+\tool\ accepts as input the API doucments of source and target API.
 In particular, \tool\ proposes to create a vector space model~\cite{singhal2001modern,manning2008introduction} of the target API method descriptions. 
 \tool\ then queries the vector space model of the target API using
 automatically-generated queries from the source API method descriptions.
-\tool\ automates the query generation in source API using the concepts from text mining, such as emphasizing and de-emphasizing certain keywords over others and querying multiple facets, such as class description, package names, and method description.
+\tool\ automates the query generation in source API using the concepts from text mining, such as emphasizing certain keywords over others and querying multiple facets of API documents, such as class description, package names, and method description.
 The output of \tool\ is a ranked list of methods of the target API that are candidates for the mapping of the method from the source API that was used to generate the query.
 Since \tool\ analyzes API documents in natural language, the proposed approach is reusable, independent of the programming language of the library.
 
@@ -81,21 +82,22 @@ Since \tool\ analyzes API documents in natural language, the proposed approach i
 However, automatic query generation is challenging. In particular, given a typical API exposes a large number of methods, a large search space may result in noise in the search results.
 Consider for example, Android API level 23 exposes 4404~\footnote{\url{http://developer.android.com/reference/classes.html}} classes
 and Java 8 exposes 4240~\footnote{\url{https://docs.oracle.com/javase/8/docs/api/allclasses-noframe.html}} classes.
-Furthermore, each class exposes several methods resulting in large search space for each query, resulting in a low effectiveness of search. 
-\tool\ addresses this challenge by leveraging user feedback in the form of confirmed mappings to prune the search space using topic modelling~\cite{blei2003latent,panichella2013effectively}. 
+Furthermore, each class exposes several methods resulting in a large search space for each query and a low effectiveness of search. 
+\tool\ addresses this challenge by leveraging feedback in the form of confirmed mappings to prune the search space using topic modelling~\cite{blei2003latent,panichella2013effectively}.
+Thus, given a set of confirmed mappings \tool\ improves the recommendations for future queries by pruning irrelevant methods from search results.
 
 
 We pose the following research questions:
 \begin{itemize}
 	
-	\item\textbf{RQ1}: Does \tool\ discover additional method mappings in comparison to existing program analysis-based approaches?
+	\item\textbf{RQ1}: Does \tool\ discover additional method mappings in comparison to existing program-analysis based approaches?
 	
-	\item\textbf{RQ2}: What is the improvement in the rankings of the method mappings in \tool\ output by leveraging the use feedback?
+	\item\textbf{RQ2}: What is the improvement in pruning irrelevant mappings from the \tool\ output by leveraging feedback?
 	
 	\item\textbf{RQ3}: What is the overlap of the method mappings discovered by \tool\ in comparison with the mappings discovered by existing program-analysis based approaches?
 	
 	
-	\item\textbf{RQ4}: Does \tool\ discover relevant methods using free-form queries instead of automated generated queries?
+	\item\textbf{RQ4}: Does \tool\ discover relevant methods using free-form queries instead of automatically generated queries?
 	
 \end{itemize}
 To answer our questions, we apply \tool\ to discover likely API mappings for 15 classes across:
@@ -109,11 +111,15 @@ We also compare the discovered mappings with two state-of-the-art program-analys
 This paper makes the following major contributions:
 \begin{itemize}
 	\item A text mining (queries on vector space model) based approach that effectively discovers mapping between source and target API.
-	\item A topic modeling based approach to prune the search space of queries by using end user feedback to prune irrelevant suggestions in discovering mapping between source and target API. 
-	\item A prototype implementation of our approach based on extending the Apache Lucene~\cite{lucene} and Mallet~\cite{McCallumMALLET}. An open source implementation of our prototype can be found at our website~\cite{projectWeb}. 
+	\item A topic modeling-based feedback approach for reducing the search space of queries to prune irrelevant suggestions in discovering mapping between source and target API. 
+	\item A prototype implementation of our approach based on extending the Apache Lucene~\cite{lucene} and Mallet~\cite{McCallum}. An open source implementation of our prototype can be found at our website~\cite{projectWeb}. 
 	\item An evaluation of our approach on 5 classes in Java ME to Android API and 10 Classes Java to C\# API. The evaluation results and artifacts are publicly available on the project website.
 \end{itemize}
 
+
+This paper is a revised, expanded version of a paper (Pandita et al.~\cite{pandita2015discovering}) presented at the 15th
+IEEE working conference on Source Code Analysis and Maintenance (SCAM 2015).
+Specifically, this paper builds on the previous version by proposing and evaluating a new technique to leverage feedback for prune the irrelevant \tool\ suggestions. Furthermore, this paper also evaluates the effectiveness of text-mining in general for API related information retrieval tasks.
 
 The rest of the paper is organized as follows.
 Section~\ref{sec:background} presents the background on Text Mining.
@@ -122,12 +128,4 @@ Section~\ref{sec:evaluation} presents evaluation of \tool.
 Section~\ref{sec:discussion} presents a brief discussion and future work.
 Section~\ref{sec:related} discusses the related work.
 Finally, Section~\ref{sec:conclusion} concludes the paper.
-
-
-\begin{framed}
-This paper is a revised, expanded version of a paper (Pandita et al.~\cite{pandita2015discovering}) presented at the 15th
-IEEE working conference on Source code analysis and Maintenance (SCAM 2015).
-In particular, this paper builds on the previous version by proposing and evaluating a new technique to leverage user feedback to prune the irrelevant \tool\ suggestions. Additionally, this paper also evaluates the effectiveness of text-mining in general for API related information retrieval tasks.
-\end{framed}
-
 

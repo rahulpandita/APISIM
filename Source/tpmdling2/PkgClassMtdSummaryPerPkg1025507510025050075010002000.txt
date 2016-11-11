@@ -1,0 +1,187 @@
+java.util[1]
+	(0.0015209641759211655)	android.content
+	(0.0015040661626648708)	android.widget
+	(0.0015019973138635679)	android.app
+	(0.0010145405458724297)	android.media
+_________________________________________________________________________________
+javax.microedition.io[2]
+	(0.0015851607014340462)	dalvik.bytecode
+	(0.0015736838676284044)	android.support.v7.gridlayout
+	(0.0015715424109975784)	org.apache.http.conn.util
+	(0.0015715424109975784)	android.support.v4.content.pm
+	(0.0015637184543166702)	org.apache.http.client.utils
+	(0.0015580558602629037)	java.nio.charset.spi
+	(0.0015510100478683107)	org.apache.http.cookie.params
+	(0.001549605190933035)	android.support.v4.database
+	(0.001549605190933035)	javax.security.auth.login
+	(0.0015482017648866839)	android.os.storage
+	(0.001530778926231729)	android.support.v4.net
+	(0.0015252501973783239)	org.apache.http.auth.params
+	(0.0015231827020092685)	android.support.v7.mediarouter
+	(0.0015204309284193264)	android.support.v4.graphics.drawable
+	(0.0015142597889130551)	android.support.v7.appcompat
+	(0.0015135758409959513)	android.support.v4.hardware.display
+	(0.0015128922391208363)	org.apache.http.io
+	(0.0015087978824560788)	android.support.v4.os
+	(0.0014925440084096056)	javax.crypto.interfaces
+	(0.0014758206778421297)	javax.security.auth
+	(0.0014501479098496944)	android.net.wifi
+	(0.0014468926373502672)	android.support.v4.print
+	(0.0014436454875922174)	android
+	(0.0014429970301387202)	android.hardware.input
+	(0.001435240731194303)	android.print.pdf
+	(0.001433308898825421)	android.support.v4.accessibilityservice
+	(0.0014128811944288436)	javax.microedition.khronos.egl
+	(0.00140782481875968)	android.telephony.gsm
+	(0.0014053041447929853)	org.apache.http.client.params
+	(0.0014021603219420797)	junit.runner
+	(0.0013971463717958649)	javax.security.auth.callback
+	(0.001377287713549639)	android.service.notification
+	(0.0013589526196820922)	java.awt.font
+	(0.0013535046148583944)	android.telephony.cdma
+	(0.0013331388131618545)	org.apache.http.client.protocol
+	(0.0013307650340736226)	android.hardware.display
+	(0.0013278043248737014)	javax.xml.transform
+	(0.0013278043248737014)	org.apache.http.conn.ssl
+	(0.0013195526697743379)	android.sax
+	(0.0013136930129895637)	android.support.v4.util
+	(0.001277991734093578)	java.lang.annotation
+	(0.001265578920341907)	org.apache.http.impl.entity
+	(0.0012405951678415145)	java.security.interfaces
+	(0.00123402353392658)	android.graphics.drawable.shapes
+	(0.001215070482530148)	javax.security.cert
+	(0.001210782672035444)	android.support.v4.text
+	(0.0011859189966562564)	org.apache.http.conn.scheme
+	(0.0011734350596437283)	org.apache.http.impl.auth
+	(0.0011703361797896499)	android.graphics.pdf
+	(0.0011698205542896183)	org.apache.http.util
+_________________________________________________________________________________
+javax.microedition.lcdui.game[3]
+	(0.0015186425292558388)	android.content
+	(0.0015017554506026303)	android.widget
+	(0.0014996879475947418)	android.app
+	(0.0010125979578200024)	android.media
+_________________________________________________________________________________
+javax.microedition.lcdui[4]
+	(0.0033530979487105973)	dalvik.bytecode
+	(0.0033371241011405295)	android.support.v7.gridlayout
+	(0.0033341413174802735)	org.apache.http.conn.util
+	(0.0033341413174802735)	android.support.v4.content.pm
+	(0.003323237508215413)	org.apache.http.client.utils
+	(0.0033153399548394307)	java.nio.charset.spi
+	(0.0033055062628409683)	org.apache.http.cookie.params
+	(0.0033035446038456135)	android.support.v4.database
+	(0.0033035446038456135)	javax.security.auth.login
+	(0.0033015846332088306)	android.os.storage
+	(0.003277226627173036)	android.support.v4.net
+	(0.0032694870689485666)	org.apache.http.auth.params
+	(0.003266591560545167)	android.support.v7.mediarouter
+	(0.003262736656999022)	android.support.v4.graphics.drawable
+	(0.003254087175371802)	android.support.v7.appcompat
+	(0.0032531281717841044)	android.support.v4.hardware.display
+	(0.0032521695772814415)	org.apache.http.io
+	(0.003246426587351814)	android.support.v4.os
+	(0.003223600758916735)	javax.crypto.interfaces
+	(0.0032000697798051625)	javax.security.auth
+	(0.003163853893223068)	android.net.wifi
+	(0.003159253648313292)	android.support.v4.print
+	(0.0031546630412922073)	android
+	(0.0031537460739442273)	android.hardware.input
+	(0.0031427723657183075)	android.print.pdf
+	(0.0031400375367053564)	android.support.v4.accessibilityservice
+	(0.0031110780712064515)	javax.microedition.khronos.egl
+	(0.003103898283966215)	android.telephony.gsm
+	(0.0031003173254199766)	org.apache.http.client.params
+	(0.003095849476308925)	junit.runner
+	(0.0030887201499792787)	javax.security.auth.callback
+	(0.0030604375031787236)	android.service.notification
+	(0.0030342589500684186)	java.awt.font
+	(0.0030264680115234784)	android.telephony.cdma
+	(0.0029972928246941493)	org.apache.http.client.protocol
+	(0.002993886956862317)	android.hardware.display
+	(0.0029896374056658176)	javax.xml.transform
+	(0.0029896374056658176)	org.apache.http.conn.ssl
+	(0.0029777844720916095)	android.sax
+	(0.002969359197069243)	android.support.v4.util
+	(0.0029178748055388583)	java.lang.annotation
+	(0.002899912153863549)	org.apache.http.impl.entity
+	(0.002863657738749202)	java.security.interfaces
+	(0.002854098855584238)	android.graphics.drawable.shapes
+	(0.0028264764180850202)	javax.security.cert
+	(0.002820216053688625)	android.support.v4.text
+	(0.0027838306688726757)	org.apache.http.conn.scheme
+	(0.0027655070808690497)	org.apache.http.impl.auth
+	(0.0027609528696429875)	android.graphics.pdf
+	(0.0027601948664158797)	org.apache.http.util
+_________________________________________________________________________________
+javax.microedition.media.control[0]
+	(0.003171057363205652)	android.content
+	(0.0031482829969771567)	android.widget
+	(0.0031454907180873534)	android.app
+	(0.002459356351881976)	android.media
+	(0.002224195703875443)	java.sql
+	(0.0021146846240186453)	java.io
+	(0.0018793879623974982)	android.view
+	(0.0018075682122759454)	android.graphics
+	(0.0017639086432022725)	java.util
+	(0.001718002469676311)	android.provider
+	(0.0016717992242865016)	android.os
+	(0.0015428256902841363)	java.lang
+	(0.0014596523908697594)	android.support.v4.app
+	(0.001381946299656553)	android.test.mock
+	(0.001322877931914576)	java.text
+	(0.0011247584769975595)	android.opengl
+	(0.0010880393954343934)	org.w3c.dom
+	(0.0010454608717831598)	android.database
+	(0.0010405434541486556)	android.view.inputmethod
+	(0.0010293283030670987)	java.util.concurrent.locks
+	(0.0010275288247128006)	java.security
+_________________________________________________________________________________
+javax.microedition.media[6]
+	(0.0020339500517780025)	android.content
+	(0.0020148745918589462)	android.widget
+	(0.0020125377220577235)	android.app
+	(0.0014518099194612874)	android.media
+	(0.0012665348559803805)	java.sql
+	(0.0011816430917713017)	java.io
+	(0.0010025473265525419)	android.view
+_________________________________________________________________________________
+javax.microedition.midlet[8]
+	(0.0019764695023106738)	android.content
+	(0.0019576174152759374)	android.widget
+	(0.001955308042818434)	android.app
+	(0.0014021172054027619)	android.media
+	(0.001219821569738383)	java.sql
+	(0.001136396434201727)	java.io
+_________________________________________________________________________________
+javax.microedition.pki[5]
+	(0.0033136168921819656)	android.content
+	(0.0032904521396524785)	android.widget
+	(0.0032876117893447555)	android.app
+	(0.002588181893378943)	android.media
+	(0.0023477010236761142)	java.sql
+	(0.002235557930842689)	java.io
+	(0.001994237357787088)	android.view
+	(0.0019204699154949537)	android.graphics
+	(0.001875599460075933)	java.util
+	(0.001828397334991396)	android.provider
+	(0.0017808654103178478)	android.os
+	(0.0016480462077183072)	java.lang
+	(0.001562278369363021)	android.support.v4.app
+	(0.0014820601097673583)	android.test.mock
+	(0.0014210211294636873)	java.text
+	(0.0012158607482808908)	android.opengl
+	(0.001177755379399654)	org.w3c.dom
+	(0.001133533833514258)	android.database
+	(0.0011284241155811781)	android.view.inputmethod
+	(0.0011167683612013136)	java.util.concurrent.locks
+	(0.0011148979236528932)	java.security
+	(0.0010362906173138997)	android.preference
+	(0.0010280558035080743)	java.net
+_________________________________________________________________________________
+javax.microedition.rms[7]
+	(0.0015558506224002424)	android.content
+	(0.0015387896533122902)	android.widget
+	(0.0015367007482835913)	android.app
+	(0.0010437765231035658)	android.media
+_________________________________________________________________________________

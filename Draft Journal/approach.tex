@@ -8,13 +8,13 @@ The \tool\ approach consists of three major components: 1) an Indexer; 2) Query 
 
 
 The Indexer accepts the API documents of the target API
-and creates indexes (a vector space model) of these documents 
+and creates indices (a vector space model) of these documents 
 by extracting intermediate contents from the method descriptions. 
 The Query Builder accepts the API documents of the source API
 and creates queries to be executed on the indexes (a vector space model).
-In addition, the Query Builder component also accepts feedback from the
-user in terms of confirmed mappings to further refine the query. 
-Finally, the Searcher component executes the queries on the indexes and 
+In addition, the Query Builder component also accepts feedback
+in the form of confirmed mappings to further refine the query. 
+Finally, the Searcher component executes the queries on the indices and 
 generates a ranked list of the API methods from target API documents as
 mapping results to be presented to the developers for confirmation.
 
@@ -35,8 +35,8 @@ We next describe each component in detail.
 \label{sub:Approach_Indexer}
 
 This component accepts the API method descriptions of the target API
-and creates indexes (a vector space model) of these documents.
-In particular, Indexer extracts the following fields from the API method descriptions:
+and creates indices (a vector space model) of these documents.
+Specifically, Indexer extracts the following fields from the API method descriptions:
 
  
 \textbf{F1) Type Name}: The name of enclosing class/interface of the method. For the method description of \CodeIn{drawString} shown in Figure~\ref{fig:drawStringJavadoc}, indexer extracts the type Name as ``Graphics''.
@@ -59,10 +59,10 @@ In particular, Indexer extracts the following fields from the API method descrip
 
 
 This step is required to extract the desired descriptive text from the API method descriptions.
-Getting structured descriptions facilitates searching on individual categories.
+Getting structured descriptions facilitates searching on individual categories or facets.
 This step allows \tool\ to deal with the \textit{structure} issue, as presented in Section~\ref{sec:example}.
 Different API documents may have different styles of presenting information to developers.
-Such stylistic differences may also include the difference in the level of the details presented to developers.
+Such stylistic differences may also include the difference in the level of the detail presented to developers.
 \tool\ relies only on basic fields that are generally available for API methods across different presentation styles. 
 
 After extracting the desired information, the extracted text is further preprocessed.
@@ -70,25 +70,25 @@ The preprocessing steps are required to make the text amenable to text mining te
 that are used in the subsequent phases of the \tool\ approach.
 In particular, \tool\ performs the following basic prepossessing steps: 
 
-\textbf{P1) Presentation Elements}: A typical API method description is often interleaved with presentation elements for improved readability. For instance, \CodeIn{JavaDoc} provides a list of identifiers such as  \CodeIn{@Code} and  \CodeIn{@link}. These identifiers are automatically translated into presentation markup, such as links and fonts. Although such elements are part of the description text, these elements often cause noise in the text mining techniques to compute relevance based on the query. Therefore, this preprocessing step cleans the method descriptions to remove such elements. We use a static list of presentation elements to achieve cleaning in this step with relatively high accuracy.
+\textbf{P1) Presentation Elements}: A typical API method description is often interleaved with presentation elements for improved readability. For instance, \CodeIn{JavaDoc} provides a list of identifiers such as  \CodeIn{@Code} and  \CodeIn{@link}. These elements are automatically translated into presentation markup, such as links and fonts. Although such elements are part of the description text, they often cause hindrance for the text mining techniques to compute relevance based on the query. Therefore, this preprocessing step cleans the method descriptions to remove such elements. We use a static list of presentation elements to achieve cleaning in this step with relatively high accuracy.
 	
 \textbf{P2) Split Package Notation}: In method descriptions, the ``.'' character is used as a separator character for package names like ``\CodeIn{javax.microedition.lcdui}''. We use regular expressions to split the package name into constituent words to facilitate search on individual words in the package name. For example, ``\CodeIn{javax.microedition.lcdui}'' is split into ``javax microedition lcdui''.
 
 \textbf{P3) Split CamelCase Notation}: API method descriptions are often interleaved with programming identifiers, such as class names and method names.
 Oftentimes these identifiers use CamelCase notation.
-The CamelCase notation is the \textit{de facto} mechanism used by programmers for combining phrases into a single word, such that each word in the phrase begins with a capital letter.
+The CamelCase notation has become the \textit{de facto} mechanism used by programmers for combining phrases into a single word, such that each word in the phrase begins with a capital letter.
 Previous research~\cite{Little2009} demonstrated the benefit of splitting the CamelCase word into its constituent phrase for automated code completion.
-\tool\ splits such identifiers into constituent phrases to better facilitate searching.
+\tool\ splits such identifiers into constituent phrases to facilitate effective searching.
 \tool\ leverages the well-formed structure of CamelCase notations to encode a regular expression to achieve splitting with relatively high accuracy.
 For example, ``\CodeIn{drawString}'' is split into ``draw String''.   
 
-\textbf{P4) Lowercase}: This step involves converting the text description to lower case. The step is performed to normalize the text for making the keyword match case insensitive, further increasing the range of queries.
+\textbf{P4) Lowercase}: This step involves converting the text description to lower case. This step is performed to normalize the text for making the keyword match case insensitive, further increasing the range of queries.
 	
 \textbf{P5) Stemming}: This steps transforms the words in the description to their base form. Stemming is very effective in extending the range of keyword based queries to match various operational forms of the words. For instance, ``has'', ``have'', and ``had'' are mapped to the stem ``ha''. We use the default implementation of the Lucene Porter stemmer for pre-processing. 
 	
 
 
-After preprocessing, \tool\ next creates indexes for the API method descriptions.
+After preprocessing, \tool\ creates indices for the API method descriptions.
 An index is a collection of documents where each document is made up of 
 values organized into well defined fields.
 \tool\ considers every method description as an individual document and 
@@ -152,10 +152,10 @@ Likewise, keywords for field ``Method Name'' is derived by preprocessing ``hasNe
 \end{figure}
 
 
-For generating keywords to query the ``Type Description'' field we consider following heuristic:
+To generate keywords for querying the ``Type Description'' field we consider following heuristic:
 \textit{Heuristic H1:  the first paragraph or the first five sentences of the type description (whichever is shorter) provides reasonable keywords for searching equivalent class in target API.} 
 
-Likewise, for generating the keywords to query the ``Method Description'' field, we consider the following heuristic: \textit{Heuristic H2: the first paragraph or the first two sentences of the method description (whichever is shorter) provides reasonable keywords for searching equivalent method in target API.}
+Likewise, to generate the keywords for querying the ``Method Description'' field, we consider the following heuristic: \textit{Heuristic H2: the first paragraph or the first two sentences of the method description (whichever is shorter) provides reasonable keywords for searching equivalent method in target API.}
 
 \tool\ uses these heuristics to improve the performance of searching infrastructure
 that tends to be inversely proportional to the complexity and length of the query.
@@ -163,15 +163,15 @@ Using all the descriptive text as keywords often results in a verbose query.
 As the number of keywords in a query increases the effectiveness of the query decreases.
 A large number of keywords have higher probability of matching large number of documents in comparison to a query with fewer keywords.
 In contrast, we observed that the document writers tend to describe the general
-overview of class and method description in the first few sentences followed by implementation and design specific details.
+overview of class and method descriptions in the first few sentences followed by implementation and design specific details.
 We thus focused on the words in these overview sentences to create queries instead of using entire descriptive text.
 
 
 \textbf{Weights for terms}. As mentioned in Section~\ref{sec:example},
 all terms in a method description are not equally important keywords. 
-\tool\ further enhances the query by quantifying the importance of a term in the method description and use that as the weight of the corresponding keywords in the query.
-In particular, we propose to use tf-idf\cite{manning2008introduction} as a means to quantify importance of a term.
-For each term in the method description \tool\ calculates the number of times the term occurs in that method description as $freq_{mtd}$.
+\tool\ further enhances the query by quantifying the importance of a term in the method description and using that as the weight of the corresponding keywords in the query.
+In particular, we propose to use tf-idf score~\cite{manning2008introduction} as a metric to quantify the importance of a term.
+For each term in the method descriptions \tool\ calculates the number of times the term occurs in that method description as $freq_{mtd}$.
 \tool\ also calculates the maximum frequency of any term in the document as $freq_{MAX}$.
 \tool\ then calculates the number of documents in the corpus that contains the term as $freq_{doc}$.
 \tool\ finally calculates the tf-idf score of the term (as listed \cite{manning2008introduction}) as:
@@ -183,70 +183,76 @@ For each term in the method description \tool\ calculates the number of times th
 The calculated tf-idf values of terms are normalized to a range of 0 to 1 (both 0 and 1 inclusive) for each document.
 The normalized tf-idf sore of the top-k terms is then used as the weights for the corresponding  keywords occurring in the query.
 
-For the API method description  shown in Figure~\ref{fig:hasNextJavadoc}, \tool\ calculates ``iter'', ``ha'' (Lemma of ``has''), and ``element'' as most the important terms with normalized tf-idf scores of 1.0, 1.0, and 0,6 respectively. We augment the query shown in Figure~\ref{fig:hasNextJavaQuery} with the computed weights for the keywords respectively.
+For the API method description  shown in Figure~\ref{fig:hasNextJavadoc}, \tool\ calculates ``iter'', ``ha'' (Lemma of ``has''), and ``element'' as most the important terms with normalized tf-idf scores of 1.0, 1.0, and 0.6 respectively. We augment the query shown in Figure~\ref{fig:hasNextJavaQuery} with the computed weights for the keywords respectively.
 
 \subsubsection{Feedback}
 \label{subsub:querybuilder:feedback}
 
 
-The Query Builder component also accepts feedback from an end user in the form of confirmed mappings to further refine the query.
-In particular, this component seeks to prune the irrelevant results of a given query.
+The Query Builder component also accepts feedback in the form of confirmed mappings to further refine the results of a query.
+A confirmed mapping is method mapping that has been accepted as a valid mapping by a user.
+This goal of having this component in \tool\ is to prune the irrelevant results of a given query.
 Without the proposed feedback, the search space for the queries is all the public methods of the target API.
 Given a typical API exposes a large number of methods, a large search space may result in noise in the search results in the form of irrelevant results.
 Consider for example, Android API level 23 exposes 4404~\footnote{\url{http://developer.android.com/reference/classes.html}} classes
 and Java 8 exposes 4240~\footnote{\url{https://docs.oracle.com/javase/8/docs/api/allclasses-noframe.html}} classes.
-Furthermore, each class exposes several methods resulting in large search space for each query, in turn resulting in a low effectiveness of search.
+Furthermore, each class exposes several methods resulting in a large search space for each query, in turn resulting in a low search effectiveness.
 
-A well designed API is typically modular~\cite{Bloch:2006:OOPSLA:APIDesign}, and
-we seek to leverage the modularity in the API to prune the irrelevant results of queries.
-API methods are modular as they arranged according to the functionality provided by the methods.
-This arrangement manifests as methods groups appearing in class and class groups appearing in a package.
+A well designed API is typically modular~\cite{Bloch:2006:OOPSLA:APIDesign}.
+We seek to leverage the modularity in the API to prune the irrelevant results of queries.
+API methods are modular as they are arranged according to the functionality provided by the methods.
+This arrangement manifests as method groups appearing in a class and class groups appearing in a package.
 Our key intuition is that mappings of methods localized in a source API will also be localized in the target API.
-The intuition is based on the statistical model translation theory~\cite{brown1993mathematics} that given a context, a set of closely related words and the set of their translations are likely to occur frequently together in different languages. 
+This intuition is based on the statistical model translation theory~\cite{brown1993mathematics} that given a context, a set of closely related words and the set of their translations are likely to occur frequently together in different languages. 
 
 
 \tool\ operationalizes our intuition using topic modelling~\cite{blei2003latent,panichella2013effectively}.
-Topic Modeling has been demonstrated to be useful in many information retrieval related software engineering tasks~\cite{Panichella2013:ICSE:TopicModel,Binkley:2014:ULS:2597008.2597150}.
+Topic Modeling has been demonstrated to be useful in many information retrieval-related software engineering tasks~\cite{Panichella2013:ICSE:TopicModel,Binkley:2014:ULS:2597008.2597150}.
 In particular, \tool\ uses LDA as the choice of topic modelling implementation. 
 LDA creates a probabilistic statistical model that estimates distributions of latent topics from textual documents.
 \tool\ considers each package as an individual document. 
 In particular, we concatenate the package description with the descriptions of the classes and methods occurring within the package to form the document.
 
 \tool\ first creates a topic model $T$ of source API documents with $m$ topics.
-Next, \tool\ uses the model ($T$) to get the topic distribution vector of the source package document $V_{S}$.
-A topic distribution vector quantifies the contribution each topic ($m$) in the document.
-The model is next used to get the topic distribution vectors of the target package documents $\{V_{T}\}:=\{V_{T1},V_{T2},...,V_{Tn}\}$.
-The set $\{V_{T}\}$ is then queried to find ranked list of the target topic distribution vectors similar to $V_{S}$.
-In particular, \tool\ uses the Jensen–Shannon divergence~\cite{lin1991divergence} function to measure the similarity between two probability distributions. 
-Finally, \tool\ uses top ten of the resultant documents to prune the irrelevant results of the query to those packages.
+\tool\ next combines the source and target API documents to query the model ($T$) and generate a ranked list of top-k API documents $L$ per topic $m$.
+For a given source API document $D_s$, \tool\ discards every $L$ where $D_s$ does not appear to get a subset of lists $\{L\}'$.
+\tool\ next assigns weights to each target API document $D_t$ in each list in $\{L\}'$ as a logarithmic function of their rank. 
+In particular, if $D_t$ appears at rank $r$ in list of size $k$, the weight assigned is $log(1+ (k-r))$.
+\tool\ next combines the target API documents into a single ranked list $L_t$ by accumulating weights for each unique API documents appearing in $\{L\}'$. 
+Finally, \tool\ uses the top ten resulting documents in $L_t$ to prune the irrelevant results of the query to those packages.
+
 
 However, LDA requires setting up a lot of parameters for effectively generating a topic model.
-For instance, a typical implementation of LDA requires user to set following four parameters : 1) Number of topics, 2) Number of iterations, 3) Dirichlet distribution parameters $\alpha$, and 4) Dirichlet distribution parameter $\beta$.
+For instance, a typical implementation of LDA requires the user to set the following four parameters : 1) Number of topics, 2) Number of iterations, 3) Dirichlet distribution parameters $\alpha$, and 4) Dirichlet distribution parameter $\beta$.
 Finding optimal values for these parameters is an active area of research.
 \tool\ uses the recommendation by Arun et al.~\cite{arun2010finding} of optimizing for number of topics $m$ by running LDA under different values of $m$, while maintaining rest of the parameters as constant.
 \tool\ then use a fitness function to find the optimal value of $m$.
 
 
-\tool\ uses hyperparameter optimization~\cite{mccallum2002mallet} to optimize values for $\alpha$ and $\beta$ ($\alpha$ and $\beta$ are initialized to recommended~\cite{mccallum2002mallet} $1.0$ and $0.01$ respectively).
+\tool\ uses hyperparameter optimization~\cite{McCallum} to optimize values for $\alpha$ and $\beta$ ($\alpha$ and $\beta$ are initialized to recommended~\cite{McCallum} $1.0$ and $0.01$ respectively).
 The parameter ``number of iterations'' is initialized to 10000 (large for hyperparameter optimization to be effective).
 \tool\ next creates a set of topic models by running LDA with following values of $m$: 10, 50, 100, 500, 1000, 2500, 5000.
 The following fitness function is then used to select an optimal topic model:
 
 Given a mapping from the feedback; \textit{that methods in source package ($P_S$) are mapped to methods in target packages ($P_{T_1}...P_{T_n}$)}, all the generated topic models are queried with $P_S$.
-The topic model with minimum $m$ containing most of ($P_{T_1}...P_{T_n}$) in top-10 results for similarity described previously is selected as the optimal model for pruning irrelevant results in query output. 
+The topic model with minimum $m$ containing most of ($P_{T_1}...P_{T_n}$) in top ten results for similarity described previously is selected as the optimal model for pruning irrelevant results in query output. 
+
+We envision a user may follow a iterative process to leverage feedback.  
+A user may initially use \tool\ without the feedback and validate output for initial queries.
+He/she will then use the validated output as confirmed mappings to refine the subsequent query results.
+As an alternative, a user can also leverage the results from existing approaches such as Rosetta~\cite{Gokhale2013ICSE} and StaMiner~\cite{nguyen2014statistical} as feedback.
 
 
 
 \subsection{Searcher}
 \label{sub:approach_searcher}
 
-The searcher component accepts the query from Query Builder component and queries the index generated by Indexer component.
+The searcher component accepts the query from Query Builder component and queries the index generated by the Indexer component.
 The results are then ranked and presented to the end user for review.
 The searcher is realized as follows. 
 First all the documents that match the keywords and clauses in a query are returned.
-Then, the returned documents are ranked using the cosine similarity\cite{singhal2001modern} of the terms in query and the terms in returned documents. In mathematics, Cosine similarity is a numerical statistic to measure the similarity between two vectors. 
+Then, the returned documents are ranked using the cosine similarity\cite{singhal2001modern} of the terms in the query and the terms in returned documents. In mathematics, Cosine similarity is a numerical statistic to measure the similarity between two vectors. 
 In information theory~\cite{manning2008introduction}, cosine similarity is the standard statistic to rank relevant documents.
-The search space pruning using end user feedback was implemented using Mallet~\cite{mccallum2002mallet}.
 
 
 
@@ -258,7 +264,7 @@ The search space pruning using end user feedback was implemented using Mallet~\c
 \label{sub:Approach_implementation}
 
 We implemented a prototype version of the \tool\ approach.
-We first manually download the HTML version of API documents of libraries. 
+We first manually downloaded the HTML version of API documents of libraries. 
 We then implemented a parser for extracting the requisite text from these documents using 
 Jsoup\footnote{\url{http://jsoup.org/}}, which is a java library for working with HTML documents.
 In particular our prototype implementation parses: 
@@ -268,4 +274,6 @@ In particular our prototype implementation parses:
 
 We next implemented the indexing, query building, and searching infrastructure using the Apache Lucene~\cite{lucene}.
 Lucene is a high-performance, full-featured text search engine library written entirely in Java.
+We used Mallet~\cite{McCallum}  as a choice of topic-modeling library to implement feedback mechanism for the search space pruning.
 Our prototype implementation and evaluation subjects are publicly available on the project website~\cite{projectWeb}. 
+

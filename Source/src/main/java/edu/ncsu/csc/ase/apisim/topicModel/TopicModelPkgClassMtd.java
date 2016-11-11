@@ -25,6 +25,13 @@ public class TopicModelPkgClassMtd extends TopicModelFactory {
 		super(mode);
 	}
 	
+	public TopicModelPkgClassMtd (int numTopics, EvalMode mode) throws Exception {
+		super(numTopics, mode);
+		OUTPUT_FILE_NAME_1 = OUTPUT_FILE_NAME_1 + numTopics;
+		OUTPUT_FILE_NAME_2 = OUTPUT_FILE_NAME_2 + numTopics;
+		OUTPUT_FILE_NAME_3 = OUTPUT_FILE_NAME_3 + numTopics;
+	}
+	
 	@Override
 	public InstanceList getInstanceList() {
 		try {
@@ -69,7 +76,7 @@ public class TopicModelPkgClassMtd extends TopicModelFactory {
 	@Override
 	public void runEval() throws Exception {
 		Map<String ,List<String>> rankedMap = getRankedListPerTopic(MIN_PROB_DIST);
-		writeToFile(rankedMap, OUTPUT_FILE_NAME_1, TOPK);
+		//writeToFile(rankedMap, OUTPUT_FILE_NAME_1, TOPK);
 		writeToFile(getRankedListPerSearch(MIN_PROB_DIST), OUTPUT_FILE_NAME_2, TOPK);
 		writeToFile(getSimilarListPerSearch(rankedMap, SIMILARITY_CUTOFF), OUTPUT_FILE_NAME_3, TOPK);
 		

@@ -5,6 +5,8 @@ We next describe the limitations and future work of \tool,
 followed by discussions on threats to validity.
 
 
+
+
 A key limitation of the presented work is its reliance on the human developer
 to confirm or refute mappings.
 In the future, we plan to extend the \tool\ infrastructure to achieve an end-to-end automation. 
@@ -28,10 +30,20 @@ specification inference~\cite{pandita12:inferring} to identify method sequences.
 From an implementation perspective, \tool\ does not take into account 
 the API fields,
 which limits \tool s ability in reporting mappings involving API fields.
-%For instance, the functionality achieved by a method call in a source API
-%may be achieved by accessing a API field in destination API.
-However, disregarding API fields is a limitation of the current implementation 
-and in future iterations of \tool\ implementations we plan to include API fields in the indexes as well.
+For instance, the functionality achieved by a method call in a source API
+may be achieved by accessing a API field in destination API.
+However, disregarding API fields is a limitation of the current implementation.
+In future iterations of \tool\ implementations we plan to include API fields in the indexes as well.
+
+Furthermore, current implementation of the feedback mechanism 
+uses topic modeling as a mechanism to cluster the API elements together on a package level
+to prune the irrelevant mappings. 
+Topic modeling has been demonstrated to be useful in many information retrieval-related software engineering tasks~\cite{Panichella2013:ICSE:TopicModel,Binkley:2014:ULS:2597008.2597150}. 
+Although, this design choice yielded benefits in Java ME-Android mappings the benefits were not observed in Java-C\# mappings. 
+In the future, we plan to further investigate an optimum design of feedback mechanism for effectively pruning irrelevant mappings from the search results. 
+
+
+\tool\ incorporates a simple camelcase splitting~\cite{Little2009} as a means to transform identifiers into meaningful phrases to improve search results. While simple to implement, sometimes naive splitting is not ideal to deal with identifiers containing abbreviations or acronyms. In the future, we will explore alternatives handle such cases. In particular, we are interested in incorporating the concepts from SWordNet~\cite{Yang2014} to achieve better resolution of in camelcase.
 
 Finally, \tool\ operates under the assumption of the availability of the API documents.
 Thus \tool\ is not applicable in situations where API documents are of low quality or are unavailable altogether.
@@ -43,15 +55,14 @@ Specifically we plan to leverage techniques like code summarisation~\cite{sridha
 %limitations with respect to most commonly occurring method names like \CodeIn{get} \CodeIn{set}
 
 
- 
-
 \textbf{Threats to Validity}: The primary threat to external validity is the representativeness of our experimental subjects to the real world software.
 To address this threat we chose real world API pairs:
 1) Java ME and Android APIs are two Java based platforms to develop mobile applications; 
 2) Java and C\# APIs are the top object-oriented programming language APIs used for generic application development. 
-The threat can be further minimized by evaluating \tool\ on more APIs from different domains. 
+The threat can be further minimized by evaluating \tool\ on more APIs from different domains.
+Hopefully, other researchers will emulate our methods to repeat, refute, or improve our results. 
 
-Our chief threat to internal validity is the accuracy of \tool\ in identifying API mappings. 
+Our chief threat to internal validity is the accuracy of \tool\ in discovering API mappings. 
 To minimize this threat we compared the mappings inferred by \tool\ with
 the mappings provided by previous approaches. We thank Gokhale et al.~\cite{Gokhale2013ICSE} for sharing with us the Java ME and Android API mappings inferred by their Rosetta approach. We also thank Nguyen et al.~\cite{nguyen2014statistical} for making their mappings publicly available. Furthermore, authors did manually identify some of the mappings that could not be compared to previous work.
 Thus, human errors may affect our results. 

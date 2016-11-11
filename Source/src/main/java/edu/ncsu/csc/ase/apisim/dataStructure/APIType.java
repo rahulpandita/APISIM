@@ -58,6 +58,7 @@ public class APIType implements Serializable
 		
 		return sbr.toString();
 	}
+	
 	public APIType(String pkg, String name) {
 		this.name = name;
 		this.pkg = pkg;

@@ -130,5 +130,10 @@ public class Configuration
 
 	//------------------------------ END LUCENE IDX FIELDS ----------------------------------------
 	
+	public static final String JAVANET_DUMP_PATH_INS = PROJECT_PATH + "TEMPFILES" + File.separator + "javanet.instances";
 
+	public static final String JAVA_DUMP_PATH_INS = PROJECT_PATH + "TEMPFILES" + File.separator + "java.instances";
+
+	public static final String DOTNET_DUMP_PATH_INS = PROJECT_PATH + "TEMPFILES" + File.separator + "dotnet.instances";
+	
 }

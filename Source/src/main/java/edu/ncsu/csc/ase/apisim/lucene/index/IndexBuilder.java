@@ -16,11 +16,12 @@ public class IndexBuilder
 	public static void main(String[] args) {
 		
 		
-		buildStdMtdIndexes(APITYPE.ANDROID);
-		buildStdMtdIndexes(APITYPE.CLDC);
-		buildStdMtdIndexes(APITYPE.DOTNET);
-		buildStdMtdIndexes(APITYPE.ECLIPSE);
-		buildStdMtdIndexes(APITYPE.JAVA);
+		//buildStdMtdIndexes(APITYPE.ANDROID);
+		//buildStdMtdIndexes(APITYPE.CLDC);
+		//buildStdMtdIndexes(APITYPE.DOTNET);
+		//buildStdMtdIndexes(APITYPE.ECLIPSE);
+		//buildStdMtdIndexes(APITYPE.JAVA);
+		buildStdMtdIndexes(APITYPE.MIDP);
 		//buildStdMtdIndexes(APITYPE.UNKNOWN);
 		
 	}

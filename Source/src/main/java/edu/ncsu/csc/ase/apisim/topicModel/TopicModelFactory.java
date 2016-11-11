@@ -39,13 +39,13 @@ public abstract class TopicModelFactory {
 
 	public int TOPK = 50;
 
-	public int SIMILARITY_CUTOFF = 15;
+	public int SIMILARITY_CUTOFF = 20;
 
-	private int numTopics = 1000;
+	private  int numTopics = 250;
 
 	private int numThreads = 5;
 
-	private int numIterations = 20000 / 4;
+	private int numIterations = 20000 / 2;
 
 	private int numIterations_Infer = 100;
 
@@ -78,6 +78,15 @@ public abstract class TopicModelFactory {
 		createTopicModel();
 	}
 
+	public TopicModelFactory(int numTopics, EvalMode mode) throws Exception {
+		if (mode.equals(EvalMode.UNKNOWN))
+			throw new IllegalArgumentException("Unrecognized EvalMode");
+		this.eval_mode = mode;
+		this.numTopics = numTopics;
+		this.numIterations = numTopics<=500?(numTopics<=100?1000:numTopics*10):10000;
+		createTopicModel();
+	}
+
 	public EvalMode getEval_mode() {
 		return eval_mode;
 	}
@@ -107,7 +116,7 @@ public abstract class TopicModelFactory {
 			buff = new StringBuffer();
 			buff.append(topic);
 			buff.append(" : ");
-			while (iterator.hasNext() && rank < 5) {
+			while (iterator.hasNext() && rank < 10) {
 				IDSorter idCountPair = iterator.next();
 				buff.append(instances.getDataAlphabet().lookupObject(idCountPair.getID()));
 				buff.append(" ");
@@ -299,6 +308,8 @@ public abstract class TopicModelFactory {
 		IDSorter id;
 		double weight;
 		for (String pkgStr : srcClassSet) {
+			if (!inclusionCriteria(pkgStr))
+				continue;
 			tgtPkgMap = new LinkedHashMap<String, IDSorter>();
 			vocabList = new ArrayList<String>();
 			for (String key : finalMap.keySet()) {
@@ -306,13 +317,15 @@ public abstract class TopicModelFactory {
 				flag = false;
 				lst = finalMap.get(key);
 				for (int i = 0; (i < lst.size() && i < topK); i++) {
+					tmp="";
+					try{
 					tmp = lst.get(i).split("\t")[1];
+					}catch(Exception e){}
 					if (lst.get(i).endsWith(pkgStr)) {
 						flag = true;
 						// break;
 					}
-					if (inclusionCriteria(tmp))
-						tgtPkgPerTopicList.add(tmp);
+					tgtPkgPerTopicList.add(tmp);
 				}
 				if (flag) {
 					tgtPkgPerTopicList.removeAll(srcClassSet);

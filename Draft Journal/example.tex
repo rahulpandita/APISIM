@@ -2,7 +2,7 @@
 \label{sec:example}
 
 We next present an example to motivate our work and list the considerations for applying text mining techniques on API documents. 
-The example is from the Java ME and the Android API. Both Java ME and Android use Java as the language of implementation and are targeted towards hand-held devices.
+The presented example is from the Java ME and the Android API. Both Java ME and Android use Java as the language of implementation and are targeted towards hand-held devices.
 Figure~\ref{fig:drawStringJavadoc} shows the API method description
 of \CodeIn{drawString} method from
 \CodeIn{javax.microedition.lcdui.Graphics} class in Java ME API.
@@ -34,7 +34,7 @@ of method \CodeIn{drawText} method from
 
 
 Notice the overlap in the language of these two methods.
-A developer can easily conclude that
+A human developer can effortlessly (or with a little overhead) conclude that
 the two methods offer similar functionality.
 However, Android API has more than 23,000 public methods.
 Manually going through each method description to find similar methods
@@ -87,10 +87,10 @@ In the example, a combination of various attributes, such as method name split i
 				
 				\rowpln 1	& Class Name: ``Graphics''					& 0 & -\\
 				\rowcol 2	& Method Name: ``drawString''				& 0 & -\\
-				\rowcol 3	& Method Signature							& 23547 & - \\
-				\rowpln 4	& Method Description: (Complete)			& 16820 & - \\
-				\rowcol 5	& Method Description: (summary sentences)	& 94230 & - \\
-				\rowpln 6	& Combination								& 1479 & \textbf{3} \\			
+				\rowpln 3	& Method Signature							& 23547 & - \\
+				\rowcol 4	& Method Description: (Complete)			& 16820 & - \\
+				\rowpln 5	& Method Description: (summary sentences)	& 94230 & - \\
+				\rowcol 6	& Combination								& 1479 & \textbf{3} \\			
 				\bottomline
 				%----------------- END TABLE DATA ------------------------ 
 				\rowpln \multicolumn{4}{r}{{\small `-'=No Match in Top-10 results.}}\\ 
@@ -107,11 +107,11 @@ The previous example demonstrates difficulties faced by simple keyword-based sea
  
 \begin{enumerate}
 		
-	\item \textit{Confounding effects}. Certain method names have a confounding effects. For instance, \CodeIn{toString()}, \CodeIn{get()}, \CodeIn{set()} are too generic and tend to have similar descriptions across many method definitions. These generic methods often cause interference with the output of text mining based approaches. The challenge is to automatically identify such method names to de-emphasize their importance in a query. 
+	\item \textbf{\textit{Confounding effects}}. Certain method names have a confounding effect. For instance, \CodeIn{toString()}, \CodeIn{get()}, \CodeIn{set()} are too generic and tend to have similar descriptions across many method definitions. These generic methods often cause interference with the output of text mining based approaches. The challenge is to automatically identify such method names to de-emphasize their importance in a query. 
 	
-	\item \textit{Weights}. Not all terms in a method descriptions are equally important keywords. For instance, the term ``zip'' in the sentence ``opens a zip file'' is more important than the terms ``opens'' and ``files'' as the term emphasizes on the specific type of file. The challenge is to automatically identify the importance of a term.
+	\item \textbf{\textit{Weights}}. Not all terms in a method descriptions are equally important keywords. For instance, the term ``zip'' in the sentence ``opens a zip file'' is more important than the terms ``opens'' and ``files'' as the term emphasizes on the specific type of file. The challenge is to automatically identify the importance of a term.
 	
-	\item \textit{Structure}. API documents are not flat contiguous text blobs. They have well defined structure, that is often shared by method descriptions. Ignoring the structure may cause ineffective queries negatively affecting the results. The challenge is to effectively aggregate the results of querying individual API document elements (such as class description, class names, method names, method descriptions).
+	\item \textbf{\textit{Structure}}. API documents are not flat contiguous text blobs. They have well defined structure, that is often shared by method descriptions. Ignoring the structure may cause ineffective queries to negatively affect the results. The challenge is to effectively aggregate the results of querying individual API document elements (such as class description, class names, method names, method descriptions).
 			
 	
 \end{enumerate}

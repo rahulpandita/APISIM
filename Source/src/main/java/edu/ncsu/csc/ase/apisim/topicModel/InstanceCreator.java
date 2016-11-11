@@ -3,8 +3,10 @@ package edu.ncsu.csc.ase.apisim.topicModel;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
@@ -157,11 +159,28 @@ public class InstanceCreator {
 		return InstanceCreator.createInstanceList(insList);
 	}
 	
+
+	
 	public static InstanceList createInstanceListPkgCls(boolean includeMtd) throws Exception {
 		List<Instance> insList = new ArrayList<Instance>();
 		insList.addAll(getInsListMidpPkgCls(getPkgStrMap(Configuration.MIDP_DUMP_PATH, includeMtd)));
 	    insList.addAll(getInsListAndroidPkgCls(getPkgStrMap(Configuration.ANDROID_DUMP_PATH, includeMtd)));
 		return InstanceCreator.createInstanceList(insList);
+	}
+
+	
+	public static InstanceList createInstanceListJavaNetPkgCls(boolean includeMtd) throws Exception {
+		InstanceList lst = readInstancesPersistance(Configuration.JAVANET_DUMP_PATH_INS);
+		if(lst==null)
+		{
+			List<Instance> insList = new ArrayList<Instance>();
+			insList.addAll(getInsListPkgCls(getPkgStrMap(Configuration.JAVA_DUMP_PATH, includeMtd)));
+		    insList.addAll(getInsListPkgCls(getPkgStrMap(Configuration.DOTNET_DUMP_PATH, includeMtd)));
+		    
+			lst = InstanceCreator.createInstanceList(insList);
+			writeInstancesPersistance(Configuration.JAVANET_DUMP_PATH_INS,lst);
+		}
+		return lst;
 	}
 
 	private static List<Instance> getInsListMidpPkgCls(Map<String, String> pkgMap) throws Exception {
@@ -228,6 +247,22 @@ public class InstanceCreator {
 		return pkgMap;
 	}
 	
+	private static List<Instance> getInsListPkgCls(Map<String, String> pkgMap) throws Exception {
+		List<Instance> insList = new ArrayList<Instance>();
+		
+		//HashMap<String, String> pageMap = readPagesPersistance(PackageSummaryCrawler.ANDROID_PKG_DMP_FILE);
+	    String text;
+	    //Element  element;
+	    //StringBuffer buff;;
+	    for(String key:pkgMap.keySet())
+	    {
+	    	text = pkgMap.get(key);
+	    	text = text==null?"":text;
+	    	insList.add(new DataInstance(text, key));
+	    }
+		return insList;
+	}
+	
 	private static List<Instance> getInsListAndroidPkgCls(Map<String, String> pkgMap) throws Exception {
 		List<Instance> insList = new ArrayList<Instance>();
 		
@@ -256,9 +291,33 @@ public class InstanceCreator {
 		return InstanceCreator.createInstanceList(getInsListMidpPkgCls(getPkgStrMap(Configuration.MIDP_DUMP_PATH, includeMtd)));
 	}
 	
+	public static InstanceList createInstanceListJavaPkgClass(boolean includeMtd) throws Exception
+	{
+		InstanceList lst = readInstancesPersistance(Configuration.JAVA_DUMP_PATH_INS);
+		if(lst==null)
+		{
+			lst = InstanceCreator.createInstanceList(getInsListPkgCls(getPkgStrMap(Configuration.JAVA_DUMP_PATH, includeMtd)));
+			writeInstancesPersistance(Configuration.JAVA_DUMP_PATH_INS,lst);
+		}
+		return lst;
+	}
+	
+	
+
 	public static InstanceList createInstanceListandroidpkgClass(boolean includeMtd) throws Exception
 	{
 		return InstanceCreator.createInstanceList(getInsListAndroidPkgCls(getPkgStrMap(Configuration.ANDROID_DUMP_PATH, includeMtd)));
+	}
+	
+	public static InstanceList createInstanceListNetPkgClass(boolean includeMtd) throws Exception
+	{
+		InstanceList lst = readInstancesPersistance(Configuration.DOTNET_DUMP_PATH_INS);
+		if(lst==null)
+		{
+			lst = InstanceCreator.createInstanceList(getInsListPkgCls(getPkgStrMap(Configuration.DOTNET_DUMP_PATH, includeMtd)));
+			writeInstancesPersistance(Configuration.DOTNET_DUMP_PATH_INS,lst);
+		}
+		return lst;
 	}
 
 	public static InstanceList createInstanceListMIDP_Eval(boolean includeMtd) throws Exception {
@@ -328,5 +387,37 @@ public class InstanceCreator {
 		return evalList;
 	}
 	
+	@SuppressWarnings("unchecked")
+	private static InstanceList readInstancesPersistance(String fileName){
+		InstanceList pageMap = null;
+		try{
+		File file = new File(fileName);
+	    FileInputStream f = new FileInputStream(file);
+	    ObjectInputStream s = new ObjectInputStream(f);
+	    pageMap = (InstanceList) s.readObject();
+	    s.close();
+		}
+		catch(Exception e)
+		{
+			
+		}
+		return pageMap;
+		
+	}
+	
+	private static void writeInstancesPersistance(String path, InstanceList lst) {
+		
+		try {
+			FileOutputStream fout = new FileOutputStream(path);
+			ObjectOutputStream oos = new ObjectOutputStream(fout);
+			oos.writeObject(lst);
+			oos.close();
+			System.out.println("Done");
 
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		System.err.println("Writen Inatance List @" + path);
+		
+	}
 }
